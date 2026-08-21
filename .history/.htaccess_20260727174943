@@ -1,0 +1,5 @@
+
+RewriteEngine On
+
+Redirect 301 /index https://uncodemy.com/
+Redirect 301 /index.html https://uncodemy.com/

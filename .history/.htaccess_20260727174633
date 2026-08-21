@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} /index(?:\.html)?[\s?] [NC]
+RewriteRule ^index(?:\.html)?$ https://uncodemy.com/ [R=301,L]
