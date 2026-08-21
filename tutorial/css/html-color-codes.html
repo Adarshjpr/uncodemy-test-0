@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html Color Codes | Web Development Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Html Color Codes with clear explanations, examples, and best practices as part of the complete Web Development tutorial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+                        <a href="https://uncodemy.com/">CSS</a>
+            <span class="sep">/</span>
+            <span class="current">Page 3 of 5: Html Color Codes</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>CSS Topics</h4>
+            <ul class="topic-list">
+                <li><a href="introduction-to-css.html"><span class="num">01</span>Introduction to CSS</a></li>
+                <li><a href="css-force-wrap.html"><span class="num">02</span>CSS to force long text and urls to wrap on all browser</a></li>
+                <li><a href="html-color-codes.html" class="active"><span class="num">03</span>Html Color Codes</a></li>
+                <li><a href="css-inline-block-none.html"><span class="num">04</span>CSS Inline, block and none display style</a></li>
+                <li><a href="css-scrollbar-div.html"><span class="num">05</span>CSS to show only horizontal and vertical scroll bar in div</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow"><i class="fas fa-palette"></i> CSS Colors</span>
+            <h1>Html Color Codes</h1>
+
+            <div class="card">
+
+                <h2>Overview</h2>
+                <p>Colors are a fundamental part of web design. They set the mood, establish brand identity, and improve readability. In HTML and CSS, colors can be specified using several different formats. This lesson covers all the major color code systems: named colors, hexadecimal (hex), RGB, RGBA, HSL, and HSLA.</p>
+
+                <h2>1. Named Colors</h2>
+                <p>HTML supports 140 standard color names that you can use directly. These are the simplest to remember and use, but they offer a limited palette.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.example</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">color</span>: <span style="color:#032f62;">red</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">background-color</span>: <span style="color:#032f62;">lightblue</span>;<br />
+                    }
+                </div>
+
+                <p><b>Common named colors:</b> <code>red</code>, <code>blue</code>, <code>green</code>, <code>yellow</code>, <code>orange</code>, <code>purple</code>, <code>pink</code>, <code>black</code>, <code>white</code>, <code>gray</code>, <code>tomato</code>, <code>skyblue</code>, <code>gold</code>, and many more.</p>
+
+                <h2>2. Hexadecimal (Hex) Color Codes</h2>
+                <p>Hex codes are the most common way to specify colors in web development. They are represented by a <code>#</code> symbol followed by six hexadecimal digits (0–9 and A–F). The six digits are grouped in pairs representing Red, Green, and Blue channels.</p>
+
+                <p><b>Format:</b> <code>#RRGGBB</code></p>
+                <ul>
+                    <li><code>#FF0000</code> – pure Red</li>
+                    <li><code>#00FF00</code> – pure Green</li>
+                    <li><code>#0000FF</code> – pure Blue</li>
+                    <li><code>#000000</code> – Black</li>
+                    <li><code>#FFFFFF</code> – White</li>
+                    <li><code>#FFA500</code> – Orange</li>
+                </ul>
+
+                <p><b>Shorthand Hex (3-digit):</b> When each pair has identical digits, you can use a 3-digit shorthand.</p>
+                <ul>
+                    <li><code>#F00</code> is the same as <code>#FF0000</code></li>
+                    <li><code>#0F0</code> is the same as <code>#00FF00</code></li>
+                    <li><code>#FFF</code> is the same as <code>#FFFFFF</code></li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.primary</span> { <span style="color:#005cc5;">color</span>: <span style="color:#032f62;">#3498db</span>; }<br />
+                    <span style="color:#d73a49;">.danger</span>  { <span style="color:#005cc5;">color</span>: <span style="color:#032f62;">#e74c3c</span>; }
+                </div>
+
+                <h2>3. RGB Color Model</h2>
+                <p>RGB stands for Red, Green, and Blue. Each color channel is specified as a number between 0 and 255. The syntax is <code>rgb(red, green, blue)</code>.</p>
+
+                <ul>
+                    <li><code>rgb(255, 0, 0)</code> – Red</li>
+                    <li><code>rgb(0, 255, 0)</code> – Green</li>
+                    <li><code>rgb(0, 0, 255)</code> – Blue</li>
+                    <li><code>rgb(0, 0, 0)</code> – Black</li>
+                    <li><code>rgb(255, 255, 255)</code> – White</li>
+                </ul>
+
+                <h3>RGBA – RGB with Alpha (Opacity)</h3>
+                <p>RGBA adds an <b>alpha</b> channel to control opacity. The alpha value ranges from 0 (fully transparent) to 1 (fully opaque).</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.semi-transparent</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">background-color</span>: <span style="color:#032f62;">rgba(52, 152, 219, 0.5)</span>;<br />
+                    }
+                </div>
+
+                <p>In this example, the color is blue with 50% opacity.</p>
+
+                <h2>4. HSL Color Model</h2>
+                <p>HSL stands for <b>Hue</b>, <b>Saturation</b>, and <b>Lightness</b>. This model is more intuitive for designers because it allows you to pick a color by its hue on the color wheel, then adjust saturation and lightness.</p>
+
+                <ul>
+                    <li><b>Hue:</b> A degree on the color wheel (0–360). 0 is red, 120 is green, 240 is blue.</li>
+                    <li><b>Saturation:</b> Percentage (0% – gray, 100% – full color).</li>
+                    <li><b>Lightness:</b> Percentage (0% – black, 100% – white).</li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.hsl-example</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">color</span>: <span style="color:#032f62;">hsl(240, 100%, 50%)</span>; <span style="color:#6a737d;">/* pure blue */</span><br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">color</span>: <span style="color:#032f62;">hsl(0, 80%, 50%)</span>;  <span style="color:#6a737d;">/* a rich red */</span><br />
+                    }
+                </div>
+
+                <h3>HSLA – HSL with Alpha</h3>
+                <p>Similar to RGBA, HSLA adds an alpha channel for opacity.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.hsl-alpha</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">background-color</span>: <span style="color:#032f62;">hsla(120, 100%, 50%, 0.3)</span>; <span style="color:#6a737d;">/* 30% opaque green */</span><br />
+                    }
+                </div>
+
+                <h2>5. Comparison Table</h2>
+                <div style="overflow-x:auto;margin:1rem 0;">
+                    <table style="width:100%;border-collapse:collapse;font-size:0.95rem;background:#f8f9fa;border:1px solid #ddd;">
+                        <thead>
+                            <tr style="background:#e9ecef;">
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">Format</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">Example</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Named Color</td><td style="border:1px solid #ddd;padding:8px;"><code>tomato</code></td><td style="border:1px solid #ddd;padding:8px;">Quick prototyping</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Hex</td><td style="border:1px solid #ddd;padding:8px;"><code>#FF6347</code></td><td style="border:1px solid #ddd;padding:8px;">General web use, best performance</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">RGB</td><td style="border:1px solid #ddd;padding:8px;"><code>rgb(255, 99, 71)</code></td><td style="border:1px solid #ddd;padding:8px;">When you have numeric RGB values</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">RGBA</td><td style="border:1px solid #ddd;padding:8px;"><code>rgba(255, 99, 71, 0.5)</code></td><td style="border:1px solid #ddd;padding:8px;">Need transparency</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">HSL</td><td style="border:1px solid #ddd;padding:8px;"><code>hsl(9, 100%, 64%)</code></td><td style="border:1px solid #ddd;padding:8px;">Intuitive color adjustments</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">HSLA</td><td style="border:1px solid #ddd;padding:8px;"><code>hsla(9, 100%, 64%, 0.5)</code></td><td style="border:1px solid #ddd;padding:8px;">Transparency with intuitive hues</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>6. Practical Examples</h2>
+                <p>Here's a simple card component styled with different color formats:</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    &lt;<span style="color:#d73a49;">div</span> <span style="color:#005cc5;">style</span>=<span style="color:#032f62;">"background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 5px solid #007bff;"</span>&gt;<br />
+                    &nbsp;&nbsp;&lt;<span style="color:#d73a49;">h3</span> <span style="color:#005cc5;">style</span>=<span style="color:#032f62;">"color: #333;"</span>&gt;Card Title&lt;/<span style="color:#d73a49;">h3</span>&gt;<br />
+                    &nbsp;&nbsp;&lt;<span style="color:#d73a49;">p</span> <span style="color:#005cc5;">style</span>=<span style="color:#032f62;">"color: rgba(0,0,0,0.7);"</span>&gt;This is a sample card using hex, named, and rgba colors.&lt;/<span style="color:#d73a49;">p</span>&gt;<br />
+                    &nbsp;&nbsp;&lt;<span style="color:#d73a49;">button</span> <span style="color:#005cc5;">style</span>=<span style="color:#032f62;">"background: hsl(211, 100%, 50%); color: white; border: none; padding: 8px 16px; border-radius: 4px;"</span>&gt;Click Me&lt;/<span style="color:#d73a49;">button</span>&gt;<br />
+                    &lt;/<span style="color:#d73a49;">div</span>&gt;
+                </div>
+
+                <div style="background:#f8f9fa;padding:20px;border-radius:8px;border-left:5px solid #007bff;margin:1rem 0;">
+                    <h3 style="color:#333;margin-top:0;">Card Title</h3>
+                    <p style="color:rgba(0,0,0,0.7);">This is a sample card using hex, named, and rgba colors.</p>
+                    <button style="background:hsl(211, 100%, 50%);color:white;border:none;padding:8px 16px;border-radius:4px;cursor:default;">Click Me</button>
+                </div>
+
+                <h2>7. Choosing the Right Format</h2>
+                <ul>
+                    <li><b>Hex (#RRGGBB):</b> Best for performance and compactness. Most widely used in designs.</li>
+                    <li><b>RGB:</b> Useful when you have color values from design tools or need to manipulate channels programmatically.</li>
+                    <li><b>RGBA/HSLA:</b> Essential for overlays, shadows, and any effect requiring transparency.</li>
+                    <li><b>HSL:</b> Great for theme systems where you want to adjust lightness or saturation dynamically.</li>
+                </ul>
+
+                <h2>8. Browser Support</h2>
+                <p>All color formats covered here (named, hex, rgb, rgba, hsl, hsla) are supported by every modern browser, including Chrome, Firefox, Safari, Edge, and Opera. They also work in Internet Explorer 9 and above (with partial support for alpha channels in IE9).</p>
+
+                <h2>9. Common Mistakes</h2>
+                <ul>
+                    <li><b>Missing the # in hex codes:</b> <code>FF0000</code> is invalid; must be <code>#FF0000</code>.</li>
+                    <li><b>Forgetting alpha values:</b> When using <code>rgba()</code> or <code>hsla()</code>, always include the fourth parameter.</li>
+                    <li><b>Using names that don't exist:</b> Only 140 named colors are supported. Check your spelling.</li>
+                    <li><b>Confusing hue values:</b> In HSL, hue is a degree (0–360). Values like 0.5 are not valid unless in percentage.</li>
+                </ul>
+
+                <h2>Summary</h2>
+                <p>HTML color codes give you a variety of ways to express colors, from simple named colors to precise hex codes and flexible HSL values. Each format has its strengths, and as a developer, you should be comfortable using all of them. Hex remains the most popular for its brevity, while RGBA and HSLA are indispensable for modern design with transparency.</p>
+
+                <p>Experiment with different formats to understand how they work, and choose the one that best fits your project's needs.</p>
+
+            </div>
+
+            <div class="prev-next">
+                <a href="css-force-wrap.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>CSS to force long text and urls to wrap on all browser</a>
+                <a href="css-inline-block-none.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>CSS Inline, block and none display style</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world web development?</h3>
+                    <p>Learn HTML, CSS3, Bootstrap and JavaScript hands-on with mentor-led sessions.</p>
+                </div>
+                                                    <a <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>Full Stack Development</h4>
+                <p class="batch-sub">Kickstart your web dev journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

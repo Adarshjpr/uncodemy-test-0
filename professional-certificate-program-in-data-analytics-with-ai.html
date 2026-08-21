@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analytics with AI Course – Year-End Opportunity 2026 | Uncodemy</title>
+  <meta name="description" content="Join Uncodemy's NASSCOM certified Data Analytics with AI course. Industrial training, placement support, ₹8–28 LPA package. Rated 4.8★ on Google.">
+  <meta name="keywords" content="Data Analytics, AI, Power BI, Tableau, SQL, Python, Uncodemy, Year-End Opportunity 2026, IT Training, Placement, Career Growth, NASSCOM Certified">
+  <link rel="icon" href="image/logo.png" type="image/x-icon">
+  <link rel="icon" href="image/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ========== Global Styles ========== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: #f9fbfd; 
+      color: #222; 
+      line-height: 1.7; 
+      overflow-x: hidden; 
+    }
+    
+    /* ========== Navigation Bar ========== */
+    .navbar {
+      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-logo span {
+      color: #ffae1a;
+    }
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+    .navbar-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+    .navbar-menu a:hover {
+      color: #ffae1a;
+    }
+    .navbar-cta {
+      background: #ffae1a;
+      color: #0066cc;
+      padding: 10px 26px;
+      border-radius: 30px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .navbar-cta:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+    .navbar-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    
+    /* Mobile Menu */
+    @media (max-width: 968px) {
+      .navbar-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+        transition: left 0.4s;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      }
+      .navbar-menu.active {
+        left: 0;
+      }
+      .navbar-toggle {
+        display: block;
+      }
+    }
+
+    /* ========== Hero Banner ========== */
+    .hero-banner {
+      background: linear-gradient(135deg, #0066cc 0%, #0052a3 50%, #ff9500 100%);
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px 60px 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 42px rgba(0,0,0,0.15);
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      top: -250px; left: -150px;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      bottom: -200px; right: -100px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    @keyframes float { 
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    .hero-content { position: relative; z-index: 10; max-width: 920px; margin: 0 auto; }
+    .hero-badge { 
+      background: #ffae1a; 
+      color: #fff; 
+      display: inline-block; 
+      padding: 8px 26px; 
+      border-radius: 30px; 
+      font-size: 0.95rem; 
+      font-weight: 700; 
+      letter-spacing: 0.8px; 
+      margin-bottom: 18px;
+      box-shadow: 0 6px 18px rgba(255,174,26,0.3);
+    }
+    .hero-content h1 { 
+      font-size: 3rem; 
+      font-weight: 900; 
+      line-height: 1.2; 
+      margin-bottom: 14px; 
+      text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .hero-content .subtitle { 
+      font-size: 1.3rem; 
+      margin-bottom: 10px; 
+      font-weight: 500; 
+      line-height: 1.6;
+    }
+    .hero-stats { 
+      display: flex; 
+      justify-content: center; 
+      gap: 32px; 
+      margin: 28px 0; 
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat-box { 
+      background: rgba(255,255,255,0.15); 
+      padding: 16px 26px; 
+      border-radius: 18px; 
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .hero-stats .stat-box strong { 
+      display: block; 
+      font-size: 2rem; 
+      color: #ffae1a;
+    }
+    .hero-stats .stat-box span { 
+      font-size: 1rem; 
+      font-weight: 600;
+    }
+    .hero-cta { 
+      background: #ffae1a; 
+      color: #0066cc; 
+      border: none; 
+      padding: 16px 50px; 
+      font-size: 1.2rem; 
+      font-weight: 800; 
+      border-radius: 40px; 
+      cursor: pointer; 
+      margin-top: 24px;
+      box-shadow: 0 8px 28px rgba(255,174,26,0.4);
+      transition: all 0.3s ease;
+    }
+    .hero-cta:hover { 
+      background: #fff; 
+      transform: translateY(-4px); 
+      box-shadow: 0 12px 38px rgba(255,174,26,0.5);
+    }
+
+    /* ========== Stats Counter Section ========== */
+    .stats-section {
+      background: linear-gradient(135deg, #0066cc, #0052a3);
+      color: #fff;
+      padding: 50px 20px;
+      margin: 0;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 3rem;
+      color: #ffae1a;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .stat-item p {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* ========== Section Container ========== */
+    section { 
+      max-width: 1150px; 
+      margin: 42px auto; 
+      padding: 0 18px;
+    }
+    .section-title { 
+      font-size: 2.3rem; 
+      color: #0066cc; 
+      margin-bottom: 24px; 
+      font-weight: 800; 
+      text-align: center;
+      position: relative;
+      padding-bottom: 14px;
+    }
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 5px;
+      background: #ffae1a;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+
+    /* ========== Info Card ========== */
+    .info-card { 
+      background: #fff; 
+      padding: 36px; 
+      border-radius: 22px; 
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08); 
+      margin-bottom: 32px;
+    }
+    .info-card h3 { 
+      color: #0066cc; 
+      font-size: 1.7rem; 
+      margin-bottom: 16px; 
+      font-weight: 700;
+    }
+    .info-card p, .info-card li { 
+      font-size: 1.08rem; 
+      color: #333; 
+      margin-bottom: 12px; 
+      line-height: 1.8;
+    }
+    .info-card ul { 
+      list-style: none; 
+      padding-left: 0;
+    }
+    .info-card ul li::before { 
+      content: '✔'; 
+      color: #ffae1a; 
+      font-weight: bold; 
+      margin-right: 12px;
+    }
+
+    /* ========== Features Grid ========== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .feature-box {
+      background: #fff;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .feature-box:hover {
+      transform: translateY(-8px);
+    }
+    .feature-box .emoji {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+    .feature-box h4 {
+      color: #0066cc;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .feature-box p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ========== Tools Grid with Emojis ========== */
+    .tools-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+      gap: 22px; 
+      margin-top: 28px;
+    }
+    .tool-box { 
+      background: linear-gradient(135deg, #0066cc, #0052a3); 
+      color: #fff; 
+      padding: 28px 20px; 
+      border-radius: 18px; 
+      text-align: center; 
+      font-weight: 700; 
+      font-size: 1.05rem; 
+      box-shadow: 0 6px 20px rgba(0,102,204,0.2);
+      transition: transform 0.3s ease;
+    }
+    .tool-box:hover { 
+      transform: translateY(-6px) scale(1.05);
+    }
+    .tool-box .tool-emoji {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ========== Learning Path ========== */
+    .learning-path {
+      background: #fff;
+      padding: 40px;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      margin-bottom: 32px;
+    }
+    .path-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .path-step {
+      background: linear-gradient(135deg, #f7f9fc, #fff);
+      padding: 24px;
+      border-radius: 16px;
+      border-left: 5px solid #ffae1a;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .path-step .step-number {
+      background: #ffae1a;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+    .path-step h4 {
+      color: #0066cc;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .path-step p {
+      color: #555;
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    /* ========== Placement Banner Image Section ========== */
+    .placement-banner {
+      margin: 50px auto;
+      max-width: 1150px;
+      padding: 0 18px;
+    }
+    .placement-banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 12px 42px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .placement-banner img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ========== Projects Section ========== */
+    .project-card { 
+      background: #fff; 
+      border-left: 6px solid #ffae1a; 
+      padding: 28px; 
+      margin-bottom: 26px; 
+      border-radius: 16px; 
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    }
+    .project-card h4 { 
+      color: #0066cc; 
+      font-size: 1.5rem; 
+      margin-bottom: 12px; 
+      font-weight: 700;
+    }
+    .project-card .domain-tag { 
+      background: #ffae1a; 
+      color: #fff; 
+      padding: 5px 16px; 
+      border-radius: 20px; 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      display: inline-block; 
+      margin-bottom: 10px;
+    }
+    .project-card p { 
+      font-size: 1.05rem; 
+      margin-bottom: 10px;
+    }
+    .project-card ul { 
+      margin-left: 20px; 
+      margin-bottom: 12px;
+    }
+    .project-card ul li { 
+      margin-bottom: 8px; 
+      font-size: 1.02rem;
+    }
+
+    /* ========== Placement Section ========== */
+    .placement-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 28px; 
+      margin-top: 28px;
+    }
+    .placement-box { 
+      background: linear-gradient(135deg, #0066cc, #0052a3); 
+      color: #fff; 
+      padding: 32px; 
+      border-radius: 20px; 
+      box-shadow: 0 8px 28px rgba(0,102,204,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .placement-box::before {
+      content: '';
+      position: absolute;
+      width: 150px; height: 150px;
+      background: rgba(255,174,26,0.15);
+      border-radius: 50%;
+      top: -50px; right: -30px;
+    }
+    .placement-box h4 { 
+      font-size: 1.4rem; 
+      margin-bottom: 8px; 
+      font-weight: 700;
+    }
+    .placement-box .company { 
+      color: #ffae1a; 
+      font-weight: 700; 
+      font-size: 1.15rem; 
+      margin-bottom: 6px;
+    }
+    .placement-box .package { 
+      font-size: 2rem; 
+      font-weight: 900; 
+      color: #ffae1a; 
+      margin-bottom: 14px;
+    }
+    .placement-box p { 
+      font-size: 1.02rem; 
+      line-height: 1.7; 
+      font-style: italic;
+    }
+
+    /* ========== Google Reviews ========== */
+    .reviews-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 24px; 
+      margin-top: 28px;
+    }
+    .review-box { 
+      background: #fff; 
+      padding: 28px; 
+      border-radius: 18px; 
+      box-shadow: 0 6px 22px rgba(0,0,0,0.08); 
+      border-top: 4px solid #ffae1a;
+      position: relative;
+    }
+    .review-box .stars { 
+      color: #ffae1a; 
+      font-size: 1.3rem; 
+      margin-bottom: 10px;
+    }
+    .review-box .reviewer { 
+      font-weight: 700; 
+      color: #0066cc; 
+      font-size: 1.15rem; 
+      margin-bottom: 8px;
+    }
+    .review-box p { 
+      font-size: 1.02rem; 
+      color: #444; 
+      font-style: italic; 
+      line-height: 1.7;
+    }
+
+    /* ========== FAQ Section ========== */
+    .faq-section {
+      background: #fff;
+      padding: 40px;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      margin-bottom: 32px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 16px;
+    }
+    .faq-item h4 {
+      color: #0066cc;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq-item h4::before {
+      content: '❓';
+      font-size: 1.3rem;
+    }
+    .faq-item p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      padding-left: 32px;
+    }
+
+    /* ========== Course Cards ========== */
+    .course-cards { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 30px; 
+      margin-top: 36px;
+    }
+    .course-card { 
+      background: #fff; 
+      border-radius: 22px; 
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1); 
+      overflow: hidden; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .course-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 14px 42px rgba(0,102,204,0.15);
+    }
+    .course-card .card-header { 
+      background: linear-gradient(135deg, #0066cc, #0052a3); 
+      color: #fff; 
+      padding: 28px; 
+      text-align: center;
+    }
+    .course-card .card-header h3 { 
+      font-size: 1.6rem; 
+      font-weight: 800; 
+      margin-bottom: 8px;
+    }
+    .course-card .card-body { 
+      padding: 26px;
+    }
+    .course-card .card-body p { 
+      font-size: 1.05rem; 
+      color: #444; 
+      margin-bottom: 22px; 
+      line-height: 1.7;
+    }
+    .course-card .download-btn { 
+      background: #ffae1a; 
+      color: #fff; 
+      border: none; 
+      padding: 14px 0; 
+      width: 100%; 
+      font-size: 1.1rem; 
+      font-weight: 700; 
+      border-radius: 30px; 
+      cursor: pointer; 
+      transition: background 0.3s ease;
+      box-shadow: 0 6px 18px rgba(255,174,26,0.3);
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+    .course-card .download-btn a{
+      text-decoration: none;
+      color: #f0f0f0;
+    }
+    .course-card .download-btn:hover { 
+      background: #0066cc;
+    }
+    .course-card .label { 
+      position: absolute; 
+      top: 16px; 
+      right: 16px; 
+      background: #ffae1a; 
+      color: #fff; 
+      padding: 8px 18px; 
+      border-radius: 24px; 
+      font-weight: 700; 
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(255,174,26,0.4);
+    }
+
+    /* ========== Footer ========== */
+    .footer {
+      background: linear-gradient(135deg, #001a33, #003366);
+      color: #fff;
+      padding: 50px 20px 20px 20px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    .footer-section h3 {
+      color: #ffae1a;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+    .footer-section p, .footer-section a {
+      color: #ddd;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .footer-section a:hover {
+      color: #ffae1a;
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .social-icons a {
+      background: #ffae1a;
+      color: #003366;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: transform 0.3s, background 0.3s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      transform: scale(1.15);
+      background: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 1rem;
+      color: #bbb;
+    }
+    .footer-bottom strong {
+      color: #ffae1a;
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-content .subtitle { font-size: 1.1rem; }
+      .hero-stats { flex-direction: column; gap: 18px; }
+      .section-title { font-size: 1.9rem; }
+      .course-cards, .placement-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .navbar-container { flex-wrap: wrap; }
+    }
+
+    /* ========== Scroll to Top Button ========== */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ffae1a;
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255,174,26,0.4);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+    }
+    .scroll-top:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Navigation Bar ========== -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="https://uncodemy.com" class="navbar-logo">
+        🎓 <span>Uncodemy</span>
+      </a>
+      <ul class="navbar-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#placements">Placements</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <button class="navbar-cta" onclick="window.location.href='https://uncodemy.com/register-now'">Enroll Now</button>
+      </ul>
+      <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero Banner Section ========== -->
+  <div class="hero-banner" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">🏆 NASSCOM® Certified Member</div>
+      <h1>Year-End Opportunity Program 2026</h1>
+      <div class="subtitle">
+        "India's IT sector expected to add nearly <strong>40% more jobs in FY 2026-27</strong>,<br>
+        translating into approximately <strong>1 million new IT-related vacancies</strong>" – Survey
+      </div>
+      <h2 style="margin-top:24px; font-size:2rem;">Professional Certificate Program in<br><strong>Data Analytics With AI</strong></h2>
+      <p style="font-size:1.15rem; margin-top:12px;">🚀 Industrial Training with Hands-On Learning That Prepares You for the Real World</p>
+      
+      <div class="hero-stats">
+        <div class="stat-box">
+          <strong>₹8–28 LPA</strong>
+          <span>Average Package</span>
+        </div>
+        <div class="stat-box">
+          <strong>6–7 Months</strong>
+          <span>Program Duration</span>
+        </div>
+        <div class="stat-box">
+          <strong>4.8★</strong>
+          <span>Rated on Google</span>
+        </div>
+      </div>
+      
+      <button class="hero-cta" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+        🎯 Explore Courses Now
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== Statistics Counter Section ========== -->
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>10,000+</h3>
+        <p>Students Trained</p>
+      </div>
+      <div class="stat-item">
+        <h3>500+</h3>
+        <p>Companies Hiring</p>
+      </div>
+      <div class="stat-item">
+        <h3>95%</h3>
+        <p>Placement Success</p>
+      </div>
+      <div class="stat-item">
+        <h3>4.8★</h3>
+        <p>Google Rating</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== About Program Section ========== -->
+  <section>
+    <div class="info-card">
+      <h3>🎓 Why Choose This Program?</h3>
+      <p>
+        Uncodemy's <strong>Professional Certificate Program in Data Analytics With AI</strong> is designed for aspiring data analysts who want to master data cleaning, visualization, SQL, Python, Power BI, Tableau, and AI-powered analytics. With a perfect blend of theory and hands-on industrial training across 15+ real-world projects, this program prepares you to work on enterprise-level data analytics across Sales, Finance, HR, Marketing, Healthcare, E-Commerce, and more domains.
+      </p>
+      <ul>
+        <li>✅ NASSCOM certified curriculum trusted by 10,000+ learners</li>
+        <li>💰 Average placement package: ₹8–28 LPA</li>
+        <li>👨‍🏫 Learn from industry experts with 10+ years of live project experience</li>
+        <li>🎯 100% placement assistance with interview preparation and resume building</li>
+        <li>🛠️ Master tools: Excel, Power BI, Tableau, SQL, Python, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Bokeh, Google Colab, Jupyter, AI Tools (ChatGPT, Gemini, Copilot, Claude, Perplexity, Julius)</li>
+        <li>📜 Globally recognized NASSCOM certification</li>
+        <li>🌐 Flexible online and offline training modes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Key Features Section ========== -->
+  <section id="features">
+    <h2 class="section-title">✨ Key Program Features</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="emoji">💼</div>
+        <h4>15+ Industry Projects</h4>
+        <p>Work on real-world projects across Sales, Finance, HR, Marketing, Healthcare, E-Commerce, Retail, and Supply Chain domains.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">🎯</div>
+        <h4>100% Placement Support</h4>
+        <p>Dedicated placement team with resume building, mock interviews, and job referrals to top MNCs.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">🏆</div>
+        <h4>NASSCOM Certified</h4>
+        <p>Get globally recognized certification that adds credibility to your professional profile.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">👨‍💻</div>
+        <h4>Expert Mentors</h4>
+        <p>Learn from trainers with 10+ years of industry experience in data analytics and BI.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">🤖</div>
+        <h4>AI-Powered Tools</h4>
+        <p>Master modern AI tools including ChatGPT, Gemini, Copilot, Claude, Perplexity, and Julius.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">📚</div>
+        <h4>Lifetime Access</h4>
+        <p>Get lifetime access to course materials, recordings, and community support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Learning Path Section ========== -->
+  <section>
+    <h2 class="section-title">🗺️ Your Learning Journey</h2>
+    <div class="learning-path">
+      <div class="path-steps">
+        <div class="path-step">
+          <div class="step-number">1</div>
+          <h4>Foundation</h4>
+          <p>Learn Excel fundamentals, SQL basics, and data visualization principles.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">2</div>
+          <h4>Core Skills</h4>
+          <p>Master Python, Pandas, NumPy, data analysis, and visualization with Matplotlib/Seaborn.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">3</div>
+          <h4>Advanced Topics</h4>
+          <p>Power BI dashboards, Tableau visualization, DAX formulas, and AI tools integration.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">4</div>
+          <h4>Live Projects</h4>
+          <p>Apply your skills on 15+ industry projects with real-world data analytics scenarios.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">5</div>
+          <h4>Placement Prep</h4>
+          <p>Resume building, mock interviews, and soft skills training for job success.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">6</div>
+          <h4>Career Launch</h4>
+          <p>Get placed as Data Analyst with dedicated placement assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Placement Banner Image Section ========== -->
+  <div class="placement-banner">
+    <img src="/image/placementbanner.png" alt="Uncodemy - Trusted by 10,000+ Learners - India's Most Trusted IT Training Institute - Rated 4.8★ On Google" loading="lazy">
+  </div>
+
+  <!-- ========== Tools Covered Section ========== -->
+  <section>
+    <h2 class="section-title">🛠️ Tools & Technologies Covered</h2>
+    <div class="tools-grid">
+      <div class="tool-box">
+        <span class="tool-emoji">📊</span>
+        Excel
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📈</span>
+        Power BI
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📉</span>
+        Tableau
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🗄️</span>
+        SQL
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🐍</span>
+        Python
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🐼</span>
+        Pandas
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🔢</span>
+        NumPy
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📊</span>
+        Matplotlib
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🌊</span>
+        Seaborn
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📈</span>
+        Plotly
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🌐</span>
+        Bokeh
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">☁️</span>
+        Google Colab
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📓</span>
+        Jupyter
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">💬</span>
+        ChatGPT
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">✨</span>
+        Gemini
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">👨‍💻</span>
+        Copilot
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🧠</span>
+        Claude
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🔍</span>
+        Perplexity
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🤖</span>
+        Julius
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Live Projects Section ========== -->
+  <section>
+    <h2 class="section-title">💼 Live Industrial Projects (15+ Projects)</h2>
+    
+    <div class="project-card">
+      <span class="domain-tag">📊 Sales</span>
+      <h4>1. Sales Performance Dashboard</h4>
+      <p><strong>Tools Used:</strong> Power BI, Excel, SQL</p>
+      <p><strong>Concepts:</strong> Data Cleaning, KPI Tracking, Data Visualization</p>
+      <p><strong>Major Topics:</strong> DAX Formulas, Power BI Modeling, Data Relationships</p>
+      <p><strong>Description:</strong> Create an interactive sales dashboard that tracks region-wise and product-wise sales trends and KPIs.</p>
+      <p><strong>Scope:</strong> Improve business visibility and enable quick decision-making through visual analytics.</p>
+      <p><strong>Who Should Do:</strong> Aspiring Business Analysts, Sales Analysts</p>
+      <p><strong>Prerequisites:</strong> Excel basics, Power BI visualization, SQL Joins</p>
+      <p><strong>Experience Gained:</strong> Dashboard building, DAX measure creation, KPI design</p>
+      <p><strong>Career Outcome:</strong> Business Analyst / Sales Reporting Analyst</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🛒 E-Commerce</span>
+      <h4>2. Customer Purchase Behavior Analysis</h4>
+      <p><strong>Tools Used:</strong> Python, Pandas, Excel</p>
+      <p><strong>Concepts:</strong> Descriptive Analytics, Data Segmentation, Trend Analysis</p>
+      <p><strong>Major Topics:</strong> Data Manipulation, Aggregation, Visualization using Matplotlib</p>
+      <p><strong>Description:</strong> Analyze customer transactions to find buying frequency, average basket value, and churn indicators.</p>
+      <p><strong>Scope:</strong> Segment customers for marketing and retention strategies.</p>
+      <p><strong>Who Should Do:</strong> Retail & E-commerce Analysts</p>
+      <p><strong>Prerequisites:</strong> Python basics, EDA techniques</p>
+      <p><strong>Experience Gained:</strong> Data wrangling and behavioral insight generation</p>
+      <p><strong>Career Outcome:</strong> Customer Insights Analyst</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">💰 Finance</span>
+      <h4>3. Financial Performance Reporting</h4>
+      <p><strong>Tools Used:</strong> Excel, SQL, Power BI</p>
+      <p><strong>Concepts:</strong> KPI Design, Variance Analysis, Data Aggregation</p>
+      <p><strong>Major Topics:</strong> DAX Measures, Financial Ratio Calculation</p>
+      <p><strong>Description:</strong> Build financial reports that track revenue, expenses, and profit margins across departments.</p>
+      <p><strong>Scope:</strong> Monitor organizational financial health through automated dashboards.</p>
+      <p><strong>Who Should Do:</strong> Students interested in finance and banking analytics</p>
+      <p><strong>Prerequisites:</strong> Excel formulas, SQL basics</p>
+      <p><strong>Experience Gained:</strong> Financial KPI development and variance insight</p>
+      <p><strong>Career Outcome:</strong> Financial Data Analyst</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">👔 HR</span>
+      <h4>4. HR Attrition and Employee Analysis</h4>
+      <p><strong>Tools Used:</strong> Python, Pandas, Power BI</p>
+      <p><strong>Concepts:</strong> Statistical Analysis, EDA, Data Visualization</p>
+      <p><strong>Major Topics:</strong> Correlation, Regression, Dashboarding</p>
+      <p><strong>Description:</strong> Analyze employee data to identify attrition reasons and satisfaction levels.</p>
+      <p><strong>Scope:</strong> Improve retention strategies and resource planning.</p>
+      <p><strong>Who Should Do:</strong> HR Analysts and Workforce Planners</p>
+      <p><strong>Prerequisites:</strong> Basic Python statistics</p>
+      <p><strong>Experience Gained:</strong> Correlation study and KPI development</p>
+      <p><strong>Career Outcome:</strong> HR Data Analyst</p>
+      <p><strong>Trending Technology:</strong> Predictive HR Dashboards</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🏪 Retail</span>
+      <h4>5. Retail Store Profitability Analysis</h4>
+      <p><strong>Tools Used:</strong> Excel, Power BI</p>
+      <p><strong>Concepts:</strong> Profit Margin Analysis, KPI Visualization</p>
+      <p><strong>Major Topics:</strong> Slicers, Charts, Conditional Formatting</p>
+      <p><strong>Description:</strong> Evaluate store and product-wise profitability and identify growth areas.</p>
+      <p><strong>Scope:</strong> Optimize pricing and inventory management.</p>
+      <p><strong>Who Should Do:</strong> Retail Business Analysts</p>
+      <p><strong>Prerequisites:</strong> Excel formulas, Pivot Tables</p>
+      <p><strong>Experience Gained:</strong> Dashboard Design and Data Summarization</p>
+      <p><strong>Career Outcome:</strong> Retail Data Analyst</p>
+      <p><strong>Trending Technology:</strong> Power Query & DAX Automation</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🏥 Healthcare</span>
+      <h4>6. COVID-19 Data Analytics Dashboard</h4>
+      <p><strong>Tools Used:</strong> Python, Pandas, Tableau</p>
+      <p><strong>Concepts:</strong> Time-Series Analysis, Data Cleaning, Visualization</p>
+      <p><strong>Major Topics:</strong> Line Charts, Trend Analysis, KPIs</p>
+      <p><strong>Description:</strong> Analyze global COVID data to monitor cases, recoveries, and vaccination rates.</p>
+      <p><strong>Scope:</strong> Track pandemic trends and health insights over time.</p>
+      <p><strong>Who Should Do:</strong> Data Analysts in healthcare/public sector</p>
+      <p><strong>Prerequisites:</strong> Tableau basics, Python EDA</p>
+      <p><strong>Experience Gained:</strong> Time-series visualization and trend interpretation</p>
+      <p><strong>Career Outcome:</strong> Public Health Data Analyst</p>
+      <p><strong>Trending Technology:</strong> Tableau Public</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">📢 Marketing</span>
+      <h4>7. Marketing Campaign Performance Analysis</h4>
+      <p><strong>Tools Used:</strong> Excel, SQL, Power BI</p>
+      <p><strong>Concepts:</strong> Campaign ROI, Conversion Analytics</p>
+      <p><strong>Major Topics:</strong> SQL Joins, DAX Metrics, KPI Dashboard</p>
+      <p><strong>Description:</strong> Measure marketing effectiveness across channels and campaigns.</p>
+      <p><strong>Scope:</strong> Optimize marketing budget and customer engagement strategies.</p>
+      <p><strong>Who Should Do:</strong> Marketing and Digital Analysts</p>
+      <p><strong>Prerequisites:</strong> SQL queries, Power BI basics</p>
+      <p><strong>Experience Gained:</strong> ROI and conversion rate calculation</p>
+      <p><strong>Career Outcome:</strong> Marketing Data Analyst</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🛍️ E-Commerce</span>
+      <h4>8. Customer Segmentation using RFM Model</h4>
+      <p><strong>Tools Used:</strong> Python, Pandas, Excel</p>
+      <p><strong>Concepts:</strong> Recency-Frequency-Monetary Analysis</p>
+      <p><strong>Major Topics:</strong> Data Binning, EDA, Clustering</p>
+      <p><strong>Description:</strong> Segment customers based on their purchase behavior and spending patterns.</p>
+      <p><strong>Scope:</strong> Support targeted marketing and retention plans.</p>
+      <p><strong>Who Should Do:</strong> E-commerce Data Analysts</p>
+      <p><strong>Prerequisites:</strong> Basic Statistics, Python EDA</p>
+      <p><strong>Experience Gained:</strong> Customer Behavior Segmentation</p>
+      <p><strong>Career Outcome:</strong> Business Data Analyst</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🚚 Supply Chain</span>
+      <h4>9. Supply Chain Efficiency Dashboard</h4>
+      <p><strong>Tools Used:</strong> Power BI, SQL</p>
+      <p><strong>Concepts:</strong> Data Modeling, KPI Visualization</p>
+      <p><strong>Major Topics:</strong> Lead Time, Inventory Turnover, Supplier Performance</p>
+      <p><strong>Description:</strong> Monitor logistics, inventory cycles, and order fulfillment efficiency.</p>
+      <p><strong>Scope:</strong> Enable data-driven supply chain optimization.</p>
+      <p><strong>Who Should Do:</strong> Operations & Logistics Analysts</p>
+      <p><strong>Prerequisites:</strong> SQL queries, Power BI visuals</p>
+      <p><strong>Experience Gained:</strong> Supply Chain KPI tracking</p>
+      <p><strong>Career Outcome:</strong> Supply Chain Data Analyst</p>
+      <p><strong>Trending Technology:</strong> Dynamic Power BI Dashboards</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">📊 Sales Forecasting</span>
+      <h4>10. Sales Forecasting using Historical Data</h4>
+      <p><strong>Tools Used:</strong> Excel, Python</p>
+      <p><strong>Concepts:</strong> Regression Analysis, Trend Forecasting</p>
+      <p><strong>Major Topics:</strong> Moving Averages, Time-Series Charts</p>
+      <p><strong>Description:</strong> Predict future sales based on historical data patterns.</p>
+      <p><strong>Scope:</strong> Assist business planning and budget allocation.</p>
+      <p><strong>Who Should Do:</strong> Retail and FMCG Analysts</p>
+      <p><strong>Prerequisites:</strong> Excel charts, Python basics</p>
+      <p><strong>Experience Gained:</strong> Statistical forecasting skills</p>
+      <p><strong>Career Outcome:</strong> Forecast Analyst</p>
+      <p><strong>Trending Technology:</strong> Excel Power Pivot</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">📱 Social Media</span>
+      <h4>11. Social Media Engagement Analytics</h4>
+      <p><strong>Tools Used:</strong> Python, Excel, Tableau</p>
+      <p><strong>Concepts:</strong> Engagement Metrics, Trend Analysis</p>
+      <p><strong>Major Topics:</strong> EDA, Dashboard Visualization</p>
+      <p><strong>Description:</strong> Analyze social media metrics to measure brand engagement and growth.</p>
+      <p><strong>Scope:</strong> Help optimize digital marketing strategies.</p>
+      <p><strong>Who Should Do:</strong> Social Media & Marketing Analysts</p>
+      <p><strong>Prerequisites:</strong> Tableau visualization basics</p>
+      <p><strong>Experience Gained:</strong> Data reporting and correlation analysis</p>
+      <p><strong>Career Outcome:</strong> Digital Analytics Specialist</p>
+      <p><strong>Trending Technology:</strong> Tableau Storytelling</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🛒 E-Commerce Product</span>
+      <h4>12. E-commerce Product Performance Dashboard</h4>
+      <p><strong>Tools Used:</strong> SQL, Power BI</p>
+      <p><strong>Concepts:</strong> Sales KPI Tracking, Profitability Analytics</p>
+      <p><strong>Major Topics:</strong> Data Modeling, DAX Calculations</p>
+      <p><strong>Description:</strong> Monitor product sales and profit margins across categories.</p>
+      <p><strong>Scope:</strong> Support product and pricing decisions.</p>
+      <p><strong>Who Should Do:</strong> E-commerce and Retail Analysts</p>
+      <p><strong>Prerequisites:</strong> SQL, Power BI Modeling</p>
+      <p><strong>Experience Gained:</strong> Data visualization and product KPI analysis</p>
+      <p><strong>Career Outcome:</strong> E-commerce Analyst</p>
+      <p><strong>Trending Technology:</strong> Embedded Analytics in Power BI</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🏥 Healthcare</span>
+      <h4>13. Hospital Patient Data Analysis</h4>
+      <p><strong>Tools Used:</strong> Python, Pandas, Excel</p>
+      <p><strong>Concepts:</strong> Descriptive Statistics, Data Cleaning</p>
+      <p><strong>Major Topics:</strong> Central Tendency, Correlation, Charts</p>
+      <p><strong>Description:</strong> Analyze hospital records to find admission trends and outcomes.</p>
+      <p><strong>Scope:</strong> Support health planning and resource allocation.</p>
+      <p><strong>Who Should Do:</strong> Healthcare Analysts</p>
+      <p><strong>Prerequisites:</strong> Python EDA, Excel charts</p>
+      <p><strong>Experience Gained:</strong> Healthcare data exploration</p>
+      <p><strong>Career Outcome:</strong> Healthcare Data Analyst</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🏦 Banking</span>
+      <h4>14. Banking Loan Performance Analytics</h4>
+      <p><strong>Tools Used:</strong> SQL, Excel, Python</p>
+      <p><strong>Concepts:</strong> KPI Calculation, EDA, Trend Detection</p>
+      <p><strong>Major Topics:</strong> Default Rate, Loan Approval Trends</p>
+      <p><strong>Description:</strong> Analyze loan portfolios to measure repayment performance.</p>
+      <p><strong>Scope:</strong> Improve loan management and risk evaluation.</p>
+      <p><strong>Who Should Do:</strong> Finance and Banking Students</p>
+      <p><strong>Prerequisites:</strong> SQL queries, Excel formulas</p>
+      <p><strong>Experience Gained:</strong> Risk and portfolio data analysis</p>
+      <p><strong>Career Outcome:</strong> Loan Analytics Specialist</p>
+      <p><strong>Trending Technology:</strong> SQL Data Pipelines</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🎬 Entertainment</span>
+      <h4>15. Movie Ratings and Audience Insights</h4>
+      <p><strong>Tools Used:</strong> Python, Pandas, Matplotlib</p>
+      <p><strong>Concepts:</strong> EDA, Visualization, Data Aggregation</p>
+      <p><strong>Major Topics:</strong> Scatter Plots, Box Plots, Histograms</p>
+      <p><strong>Description:</strong> Analyze movie ratings to discover viewer preferences and trends.</p>
+      <p><strong>Scope:</strong> Support media marketing and content strategy.</p>
+      <p><strong>Who Should Do:</strong> Entertainment Data Analysts</p>
+      <p><strong>Prerequisites:</strong> Python data visualization libraries</p>
+      <p><strong>Experience Gained:</strong> Trend analysis and data storytelling</p>
+      <p><strong>Career Outcome:</strong> Media Data Analyst</p>
+      <p><strong>Trending Technology:</strong> Python Matplotlib & Seaborn</p>
+    </div>
+
+  </section>
+
+  <!-- ========== Student Placements Section ========== -->
+  <section id="placements">
+    <h2 class="section-title">🎯 Our Students' Success Stories</h2>
+    <div class="placement-grid">
+      
+      <div class="placement-box">
+        <h4>Hashir</h4>
+        <div class="company">📦 FedEx, Bengaluru</div>
+        <div class="package">₹10.6 LPA</div>
+        <p>"Uncodemy has truly transformed my learning journey! The practical sessions, real-time projects, and continuous mentor guidance helped me build strong analytical skills and industry-ready knowledge. I'm thrilled to join FedEx as a Data Analyst with a package of 10.6 LPA. Big thanks to the Uncodemy team for their constant support and placement guidance!"</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Farhan Noman</h4>
+        <div class="company">💼 Cubastion</div>
+        <div class="package">₹9.5 LPA</div>
+        <p>"Uncodemy has been a turning point in my professional journey! The comprehensive training modules, real-world projects, and consistent mentor support equipped me with the knowledge and confidence to excel in interviews. I'm thrilled to begin my new role as a Senior Associate Consultant at Cubastion with a package of 9.5 LPA. Heartfelt thanks to the Uncodemy team for their expert guidance and placement assistance throughout my journey!"</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Divya Pandey</h4>
+        <div class="company">🛡️ Qualys</div>
+        <div class="package">₹8.5 LPA</div>
+        <p>"Enrolling at Uncodemy was a turning point in my learning journey. The mentors guided me with real-world projects, practical sessions, and continuous feedback that built my confidence. The placement team provided incredible support throughout the interview process, helping me secure my role as a Data Quality Analyst at Qualys. Thankful to Uncodemy for their guidance and constant encouragement!"</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Sagar Gahloat</h4>
+        <div class="company">📚 Clarivate</div>
+        <div class="package">₹5 LPA</div>
+        <p>"My journey with Uncodemy has been truly rewarding. The trainers ensured that each session was interactive, insightful, and focused on practical learning. Their structured curriculum and dedicated placement support helped me gain the confidence to crack interviews and get placed as an Intellectual Property Analyst at Clarivate. A big thanks to Uncodemy for shaping my career path with the right guidance and opportunities!"</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Ankit Singh</h4>
+        <div class="company">🔬 Finelabs</div>
+        <div class="package">₹4.8 LPA</div>
+        <p>"Uncodemy played a crucial role in transforming my career. The trainers were knowledgeable, approachable, and always focused on practical learning. The hands-on training, live projects, and personalized guidance made complex concepts easy to understand. The placement team supported me throughout the process, from preparation to interviews, which helped me secure my role as a Data Analyst at Finelabs."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Mehak Khan</h4>
+        <div class="company">📖 Clarivate</div>
+        <div class="package">₹4 LPA</div>
+        <p>"Uncodemy has been a game changer in my learning and career journey. The mentors provided in-depth training, industry-based projects, and continuous guidance that built my confidence and practical skills. The placement team at Uncodemy was incredibly supportive—from resume preparation to interview practice, they helped me at every stage. I'm truly thankful to Uncodemy for helping me begin my career as an IP Renewals Analyst at Clarivate."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Kundan Kumar Kushwaha</h4>
+        <div class="company">🏭 Fabricroot</div>
+        <div class="package">₹3.5 LPA</div>
+        <p>"Uncodemy has been a turning point in my professional journey. The mentors not only provided excellent technical training but also focused on real-world applications and interview readiness. The placement support was incredible—from guiding me in resume building to preparing me for interviews. I'm grateful to Uncodemy for helping me secure my position as an MIS Executive at Fabricroot. Thank you, Uncodemy, for shaping my career with the right skills and guidance!"</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Kartikeya</h4>
+        <div class="company">🔍 MarkScan</div>
+        <div class="package">₹3 LPA</div>
+        <p>"Uncodemy has played a vital role in shaping my career path. The trainers were highly knowledgeable and always encouraged practical learning along with conceptual clarity. The interview preparation sessions and placement support were extremely helpful—from resume guidance to mock interviews, every step made a difference. I'm thankful to Uncodemy for helping me start my journey as a Research Analyst at MarkScan. It's been an amazing experience!"</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== Google Reviews Section ========== -->
+  <section id="reviews">
+    <h2 class="section-title">⭐ Trusted by 10,000+ Learners – Google Reviews (4.8★)</h2>
+    <div class="reviews-grid">
+      
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Ayu Sin</div>
+        <p>"I'm from Ghaziabad and joined the data analytics course at Uncodemy. We covered Excel, Power BI, and SQL. The course is beginner-friendly, and the project work helped during interviews."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Simran Pal</div>
+        <p>"Academy has the best data analytics course in Delhi. From SQL to Power BI, everything was taught practically. I'm now working in the analytics team of an ecommerce company."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Disha Srivastava</div>
+        <p>"I joined the data analytics course in Noida and it was a great choice. We covered Excel, SQL, and Power BI with live assignments. The trainer was really supportive."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Divyansh</div>
+        <p>"Being in Ghaziabad, I joined Uncodemy's data analytics course to improve my Excel and Power BI skills. The trainer explained everything step by step, and now I'm applying for analytics jobs with confidence."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Rishika Jain</div>
+        <p>"Uncodemy's data analytics course in Pune helped me go from beginner to job-ready. I now work in the analytics team of an ecommerce brand. Power BI and Excel training were the best."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Shweta Singh</div>
+        <p>"Uncodemy offers the best data analyst course in Noida. I had zero SQL knowledge, but thanks to Anshul Sir, I now handle dashboards and data reports confidently at work."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Shagun Pandey</div>
+        <p>"The Data Analytics course from Uncodemy was very helpful. The sessions were live and clear, with hands-on training. I now work as a junior analyst, thanks to their support."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">myiesha johri</div>
+        <p>"I had zero experience in analytics, but this online course from Uncodemy made it all clear. From Excel to Power BI, the trainer explained everything slowly and clearly. I now feel ready to work on data projects."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Ankit mahto</div>
+        <p>"I joined for data analytics placement course online. The really excellent team was maintained with the best teaching skills and professional experience. The uncodemy team really helped me with my career switch in IT."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Rajat Kashyap</div>
+        <p>"My name is Rajat, and I recently completed the Data Analytics course from Uncodemy at their Noida branch. My trainer was Irshad Sir, and he was an excellent mentor. He taught every topic in a very easy and practical way, which helped me understand the concepts clearly. His guidance really made a difference in my learning journey."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FAQ Section ========== -->
+  <section>
+    <h2 class="section-title">❓ Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <h4>What is the duration of the Data Analytics course?</h4>
+        <p>The program duration is 6 to 7 months with flexible batch timings for working professionals and students.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is this course suitable for beginners?</h4>
+        <p>Yes! The course starts from basics and gradually progresses to advanced topics. No prior programming experience required.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What is the average placement package?</h4>
+        <p>Our students receive average placement packages ranging from ₹8 LPA to ₹28 LPA depending on skills and company requirements.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you provide placement assistance?</h4>
+        <p>Yes, we provide 100% placement assistance including resume building, mock interviews, job referrals, and soft skills training.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is the certification recognized globally?</h4>
+        <p>Yes, Uncodemy is a NASSCOM certified training partner, and the certification is recognized globally by top IT companies.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I attend classes online?</h4>
+        <p>Yes, we offer both online and offline training modes with live interactive sessions and lifetime access to recordings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Trending Courses Cards ========== -->
+  <section id="courses">
+    <h2 class="section-title">🔥 Explore Our Trending Courses</h2>
+    <div class="course-cards">
+      
+      <div class="course-card">
+        <span class="label">🏆 Most Popular</span>
+        <div class="card-header">
+          <h3>Playwright Automation</h3>
+        </div>
+        <div class="card-body">
+          <p>Master cross-browser testing, CI/CD pipelines, API validation, and AI-powered tools with hands-on industry projects. Secure top placements with ₹8–28 LPA packages.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/Playwright-Automation.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="label">📈 High Demand</span>
+        <div class="card-header">
+          <h3>Data Science</h3>
+        </div>
+        <div class="card-body">
+          <p>Become a data expert with Python, machine learning, AI, deep learning, and data visualization. Work on real-world datasets and predictive models for top IT roles.</p>
+          <button class="download-btn"><a href="/course/data-science-training-course-in-noida" target="_blank" rel="noopener noreferrer"> 📥 Download Course PDF</a></button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="label">🔥 Trending</span>
+        <div class="card-header">
+          <h3>Data Analytics</h3>
+        </div>
+        <div class="card-body">
+          <p>Learn advanced analytics, business intelligence, SQL, Power BI, Tableau, and data-driven decision-making for FinTech, E-Commerce, and enterprise domains.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/DA.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="label">💼 Career Boost</span>
+        <div class="card-header">
+          <h3>Full Stack Development</h3>
+        </div>
+        <div class="card-body">
+          <p>Build modern web applications with React, Node.js, MongoDB, Express, and cloud deployment. Learn end-to-end development with live industry projects.</p>
+          <button class="download-btn" ><a href="/course/full-stack-development-training-course-in-noida" target="_blank" rel="noopener noreferrer">📥 Download Course PDF</a> </button>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="label">🧪 Automation Expert</span>
+        <div class="card-header">
+          <h3>Professional Certificate Program in API Automation Testing</h3>
+        </div>
+        <div class="card-body">
+          <p>Master REST & SOAP API testing using Postman, RestAssured, Selenium, and automation frameworks. Learn API validations, CI/CD integration, token-based auth, test reporting, and real-time industry projects.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/API-Automation.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+      
+      <div class="course-card">
+        <span class="label">📊 High Demand</span>
+        <div class="card-header">
+          <h3>Professional Certificate Program in Business Analytics With AI</h3>
+        </div>
+        <div class="card-body">
+          <p>Become a certified business analyst with AI-powered tools. Learn data analytics, forecasting, Power BI, SQL, Python, ML models, dashboards, and decision-making with real-world case studies.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/BA-with-ai.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <!-- ========== Why Students Choose Uncodemy ========== -->
+  <section>
+    <div class="info-card">
+      <h3>🏆 Why 10,000+ Students Choose Uncodemy</h3>
+      <ul>
+        <li>🌟 India's #1 IT training institute rated 4.8★ on Google</li>
+        <li>🎓 NASSCOM certified curriculum designed for industry readiness</li>
+        <li>👥 10,000+ students trained and placed in top MNCs</li>
+        <li>💼 100% placement assistance with dedicated support team</li>
+        <li>🌐 Flexible online and offline training modes</li>
+        <li>♾️ Lifetime access to course materials and community support</li>
+        <li>🚀 15+ real-time projects across Sales, Finance, HR, Marketing, Healthcare domains</li>
+        <li>👨‍🏫 Expert trainers with 10+ years of industry experience</li>
+        <li>📝 Resume building, mock interviews, and soft skills training included</li>
+        <li>🔄 Regular doubt-clearing sessions and mentorship</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      
+      <div class="footer-section">
+        <h3>🎓 Uncodemy</h3>
+        <p>India's Most Trusted IT Training Institute</p>
+        <p>NASSCOM® Certified Member</p>
+        <p>Empowering 10,000+ students to achieve their dream careers in technology.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/uncodemyofficial/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        
+          <a href="https://twitter.com/uncodemy?lang=en" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+          <a href="https://www.linkedin.com/company/uncodemy?originalSubdomain=in" 
+             target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        
+          <a href="https://www.instagram.com/uncodemyofficial/?hl=en" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        
+          <a href="https://www.youtube.com/@uncodemylearning" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        
+      </div>
+
+      <div class="footer-section">
+        <h3>🔗 Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/all-courses">Courses</a></li>
+          <li><a href="/placement">Placements</a></li>
+          <li><a href="/instructors">Instructors</a></li>
+          <li><a href="/contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>📚 Popular Courses</h3>
+        <ul>
+          <li><a href="/course/playwright-training-course-in-noida">Playwright Automation</a></li>
+          <li><a href="/course/data-science-training-course-in-noida">Data Science</a></li>
+          <li><a href="/course/data-analytics-training-course-in-noida">Data Analytics</a></li>
+          <li><a href="/course/full-stack-with-nodejs-training-course-in-noida">Full Stack Development</a></li>
+          <li><a href="/course/cloud-computing-training-course-in-noida">Cloud Computing</a></li>
+          <li><a href="/course/artificial-intelligence-training-course-in-noida">AI & Machine Learning</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>📞 Contact Info</h3>
+      
+        <p><strong>📍 Address:</strong><br>
+          <a href="https://maps.app.goo.gl/6Q3VsPojbbkNNiKNA" target="_blank" style="color: inherit; text-decoration: none;">
+            B 14-15, Udhyog Marg, Sector 1, Noida<br>
+            (Near Noida Sector 15 Metro)<br>
+            Uttar Pradesh 201301
+          </a>
+        </p>
+      
+        <p><strong>📱 Call/WhatsApp:</strong><br>
+          <a href="tel:+919818366550" style="color: inherit; text-decoration: none;">+91 9818366550</a> 
+          <a href="tel:+918448807675" style="color: inherit; text-decoration: none;">+91 8448807675</a>
+        </p>
+      
+        <p><strong>💬 WhatsApp Chat:</strong><br>
+          <a href="https://wa.me/919818366550" target="_blank" style="color: inherit; text-decoration: none;">
+            Chat on WhatsApp
+          </a>
+        </p>
+      
+        <p><strong>✉️ Email:</strong><br>
+          <a href="mailto:info@uncodemy.com" style="color: inherit; text-decoration: none;">info@uncodemy.com</a>
+        </p>
+      
+        <p><strong>🌐 Website:</strong><br>
+          <a href="https://uncodemy.com" target="_blank" style="color: inherit; text-decoration: none;">uncodemy.com</a>
+        </p>
+      </div>
+      
+
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>Uncodemy Edutech Pvt. LTD</strong> | CIN No. U85499UP2024PTC195902</p>
+      <p>Rated <strong>4.8★</strong> on Google | Trusted by <strong>10,000+ Learners</strong></p>
+      <p style="margin-top:12px; font-style:italic;">"We rise by lifting others."</p>
+    </div>
+  </footer>
+
+  <!-- ========== Scroll to Top Button ========== -->
+  <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ⬆️
+  </div>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+
+    // Scroll to Top Button Visibility
+    window.addEventListener('scroll', function() {
+      const scrollTop = document.getElementById('scrollTop');
+      if (window.pageYOffset > 300) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    // Download PDF Function
+    function downloadPDF(filename) {
+      // Update path to your actual PDF hosting location
+      let pdfPath = '/files/' + filename;
+      window.open(pdfPath, '_blank');
+    }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

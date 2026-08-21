@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jump Statements in C: break, continue, goto, return | C Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Jump Statements in C: break, continue, goto, return with clear explanations, examples, and best practices as part of the complete C Programming tutorial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+            <a href="https://uncodemy.com">C Programming</a>
+            <span class="sep">/</span>
+            <span class="current">Page 26 of 48: Jump Statements in C: break, continue, goto, return</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>C Programming Tutorial</h4>
+            <ul class="topic-list">
+                <li><a href="identifiers-in-c-types-of-identifiers.html"><span class="num">01</span>Identifiers in C: Types of Identifiers</a></li>
+                <li><a href="10-reasons-why-you-should-learn-c.html"><span class="num">02</span>10 Reasons Why You Should Learn C</a></li>
+                <li><a href="if-statements-in-c-syntax-examples.html"><span class="num">03</span>If Statements in C: Syntax, Examples, and Best Practices</a></li>
+                <li><a href="if-else-statement-in-c-programming.html"><span class="num">04</span>If...else statement in C Programming</a></li>
+                <li><a href="understanding-realloc-function-in-c.html"><span class="num">05</span>Understanding realloc() function in C</a></li>
+                <li><a href="if-else-if-statements-in-c-programming.html"><span class="num">06</span>if else if statements in C Programming</a></li>
+                <li><a href="why-c-is-called-middle-level-language.html"><span class="num">07</span>Why C is called middle level language?</a></li>
+                <li><a href="beginners-guide-to-c-programming.html"><span class="num">08</span>Beginner's Guide to C Programming</a></li>
+                <li><a href="first-c-program-and-its-syntax.html"><span class="num">09</span>First C program and Its Syntax</a></li>
+                <li><a href="escape-sequences-and-comments-in-c.html"><span class="num">10</span>Escape Sequences and Comments in C</a></li>
+                <li><a href="keywords-in-c-list-of-keywords.html"><span class="num">11</span>Keywords in C: List of Keywords</a></li>
+                <li><a href="top-50-c-interview-questions-and-answers.html"><span class="num">12</span>Top 50 Mostly Asked C Interview Questions and Answers</a></li>
+                <li><a href="boolean-and-static-in-c-programming.html"><span class="num">13</span>Boolean and Static in C Programming With Examples ( Full Guide )</a></li>
+                <li><a href="learn-data-structures-in-c-with-types.html"><span class="num">14</span>Learn Data Structures in C With Types</a></li>
+                <li><a href="constants-in-c-language.html"><span class="num">15</span>Constants in C language</a></li>
+                <li><a href="data-types-in-c-programming.html"><span class="num">16</span>Data Types in C Programming - A Beginner Guide with examples</a></li>
+                <li><a href="variables-in-c-programming-types.html"><span class="num">17</span>Variables in C Programming - Types of Variables in C ( With Examples )</a></li>
+                <li><a href="expressions-in-c-programming-types.html"><span class="num">18</span>Expressions in C Programming - Types of Expressions in C ( With Examples )</a></li>
+                <li><a href="c-programming-assignment-operators.html"><span class="num">19</span>C Programming Assignment Operators</a></li>
+                <li><a href="arithmetic-operators-in-c-programming.html"><span class="num">20</span>Arithmetic Operators in C Programming</a></li>
+                <li><a href="relational-operators-in-c-programming.html"><span class="num">21</span>Relational Operators in C Programming</a></li>
+                <li><a href="logical-operators-in-c-programming.html"><span class="num">22</span>Logical Operators in C Programming</a></li>
+                <li><a href="operators-in-c-types-of-operators.html"><span class="num">23</span>Operators in C: Types of Operators</a></li>
+                <li><a href="bitwise-operators-in-c.html"><span class="num">24</span>Bitwise Operators in C: AND, OR, XOR, Shift & Complement</a></li>
+                <li><a href="ternary-operator-in-c.html"><span class="num">25</span>Ternary Operator in C: Ternary Operator vs. if...else Statement</a></li>
+                <li><a href="jump-statements-in-c.html" class="active"><span class="num">26</span>Jump Statements in C: break, continue, goto, return</a></li>
+                <li><a href="continue-statement-in-c.html"><span class="num">27</span>Continue Statement in C: What is Break & Continue Statement in C with Example</a></li>
+                <li><a href="conditional-statements-in-c.html"><span class="num">28</span>Conditional Statements in C: if, if..else, Nested if</a></li>
+                <li><a href="switch-statement-in-c.html"><span class="num">29</span>Switch Statement in C: Syntax and Examples</a></li>
+                <li><a href="understanding-do-while-loop-in-c.html"><span class="num">30</span>Understanding do...while loop in C</a></li>
+                <li><a href="understanding-for-loop-in-c.html"><span class="num">31</span>Understanding for loop in C</a></li>
+                <li><a href="understanding-while-loop-in-c.html"><span class="num">32</span>Understanding While loop in C</a></li>
+                <li><a href="loop-in-c-with-examples.html"><span class="num">33</span>Loop in C with Examples: For, While, Do..While Loops</a></li>
+                <li><a href="nested-loops-in-c.html"><span class="num">34</span>Nested Loops in C</a></li>
+                <li><a href="infinite-loops-in-c.html"><span class="num">35</span>Infinite Loops in C: Types of Infinite Loops</a></li>
+                <li><a href="functions-in-c-types-of-functions.html"><span class="num">36</span>Functions in C: Learn Types of Functions in C</a></li>
+                <li><a href="recursion-in-c-types-working-examples.html"><span class="num">37</span>Recursion in C: Types, its Working and Examples</a></li>
+                <li><a href="storage-classes-in-c.html"><span class="num">38</span>Storage Classes in C: Auto, Extern, Static, Register</a></li>
+                <li><a href="arrays-in-c-programming-operations.html"><span class="num">39</span>Arrays in C Programming: Operations on Arrays</a></li>
+                <li><a href="multidimensional-arrays-in-c.html"><span class="num">40</span>Multidimensional Arrays in C: 2D and 3D Arrays</a></li>
+                <li><a href="strings-in-c-with-examples.html"><span class="num">41</span>Strings in C with Examples: String Functions</a></li>
+                <li><a href="call-by-value-and-call-by-reference-in-c.html"><span class="num">42</span>Call by Value and Call by Reference in C</a></li>
+                <li><a href="pointers-in-c-types-of-pointers.html"><span class="num">43</span>Pointers in C: Types of Pointers</a></li>
+                <li><a href="dynamic-memory-allocation-using-calloc.html"><span class="num">44</span>How to Dynamically Allocate Memory using calloc() in C?</a></li>
+                <li><a href="dynamic-memory-allocation-using-malloc.html"><span class="num">45</span>How to Dynamically Allocate Memory using malloc() in C?</a></li>
+                <li><a href="dynamic-memory-allocation-in-c.html"><span class="num">46</span>Dynamic Memory Allocation in C: Malloc(), Calloc(), Realloc(), Free()</a></li>
+                <li><a href="difference-between-structure-and-union.html"><span class="num">47</span>Difference Between Structure and Union in C Language</a></li>
+                <li><a href="c-programming-mcq.html"><span class="num">48</span>C Programming MCQ – C Language Multiple Choice Questions with Answers</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow">Control Flow</span>
+            <h1>Jump Statements in C: break, continue, goto, return</h1>
+
+            <div class="card">
+<h2>What are Jump Statements?</h2>
+<p>Jump statements transfer control from one part of the program to another unconditionally.</p>
+<h2>break</h2>
+<p>Exits the nearest enclosing loop or <code>switch</code> immediately.</p>
+<h2>continue</h2>
+<p>Skips the rest of the current loop iteration and moves to the next one.</p>
+<h2>goto</h2>
+<p>Transfers control to a labeled statement elsewhere in the function.</p>
+<pre><code>goto end;
+printf("Skipped");
+end:
+printf("Reached label");</code></pre>
+<h2>return</h2>
+<p>Exits a function, optionally returning a value to the caller.</p>
+<pre><code>int square(int n) {
+    return n * n;
+}</code></pre>
+            </div>
+
+            <div class="prev-next">
+<a href="ternary-operator-in-c.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Ternary Operator in C: Ternary Operator vs. if...else Statement</a>
+<a href="continue-statement-in-c.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Continue Statement in C: What is Break & Continue Statement in C with Example</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world C Programming development?</h3>
+                    <p>Learn C Programming hands-on with mentor-led, live sessions.</p>
+                </div>
+                <a class="btn-cta" href="https://uncodemy.com">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>C Programming Training</h4>
+                <p class="batch-sub">Kickstart your development journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

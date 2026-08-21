@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anjali's Success - Digital Marketing Executive | Uncodemy</title>
+    <meta name="description" content="From bootcamp to Digital Marketing Executive — Anjali transformed her career with Uncodemy's placement program: 2.5 LPA package, based in Noida." />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/journey.css" />
+    <link rel="stylesheet" href="components/footer-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js">
+    </script>
+    <script src="components/uncodemy-navbar.js" defer></script>
+    <style>
+        /* ===== MENTOR SLIDER - COMPLETE ===== */
+        .mentor-slider-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 8px 0 12px 0;
+        }
+        .mentor-slider-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        .mentor-card {
+            flex: 0 0 calc(33.333% - 16px);
+            min-width: 0;
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px 20px 24px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-sizing: border-box;
+        }
+        .mentor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.10);
+        }
+        .mentor-card img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+            display: block;
+            border: 3px solid #f0f4ff;
+        }
+        .mentor-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0b1a33;
+            margin: 0 0 4px 0;
+        }
+        .mentor-card .role {
+            font-size: 14px;
+            color: #6b7a8f;
+            font-weight: 500;
+            margin: 0 0 16px 0;
+        }
+        .mentor-card .li-btn {
+            background: #0a66c2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            width: 100%;
+            max-width: 180px;
+        }
+        .mentor-card .li-btn:hover {
+            background: #004182;
+        }
+        .mentor-slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .mentor-slider-nav button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid #d0d7e2;
+            background: #fff;
+            color: #1a2a4a;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .mentor-slider-nav button:hover {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+        }
+        .mentor-slider-nav button:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            background: #f5f7fa;
+            color: #b0b8c5;
+            border-color: #e2e6ee;
+            box-shadow: none;
+        }
+        .mentor-slider-nav button:disabled:hover {
+            background: #f5f7fa;
+            color: #b0b8c5;
+            border-color: #e2e6ee;
+            box-shadow: none;
+        }
+        .mentor-slider-nav button i {
+            width: 20px;
+            height: 20px;
+        }
+        .mentor-dots {
+            display: none;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .mentor-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d0d7e2;
+            transition: background 0.3s ease, width 0.3s ease;
+            cursor: pointer;
+        }
+        .mentor-dots span.active {
+            background: #2563eb;
+            width: 24px;
+            border-radius: 4px;
+        }
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .mentor-card {
+                flex: 0 0 calc(50% - 12px);
+            }
+        }
+        @media (max-width: 768px) {
+            .mentor-card {
+                flex: 0 0 calc(100% - 0px);
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .mentor-slider-track {
+                gap: 16px;
+            }
+            .mentor-dots {
+                display: flex;
+            }
+            .mentor-slider-nav {
+                margin-top: 16px;
+            }
+            .mentor-slider-nav button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 420px) {
+            .mentor-card {
+                padding: 20px 14px 20px;
+            }
+            .mentor-card img {
+                width: 80px;
+                height: 80px;
+            }
+            .mentor-card h4 {
+                font-size: 16px;
+            }
+            .mentor-slider-nav button {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+        }
+        .mentor-quote {
+            margin-top: 32px;
+        }
+        .jsection .mentor-slider-wrapper {
+            padding: 8px 0 12px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== DYNAMIC NAVBAR (Uncodemy) ===================== -->
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <main>
+
+        <!-- ===================== HERO ===================== -->
+        <section class="journey-hero" id="hero">
+            <div class="jwrap journey-hero-grid">
+                <div>
+                    <span class="pill-live"><span class="dot-ping"></span> PLACED AT COMPANY</span>
+                    <h1>From Bootcamp to <span>Digital Marketing Executive</span></h1>
+                    <p class="journey-hero-sub">Anjali transformed her career trajectory in just 6 months. By mastering SEO, social media marketing, content strategy, and analytics, she secured a 2.5 LPA package and a pivotal role at a leading digital marketing agency in Noida.</p>
+                    <div class="hero-btn-row">
+                        <a href="#journey?student=Anjali&salary=2.5LPA" class="btn btn-primary btn-lg">Read Her Story</a>
+                        <a href="#?student=Anjali&salary=2.5LPA" class="btn btn-lg btn-ghost"><i data-lucide="play-circle"></i> Watch Interview</a>
+                    </div>
+                </div>
+                <div class="journey-hero-media">
+                    <img src="components/images/pcimage/anjali.png" alt="Anjali - Student Success" />
+                    <div class="journey-hero-media-overlay"></div>
+                    <div class="journey-hero-media-caption">
+                        <h3>Anjali</h3>
+                        <p>Digital Marketing Executive</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batch info -->
+            <div class="jwrap">
+                <div class="batch-bar">
+                    <div>
+                        <div class="label">Batch</div>
+                        <div class="value-lg">DM/09/0823/S WD 7PM</div>
+                    </div>
+                    <div class="batch-bar-meta">
+                        <div><div class="label">Location</div><div class="value">Noida</div></div>
+                        <div><div class="label">Completion</div><div class="value">September 2023 <span style="color:var(--gray);font-weight:400">(6 Month Intensive)</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== STATS BENTO GRID ===================== -->
+        <section class="jwrap" id="journey">
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <span class="bento-icon"><i data-lucide="trending-up"></i></span>
+                    <div><h4>2.5 LPA</h4><p>Salary Package</p></div>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon"><i data-lucide="hourglass"></i></span>
+                    <div><h4>45</h4><p>Days to Hire</p></div>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon"><i data-lucide="briefcase"></i></span>
+                    <div><h4>Digital Agency</h4><p>Leading Firm</p></div>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-icon"><i data-lucide="badge-check"></i></span>
+                    <div><h4>Top 6%</h4><p>Cohort Ranking</p></div>
+                </div>
+            </div>
+
+            <!-- ===================== CAREER PIVOT ===================== -->
+            <div class="jcard">
+                <h3 class="jtitle">The Pivot</h3>
+                <div class="pivot-row">
+                    <div class="pivot-col">
+                        <span class="material-icon"><i data-lucide="graduation-cap"></i></span>
+                        <span class="pivot-role">Student</span>
+                        <span class="pivot-sub">Non-Tech Background</span>
+                    </div>
+                    <div class="pivot-connector"><span>6 MONTHS INTENSIVE</span><span class="arrow-icon"><i data-lucide="chevron-right"></i></span></div>
+                    <div class="pivot-col end">
+                        <span class="material-icon"><i data-lucide="laptop"></i></span>
+                        <span class="pivot-role">Digital Marketing Executive</span>
+                        <span class="pivot-sub" style="color:var(--orange)">Agency</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== BEFORE / AFTER ===================== -->
+            <div class="jsection ba-grid">
+                <div class="ba-card before">
+                    <h4><i data-lucide="x"></i> Before the Program</h4>
+                    <ul>
+                        <li>Basic understanding of social media platforms.</li>
+                        <li>Struggled with SEO, content creation, and analytics.</li>
+                        <li>Imposter syndrome during marketing interviews.</li>
+                        <li>No portfolio of digital marketing campaigns.</li>
+                    </ul>
+                </div>
+                <div class="ba-card after">
+                    <h4><i data-lucide="check"></i> After the Program</h4>
+                    <ul>
+                        <li>Mastery in SEO, SEM, and social media advertising.</li>
+                        <li>Confident in content strategy and data-driven marketing.</li>
+                        <li>Aced technical rounds with multiple offers.</li>
+                        <li>Built a comprehensive digital marketing portfolio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===================== LEARNING JOURNEY TIMELINE ===================== -->
+            <div class="jsection">
+                <h3 class="jtitle">The Learning Journey Timeline</h3>
+                <div class="jtimeline">
+                    <div class="jtimeline-item">
+                        <span class="dot"></span>
+                        <h4>Phase 1: The Foundation</h4>
+                        <p>Mastering digital marketing fundamentals: SEO, content marketing, email marketing, and an introduction to analytics tools.</p>
+                    </div>
+                    <div class="jtimeline-item">
+                        <span class="dot"></span>
+                        <h4>Phase 2: The Execution Phase</h4>
+                        <p>Diving into Google Ads, Facebook Ads Manager, social media strategy, and advanced analytics with Google Analytics and Tag Manager.</p>
+                    </div>
+                    <div class="jtimeline-item">
+                        <span class="dot"></span>
+                        <h4>Phase 3: The Placement Prep</h4>
+                        <p>Intensive mock interviews, case study presentations, and resume optimization. Refining the personal narrative for marketing roles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SKILLS ===================== -->
+            <div class="jsection" id="skills">
+                <h3 class="jtitle">Core Skills Mastered</h3>
+                <div class="chip-row">
+                    <span class="chip"><span class="material-icon"><i data-lucide="search"></i></span> SEO</span>
+                    <span class="chip"><span class="material-icon"><i data-lucide="trending-up"></i></span> Google Ads</span>
+                    <span class="chip"><span class="material-icon"><i data-lucide="share-2"></i></span> Social Media</span>
+                    <span class="chip"><span class="material-icon"><i data-lucide="bar-chart-2"></i></span> Analytics</span>
+                    <span class="chip"><span class="material-icon"><i data-lucide="mail"></i></span> Email Marketing</span>
+                </div>
+            </div>
+
+            <!-- ===================== CAPSTONE PROJECT ===================== -->
+            <div class="jsection">
+                <h3 class="jtitle">Capstone Project Mastery</h3>
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="https://lh3.googleusercontent.com/aida/AP1WRLtdjh1vEL4XUtIBK8Juc3cdlcCRa-hbRys9hKhpDrhkv-Xum8VqEFaXavJmD01qMLVSsHX2Zs6EV2Ln53qjRTt29cjOQ76FOXliUvW1jb6vamRc0ZpoECW6yLWtsyMkkQbkiq4Y8eIZGx2BQ22KUsz5OiwPcoYY7IMFPcJbv533L5WHTMJsxWRAwRu83iXYvDER_07_7OA3I0yOIvp_Qls0Q2SO_kbMZxYfQbxSXFuz9YcToySuXqFsp8s" alt="Project Dashboard" />
+                    </div>
+                    <div class="project-body">
+                        <div class="project-body-top">
+                            <h4>Digital Marketing Campaign</h4>
+                            <span class="tag-pill">GOOGLE ADS</span>
+                        </div>
+                        <p>A complete end-to-end digital marketing campaign for an e-commerce brand, including SEO strategy, content creation, social media advertising, and performance tracking.</p>
+                        <div class="project-note">
+                            <strong>The Challenge:</strong>
+                            <p>Driving high-quality traffic and conversions with a limited budget and tight deadlines, while maintaining brand consistency across channels.</p>
+                        </div>
+                        <div class="project-note">
+                            <strong>The Solution:</strong>
+                            <p>Implemented a multi-channel approach: SEO-optimized content, targeted Google Ads, engaging social media posts, and regular A/B testing to refine messaging and improve ROI.</p>
+                        </div>
+                        <div class="stack-chip-row">
+                            <span class="stack-chip"><i data-lucide="puzzle"></i> Google Analytics</span>
+                            <span class="stack-chip"><i data-lucide="zap"></i> Facebook Ads</span>
+                            <span class="stack-chip"><i data-lucide="archive"></i> Canva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== PERFORMANCE SCORECARD ===================== -->
+            <div class="jcard">
+                <h3 class="jtitle">Performance Scorecard</h3>
+                <div class="score-grid">
+                    <div>
+                        <div class="score-row"><span>SEO &amp; Analytics</span><strong>94%</strong></div>
+                        <div class="score-bar"><span style="width:94%"></span></div>
+                    </div>
+                    <div>
+                        <div class="score-row"><span>Campaign Management</span><strong>4.4/5</strong></div>
+                        <div class="score-bar"><span style="width:88%"></span></div>
+                    </div>
+                    <div>
+                        <div class="score-row"><span>Soft Skills</span><strong>4.8/5</strong></div>
+                        <div class="score-bar"><span style="width:96%"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== CHALLENGES ===================== -->
+            <div class="jsection">
+                <div class="callout">
+                    <span class="material-icon"><i data-lucide="triangle-alert"></i></span>
+                    <div>
+                        <h4>Overcoming Challenges</h4>
+                        <p>Mastering data-driven decision-making and ad optimization was initially a significant hurdle. Anjali spent over 35 additional hours in peer-learning sessions to understand analytics dashboards and campaign performance metrics. Balancing full-time study with part-time work required immense time-management discipline, teaching her prioritization skills that proved invaluable during her interviews.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== INTERVIEW PREP ===================== -->
+            <div class="jsection">
+                <h3 class="jtitle">Interview Preparation Intensive</h3>
+                <div class="prep-grid">
+                    <div class="prep-card">
+                        <span class="material-icon"><i data-lucide="video"></i></span>
+                        <h4>Mock Interviews</h4>
+                        <p>Completed 15+ rigorous marketing mocks with industry experts, refining approach to campaign strategies and problem-solving.</p>
+                    </div>
+                    <div class="prep-card">
+                        <span class="material-icon"><i data-lucide="file-text"></i></span>
+                        <h4>Resume Workshops</h4>
+                        <p>Iterated on portfolio presentation to highlight impact-driven metrics and campaign performance results.</p>
+                    </div>
+                    <div class="prep-card">
+                        <span class="material-icon"><i data-lucide="message-circle"></i></span>
+                        <h4>Soft Skills Training</h4>
+                        <p>Mastered the STAR method for behavioral rounds, ensuring clear, confident communication of past experiences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== INTERVIEW & PLACEMENT PROCESS ===================== -->
+            <div class="jsection">
+                <h3 class="jtitle">Interview &amp; Placement Process</h3>
+                <div class="process4-grid">
+                    <div class="process4-card">
+                        <span class="process4-num">1</span>
+                        <h4>Online Assessment</h4>
+                        <p>Aced a 90-minute test covering SEO concepts, Google Ads, and analytical thinking.</p>
+                    </div>
+                    <div class="process4-card">
+                        <span class="process4-num">2</span>
+                        <h4>Technical Round</h4>
+                        <p>Live case study on creating a digital marketing strategy for a new product launch.</p>
+                    </div>
+                    <div class="process4-card">
+                        <span class="process4-num">3</span>
+                        <h4>Campaign Presentation</h4>
+                        <p>Presented a full campaign plan with budget allocation, channel mix, and expected ROI.</p>
+                    </div>
+                    <div class="process4-card">
+                        <span class="process4-num">4</span>
+                        <h4>Managerial</h4>
+                        <p>Final discussion focusing on behavioral questions, culture fit, and career aspirations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== THE OFFER ===================== -->
+            <div class="jsection" id="outcome">
+                <h3 class="jtitle">The Offer</h3>
+                <div class="offer-card">
+                    <div class="offer-icon"><i data-lucide="building-2"></i></div>
+                    <div class="offer-body">
+                        <h4>Leading Digital Agency</h4>
+                        <p class="role">Digital Marketing Executive</p>
+                        <p>Joining the marketing team responsible for driving online visibility and engagement for clients across diverse industries.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== CAREER GROWTH CHART ===================== -->
+            <div class="jcard chart-card">
+                <h3 class="jtitle">Trajectory: The Ascent</h3>
+                <p class="jtitle-sub">Anjali's compensation growth mapping from her entry-level role to her current Digital Marketing Executive position, highlighting the 2.5 LPA leap post-graduation.</p>
+                <img src="https://lh3.googleusercontent.com/aida/AP1WRLtwvJ-BK0GLAd65XulaLQrCSgYq8GcQKHRvsF3oqb8C1ollev3wP2fFHpAQFLsJ1TSMDUEPD8JkGDBu3IYR_MobPK5Kew3Uzs5akZaC63L6Kp0NXQlzCes8lRyif56NvbDQ0ECCfNa9uUXCrrNbdUN4D0XqGYNoZrUwHAW2cZgggWrZ1D9Mqr7ZgSOxPBLO_6YCMi1YdMkPqxydgbYjIO15wPXGg3-XwwmTx4K00nhrXbLnbnUGUQDh7BY" alt="Salary Growth Chart" />
+            </div>
+
+            <!-- ===================== MENTOR TEAM — SLIDER ===================== -->
+            <div class="jsection">
+                <h3 class="jtitle">Trainer &amp; Mentor Team</h3>
+
+                <div class="mentor-slider-wrapper" id="mentorSliderWrapper">
+                    <div class="mentor-slider-track" id="mentorTrack">
+                        <!-- Card 1 -->
+                        <div class="mentor-card">
+                            <img src="https://lh3.googleusercontent.com/aida/AP1WRLs9n1mOvNay4VssscYNDK0VURHeQsrzGHYvImLc9XahgbhHgH8Vwrsg7bv2242klf3vofyVeNgYSBYd6_9fLkBtwb-mbJd0Idp8j5zCFrAPaiExFQ_ljTQ-SjF9xM7s8uROY79hqXP-87rh-QySxiYj07VKrq1u369W0PsN3yRie5T42HBRzerbZBCU3bXetNkx78zAqqvmjf3y7mPmA9OCBSeVM8IAYXV9EAiVWetvb2-RGM_u-O5v3yg" alt="Sarah Jenkins - Lead Instructor" />
+                            <h4>Sarah Jenkins</h4>
+                            <p class="role">Lead Instructor</p>
+                            <button class="li-btn">Connect on LinkedIn</button>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="mentor-card">
+                            <img src="https://lh3.googleusercontent.com/aida/AP1WRLtV0n23t574iW6398sWd2fUqA2JqLq8RKV356q8Jp6O1M_V5uI9k8R8l5c2A6B4T1hB5t319j69p618c7x_z1H1Y3X29W5N1jL3_M6Y_V4G_V8L7K_S9W4S4F0T7Y7S4j9K0Y0R9H4" alt="Mike Chen - System Design Expert" />
+                            <h4>Mike Chen</h4>
+                            <p class="role">System Design Expert</p>
+                            <button class="li-btn">Connect on LinkedIn</button>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="mentor-card">
+                            <img src="https://lh3.googleusercontent.com/aida/AP1WRLvP815D8T04s10V5T1J5c2v6C4W0K9R5G0H5x3B4q4X2L9C1X1Q5y9F2J8J0Y4Y9T6T9B1H7K8H3J6L5Z5M4Z8J3M9Z4C9W4W0X4W2R0H7P1W6V6K2M8Q5W6X8M2Y0X4Y0X1P6" alt="Priya Sharma - Full Stack Mentor" />
+                            <h4>Priya Sharma</h4>
+                            <p class="role">Full Stack Mentor</p>
+                            <button class="li-btn">Connect on LinkedIn</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="mentor-slider-nav">
+                    <button id="mentorPrev" aria-label="Previous mentors">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button id="mentorNext" aria-label="Next mentors">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Dots (mobile) -->
+                <div class="mentor-dots" id="mentorDots">
+                    <span class="active" data-index="0"></span>
+                    <span data-index="1"></span>
+                    <span data-index="2"></span>
+                </div>
+
+                <!-- Quote -->
+                <div class="mentor-quote">
+                    <span class="material-icon"><i data-lucide="quote"></i></span>
+                    <p>"Anjali's ability to combine creativity with data analytics is what made her stand out. She approached every campaign with a test-and-learn mindset, always looking for ways to improve ROI. Her dedication to understanding the customer journey from top to bottom was impressive, and it's exactly why she aced her interviews."</p>
+                    <p class="by">- Sarah Jenkins</p>
+                </div>
+            </div>
+
+            <!-- ===================== STUDENT TESTIMONIAL ===================== -->
+            <div class="j-testimonial">
+                <span class="material-icon"><i data-lucide="star"></i></span>
+                <h3>"Consistency was my secret weapon. The curriculum was tough, but showing up every single day and trusting the process changed my life. 'We rise by lifting others.'"</h3>
+                <p class="by">- Anjali</p>
+            </div>
+
+            <!-- ===================== FINAL CTA ===================== -->
+            <div class="final-cta">
+                <span class="badge-dream">THE DREAM ACHIEVED</span>
+                <h2>Ready to Write Your Own Success Story?</h2>
+                <p>Join our intensive program and take the first step towards your career transformation.</p>
+                <div class="hero-btn-row">
+                    <a href="#apply?student=Anjali&salary=2.5LPA" class="btn btn-primary btn-lg">Apply Now</a>
+                    <a href="#batch?student=Anjali&salary=2.5LPA" class="btn btn-lg btn-ghost">Join Next Batch</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== DYNAMIC FOOTER (Uncodemy) ===================== -->
+    <div id="UnCodeMy-Footer"></div>
+    <script src="components/footer-script.js">
+    </script>
+
+    <script>
+        lucide.createIcons();
+
+        // ===== MENTOR SLIDER — FULL LOGIC =====
+        (function() {
+            const track = document.getElementById('mentorTrack');
+            const wrapper = document.getElementById('mentorSliderWrapper');
+            const prevBtn = document.getElementById('mentorPrev');
+            const nextBtn = document.getElementById('mentorNext');
+            const dots = document.querySelectorAll('#mentorDots span');
+
+            if (!track || !wrapper || !prevBtn || !nextBtn) return;
+
+            let currentIndex = 0;
+            let totalCards = track.querySelectorAll('.mentor-card').length;
+            let cardsPerView = getCardsPerView();
+            let maxIndex = Math.max(0, totalCards - cardsPerView);
+
+            function getCardsPerView() {
+                const w = window.innerWidth;
+                if (w <= 768) return 1;
+                if (w <= 1024) return 2;
+                return 3;
+            }
+
+            function getGap() {
+                const w = window.innerWidth;
+                if (w <= 768) return 16;
+                return 24;
+            }
+
+            function getCardWidth() {
+                const wrapperWidth = wrapper.offsetWidth;
+                const gap = getGap();
+                const cPerView = getCardsPerView();
+                return (wrapperWidth - gap * (cPerView - 1)) / cPerView;
+            }
+
+            function updateSlider() {
+                cardsPerView = getCardsPerView();
+                maxIndex = Math.max(0, totalCards - cardsPerView);
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                if (currentIndex < 0) currentIndex = 0;
+
+                const gap = getGap();
+                const cardWidth = getCardWidth();
+                const offset = currentIndex * (cardWidth + gap);
+
+                track.style.transform = 'translateX(-' + offset + 'px)';
+
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentIndex);
+                    });
+                } else {
+                    dots.forEach(d => d.classList.remove('active'));
+                }
+            }
+
+            function goTo(index) {
+                const newIndex = Math.max(0, Math.min(index, maxIndex));
+                if (newIndex === currentIndex) return;
+                currentIndex = newIndex;
+                updateSlider();
+            }
+
+            function goPrev() {
+                if (currentIndex > 0) goTo(currentIndex - 1);
+            }
+
+            function goNext() {
+                if (currentIndex < maxIndex) goTo(currentIndex + 1);
+            }
+
+            prevBtn.addEventListener('click', goPrev);
+            nextBtn.addEventListener('click', goNext);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        goTo(index);
+                    }
+                });
+            });
+
+            let resizeTimeout;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    cardsPerView = getCardsPerView();
+                    maxIndex = Math.max(0, totalCards - cardsPerView);
+                    if (currentIndex > maxIndex) currentIndex = maxIndex;
+                    updateSlider();
+                }, 100);
+            });
+
+            window.addEventListener('load', function() {
+                setTimeout(updateSlider, 300);
+            });
+
+            setTimeout(updateSlider, 100);
+        })();
+    </script>
+
+</body>
+</html>

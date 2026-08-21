@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to CSS | Web Development Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Introduction to CSS with clear explanations, examples, and best practices as part of the complete Web Development tutorial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+                        <a href="https://uncodemy.com/">CSS</a>
+            <span class="sep">/</span>
+            <span class="current">Page 1 of 5: Introduction to CSS</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>CSS Topics</h4>
+            <ul class="topic-list">
+                <li><a href="introduction-to-css.html" class="active"><span class="num">01</span>Introduction to CSS</a></li>
+                <li><a href="css-force-wrap.html"><span class="num">02</span>CSS to force long text and urls to wrap on all browser</a></li>
+                <li><a href="html-color-codes.html"><span class="num">03</span>Html Color Codes</a></li>
+                <li><a href="css-inline-block-none.html"><span class="num">04</span>CSS Inline, block and none display style</a></li>
+                <li><a href="css-scrollbar-div.html"><span class="num">05</span>CSS to show only horizontal and vertical scroll bar in div</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow"><i class="fas fa-question-circle"></i> CSS Fundamentals</span>
+            <h1>Introduction to CSS</h1>
+
+            <div class="card">
+
+                <h2>What is CSS?</h2>
+                <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. It is one of the core technologies of the World Wide Web, alongside HTML and JavaScript.</p>
+
+                <p>CSS enables developers to separate content from presentation, making it easier to maintain, update, and scale websites. With CSS, you can control the layout, colors, fonts, spacing, and overall visual appearance of your web pages without changing the underlying HTML structure.</p>
+
+                <h2>Why CSS Matters</h2>
+                <p>Before CSS, web designers had to use HTML tags like <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, and <code>&lt;bgcolor&gt;</code> to style web pages. This approach led to messy, bloated code that was difficult to maintain. CSS revolutionized web design by providing a clean, efficient way to style web pages.</p>
+
+                <ul>
+                    <li><b>Separation of Concerns:</b> CSS keeps presentation separate from content, making code cleaner and more maintainable.</li>
+                    <li><b>Reusability:</b> One CSS file can style multiple HTML pages, reducing code duplication.</li>
+                    <li><b>Consistency:</b> CSS ensures a consistent look and feel across all pages of a website.</li>
+                    <li><b>Accessibility:</b> CSS supports accessibility features like screen reader compatibility and high-contrast modes.</li>
+                    <li><b>Responsive Design:</b> CSS enables websites to adapt to different screen sizes and devices.</li>
+                </ul>
+
+                <h2>How CSS Works</h2>
+                <p>CSS works by applying styles to HTML elements using a set of rules. A CSS rule consists of a selector and a declaration block. The selector targets the HTML element(s) to be styled, and the declaration block contains one or more property-value pairs that define the style.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">selector</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">property</span>: <span style="color:#032f62;">value</span>;<br />
+                    }
+                </div>
+
+                <p><b>Example:</b></p>
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">h1</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">color</span>: <span style="color:#032f62;">blue</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">font-size</span>: <span style="color:#032f62;">24px</span>;<br />
+                    }
+                </div>
+
+                <p>In this example, all <code>&lt;h1&gt;</code> elements will have blue text and a font size of 24 pixels.</p>
+
+                <h2>Ways to Apply CSS</h2>
+                <p>There are three ways to apply CSS to HTML documents:</p>
+
+                <h3>1. Inline CSS</h3>
+                <p>Inline CSS is applied directly to individual HTML elements using the <code>style</code> attribute. This method is useful for quick, one-off styles but is generally discouraged for large projects because it mixes content with presentation.</p>
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    &lt;<span style="color:#d73a49;">p</span> <span style="color:#005cc5;">style</span>=<span style="color:#032f62;">"color: red; font-weight: bold;"</span>&gt;This text is red and bold.&lt;/<span style="color:#d73a49;">p</span>&gt;
+                </div>
+
+                <h3>2. Internal CSS (Embedded)</h3>
+                <p>Internal CSS is placed within the <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> section of an HTML page. This method is useful for styling a single page without affecting other pages.</p>
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    &lt;<span style="color:#d73a49;">head</span>&gt;<br />
+                    &nbsp;&nbsp;&lt;<span style="color:#d73a49;">style</span>&gt;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#d73a49;">p</span> { <span style="color:#005cc5;">color</span>: <span style="color:#032f62;">green</span>; }<br />
+                    &nbsp;&nbsp;&lt;/<span style="color:#d73a49;">style</span>&gt;<br />
+                    &lt;/<span style="color:#d73a49;">head</span>&gt;
+                </div>
+
+                <h3>3. External CSS</h3>
+                <p>External CSS is the most common and recommended method. It involves placing all CSS rules in a separate <code>.css</code> file and linking it to the HTML page using the <code>&lt;link&gt;</code> tag. This approach promotes reusability, maintainability, and better performance.</p>
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    &lt;<span style="color:#d73a49;">head</span>&gt;<br />
+                    &nbsp;&nbsp;&lt;<span style="color:#d73a49;">link</span> <span style="color:#005cc5;">rel</span>=<span style="color:#032f62;">"stylesheet"</span> <span style="color:#005cc5;">href</span>=<span style="color:#032f62;">"styles.css"</span> /&gt;<br />
+                    &lt;/<span style="color:#d73a49;">head</span>&gt;
+                </div>
+
+                <h2>CSS Selectors</h2>
+                <p>Selectors are patterns used to select the elements you want to style. Here are the most common types:</p>
+
+                <ul>
+                    <li><b>Element Selector:</b> Selects all elements of a given type. <code>p { color: blue; }</code></li>
+                    <li><b>Class Selector:</b> Selects elements with a specific class attribute. <code>.highlight { background: yellow; }</code></li>
+                    <li><b>ID Selector:</b> Selects a single element with a specific ID. <code>#header { font-size: 2em; }</code></li>
+                    <li><b>Universal Selector:</b> Selects all elements. <code>* { margin: 0; }</code></li>
+                    <li><b>Descendant Selector:</b> Selects elements that are descendants of a specified element. <code>div p { margin: 10px; }</code></li>
+                </ul>
+
+                <h2>CSS Box Model</h2>
+                <p>The CSS box model is a fundamental concept that describes how elements are rendered. Every element is treated as a rectangular box that consists of:</p>
+
+                <ul>
+                    <li><b>Content:</b> The actual content of the element (text, images, etc.).</li>
+                    <li><b>Padding:</b> The space between the content and the border.</li>
+                    <li><b>Border:</b> The line surrounding the padding (if any).</li>
+                    <li><b>Margin:</b> The space outside the border, separating the element from others.</li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;text-align:center;">
+                    <div style="border:2px solid #333;padding:20px;display:inline-block;background:#e8ecf1;">
+                        <div style="border:2px dashed #666;padding:15px;background:#d0d7de;">
+                            <div style="border:2px solid #0366d6;padding:10px;background:#f0f6ff;">
+                                <strong>Content</strong>
+                            </div>
+                            <div style="font-size:0.8rem;color:#666;margin-top:4px;">Padding</div>
+                        </div>
+                        <div style="font-size:0.8rem;color:#666;margin-top:4px;">Border</div>
+                        <div style="font-size:0.8rem;color:#666;margin-top:4px;">Margin</div>
+                    </div>
+                </div>
+
+                <h2>CSS Units</h2>
+                <p>CSS supports various units for specifying lengths and sizes:</p>
+
+                <ul>
+                    <li><b>Absolute Units:</b> <code>px</code> (pixels), <code>pt</code> (points), <code>cm</code>, <code>mm</code>, <code>in</code> (inches).</li>
+                    <li><b>Relative Units:</b> <code>em</code> (relative to parent font size), <code>rem</code> (relative to root font size), <code>%</code> (percentage), <code>vw</code> (viewport width), <code>vh</code> (viewport height).</li>
+                </ul>
+
+                <h2>CSS Cascade and Specificity</h2>
+                <p>When multiple CSS rules target the same element, the cascade determines which rule takes precedence. The cascade considers three factors:</p>
+
+                <ol>
+                    <li><b>Importance:</b> <code>!important</code> declarations override normal rules.</li>
+                    <li><b>Specificity:</b> More specific selectors override less specific ones. The order of specificity is: inline styles &gt; IDs &gt; classes &gt; elements.</li>
+                    <li><b>Source Order:</b> When two rules have equal specificity, the one declared later (in the stylesheet) takes precedence.</li>
+                </ol>
+
+                <h2>Browser Support and Compatibility</h2>
+                <p>CSS is supported by all modern web browsers, including Chrome, Firefox, Safari, Edge, and Opera. However, some advanced CSS features may not be available in older browsers. It's important to use feature detection and progressive enhancement techniques to ensure your styles work across different browsers and devices.</p>
+
+                <h2>Common CSS Mistakes for Beginners</h2>
+                <ul>
+                    <li><b>Forgetting the Semicolon:</b> Each declaration must end with a semicolon. <code>color: red; font-size: 16px;</code></li>
+                    <li><b>Incorrect Selector Syntax:</b> Using <code>#</code> for classes and <code>.</code> for IDs (the opposite is correct).</li>
+                    <li><b>Not Using the Cascade:</b> Overwriting styles unnecessarily instead of leveraging the cascade.</li>
+                    <li><b>Overusing <code>!important</code>:</b> This makes styles harder to debug and override.</li>
+                    <li><b>Neglecting Responsive Design:</b> Failing to consider how styles look on different screen sizes.</li>
+                </ul>
+
+                <h2>Summary</h2>
+                <p>CSS is an essential technology for web development that allows you to control the visual appearance of your web pages. By separating content from presentation, CSS makes websites more maintainable, accessible, and responsive. In this introduction, we covered the basics of CSS, including its purpose, how it works, the different ways to apply it, selectors, the box model, units, cascade, and common mistakes.</p>
+
+                <p>As you continue learning CSS, you'll discover its power and flexibility in creating beautiful, responsive, and user-friendly web experiences.</p>
+
+            </div>
+
+            <div class="prev-next">
+                <a href="https://uncodemy.com/course/full-stack-development-training-course-in-noida"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Back to Course</a>
+                <a href="css-force-wrap.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>CSS to force long text and urls to wrap on all browser</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world web development?</h3>
+                    <p>Learn HTML, CSS3, Bootstrap and JavaScript hands-on with mentor-led sessions.</p>
+                </div>
+                                                    <a <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>Full Stack Development</h4>
+                <p class="batch-sub">Kickstart your web dev journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

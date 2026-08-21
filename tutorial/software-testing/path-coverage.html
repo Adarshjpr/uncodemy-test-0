@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Path Coverage | Software Testing Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn about Path Coverage in software testing with clear explanations and examples." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+            <a href="https://uncodemy.com/course/software-testing-training-course-in-noida">Software Testing Training Course</a>
+            <span class="sep">/</span>
+            <span class="current">Page 76 of 360: Path Coverage</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>Course Content</h4>
+            <ul class="topic-list">
+                <li><a href="overview-of-software-application-testing.html"><span class="num">01</span>Overview of Software Application Testing</a></li>
+                <li><a href="why-is-testing-necessary.html"><span class="num">02</span>Why is testing necessary</a></li>
+                <li><a href="software-testing-principles.html"><span class="num">03</span>Software testing Principles</a></li>
+                <li><a href="psychology-of-software-testing.html"><span class="num">04</span>Psychology of Software Testing</a></li>
+                <li><a href="causes-of-software-defects.html"><span class="num">05</span>Causes of Software Defects</a></li>
+                <li><a href="terms-used-in-software-testing.html"><span class="num">06</span>Terms used in Software Testing</a></li>
+                <li><a href="overview-of-sdlc.html"><span class="num">07</span>Overview of SDLC</a></li>
+                <li><a href="overview-of-project-execution-lifecycle.html"><span class="num">08</span>Overview of Project Execution Lifecycle</a></li>
+                <li><a href="overview-of-project-lifecycle.html"><span class="num">09</span>Overview of Project Lifecycle</a></li>
+                <li><a href="waterfall-model-in-software-testing.html"><span class="num">10</span>Waterfall Model</a></li>
+                <li><a href="prototype-model-in-software-testing.html"><span class="num">11</span>Prototype Model</a></li>
+                <li><a href="spiral-model-in-software-testing.html"><span class="num">12</span>Spiral Model</a></li>
+                <li><a href="incremental-model-in-software-testing.html"><span class="num">13</span>Incremental Model</a></li>
+                <li><a href="iterative-model-in-software-testing.html"><span class="num">14</span>Iterative Model</a></li>
+                <li><a href="rad-model-rapid-application-development-in-software-testing.html"><span class="num">15</span>RAD Model</a></li>
+                <li><a href="v-model-in-software-testing.html"><span class="num">16</span>V Model</a></li>
+                <li><a href="agile-model-in-software-testing.html"><span class="num">17</span>Agile Model</a></li>
+                <li><a href="what-is-quality-management-system.html"><span class="num">18</span>What is Quality Management System and It's Need</a></li>
+                <li><a href="what-is-quality-assurance.html"><span class="num">19</span>What is Quality Assurance</a></li>
+                <li><a href="what-is-quality-control.html"><span class="num">20</span>What is Quality Control</a></li>
+                <li><a href="review-process-and-types-of-review-process.html"><span class="num">21</span>Review Process and Types of Review Process</a></li>
+                <li><a href="roles-and-responsibilities-of-reviewers.html"><span class="num">22</span>Different Roles and Responsibilities of Reviewers</a></li>
+                <li><a href="walkthrough.html"><span class="num">23</span>Walkthrough</a></li>
+                <li><a href="inspection.html"><span class="num">24</span>Inspection</a></li>
+                <li><a href="code-review.html"><span class="num">25</span>Code Review</a></li>
+                <li><a href="white-box-testing.html"><span class="num">26</span>White Box Testing</a></li>
+                <li><a href="black-box-testing.html"><span class="num">27</span>Black Box Testing</a></li>
+                <li><a href="grey-box-testing.html"><span class="num">28</span>Grey Box Testing</a></li>
+                <li><a href="unit-testing.html"><span class="num">29</span>Unit Testing</a></li>
+                <li><a href="integration-testing.html"><span class="num">30</span>Integration Testing</a></li>
+                <li><a href="system-testing.html"><span class="num">31</span>System Testing</a></li>
+                <li><a href="uat-user-acceptance-testing.html"><span class="num">32</span>UAT (User Acceptance Testing)</a></li>
+                <li><a href="smoke-testing.html"><span class="num">33</span>Smoke Testing</a></li>
+                <li><a href="sanity-testing.html"><span class="num">34</span>Sanity Testing</a></li>
+                <li><a href="re-testing.html"><span class="num">35</span>Re-Testing</a></li>
+                <li><a href="regression-testing.html"><span class="num">36</span>Regression Testing</a></li>
+                <li><a href="ad-hoc-and-exploratory-testing.html"><span class="num">37</span>Ad-hoc and Exploratory Testing</a></li>
+                <li><a href="monkey-and-gorilla-testing.html"><span class="num">38</span>Monkey & Gorilla Testing</a></li>
+                <li><a href="alpha-testing.html"><span class="num">39</span>Alpha Testing</a></li>
+                <li><a href="beta-testing.html"><span class="num">40</span>Beta Testing</a></li>
+                <li><a href="validation-testing.html"><span class="num">41</span>Validation Testing</a></li>
+                <li><a href="web-application-testing.html"><span class="num">42</span>Web Application Testing</a></li>
+                <li><a href="accessibility-testing.html"><span class="num">43</span>Accessibility Testing</a></li>
+                <li><a href="recovery-testing.html"><span class="num">44</span>Recovery Testing</a></li>
+                <li><a href="system-compatibility.html"><span class="num">45</span>System Compatibility</a></li>
+                <li><a href="browser-compatibility-testing.html"><span class="num">46</span>Browser Compatibility Testing</a></li>
+                <li><a href="cross-browser-testing.html"><span class="num">47</span>Cross Browser Testing</a></li>
+                <li><a href="multiple-browser-testing.html"><span class="num">48</span>Multiple Browser Testing</a></li>
+                <li><a href="forward-and-backward-compatibility.html"><span class="num">49</span>Forward and Backward Compatibility</a></li>
+                <li><a href="performance-testing.html"><span class="num">50</span>Performance Testing</a></li>
+                <li><a href="load-testing.html"><span class="num">51</span>Load Testing</a></li>
+                <li><a href="stress-testing.html"><span class="num">52</span>Stress Testing</a></li>
+                <li><a href="volume-testing.html"><span class="num">53</span>Volume Testing</a></li>
+                <li><a href="usability-testing.html"><span class="num">54</span>Usability Testing</a></li>
+                <li><a href="security-testing.html"><span class="num">55</span>Security Testing</a></li>
+                <li><a href="multilingual-testing.html"><span class="num">56</span>Multilingual Testing</a></li>
+                <li><a href="test-plans-estimates-and-strategies.html"><span class="num">57</span>Test Plans, Estimates and Strategies</a></li>
+                <li><a href="different-test-approaches.html"><span class="num">58</span>Different Test Approaches</a></li>
+                <li><a href="test-progress-monitoring-and-control.html"><span class="num">59</span>Test Progress, Monitoring and Control</a></li>
+                <li><a href="configuration-management.html"><span class="num">60</span>Configuration Management</a></li>
+                <li><a href="risk-and-testing.html"><span class="num">61</span>Risk and Testing</a></li>
+                <li><a href="identifying-test-condition-and-design-test-cases.html"><span class="num">62</span>Identifying Test Condition and Design Test Cases</a></li>
+                <li><a href="categories-test-design-techniques.html"><span class="num">63</span>Categories of Test Design Techniques</a></li>
+                <li><a href="specification-based-or-black-box-techniques.html"><span class="num">64</span>Specification Based or Black Box Techniques</a></li>
+                <li><a href="bva-boundary-value-analysis.html"><span class="num">65</span>BVA (Boundary Value Analysis)</a></li>
+                <li><a href="ecp-equivalence-class-partitioning.html"><span class="num">66</span>ECP (Equivalence Class Partitioning)</a></li>
+                <li><a href="decision-table-testing.html"><span class="num">67</span>Decision Table Testing</a></li>
+                <li><a href="state-transition-testing.html"><span class="num">68</span>State Transition Testing</a></li>
+                <li><a href="orthogonal-array-testing.html"><span class="num">69</span>Orthogonal Array Testing</a></li>
+                <li><a href="structure-based-or-white-box-testing-techniques.html"><span class="num">70</span>Structure Based or White Box Testing Techniques</a></li>
+                <li><a href="cyclomatic-complexity.html"><span class="num">71</span>Cyclomatic Complexity</a></li>
+                <li><a href="basis-path-testing.html"><span class="num">72</span>Basis Path Testing</a></li>
+                <li><a href="cfg-control-flow-graph.html"><span class="num">73</span>CFG (Control Flow Graph)</a></li>
+                <li><a href="statement-coverage.html"><span class="num">74</span>Statement Coverage</a></li>
+                <li><a href="branch-coverage.html"><span class="num">75</span>Branch Coverage</a></li>
+                <li><a href="path-coverage.html" class="active"><span class="num">76</span>Path Coverage</a></li>
+                <li><a href="experience-based-techniques.html"><span class="num">77</span>Experience Based Techniques</a></li>
+                <li><a href="risk-based-testing.html"><span class="num">78</span>Risk Based Testing</a></li>
+                <li><a href="choosing-a-test-technique.html"><span class="num">79</span>Choosing a Test Technique</a></li>
+                <li><a href="bug-defect-lifecycle.html"><span class="num">80</span>Bug/Defect Lifecycle</a></li>
+                <li><a href="defect-severity-and-priority.html"><span class="num">81</span>Defect Severity & Priority</a></li>
+                <li><a href="creation-of-test-plan.html"><span class="num">82</span>Creation Of Test Plan</a></li>
+                <li><a href="creation-of-test-scenarios-test-cases.html"><span class="num">83</span>Creation Of Test Scenarios, Test Cases</a></li>
+                <li><a href="test-case-execution.html"><span class="num">84</span>Test Case Execution</a></li>
+                <li><a href="bug-tracking-and-reporting.html"><span class="num">85</span>Bug Tracking and Reporting</a></li>
+                <li><a href="implementation-of-testing-optimization-techniques.html"><span class="num">86</span>Implementation of Testing Optimization Techniques</a></li>
+                <li><a href="overview-of-test-metrics-creation-and-importance.html"><span class="num">87</span>Overview of Test Metrics, Creation and Its Importance</a></li>
+                <li><a href="types-of-test-metrics.html"><span class="num">88</span>Types of Test Metrics</a></li>
+                <li><a href="traceability-metrics.html"><span class="num">89</span>Traceability Metrics</a></li>
+                <li><a href="test-report-preparation.html"><span class="num">90</span>Test Report Preparation</a></li>
+                <li><a href="test-closure-report-preparation.html"><span class="num">91</span>Test Closure Report Preparation</a></li>
+                <li><a href="test-bed.html"><span class="num">92</span>Test Bed</a></li>
+                <li><a href="test-harness.html"><span class="num">93</span>Test Harness</a></li>
+                <li><a href="test-suite.html"><span class="num">94</span>Test Suite</a></li>
+                <li><a href="test-basis.html"><span class="num">95</span>Test Basis</a></li>
+                <li><a href="test-artifacts.html"><span class="num">96</span>Test Artifacts</a></li>
+                <li><a href="different-environments-dev-test-production.html"><span class="num">97</span>Different Environments (DEV, Test, Production)</a></li>
+                <li><a href="requirements-volatility.html"><span class="num">98</span>Requirements Volatility</a></li>
+                <li><a href="staging-process.html"><span class="num">99</span>Staging Process</a></li>
+                <li><a href="build-process.html"><span class="num">100</span>Build Process</a></li>
+                <li><a href="test-cycle.html"><span class="num">101</span>Test Cycle</a></li>
+                <li><a href="re-spin.html"><span class="num">102</span>Re-Spin</a></li>
+                <li><a href="test-efficiency.html"><span class="num">103</span>Test Efficiency</a></li>
+                <li><a href="hot-fix.html"><span class="num">104</span>Hot Fix</a></li>
+                <li><a href="patch.html"><span class="num">105</span>Patch</a></li>
+                <li><a href="baseline.html"><span class="num">106</span>Base Line</a></li>
+                <li><a href="change-request.html"><span class="num">107</span>Change Request</a></li>
+                <li><a href="defect-age.html"><span class="num">108</span>Defect Age</a></li>
+                <li><a href="defect-clustering.html"><span class="num">109</span>Defect Clustering</a></li>
+                <li><a href="defect-slippage.html"><span class="num">110</span>Defect Slippage</a></li>
+                <li><a href="impact-analysis.html"><span class="num">111</span>Impact Analysis</a></li>
+                <li><a href="defect-root-cause.html"><span class="num">112</span>Defect Root Cause</a></li>
+                <li><a href="escalation-process.html"><span class="num">113</span>Escalation Process</a></li>
+                <li><a href="introduction-to-agile-methodology-agile-manifesto.html"><span class="num">114</span>Introduction to Agile Methodology & Agile Manifesto</a></li>
+                <li><a href="overview-of-different-agile-methods.html"><span class="num">115</span>Overview of Different Agile methods</a></li>
+                <li><a href="when-to-use-scrum-vs-when-to-use-traditional-methods.html"><span class="num">116</span>When to Use Scrum vs. When to Use Traditional Methods</a></li>
+                <li><a href="scrum-process.html"><span class="num">117</span>Scrum Process</a></li>
+                <li><a href="scrum-roles.html"><span class="num">118</span>Scrum Roles</a></li>
+                <li><a href="scrum-team.html"><span class="num">119</span>Scrum Team</a></li>
+                <li><a href="time-box-concept.html"><span class="num">120</span>Time-Box Concept</a></li>
+                <li><a href="event-1-the-sprint.html"><span class="num">121</span>Event 1: The Sprint</a></li>
+                <li><a href="event-2-sprint-planning.html"><span class="num">122</span>Event 2: Sprint Planning</a></li>
+                <li><a href="event-3-daily-scrum.html"><span class="num">123</span>Event 3: Daily Scrum</a></li>
+                <li><a href="event-4-sprint-review.html"><span class="num">124</span>Event 4: Sprint Review</a></li>
+                <li><a href="event-5-sprint-retrospective.html"><span class="num">125</span>Event 5: Sprint Retrospective</a></li>
+                <li><a href="product-backlog-grooming.html"><span class="num">126</span>Product Backlog Grooming</a></li>
+                <li><a href="scrum-artifacts.html"><span class="num">127</span>Scrum Artifacts</a></li>
+                <li><a href="artifact-1-product-backlog.html"><span class="num">128</span>Artifact 1: Product Backlog</a></li>
+                <li><a href="artifact-2-sprint-backlog.html"><span class="num">129</span>Artifact 2: Sprint Backlog</a></li>
+                <li><a href="artifact-3-increment.html"><span class="num">130</span>Artifact 3: Increment</a></li>
+                <li><a href="artifact-4-definition-of-done.html"><span class="num">131</span>Artifact 4: Definition of "Done"</a></li>
+                <li><a href="artifact-5-monitoring-progress-toward-a-goal.html"><span class="num">132</span>Artifact 5: Monitoring Progress toward a Goal</a></li>
+                <li><a href="artifact-6-monitoring-sprint-progress.html"><span class="num">133</span>Artifact 6: Monitoring Sprint Progress</a></li>
+                <li><a href="agile-tracking-scrum-meeting-and-daily-stand-ups.html"><span class="num">134</span>Agile Tracking, Scrum Meeting and Daily Stand-ups</a></li>
+                <li><a href="introduction-about-jira-tool.html"><span class="num">135</span>Introduction about Jira tool</a></li>
+                <li><a href="what-is-an-issue.html"><span class="num">136</span>What is an Issue?</a></li>
+                <li><a href="what-is-a-project.html"><span class="num">137</span>What is a Project?</a></li>
+                <li><a href="what-is-a-workflow.html"><span class="num">138</span>What is a Workflow</a></li>
+                <li><a href="exploring-the-jira-workspace.html"><span class="num">139</span>Exploring the JIRA workspace</a></li>
+                <li><a href="managing-your-user-profile.html"><span class="num">140</span>Managing your user profile</a></li>
+                <li><a href="navigating-jira.html"><span class="num">141</span>Navigating JIRA</a></li>
+                <li><a href="creating-an-issue.html"><span class="num">142</span>Creating an Issue</a></li>
+                <li><a href="viewing-issues.html"><span class="num">143</span>Viewing Issues</a></li>
+                <li><a href="editing-issues.html"><span class="num">144</span>Editing Issues</a></li>
+                <li><a href="transitions-and-screens.html"><span class="num">145</span>Transitions and Screens</a></li>
+                <li><a href="the-workflow-viewer.html"><span class="num">146</span>The Workflow Viewer</a></li>
+                <li><a href="collaboration.html"><span class="num">147</span>Collaboration</a></li>
+                <li><a href="search.html"><span class="num">148</span>Search</a></li>
+                <li><a href="detail-view.html"><span class="num">149</span>Detail View</a></li>
+                <li><a href="configuring-filters.html"><span class="num">150</span>Configuring Filters</a></li>
+                <li><a href="email-filter-results.html"><span class="num">151</span>Email Filter Results</a></li>
+                <li><a href="standard-custom-reports.html"><span class="num">152</span>Standard & Custom Reports</a></li>
+                <li><a href="what-is-database-application.html"><span class="num">153</span>What is Database Application?</a></li>
+                <li><a href="overview-about-database-structure.html"><span class="num">154</span>Overview about database structure</a></li>
+                <li><a href="introduction-about-different-database-types.html"><span class="num">155</span>Introduction about different database types</a></li>
+                <li><a href="understanding-data-storage.html"><span class="num">156</span>Understanding data storage</a></li>
+                <li><a href="back-end-front-end-testing.html"><span class="num">157</span>Back end & front-end Testing</a></li>
+                <li><a href="general-database-basics.html"><span class="num">158</span>General Database Basics</a></li>
+                <li><a href="essential-elements-needed-for-database-testing.html"><span class="num">159</span>Essential elements needed for database testing</a></li>
+                <li><a href="writing-test-plan-for-database-testing.html"><span class="num">160</span>writing test plan for database testing</a></li>
+                <li><a href="organizing-db-testing-approach.html"><span class="num">161</span>Organizing DB Testing approach</a></li>
+                <li><a href="writing-test-cases-for-database-testing.html"><span class="num">162</span>writing test cases for database testing</a></li>
+                <li><a href="why-should-test-professionals-know-structured-query-language.html"><span class="num">163</span>Why should Test professionals know Structured Query Language?</a></li>
+                <li><a href="writing-the-statement-in-sql-plus.html"><span class="num">164</span>Writing the statement in SQL Plus</a></li>
+                <li><a href="overview-of-dml-ddl-tcl-dcl.html"><span class="num">165</span>Overview of DML , DDL, TCL,DCL</a></li>
+                <li><a href="dml-insert-update-delete-merge.html"><span class="num">166</span>DML : Insert , update , Delete , merge</a></li>
+                <li><a href="ddl-create-drop-alter-rename-modify-truncate.html"><span class="num">167</span>DDL : Create, Drop, Alter, Rename, Modify, Truncate</a></li>
+                <li><a href="tcl-commit-roleback-savepoint.html"><span class="num">168</span>TCL : Commit, Roleback, SavePoint</a></li>
+                <li><a href="single-row-function-multiple-row-function.html"><span class="num">169</span>Single Row Function / Multiple Row Function</a></li>
+                <li><a href="string-function-number-function-date-and-time-function-general-function.html"><span class="num">170</span>String Function , Number Function , Date and Time Function, General Function</a></li>
+                <li><a href="obtaining-data-from-multiple-tables.html"><span class="num">171</span>Obtaining data from multiple tables</a></li>
+                <li><a href="types-of-joins-inner-joins-non-equi-join-natural-join-right-outer-join.html"><span class="num">172</span>Types of joins : Inner joins , Non-equi Join, Natural Join, Right outer join</a></li>
+                <li><a href="full-outer-join.html"><span class="num">173</span>Full outer Join</a></li>
+                <li><a href="arithmetic-operator.html"><span class="num">174</span>Arithmetic Operator</a></li>
+                <li><a href="relational-logical.html"><span class="num">175</span>Relational/Logical</a></li>
+                <li><a href="like-operator.html"><span class="num">176</span>Like Operator</a></li>
+                <li><a href="not-null.html"><span class="num">177</span>Not Null</a></li>
+                <li><a href="unique.html"><span class="num">178</span>Unique</a></li>
+                <li><a href="primary-key.html"><span class="num">179</span>Primary key</a></li>
+                <li><a href="group-by.html"><span class="num">180</span>GROUP BY</a></li>
+                <li><a href="having.html"><span class="num">181</span>HAVING</a></li>
+                <li><a href="single-row-sub-queries.html"><span class="num">182</span>Single Row sub queries</a></li>
+                <li><a href="multiple-row-sub-queries.html"><span class="num">183</span>Multiple row Sub queries</a></li>
+                <li><a href="basic-knowledge-of-api-api-testing.html"><span class="num">184</span>Basic Knowledge of API & API Testing</a></li>
+                <li><a href="postman-introduction.html"><span class="num">185</span>Postman Introduction</a></li>
+                <li><a href="java-course-syllabus.html"><span class="num">186</span>Java Course Syllabus</a></li>
+                <li><a href="rest-assured-course-syllabus.html"><span class="num">187</span>Rest Assured Course Syllabus</a></li>
+                <li><a href="what-is-api-automation-testing.html"><span class="num">188</span>What is API Automation testing</a></li>
+                <li><a href="when-best-to-go-for-api-automation.html"><span class="num">189</span>When best to go for API Automation</a></li>
+                <li><a href="advantages-of-api-automation.html"><span class="num">190</span>Advantages of API Automation</a></li>
+                <li><a href="criteria-for-api-automation.html"><span class="num">191</span>Criteria for API Automation</a></li>
+                <li><a href="introduction-to-restassured.html"><span class="num">192</span>Introduction to Restassured</a></li>
+                <li><a href="use-of-restassured.html"><span class="num">193</span>Use of Restassured</a></li>
+                <li><a href="when-restassured-can-be-useful.html"><span class="num">194</span>When Restassured can be useful</a></li>
+                <li><a href="features-of-restassured.html"><span class="num">195</span>Features of Restassured</a></li>
+                <li><a href="differences-between-restassured-postman-soapui.html"><span class="num">196</span>Differences between Restassured, Postman & SoapUI</a></li>
+                <li><a href="why-not-using-api-recording-tools-like-vrest-or-jmeter.html"><span class="num">197</span>Why not using API Recording tools like VRest or JMeter</a></li>
+                <li><a href="api-testing-components.html"><span class="num">198</span>API Testing Components</a></li>
+                <li><a href="why-api-testing-is-important.html"><span class="num">199</span>Why API Testing is Important</a></li>
+                <li><a href="api-test-cases.html"><span class="num">200</span>API Test Cases</a></li>
+                <li><a href="module-2-api-testing-using-postman.html"><span class="num">201</span>Module 2 : API Testing using Postman</a></li>
+                <li><a href="api-status-codes.html"><span class="num">202</span>API Status Codes</a></li>
+                <li><a href="api-testing-using-postman.html"><span class="num">203</span>API Testing Using Postman</a></li>
+                <li><a href="postman-collections-environment-file.html"><span class="num">204</span>Postman Collections & Environment File</a></li>
+                <li><a href="postman-environment-and-global-variables.html"><span class="num">205</span>Postman Environment and Global Variables</a></li>
+                <li><a href="postman-proxy-recorder.html"><span class="num">206</span>Postman Proxy Recorder</a></li>
+                <li><a href="postman-collection-runner.html"><span class="num">207</span>Postman Collection Runner</a></li>
+                <li><a href="postman-keywords.html"><span class="num">208</span>Postman Keywords</a></li>
+                <li><a href="basic-api-test-automation-using-postman.html"><span class="num">209</span>Basic API Test Automation Using Postman</a></li>
+                <li><a href="setting-up-system-eclipse-java-maven-rest-assured-and-testng.html"><span class="num">210</span>Setting Up System: Eclipse, Java, Maven, Rest-assured and TestNG</a></li>
+                <li><a href="writing-a-simple-program-in-java.html"><span class="num">211</span>Writing A Simple Program In Java</a></li>
+                <li><a href="java-data-types.html"><span class="num">212</span>Java Data Types</a></li>
+                <li><a href="java-variables-literals.html"><span class="num">213</span>Java Variables & Literals</a></li>
+                <li><a href="java-strings.html"><span class="num">214</span>Java Strings</a></li>
+                <li><a href="java-logics-if-else-for-foreach-while-and-do-while.html"><span class="num">215</span>Java Logics: If else, for, foreach, while and do while</a></li>
+                <li><a href="java-arrays.html"><span class="num">216</span>Java Arrays</a></li>
+                <li><a href="java-collections.html"><span class="num">217</span>Java Collections</a></li>
+                <li><a href="java-streams.html"><span class="num">218</span>Java Streams</a></li>
+                <li><a href="java-methods.html"><span class="num">219</span>Java Methods</a></li>
+                <li><a href="java-static-methods.html"><span class="num">220</span>Java Static Methods</a></li>
+                <li><a href="java-classes.html"><span class="num">221</span>Java Classes</a></li>
+                <li><a href="java-constructors.html"><span class="num">222</span>Java Constructors</a></li>
+                <li><a href="java-oops-concept-polymorphism-compile-time-run-time.html"><span class="num">223</span>Java OOPS Concept: Polymorphism (compile-time & run-time)</a></li>
+                <li><a href="java-oops-concept-abstraction-abstract-classes.html"><span class="num">224</span>Java OOPS Concept: Abstraction(abstract classes)</a></li>
+                <li><a href="java-oops-concept-inheritance-parent-child-classes-interfaces.html"><span class="num">225</span>Java OOPS Concept: Inheritance(Parent, Child classes, Interfaces)</a></li>
+                <li><a href="java-oops-concept-data-hiding-access-modifiers.html"><span class="num">226</span>Java OOPS Concept: Data Hiding( Access modifiers)</a></li>
+                <li><a href="a-oops-concept-encapsulation-classes-with-the-method-variables-logics.html"><span class="num">227</span>a OOPS Concept: Encapsulation(Classes with the method, variables & logics)</a></li>
+                <li><a href="java-enums.html"><span class="num">228</span>Java Enums</a></li>
+                <li><a href="java-generics.html"><span class="num">229</span>Java Generics</a></li>
+                <li><a href="java-exceptions.html"><span class="num">230</span>Java Exceptions</a></li>
+                <li><a href="testng-framework.html"><span class="num">231</span>TestNG Framework</a></li>
+                <li><a href="what-is-testng.html"><span class="num">232</span>What is TestNG</a></li>
+                <li><a href="create-testng-xml-file.html"><span class="num">233</span>Create TestNG.xml file</a></li>
+                <li><a href="integrate-developed-rest-assured-scripts-into-testng-framework.html"><span class="num">234</span>Integrate developed Rest-assured scripts into TestNG Framework</a></li>
+                <li><a href="reporting-results-and-analyze.html"><span class="num">235</span>Reporting Results and Analyze</a></li>
+                <li><a href="run-programs-from-testng.html"><span class="num">236</span>Run Programs From TestNG</a></li>
+                <li><a href="testng-annotations.html"><span class="num">237</span>TestNG Annotations</a></li>
+                <li><a href="testng-annotations-usage.html"><span class="num">238</span>TestNG Annotations Usage</a></li>
+                <li><a href="parallel-test-execution-using-testng.html"><span class="num">239</span>Parallel Test Execution Using TestNG</a></li>
+                <li><a href="what-is-maven.html"><span class="num">240</span>What is Maven</a></li>
+                <li><a href="creating-a-maven-project.html"><span class="num">241</span>Creating A Maven Project</a></li>
+                <li><a href="adding-dependencies-in-maven-project.html"><span class="num">242</span>Adding Dependencies In Maven Project</a></li>
+                <li><a href="running-a-maven-project-build-using-eclipse.html"><span class="num">243</span>Running A Maven Project Build Using Eclipse</a></li>
+                <li><a href="adding-maven-surefire-plugin.html"><span class="num">244</span>Adding Maven Surefire Plugin</a></li>
+                <li><a href="running-testng-suite-file-using-surefire-plugin.html"><span class="num">245</span>Running TestNG Suite File Using Surefire Plugin</a></li>
+                <li><a href="viewing-maven-surefire-reports.html"><span class="num">246</span>Viewing Maven Surefire reports</a></li>
+                <li><a href="restassured-features.html"><span class="num">247</span>Restassured Features</a></li>
+                <li><a href="setting-up-restassured-project.html"><span class="num">248</span>Setting up Restassured Project</a></li>
+                <li><a href="how-to-use-eclipse-and-understand-eclipse-navigation-panel.html"><span class="num">249</span>How to use eclipse and understand Eclipse navigation panel</a></li>
+                <li><a href="get-started-with-restassured.html"><span class="num">250</span>Get started with Restassured</a></li>
+                <li><a href="introducing-bdd-concepts-in-restassured.html"><span class="num">251</span>Introducing BDD Concepts In Restassured</a></li>
+                <li><a href="understanding-restassured-bdd-method-given-when-then.html"><span class="num">252</span>Understanding Restassured BDD Method- Given, When,Then</a></li>
+                <li><a href="passing-base-url-headers-body-data-method-type-endpoint-of-api-in-restassured.html"><span class="num">253</span>Passing Base Url, Headers, Body data, Method type & Endpoint Of API In Restassured</a></li>
+                <li><a href="testing-a-get-api-using-restassured.html"><span class="num">254</span>Testing A Get API Using Restassured</a></li>
+                <li><a href="testing-a-post-api-using-restassured.html"><span class="num">255</span>Testing A Post API Using Restassured</a></li>
+                <li><a href="testing-a-put-api-using-restassured.html"><span class="num">256</span>Testing A Put API Using Restassured</a></li>
+                <li><a href="testing-a-delete-api-using-restassured.html"><span class="num">257</span>Testing A Delete API Using Restassured</a></li>
+                <li><a href="extracting-status-code-from-response-using-restassured.html"><span class="num">258</span>Extracting Status Code From Response Using Restassured</a></li>
+                <li><a href="extracting-response-headers-from-response-using-restassured.html"><span class="num">259</span>Extracting Response Headers From Response Using Restassured</a></li>
+                <li><a href="extracting-response-body-data-from-response-using-restassured.html"><span class="num">260</span>Extracting Response Body data From Response Using Restassured</a></li>
+                <li><a href="json-path-introduction.html"><span class="num">261</span>Json Path Introduction</a></li>
+                <li><a href="extracting-json-field-data-from-response-using-restassured.html"><span class="num">262</span>Extracting Json Field Data From Response Using Restassured</a></li>
+                <li><a href="extracting-token-from-login-request-supplying-in-following-requests-using-restassured.html"><span class="num">263</span>Extracting Token From Login Request & Supplying In Following Requests Using Restassured</a></li>
+                <li><a href="applying-hamcrest-assertions-on-response-validations-using-restassured.html"><span class="num">264</span>Applying Hamcrest Assertions On Response Validations Using Restassured</a></li>
+                <li><a href="verifying-response-json-schema-using-restassured.html"><span class="num">265</span>Verifying Response Json Schema Using Restassured</a></li>
+                <li><a href="setting-up-common-specification-for-the-same-kind-of-requests-using-restassured.html"><span class="num">266</span>Setting Up Common Specification For The Same Kind Of Requests Using Restassured</a></li>
+                <li><a href="introduction-of-paylod-driven-framework.html"><span class="num">267</span>Introduction of Paylod Driven Framework</a></li>
+                <li><a href="why-should-we-use-excel-sheets.html"><span class="num">268</span>Why should we use excel sheets</a></li>
+                <li><a href="payload-extraction-from-excel-sheets.html"><span class="num">269</span>Payload extraction from excel sheets</a></li>
+                <li><a href="what-is-gson.html"><span class="num">270</span>What is Gson</a></li>
+                <li><a href="serializing-deserializing-json-using-gson.html"><span class="num">271</span>Serializing & Deserializing Json Using Gson</a></li>
+                <li><a href="converting-json-to-map-and-vice-versa-using-gson.html"><span class="num">272</span>Converting Json To Map and Vice Versa Using Gson</a></li>
+                <li><a href="converting-json-to-file-and-vice-versa-using-gson.html"><span class="num">273</span>Converting Json to File and Vice Versa Using Gson</a></li>
+                <li><a href="converting-json-to-class-object-and-vice-versa-using-pojo-gson.html"><span class="num">274</span>Converting Json to Class object and Vice Versa Using POJO & Gson</a></li>
+                <li><a href="modify-json-payload-data-using-gson.html"><span class="num">275</span>Modify Json Payload Data Using Gson</a></li>
+                <li><a href="what-is-a-framework.html"><span class="num">276</span>What is a Framework</a></li>
+                <li><a href="learn-different-types-of-frameworks.html"><span class="num">277</span>Learn Different Types of Frameworks</a></li>
+                <li><a href="data-driven-framework.html"><span class="num">278</span>Data-Driven Framework</a></li>
+                <li><a href="keyword-driven-framework.html"><span class="num">279</span>Keyword Driven Framework</a></li>
+                <li><a href="hybrid-framework.html"><span class="num">280</span>Hybrid Framework</a></li>
+                <li><a href="use-of-framework.html"><span class="num">281</span>Use of Framework</a></li>
+                <li><a href="approach-required-to-develop-the-framework.html"><span class="num">282</span>Approach required to develop the Framework</a></li>
+                <li><a href="integration-of-test-scripts-developed-into-the-framework.html"><span class="num">283</span>Integration of test scripts developed into the Framework</a></li>
+                <li><a href="execute-the-scripts-from-framework.html"><span class="num">284</span>Execute the scripts from Framework</a></li>
+                <li><a href="payload-driven-framework-creation.html"><span class="num">285</span>Payload Driven Framework Creation</a></li>
+                <li><a href="payloads-factory-creation.html"><span class="num">286</span>Payloads Factory Creation</a></li>
+                <li><a href="setting-up-base-framework-class-for-reusability.html"><span class="num">287</span>Setting Up Base Framework Class For Reusability</a></li>
+                <li><a href="setting-up-utils-for-reusability.html"><span class="num">288</span>Setting Up Utils For Reusability</a></li>
+                <li><a href="optimizing-code-to-make-it-scalable.html"><span class="num">289</span>Optimizing Code To Make It Scalable</a></li>
+                <li><a href="following-design-guidelines-achieving-more-by-writing-less-code.html"><span class="num">290</span>Following Design Guidelines & Achieving More By Writing Less Code</a></li>
+                <li><a href="download-and-configure-the-jenkins.html"><span class="num">291</span>Download and configure the Jenkins</a></li>
+                <li><a href="execute-maven-project-using-jenkins.html"><span class="num">292</span>Execute maven project using Jenkins</a></li>
+                <li><a href="check-the-build-and-result.html"><span class="num">293</span>Check the build and result</a></li>
+                <li><a href="configuring-email-alerts.html"><span class="num">294</span>Configuring Email Alerts</a></li>
+                <li><a href="receiving-build-reports-in-email.html"><span class="num">295</span>Receiving Build Reports In Email</a></li>
+                <li><a href="introduction-to-test-design.html"><span class="num">296</span>Introduction to Test Design</a></li>
+                <li><a href="designing-tests-from-requirements.html"><span class="num">297</span>Designing tests from requirements</a></li>
+                <li><a href="designing-tests-from-scenarios.html"><span class="num">298</span>Designing tests from scenarios</a></li>
+                <li><a href="requirement-based-test-design-methods-and-techniques.html"><span class="num">299</span>Requirement-based test design methods and techniques</a></li>
+                <li><a href="separation-of-data-from-scripts.html"><span class="num">300</span>Separation of data from scripts</a></li>
+                <li><a href="code-based-test-design.html"><span class="num">301</span>Code-based test design</a></li>
+                <li><a href="automation-considerations-when-designing-tests.html"><span class="num">302</span>Automation considerations when designing tests</a></li>
+                <li><a href="selecting-candidate-tests-to-automate.html"><span class="num">303</span>Selecting candidate tests to automate</a></li>
+                <li><a href="understand-oops-java-concepts-selenium-module-overview.html"><span class="num">304</span>Understand OOPs / Java Concepts (Selenium Module Overview)</a></li>
+                <li><a href="selenium-ide-rc.html"><span class="num">305</span>Selenium IDE, RC</a></li>
+                <li><a href="selenium-webdriver-tool-in-depth-it-s-features-components.html"><span class="num">306</span>Selenium WebDriver tool in depth, it's features & components</a></li>
+                <li><a href="building-a-new-test-framework-by-using-web-driver-test-ng-and-maven.html"><span class="num">307</span>Building a new Test Framework by using Web Driver, Test NG, and Maven</a></li>
+                <li><a href="selenium-introduction.html"><span class="num">308</span>Selenium Introduction</a></li>
+                <li><a href="what-is-selenium-and-why-selenium.html"><span class="num">309</span>What is Selenium and Why Selenium</a></li>
+                <li><a href="use-of-automation-testing.html"><span class="num">310</span>Use of Automation Testing</a></li>
+                <li><a href="explanation-of-selenium-and-its-advantages.html"><span class="num">311</span>Explanation of Selenium and its advantages</a></li>
+                <li><a href="differences-between-selenium-and-qtp.html"><span class="num">312</span>Differences between Selenium and QTP</a></li>
+                <li><a href="selenium-components.html"><span class="num">313</span>Selenium Components</a></li>
+                <li><a href="setup-java-environment-download-jdk-and-setup-eclipse.html"><span class="num">314</span>Setup Java environment – Download JDK and Setup Eclipse</a></li>
+                <li><a href="java-programming-concepts-class-object-variables-methods-packages.html"><span class="num">315</span>Java programming concepts: Class, Object, variables, methods, Packages</a></li>
+                <li><a href="conditions-and-loops.html"><span class="num">316</span>Conditions and loops</a></li>
+                <li><a href="access-and-non-access-modifiers.html"><span class="num">317</span>Access and non-access modifiers</a></li>
+                <li><a href="advanced-java-programming-interfaces-inheritance-collections-exceptions.html"><span class="num">318</span>Advanced Java Programming: Interfaces, Inheritance, Collections, Exceptions</a></li>
+                <li><a href="installing-selenium-ide.html"><span class="num">319</span>Installing Selenium IDE</a></li>
+                <li><a href="selenese-selenium-commands-actions-asserts-accessors.html"><span class="num">320</span>Selenese – Selenium Commands: Actions, Asserts, Accessors</a></li>
+                <li><a href="developing-test-cases-test-suites-with-selenium-ide.html"><span class="num">321</span>Developing Test Cases & Test Suites with Selenium-IDE</a></li>
+                <li><a href="introduction-to-selenium-rc.html"><span class="num">322</span>Introduction to Selenium RC</a></li>
+                <li><a href="eclipse-oxygen-jdk-1-8-firefox-47-0-1-and-firebug-setup.html"><span class="num">323</span>Eclipse Oxygen, JDK 1.8, Firefox 47.0.1 and Firebug Setup</a></li>
+                <li><a href="set-up-testng-maven-and-selenium-for-eclipse.html"><span class="num">324</span>Set up TestNG, Maven and Selenium for Eclipse</a></li>
+                <li><a href="selenium-webdriver-introduction.html"><span class="num">325</span>Selenium WebDriver Introduction</a></li>
+                <li><a href="webdriver-vs-rc.html"><span class="num">326</span>WebDriver Vs RC</a></li>
+                <li><a href="download-and-configure-webdriver-with-eclipse.html"><span class="num">327</span>Download and Configure WebDriver with Eclipse</a></li>
+                <li><a href="simple-test-case-open-and-close-browser.html"><span class="num">328</span>Simple Test Case: Open and Close Browser</a></li>
+                <li><a href="cross-browser-testing-firefox-ie-chrome-edge.html"><span class="num">329</span>Cross Browser Testing – Firefox, IE, Chrome, Edge</a></li>
+                <li><a href="ui-elements-locators.html"><span class="num">330</span>UI elements Locators</a></li>
+                <li><a href="identifying-webelement-using-id-name-linktext-partial-linktext-classname-xpath-cssselector-and-tagname.html"><span class="num">331</span>Identifying WebElement using id, name, linkText, partial LinkText, className, XPath, CssSelector and TagName</a></li>
+                <li><a href="handling-various-webelement-using-webdriver.html"><span class="num">332</span>Handling various WebElement using WebDriver</a></li>
+                <li><a href="handling-mouse-movements-and-keyboard-events.html"><span class="num">333</span>Handling Mouse movements and Keyboard Events</a></li>
+                <li><a href="geckodriver.html"><span class="num">334</span>GeckoDriver</a></li>
+                <li><a href="verification-commands-title-current-url-pagesource-windowhandle-s-text-attributes.html"><span class="num">335</span>Verification Commands: Title, Current URL, PageSource, WindowHandle(s), Text, Attributes</a></li>
+                <li><a href="validation-commands-isselected-isenabled-isdisplayed.html"><span class="num">336</span>Validation Commands: isSelected, isEnabled, isDisplayed</a></li>
+                <li><a href="how-to-operate-with-webtable.html"><span class="num">337</span>How to operate with WebTable</a></li>
+                <li><a href="how-to-handle-alerts-in-webpage.html"><span class="num">338</span>How to Handle Alerts in webpage</a></li>
+                <li><a href="switch-commands-switching-windows-tabs-and-alerts.html"><span class="num">339</span>Switch Commands: Switching Windows/Tabs and Alerts</a></li>
+                <li><a href="how-to-operate-with-calendars.html"><span class="num">340</span>How to operate with calendars</a></li>
+                <li><a href="synchronization-commands-thread-sleep-implicit-wait-explicit-wait.html"><span class="num">341</span>Synchronization Commands: Thread.sleep(), Implicit Wait, Explicit Wait</a></li>
+                <li><a href="file-uploading-using-auto-it-and-robot-class.html"><span class="num">342</span>File uploading using Auto-It and Robot Class</a></li>
+                <li><a href="introduction-to-the-selenium-testing-framework.html"><span class="num">343</span>Introduction to the Selenium Testing Framework</a></li>
+                <li><a href="types-of-selenium-test-frameworks.html"><span class="num">344</span>Types of Selenium Test Frameworks</a></li>
+                <li><a href="tools-for-developing-test-framework.html"><span class="num">345</span>Tools for developing Test Framework</a></li>
+                <li><a href="testng-introduction-and-configuration-with-eclipse.html"><span class="num">346</span>TestNG introduction and Configuration with Eclipse</a></li>
+                <li><a href="testng-annotations-and-data-providers.html"><span class="num">347</span>TestNG Annotations and Data Providers</a></li>
+                <li><a href="creating-test-suite-with-testng.html"><span class="num">348</span>Creating Test Suite with TestNG</a></li>
+                <li><a href="modular-framework.html"><span class="num">349</span>Modular Framework</a></li>
+                <li><a href="page-object-model-pom.html"><span class="num">350</span>Page Object Model (POM)</a></li>
+                <li><a href="data-driven-testing-parameterization-in-selenium.html"><span class="num">351</span>Data-Driven Testing & Parameterization in Selenium</a></li>
+                <li><a href="hybrid-framework-for-selenium.html"><span class="num">352</span>Hybrid Framework for Selenium</a></li>
+                <li><a href="developing-hybrid-framework-for-web-application-using-webdriver-testng-and-maven.html"><span class="num">353</span>Developing Hybrid Framework for Web Application using WebDriver, TestNG and Maven</a></li>
+                <li><a href="use-external-data-for-testing-excel-sheet-xml-files-property-file.html"><span class="num">354</span>Use external Data for Testing (Excel sheet, XML files, Property file)</a></li>
+                <li><a href="reading-and-understanding-reports.html"><span class="num">355</span>Reading and understanding reports</a></li>
+                <li><a href="screenshots-of-failed-test-case.html"><span class="num">356</span>Screenshots of failed Test case</a></li>
+                <li><a href="jenkins-installation-selenium-project-setup.html"><span class="num">357</span>Jenkins Installation (Selenium Project Setup)</a></li>
+                <li><a href="maven-installation-selenium-project-setup.html"><span class="num">358</span>Maven Installation (Selenium Project Setup)</a></li>
+                <li><a href="dependencies-and-configure-maven-project-selenium.html"><span class="num">359</span>Dependencies and configure Maven Project (Selenium)</a></li>
+                <li><a href="integrate-maven-projects-in-jenkins-selenium.html"><span class="num">360</span>Integrate Maven projects in Jenkins (Selenium)</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow"><i class="fas fa-book-open"></i> White Box Techniques</span>
+            <h1>Path Coverage</h1>
+
+            <div class="card">
+<h2>What is Path Coverage?</h2>
+<p><b>Path coverage</b> is the most thorough white box testing technique, requiring that every possible execution path through the code — every unique combination of branches — be tested at least once.</p>
+
+<h2>Why It's Challenging</h2>
+<p>The number of possible paths can grow exponentially with the number of decision points and loops, making 100% path coverage impractical for most real-world applications. Basis path testing is often used as a practical, mathematically grounded compromise.</p>
+
+<h2>Coverage Hierarchy</h2>
+<ul>
+    <li><b>Statement coverage</b> is the weakest criterion.</li>
+    <li><b>Branch coverage</b> is stronger, subsuming statement coverage.</li>
+    <li><b>Path coverage</b> is the strongest, subsuming both statement and branch coverage.</li>
+</ul>
+            </div>
+            <div class="prev-next">
+                <a href="branch-coverage.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Branch Coverage</a>
+                <a href="experience-based-techniques.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Experience Based Techniques</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world software testing?</h3>
+                    <p>Learn manual and automation testing hands-on with mentor-led sessions.</p>
+                </div>
+                <a class="btn-cta" href="https://uncodemy.com/course/software-testing-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>Software Testing Training</h4>
+                <p class="batch-sub">Kickstart your QA journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

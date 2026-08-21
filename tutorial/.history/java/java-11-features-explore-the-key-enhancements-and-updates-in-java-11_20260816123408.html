@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java 11 Features: Explore the Key Enhancements and Updates in Java 11 | Java Programming Course | Uncodemy</title>
+<meta name="description" content="Explore the key features of Java 11, from the new HTTP Client API to local-variable syntax for lambdas, in this Java 11 enhancements guide by Uncodemy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-bar">
+  <a href="https://uncodemy.com/">Java Programming Course</a><span class="sep">›</span><span>Page 19 of 86</span><span class="sep">›</span><span>Java 11 Features: Explore the Key Enhancements and Updates in Java 11</span>
+</div>
+
+<div class="page-container">
+
+  <aside class="left-sidebar">
+    <div class="sidebar-title">Course Topics</div>
+                            <ul class="topic-list">
+      <li class="topic-category">1. Introduction</li>
+      <li><a href="what-is-data-structure-in-java-classification-tutorial.html">What is Data Structure in Java & Classification (Tutorial)</a></li>
+      <li class="topic-category">2. Java Basics</li>
+      <li><a href="type-casting-in-java-implicit-vs-explicit-with-examples.html">Type Casting in Java: Implicit vs Explicit with Examples</a></li>
+      <li><a href="what-is-multiple-inheritance-in-java-with-example.html">What is Multiple Inheritance in Java with Example</a></li>
+      <li><a href="hierarchical-inheritance-in-java.html">Hierarchical Inheritance in Java</a></li>
+      <li><a href="differences-between-jdk-jre-and-jvm-java-toolkit.html">Differences between JDK, JRE, and JVM: Java Toolkit</a></li>
+      <li class="topic-category">3. Basics</li>
+      <li><a href="hashmap-in-java-a-detailed-explanation.html">HashMap in Java: A Detailed Explanation</a></li>
+      <li><a href="collection-framework-in-java.html">Collection Framework in Java</a></li>
+      <li><a href="method-overloading-and-overriding-in-java-with-example.html">Method Overloading And Overriding In Java (With example)</a></li>
+      <li><a href="prime-numbers-in-java-simple-logic-and-code.html">Prime Numbers in Java: Simple Logic and Code</a></li>
+      <li><a href="what-is-java-a-beginners-guide-to-java.html">What is Java? A Beginners Guide to Java</a></li>
+      <li><a href="types-of-variables-in-java-local-instance-static.html">Types of Variables in Java with Examples: Local, Instance & Static</a></li>
+      <li><a href="java-vs-python-which-language-is-better-for-the-future.html">Java vs Python: Which Language is Better for the Future?</a></li>
+      <li><a href="what-is-string-in-java-string-methods-and-types.html">What is String in Java - Java String Methods & Type (Examples)</a></li>
+      <li><a href="access-modifiers-in-java-default-private-public-protected.html">Access Modifiers in Java: Default, Private, Public, Protected</a></li>
+      <li><a href="15-top-full-stack-java-developer-skills.html">15 Top Full Stack Java Developer Skills</a></li>
+      <li class="topic-category">4. Roadmaps</li>
+      <li><a href="how-to-become-a-java-architect-step-by-step-techniques.html">How to Become a Java Architect: Step-by-Step Techniques</a></li>
+      <li><a href="java-full-stack-developer-roadmap-for-beginners.html">Java Full Stack Developer Roadmap for Beginners (Updated 2026)</a></li>
+      <li class="topic-category">5. Features</li>
+      <li><a href="top-12-features-of-java.html">Top 12 Features of Java</a></li>
+      <li><a href="java-11-features-explore-the-key-enhancements-and-updates-in-java-11.html" class="active">Java 11 Features: Explore the Key Enhancements and Updates in Java 11</a></li>
+      <li><a href="top-20-java-8-features-to-boost-your-programming-skills.html">Top 20 Java 8 Features to Boost Your Programming Skills</a></li>
+      <li class="topic-category">6. Keywords</li>
+      <li><a href="super-keyword-in-java-explained.html">Super Keyword in Java Explained</a></li>
+      <li><a href="this-keyword-in-java.html">This Keyword in Java</a></li>
+      <li class="topic-category">7. Data Types</li>
+      <li><a href="primitive-data-types-in-java.html">Primitive Data Types in Java</a></li>
+      <li><a href="data-types-in-java-primitive-and-non-primitive-data-types.html">Data Types in Java : Primitive and Non-Primitive Data Types</a></li>
+      <li class="topic-category">8. Operators</li>
+      <li><a href="ternary-operator-in-java-with-examples-ternary-operator-vs-if-else-statement.html">Ternary Operator in Java with Examples: Ternary Operator vs. if...else Statement</a></li>
+      <li><a href="logical-operators-in-java.html">Logical operators in Java</a></li>
+      <li><a href="unary-operator-in-java.html">Unary operator in Java</a></li>
+      <li><a href="what-are-bitwise-operators-in-java-types-examples-and-more.html">What are Bitwise Operators in Java? Types, Examples and More</a></li>
+      <li><a href="arithmetic-operators-in-java.html">Arithmetic operators in Java</a></li>
+      <li><a href="assignment-operator-in-java-explained-with-examples-2026-guide.html">Assignment Operator in Java Explained with Examples (2026 Guide)</a></li>
+      <li><a href="relational-operators-in-java-types-of-relational-operators.html">Relational Operators in Java - Types of Relational Operators</a></li>
+      <li><a href="what-are-operators-in-java-types-of-operators-in-java-with-examples.html">What are Operators in Java - Types of Operators in Java ( With Examples )</a></li>
+      <li class="topic-category">9. Conditional Statements</li>
+      <li><a href="control-statements-in-java-with-examples-if-if-else-and-switch-statement.html">Control Statements in Java with Examples: If, If-Else and Switch Statement</a></li>
+      <li><a href="jump-statements-in-java-types-of-statements-in-java-with-examples.html">Jump Statements in JAVA - Types of Statements in JAVA (With Examples)</a></li>
+      <li class="topic-category">10. Loops</li>
+      <li><a href="for-loop-in-java-its-types-and-examples.html">for Loop in Java: Its Types and Examples</a></li>
+      <li><a href="while-loop-in-java.html">while Loop in Java</a></li>
+      <li><a href="do-while-loop-in-java-flowchart-syntax-with-examples.html">do...while Loop in Java - Flowchart & Syntax (With Examples)</a></li>
+      <li><a href="looping-statements-in-java-for-while-do-while-loop-in-java.html">Looping Statements in Java - For, While, Do-While Loop in Java</a></li>
+      <li class="topic-category">11. Array</li>
+      <li><a href="java-arrays-single-dimensional-and-multi-dimensional-arrays.html">Java Arrays: Single Dimensional and Multi-Dimensional Arrays</a></li>
+      <li class="topic-category">12. Reverse String</li>
+      <li><a href="how-to-reverse-a-string-in-java-explained.html">How To Reverse A String In Java: Explained</a></li>
+      <li class="topic-category">13. Fibonacci Series</li>
+      <li><a href="fibonacci-series-in-java-using-with-recursion-scanner-for-while-loop.html">Fibonacci Series in Java using with Recursion, Scanner, For & While Loop</a></li>
+      <li class="topic-category">14. OOPs</li>
+      <li><a href="what-is-class-in-java-objects-and-classes-in-java-explained.html">What is Class in Java? - Objects and Classes in Java {Explained}</a></li>
+      <li class="topic-category">15. OOP Concepts</li>
+      <li><a href="hybrid-inheritance-in-java.html">Hybrid Inheritance in Java</a></li>
+      <li><a href="single-inheritance-in-java.html">Single Inheritance in Java</a></li>
+      <li><a href="learn-method-overloading-in-java-with-examples.html">Learn Method Overloading in Java (With Examples)</a></li>
+      <li><a href="understanding-encapsulation-in-java.html">Understanding Encapsulation in Java</a></li>
+      <li><a href="explore-the-concept-of-overriding-in-java.html">Explore the Concept of Overriding in Java</a></li>
+      <li><a href="understanding-multithreading-in-java-with-examples.html">Understanding Multithreading in Java with Examples</a></li>
+      <li><a href="oops-concepts-in-java-encapsulation-abstraction-inheritance-polymorphism.html">OOPs Concepts in Java: Encapsulation, Abstraction, Inheritance, Polymorphism</a></li>
+      <li><a href="what-is-abstraction-in-java-with-examples-and-its-uses.html">What is Abstraction in Java with Examples & Its Uses</a></li>
+      <li><a href="polymorphism-in-java-definition-types-and-real-life-examples.html">Polymorphism in Java: Definition, Types, and Real-Life Examples</a></li>
+      <li><a href="what-is-inheritance-in-java-types-of-inheritance-in-java.html">What is Inheritance in Java: Types of Inheritance in Java</a></li>
+      <li class="topic-category">16. Constructors</li>
+      <li><a href="constructor-chaining-in-java.html">Constructor Chaining in Java</a></li>
+      <li><a href="what-are-copy-constructors-in-java-explore-types-examples-and-use.html">What are Copy Constructors In Java? Explore Types, Examples & Use</a></li>
+      <li><a href="parameterized-constructor-in-java.html">Parameterized Constructor in Java</a></li>
+      <li><a href="constructor-overloading-in-java.html">Constructor Overloading in Java</a></li>
+      <li><a href="constructors-in-java-types-of-constructors-with-examples.html">Constructors in Java - Types of Constructors [With Examples]</a></li>
+      <li class="topic-category">17. Packages</li>
+      <li><a href="what-is-package-in-java-types-uses-and-work.html">What is Package in Java - Types, Uses & Work</a></li>
+      <li class="topic-category">18. Exception Handling</li>
+      <li><a href="what-is-exception-handling-in-java-try-catch-throw-finally.html">What is Exception Handling in Java?: try, catch, throw, finally</a></li>
+      <li class="topic-category">19. File Handling</li>
+      <li><a href="file-handling-in-java-complete-guide.html">File Handling in Java Complete Guide</a></li>
+      <li class="topic-category">20. Generics</li>
+      <li><a href="understanding-static-keyword-in-java.html">Understanding Static Keyword in Java</a></li>
+      <li class="topic-category">21. Collection Framework</li>
+      <li><a href="java-collections-cheat-sheet.html">Java Collections Cheat Sheet</a></li>
+      <li class="topic-category">22. Collections</li>
+      <li><a href="best-java-developer-roadmap-2026.html">Best Java Developer Roadmap 2026</a></li>
+      <li class="topic-category">23. Lambda Expressions</li>
+      <li><a href="lambda-expressions-in-java-explained-in-easy-steps.html">Lambda Expressions in Java: Explained in Easy Steps</a></li>
+      <li class="topic-category">24. Microservices</li>
+      <li><a href="microservices-in-java-a-detailed-guide.html">Microservices in Java - A Detailed Guide</a></li>
+      <li><a href="top-java-microservices-skills-every-java-developer-must-master.html">Top Java Microservices Skills Every Java Developer Must Master</a></li>
+      <li><a href="spring-boot-microservices-architecture-explained-full-guide.html">Spring Boot Microservices Architecture Explained: Full Guide</a></li>
+      <li><a href="java-microservices-developer-salary-in-2026.html">Java Microservices Developer Salary in 2026</a></li>
+      <li class="topic-category">25. Certifications</li>
+      <li><a href="best-java-certifications-in-2026-which-one-is-right-for-you.html">Best Java Certifications in 2026: Which One is Right for You?</a></li>
+      <li class="topic-category">26. Career</li>
+      <li><a href="java-full-stack-developer-salary-in-india-2026-salary-guide.html">Java Full Stack Developer Salary in India 2026 (Salary Guide)</a></li>
+      <li><a href="java-developer-salary-guide-in-india-for-freshers-and-experienced.html">Java Developer Salary Guide in India – For Freshers & Experienced</a></li>
+      <li class="topic-category">27. Interview</li>
+      <li><a href="java-interview-questions-for-10-years-experience-advanced-prep-guide.html">Java Interview Questions for 10 Years Experience – Advanced Prep Guide</a></li>
+      <li><a href="top-40-string-in-java-interview-questions-with-answers-2026.html">Top 40+ String in Java Interview Questions with Answers 2026</a></li>
+      <li><a href="top-java-interview-questions-for-5-years-experience.html">Top Java Interview Questions for 5 Years Experience</a></li>
+      <li><a href="top-java-collections-interview-questions-with-answers.html">Top Java Collections Interview Questions with Answers</a></li>
+      <li><a href="java-interview-questions-for-3-years-experience.html">Java Interview Questions for 3 years Experience</a></li>
+      <li><a href="java-microservices-interview-questions-and-answers.html">Java Microservices Interview Questions and Answers</a></li>
+      <li><a href="top-50-full-stack-java-developer-interview-questions-and-answers.html">Top 50 Full Stack Java Developer Interview Questions and Answers</a></li>
+      <li><a href="top-50-jsp-interview-questions-and-answers.html">Top 50 JSP Interview Questions and Answers</a></li>
+      <li><a href="top-50-core-java-interview-questions.html">Top 50 Core Java Interview Questions</a></li>
+      <li><a href="top-50-java-8-interview-questions-and-answers-2026-updated.html">Top 50+ Java 8 Interview Questions & Answers 2026 [Updated]</a></li>
+      <li><a href="java-multithreading-interview-questions-and-answers-2026.html">Java Multithreading Interview Questions and Answers 2026</a></li>
+      <li><a href="hibernate-interview-questions-java-orm-preparation-guide.html">Hibernate Interview Questions – Java ORM Preparation Guide</a></li>
+      <li><a href="top-50-java-mcq-questions-master-java-for-interviews-and-exams.html">Top 50 Java MCQ Questions – Master Java for Interviews & Exams</a></li>
+      <li><a href="80-java-interview-questions-for-freshers-and-professionals-in-2026.html">80 Java Interview Questions for Freshers and Professionals in 2026</a></li>
+      <li><a href="top-10-reasons-to-know-why-java-is-important.html">Top 10 Reasons to know why Java is Important?</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <article class="content-card fade-in">
+      <h1>Java 11 Features: Explore the Key Enhancements and Updates in Java 11</h1>
+
+<p>Java 11, released in September 2018, was the first long-term support (LTS) release after Java 8, and it brought several practical enhancements that developers still rely on today.</p>
+<h2>Local-Variable Syntax for Lambda Parameters</h2>
+<p>Java 11 allows the <code>var</code> keyword to be used inside lambda expressions, letting you apply annotations to lambda parameters while keeping type inference.</p>
+<pre><code>(var x, var y) -> x.process(y)</code></pre>
+<h2>New HTTP Client API</h2>
+<p>The <code>java.net.http</code> package became a standard part of the JDK, offering built-in support for HTTP/2, WebSocket, and asynchronous requests without needing a third-party library.</p>
+<h2>String Methods</h2>
+<p>Several convenience methods were added to the <code>String</code> class, including <code>isBlank()</code>, <code>strip()</code>, <code>lines()</code>, and <code>repeat(int)</code>, making common text operations shorter to write.</p>
+<h2>Running Java Files Directly</h2>
+<p>Java 11 introduced the ability to run a single-file source-code program directly with <code>java Hello.java</code>, without a separate compilation step, which is great for quick scripts and demos.</p>
+<h2>Removal of Java EE and CORBA Modules</h2>
+<p>Modules that were part of Java EE (like JAX-WS and JAXB) and CORBA were removed from the JDK, reducing its footprint and pushing developers toward standalone libraries for those needs.</p>
+<h2>Flight Recorder</h2>
+<p>Java Flight Recorder, previously a commercial feature, was open-sourced and made available for low-overhead profiling and diagnostics in production environments.</p>
+<h2>Nest-Based Access Control</h2>
+<p>Java 11 introduced nestmates, which allow nested classes that logically belong together to access each other's private members without the compiler generating synthetic bridge methods.</p>
+<div class="highlight-note">Because Java 11 is an LTS release, it remains one of the most widely used versions in production, making these features essential knowledge for any Java developer.</div>
+
+      <div class="prev-next-nav">
+        <a class="nav-btn prev" href="top-12-features-of-java.html"><span class="nav-label">← Previous</span><span class="nav-topic">Top 12 Features of Java</span></a>
+        <a class="nav-btn next" href="top-20-java-8-features-to-boost-your-programming-skills.html"><span class="nav-label">Next →</span><span class="nav-topic">Top 20 Java 8 Features to Boost Your Programming Skills</span></a>
+      </div>
+
+      <div class="course-cta-box">
+        <div>
+          <h3>Master Java with Uncodemy</h3>
+          <p>Hands-on training, live projects, and placement support in our Java Programming Course.</p>
+        </div>
+        <a class="cta-btn-white" href="https://uncodemy.com/course/java-training-course-in-noida">Explore the Course</a>
+      </div>
+    </article>
+  </main>
+
+  <aside class="right-sidebar">
+  <div class="batch-card fade-in">
+    <span class="batch-badge">ENROLLING NOW</span>
+    <h4>Java Programming Training</h4>
+    <div class="batch-divider"></div>
+    <div class="batch-meta">
+      <div class="meta-col"><span class="meta-label">Next Batch Starts</span><span class="meta-value">25 August 2026</span></div>
+      <div class="meta-col"><span class="meta-label">Duration</span><span class="meta-value">3 Months</span></div>
+    </div>
+
+    <div class="countdown-timer">
+        <div class="countdown-unit"><span class="num" data-cd-days>00</span><span class="lbl">Days</span></div>
+        <div class="countdown-unit"><span class="num" data-cd-hours>00</span><span class="lbl">Hrs</span></div>
+        <div class="countdown-unit"><span class="num" data-cd-minutes>00</span><span class="lbl">Min</span></div>
+        <div class="countdown-unit"><span class="num" data-cd-seconds>00</span><span class="lbl">Sec</span></div>
+    </div>
+
+    <ul class="batch-features">
+      <li>Live Classes</li>
+      <li>Mentor Support</li>
+      <li>Placement Assistance</li>
+    </ul>
+
+    <div class="limited-seats-badge">Only a few seats left in this batch</div>
+    <button class="cta-full-btn" type="button" data-landing-cta>Go to Course Landing Page</button>
+  </div>
+
+  <div class="help-card fade-in">
+    <h4>Need Help?</h4>
+    <div class="help-row">
+      <span class="help-icon">📞</span>
+      <div>
+        Talk to our Counselor<br>
+        <a href="tel:" data-phone-link data-phone-display>+91 9818366550</a>
+      </div>
+    </div>
+    <a class="whatsapp-btn" href="#" target="_blank" rel="noopener" data-whatsapp-link>💬 Chat on WhatsApp</a>
+  </div>
+</aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

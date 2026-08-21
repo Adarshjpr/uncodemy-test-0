@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android App Components — Activities, Services, Broadcast Receivers, Content Providers | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn the four main building blocks of Android apps — Activities (UI), Services (background), Broadcast Receivers (system events), and Content Providers (data sharing)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 3 of 12: Android App Components — Activities, Services, Broadcast Receivers, Content Providers</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html" class="active"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cubes"></i> Components</span>
+        <h1>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</h1>
+
+        <div class="card">
+
+            <p>Every Android application is built using <strong>four essential components</strong> that serve as the building blocks of the app. These components define how the app interacts with the user, runs background tasks, responds to system events, and shares data. Understanding these components is the foundation of Android development.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Every Android app must declare all its components in the <code>AndroidManifest.xml</code> file. Without proper declaration, components won't work. This is one of the most common mistakes beginners make.
+            </div>
+
+            <h2>1. Overview of the Four Components</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Purpose</th><th>Entry Point</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Activity</strong></td><td>User interface screen</td><td>Launcher icon or intent</td></tr>
+                        <tr><td><strong>Service</strong></td><td>Background operations</td><td>StartService() or bindService()</td></tr>
+                        <tr><td><strong>Broadcast Receiver</strong></td><td>Respond to system events</td><td>System broadcasts or sendBroadcast()</td></tr>
+                        <tr><td><strong>Content Provider</strong></td><td>Share data between apps</td><td>ContentResolver queries</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Insight:</strong> Activities and Services are the most commonly used components. Broadcast Receivers and Content Providers are used for system-level interactions and data sharing. Every app has at least one Activity.
+            </div>
+
+            <h2>2. Activity — The User Interface</h2>
+
+            <p>An <strong>Activity</strong> is a single, focused screen that the user can interact with. It provides a window for drawing the UI and handling user interactions. Almost every screen in your app will be an Activity.</p>
+
+            <h3>Activity Lifecycle</h3>
+            <p>Activities have a well-defined lifecycle managed by the Android system. Understanding this lifecycle is critical to building robust apps.</p>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Activity Lifecycle</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │                   Activity Launched                       │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │   onCreate()    →  Called when Activity is first created  │<br />
+                    │                  →  Initialize UI, bind data              │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │   onStart()     →  Activity becomes visible               │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │   onResume()    →  Activity is in the foreground          │<br />
+                    │                  →  User can interact                     │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │   Activity is running (foreground)                        │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                        ┌────────────┴────────────┐<br />
+                        │                         │<br />
+                        ▼                         ▼<br />
+            ┌─────────────────────────┐  ┌─────────────────────────┐<br />
+            │  onPause()              │  │  onDestroy()            │<br />
+            │  → Activity partially   │  │  → Activity is being    │<br />
+            │    visible              │  │    destroyed            │<br />
+            │  → Save user data       │  │  → Clean up resources   │<br />
+            └─────────────────────────┘  └─────────────────────────┘<br />
+                        │                         │<br />
+                        ▼                         │<br />
+            ┌─────────────────────────┐          │<br />
+            │  onStop()               │          │<br />
+            │  → Activity no longer   │          │<br />
+            │    visible              │          │<br />
+            └─────────────────────────┘          │<br />
+                        │                         │<br />
+                        ▼                         │<br />
+            ┌─────────────────────────┐          │<br />
+            │  onRestart()            │          │<br />
+            │  → Activity restarting  │          │<br />
+            │    after being stopped  │          │<br />
+            └─────────────────────────┘          │<br />
+                        │                         │<br />
+                        └────────────┬────────────┘<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │              Activity is destroyed                        │<br />
+                    └─────────────────────────────────────────────────────────────┘
+                </div>
+            </div>
+
+            <h3>Activity Lifecycle Methods</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>When Called</th><th>What to Do</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>onCreate()</code></td><td>Activity first created</td><td>Initialize UI, set content view, bind data</td></tr>
+                        <tr><td><code>onStart()</code></td><td>Activity becomes visible</td><td>Prepare UI for user interaction</td></tr>
+                        <tr><td><code>onResume()</code></td><td>Activity in foreground</td><td>Start animations, camera, GPS</td></tr>
+                        <tr><td><code>onPause()</code></td><td>Activity partially obscured</td><td>Save user data, stop animations</td></tr>
+                        <tr><td><code>onStop()</code></td><td>Activity no longer visible</td><td>Release resources, stop heavy operations</td></tr>
+                        <tr><td><code>onRestart()</code></td><td>Activity restarting after stop</td><td>Re-initialize resources</td></tr>
+                        <tr><td><code>onDestroy()</code></td><td>Activity being destroyed</td><td>Clean up all resources</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Basic Activity Implementation</h3>
+            <pre class="code-block"><code>// MainActivity.kt
+package com.example.myapp
+
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initialize UI elements
+        val button = findViewById&lt;android.widget.Button&gt;(R.id.myButton)
+        button.setOnClickListener {
+            Toast.makeText(this, "Button Clicked!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Activity becomes visible
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Activity is in foreground
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Save user data here
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Release resources
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Final cleanup
+    }
+}</code></pre>
+
+            <h2>3. Service — Background Operations</h2>
+
+            <p>A <strong>Service</strong> is a component that runs in the background to perform long-running operations without a user interface. Services are ideal for tasks like playing music, downloading files, or fetching data from a server.</p>
+
+            <h3>Types of Services</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Type</th><th>Description</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Started Service</strong></td><td>Runs until stopped or destroyed</td><td>Downloading files, playing music</td></tr>
+                        <tr><td><strong>Bound Service</strong></td><td>Allows client-server interaction</td><td>Music player (play/pause control)</td></tr>
+                        <tr><td><strong>Intent Service</strong></td><td>Handles one-off tasks sequentially</td><td>Processing queue of requests</td></tr>
+                        <tr><td><strong>Foreground Service</strong></td><td>Shows a notification</td><td>Music playback, navigation</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Basic Service Implementation</h3>
+            <pre class="code-block"><code>// MyService.kt
+package com.example.myapp
+
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
+import android.util.Log
+
+class MyService : Service() {
+
+    companion object {
+        private const val TAG = "MyService"
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        Log.d(TAG, "Service created")
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Log.d(TAG, "Service started")
+
+        // Do background work here
+        Thread {
+            // Simulate long-running task
+            Thread.sleep(5000)
+            Log.d(TAG, "Background task completed")
+            stopSelf() // Stop the service when done
+        }.start()
+
+        return START_STICKY // Restart if killed by system
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "Service destroyed")
+    }
+
+    override fun onBind(intent: Intent?): IBinder? {
+        // Return null for started services
+        return null
+    }
+}</code></pre>
+
+            <h3>Starting and Stopping a Service</h3>
+            <pre class="code-block"><code>// In your Activity or Fragment
+val intent = Intent(this, MyService::class.java)
+
+// Start the service
+startService(intent)
+
+// Stop the service
+stopService(intent)</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Starting with Android 8.0 (API 26), apps cannot use startService() when they are in the background. Use <strong>Foreground Services</strong> with a notification or <strong>WorkManager</strong> for background tasks.
+            </div>
+
+            <h2>4. Broadcast Receiver — Responding to System Events</h2>
+
+            <p>A <strong>Broadcast Receiver</strong> is a component that responds to system-wide broadcast announcements. It can listen to events like battery low, screen off, device boot, or custom broadcasts from your app.</p>
+
+            <h3>Common System Broadcasts</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Action</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>android.intent.action.BOOT_COMPLETED</code></td><td>Device boot completed</td></tr>
+                        <tr><td><code>android.intent.action.BATTERY_LOW</code></td><td>Battery is low</td></tr>
+                        <tr><td><code>android.intent.action.AIRPLANE_MODE</code></td><td>Airplane mode toggled</td></tr>
+                        <tr><td><code>android.net.conn.CONNECTIVITY_CHANGE</code></td><td>Network connectivity changed</td></tr>
+                        <tr><td><code>android.intent.action.SCREEN_OFF</code></td><td>Screen turned off</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Broadcast Receiver Implementation</h3>
+            <pre class="code-block"><code>// BatteryBroadcastReceiver.kt
+package com.example.myapp
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.widget.Toast
+
+class BatteryBroadcastReceiver : BroadcastReceiver() {
+
+    override fun onReceive(context: Context, intent: Intent) {
+        val action = intent.action
+        if (Intent.ACTION_BATTERY_LOW == action) {
+            Toast.makeText(context, "Battery is low!", Toast.LENGTH_LONG).show()
+        }
+    }
+}</code></pre>
+
+            <h3>Registering a Broadcast Receiver</h3>
+            <pre class="code-block"><code>// Method 1: Register in AndroidManifest.xml (manifest-declared)
+// &lt;receiver android:name=".BatteryBroadcastReceiver"&gt;
+//     &lt;intent-filter&gt;
+//         &lt;action android:name="android.intent.action.BATTERY_LOW" /&gt;
+//     &lt;/intent-filter&gt;
+// &lt;/receiver&gt;
+
+// Method 2: Register dynamically (recommended for newer Android versions)
+class MainActivity : AppCompatActivity() {
+
+    private val batteryReceiver = BatteryBroadcastReceiver()
+
+    override fun onResume() {
+        super.onResume()
+        val filter = IntentFilter(Intent.ACTION_BATTERY_LOW)
+        registerReceiver(batteryReceiver, filter)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        unregisterReceiver(batteryReceiver)
+    }
+}</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Starting with Android 8.0 (API 26), most implicit broadcasts cannot be received in manifest-declared receivers. Use <strong>dynamic registration</strong> or <strong>JobScheduler</strong> for modern apps.
+            </div>
+
+            <h3>Sending Custom Broadcasts</h3>
+            <pre class="code-block"><code>// Send a custom broadcast
+val intent = Intent("com.example.CUSTOM_EVENT")
+intent.putExtra("message", "Hello from your app!")
+sendBroadcast(intent)
+
+// Receive custom broadcast
+class CustomReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        val message = intent.getStringExtra("message")
+        Toast.makeText(context, "Received: $message", Toast.LENGTH_SHORT).show()
+    }
+}</code></pre>
+
+            <h2>5. Content Provider — Sharing Data</h2>
+
+            <p>A <strong>Content Provider</strong> manages access to a structured set of data. It provides a standardized interface for sharing data between different applications. Content Providers are the only way to share data across apps securely.</p>
+
+            <h3>Common Use Cases</h3>
+            <ul>
+                <li><strong>Contacts Provider:</strong> Access device contacts</li>
+                <li><strong>Media Store:</strong> Access photos, videos, and audio</li>
+                <li><strong>Calendar Provider:</strong> Access calendar events</li>
+                <li><strong>Files Provider:</strong> Share files with other apps</li>
+            </ul>
+
+            <h3>Using a Content Provider (Accessing Contacts)</h3>
+            <pre class="code-block"><code>// Access device contacts
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        readContacts()
+    }
+
+    private fun readContacts() {
+        val projection = arrayOf(
+            ContactsContract.Contacts._ID,
+            ContactsContract.Contacts.DISPLAY_NAME
+        )
+
+        val cursor = contentResolver.query(
+            ContactsContract.Contacts.CONTENT_URI,
+            projection,
+            null,
+            null,
+            null
+        )
+
+        cursor?.use {
+            while (it.moveToNext()) {
+                val name = it.getString(it.getColumnIndexOrThrow(
+                    ContactsContract.Contacts.DISPLAY_NAME
+                ))
+                Log.d("Contacts", "Name: $name")
+            }
+        }
+    }
+}</code></pre>
+
+            <h3>Creating a Custom Content Provider</h3>
+            <pre class="code-block"><code>// MyContentProvider.kt
+package com.example.myapp
+
+import android.content.ContentProvider
+import android.content.ContentValues
+import android.database.Cursor
+import android.net.Uri
+
+class MyContentProvider : ContentProvider() {
+
+    companion object {
+        const val AUTHORITY = "com.example.myapp.provider"
+        val CONTENT_URI = Uri.parse("content://$AUTHORITY/data")
+    }
+
+    override fun onCreate(): Boolean {
+        // Initialize data source
+        return true
+    }
+
+    override fun query(
+        uri: Uri,
+        projection: Array&lt;String&gt;?,
+        selection: String?,
+        selectionArgs: Array&lt;String&gt;?,
+        sortOrder: String?
+    ): Cursor? {
+        // Return data based on URI
+        // Called by other apps using ContentResolver
+        return null
+    }
+
+    override fun insert(uri: Uri, values: ContentValues?): Uri? {
+        // Insert data
+        return null
+    }
+
+    override fun update(
+        uri: Uri,
+        values: ContentValues?,
+        selection: String?,
+        selectionArgs: Array&lt;String&gt;?
+    ): Int {
+        // Update data
+        return 0
+    }
+
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array&lt;String&gt;?): Int {
+        // Delete data
+        return 0
+    }
+
+    override fun getType(uri: Uri): String? {
+        // Return MIME type
+        return "vnd.android.cursor.dir/vnd.com.example.data"
+    }
+}</code></pre>
+
+            <h3>Declaring Content Provider in Manifest</h3>
+            <pre class="code-block"><code>&lt;provider
+    android:name=".MyContentProvider"
+    android:authorities="com.example.myapp.provider"
+    android:exported="true" /&gt;</code></pre>
+
+            <h2>6. Component Lifecycle Summary</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Lifecycle Methods</th><th>Key Points</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Activity</strong></td><td>onCreate, onStart, onResume, onPause, onStop, onDestroy</td><td>Has UI, interacts with user</td></tr>
+                        <tr><td><strong>Service</strong></td><td>onCreate, onStartCommand, onBind, onDestroy</td><td>No UI, runs in background</td></tr>
+                        <tr><td><strong>Broadcast Receiver</strong></td><td>onReceive</td><td>Short-lived, responds to events</td></tr>
+                        <tr><td><strong>Content Provider</strong></td><td>onCreate, query, insert, update, delete</td><td>Manages shared data</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>7. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Declare all components</strong> — Every component must be declared in <code>AndroidManifest.xml</code>.</li>
+                <li><strong>✅ Understand Activity lifecycle</strong> — Save and restore state in <code>onSaveInstanceState()</code>.</li>
+                <li><strong>✅ Use Services wisely</strong> — Use WorkManager for background tasks on Android 8.0+.</li>
+                <li><strong>✅ Register receivers properly</strong> — Use dynamic registration for modern apps.</li>
+                <li><strong>✅ Handle permissions</strong> — Check and request permissions before accessing Content Providers.</li>
+                <li><strong>✅ Avoid memory leaks</strong> — Unregister receivers and unbind services in lifecycle callbacks.</li>
+                <li><strong>✅ Use foreground services</strong> — Show a notification for long-running services.</li>
+                <li><strong>✅ Test configuration changes</strong> — Handle screen rotation and other configuration changes.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Understanding the four components — Activities, Services, Broadcast Receivers, and Content Providers — is essential for building any Android app. Each component serves a specific purpose, and they work together to create a complete app experience. Mastering these components is the first step toward becoming a proficient Android developer.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-what-is-android.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>What is Android and Why to use it?</a>
+            <a href="android-ui-design.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Android UI Design — Layouts, Views &amp; ViewGroups</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

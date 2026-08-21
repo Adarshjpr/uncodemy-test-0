@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android Permissions — Security Best Practices | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Master Android permissions — manifest permissions, runtime permissions, handling denials, rationale dialogs, and production best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 10 of 12: Android Permissions — Security Best Practices</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html" class="active"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-shield-alt"></i> Security</span>
+        <h1>Android Permissions — Security Best Practices</h1>
+
+        <div class="card">
+
+            <p>Android permissions are the gatekeepers of user data and device features. They protect users by ensuring apps can only access sensitive data and system features with explicit user consent. Starting with Android 6.0 (API 23), Android introduced the <strong>runtime permissions model</strong>, where dangerous permissions must be requested at runtime rather than at install time.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Permission handling is one of the most critical aspects of Android development. A poorly implemented permission flow leads to app crashes, frustrated users, and negative reviews. Mastering runtime permissions is essential for building professional, user-friendly apps.
+            </div>
+
+            <h2>1. Types of Android Permissions</h2>
+
+            <p>Android permissions are categorized into three levels of protection:</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Normal</strong></td>
+                            <td>Low-risk permissions that don't significantly impact user privacy. <br/>✅ <strong>Automatically granted</strong> — no user prompt.</td>
+                            <td>INTERNET, ACCESS_NETWORK_STATE, VIBRATE, SET_ALARM, WAKE_LOCK</td></tr>
+                        <tr><td><strong>Dangerous</strong></td>
+                            <td>High-risk permissions that access user data or device features. <br/>⚠️ <strong>Must be requested at runtime</strong> — user must grant explicitly.</td>
+                            <td>CAMERA, READ_CONTACTS, ACCESS_FINE_LOCATION, RECORD_AUDIO, READ_EXTERNAL_STORAGE</td></tr>
+                        <tr><td><strong>Signature</strong></td>
+                            <td>Only granted to apps signed with the same certificate. <br/>🔐 <strong>Automatically granted</strong> — for system apps or same developer apps.</td>
+                            <td>System-level permissions (custom permissions defined by apps)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Common Dangerous Permissions</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Permission</th><th>Manifest Declaration</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Camera</strong></td>
+                            <td><code>android.permission.CAMERA</code></td>
+                            <td>Take photos, scan QR codes</td></tr>
+                        <tr><td><strong>Location</strong></td>
+                            <td><code>android.permission.ACCESS_FINE_LOCATION</code> <br/> <code>android.permission.ACCESS_COARSE_LOCATION</code></td>
+                            <td>GPS, maps, location-based services</td></tr>
+                        <tr><td><strong>Contacts</strong></td>
+                            <td><code>android.permission.READ_CONTACTS</code> <br/> <code>android.permission.WRITE_CONTACTS</code></td>
+                            <td>Access device contacts, sync</td></tr>
+                        <tr><td><strong>Storage</strong></td>
+                            <td><code>android.permission.READ_EXTERNAL_STORAGE</code> <br/> <code>android.permission.WRITE_EXTERNAL_STORAGE</code></td>
+                            <td>Read/write files, images, documents</td></tr>
+                        <tr><td><strong>Microphone</strong></td>
+                            <td><code>android.permission.RECORD_AUDIO</code></td>
+                            <td>Voice recording, audio calls</td></tr>
+                        <tr><td><strong>Phone</strong></td>
+                            <td><code>android.permission.READ_PHONE_STATE</code> <br/> <code>android.permission.CALL_PHONE</code></td>
+                            <td>Read device ID, make calls</td></tr>
+                        <tr><td><strong>SMS</strong></td>
+                            <td><code>android.permission.READ_SMS</code> <br/> <code>android.permission.SEND_SMS</code></td>
+                            <td>Read and send SMS messages</td></tr>
+                        <tr><td><strong>Calendar</strong></td>
+                            <td><code>android.permission.READ_CALENDAR</code> <br/> <code>android.permission.WRITE_CALENDAR</code></td>
+                            <td>Access calendar events</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. The Runtime Permission Flow</h2>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Runtime Permission Flow</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │  1. Check if permission is already granted                │<br />
+                    │     → <code>checkSelfPermission()</code>                   │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                        ┌────────────┴────────────┐<br />
+                        │             │<br />
+                        ▼             ▼<br />
+                ┌─────────────────────────────────────────────────────────────┐<br />
+                │  ✅ Already Granted   │  ❌ Not Granted                    │<br />
+                │  → Proceed with      │  → Request permission              │<br />
+                │    operation         │    <code>requestPermissions()</code> │<br />
+                └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                ┌─────────────────────────────────────────────────────────────┐<br />
+                │  3. Handle User Response                                   │<br />
+                │     → <code>onRequestPermissionsResult()</code>            │<br />
+                └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                        ┌────────────┴────────────┐<br />
+                        │             │<br />
+                        ▼             ▼<br />
+                ┌─────────────────────────────────────────────────────────────┐<br />
+                │  ✅ Granted          │  ❌ Denied                         │<br />
+                │  → Proceed with      │  → Show rationale                  │<br />
+                │    operation         │  → Or gracefully degrade           │<br />
+                └─────────────────────────────────────────────────────────────┘
+                </div>
+            </div>
+
+            <h2>4. Declaring Permissions in Manifest</h2>
+
+            <p>All permissions must be declared in <code>AndroidManifest.xml</code>:</p>
+
+            <pre class="code-block"><code>&lt;!-- AndroidManifest.xml --&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapp"&gt;
+
+    &lt;!-- Normal permissions (auto-granted) --&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+
+    &lt;!-- Dangerous permissions (runtime required) --&gt;
+    &lt;uses-permission android:name="android.permission.CAMERA" /&gt;
+    &lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+    &lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;
+
+    &lt;!-- Optional: Declare optional hardware features --&gt;
+    &lt;uses-feature android:name="android.hardware.camera" android:required="false" /&gt;
+
+    &lt;application ...&gt;
+        ...
+    &lt;/application&gt;
+
+&lt;/manifest&gt;</code></pre>
+
+            <h2>5. Complete Permission Implementation</h2>
+
+            <h3>Step 1: Create Permission Helper</h3>
+            <pre class="code-block"><code>// PermissionHelper.kt
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import androidx.core.content.ContextCompat
+
+object PermissionHelper {
+    
+    // List of permissions required by the app
+    val REQUIRED_PERMISSIONS = arrayOf(
+        Manifest.permission.CAMERA,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.ACCESS_FINE_LOCATION,
+        Manifest.permission.RECORD_AUDIO
+    )
+    
+    // Check if a single permission is granted
+    fun isPermissionGranted(context: Context, permission: String): Boolean {
+        return ContextCompat.checkSelfPermission(
+            context,
+            permission
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+    
+    // Check if all permissions are granted
+    fun areAllPermissionsGranted(context: Context): Boolean {
+        return REQUIRED_PERMISSIONS.all { permission ->
+            isPermissionGranted(context, permission)
+        }
+    }
+    
+    // Get list of denied permissions
+    fun getDeniedPermissions(context: Context): List&lt;String&gt; {
+        return REQUIRED_PERMISSIONS.filter { permission ->
+            !isPermissionGranted(context, permission)
+        }
+    }
+}</code></pre>
+
+            <h3>Step 2: Activity with Permission Handling</h3>
+            <pre class="code-block"><code>// MainActivity.kt
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+
+class MainActivity : AppCompatActivity() {
+    
+    private lateinit var cameraButton: Button
+    private lateinit var locationButton: Button
+    
+    // Permission launcher (modern approach)
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { permissions ->
+        // Handle all permission results
+        val allGranted = permissions.values.all { it }
+        
+        if (allGranted) {
+            // All permissions granted — proceed
+            Toast.makeText(this, "All permissions granted!", Toast.LENGTH_SHORT).show()
+        } else {
+            // Some permissions were denied
+            val deniedPermissions = permissions.filter { !it.value }.keys
+            handleDeniedPermissions(deniedPermissions)
+        }
+    }
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        cameraButton = findViewById(R.id.cameraButton)
+        locationButton = findViewById(R.id.locationButton)
+        
+        // Check if all permissions are already granted
+        if (PermissionHelper.areAllPermissionsGranted(this)) {
+            // All permissions granted — proceed
+            enableFeatures(true)
+        } else {
+            // Request missing permissions
+            requestPermissions()
+        }
+        
+        cameraButton.setOnClickListener {
+            if (PermissionHelper.isPermissionGranted(this, Manifest.permission.CAMERA)) {
+                openCamera()
+            } else {
+                requestPermissions()
+            }
+        }
+        
+        locationButton.setOnClickListener {
+            if (PermissionHelper.isPermissionGranted(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+                getLocation()
+            } else {
+                requestPermissions()
+            }
+        }
+    }
+    
+    private fun requestPermissions() {
+        val deniedPermissions = PermissionHelper.getDeniedPermissions(this)
+        if (deniedPermissions.isNotEmpty()) {
+            // Show rationale for Android 12+ (optional)
+            if (shouldShowRationale()) {
+                showPermissionRationale()
+            } else {
+                requestPermissionLauncher.launch(deniedPermissions.toTypedArray())
+            }
+        }
+    }
+    
+    private fun shouldShowRationale(): Boolean {
+        return PermissionHelper.REQUIRED_PERMISSIONS.any { permission ->
+            shouldShowRequestPermissionRationale(permission)
+        }
+    }
+    
+    private fun showPermissionRationale() {
+        // Show a dialog explaining why permissions are needed
+        AlertDialog.Builder(this)
+            .setTitle("Permissions Required")
+            .setMessage("This app needs camera, storage, and location permissions to function properly. Please grant them to continue.")
+            .setPositiveButton("Grant") { _, _ ->
+                requestPermissionLauncher.launch(PermissionHelper.getDeniedPermissions(this).toTypedArray())
+            }
+            .setNegativeButton("Cancel") { _, _ ->
+                Toast.makeText(this, "Permissions required for full functionality", Toast.LENGTH_LONG).show()
+                enableFeatures(false)
+            }
+            .show()
+    }
+    
+    private fun handleDeniedPermissions(deniedPermissions: Set&lt;String&gt;) {
+        // Check if permissions are permanently denied
+        val permanentlyDenied = deniedPermissions.any { permission ->
+            !shouldShowRequestPermissionRationale(permission)
+        }
+        
+        if (permanentlyDenied) {
+            // Show settings dialog
+            showSettingsDialog()
+        } else {
+            Toast.makeText(this, "Permissions denied. Please grant them to use this feature.", Toast.LENGTH_LONG).show()
+            enableFeatures(false)
+        }
+    }
+    
+    private fun showSettingsDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Permissions Permanently Denied")
+            .setMessage("You have permanently denied some permissions. To use all features, please enable them in app settings.")
+            .setPositiveButton("Open Settings") { _, _ ->
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                intent.data = Uri.parse("package:$packageName")
+                startActivity(intent)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+    
+    private fun enableFeatures(enabled: Boolean) {
+        cameraButton.isEnabled = enabled
+        locationButton.isEnabled = enabled
+    }
+    
+    private fun openCamera() {
+        // Camera is available — open it
+        Toast.makeText(this, "📷 Opening Camera", Toast.LENGTH_SHORT).show()
+    }
+    
+    private fun getLocation() {
+        // Location is available — get it
+        Toast.makeText(this, "📍 Getting Location", Toast.LENGTH_SHORT).show()
+    }
+}</code></pre>
+
+            <h2>6. Permission Groups (Android 12+)</h2>
+
+            <p>Android 12 introduced the ability to request permissions in groups, allowing users to grant permissions with a single click.</p>
+
+            <pre class="code-block"><code>// Request multiple permissions in a group
+private val permissionLauncher = registerForActivityResult(
+    ActivityResultContracts.RequestMultiplePermissions()
+) { permissions ->
+    // Handle results
+    val cameraGranted = permissions[Manifest.permission.CAMERA] ?: false
+    val storageGranted = permissions[Manifest.permission.READ_EXTERNAL_STORAGE] ?: false
+    
+    if (cameraGranted && storageGranted) {
+        // Both granted
+    } else if (cameraGranted) {
+        // Only camera granted
+    } else if (storageGranted) {
+        // Only storage granted
+    }
+}</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Request related permissions together (e.g., camera and storage) to reduce the number of prompts. Users appreciate fewer permission dialogs.
+            </div>
+
+            <h2>7. Android 13+ Changes — Granular Media Permissions</h2>
+
+            <p>Android 13 introduced granular media permissions, replacing <code>READ_EXTERNAL_STORAGE</code> with specific permissions:</p>
+
+            <ul>
+                <li><code>READ_MEDIA_IMAGES</code> — Access images</li>
+                <li><code>READ_MEDIA_VIDEO</code> — Access videos</li>
+                <li><code>READ_MEDIA_AUDIO</code> — Access audio files</li>
+            </ul>
+
+            <pre class="code-block"><code>// Android 13+ media permissions
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    // Request specific media permissions
+    val mediaPermissions = arrayOf(
+        Manifest.permission.READ_MEDIA_IMAGES,
+        Manifest.permission.READ_MEDIA_VIDEO
+    )
+    requestPermissionLauncher.launch(mediaPermissions)
+} else {
+    // Android 12 and below
+    requestPermissionLauncher.launch(
+        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+    )
+}</code></pre>
+
+            <h2>8. Background Location Permissions</h2>
+
+            <p>For apps that need location in the background, you must request <code>ACCESS_BACKGROUND_LOCATION</code>:</p>
+
+            <pre class="code-block"><code>// AndroidManifest.xml
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /&gt;
+
+// In Activity
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+    // Request background location permission
+    val permissions = arrayOf(
+        Manifest.permission.ACCESS_FINE_LOCATION,
+        Manifest.permission.ACCESS_BACKGROUND_LOCATION
+    )
+    requestPermissionLauncher.launch(permissions)
+}</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Background location permission requires additional review from Google Play. You must provide a valid reason for using background location in your app's Play Store listing.
+            </div>
+
+            <h2>9. Common Pitfalls &amp; Solutions</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Mistakes to Avoid:</strong>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 1: Not checking permissions before using features</strong></p>
+                <p><strong>Problem:</strong> Accessing a feature without checking permissions causes a <code>SecurityException</code>.</p>
+                <p><strong>Solution:</strong> Always check <code>checkSelfPermission()</code> before accessing protected features.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 2: Not handling "Never Ask Again" state</strong></p>
+                <p><strong>Problem:</strong> Users can permanently deny permissions, and requesting again won't show the dialog.</p>
+                <p><strong>Solution:</strong> Check <code>shouldShowRequestPermissionRationale()</code> to detect permanent denial and guide users to settings.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 3: Not providing explanation for permissions</strong></p>
+                <p><strong>Problem:</strong> Users may deny permissions if they don't understand why they're needed.</p>
+                <p><strong>Solution:</strong> Show a rationale dialog explaining why each permission is needed before requesting.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 4: Requesting all permissions at once</strong></p>
+                <p><strong>Problem:</strong> Asking for many permissions at once overwhelms users and leads to denials.</p>
+                <p><strong>Solution:</strong> Request permissions only when needed (just-in-time).</p>
+            </div>
+
+            <h2>10. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Declare permissions</strong> — All permissions must be in <code>AndroidManifest.xml</code>.</li>
+                <li><strong>✅ Use runtime permissions</strong> — Request dangerous permissions at runtime.</li>
+                <li><strong>✅ Check before use</strong> — Always check <code>checkSelfPermission()</code> before accessing protected features.</li>
+                <li><strong>✅ Handle denial</strong> — Show rationale for denied permissions.</li>
+                <li><strong>✅ Handle permanent denial</strong> — Guide users to settings for permanently denied permissions.</li>
+                <li><strong>✅ Use AndroidX</strong> — Use <code>ActivityResultContracts.RequestMultiplePermissions</code>.</li>
+                <li><strong>✅ Request only when needed</strong> — Just-in-time permission requests.</li>
+                <li><strong>✅ Show rationale</strong> — Explain why permissions are needed.</li>
+                <li><strong>✅ Test denial scenarios</strong> — Test with permissions denied and permanently denied.</li>
+                <li><strong>✅ Handle Android 13+</strong> — Use granular media permissions.</li>
+                <li><strong>✅ Handle background location</strong> — Request separately if needed.</li>
+                <li><strong>✅ Document permissions</strong> — Add to Play Store listing.</li>
+            </ul>
+
+            <h2>11. Quick Reference — Permission Methods</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>checkSelfPermission()</code></td><td>Check if a permission is granted</td></tr>
+                        <tr><td><code>requestPermissions()</code></td><td>Request one or more permissions (deprecated)</td></tr>
+                        <tr><td><code>ActivityResultContracts.RequestPermission</code></td><td>Modern API for single permission</td></tr>
+                        <tr><td><code>ActivityResultContracts.RequestMultiplePermissions</code></td><td>Modern API for multiple permissions</td></tr>
+                        <tr><td><code>shouldShowRequestPermissionRationale()</code></td><td>Check if rationale should be shown</td></tr>
+                        <tr><td><code>onRequestPermissionsResult()</code></td><td>Handle permission results (deprecated)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Permission handling is essential for user trust and app functionality. Use the modern ActivityResult API, show rationales, handle denials gracefully, and always check permissions before accessing protected features. Testing all permission scenarios (granted, denied, permanently denied) is critical for a production-ready app.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-networking.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Networking in Android — Making API Calls</a>
+            <a href="android-publishing.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Publishing Your App — Play Store Deployment</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

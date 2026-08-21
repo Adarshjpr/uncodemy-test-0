@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Master Bootstrap's layout utilities — Flexbox (alignment, ordering, wrapping), Display (show/hide, responsive), and Positioning (relative, absolute, fixed, sticky)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 7 of 9: Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html" class="active"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-vector-square"></i> Utilities</span>
+        <h1>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</h1>
+
+        <div class="card">
+
+            <p>Beyond the grid system, Bootstrap provides powerful <strong>layout utilities</strong> that give you fine-grained control over element positioning, alignment, and visibility. These utilities are built on CSS Flexbox and CSS Positioning — mastering them allows you to create complex, responsive layouts without writing custom CSS.</p>
+
+            <h2>1. Flexbox Utilities</h2>
+            <p>Bootstrap's flexbox utilities are the foundation of modern layouts. They control alignment, ordering, and spacing of elements within a container.</p>
+
+            <h3>Enable Flexbox</h3>
+            <p>Use <code>.d-flex</code> or <code>.d-inline-flex</code> to create a flex container.</p>
+            <pre class="code-block"><code>&lt;!-- Block-level flex container --&gt;
+&lt;div class="d-flex"&gt;...&lt;/div&gt;
+
+&lt;!-- Inline-level flex container --&gt;
+&lt;div class="d-inline-flex"&gt;...&lt;/div&gt;
+
+&lt;!-- Responsive flex containers --&gt;
+&lt;div class="d-md-flex"&gt;...&lt;/div&gt; &lt;!-- Only flex on medium screens and up --&gt;
+&lt;div class="d-flex d-sm-none"&gt;...&lt;/div&gt; &lt;!-- Flex only on small screens --&gt;</code></pre>
+
+            <h3>Flex Direction</h3>
+            <p>Control the direction of flex items using <code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-column</code>, or <code>.flex-column-reverse</code>.</p>
+            <pre class="code-block"><code>&lt;!-- Horizontal (default) --&gt;
+&lt;div class="d-flex flex-row"&gt;
+    &lt;div&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+    &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Output: 1 2 3 --&gt;
+
+&lt;!-- Horizontal reversed --&gt;
+&lt;div class="d-flex flex-row-reverse"&gt;...&lt;/div&gt;
+&lt;!-- Output: 3 2 1 --&gt;
+
+&lt;!-- Vertical --&gt;
+&lt;div class="d-flex flex-column"&gt;...&lt;/div&gt;
+&lt;!-- Output:
+1
+2
+3 --&gt;
+
+&lt;!-- Responsive flex direction --&gt;
+&lt;div class="d-flex flex-column flex-md-row"&gt;...&lt;/div&gt;
+&lt;!-- Vertical on mobile, horizontal on medium screens --&gt;</code></pre>
+
+            <h3>Justify Content — Horizontal Alignment</h3>
+            <p>Align flex items along the main axis (horizontal by default).</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Effect</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.justify-content-start</code></td><td>Items at the start (left)</td></tr>
+                        <tr><td><code>.justify-content-end</code></td><td>Items at the end (right)</td></tr>
+                        <tr><td><code>.justify-content-center</code></td><td>Items centered</td></tr>
+                        <tr><td><code>.justify-content-between</code></td><td>Space between items</td></tr>
+                        <tr><td><code>.justify-content-around</code></td><td>Space around items</td></tr>
+                        <tr><td><code>.justify-content-evenly</code></td><td>Evenly distributed space</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>&lt;!-- Center items --&gt;
+&lt;div class="d-flex justify-content-center"&gt;...&lt;/div&gt;
+
+&lt;!-- Space between items --&gt;
+&lt;div class="d-flex justify-content-between"&gt;
+    &lt;div&gt;Left&lt;/div&gt;
+    &lt;div&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive justify --&gt;
+&lt;div class="d-flex justify-content-center justify-content-md-start"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Align Items — Vertical Alignment</h3>
+            <p>Align flex items along the cross axis (vertical by default).</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Effect</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.align-items-start</code></td><td>Items at the top</td></tr>
+                        <tr><td><code>.align-items-end</code></td><td>Items at the bottom</td></tr>
+                        <tr><td><code>.align-items-center</code></td><td>Items centered vertically</td></tr>
+                        <tr><td><code>.align-items-baseline</code></td><td>Items aligned by baseline</td></tr>
+                        <tr><td><code>.align-items-stretch</code></td><td>Items stretched to fill container</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>&lt;!-- Center items vertically --&gt;
+&lt;div class="d-flex align-items-center" style="height: 200px;"&gt;
+    &lt;div&gt;Centered vertically&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Stretch items to fill height --&gt;
+&lt;div class="d-flex align-items-stretch" style="height: 200px;"&gt;
+    &lt;div&gt;Stretched&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Align Self — Individual Item Alignment</h3>
+            <p>Override the container's alignment for a specific flex item.</p>
+            <pre class="code-block"><code>&lt;div class="d-flex align-items-center" style="height: 200px;"&gt;
+    &lt;div&gt;Default (center)&lt;/div&gt;
+    &lt;div class="align-self-start"&gt;Start&lt;/div&gt;
+    &lt;div class="align-self-end"&gt;End&lt;/div&gt;
+    &lt;div class="align-self-stretch"&gt;Stretch&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Flex Wrap</h3>
+            <p>Control whether flex items wrap to the next line.</p>
+            <pre class="code-block"><code>&lt;!-- No wrap (default) --&gt;
+&lt;div class="d-flex flex-nowrap"&gt;...&lt;/div&gt;
+
+&lt;!-- Wrap to next line --&gt;
+&lt;div class="d-flex flex-wrap"&gt;...&lt;/div&gt;
+
+&lt;!-- Wrap reversed --&gt;
+&lt;div class="d-flex flex-wrap-reverse"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Flex Grow &amp; Shrink</h3>
+            <p>Control how flex items grow or shrink to fill available space.</p>
+            <pre class="code-block"><code>&lt;div class="d-flex"&gt;
+    &lt;div class="flex-grow-1"&gt;Grows to fill space&lt;/div&gt;
+    &lt;div&gt;Fixed width&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Prevent shrinking --&gt;
+&lt;div class="flex-shrink-0"&gt;I don't shrink&lt;/div&gt;</code></pre>
+
+            <h3>Gap</h3>
+            <p>Add space between flex items using <code>.gap-{size}</code>.</p>
+            <pre class="code-block"><code>&lt;div class="d-flex gap-3"&gt;
+    &lt;div&gt;Item 1&lt;/div&gt;
+    &lt;div&gt;Item 2&lt;/div&gt;
+    &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive gap --&gt;
+&lt;div class="d-flex gap-2 gap-md-4"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Order</h3>
+            <p>Change the visual order of flex items.</p>
+            <pre class="code-block"><code>&lt;div class="d-flex"&gt;
+    &lt;div class="order-3"&gt;Third visually&lt;/div&gt;
+    &lt;div class="order-1"&gt;First visually&lt;/div&gt;
+    &lt;div class="order-2"&gt;Second visually&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive ordering --&gt;
+&lt;div class="d-flex flex-column flex-md-row"&gt;
+    &lt;div class="order-2 order-md-1"&gt;Changes order on different screens&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>2. Display Utilities</h2>
+            <p>Display utilities control an element's visibility and layout behavior.</p>
+
+            <h3>Basic Display Classes</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>CSS Property</th><th>Effect</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.d-none</code></td><td><code>display: none</code></td><td>Hidden completely</td></tr>
+                        <tr><td><code>.d-block</code></td><td><code>display: block</code></td><td>Block-level element</td></tr>
+                        <tr><td><code>.d-inline</code></td><td><code>display: inline</code></td><td>Inline element</td></tr>
+                        <tr><td><code>.d-inline-block</code></td><td><code>display: inline-block</code></td><td>Inline-block element</td></tr>
+                        <tr><td><code>.d-flex</code></td><td><code>display: flex</code></td><td>Flex container</td></tr>
+                        <tr><td><code>.d-inline-flex</code></td><td><code>display: inline-flex</code></td><td>Inline flex container</td></tr>
+                        <tr><td><code>.d-grid</code></td><td><code>display: grid</code></td><td>Grid container</td></tr>
+                        <tr><td><code>.d-table</code></td><td><code>display: table</code></td><td>Table element</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Responsive Display</h3>
+            <p>Show or hide elements at specific breakpoints.</p>
+            <pre class="code-block"><code>&lt;!-- Hidden on mobile, visible on larger screens --&gt;
+&lt;div class="d-none d-md-block"&gt;Visible on medium screens and up&lt;/div&gt;
+
+&lt;!-- Visible on mobile, hidden on larger screens --&gt;
+&lt;div class="d-block d-md-none"&gt;Visible only on small screens&lt;/div&gt;
+
+&lt;!-- Hidden on all screens --&gt;
+&lt;div class="d-none"&gt;Always hidden&lt;/div&gt;
+
+&lt;!-- Visible on all screens --&gt;
+&lt;div class="d-block"&gt;Always visible&lt;/div&gt;
+
+&lt;!-- Responsive flex: flex on large screens only --&gt;
+&lt;div class="d-flex d-lg-flex"&gt;Flex on large screens&lt;/div&gt;</code></pre>
+
+            <h3>Visibility Utilities</h3>
+            <p>Control visibility without affecting layout.</p>
+            <pre class="code-block"><code>&lt;!-- Invisible (hidden but still takes up space) --&gt;
+&lt;div class="invisible"&gt;I'm invisible but still here&lt;/div&gt;
+
+&lt;!-- Visible (default) --&gt;
+&lt;div class="visible"&gt;I'm visible&lt;/div&gt;</code></pre>
+
+            <h3>Common Display Use Cases</h3>
+            <pre class="code-block"><code>&lt;!-- Mobile-first navigation toggle --&gt;
+&lt;button class="d-md-none"&gt;Menu (only on mobile)&lt;/button&gt;
+
+&lt;!-- Desktop-only sidebar --&gt;
+&lt;div class="d-none d-lg-block"&gt;Desktop sidebar&lt;/div&gt;
+
+&lt;!-- Centered block --&gt;
+&lt;div class="d-block mx-auto" style="width: 200px;"&gt;Centered block&lt;/div&gt;</code></pre>
+
+            <h2>3. Positioning Utilities</h2>
+            <p>Positioning utilities control how elements are positioned in the document flow.</p>
+
+            <h3>Position Classes</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>CSS Property</th><th>Effect</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.position-static</code></td><td><code>position: static</code></td><td>Default document flow</td></tr>
+                        <tr><td><code>.position-relative</code></td><td><code>position: relative</code></td><td>Relative to normal position</td></tr>
+                        <tr><td><code>.position-absolute</code></td><td><code>position: absolute</code></td><td>Relative to nearest positioned ancestor</td></tr>
+                        <tr><td><code>.position-fixed</code></td><td><code>position: fixed</code></td><td>Relative to viewport</td></tr>
+                        <tr><td><code>.position-sticky</code></td><td><code>position: sticky</code></td><td>Sticks when scrolling past</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Absolute Positioning</h3>
+            <p>Use <code>.position-absolute</code> with top/start/end/bottom utilities.</p>
+            <pre class="code-block"><code>&lt;div class="position-relative" style="height: 200px; background: #eee;"&gt;
+    &lt;!-- Parent must be position-relative --&gt;
+    &lt;div class="position-absolute top-0 start-0 p-2 bg-primary text-white"&gt;
+        Top Left
+    &lt;/div&gt;
+    &lt;div class="position-absolute top-0 end-0 p-2 bg-success text-white"&gt;
+        Top Right
+    &lt;/div&gt;
+    &lt;div class="position-absolute bottom-0 start-0 p-2 bg-danger text-white"&gt;
+        Bottom Left
+    &lt;/div&gt;
+    &lt;div class="position-absolute bottom-0 end-0 p-2 bg-warning text-dark"&gt;
+        Bottom Right
+    &lt;/div&gt;
+    &lt;div class="position-absolute top-50 start-50 translate-middle p-2 bg-dark text-white"&gt;
+        Center
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Translate Utilities</h3>
+            <p>Center elements using <code>.translate-middle</code> with <code>.top-50</code> and <code>.start-50</code>.</p>
+            <pre class="code-block"><code>&lt;!-- Perfect center --&gt;
+&lt;div class="position-absolute top-50 start-50 translate-middle"&gt;
+    Centered content
+&lt;/div&gt;
+
+&lt;!-- Center in x-axis only --&gt;
+&lt;div class="position-absolute top-0 start-50 translate-middle-x"&gt;
+    Centered horizontally
+&lt;/div&gt;
+
+&lt;!-- Center in y-axis only --&gt;
+&lt;div class="position-absolute top-50 start-0 translate-middle-y"&gt;
+    Centered vertically
+&lt;/div&gt;</code></pre>
+
+            <h3>Fixed &amp; Sticky Positioning</h3>
+            <pre class="code-block"><code>&lt;!-- Fixed to top --&gt;
+&lt;div class="position-fixed top-0 start-0 w-100 bg-primary text-white p-3"&gt;
+    Fixed header
+&lt;/div&gt;
+
+&lt;!-- Fixed to bottom --&gt;
+&lt;div class="position-fixed bottom-0 start-0 w-100 bg-dark text-white p-3"&gt;
+    Fixed footer
+&lt;/div&gt;
+
+&lt;!-- Sticky top --&gt;
+&lt;div class="position-sticky top-0 bg-white shadow p-3"&gt;
+    Sticky header (sticks when scrolling past)
+&lt;/div&gt;</code></pre>
+
+            <h3>Position Coordinates</h3>
+            <p>Use <code>.top-0</code>, <code>.start-0</code>, <code>.end-0</code>, <code>.bottom-0</code> with position utilities.</p>
+            <pre class="code-block"><code>&lt;div class="position-relative" style="height: 300px;"&gt;
+    &lt;div class="position-absolute top-0 start-0"&gt;Top Left&lt;/div&gt;
+    &lt;div class="position-absolute top-0 end-0"&gt;Top Right&lt;/div&gt;
+    &lt;div class="position-absolute bottom-0 start-0"&gt;Bottom Left&lt;/div&gt;
+    &lt;div class="position-absolute bottom-0 end-0"&gt;Bottom Right&lt;/div&gt;
+    &lt;div class="position-absolute top-50 start-50 translate-middle"&gt;Center&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Z-Index Utilities</h3>
+            <p>Control stacking order using <code>.z-{index}</code>.</p>
+            <pre class="code-block"><code>&lt;div class="position-relative" style="height: 100px;"&gt;
+    &lt;div class="position-absolute top-0 start-0 bg-primary p-3 z-1"&gt;Z-index 1&lt;/div&gt;
+    &lt;div class="position-absolute top-0 start-2 bg-danger p-3 z-2"&gt;Z-index 2 (on top)&lt;/div&gt;
+    &lt;div class="position-absolute top-0 start-4 bg-success p-3 z-0"&gt;Z-index 0 (behind)&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Common Layout Patterns</h2>
+
+            <h3>1. Centering Content</h3>
+            <pre class="code-block"><code>&lt;!-- Centered horizontally and vertically --&gt;
+&lt;div class="d-flex justify-content-center align-items-center" style="height: 400px;"&gt;
+    &lt;div&gt;Centered content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>2. Sticky Footer</h3>
+            <pre class="code-block"><code>&lt;div class="d-flex flex-column min-vh-100"&gt;
+    &lt;header class="bg-primary text-white p-3"&gt;Header&lt;/header&gt;
+    &lt;main class="flex-grow-1 p-3"&gt;Content&lt;/main&gt;
+    &lt;footer class="bg-dark text-white p-3 mt-auto"&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>3. Sidebar Layout</h3>
+            <pre class="code-block"><code>&lt;div class="d-flex"&gt;
+    &lt;div class="bg-light p-3" style="width: 250px;"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="flex-grow-1 p-3"&gt;Main content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>4. Mobile-Friendly Navbar</h3>
+            <pre class="code-block"><code>&lt;nav class="d-flex flex-wrap justify-content-between align-items-center p-3 bg-dark"&gt;
+    &lt;a href="#" class="text-white text-decoration-none fs-4"&gt;Brand&lt;/a&gt;
+    &lt;div class="d-none d-md-flex gap-3"&gt;
+        &lt;a href="#" class="text-white"&gt;Home&lt;/a&gt;
+        &lt;a href="#" class="text-white"&gt;About&lt;/a&gt;
+        &lt;a href="#" class="text-white"&gt;Contact&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;button class="d-md-none btn btn-outline-light"&gt;Menu&lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> 
+                <ul>
+                    <li><strong>Flexbox</strong> is the most powerful layout tool in Bootstrap — master it for modern layouts.</li>
+                    <li><strong>Display utilities</strong> are essential for responsive design — use them to show/hide content at different breakpoints.</li>
+                    <li><strong>Positioning</strong> is perfect for overlays, tooltips, and fixed elements.</li>
+                    <li>Always test your layouts on multiple screen sizes to ensure responsiveness.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-modals-carousels-accordions.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a>
+            <a href="bootstrap-customization-sass-theming.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Customization — Sass &amp; Theming</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* ==========================================================================
+   UNCODEMY — TOOLS & TECHNOLOGIES CAROUSEL
+   --------------------------------------------------------------------------
+   Same section, same cards, same colours and typography — only the layout
+   behaviour changes: one row that scrolls horizontally forever.
+     · laptop / desktop → exactly 2 cards visible
+     · mobile           → exactly 1 card visible, swipeable
+   Never a second row, never a vertical stack.
+
+   Loads AFTER css/uncodemy-redesign.css. That file is not edited.
+   ========================================================================== */
+
+section.tools-technologies-section div.tools-technologies-carousel {
+    --tc-gap: 16px;
+    --tc-per-view: 5;
+    --tc-ease: var(--uc-ease, cubic-bezier(.22, .61, .36, 1));
+
+    position: relative;
+    margin: 0 0 40px;
+}
+
+/* soft fade at both edges so cards enter and leave instead of being cut off */
+section.tools-technologies-section div.tools-technologies-carousel::before,
+section.tools-technologies-section div.tools-technologies-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+section.tools-technologies-section div.tools-technologies-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--uc-surface, #fff) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+section.tools-technologies-section div.tools-technologies-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--uc-surface, #fff) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+section.tools-technologies-section div.tools-technologies-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+section.tools-technologies-section div.tools-technologies-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+/* the list keeps its class — only its display model changes */
+section.tools-technologies-section ul.tools-technologies-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: none;
+    gap: var(--tc-gap);
+    width: 100%;
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+}
+
+section.tools-technologies-section li.tools-technology-item {
+    /* exactly --tc-per-view cards fill the viewport, gaps included */
+    flex: 0 0 calc((100% - var(--tc-gap) * (var(--tc-per-view) - 1)) / var(--tc-per-view));
+    /* two cards across is a wide slot — lay the tile out sideways so it
+       reads as a proper card instead of a logo lost in whitespace */
+    flex-direction: row;
+    justify-content: center;
+    min-height: max-content;
+ 
+    gap: 22px;
+}
+
+section.tools-technologies-section li.tools-technology-item img {
+    width: 76px;
+    height: 76px;
+}
+
+section.tools-technologies-section span.tools-technology-emoji {
+    font-size: 54px;
+    line-height: 76px;
+}
+
+section.tools-technologies-section span.tools-technology-name {
+    font-size: 18px;
+    text-align: left;
+}
+
+/* while the marquee is running the cards must not jump under the cursor */
+section.tools-technologies-section div.tools-technologies-carousel.is-dragging {
+    cursor: grabbing;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE — the only thing that changes is how many cards are in view
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    section.tools-technologies-section li.tools-technology-item {
+       min-height: max-content;
+       
+        gap: 18px;
+    }
+
+    section.tools-technologies-section li.tools-technology-item img {
+        width: 64px;
+        height: 64px;
+    }
+
+    section.tools-technologies-section span.tools-technology-emoji {
+        font-size: 46px;
+        line-height: 64px;
+    }
+
+    section.tools-technologies-section span.tools-technology-name {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    section.tools-technologies-section div.tools-technologies-carousel {
+        --tc-per-view: 2;
+        --tc-gap: 12px;
+    }
+
+    section.tools-technologies-section div.tools-technologies-carousel::before,
+    section.tools-technologies-section div.tools-technologies-carousel::after {
+        width: 24px;
+    }
+
+    /* one card across on mobile — back to the original stacked tile */
+    section.tools-technologies-section li.tools-technology-item {
+        flex-direction: column;
+        min-height: max-content;
+        padding: 26px 16px;
+        gap: 12px;
+    }
+
+    section.tools-technologies-section li.tools-technology-item img {
+        width: 56px;
+        height: 56px;
+    }
+
+    section.tools-technologies-section span.tools-technology-emoji {
+        font-size: 40px;
+        line-height: 56px;
+    }
+
+    section.tools-technologies-section span.tools-technology-name {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+/* the redesign stylesheet re-grids this list at its own breakpoints —
+   the carousel has to win, so restate the flex row after them */
+@media (max-width: 1200px) {
+    section.tools-technologies-section ul.tools-technologies-grid {
+        display: flex;
+        grid-template-columns: none;
+    }
+}
+
+@media (max-width: 992px) {
+    section.tools-technologies-section ul.tools-technologies-grid {
+        display: flex;
+        grid-template-columns: none;
+        gap: var(--tc-gap);
+    }
+}
+
+@media (max-width: 640px) {
+    section.tools-technologies-section ul.tools-technologies-grid {
+        display: flex;
+        grid-template-columns: none;
+        gap: var(--tc-gap);
+    }
+}

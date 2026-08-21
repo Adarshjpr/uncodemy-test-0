@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Grid System — The Foundation of Layouts | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Master the Bootstrap Grid System — containers, rows, columns, breakpoints, nesting, ordering, and responsive layouts." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 2 of 9: Bootstrap Grid System — The Foundation of Layouts</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html" class="active"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-grid-2"></i> Layout</span>
+        <h1>Bootstrap Grid System — The Foundation of Layouts</h1>
+
+        <div class="card">
+
+            <p>The <strong>Bootstrap Grid System</strong> is the backbone of every Bootstrap layout. It's a powerful, mobile-first, flexible 12-column grid that helps you build responsive layouts of any complexity. Understanding the grid is the single most important step in mastering Bootstrap.</p>
+
+            <h2>How the Grid Works</h2>
+            <p>Bootstrap's grid system uses a series of <strong>containers</strong>, <strong>rows</strong>, and <strong>columns</strong> to structure and align content. It's built with flexbox and is fully responsive.</p>
+
+            <h3>The Three Core Components</h3>
+            <ul>
+                <li><strong>Container:</strong> The outermost wrapper. Centers your content and provides consistent horizontal padding.</li>
+                <li><strong>Row:</strong> A horizontal group of columns. Wraps columns and prevents them from overflowing.</li>
+                <li><strong>Column:</strong> The actual content area. Columns are children of rows and must add up to 12 (or less) per row.</li>
+            </ul>
+
+            <h3>Visual Structure</h3>
+            <pre class="code-block"><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt; Column 1 &lt;/div&gt;
+        &lt;div class="col"&gt; Column 2 &lt;/div&gt;
+        &lt;div class="col"&gt; Column 3 &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Containers — The Foundation</h2>
+            <p>Containers are the most basic layout element. They contain, pad, and center your content.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th><th>Max Width</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.container</code></td><td>Fixed-width container that changes width at each breakpoint</td><td>Responsive (varies by breakpoint)</td></tr>
+                        <tr><td><code>.container-fluid</code></td><td>Full-width container that spans the entire viewport</td><td>100%</td></tr>
+                        <tr><td><code>.container-sm</code></td><td>Fixed-width until sm breakpoint, then full-width</td><td>540px</td></tr>
+                        <tr><td><code>.container-md</code></td><td>Fixed-width until md breakpoint, then full-width</td><td>720px</td></tr>
+                        <tr><td><code>.container-lg</code></td><td>Fixed-width until lg breakpoint, then full-width</td><td>960px</td></tr>
+                        <tr><td><code>.container-xl</code></td><td>Fixed-width until xl breakpoint, then full-width</td><td>1140px</td></tr>
+                        <tr><td><code>.container-xxl</code></td><td>Fixed-width until xxl breakpoint, then full-width</td><td>1320px</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>The 12-Column System</h2>
+            <p>Bootstrap's grid uses <strong>12 columns</strong> per row. You can create layouts by specifying how many columns each element should span (from 1 to 12).</p>
+
+            <h3>Basic Column Classes</h3>
+            <ul>
+                <li><code>.col</code> — Auto-width column (distributes space evenly).</li>
+                <li><code>.col-{number}</code> — Column that spans a specific number of columns (1–12).</li>
+                <li><code>.col-{breakpoint}-{number}</code> — Column that spans a specific number at a specific breakpoint.</li>
+            </ul>
+
+            <h3>Example: Equal Width Columns</h3>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col"&gt;1 of 3&lt;/div&gt;
+    &lt;div class="col"&gt;2 of 3&lt;/div&gt;
+    &lt;div class="col"&gt;3 of 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- All columns are equal width, regardless of content. --&gt;</code></pre>
+
+            <h3>Example: Specific Width Columns</h3>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col-4"&gt;col-4&lt;/div&gt;
+    &lt;div class="col-8"&gt;col-8&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The first column takes 4/12 (1/3) and the second takes 8/12 (2/3). --&gt;</code></pre>
+
+            <h2>Breakpoints — Making It Responsive</h2>
+            <p>Bootstrap has six responsive breakpoints that let you control how your layout adapts to different screen sizes.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Breakpoint</th><th>Class Infix</th><th>Min Width</th><th>Typical Devices</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Extra small</td><td><em>none</em></td><td>&lt;576px</td><td>Phones</td></tr>
+                        <tr><td>Small</td><td><code>sm</code></td><td>≥576px</td><td>Large phones</td></tr>
+                        <tr><td>Medium</td><td><code>md</code></td><td>≥768px</td><td>Tablets</td></tr>
+                        <tr><td>Large</td><td><code>lg</code></td><td>≥992px</td><td>Desktops</td></tr>
+                        <tr><td>Extra large</td><td><code>xl</code></td><td>≥1200px</td><td>Large desktops</td></tr>
+                        <tr><td>Extra extra large</td><td><code>xxl</code></td><td>≥1400px</td><td>Extra large screens</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Responsive Column Example</h3>
+            <p>This layout shows different column counts at different breakpoints:</p>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+        Full width on mobile, 1/2 on tablets, 1/3 on desktops
+    &lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+        Full width on mobile, 1/2 on tablets, 1/3 on desktops
+    &lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+        Full width on mobile, 1/2 on tablets, 1/3 on desktops
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Column Ordering &amp; Offsetting</h2>
+
+            <h3>Offset Columns</h3>
+            <p>Push columns to the right using <code>.offset-{breakpoint}-{number}</code>.</p>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col-4 offset-4"&gt;.col-4 .offset-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The column is centered (4 + 4 = 8, leaving 4 empty on each side). --&gt;</code></pre>
+
+            <h3>Column Ordering</h3>
+            <p>Change the visual order using <code>.order-{breakpoint}-{number}</code>.</p>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col order-2"&gt;Second visually&lt;/div&gt;
+    &lt;div class="col order-1"&gt;First visually&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- The second column appears before the first. --&gt;</code></pre>
+
+            <h2>Nesting Columns</h2>
+            <p>You can nest rows and columns inside existing columns to create more complex layouts.</p>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col-8"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-6"&gt;Nested 1&lt;/div&gt;
+            &lt;div class="col-6"&gt;Nested 2&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Auto-Layout Columns</h2>
+            <p>Use <code>.col-auto</code> to create columns that only take as much space as their content needs.</p>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col-auto"&gt;Auto width (content size)&lt;/div&gt;
+    &lt;div class="col"&gt;Fills remaining space&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Gutters</h2>
+            <p>Gutters are the padding between columns. Control them with <code>g-{number}</code> classes.</p>
+            <ul>
+                <li><code>.g-0</code> — No gutters.</li>
+                <li><code>.g-3</code> — Default gutters (1rem).</li>
+                <li><code>.g-5</code> — Larger gutters (3rem).</li>
+                <li><code>.gx-{number}</code> — Horizontal gutters only.</li>
+                <li><code>.gy-{number}</code> — Vertical gutters only.</li>
+            </ul>
+            <pre class="code-block"><code>&lt;div class="row g-4"&gt;
+    &lt;div class="col"&gt;Large gutters&lt;/div&gt;
+    &lt;div class="col"&gt;Large gutters&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Common Layout Patterns</h2>
+
+            <h3>3-Column Layout</h3>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col"&gt;Left&lt;/div&gt;
+    &lt;div class="col"&gt;Center&lt;/div&gt;
+    &lt;div class="col"&gt;Right&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Sidebar + Main Content</h3>
+            <pre class="code-block"><code>&lt;div class="row"&gt;
+    &lt;div class="col-3"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="col-9"&gt;Main Content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Responsive Card Grid</h3>
+            <pre class="code-block"><code>&lt;div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"&gt;
+    &lt;div class="col"&gt;&lt;div class="card"&gt;...&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col"&gt;&lt;div class="card"&gt;...&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col"&gt;&lt;div class="card"&gt;...&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col"&gt;&lt;div class="card"&gt;...&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col"&gt;&lt;div class="card"&gt;...&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col"&gt;&lt;div class="card"&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 1 column on mobile, 2 on tablets, 3 on desktops --&gt;</code></pre>
+
+            <h2>Row Columns Classes</h2>
+            <p>The <code>.row-cols-*</code> classes let you control how many columns appear per row without explicitly setting column classes.</p>
+            <pre class="code-block"><code>&lt;!-- 2 columns on small screens, 4 on large --&gt;
+&lt;div class="row row-cols-2 row-cols-lg-4"&gt;
+    &lt;div class="col"&gt;Item 1&lt;/div&gt;
+    &lt;div class="col"&gt;Item 2&lt;/div&gt;
+    &lt;div class="col"&gt;Item 3&lt;/div&gt;
+    &lt;div class="col"&gt;Item 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Always think <strong>"mobile-first"</strong> — start with the smallest screen and add larger breakpoints as needed. This is the core philosophy of Bootstrap.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-introduction-setup.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>What is Bootstrap? — Introduction &amp; Setup</a>
+            <a href="bootstrap-typography-colors-spacing.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

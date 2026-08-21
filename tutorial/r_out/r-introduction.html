@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to R | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="History, Use Cases, and R vs. Python" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 1 of 20: Introduction to R</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html" class="active"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-info-circle"></i> Introduction</span>
+        <h1>Introduction to R</h1>
+
+        <div class="card">
+
+            <p><strong>R</strong> is a free, open-source programming language and software environment purpose-built for statistical computing, data analysis, and graphics. Created by statisticians for statisticians, R has grown into one of the most widely used languages in data science, academia, finance, bioinformatics, and research.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> R was born out of academic statistics and remains the gold standard for rigorous statistical analysis, publication-quality graphics, and reproducible research.
+            </div>
+
+            <h2>1. A Brief History of R</h2>
+            <p>R was created in <strong>1993</strong> by <strong>Ross Ihaka</strong> and <strong>Robert Gentleman</strong> at the University of Auckland, New Zealand. It was designed as an open-source implementation of the S language (developed at Bell Labs in the 1970s). Today, R is maintained by the <strong>R Core Team</strong> and distributed through the <strong>Comprehensive R Archive Network (CRAN)</strong>, which hosts over 20,000 packages.</p>
+
+            <h2>2. Why Learn R?</h2>
+            <ul>
+                <li><strong>Statistical Powerhouse</strong> — Built-in support for hypothesis testing, regression, distributions, and more.</li>
+                <li><strong>Data Visualization</strong> — Packages like <code>ggplot2</code> produce publication-ready graphics.</li>
+                <li><strong>Huge Ecosystem</strong> — CRAN and Bioconductor provide packages for nearly every domain.</li>
+                <li><strong>Free and Open Source</strong> — No licensing costs, runs on Windows, macOS, and Linux.</li>
+                <li><strong>Strong Community</strong> — Active support through RStudio Community, Stack Overflow, and R-bloggers.</li>
+            </ul>
+
+            <h2>3. Real-World Use Cases</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Industry</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Finance</td><td>Risk modeling, portfolio analysis, algorithmic trading</td></tr>
+                        <tr><td>Healthcare &amp; Bioinformatics</td><td>Clinical trial analysis, genomics (Bioconductor)</td></tr>
+                        <tr><td>Academia &amp; Research</td><td>Statistical modeling, reproducible research papers</td></tr>
+                        <tr><td>Marketing</td><td>A/B testing, customer segmentation, churn analysis</td></tr>
+                        <tr><td>Government</td><td>Census data analysis, policy research</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. R vs. Python — Which One Should You Learn?</h2>
+            <p>This is one of the most common questions among aspiring data professionals. Both are excellent, free, and open-source languages — but they shine in different areas.</p>
+
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>R</th><th>Python</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Primary Strength</td><td>Statistical analysis &amp; visualization</td><td>General-purpose programming &amp; ML deployment</td></tr>
+                        <tr><td>Learning Curve</td><td>Steeper for programmers, easier for statisticians</td><td>Easier for beginners with programming background</td></tr>
+                        <tr><td>Visualization</td><td>ggplot2 — industry benchmark for statistical graphics</td><td>matplotlib, seaborn, plotly — strong but more code-heavy</td></tr>
+                        <tr><td>Data Analysis</td><td>Native, concise syntax (dplyr, tidyverse)</td><td>pandas — powerful, slightly more verbose</td></tr>
+                        <tr><td>Machine Learning / Deployment</td><td>Good (caret, tidymodels)</td><td>Excellent (scikit-learn, TensorFlow, PyTorch)</td></tr>
+                        <tr><td>Community Focus</td><td>Academia, statisticians, biostatistics</td><td>Software engineering, ML engineers, web/backend</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> There is no universal winner — many professional data teams use both. R for exploratory statistical analysis and reporting, Python for production pipelines and machine learning at scale.
+            </div>
+
+            <h2>5. What You'll Learn in This Course</h2>
+            <p>This course takes you from installing R and RStudio all the way to building interactive Shiny dashboards and deploying them to a live server. Along the way you'll master data structures, the <code>tidyverse</code> (dplyr, tidyr, ggplot2), statistical testing, regression models, and core machine learning workflows in R.</p>
+
+            <h2>6. Key Takeaways</h2>
+            <ul>
+                <li><strong>✅ R is free, open-source, and statistics-first</strong> — built for data analysis from the ground up.</li>
+                <li><strong>✅ Massive package ecosystem</strong> via CRAN and Bioconductor.</li>
+                <li><strong>✅ Best-in-class visualization</strong> with ggplot2.</li>
+                <li><strong>✅ Complements Python</strong> rather than competing head-to-head in every use case.</li>
+            </ul>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Don't get stuck choosing 'the one true language.' Learn R first if your goal is statistics, research, or data analysis — you can always add Python later.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <span class="disabled"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>You're at the beginning!</span>
+            <a href="r-environment-setup.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Environment Setup</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

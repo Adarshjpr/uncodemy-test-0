@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to MongoDB | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Introduction to MongoDB — NoSQL vs SQL, Document Model, and Use Cases" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 1 of 20: Introduction to MongoDB</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html" class="active"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-database"></i> Introduction to MongoDB</span>
+        <h1>Introduction to MongoDB</h1>
+
+        <div class="card">
+
+            <p><strong>MongoDB</strong> is the world's most popular <strong>NoSQL database</strong>, used by millions of developers to build modern, scalable applications. Unlike traditional relational databases, MongoDB stores data as flexible, JSON-like documents instead of rigid rows and columns — making it a natural fit for how developers actually think about data.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Why It Matters:</strong> MongoDB powers applications at companies like Adobe, eBay, and Forbes because it scales horizontally, handles unstructured data gracefully, and lets teams iterate quickly without rigid schema migrations.
+            </div>
+
+            <h2>1. NoSQL vs SQL — What's the Difference?</h2>
+            <p>Relational (SQL) databases like MySQL and PostgreSQL organize data into tables with fixed schemas and enforce relationships through foreign keys. NoSQL databases like MongoDB take a different approach — storing related data together as self-contained documents.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Aspect</th><th>SQL (Relational)</th><th>MongoDB (NoSQL)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Data Structure</strong></td><td>Tables with rows and columns</td><td>Collections of BSON/JSON documents</td></tr>
+                        <tr><td><strong>Schema</strong></td><td>Fixed, defined upfront</td><td>Flexible, dynamic (schema-on-read)</td></tr>
+                        <tr><td><strong>Relationships</strong></td><td>Joins across tables</td><td>Embedding or referencing documents</td></tr>
+                        <tr><td><strong>Scaling</strong></td><td>Primarily vertical</td><td>Horizontal via sharding</td></tr>
+                        <tr><td><strong>Transactions</strong></td><td>Strong ACID by default</td><td>ACID supported, including multi-document</td></tr>
+                        <tr><td><strong>Best For</strong></td><td>Structured, highly relational data</td><td>Rapidly evolving, hierarchical, high-volume data</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. The Document Model — A Quick Preview</h2>
+            <p>MongoDB stores data as <strong>documents</strong> — flexible, JSON-like structures called BSON (Binary JSON). Each document lives inside a <strong>collection</strong>, and collections live inside a <strong>database</strong>.</p>
+
+            <pre class="code-block"><code>{
+  "_id": ObjectId("64f1a2b3c4d5e6f7a8b9c0d1"),
+  "name": "Ananya Sharma",
+  "email": "ananya@example.com",
+  "age": 27,
+  "address": {
+    "city": "Bengaluru",
+    "state": "Karnataka"
+  },
+  "skills": ["MongoDB", "Node.js", "React"]
+}</code></pre>
+
+            <p>Notice how the document mirrors real-world objects closely — nested fields (<code>address</code>) and arrays (<code>skills</code>) live directly inside the parent document, eliminating the need for extra joins in many cases.</p>
+
+            <h2>3. Real-World Use Cases</h2>
+            <ul>
+                <li><strong>Content Management Systems</strong> — Flexible schemas suit varied content types (articles, media, comments).</li>
+                <li><strong>E-Commerce Catalogs</strong> — Products with varying attributes (size, color, specs) fit naturally as documents.</li>
+                <li><strong>Real-Time Analytics</strong> — High write throughput and aggregation pipeline support fast analytics.</li>
+                <li><strong>IoT Applications</strong> — Handles high-velocity sensor data with flexible, evolving schemas.</li>
+                <li><strong>Mobile and Social Apps</strong> — User profiles, feeds, and activity logs map well to documents.</li>
+            </ul>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> MongoDB isn't a replacement for SQL databases in every scenario. Choose MongoDB when your data is naturally hierarchical, evolves frequently, or needs to scale horizontally across many servers.
+            </div>
+
+            <h2>4. Key MongoDB Terminology</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>MongoDB Term</th><th>SQL Equivalent</th></tr></thead>
+                    <tbody>
+                        <tr><td>Database</td><td>Database</td></tr>
+                        <tr><td>Collection</td><td>Table</td></tr>
+                        <tr><td>Document</td><td>Row</td></tr>
+                        <tr><td>Field</td><td>Column</td></tr>
+                        <tr><td>Embedded Document</td><td>Joined Table (denormalized)</td></tr>
+                        <tr><td>_id</td><td>Primary Key</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. Getting Started Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand documents and collections</strong> — the core building blocks.</li>
+                <li><strong>✅ Know when to choose MongoDB over SQL</strong> — flexible, evolving, horizontally scaled data.</li>
+                <li><strong>✅ Familiarize yourself with BSON data types</strong> — covered in an upcoming lesson.</li>
+                <li><strong>✅ Set up a free MongoDB Atlas account</strong> — to practice hands-on in the cloud.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> MongoDB trades rigid schemas for flexibility and horizontal scalability — making it a powerful choice for modern applications that evolve fast and handle large volumes of varied data.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <span class="disabled"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>You're at the beginning!</span>
+            <a href="mongodb-installation-setup.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Installation and Setup</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

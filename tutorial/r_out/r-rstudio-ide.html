@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RStudio IDE Mastery | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Projects, Scripts, Console, and Workspace Management" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 3 of 20: RStudio IDE Mastery</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html" class="active"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-desktop"></i> IDE</span>
+        <h1>RStudio IDE Mastery</h1>
+
+        <div class="card">
+
+            <p><strong>RStudio</strong> is far more than a text editor — it's a complete Integrated Development Environment (IDE) built specifically for R. Mastering its four main panes and project system will make you dramatically more productive.</p>
+
+            <h2>1. The Four Main Panes</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Pane</th><th>Default Location</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Source Editor</td><td>Top-left</td><td>Write and edit R scripts (.R files), R Markdown, and more</td></tr>
+                        <tr><td>Console</td><td>Bottom-left</td><td>Execute R code interactively, line by line</td></tr>
+                        <tr><td>Environment / History</td><td>Top-right</td><td>View active variables, data, and command history</td></tr>
+                        <tr><td>Files / Plots / Packages / Help</td><td>Bottom-right</td><td>Browse files, view plots, manage packages, read docs</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Scripts vs. Console</h2>
+            <p>The <strong>Console</strong> runs code immediately but doesn't save it. The <strong>Source Editor</strong> lets you write, save, and re-run entire scripts (<code>.R</code> files). Best practice: always write your code in a script, then run it — never work only in the Console for real projects.</p>
+                        <pre class="code-block"><code># Write this in a script (File &gt; New File &gt; R Script)
+x &lt;- 10
+y &lt;- 20
+cat(&quot;Sum is:&quot;, x + y, &quot;\n&quot;)
+
+# Run current line: Ctrl+Enter (Cmd+Enter on macOS)
+# Run entire script: Ctrl+Shift+Enter</code></pre>
+
+            <h2>3. RStudio Projects</h2>
+            <p>An <strong>RStudio Project</strong> (<code>.Rproj</code>) bundles your scripts, data, and settings into a self-contained folder with its own working directory. This makes your work portable and reproducible.</p>
+            <ol>
+                <li>Go to <strong>File → New Project</strong>.</li>
+                <li>Choose <strong>New Directory → New Project</strong>.</li>
+                <li>Name your project (e.g., <code>my-r-analysis</code>) and choose a location.</li>
+                <li>Click <strong>Create Project</strong> — RStudio reopens with this folder as the working directory.</li>
+            </ol>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Always use Projects instead of setwd(). Projects make your file paths relative and portable across machines — critical for reproducibility.
+            </div>
+
+            <h2>4. Workspace Management</h2>
+            <p>The <strong>Environment</strong> pane shows every variable, function, and dataset currently loaded in memory. Useful commands:</p>
+                        <pre class="code-block"><code>ls()          # list all objects in the environment
+rm(x)         # remove a specific object
+rm(list = ls())  # clear the entire environment
+getwd()       # check current working directory
+setwd(&quot;path&quot;) # change working directory (avoid in Projects)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Uncheck 'Restore .RData into workspace at startup' in Tools > Global Options > General. Starting with a clean slate every session prevents hidden state bugs.
+            </div>
+
+            <h2>5. Useful Keyboard Shortcuts</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Action</th><th>Windows/Linux</th><th>macOS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Run current line/selection</td><td>Ctrl + Enter</td><td>Cmd + Enter</td></tr>
+                        <tr><td>Assignment operator (&lt;-)</td><td>Alt + -</td><td>Option + -</td></tr>
+                        <tr><td>Pipe operator (|&gt;)</td><td>Ctrl + Shift + M</td><td>Cmd + Shift + M</td></tr>
+                        <tr><td>Comment/uncomment line</td><td>Ctrl + Shift + C</td><td>Cmd + Shift + C</td></tr>
+                        <tr><td>Restart R session</td><td>Ctrl + Shift + F10</td><td>Cmd + Shift + F10</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. Customizing RStudio</h2>
+            <p>Go to <strong>Tools → Global Options</strong> to customize the theme (including dark mode under Appearance), pane layout, font size, and default working directory — small tweaks that make long coding sessions far more comfortable.</p>
+
+            <h2>7. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand all four panes</strong> — Source, Console, Environment, Files/Plots/Help.</li>
+                <li><strong>✅ Always work inside an RStudio Project</strong> — never rely on setwd().</li>
+                <li><strong>✅ Disable workspace auto-restore</strong> — for reproducible sessions.</li>
+                <li><strong>✅ Learn key shortcuts</strong> — especially Ctrl/Cmd+Enter and the assignment shortcut.</li>
+            </ul>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Mastering the IDE isn't optional polish — it directly affects how fast you can iterate, debug, and stay organized as your R projects grow.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-environment-setup.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Environment Setup</a>
+            <a href="r-variables-datatypes.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Variables, Data Types, and Basic Operations</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

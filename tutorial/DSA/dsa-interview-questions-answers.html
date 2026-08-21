@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Interview Questions and Answers (Freshers to Experienced) | DSA Tutorial | Uncodemy</title>
+    <meta name="description" content="Prepare for your DSA interview with top 50+ questions and answers covering arrays, linked lists, trees, graphs, sorting, dynamic programming, and more. For freshers to experienced professionals." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Data Structures & Algorithms (DSA) Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 79 of 81: DSA Interview Questions and Answers (Freshers to Experienced)</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="radix-sort-for-strings.html"><span class="num">01</span>Radix Sort for Strings</a></li>
+            <li><a href="most-asked-dsa-interview-practice-questions.html"><span class="num">02</span>Most Asked DSA Interview Practice Questions</a></li>
+            <li><a href="maximum-subarray-sum-problem.html"><span class="num">03</span>Maximum Subarray Sum Problem</a></li>
+            <li><a href="merge-sorted-arrays.html"><span class="num">04</span>Merge Sorted Arrays</a></li>
+            <li><a href="linear-search-with-duplicates.html"><span class="num">05</span>Linear Search with Duplicates</a></li>
+            <li><a href="quick-sort-with-pivot-selection.html"><span class="num">06</span>Quick Sort with Pivot Selection</a></li>
+            <li><a href="insertion-sort-for-nearly-sorted-array.html"><span class="num">07</span>Insertion Sort for Nearly Sorted Array</a></li>
+            <li><a href="two-sum-problem.html"><span class="num">08</span>Two Sum Problem</a></li>
+            <li><a href="selection-sort-algorithm.html"><span class="num">09</span>Selection Sort Algorithm</a></li>
+            <li><a href="bubble-sort-algorithm.html"><span class="num">10</span>Bubble Sort Algorithm</a></li>
+            <li><a href="0-1-knapsack-problem.html"><span class="num">11</span>0/1 Knapsack Problem</a></li>
+            <li><a href="bellman-ford-algorithm-working-example-applications.html"><span class="num">12</span>Bellman-Ford Algorithm — Working, Example and Applications</a></li>
+            <li><a href="introduction-to-non-linear-data-structures.html"><span class="num">13</span>Introduction to Non-Linear Data Structures</a></li>
+            <li><a href="difference-between-stack-and-queue-data-structure.html"><span class="num">14</span>Difference Between Stack and Queue Data Structure</a></li>
+            <li><a href="breadth-first-search-vs-depth-first-search.html"><span class="num">15</span>Breadth First Search vs Depth First Search</a></li>
+            <li><a href="abstract-data-type-in-data-structure-with-example.html"><span class="num">16</span>Abstract Data Type in Data Structure with Example</a></li>
+            <li><a href="binary-tree-traversal-in-data-structure.html"><span class="num">17</span>Binary Tree Traversal in Data Structure</a></li>
+            <li><a href="binary-tree-array-implementation.html"><span class="num">18</span>Binary Tree Array Implementation</a></li>
+            <li><a href="binary-tree-in-data-structure-types-and-implementation.html"><span class="num">19</span>Binary Tree in Data Structure — Types and Implementation</a></li>
+            <li><a href="dsa-examples-a-to-z-guide.html"><span class="num">20</span>DSA Examples: A-Z Guide</a></li>
+            <li><a href="deque-in-data-structure.html"><span class="num">21</span>Deque in Data Structure</a></li>
+            <li><a href="priority-queue-in-data-structure-implementation-types.html"><span class="num">22</span>Priority Queue in Data Structure — Implementation, Types & More</a></li>
+            <li><a href="implementing-circular-queue-in-data-structure.html"><span class="num">23</span>Implementing Circular Queue in Data Structure</a></li>
+            <li><a href="queue-in-data-structure-types-and-algorithms.html"><span class="num">24</span>Queue in Data Structure — Types & Algorithms (with Examples)</a></li>
+            <li><a href="understanding-trie-data-structure.html"><span class="num">25</span>Understanding Trie Data Structure</a></li>
+            <li><a href="spanning-tree-and-minimum-spanning-tree-kruskal-prim.html"><span class="num">26</span>Spanning Tree and Minimum Spanning Tree — Kruskal's and Prim's Algorithm</a></li>
+            <li><a href="avl-tree-in-data-structure-with-example.html"><span class="num">27</span>AVL Tree in Data Structure with Example</a></li>
+            <li><a href="trees-in-data-structure-structure-operations-applications.html"><span class="num">28</span>Trees in Data Structure — Structure, Operations & Applications</a></li>
+            <li><a href="segment-tree-in-data-structure-operations-advantages-disadvantages.html"><span class="num">29</span>Segment Tree in Data Structure — Operations, Advantages and Disadvantages</a></li>
+            <li><a href="k-dimensional-tree-in-data-structure.html"><span class="num">30</span>K-Dimensional Tree in Data Structure</a></li>
+            <li><a href="singly-linked-list.html"><span class="num">31</span>Singly Linked List</a></li>
+            <li><a href="reverse-linked-list.html"><span class="num">32</span>Reverse Linked List</a></li>
+            <li><a href="linked-list-in-data-structure-types-and-applications.html"><span class="num">33</span>Linked List in Data Structure — Types and Applications</a></li>
+            <li><a href="doubly-linked-list-in-data-structure-with-example.html"><span class="num">34</span>Doubly Linked List in Data Structure with Example</a></li>
+            <li><a href="circular-linked-list-in-data-structure.html"><span class="num">35</span>Circular Linked List in Data Structure</a></li>
+            <li><a href="dijkstras-algorithm-in-data-structure.html"><span class="num">36</span>Dijkstra's Algorithm in Data Structure</a></li>
+            <li><a href="binary-search-in-data-structure.html"><span class="num">37</span>Binary Search in Data Structure</a></li>
+            <li><a href="data-structure-sorting-types-and-examples-explained.html"><span class="num">38</span>Data Structure Sorting: Types and Examples Explained in Detail</a></li>
+            <li><a href="bubble-sort-in-data-structure.html"><span class="num">39</span>Bubble Sort in Data Structure</a></li>
+            <li><a href="selection-sort-in-data-structure.html"><span class="num">40</span>Selection Sort in Data Structure</a></li>
+            <li><a href="insertion-sort-in-data-structure-algorithm-working-advantages.html"><span class="num">41</span>Insertion Sort in Data Structure — Algorithm, Working and Advantages</a></li>
+            <li><a href="merge-sort-in-data-structure-implementation-cpp-java-python.html"><span class="num">42</span>Merge Sort in Data Structure and Algorithm — with Implementation in C++, Java and Python</a></li>
+            <li><a href="counting-sort-in-data-structure.html"><span class="num">43</span>Counting Sort in Data Structure</a></li>
+            <li><a href="radix-sort-in-data-structure-algorithm-working-complexity.html"><span class="num">44</span>Radix Sort in Data Structure — Algorithm, Working and Complexity</a></li>
+            <li><a href="bucket-sort-in-data-structure.html"><span class="num">45</span>Bucket Sort in Data Structure</a></li>
+            <li><a href="shell-sort-in-data-structure-algorithm-visualization-complexity.html"><span class="num">46</span>Shell Sort in Data Structure — Algorithm, Visualization and Complexity</a></li>
+            <li><a href="heap-sort-algorithm-in-data-structure-working-implementation-applications.html"><span class="num">47</span>Heap Sort Algorithm in Data Structure — Working, Implementation and Applications</a></li>
+            <li><a href="tower-of-hanoi-in-data-structure.html"><span class="num">48</span>Tower of Hanoi in Data Structure</a></li>
+            <li><a href="counting-sort-limited-range.html"><span class="num">49</span>Counting Sort for Limited Range</a></li>
+            <li><a href="binary-search-rotated-sorted-array.html"><span class="num">50</span>Binary Search in Rotated Sorted Array</a></li>
+            <li><a href="inorder-traversal-binary-search-tree.html"><span class="num">51</span>In-order Traversal of Binary Search Tree</a></li>
+            <li><a href="binary-search-tree-data-structure.html"><span class="num">52</span>Binary Search Tree in Data Structures</a></li>
+            <li><a href="merge-sort-linked-list.html"><span class="num">53</span>Merge Sort for Linked List</a></li>
+            <li><a href="quick-sort-algorithm-types-examples.html"><span class="num">54</span>Quick Sort Algorithm in Data Structures — Its Types ( With Examples )</a></li>
+            <li><a href="greedy-algorithm-data-structures.html"><span class="num">55</span>Greedy Algorithm in Data Structures</a></li>
+            <li><a href="array-vs-linked-list-differences.html"><span class="num">56</span>Differences Between Array and Linked List</a></li>
+            <li><a href="multi-dimensional-array.html"><span class="num">57</span>Multi dimensional array in Data Structures</a></li>
+            <li><a href="one-dimensional-array-example.html"><span class="num">58</span>One dimensional Array in Data Structures with Example</a></li>
+            <li><a href="suffix-array-suffix-tree-applications.html"><span class="num">59</span>Suffix Array and Suffix Tree in Data Structures &amp; Applications</a></li>
+            <li><a href="two-dimensional-array.html"><span class="num">60</span>Two dimensional Array In Data Structure</a></li>
+            <li><a href="types-of-arrays-2d-3d-jagged.html"><span class="num">61</span>Types of Arrays in Data Structures: 2D, 3D, Jagged Arrays</a></li>
+            <li><a href="arrays-data-structures-types-representation.html"><span class="num">62</span>Arrays in Data Structures — Types, Representation &amp; Algorithm (With Examples)</a></li>
+            <li><a href="b-tree-data-structure.html"><span class="num">63</span>B Tree: An Efficient Data Structure</a></li>
+            <li><a href="what-are-data-structures-guide.html"><span class="num">64</span>What are Data Structures — Types of Data Structures (Complete Guide)</a></li>
+            <li><a href="recursion-data-structures-recursive-function.html"><span class="num">65</span>Recursion in Data Structures: Recursive Function</a></li>
+            <li><a href="complexity-analysis-of-algorithms.html"><span class="num">66</span>Complexity Analysis of Data Structures and Algorithms</a></li>
+            <li><a href="searching-data-structures-types-methods.html"><span class="num">67</span>Searching in Data Structures — Its Types, Methods &amp; Techniques</a></li>
+            <li><a href="brute-force-algorithm-types-advantages.html"><span class="num">68</span>Brute Force Algorithm in Data Structures: Types, Advantages, Disadvantages</a></li>
+            <li><a href="big-o-notation-time-space-complexity.html"><span class="num">69</span>Big O Notation in Data Structures: Time and Space Complexity</a></li>
+            <li><a href="stack-data-structure-implementations.html"><span class="num">70</span>Stack in Data Structures: Implementations in Java, Python, &amp; C++</a></li>
+            <li><a href="linear-search-algorithm-working-complexity.html"><span class="num">71</span>What is Linear Search in Data Structures — Its Algorithm, Working, &amp; Complexity</a></li>
+            <li><a href="divide-and-conquer-algorithm-working-advantages.html"><span class="num">72</span>Divide and Conquer Algorithm in Data Structures — Its Working, Advantages &amp; Disadvantages</a></li>
+            <li><a href="heap-data-structure.html"><span class="num">73</span>Heap in Data Structures</a></li>
+            <li><a href="hashing-types-functions-examples.html"><span class="num">74</span>Hashing in Data Structures: Types and Functions [With Examples]</a></li>
+            <li><a href="hash-table-data-structure.html"><span class="num">75</span>Hash Table in Data Structures</a></li>
+            <li><a href="graph-data-structure-types.html"><span class="num">76</span>What is a Graph in Data Structures and its Types?</a></li>
+            <li><a href="bfs-dfs-traversal-data-structure.html"><span class="num">77</span>Breadth First Traversal and Depth First Traversal in Data Structure</a></li>
+            <li><a href="dsa-mcq-questions-answers.html"><span class="num">78</span>Top 45+ DSA MCQ Questions with Answers {Updated}</a></li>
+            <li><a href="dsa-interview-questions-answers.html" class="active"><span class="num">79</span>DSA Interview Questions and Answers (Freshers to Experienced)</a></li>
+            <li><a href="dsa-roadmap-step-by-step-guide.html"><span class="num">80</span>DSA Roadmap for Beginners: Step-by-Step Guide to Master in DSA</a></li>
+            <li><a href="data-structure-cheat-sheet-complete.html"><span class="num">81</span>Data Structure Cheat Sheet: Complete Guide</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-comments"></i> Interview Preparation</span>
+        <h1>DSA Interview Questions and Answers (Freshers to Experienced)</h1>
+
+        <div class="card">
+
+            <p>This comprehensive guide covers the most frequently asked Data Structures and Algorithms interview questions. Whether you're a fresher preparing for your first technical interview or an experienced professional looking to brush up on DSA concepts, these questions and answers will help you succeed.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Interview Tip:</strong> Practice writing code on a whiteboard or paper. Focus on explaining your thought process clearly. Understanding the <strong>why</strong> behind each solution is as important as the code itself.
+            </div>
+
+            <h2>Section 1: Basic Concepts</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q1. What is a data structure? Why are data structures important?</strong></p>
+                <p><strong>Answer:</strong> A data structure is a way to organize, store, and manage data so that it can be accessed and modified efficiently. Data structures are important because they help in:</p>
+                <ul>
+                    <li><strong>Efficient algorithms:</strong> The right data structure can reduce time complexity from O(n²) to O(log n).</li>
+                    <li><strong>Better organization:</strong> They represent real-world relationships (hierarchies, networks, sequences).</li>
+                    <li><strong>Reusability:</strong> Standard data structures are well-tested and reusable across projects.</li>
+                    <li><strong>Abstraction:</strong> They hide implementation complexity, allowing focus on problem-solving.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q2. What is the difference between a data structure and an abstract data type (ADT)?</strong></p>
+                <p><strong>Answer:</strong> A data structure is a concrete implementation (e.g., array, linked list), while an ADT is a theoretical model that defines operations without specifying implementation (e.g., Stack, Queue). The ADT defines <strong>what</strong> operations can be performed, and the data structure defines <strong>how</strong> they are implemented.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q3. What is the difference between linear and non-linear data structures?</strong></p>
+                <p><strong>Answer:</strong> Linear data structures store data in a sequential order where each element has a predecessor and successor (except first and last). Examples: Arrays, Linked Lists, Stacks, Queues. Non-linear data structures store data hierarchically or in a network where elements can have multiple connections. Examples: Trees, Graphs.</p>
+            </div>
+
+            <h2>Section 2: Arrays & Strings</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q4. What is the time complexity of searching in an unsorted array vs a sorted array?</strong></p>
+                <p><strong>Answer:</strong> Searching in an unsorted array requires linear search with O(n) time complexity. In a sorted array, we can use binary search with O(log n) time complexity, making it significantly faster for large datasets.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q5. What is the difference between an array and a linked list?</strong></p>
+                <p><strong>Answer:</strong> Arrays store elements in contiguous memory locations with O(1) access time but O(n) insertion/deletion. Linked lists store elements in non-contiguous memory with O(n) access time but O(1) insertion/deletion at known positions. Arrays have fixed size (unless dynamic), while linked lists are dynamic.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q6. How do you find the missing number in an array of 1 to n?</strong></p>
+                <p><strong>Answer:</strong> Use the formula: <code>missing = n*(n+1)/2 - sum(arr)</code>. This works in O(n) time and O(1) space. For example, if the array contains [1,2,3,5] with n=5, the missing number is 4.</p>
+                <pre class="code-block"><code>def find_missing(arr, n):
+    total = n * (n + 1) // 2
+    return total - sum(arr)
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q7. How do you reverse a string in place?</strong></p>
+                <p><strong>Answer:</strong> Use two pointers (left and right) and swap characters until they meet.</p>
+                <pre class="code-block"><code>def reverse_string(s):
+    arr = list(s)
+    left, right = 0, len(arr) - 1
+    while left < right:
+        arr[left], arr[right] = arr[right], arr[left]
+        left += 1
+        right -= 1
+    return ''.join(arr)
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q8. What is the Two Sum problem and how do you solve it?</strong></p>
+                <p><strong>Answer:</strong> Given an array of integers, find two numbers that add up to a target. Use a hash map to store seen numbers and check if <code>target - num</code> exists.</p>
+                <pre class="code-block"><code>def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
+    return []
+</code></pre>
+            </div>
+
+            <h2>Section 3: Linked Lists</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q9. What is a linked list and what are its types?</strong></p>
+                <p><strong>Answer:</strong> A linked list is a linear data structure where elements (nodes) are connected via pointers. Types include:</p>
+                <ul>
+                    <li><strong>Singly Linked List:</strong> Each node has a pointer to the next node.</li>
+                    <li><strong>Doubly Linked List:</strong> Each node has pointers to both next and previous nodes.</li>
+                    <li><strong>Circular Linked List:</strong> The last node points back to the first node.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q10. How do you detect a cycle in a linked list?</strong></p>
+                <p><strong>Answer:</strong> Use Floyd's Cycle Detection Algorithm (Tortoise and Hare). Use two pointers moving at different speeds. If they meet, there is a cycle.</p>
+                <pre class="code-block"><code>def has_cycle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q11. How do you find the middle node of a linked list?</strong></p>
+                <p><strong>Answer:</strong> Use the slow-fast pointer technique. Move slow by 1 step and fast by 2 steps. When fast reaches the end, slow is at the middle.</p>
+                <pre class="code-block"><code>def find_middle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    return slow
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q12. How do you reverse a linked list?</strong></p>
+                <p><strong>Answer:</strong> Iterate through the list and reverse the pointers. This is O(n) time and O(1) space.</p>
+                <pre class="code-block"><code>def reverse_linked_list(head):
+    prev = None
+    curr = head
+    while curr:
+        next_temp = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_temp
+    return prev
+</code></pre>
+            </div>
+
+            <h2>Section 4: Stacks & Queues</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q13. What is the difference between a stack and a queue?</strong></p>
+                <p><strong>Answer:</strong> Stack follows LIFO (Last-In-First-Out) — the last element added is the first removed. Queue follows FIFO (First-In-First-Out) — the first element added is the first removed. Stacks are used for function calls, undo/redo. Queues are used for print spooling, task scheduling.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q14. How do you implement a stack using an array?</strong></p>
+                <p><strong>Answer:</strong> Use an array and a top pointer. Push increments top, pop decrements top. Check for overflow/underflow.</p>
+                <pre class="code-block"><code>class Stack:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.stack = [None] * capacity
+        self.top = -1
+
+    def push(self, item):
+        if self.top == self.capacity - 1:
+            raise Exception("Stack overflow")
+        self.top += 1
+        self.stack[self.top] = item
+
+    def pop(self):
+        if self.top == -1:
+            raise Exception("Stack underflow")
+        item = self.stack[self.top]
+        self.top -= 1
+        return item
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q15. What is a priority queue and how is it implemented?</strong></p>
+                <p><strong>Answer:</strong> A priority queue is a data structure where each element has a priority, and elements with higher priority are dequeued first. It is typically implemented using a <strong>heap</strong> (min-heap or max-heap) to achieve O(log n) insertion and O(log n) extraction.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q16. How do you implement a queue using two stacks?</strong></p>
+                <p><strong>Answer:</strong> Use one stack for enqueue and another for dequeue. When dequeue is called, pop all elements from the first stack to the second stack, then pop from the second stack.</p>
+                <pre class="code-block"><code>class QueueUsingStacks:
+    def __init__(self):
+        self.stack1 = []  # For enqueue
+        self.stack2 = []  # For dequeue
+
+    def enqueue(self, item):
+        self.stack1.append(item)
+
+    def dequeue(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        if not self.stack2:
+            raise Exception("Queue is empty")
+        return self.stack2.pop()
+</code></pre>
+            </div>
+
+            <h2>Section 5: Trees</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q17. What is a Binary Search Tree (BST) and what are its properties?</strong></p>
+                <p><strong>Answer:</strong> A BST is a binary tree where each node has at most two children, and it satisfies these properties:</p>
+                <ul>
+                    <li>All nodes in the left subtree have values less than the node's value.</li>
+                    <li>All nodes in the right subtree have values greater than the node's value.</li>
+                    <li>Both left and right subtrees are also BSTs.</li>
+                </ul>
+                <p>BSTs offer O(log n) average-case search, insert, and delete operations.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q18. What is the difference between a binary tree and a binary search tree?</strong></p>
+                <p><strong>Answer:</strong> In a binary tree, each node has at most two children with no ordering constraints. In a binary search tree, nodes are ordered so that left children are smaller and right children are larger than the parent. BSTs enable faster search operations.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q19. What are the three types of tree traversal?</strong></p>
+                <p><strong>Answer:</strong> The three types of DFS traversals are:</p>
+                <ul>
+                    <li><strong>Preorder:</strong> Root → Left → Right</li>
+                    <li><strong>Inorder:</strong> Left → Root → Right (produces sorted order in a BST)</li>
+                    <li><strong>Postorder:</strong> Left → Right → Root</li>
+                </ul>
+                <p>BFS (Level Order) visits nodes level by level.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q20. What is an AVL tree?</strong></p>
+                <p><strong>Answer:</strong> An AVL tree is a self-balancing BST where the height difference between left and right subtrees (balance factor) is at most 1 for every node. It ensures O(log n) operations even in the worst case by performing rotations (LL, RR, LR, RL) on insertions and deletions to maintain balance.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q21. How do you find the height of a binary tree?</strong></p>
+                <p><strong>Answer:</strong> The height of a binary tree is the longest path from the root to a leaf. Use recursion:</p>
+                <pre class="code-block"><code>def height(node):
+    if not node:
+        return -1
+    return 1 + max(height(node.left), height(node.right))
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q22. What is the maximum number of nodes in a binary tree of height h?</strong></p>
+                <p><strong>Answer:</strong> The maximum number of nodes is <code>2^(h+1) - 1</code> (when the tree is a perfect binary tree). For example, a tree of height 2 has at most 2³ - 1 = 7 nodes.</p>
+            </div>
+
+            <h2>Section 6: Graphs</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q23. What is a graph and what are its types?</strong></p>
+                <p><strong>Answer:</strong> A graph is a non-linear data structure consisting of vertices (nodes) and edges (connections). Types include:</p>
+                <ul>
+                    <li><strong>Directed vs Undirected:</strong> Edges have direction or not.</li>
+                    <li><strong>Weighted vs Unweighted:</strong> Edges have weights or not.</li>
+                    <li><strong>Cyclic vs Acyclic:</strong> Contains cycles or not (DAG).</li>
+                    <li><strong>Connected vs Disconnected:</strong> All vertices reachable or not.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q24. What is the difference between BFS and DFS?</strong></p>
+                <p><strong>Answer:</strong> BFS uses a queue and explores level by level; it finds the shortest path in unweighted graphs. DFS uses a stack (or recursion) and explores as deep as possible; it's used for topological sorting and cycle detection. Both have O(V+E) time complexity but BFS uses more memory in wide graphs.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q25. What is Dijkstra's algorithm and what is its time complexity?</strong></p>
+                <p><strong>Answer:</strong> Dijkstra's algorithm finds the shortest path from a source vertex to all other vertices in a graph with non-negative edge weights. Using a priority queue (min-heap), its time complexity is O((V+E) log V). It does not work with negative edge weights.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q26. What is the difference between Dijkstra's and Bellman-Ford algorithms?</strong></p>
+                <p><strong>Answer:</strong> Dijkstra's algorithm works only with non-negative edge weights and has O((V+E) log V) time complexity. Bellman-Ford works with negative edge weights (but detects negative cycles) and has O(V×E) time complexity. Bellman-Ford is slower but more flexible.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q27. What is a Minimum Spanning Tree (MST) and what algorithms find it?</strong></p>
+                <p><strong>Answer:</strong> An MST is a subset of edges that connects all vertices in a weighted undirected graph with the minimum total edge weight, without forming cycles. Algorithms: <strong>Kruskal's</strong> (edge-based, uses union-find) and <strong>Prim's</strong> (vertex-based, uses priority queue).</p>
+            </div>
+
+            <h2>Section 7: Sorting & Searching</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q28. What is the difference between stable and unstable sorting?</strong></p>
+                <p><strong>Answer:</strong> A stable sorting algorithm preserves the relative order of equal elements. Examples: Merge Sort, Insertion Sort, Bubble Sort. Unstable algorithms: Quick Sort, Heap Sort, Selection Sort.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q29. What is the time complexity of Merge Sort and Quick Sort?</strong></p>
+                <p><strong>Answer:</strong> Merge Sort: O(n log n) in all cases with O(n) space. Quick Sort: O(n log n) average case, O(n²) worst case with O(log n) space. Merge Sort is stable; Quick Sort is generally faster in practice.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q30. What is the best sorting algorithm for a nearly sorted array?</strong></p>
+                <p><strong>Answer:</strong> Insertion Sort is ideal because it has O(n) time complexity for nearly sorted data. Bubble Sort with an early exit flag also works well. For guaranteed performance, Adaptive Merge Sort or Timsort (used in Python) are good choices.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q31. What is the difference between Linear Search and Binary Search?</strong></p>
+                <p><strong>Answer:</strong> Linear Search checks each element sequentially and works on any array (O(n) time). Binary Search requires a sorted array and divides the search space in half (O(log n) time). Binary Search is much faster but requires the data to be sorted.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q32. How does Counting Sort work and when is it used?</strong></p>
+                <p><strong>Answer:</strong> Counting Sort counts occurrences of each value and uses this information to place elements directly. It has O(n+k) time complexity where k is the range of values. It is used when the range of values is small compared to the number of elements (e.g., sorting grades 0-100).</p>
+            </div>
+
+            <h2>Section 8: Hashing</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q33. What is hashing and what is a hash table?</strong></p>
+                <p><strong>Answer:</strong> Hashing is a technique to map keys to values using a hash function. A hash table is a data structure that uses hashing for O(1) average-time search, insert, and delete operations. It handles collisions using techniques like chaining or open addressing.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q34. What are the different collision resolution techniques?</strong></p>
+                <p><strong>Answer:</strong> The two main techniques are:</p>
+                <ul>
+                    <li><strong>Chaining:</strong> Each bucket contains a linked list of elements that hash to the same index.</li>
+                    <li><strong>Open Addressing:</strong> Elements are stored directly in the table. Variants include Linear Probing, Quadratic Probing, and Double Hashing.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q35. What is a good hash function and what properties should it have?</strong></p>
+                <p><strong>Answer:</strong> A good hash function should be:</p>
+                <ul>
+                    <li><strong>Deterministic:</strong> Always returns the same hash for the same key.</li>
+                    <li><strong>Uniform:</strong> Distributes keys evenly across the table.</li>
+                    <li><strong>Fast:</strong> Computes quickly.</li>
+                    <li><strong>Minimal Collisions:</strong> Avoids unnecessary collisions.</li>
+                </ul>
+            </div>
+
+            <h2>Section 9: Dynamic Programming & Greedy</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q36. What is Dynamic Programming and when is it used?</strong></p>
+                <p><strong>Answer:</strong> Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems and storing the results of subproblems to avoid recomputation. It is used when a problem has <strong>optimal substructure</strong> and <strong>overlapping subproblems</strong>. Examples: Fibonacci, Knapsack, LCS.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q37. What is the difference between Dynamic Programming and Greedy algorithms?</strong></p>
+                <p><strong>Answer:</strong> Greedy algorithms make locally optimal choices at each step and never reconsider decisions (e.g., Activity Selection). Dynamic Programming considers all possibilities and makes globally optimal decisions using subproblem solutions (e.g., Knapsack). DP is more powerful but slower; Greedy is faster but not always optimal.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q38. What is the 0/1 Knapsack problem and how is it solved?</strong></p>
+                <p><strong>Answer:</strong> The 0/1 Knapsack problem asks: given items with weights and values, what is the maximum value that can be carried with a weight capacity? Each item is either included (1) or excluded (0). It is solved using Dynamic Programming with a 2D DP table (O(n×W) time and space).</p>
+                <pre class="code-block"><code>def knapsack(weights, values, capacity):
+    n = len(weights)
+    dp = [[0] * (capacity + 1) for _ in range(n + 1)]
+    for i in range(1, n + 1):
+        for w in range(capacity + 1):
+            if weights[i-1] <= w:
+                dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])
+            else:
+                dp[i][w] = dp[i-1][w]
+    return dp[n][capacity]
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q39. What is the Longest Common Subsequence (LCS) problem?</strong></p>
+                <p><strong>Answer:</strong> LCS finds the longest subsequence common to two sequences. It is solved using Dynamic Programming with O(n×m) time and space. The recurrence is: if characters match, <code>dp[i][j] = 1 + dp[i-1][j-1]</code>; otherwise, <code>dp[i][j] = max(dp[i-1][j], dp[i][j-1])</code>.</p>
+            </div>
+
+            <h2>Section 10: Complexity Analysis</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q40. What is Big O notation and why is it important?</strong></p>
+                <p><strong>Answer:</strong> Big O notation describes the worst-case time or space complexity of an algorithm as a function of input size. It is important because it helps predict how an algorithm scales, compare different algorithms objectively, and identify performance bottlenecks.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q41. What is the difference between O(1), O(n), O(n²), and O(log n)?</strong></p>
+                <p><strong>Answer:</strong> O(1) is constant time (array access). O(n) is linear time (linear search). O(n²) is quadratic time (nested loops). O(log n) is logarithmic time (binary search). As input grows, O(1) is best, then O(log n), O(n), and O(n²) is worst among these.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q42. What is the time complexity of recursive algorithms like Tower of Hanoi?</strong></p>
+                <p><strong>Answer:</strong> The Tower of Hanoi has time complexity O(2ⁿ) with n disks, as each disk doubles the number of moves. The recurrence is <code>T(n) = 2T(n-1) + 1</code>.</p>
+            </div>
+
+            <h2>Section 11: Advanced & Miscellaneous</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q43. What is a Trie data structure?</strong></p>
+                <p><strong>Answer:</strong> A Trie (prefix tree) is a tree-like data structure used to store strings. Each node represents a character, and paths from root to leaf form words. It provides O(m) search, insert, and delete operations (where m is word length). Used in autocomplete, spell checkers, and IP routing.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q44. What is the difference between a B-Tree and a Binary Search Tree?</strong></p>
+                <p><strong>Answer:</strong> A B-Tree is a multi-way search tree where each node can have multiple children and keys, making it shorter and wider. It is optimized for disk I/O with O(log n) operations and is used in databases. A BST has at most two children and is used for in-memory storage.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q45. What is a heap and what are its uses?</strong></p>
+                <p><strong>Answer:</strong> A heap is a complete binary tree that satisfies the heap property. Max-heap: parent ≥ children. Min-heap: parent ≤ children. Uses include priority queues, heap sort, Dijkstra's algorithm, and finding k-th largest/smallest elements.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q46. What is a suffix array and when is it used?</strong></p>
+                <p><strong>Answer:</strong> A suffix array is a sorted array of all suffixes of a string. It is used for efficient pattern matching, finding the longest repeated substring, and in bioinformatics for genome analysis. With LCP array, it can solve many string problems efficiently.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q47. What is a graph traversal and what are its applications?</strong></p>
+                <p><strong>Answer:</strong> Graph traversal is visiting all vertices in a graph. Applications include:</p>
+                <ul>
+                    <li>Finding connected components.</li>
+                    <li>Shortest path finding.</li>
+                    <li>Topological sorting (DFS).</li>
+                    <li>Web crawling (BFS).</li>
+                    <li>Cycle detection.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q48. How do you check if a string is a palindrome?</strong></p>
+                <p><strong>Answer:</strong> Use two pointers (left and right) and compare characters from both ends.</p>
+                <pre class="code-block"><code>def is_palindrome(s):
+    s = s.lower()
+    left, right = 0, len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q49. What are the advantages of using dynamic arrays (like ArrayList in Java)?</strong></p>
+                <p><strong>Answer:</strong> Dynamic arrays combine the benefits of arrays (O(1) access) and linked lists (dynamic size). They automatically resize when full, providing amortized O(1) insertion at the end. Most modern languages provide dynamic arrays (Python list, Java ArrayList, C++ vector).</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q50. What is the difference between a stack and recursion?</strong></p>
+                <p><strong>Answer:</strong> Recursion uses the call stack implicitly to store function call information. A stack is a data structure used to implement LIFO behavior. Recursion can be converted to iterative solutions using an explicit stack. The call stack has a fixed limit, so deep recursion can cause stack overflow.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q51. How does memory allocation differ between stack and heap?</strong></p>
+                <p><strong>Answer:</strong> Stack memory is used for function calls and local variables, managed automatically with LIFO allocation and deallocation. Heap memory is used for dynamic allocation (new/malloc), managed manually, and has larger but slower access. Stack memory is limited and can overflow; heap memory is larger but requires careful management.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q52. What is the Sliding Window technique and when is it used?</strong></p>
+                <p><strong>Answer:</strong> The sliding window technique maintains a window of elements (subarray/substring) and slides it across the data to solve problems efficiently. It is used for problems like:</p>
+                <ul>
+                    <li>Maximum sum subarray of size k.</li>
+                    <li>Longest substring without repeating characters.</li>
+                    <li>Finding the smallest subarray with sum ≥ target.</li>
+                </ul>
+                <p>It reduces time complexity from O(n²) to O(n) in many cases.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q53. What are the different types of algorithmic paradigms?</strong></p>
+                <p><strong>Answer:</strong> Major algorithmic paradigms include:</p>
+                <ul>
+                    <li><strong>Brute Force:</strong> Exhaustive search.</li>
+                    <li><strong>Divide and Conquer:</strong> Break into subproblems (Merge Sort, Quick Sort).</li>
+                    <li><strong>Dynamic Programming:</strong> Solve overlapping subproblems (Knapsack, LCS).</li>
+                    <li><strong>Greedy:</strong> Make local optimal choices (Activity Selection, Huffman).</li>
+                    <li><strong>Backtracking:</strong> Explore all solutions, pruning invalid paths (N-Queens, Sudoku).</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q54. What is the difference between a thread-safe and a non-thread-safe data structure?</strong></p>
+                <p><strong>Answer:</strong> Thread-safe data structures can be used safely in multi-threaded environments without causing race conditions. They implement synchronization mechanisms (e.g., locks, atomic operations). Non-thread-safe structures require external synchronization. Examples: Java's ConcurrentHashMap (thread-safe) vs HashMap (not thread-safe).</p>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <h3 style="margin-top: 0;">Interview Preparation Tips</h3>
+                <ul>
+                    <li><strong>Practice coding on whiteboard/paper:</strong> Most interviews don't allow syntax highlighting.</li>
+                    <li><strong>Think out loud:</strong> Explain your thought process clearly to the interviewer.</li>
+                    <li><strong>Start with a brute force solution:</strong> Then optimize it.</li>
+                    <li><strong>Test your code:</strong> Walk through edge cases.</li>
+                    <li><strong>Ask clarifying questions:</strong> Make sure you understand the problem constraints.</li>
+                    <li><strong>Know your complexities:</strong> Be ready to discuss time and space complexity.</li>
+                    <li><strong>Practice regularly:</strong> Consistency is key — use platforms like LeetCode, HackerRank, or Codeforces.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="dsa-mcq-questions-answers.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Top 45+ DSA MCQ Questions with Answers {Updated}</a>
+            <a href="dsa-roadmap-step-by-step-guide.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>DSA Roadmap for Beginners: Step-by-Step Guide to Master in DSA</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Data Structures &amp; Algorithms?</h3>
+                <p>Learn DSA hands-on with mentor-led sessions, real interview practice, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>DSA Training Course</h4>
+            <p class="batch-sub">Kickstart your problem-solving journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

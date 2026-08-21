@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Set Trigger Firing Order in SQL Server | Uncodemy</title>
+<meta name="description" content="Learn how to control the execution order of multiple AFTER triggers on the same table using sp_settriggerorder in SQL Server.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb">
+  <a href="https://uncodemy.com/">Data Analytics Course</a><span class="sep">/</span><span>Page 16 of 69</span>
+</nav>
+
+<div class="page-container">
+
+  <aside class="left-sidebar">
+    <button class="mobile-sidebar-toggle">Browse Topics &#9660;</button>
+    <h4>Topics</h4>
+      <a class="topic-link" href="standard-libraries.html">Standard Libraries</a>
+      <a class="topic-link" href="packages-and-import-statements.html">Packages and Import Statements</a>
+      <a class="topic-link" href="working-with-modules-and-handling-exceptions.html">Working with Modules and Handling Exceptions</a>
+      <a class="topic-link" href="sql-cheat-sheet-full-guide-for-beginners-professionals.html">SQL Cheat Sheet: Full Guide for Beginners & Professionals</a>
+      <a class="topic-link" href="clear-list-of-recent-sql-server-connections-from-ssms.html">Clear List of Recent SQL Server Connections From SQL Server Management Studio</a>
+      <a class="topic-link" href="sql-vs-nosql-difference-between-sql-and-nosql-database.html">SQL Vs. NoSQL: Difference Between SQL and NoSQL Database</a>
+      <a class="topic-link" href="understanding-sql-server-case-expression-with-example.html">Understanding SQL Server Case Expression with Example</a>
+      <a class="topic-link" href="sql-server-database-mail-setup.html">SQL Server Database Mail Setup</a>
+      <a class="topic-link" href="enable-intellisense-in-sql-server.html">Enable Intellisense in SQL Server</a>
+      <a class="topic-link" href="drop-all-tables-stored-procedures-views-and-triggers.html">Drop all Tables, Stored Procedures, Views and Triggers</a>
+      <a class="topic-link" href="how-to-insert-values-into-identity-column-in-sql-server.html">How to Insert Values to Identity Column in SQL Server?</a>
+      <a class="topic-link" href="calculate-running-total-and-total-of-a-column-and-row.html">Calculate Running Total, Total of a Column and Row</a>
+      <a class="topic-link" href="top-sql-mcq-questions-to-boost-your-knowledge-and-skills.html">Top SQL MCQ Questions to Boost Your Knowledge and Skills</a>
+      <a class="topic-link" href="different-types-of-sql-server-functions.html">Different Types of SQL Server Functions</a>
+      <a class="topic-link" href="swap-the-values-of-two-columns-in-sql-server.html">Swap the Values of Two Columns in SQL Server</a>
+      <a class="topic-link active" href="sql-server-setting-triggers-firing-order.html">SQL Server Setting Triggers Firing Order</a>
+      <a class="topic-link" href="get-nth-highest-and-lowest-salary-of-an-employee.html">Get nth Highest and Lowest Salary of an Employee</a>
+      <a class="topic-link" href="logical-tables-in-sql-server-inserted-and-deleted.html">Logical Tables in SQL Server: Inserted and Deleted Logical Table</a>
+      <a class="topic-link" href="top-sql-joins-interview-questions-you-need-to-know.html">Top SQL Joins Interview Questions You Need to Know</a>
+      <a class="topic-link" href="tips-to-improve-sql-server-performance-and-database-design.html">Tips to Improve SQL Server Performance & Database Design</a>
+      <a class="topic-link" href="sql-viva-questions-a-must-read-for-tech-students.html">SQL Viva Questions: A Must-Read for Tech Students</a>
+      <a class="topic-link" href="sql-server-2026-new-features-and-enhancements.html">SQL Server 2026: New Features and Enhancements</a>
+      <a class="topic-link" href="what-are-the-5-basic-sql-commands-ddl-dml-dcl-tcl-dql.html">What are the 5 Basic SQL Commands? (DDL, DML, DCL, TCL, DQL)</a>
+      <a class="topic-link" href="self-join-in-sql-a-step-by-step-guide.html">Self Join in SQL: A Step-by-Step Guide</a>
+      <a class="topic-link" href="sql-server-naming-conventions-and-standards.html">SQL Server Naming Conventions and Standards</a>
+      <a class="topic-link" href="understanding-database-normalization-in-sql-with-example.html">Understanding Database Normalization in SQL with Example</a>
+      <a class="topic-link" href="different-types-of-sql-keys.html">Different Types of SQL Keys</a>
+      <a class="topic-link" href="group-by-and-having-clause-definition-and-use.html">Definition, Use of Group by and Having Clause</a>
+      <a class="topic-link" href="top-sql-developer-skills-you-need-to-master-in-2026.html">Top SQL Developer Skills You Need to Master in 2026</a>
+      <a class="topic-link" href="sql-server-system-defined-database.html">SQL Server System Defined Database</a>
+      <a class="topic-link" href="difference-between-primary-key-and-unique-key.html">Difference between Primary Key and Unique Key</a>
+      <a class="topic-link" href="difference-between-inner-join-equi-join-and-natural-join.html">Difference between Inner Join and Equi Join and Natural Join</a>
+      <a class="topic-link" href="sql-having-clause-explained.html">SQL HAVING Clause Explained: Filter Your Data Like a Pro</a>
+      <a class="topic-link" href="difference-between-primary-key-and-foreign-key.html">Differences between Primary Key and Foreign Key</a>
+      <a class="topic-link" href="remove-unsent-database-email-from-sql-server.html">Remove Unsent Database Email from SQL Server</a>
+      <a class="topic-link" href="sql-where-clause-explained-filter-data-with-precision.html">SQL WHERE Clause Explained: Filter Data with Precision</a>
+      <a class="topic-link" href="group-by-clause-in-sql-unveiling-patterns-in-data.html">Group By Clause in SQL: Unveiling Patterns in Data</a>
+      <a class="topic-link" href="get-field-name-data-type-and-size-of-database-table.html">Get field name, data type and size of database table</a>
+      <a class="topic-link" href="sql-server-2012-new-features-and-programmability-enhancements.html">SQL Server 2012 New Features and Programmability Enhancements</a>
+      <a class="topic-link" href="inner-join-in-sql-how-it-works.html">Inner Join in SQL: How It Works</a>
+      <a class="topic-link" href="sql-server-2019-new-features.html">Sql Server 2019 New Features</a>
+      <a class="topic-link" href="create-comma-separated-list-from-column-using-select-statement.html">Create a Comma Separated List from Column Using Select Statement</a>
+      <a class="topic-link" href="understanding-left-join-in-sql-a-simple-guide.html">Understanding LEFT JOIN in SQL: A Simple Guide</a>
+      <a class="topic-link" href="sql-server-insert-retrieve-update-delete-operations-using-stored-procedures.html">SQL Server Insert, Retrieve, Update, Delete Operations using Stored Procedures</a>
+      <a class="topic-link" href="sql-server-xquery-methods.html">SQL Server XQuery Methods</a>
+      <a class="topic-link" href="sql-server-transactions-management.html">SQL Server Transactions Management</a>
+      <a class="topic-link" href="cursors-in-sql-server.html">Cursors In SQL Server</a>
+      <a class="topic-link" href="joins-in-sql-types-syntax-examples-use-cases.html">Joins in SQL: Types, Syntax, Examples & Use Cases</a>
+      <a class="topic-link" href="full-outer-join-in-sql-a-comprehensive-guide.html">Full Outer Join in SQL: A Comprehensive Guide</a>
+      <a class="topic-link" href="understanding-outer-join-in-sql.html">Understanding Outer Join in SQL</a>
+      <a class="topic-link" href="understanding-natural-join-in-sql.html">Understanding Natural Join in SQL</a>
+      <a class="topic-link" href="sql-integrity-constraints.html">SQL Integrity Constraints</a>
+      <a class="topic-link" href="sql-server-xml-data-type.html">SQL Server XML Data Type</a>
+      <a class="topic-link" href="understanding-sql-cross-join-with-examples.html">Understanding SQL CROSS JOIN with Examples</a>
+      <a class="topic-link" href="different-types-of-views-in-sql-server.html">Different Types of Views in SQL Server</a>
+      <a class="topic-link" href="stored-procedure-in-sql-what-it-is-types-syntax-examples.html">Stored Procedure in SQL: What It Is, Types, Syntax & Examples</a>
+      <a class="topic-link" href="stored-procedure-plan-recompilation-and-performance-tuning.html">Stored Procedure Plan Recompilation and Performance Tuning</a>
+      <a class="topic-link" href="delete-duplicate-rows-in-sql-server-from-a-table.html">Delete Duplicate Rows in SQL Server From a Table</a>
+      <a class="topic-link" href="different-types-of-triggers-in-sql-server.html">Different Types of Triggers in SQL Server</a>
+      <a class="topic-link" href="after-trigger-instead-of-trigger-example.html">After Trigger, Instead of Trigger Example</a>
+      <a class="topic-link" href="sql-server-different-types-of-cursors.html">SQL Server Different Types of Cursors</a>
+      <a class="topic-link" href="sql-server-alternatives-cursor.html">SQL Server Alternatives to Cursor</a>
+      <a class="topic-link" href="difference-between-stored-procedure-and-function-in-sql-server.html">Difference between Stored Procedure and Function in SQL Server</a>
+      <a class="topic-link" href="sql-server-exceptions-working.html">SQL Server Exceptions Working</a>
+      <a class="topic-link" href="difference-between-cte-and-temp-table-and-table-variable.html">Difference between CTE and Temp Table and Table Variable</a>
+      <a class="topic-link" href="introduction-to-sql-server.html">Introduction to SQL Server</a>
+      <a class="topic-link" href="download-sql-server-express-editions.html">Download SQL Server Express Editions</a>
+      <a class="topic-link" href="exception-handling-in-sql-server-by-try-catch.html">Exception Handling in SQL Server by TRY…CATCH</a>
+      <a class="topic-link" href="sql-injection-attacks-how-to-be-aware.html">SQL Injection Attacks: How to be Aware?</a>
+  </aside>
+
+  <main class="main-content">
+    <article class="content-card">
+      <h1>SQL Server Setting Triggers Firing Order</h1>
+      <p class="subtitle">Estimated study time: 5 minutes. Control which trigger runs first, last, or in between.</p>
+      
+<p>When a table has more than one <code>AFTER</code> trigger for the same event, SQL Server doesn't guarantee a predictable execution order by default. If your logic depends on one trigger running before another, you need to explicitly set the <strong>firing order</strong>.</p>
+<h2>The Problem</h2>
+<p>By default, SQL Server only lets you mark one trigger as "first" and one as "last" — everything else runs in an undefined order in between.</p>
+<h2>Using sp_settriggerorder</h2>
+<pre>EXEC sp_settriggerorder
+  @triggername = 'trg_AuditLog',
+  @order = 'First',
+  @stmttype = 'INSERT';
+
+EXEC sp_settriggerorder
+  @triggername = 'trg_SendNotification',
+  @order = 'Last',
+  @stmttype = 'INSERT';</pre>
+<h2>Parameters Explained</h2>
+<ul>
+  <li><code>@triggername</code> — the trigger you want to reorder</li>
+  <li><code>@order</code> — accepts 'First', 'Last', or 'None'</li>
+  <li><code>@stmttype</code> — the statement type: INSERT, UPDATE, or DELETE</li>
+</ul>
+<h2>Checking the Current Order</h2>
+<pre>SELECT name, OBJECTPROPERTY(object_id, 'ExecIsFirstInsertTrigger') AS is_first
+FROM sys.triggers
+WHERE parent_id = OBJECT_ID('employees');</pre>
+<div class="highlight-box">💡 <strong>Tip:</strong> Only one trigger can be "First" and one can be "Last" per table, per action — every other trigger sits in between with no guaranteed order among them.</div>
+<h2>Why This Matters</h2>
+<p>Firing order becomes critical when one trigger validates or modifies data that a second trigger depends on — for example, an audit trigger that must run only after a validation trigger has finished.</p>
+
+    </article>
+
+    <nav class="prev-next-nav">
+      <a class="prev-link" href="swap-the-values-of-two-columns-in-sql-server.html"><span class="label">&laquo; Previous</span><span class="title">Swap the Values of Two Columns in SQL Server</span></a>
+      <a class="next-link" href="get-nth-highest-and-lowest-salary-of-an-employee.html"><span class="label">Next &raquo;</span><span class="title">Get nth Highest and Lowest Salary of an Employee</span></a>
+    </nav>
+
+    <div class="cta-box">
+      <h3>Ready to go beyond the basics?</h3>
+      <p>Get hands-on training, live mentorship, and placement support with Uncodemy's Data Analytics Course.</p>
+      <a class="cta-btn" href="https://uncodemy.com/">Explore Data Analytics Course &rarr;</a>
+    </div>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="batch-card">
+      <span class="badge">&#128293; Upcoming Batch</span>
+      <h4>Graphic Designing</h4>
+      <div class="course-name">Next Batch</div>
+      <div class="batch-meta">Starts: <b data-editable="batchStartDate">Coming Soon</b></div>
+      <div class="batch-meta">Duration: <b data-editable="batchDuration">3 Months</b></div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">Batch Starts In</div>
+        <div class="countdown-timer">
+          <div class="unit"><div class="num" data-countdown="days">05</div><div class="lbl">Days</div></div>
+          <div class="unit"><div class="num" data-countdown="hours">00</div><div class="lbl">Hrs</div></div>
+          <div class="unit"><div class="num" data-countdown="minutes">00</div><div class="lbl">Min</div></div>
+          <div class="unit"><div class="num" data-countdown="seconds">00</div><div class="lbl">Sec</div></div>
+        </div>
+      </div>
+
+      <ul class="feature-list">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+
+      <div class="limited-seats">&#9889; Limited Seats Available</div>
+      <button class="landing-cta-btn" onclick="goToLandingPage()">Go to Course Landing Page</button>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-row">&#128222; <a data-config="phoneNumber" href="#">+91 9818366550</a></div>
+      <div class="help-row">&#128172; <a data-config="whatsappLink" href="#" target="_blank" rel="noopener">Talk to our Counselor on WhatsApp</a></div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

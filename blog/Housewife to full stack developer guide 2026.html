@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How a Housewife Can Switch to Full Stack Developer in 2026 | Uncodemy</title>
+    <meta name="description" content="Complete guide for housewives returning after a career break to become full stack developers in 2026. HTML, CSS, JavaScript, React, Node.js, roadmap, salary, and interview tips." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/housewife-to-full-stack-developer-2026" />
+    <meta property="og:title" content="How a Housewife Can Switch to Full Stack Developer in 2026 | Uncodemy" />
+    <meta property="og:description" content="A step-by-step guide for housewives to transition into full stack development after a career break." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .path-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 8px 0 8px; }
+        .path-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 9px; padding: 9px 8px; text-align: center; }
+        .path-box .p-l { font-family: var(--mono); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+        .path-box .p-v { font-family: var(--display); font-size: 18px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; color: var(--primary); }
+        .path-box .p-d { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+        @media (max-width: 768px) { .path-grid { grid-template-columns: 1fr 1fr 1fr; } .path-box .p-v { font-size: 15px; } }
+        @media (max-width: 480px) { .path-box .p-v { font-size: 14px; } .path-box .p-l { font-size: 8px; } .path-box .p-d { font-size: 9px; } }
+        .flow-row .icon-row { display: inline-flex; gap: 4px; }
+        .flow-row .icon-row svg { width: 14px; height: 14px; color: var(--primary); }
+        .demo-bar .icon-row svg { width: 16px; height: 16px; color: var(--primary); }
+        .s-card h4 .icon-row { display: inline-flex; align-items: center; gap: 6px; }
+        .s-card h4 .icon-row svg { width: 16px; height: 16px; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <i data-lucide="menu" style="width:24px;height:24px;stroke:currentColor;stroke-width:2;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>How a Housewife Can Switch to Full Stack Developer in 2026 <mark>Complete Career Guide</mark></h1>
+                <p class="lede">A career break does not close the door to full stack development. This guide shows exactly how to build HTML, CSS, JavaScript, React, and Node.js skills, then turn them into a first developer job.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search 'housewife to full stack developer guide'" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Frontend</button>
+                    <button class="chip" aria-pressed="true">Full Stack</button>
+                    <button class="chip" aria-pressed="false">React</button>
+                    <button class="chip" aria-pressed="false">Node.js</button>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="false">Interview Prep</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <i data-lucide="bar-chart-3" style="width:16px;height:16px;color:var(--primary);"></i>
+                        <b>Full Stack Career Path · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different full stack career stages">
+                        <button aria-pressed="true" data-r="frontend">Frontend Dev</button>
+                        <button aria-pressed="false" data-r="backend">Backend Dev</button>
+                        <button aria-pressed="false" data-r="fullstack">Full Stack Dev</button>
+                        <button aria-pressed="false" data-r="senior">Senior Dev</button>
+                    </div>
+                    <div class="path-grid" id="pathTiers">
+                        <div class="path-box"><div class="p-l">Role</div><div class="p-v" id="roleName">—</div><div class="p-d">Job title</div></div>
+                        <div class="path-box"><div class="p-l">Avg. Salary (India)</div><div class="p-v" id="salaryVal">—</div><div class="p-d">Fresher to mid-level</div></div>
+                        <div class="path-box"><div class="p-l">Coding Level</div><div class="p-v" id="codingVal">—</div><div class="p-d">From low to high</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Housewife</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Learn Web Basics</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Build Projects</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Land Dev Job</span>
+                    </div>
+                    <div class="demo-cap">Click a career stage to see the role, salary, and coding level. Start with frontend basics before moving into full stack.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs">
+            <a href="#top">Home</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Career Guides</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Career Comeback</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <span>Housewife to Full Stack Developer</span>
+        </p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Guide · Housewife to Full Stack Developer</p>
+                <h1>How a Housewife Can Switch to Full Stack Developer in 2026</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 17 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="Housewife to full stack developer path: career break, web fundamentals, project, first job">
+                        <defs>
+                            <marker id="ar103" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g103" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g103)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">TODAY</text>
+                            <text x="280" y="40">FOUNDATION</text>
+                            <text x="510" y="40">PROJECT</text>
+                            <text x="720" y="40">FIRST JOB</text>
+                        </g>
+                        <rect x="20" y="58" width="200" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Career Break</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Strong discipline &amp; focus</text>
+                        <text x="50" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">No coding experience yet</text>
+                        <rect x="40" y="164" width="150" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="65" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Starting fresh</text>
+
+                        <rect x="250" y="58" width="210" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="280" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">HTML, CSS, JS</text>
+                        <text x="280" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Web fundamentals</text>
+                        <text x="280" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Guided by a trainer</text>
+                        <rect x="280" y="164" width="150" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="310" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">10–12 wks</text>
+
+                        <rect x="490" y="58" width="190" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="520" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Full Stack Project</text>
+                        <text x="520" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">React + Node app</text>
+                        <text x="520" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Something to show recruiters</text>
+                        <rect x="520" y="164" width="130" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="545" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">6–8 wks</text>
+
+                        <rect x="710" y="58" width="170" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="740" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">First Dev Role</text>
+                        <text x="740" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Entry-level, on-job growth</text>
+                        <text x="740" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Real experience begins</text>
+                        <rect x="740" y="164" width="110" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="760" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Offer</text>
+
+                        <path d="M220 148 H236" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar103)"/>
+                        <path d="M460 148 H476" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar103)"/>
+                        <path d="M680 148 H696" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar103)"/>
+                    </svg>
+                    <figcaption>Most successful comebacks follow the same shape: HTML/CSS/JS foundation, one real full stack project, then an entry-level developer role.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — can a housewife switch to full stack development?</h2>
+                    <p>Yes, absolutely. In 2026, <b>full stack development</b> hiring is driven far more by a working portfolio of projects than by age, career gaps, or original degree. What matters is building genuine fundamentals — <b>HTML, CSS, JavaScript, React, and Node.js</b> — and proving them with at least one complete, deployed project. Returning professionals who follow a structured path rather than jumping between random tutorials are the ones who get hired fastest.</p>
+                    <p>In this tutorial you will learn:</p>
+                    <ol>
+                        <li><b>What a full stack developer actually does</b> — and why a break is not a disadvantage.</li>
+                        <li><b>Why a career break isn't the obstacle it feels like.</b></li>
+                        <li><b>The skills a housewife needs</b> to become job-ready in full stack development.</li>
+                        <li><b>The tools and concepts to learn</b>, in the right order.</li>
+                        <li><b>A realistic 6-month comeback plan</b> from zero code to first application.</li>
+                        <li><b>Mistakes that waste the most time</b> for career-break returners.</li>
+                        <li><b>Test your knowledge</b> — a quick quiz.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What a full stack developer actually does</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why a career break isn't the obstacle it feels like</a></li>
+                        <li><a href="#s3"><span class="n">03</span>The core skills you need to build</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Skill and timeline comparison</a></li>
+                        <li><a href="#s5"><span class="n">05</span>How to start — a simple step-by-step guide</a></li>
+                        <li><a href="#s6"><span class="n">06</span>A realistic 6-month comeback plan</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Mistakes that waste the most time</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>What a full stack developer actually does</h2>
+                <p>A <strong>full stack developer</strong> builds both the parts of an application users see — pages, forms, buttons — and the parts running behind the scenes — servers, databases, and APIs. This means writing HTML, CSS, and JavaScript for the frontend, and languages like Node.js or Python for the backend, then connecting them through APIs and a database.</p>
+                <p>In simple terms: a full stack developer's job is <b>building a complete, working application end to end</b>, the same structured, step-by-step thinking that running a household — planning, executing, adjusting — already builds, just applied to code instead of daily routines.</p>
+                <div class="note"><b>Key point:</b> Most career-break returners become interview-ready for entry-level full stack roles in 20 to 26 weeks of focused learning, because a clear plan and daily practice matter far more than starting age or gap length.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why a career break isn't the obstacle it feels like</h2>
+                <ul>
+                    <li><b>Portfolio-first hiring is now common</b> — many companies evaluate developer candidates on GitHub projects and live demos, not an unbroken resume timeline.</li>
+                    <li><b>Household management builds real transferable skills</b> — multitasking, planning, and debugging daily problems map closely onto debugging code.</li>
+                    <li><b>Focus and follow-through matter more than a fresh degree</b> — completing a structured coding course while managing a home proves discipline employers value.</li>
+                    <li><b>Entry-level hiring volume is steady</b> — companies constantly need junior developers for maintenance and feature work.</li>
+                    <li><b>It is a genuine long-term career</b> — junior developers grow into senior developers, tech leads, and architects over time.</li>
+                </ul>
+                <p>Housewives who focus on demonstrable skills — working HTML/CSS/JS, a deployed React app, one solid full stack project — are the ones who convert interviews into offers, regardless of how long the break was.</p>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>The core skills you need to build</h2>
+                <h3>1. HTML, CSS &amp; JavaScript</h3>
+                <p>Covers structuring web pages, styling them, and adding interactivity — the foundation every web developer role builds on.</p>
+                <ul>
+                    <li><b>Example:</b> Building a responsive product page with a working "add to cart" button.</li>
+                    <li><b>Best for:</b> Every returner — this is the mandatory starting point, and it builds fast with daily practice.</li>
+                </ul>
+                <h3>2. React (Frontend Framework)</h3>
+                <p>Covers building reusable components and managing application state for larger, dynamic web applications.</p>
+                <ul>
+                    <li><b>Example:</b> Building a to-do list app where items can be added, completed, and deleted without reloading the page.</li>
+                    <li><b>Best for:</b> Moving from static pages to real, interactive applications.</li>
+                </ul>
+                <h3>3. Node.js &amp; APIs</h3>
+                <p>Covers building a backend server that stores data and responds to requests from the frontend.</p>
+                <ul>
+                    <li><b>Example:</b> Building an API endpoint that saves a new user's sign-up details to a database.</li>
+                    <li><b>Best for:</b> Returners ready to connect frontend and backend into one complete application.</li>
+                </ul>
+                <h3>4. Databases &amp; Deployment</h3>
+                <p>Covers storing data properly and putting a finished application online for others to use, usually added after the core stack is solid.</p>
+                <ul>
+                    <li><b>Example:</b> Deploying a full stack app so it is accessible via a public link.</li>
+                    <li><b>Best for:</b> Returners aiming for a stronger portfolio, added after — not instead of — frontend and backend fundamentals.</li>
+                </ul>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Skill and timeline comparison</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Skill area</th><th>Time to learn basics</th><th>Best for</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>HTML, CSS &amp; JavaScript</b></td><td>10–12 weeks</td><td>Mandatory first step for every career-break returner</td></tr>
+                            <tr><td><b>React</b></td><td>8–10 weeks</td><td>Learned right after JavaScript fundamentals are solid</td></tr>
+                            <tr><td><b>Node.js &amp; APIs</b></td><td>8–10 weeks</td><td>Learned alongside or right after React</td></tr>
+                            <tr><td><b>Databases &amp; Deployment</b></td><td>2–4 weeks</td><td>Learned alongside the final project</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>Pro tip:</b> Do not try to learn React and Node.js before JavaScript fundamentals are solid. Interviewers for entry-level developer roles almost always test core JavaScript first.</div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>How to start — a simple step-by-step guide</h2>
+                <ol class="steps">
+                    <li><b>Get comfortable with HTML and CSS.</b> Build several static pages before moving to interactivity.</li>
+                    <li><b>Learn JavaScript fundamentals properly.</b> Understand variables, functions, loops, and how the browser responds to user actions.</li>
+                    <li><b>Learn React for the frontend.</b> Get hands-on with components, state, and props by building small apps.</li>
+                    <li><b>Learn Node.js and build a simple API.</b> Connect it to a database and understand request-response flow.</li>
+                    <li><b>Connect frontend and backend.</b> Build one application where the React frontend talks to your Node.js backend.</li>
+                    <li><b>Build one complete project and deploy it.</b> Document everything — the tech stack, features, and what you learned.</li>
+                </ol>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Sample output">
+                        <button role="tab" aria-selected="true" data-t="0">Self-check</button>
+                        <button role="tab" aria-selected="false" data-t="1">Sample recommendation</button>
+                    </div>
+                    <pre data-p="0"><code>Question                          Answer
+Comfortable with computers?        Yes
+Written any code before?           No
+Enjoy building things step by step? Yes
+Hours available per week           8-10
+City has entry-level dev roles     Yes
+
+Recommendation: Strengthen HTML/CSS/JS,
+add React next, Node.js after that.</code></pre>
+                    <pre data-p="1" hidden><code>6-month plan for this profile:
+Month 1-2: HTML, CSS, JavaScript fundamentals
+Month 3: React basics + small projects
+Month 4: Node.js, APIs, and databases
+Month 5: Full stack project, connect frontend & backend
+Month 6: Deploy project, resume, interview prep,
+start applying to entry-level developer roles</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">self-check · Full stack developer comeback path</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>A realistic 6-month comeback plan</h2>
+                <ul class="steps">
+                    <li><b>Month 1–2:</b> Build strong HTML, CSS, and JavaScript fundamentals through daily practice.</li>
+                    <li><b>Month 3:</b> Learn React and build two to three small interactive apps.</li>
+                    <li><b>Month 4:</b> Learn Node.js, build APIs, and connect them to a database.</li>
+                    <li><b>Month 5:</b> Build one complete full stack project connecting your frontend and backend.</li>
+                    <li><b>Month 6:</b> Deploy your project, rewrite your resume, and start applying to entry-level roles.</li>
+                    <li><b>Throughout:</b> Push your code to GitHub regularly — a visible portfolio matters more than certificates alone, especially after a break.</li>
+                </ul>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Mistakes that waste the most time</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Mistake</th><th>Why it costs time</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Jumping straight to React before JavaScript basics</b></td><td>React concepts assume solid JavaScript understanding</td><td>Finish core JavaScript fundamentals first</td></tr>
+                            <tr><td><b>Watching tutorials without building anything</b></td><td>Tutorial-following alone rarely convinces interviewers</td><td>Build your own version of every concept you learn</td></tr>
+                            <tr><td><b>Studying in long, irregular bursts</b></td><td>Inconsistent study is easily disrupted by home responsibilities</td><td>Set a fixed, shorter daily slot instead of occasional long sessions</td></tr>
+                            <tr><td><b>Apologising for the career break in interviews</b></td><td>Draws attention away from the skills actually being evaluated</td><td>State the break plainly, then pivot straight to your project</td></tr>
+                            <tr><td><b>No interview practice</b></td><td>Technical skill without interview readiness stalls offers</td><td>Do mock interviews in month 5–6, not the week before</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — switching to full stack developer from a career break</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>Is it really possible for a housewife to become a full stack developer?</summary>
+                    <div class="body"><p>Yes — companies increasingly hire on portfolio and project work rather than a continuous resume, and career-break returners who build one strong deployed full stack project are hired into entry-level developer roles regularly.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q2</span>Do I need a computer science degree to become a developer?</summary>
+                    <div class="body"><p>No. A structured course covering HTML, CSS, JavaScript, React, and Node.js, backed by a deployed project, is often enough for entry-level roles, regardless of your original degree.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q3</span>Which skill should I learn first?</summary>
+                    <div class="body"><p>Start with HTML, CSS, and JavaScript. Add React and Node.js next, and advanced tools only after those fundamentals are solid.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q4</span>How long does it take to become job-ready after a break?</summary>
+                    <div class="body"><p>Most career-break returners become interview-ready in 20 to 26 weeks with focused, consistent study and one completed full stack project.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q5</span>Will interviewers ask about my career gap?</summary>
+                    <div class="body"><p>Often yes, briefly — but most entry-level developer interviews spend the majority of time on your project, your JavaScript knowledge, and how you approach problem-solving.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q6</span>Should I learn multiple frameworks right away?</summary>
+                    <div class="body"><p>No. Master HTML, CSS, JavaScript, React, and Node.js first and complete one full stack project — additional frameworks are easier to pick up once the fundamentals are second nature.</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — housewife to full stack developer quiz</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign-up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is full stack development a realistic career for a housewife returning after a break in 2026?</summary><div class="body"><p>Yes — portfolio-first hiring means entry-level developer roles are increasingly judged on GitHub projects and live demos rather than an unbroken career timeline.</p></div></details>
+                <details class="acc"><summary>How many hours a week do I need to study?</summary><div class="body"><p>Most returners manage with 8–10 hours a week across short daily sessions, spread over 20 to 26 weeks for HTML, CSS, JavaScript, React, and Node.js.</p></div></details>
+                <details class="acc"><summary>Is React harder than plain JavaScript for a beginner?</summary><div class="body"><p>Generally no, since it builds on the same JavaScript concepts. Most returners find React easier once core JavaScript is solid.</p></div></details>
+                <details class="acc"><summary>Will I need to relocate for an entry-level developer job?</summary><div class="body"><p>Not necessarily — entry-level developer roles are available in most major hubs and increasingly on a remote or hybrid basis, which also helps with balancing home responsibilities.</p></div></details>
+                <details class="acc"><summary>What if I do not have a project to show?</summary><div class="body"><p>Build one from scratch using a simple idea like a to-do app or a small e-commerce page. A single well-documented, deployed project is often enough for an entry-level interview.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="housewife-to-business-analytics-guide-2026.html"><span class="t">Is it too late for a housewife to learn business analytics?</span><span class="m">Data · 15 min</span></a>
+                    <a class="rel-card" href="can-a-housewife-become-data-engineer-2026.html"><span class="t">Can a housewife really become a data engineer in 2026</span><span class="m">Data · 15 min</span></a>
+                    <a class="rel-card" href="housewife-switch-to-data-scientist-2026.html"><span class="t">How a housewife can switch to data scientist in 2026</span><span class="m">Career · 15 min</span></a>
+                    <a class="rel-card" href="housewife-to-automation-tester-guide-2026.html"><span class="t">How a housewife can become an automation tester in 2026</span><span class="m">QA · 14 min</span></a>
+                    <a class="rel-card" href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="t">Best IT career path to start from zero</span><span class="m">Career · 15 min</span></a>
+                    <a class="rel-card" href="what-is-an-api-in-programming.html"><span class="t">What is an API in programming?</span><span class="m">API · 11 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Restart your career in full stack development with a job-ready programme built for returners</h3>
+                    <p>Our Full Stack Development programme covers HTML, CSS, JavaScript, React, Node.js, and databases, plus one full deployed project — designed for housewives and career-break returners moving from home routines to real-world code.</p>
+                    <span class="price">₹15,500 · full programme <s>₹23,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>5 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekday & weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live beginner full stack session</div>
+                    <p>Two hours, no payment, no commitment. Build your first mini web page and get hands-on feedback from industry trainers.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 11:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes the full plan</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>HTML &amp; CSS tutorial for beginners</a></li>
+                        <li><a href="#"><span class="rank">02</span>Entry-level developer interview questions</a></li>
+                        <li><a href="what-is-an-api-in-programming.html"><span class="rank">03</span>What is an API in programming?</a></li>
+                        <li><a href="#"><span class="rank">04</span>Building your first React project</a></li>
+                        <li><a href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="rank">05</span>Best IT career path to start from zero</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">JavaScript · 50 questions</a></li>
+                        <li><a href="#">React · 30 questions</a></li>
+                        <li><a href="#">Node.js &amp; APIs · 25 questions</a></li>
+                        <li><a href="#">Career Comeback · General · 25 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Full Stack Development</div>
+                    <p>HTML, CSS, JavaScript, React, Node.js, and databases, real tools, one live deployed project — built for career-break returners moving from home management to code-driven roles. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">5</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in Career Comeback</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">HTML &amp; CSS for absolute beginners <small>Structure → Style → Layout</small></a></li>
+                    <li><a href="#">JavaScript fundamentals, explained <small>Variables to functions</small></a></li>
+                    <li><a href="what-is-an-api-in-programming.html">What is an API in programming? <small>Core concepts</small></a></li>
+                    <li><a href="#">Resume tips for career-break returners <small>Framing the gap</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Full Stack Developer roadmap <small>HTML → JS → React → Node</small></a></li>
+                    <li><a href="working-professional-best-it-career-path-to-start-from-zero.html">Best IT career path from zero <small>Compare all paths</small></a></li>
+                    <li><a href="can-a-housewife-become-data-engineer-2026.html">Data Engineer roadmap <small>SQL → Python → ETL</small></a></li>
+                    <li><a href="housewife-switch-to-data-scientist-2026.html">Data Scientist roadmap <small>Python → Stats → ML</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Career comeback self-check worksheet <small>Decide if dev fits you</small></a></li>
+                    <li><a href="#">6-month comeback plan template <small>Ready-to-use planner</small></a></li>
+                    <li><a href="#">HTML/CSS/JS cheat sheet <small>What to learn, in order</small></a></li>
+                    <li><a href="#">Entry-level developer interview question bank <small>50 real questions</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Housewife to developer — success stories <small>17 August 2026</small></a></li>
+                    <li><a href="#">Top frontend frameworks for 2026 <small>15 August 2026</small></a></li>
+                    <li><a href="#">React vs plain JavaScript <small>13 August 2026</small></a></li>
+                    <li><a href="#">Which certification helps career-break returners most <small>11 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We offer career‑start programmes in Full Stack Development, QA Testing, Automation, and Data Analytics — designed for returners and graduates alike.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Frontend Development (React)</a></li>
+                        <li><a href="#">Backend Development (Node.js)</a></li>
+                        <li><a href="#">Manual Testing</a></li>
+                        <li><a href="#">Automation Testing (Selenium)</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#">Python Programming</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        lucide.createIcons();
+
+        UncodemyPage.init({
+            SCENARIOS: {
+                frontend: { role: "Frontend Developer", salary: "₹3–6 LPA", coding: "Medium" },
+                backend: { role: "Backend Developer", salary: "₹4–8 LPA", coding: "Medium-High" },
+                fullstack: { role: "Full Stack Developer", salary: "₹5–10 LPA", coding: "High" },
+                senior: { role: "Senior Full Stack Dev", salary: "₹12–20 LPA", coding: "High" }
+            },
+            stateOrder: ["frontend", "backend", "fullstack", "senior"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("codingVal").textContent = s.coding;
+            },
+            defaultTrack: "Full Stack Development",
+            emptyMsg: 'Nothing matches that yet. Try “JavaScript”, “React” or “Node.js”.',
+            LIB: [
+                { t: "How a housewife can switch to full stack developer — complete guide", g: "Career Comeback" },
+                { t: "HTML & CSS tutorial for absolute beginners", g: "Frontend" },
+                { t: "JavaScript fundamentals explained simply", g: "Frontend" },
+                { t: "React for beginners — components and state", g: "React" },
+                { t: "Node.js and APIs — a beginner's guide", g: "Backend" },
+                { t: "Full stack developer career path — complete guide", g: "Career Change" },
+                { t: "Frontend developer interview questions and answers", g: "Interview Prep" },
+                { t: "Deploying your first full stack project", g: "Deployment" },
+                { t: "Housewife to IT — best career paths", g: "Career Change" },
+                { t: "How to build a developer portfolio on GitHub", g: "Career Change" }
+            ],
+            QUIZ: [{
+                q: "Which skill should a career-break returner learn first for full stack development?",
+                o: ["Node.js", "HTML, CSS & JavaScript", "React", "Databases"],
+                a: 1,
+                e: "HTML, CSS, and JavaScript are the foundation every web developer role builds on, and should be learned before frameworks like React."
+            }, {
+                q: "What is React mainly used for?",
+                o: ["Managing servers", "Building reusable frontend components and state", "Writing SQL queries", "Deploying cloud infrastructure"],
+                a: 1,
+                e: "React is a frontend framework used for building reusable components and managing application state for dynamic web apps."
+            }, {
+                q: "What does Node.js allow a developer to do?",
+                o: ["Style web pages", "Build a backend server with JavaScript", "Design database schemas only", "Create mobile app icons"],
+                a: 1,
+                e: "Node.js allows developers to build backend servers and APIs using JavaScript, connecting the frontend to data and logic."
+            }, {
+                q: "What is a typical salary range for a fresher full stack developer in India?",
+                o: ["₹1–2 LPA", "₹5–10 LPA", "₹20–25 LPA", "₹30–40 LPA"],
+                a: 1,
+                e: "A fresher full stack developer in India typically earns ₹5–10 LPA, with growth as React, Node.js, and project experience deepen."
+            }, {
+                q: "What should a returner do before applying to developer roles?",
+                o: ["Learn every framework available", "Build and deploy one complete full stack project", "Avoid GitHub entirely", "Skip JavaScript fundamentals"],
+                a: 1,
+                e: "Building and deploying one complete full stack project is far more convincing to interviewers than knowledge of many frameworks without a working example."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You're ready to start your full stack journey! Begin with HTML, CSS, and JavaScript, then move into React and Node.js.",
+                fail: "Revisit sections 03 to 08 — understanding the roadmap and skills is the first step to a successful comeback into development."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

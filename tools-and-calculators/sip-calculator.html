@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIP Calculator — Estimate Your Mutual Fund Returns Instantly</title>
+<script src="uncodemy-navbar.js" defer></script>
+<link rel="stylesheet" href="footer-style.css" />
+<style>
+  :root{
+    --orange:#ff5a1f; --orange-dark:#e14a12; --navy:#0d1226; --navy-2:#161c38;
+    --bg:#ffffff; --bg-soft:#f6f3ee; --border:#ece8e0; --text:#1a1a1a; --sub:#6b6a66;
+    --save:#27500a; --save-bg:#eaf3de;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6;
+  }
+  .hero{
+    background:linear-gradient(135deg,#fff0e8,#f3f2fb);
+    padding:56px 20px 70px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+    color:var(--orange); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px;
+  }
+  .eyebrow::before{content:'●'; font-size:8px;}
+  h1{font-size:40px; font-weight:700; margin:0 0 16px; line-height:1.25; font-family:Georgia,'Times New Roman',serif; max-width:680px; margin-left:auto; margin-right:auto;}
+  h1 em{font-style:normal; color:var(--orange);}
+  .lede{font-size:16px; color:var(--sub); margin:0 auto; max-width:560px;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px 80px;}
+  .calc-shell{
+    max-width:1200px; margin:auto; padding:0 20px; position:relative; z-index:2;
+  }
+  .calc-card{
+    background:#fff; border-radius:20px; padding:32px; box-shadow:0 20px 50px rgba(20,15,5,0.08);
+    border:1px solid var(--border); margin: 10px;
+  }
+  .logo-chip{
+    display:inline-block; background:var(--navy); color:#fff; font-weight:700; font-size:13px;
+    padding:6px 10px; border-radius:6px; margin-bottom:14px; letter-spacing:.03em;
+  }
+  h2{font-size:21px; font-weight:700; margin:0 0 6px;}
+  .hint{font-size:13px; color:var(--sub); margin:0 0 22px;}
+  .calc-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:28px;}
+  @media (max-width:760px){ .calc-grid{grid-template-columns:1fr;} }
+  .mode-toggle{display:flex; gap:8px; margin-bottom:24px;}
+  .mode-toggle button{
+    flex:1; padding:10px; border-radius:9px; border:1px solid var(--border);
+    background:#fff; font-size:13.5px; font-weight:600; cursor:pointer; color:var(--text);
+    transition:all .15s;
+  }
+  .mode-toggle button.active{background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%); color:#fff; border-color:var(--orange);}
+  .field{margin-bottom:22px;}
+  .field-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  label{font-size:13px; color:var(--text); font-weight:600;}
+  .unit-tag{font-size:11px; color:var(--sub);}
+  input[type=number]{
+    width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
+    font-size:16px; font-weight:600; background:var(--bg-soft); color:var(--text);
+  }
+  input[type=number]:focus{outline:none; border-color:var(--orange);}
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:4px;
+    background:var(--border); margin-top:10px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+    background:var(--orange); cursor:pointer; border:3px solid #fff; box-shadow:0 0 0 1px var(--orange);
+  }
+  .range-labels{display:flex; justify-content:space-between; font-size:11px; color:var(--sub); margin-top:4px;}
+  .result-panel{
+    background:var(--bg-soft); border-radius:16px; padding:26px; text-align:center;
+  }
+  .result-panel .value{font-size:38px; font-weight:800; color:var(--orange); margin:0 0 2px;}
+  .result-panel .label{font-size:13px; color:var(--sub); margin:0 0 18px; font-weight:600;}
+  .badge{
+    display:inline-block; font-size:13px; font-weight:700; padding:6px 16px; border-radius:20px;
+    margin-bottom:20px; background:var(--save-bg); color:var(--save);
+  }
+  .stat-row{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid var(--border); font-size:13.5px; text-align:left;}
+  .stat-row span:first-child{color:var(--sub);}
+  .stat-row span:last-child{font-weight:700;}
+  .disclaimer{font-size:12px; color:var(--sub); margin-top:14px;}
+
+  .section-title{font-size:24px; font-weight:700; margin:0 0 10px;}
+  .section-lede{font-size:15px; color:var(--sub); max-width:680px; margin:0 0 26px;}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:36px;}
+  @media (max-width:700px){ .steps3{grid-template-columns:1fr;} }
+  .step-box{background:var(--bg-soft); border-radius:14px; padding:22px;}
+  .step-num{
+    width:30px; height:30px; background:var(--orange); color:#fff; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:14px;
+  }
+  .step-box strong{display:block; font-size:16px; margin-bottom:6px;}
+  .step-box p{font-size:13.5px; color:var(--sub); margin:0;}
+
+  .kicker{color:var(--orange); font-weight:700; font-size:14px; margin:0 0 14px;}
+  .formula-box{
+    background:var(--navy); color:#fff; border-radius:14px; padding:26px; font-size:15px;
+    margin-bottom:36px;
+  }
+  .formula-box .eq{font-size:17px; font-weight:600; margin:0 0 16px; font-family:'Georgia',serif;}
+  .formula-box p{margin:4px 0; color:#cfd3e6; font-size:13.5px;}
+
+  table{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:14px;}
+  table td{padding:12px 14px; border-top:1px solid var(--border);}
+  table tr:first-child td{border-top:none;}
+  table td:first-child{font-weight:600; width:45%;}
+  table td:last-child{font-weight:700; text-align:right;}
+
+  .tier-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:36px;}
+  @media (max-width:700px){ .tier-grid{grid-template-columns:1fr 1fr;} }
+  .tier-box{background:var(--bg-soft); border-radius:12px; padding:16px; text-align:center;}
+  .tier-box .pct{font-size:20px; font-weight:800; color:var(--orange); margin:0 0 4px;}
+  .tier-box .desc{font-size:12px; color:var(--sub); margin:0;}
+
+  details{border-top:1px solid var(--border); padding:16px 0;}
+  details:last-child{border-bottom:1px solid var(--border);}
+  summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; font-size:20px; color:var(--orange); font-weight:700;}
+  details[open] summary::after{content:'–';}
+  details p{font-size:14px; color:var(--sub); margin:12px 0 0;}
+
+  .cta{
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark)); border-radius:18px;
+    padding:44px 30px; text-align:center; color:#fff; margin-bottom:10px;
+  }
+  .cta h3{font-size:22px; margin:0 0 8px;}
+  .cta p{font-size:14px; opacity:.92; margin:0 0 20px;}
+  .cta button{
+    background:#fff; color:var(--orange-dark); border:none; padding:12px 26px;
+    border-radius:9px; font-weight:700; font-size:14px; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="hero">
+  <div class="eyebrow">Mutual fund investing</div>
+  <h1>See how your <em>SIP grows</em> over time</h1>
+  <p class="lede">Enter your monthly investment, expected return, and tenure — this calculator instantly shows your maturity value and total wealth gained.</p>
+</div>
+
+<div class="calc-shell">
+  <div class="calc-card">
+    <span class="logo-chip">₹</span>
+    <h2>Your investment details</h2>
+    <p class="hint">Estimate a regular monthly SIP, or switch to a one-time lumpsum investment.</p>
+
+    <div class="mode-toggle">
+      <button id="modeSingle" class="active">Monthly SIP</button>
+      <button id="modeStacked">Lumpsum</button>
+    </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="field" id="sipAmountField">
+          <div class="field-top"><label>Monthly investment</label><span class="unit-tag">₹</span></div>
+          <input type="number" id="ctcAmount" value="5000">
+          <input type="range" id="ctcAmountR" min="500" max="100000" step="500" value="5000">
+          <div class="range-labels"><span>₹500</span><span>₹1,00,000</span></div>
+        </div>
+        <div class="field" id="lumpsumAmountField" style="display:none;">
+          <div class="field-top"><label>Lumpsum investment</label><span class="unit-tag">₹</span></div>
+          <input type="number" id="lumpsumAmount" value="100000">
+          <input type="range" id="lumpsumAmountR" min="5000" max="5000000" step="5000" value="100000">
+          <div class="range-labels"><span>₹5,000</span><span>₹50L</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label>Expected annual return</label><span class="unit-tag">%</span></div>
+          <input type="number" id="basicPct" value="12">
+          <input type="range" id="basicPctR" min="1" max="30" value="12">
+          <div class="range-labels"><span>1%</span><span>30%</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label>Investment tenure</label><span class="unit-tag">years</span></div>
+          <input type="number" id="bonusAmount" value="10">
+          <input type="range" id="bonusAmountR" min="1" max="40" value="10">
+          <div class="range-labels"><span>1 yr</span><span>40 yrs</span></div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <p class="value" id="finalPrice">--</p>
+        <p class="label">Maturity value</p>
+        <span class="badge" id="savingsBadge"></span>
+
+        <div class="stat-row"><span>Total invested</span><span id="statOriginal">₹0</span></div>
+        <div class="stat-row"><span>Wealth gained</span><span id="statDiscountPct">₹0</span></div>
+        <div class="stat-row"><span>Maturity value</span><span id="statSaved">₹0</span></div>
+        <div class="stat-row"><span>Return multiple</span><span id="statFinal">0.0x</span></div>
+      </div>
+    </div>
+    <p class="disclaimer">Estimate only — assumes a constant annual return compounded monthly, which real mutual funds rarely deliver exactly. Actual returns vary with market performance and fund choice.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div style="height:36px;"></div>
+  <h2 class="section-title">How SIP returns are calculated</h2>
+  <p class="section-lede">A SIP invests a fixed amount every month, and each instalment compounds for a different length of time — money invested in month one grows for the full tenure, while the last instalment barely compounds at all. A lumpsum, by contrast, compounds the entire amount for the whole tenure.</p>
+
+  <div class="steps3">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <strong>Enter your investment</strong>
+      <p>Monthly SIP amount, or a one-time lumpsum.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <strong>Set return and tenure</strong>
+      <p>Expected annual return and how many years you'll stay invested.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <strong>See your maturity value</strong>
+      <p>Total invested, wealth gained, and final corpus.</p>
+    </div>
+  </div>
+
+  <p class="kicker">The SIP formula</p>
+  <div class="formula-box">
+    <p class="eq">Maturity value = P × [(1 + i)ⁿ − 1] / i × (1 + i)</p>
+    <p>P = monthly investment, i = expected monthly return, n = number of months.</p>
+    <p>For lumpsum: Maturity value = P × (1 + annual rate)^years, compounded monthly.</p>
+  </div>
+
+  <p class="kicker">A worked example</p>
+  <p class="section-lede" style="margin-bottom:14px;">A ₹5,000 monthly SIP for 10 years at 12% expected annual return:</p>
+  <table>
+    <tr><td>Monthly investment</td><td>₹5,000</td></tr>
+    <tr><td>Tenure</td><td>10 years</td></tr>
+    <tr><td>Total invested</td><td>₹6,00,000</td></tr>
+    <tr><td>Wealth gained</td><td>₹5,61,695</td></tr>
+    <tr><td>Maturity value</td><td>₹11,61,695</td></tr>
+  </table>
+  <p class="section-lede">Notice the wealth gained is almost as much as the amount invested — this is the effect of compounding over a long tenure, which is why starting early matters more than the exact monthly amount.</p>
+
+  <p class="kicker">Typical expected return ranges</p>
+  <div class="tier-grid">
+    <div class="tier-box"><p class="pct">6–7%</p><p class="desc">Debt funds, conservative</p></div>
+    <div class="tier-box"><p class="pct">10–12%</p><p class="desc">Large-cap equity funds</p></div>
+    <div class="tier-box"><p class="pct">12–15%</p><p class="desc">Flexi-cap / multi-cap funds</p></div>
+    <div class="tier-box"><p class="pct">15%+</p><p class="desc">Small-cap, higher risk</p></div>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <details open>
+    <summary>Is the SIP return guaranteed?</summary>
+    <p>No. Mutual fund returns are market-linked and vary year to year — the percentage you enter is an assumed average, not a guaranteed rate like a fixed deposit.</p>
+  </details>
+  <details>
+    <summary>Why does SIP show less wealth gain than lumpsum for the same amount?</summary>
+    <p>Because in a SIP, later instalments have less time to compound than the first ones, while a lumpsum compounds the full amount from day one — so a lumpsum of the same total often produces a higher maturity value, at the cost of more upfront risk.</p>
+  </details>
+  <details>
+    <summary>Does this account for expense ratio or exit load?</summary>
+    <p>No — this is a simplified gross-return estimate. Fund expense ratios, exit loads, and taxes on gains will reduce your actual net return.</p>
+  </details>
+  <details>
+    <summary>Are SIP gains taxed?</summary>
+    <p>Yes — equity mutual fund gains are subject to capital gains tax depending on how long each instalment was held, and the applicable rates can change with tax law.</p>
+  </details>
+
+  <div style="height:20px;"></div>
+  <div class="cta">
+    <h3>Planning a long-term goal?</h3>
+    <p>Try a few different tenures and amounts to see how starting earlier changes your final corpus.</p>
+    <button>Explore investment plans</button>
+  </div>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+<script src="footer-script.js"></script>
+
+<script>
+let lumpsumMode = false;
+const btnSingle = document.getElementById('modeSingle');
+const btnStacked = document.getElementById('modeStacked');
+const sipField = document.getElementById('sipAmountField');
+const lumpsumField = document.getElementById('lumpsumAmountField');
+
+function setMode(isLumpsum){
+  lumpsumMode = isLumpsum;
+  sipField.style.display = isLumpsum ? 'none' : 'block';
+  lumpsumField.style.display = isLumpsum ? 'block' : 'none';
+  btnSingle.classList.toggle('active', !isLumpsum);
+  btnStacked.classList.toggle('active', isLumpsum);
+  calc();
+}
+btnSingle.onclick = () => setMode(false);
+btnStacked.onclick = () => setMode(true);
+
+function syncPair(numId, rangeId){
+  const num = document.getElementById(numId);
+  const range = document.getElementById(rangeId);
+  num.addEventListener('input', () => { range.value = num.value; calc(); });
+  range.addEventListener('input', () => { num.value = range.value; calc(); });
+}
+syncPair('ctcAmount','ctcAmountR');
+syncPair('lumpsumAmount','lumpsumAmountR');
+syncPair('basicPct','basicPctR');
+syncPair('bonusAmount','bonusAmountR');
+
+function formatRupees(n){
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+function calc(){
+  const monthlyAmt = parseFloat(document.getElementById('ctcAmount').value) || 0;
+  const lumpsumAmt = parseFloat(document.getElementById('lumpsumAmount').value) || 0;
+  const annualRate = parseFloat(document.getElementById('basicPct').value) || 0;
+  const years = parseFloat(document.getElementById('bonusAmount').value) || 0;
+
+  const finalPriceEl = document.getElementById('finalPrice');
+  const badgeEl = document.getElementById('savingsBadge');
+
+  const months = years * 12;
+  const i = annualRate / 100 / 12;
+
+  let invested, maturity;
+
+  if(lumpsumMode){
+    invested = lumpsumAmt;
+    maturity = lumpsumAmt * Math.pow(1 + annualRate / 100, years);
+  } else {
+    invested = monthlyAmt * months;
+    if(i > 0 && months > 0){
+      maturity = monthlyAmt * ((Math.pow(1 + i, months) - 1) / i) * (1 + i);
+    } else {
+      maturity = invested;
+    }
+  }
+
+  if(invested <= 0 || years <= 0){
+    finalPriceEl.textContent = '--';
+    badgeEl.textContent = '';
+    document.getElementById('statOriginal').textContent = '₹0';
+    document.getElementById('statDiscountPct').textContent = '₹0';
+    document.getElementById('statSaved').textContent = '₹0';
+    document.getElementById('statFinal').textContent = '0.0x';
+    return;
+  }
+
+  const gain = maturity - invested;
+  const multiple = maturity / invested;
+
+  finalPriceEl.textContent = formatRupees(maturity);
+  badgeEl.textContent = 'Wealth gained ' + formatRupees(gain);
+
+  document.getElementById('statOriginal').textContent = formatRupees(invested);
+  document.getElementById('statDiscountPct').textContent = formatRupees(gain);
+  document.getElementById('statSaved').textContent = formatRupees(maturity);
+  document.getElementById('statFinal').textContent = multiple.toFixed(1) + 'x';
+}
+
+['ctcAmount','lumpsumAmount','basicPct','bonusAmount'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calc);
+});
+setMode(false);
+</script>
+</body>
+</html>

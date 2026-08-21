@@ -1,0 +1,3287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#FF5421">
+    <meta name="color-scheme" content="light">
+
+    <title>Playwright Automation Testing Course in Noida | 100% Placement | Uncodemy</title>
+    <meta name="description" content="Playwright Automation Testing course in Noida with 80+ hours live training, 15+ real projects, TypeScript, CI/CD, API &amp; visual testing, certification and 100% placement assistance. Weekday, weekend and fast-track batches.">
+    <meta name="keywords" content="Playwright course in Noida, Playwright automation testing training, Playwright certification Noida, end to end testing course, cross browser testing training, SDET course Noida, TypeScript automation testing, Playwright with CI/CD, QA automation course Noida, Playwright API testing">
+    <meta name="author" content="Uncodemy Edutech Pvt. Ltd.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="rating" content="general">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://uncodemy.com/playwright-automation-testing-course">
+
+    <!-- Local / GEO signals -->
+    <meta name="geo.region" content="IN-UP">
+    <meta name="geo.placename" content="Noida, Uttar Pradesh, India">
+    <meta name="geo.position" content="28.5852;77.3122">
+    <meta name="ICBM" content="28.5852, 77.3122">
+    <meta name="business:contact_data:street_address" content="B 14-15, Sector 1, Noida">
+    <meta name="business:contact_data:locality" content="Noida">
+    <meta name="business:contact_data:region" content="Uttar Pradesh">
+    <meta name="business:contact_data:postal_code" content="201301">
+    <meta name="business:contact_data:country_name" content="India">
+    <meta name="business:contact_data:phone_number" content="+91-9818366550">
+    <meta name="business:contact_data:email" content="info@uncodemy.com">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Uncodemy">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Playwright Automation Testing Course in Noida | 100% Placement | Uncodemy">
+    <meta property="og:description" content="Learn Playwright from working SDETs: cross-browser automation, mobile emulation, API and visual testing, CI/CD pipelines, 15+ live projects and placement support.">
+    <meta property="og:url" content="https://uncodemy.com/playwright-automation-testing-course">
+    <meta property="og:image" content="https://uncodemy.com/image/playwright-course-uncodemy.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Playwright Automation Testing course by Uncodemy, Noida">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uncodemy">
+    <meta name="twitter:title" content="Playwright Automation Testing Course in Noida | Uncodemy">
+    <meta name="twitter:description" content="80+ hours of live Playwright training, 15+ industry projects, certification and 100% placement assistance in Noida.">
+    <meta name="twitter:image" content="https://uncodemy.com/image/playwright-course-uncodemy.jpg">
+
+    <link rel="icon" href="/img/uc.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="css/jeet.css">
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+    <style>
+        /* ============================================================
+               BRAND THEME — Orange #FF5421 as accent, white/light base
+               ============================================================ */
+        :root {
+            --ad-primary: #FF5421;
+            --ad-primary-deep: #E94718;
+            --ad-primary-soft: #FFF1EC;
+            --ad-paper: #FFFFFF;
+            --ad-paper-alt: #FFF9F7;
+            --ad-ink: #1F1F1F;
+            --ad-ink-soft: #5F6368;
+            --ad-line: #E9E9E9;
+            --ad-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+            --ad-shadow-lift: 0 8px 28px rgba(255, 84, 33, 0.14);
+            --ad-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+            --ad-radius: 14px;
+            --ad-radius-sm: 8px;
+            --ad-radius-xl: 20px;
+            --ad-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --ad-mono: 'SF Mono', ui-monospace, 'Menlo', 'Monaco', 'Consolas', monospace;
+            --ad-pad: 16px;
+            --ad-transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .adarsh-body {
+            font-family: var(--ad-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--ad-ink) !important;
+            background: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .adarsh-shell {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--ad-pad);
+        }
+
+        .adarsh-block {
+            padding: 52px 0;
+            position: relative;
+        }
+        .adarsh-block-alt {
+            background: var(--ad-paper-alt);
+        }
+        .adarsh-block-soft {
+            background: var(--ad-primary-soft);
+        }
+        .adarsh-block-ink {
+            background: var(--ad-primary-soft);
+            color: var(--ad-ink);
+        }
+        .adarsh-defer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1400px;
+        }
+
+        .adarsh-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--ad-mono);
+            font-size: .7rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--ad-primary);
+            background: var(--ad-primary-soft);
+            border: 1px solid #FDD6C6;
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 16px;
+        }
+        .adarsh-eyebrow-ghost {
+            background: rgba(255, 84, 33, 0.10);
+            border-color: rgba(255, 84, 33, 0.25);
+            color: var(--ad-primary);
+        }
+
+        .adarsh-head {
+            max-width: 780px;
+            margin-bottom: 32px;
+        }
+        .adarsh-head-mid {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .adarsh-h2 {
+            font-size: clamp(1.8rem, 5.2vw, 2.6rem);
+            line-height: 1.18;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--ad-ink);
+            margin-bottom: 12px;
+        }
+        .adarsh-h2-light {
+            color: var(--ad-ink);
+        }
+        .adarsh-lede {
+            font-size: 1.05rem;
+            color: var(--ad-ink-soft);
+            max-width: 68ch;
+            line-height: 1.65;
+        }
+        .adarsh-lede-mid {
+            margin-inline: auto;
+        }
+        .adarsh-lede-light {
+            color: var(--ad-ink-soft);
+        }
+        .adarsh-rule {
+            width: 48px;
+            height: 3px;
+            border-radius: 4px;
+            margin-bottom: 18px;
+            background: var(--ad-primary);
+        }
+        .adarsh-rule-mid {
+            margin-inline: auto;
+        }
+
+        .adarsh-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 12px 28px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font: inherit;
+            font-weight: 600;
+            font-size: .95rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background var(--ad-transition), transform var(--ad-transition), box-shadow var(--ad-transition), border-color var(--ad-transition);
+            text-align: center;
+            width: 100%;
+            letter-spacing: 0.01em;
+        }
+        .adarsh-btn-solid {
+            background: var(--ad-primary);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(255, 84, 33, 0.28);
+        }
+        .adarsh-btn-solid:hover {
+            background: var(--ad-primary-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(255, 84, 33, 0.30);
+        }
+        .adarsh-btn-line {
+            background: #fff;
+            color: var(--ad-primary);
+            border-color: var(--ad-primary);
+        }
+        .adarsh-btn-line:hover {
+            background: var(--ad-primary-soft);
+            transform: translateY(-2px);
+        }
+        .adarsh-btn-ghost {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.40);
+        }
+        .adarsh-btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.10);
+            transform: translateY(-2px);
+        }
+        .adarsh-btn-sm {
+            min-height: 40px;
+            padding: 8px 20px;
+            font-size: .85rem;
+        }
+        .adarsh-btn-row {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .adarsh-more-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 28px;
+        }
+        .adarsh-btn-more {
+            width: auto;
+            min-width: 200px;
+        }
+
+        .adarsh-intro-card {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius-xl);
+            padding: 28px 26px;
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-intro-strip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-family: var(--ad-mono);
+            font-size: .72rem;
+            color: var(--ad-ink-soft);
+            border-bottom: 1px solid var(--ad-line);
+            padding-bottom: 14px;
+            margin-bottom: 18px;
+        }
+        .adarsh-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .adarsh-dot-a {
+            background: #FF5F57;
+        }
+        .adarsh-dot-b {
+            background: #FEBC2E;
+        }
+        .adarsh-dot-c {
+            background: #28C840;
+        }
+        .adarsh-intro-file {
+            margin-left: auto;
+            color: var(--ad-primary);
+            font-weight: 600;
+        }
+        .adarsh-copy {
+            color: var(--ad-ink-soft);
+            margin-bottom: 16px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .adarsh-copy-strong {
+            color: var(--ad-ink);
+            font-weight: 600;
+        }
+        .adarsh-h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 24px 0 10px;
+            color: var(--ad-ink);
+        }
+        .adarsh-h3-primary {
+            color: var(--ad-primary);
+        }
+        .adarsh-ticks {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .adarsh-tick {
+            position: relative;
+            padding-left: 30px;
+            color: var(--ad-ink-soft);
+            font-size: .97rem;
+            line-height: 1.55;
+        }
+        .adarsh-tick::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: .42em;
+            width: 16px;
+            height: 16px;
+            border-radius: 5px;
+            background: var(--ad-primary-soft);
+            border: 1px solid #FDD6C6;
+        }
+        .adarsh-tick::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: .62em;
+            width: 5px;
+            height: 9px;
+            border: solid var(--ad-primary);
+            border-width: 0 2px 2px 0;
+            transform: rotate(42deg);
+        }
+        .adarsh-fold {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s ease;
+        }
+        .adarsh-fold-open {
+            max-height: 6000px;
+        }
+
+        .adarsh-grid {
+            display: grid;
+            gap: 18px;
+        }
+        .adarsh-card {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            padding: 24px 22px;
+            transition: transform var(--ad-transition), box-shadow var(--ad-transition), border-color var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+            border-color: #FDD6C6;
+        }
+        .adarsh-card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+            color: var(--ad-ink);
+        }
+        .adarsh-card-text {
+            font-size: .94rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.6;
+        }
+        .adarsh-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 1.3rem;
+            margin-bottom: 14px;
+            background: var(--ad-primary-soft);
+            border: 1px solid #FDD6C6;
+            color: var(--ad-primary);
+        }
+        .adarsh-badge-ink {
+            background: var(--ad-primary);
+            color: #fff;
+            font-family: var(--ad-mono);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+        .adarsh-badge-green {
+            background: #E6F7EE;
+            border-color: #B8E3CD;
+            color: #0F7B3A;
+        }
+
+        .adarsh-enquire {
+            background: var(--ad-paper-alt);
+            color: var(--ad-ink);
+            padding: 52px 0;
+        }
+        .adarsh-enquire-grid {
+            display: grid;
+            gap: 32px;
+        }
+        .adarsh-contact-list {
+            display: grid;
+            gap: 16px;
+            margin-top: 24px;
+            list-style: none;
+        }
+        .adarsh-contact-row {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .adarsh-contact-icon {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: var(--ad-primary-soft);
+            border: 1px solid #FDD6C6;
+            font-size: 1.05rem;
+            color: var(--ad-primary);
+        }
+        .adarsh-contact-label {
+            font-weight: 600;
+            font-size: .95rem;
+            margin-bottom: 2px;
+            color: var(--ad-ink);
+        }
+        .adarsh-contact-text {
+            font-size: .9rem;
+            color: var(--ad-ink-soft);
+        }
+        .adarsh-contact-link {
+            color: var(--ad-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .adarsh-contact-link:hover {
+            color: var(--ad-primary-deep);
+            text-decoration: underline;
+        }
+
+        .adarsh-form-card {
+            background: #fff;
+            border-radius: var(--ad-radius-xl);
+            padding: 28px 24px;
+            box-shadow: var(--ad-shadow-card);
+            border: 1px solid var(--ad-line);
+        }
+        .adarsh-form-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--ad-ink);
+            margin-bottom: 4px;
+        }
+        .adarsh-form-note {
+            font-size: .88rem;
+            color: var(--ad-ink-soft);
+            margin-bottom: 20px;
+        }
+        .adarsh-field-set {
+            margin-bottom: 16px;
+        }
+        .adarsh-label {
+            display: block;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--ad-ink);
+            margin-bottom: 6px;
+        }
+        .adarsh-field {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 14px;
+            font: inherit;
+            font-size: 1rem;
+            color: var(--ad-ink);
+            background: #fff;
+            border: 1.5px solid var(--ad-line);
+            border-radius: var(--ad-radius-sm);
+            transition: border-color var(--ad-transition), box-shadow var(--ad-transition);
+        }
+        .adarsh-field:focus {
+            outline: none;
+            border-color: var(--ad-primary);
+            box-shadow: 0 0 0 3px rgba(255, 84, 33, 0.10);
+        }
+        .adarsh-submit {
+            width: 100%;
+            min-height: 50px;
+            border: none;
+            border-radius: var(--ad-radius-sm);
+            cursor: pointer;
+            font: inherit;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            background: var(--ad-primary);
+            box-shadow: 0 4px 14px rgba(255, 84, 33, 0.28);
+            transition: background var(--ad-transition), transform var(--ad-transition), box-shadow var(--ad-transition);
+        }
+        .adarsh-submit:hover {
+            background: var(--ad-primary-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(255, 84, 33, 0.30);
+        }
+
+        .adarsh-split {
+            display: grid;
+            gap: 28px;
+        }
+        .adarsh-panel {
+            background: var(--ad-primary-soft);
+            color: var(--ad-ink);
+            border-radius: var(--ad-radius-xl);
+            padding: 26px 22px;
+        }
+        .adarsh-panel-item {
+            background: rgba(255, 255, 255);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 12px;
+            padding: 18px 16px;
+            margin-bottom: 12px;
+        }
+        .adarsh-panel-item:last-child {
+            margin-bottom: 0;
+        }
+        .adarsh-panel-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #FFB089;
+        }
+        .adarsh-panel-text {
+            font-size: .92rem;
+            color: var(--ad-ink);
+            line-height: 1.6;
+        }
+
+        .adarsh-module {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            overflow: hidden;
+            transition: box-shadow var(--ad-transition), transform var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-module:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+        .adarsh-module-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--ad-ink);
+            color: #fff;
+        }
+        .adarsh-module-num {
+            font-family: var(--ad-mono);
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            background: var(--ad-primary);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            flex: 0 0 auto;
+        }
+        .adarsh-module-name {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+        .adarsh-module-body {
+            padding: 8px 20px 20px;
+        }
+        .adarsh-topics {
+            list-style: none;
+        }
+        .adarsh-topic {
+            position: relative;
+            padding: 9px 0 9px 20px;
+            font-size: .92rem;
+            color: var(--ad-ink-soft);
+            border-bottom: 1px solid var(--ad-line);
+            line-height: 1.5;
+        }
+        .adarsh-topic:last-child {
+            border-bottom: none;
+        }
+        .adarsh-topic::before {
+            content: "›";
+            position: absolute;
+            left: 2px;
+            top: 8px;
+            color: var(--ad-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .adarsh-hidden {
+            display: none;
+        }
+        .adarsh-shown {
+            display: block;
+            animation: adarshRise .4s ease both;
+        }
+        @keyframes adarshRise {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .adarsh-tool {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            padding: 22px 16px;
+            text-align: center;
+            transition: border-color var(--ad-transition), transform var(--ad-transition), box-shadow var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-tool:hover {
+            border-color: var(--ad-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-tool-mark {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 12px;
+            border-radius: var(--ad-radius);
+            display: grid;
+            place-items: center;
+            font-size: 1.6rem;
+            background: var(--ad-paper-alt);
+            border: 1px solid var(--ad-line);
+            color: var(--ad-primary);
+        }
+        .adarsh-tool-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--ad-ink);
+        }
+        .adarsh-tool-text {
+            font-size: .86rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.5;
+        }
+
+        .adarsh-table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: var(--ad-radius);
+            border: 1px solid var(--ad-line);
+            background: #fff;
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-table {
+            width: 100%;
+            min-width: 640px;
+            border-collapse: collapse;
+            font-size: .9rem;
+        }
+        .adarsh-th {
+            color: var(--ad-ink);
+            border-bottom: 1px solid var(--ad-line);
+            text-align: left;
+            padding: 14px 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: .85rem;
+            letter-spacing: 0.02em;
+        }
+        .adarsh-th-hero {
+            background: var(--ad-primary);
+        }
+        .adarsh-td {
+            padding: 13px 14px;
+            border-bottom: 1px solid var(--ad-line);
+            color: var(--ad-ink-soft);
+            vertical-align: top;
+            font-size: .88rem;
+        }
+        .adarsh-td-key {
+            font-weight: 600;
+            color: var(--ad-ink);
+            white-space: nowrap;
+        }
+        .adarsh-row-zebra {
+            background: var(--ad-paper-alt);
+        }
+        .adarsh-yes {
+            color: #0F7B3A;
+            font-weight: 600;
+        }
+        .adarsh-no {
+            color: var(--ad-primary);
+            font-weight: 600;
+        }
+
+        .adarsh-role {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-left: 4px solid var(--ad-primary);
+            border-radius: 12px;
+            padding: 20px 18px;
+            transition: transform var(--ad-transition), box-shadow var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-role:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-role-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+        .adarsh-role-icon {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: var(--ad-primary-soft);
+            border: 1px solid #FDD6C6;
+            font-size: 1.1rem;
+            color: var(--ad-primary);
+        }
+        .adarsh-role-name {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--ad-ink);
+        }
+        .adarsh-pay {
+            display: inline-block;
+            background: #E6F7EE;
+            color: #0F7B3A;
+            border: 1px solid #B8E3CD;
+            font-size: .78rem;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-family: var(--ad-mono);
+        }
+
+        .adarsh-pay-card {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--ad-shadow-card);
+            transition: transform var(--ad-transition), box-shadow var(--ad-transition);
+        }
+        .adarsh-pay-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-pay-amount {
+            font-family: var(--ad-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ad-primary);
+            letter-spacing: -0.02em;
+        }
+        .adarsh-pay-role {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 8px 0 4px;
+            color: var(--ad-ink);
+        }
+        .adarsh-pay-exp {
+            font-size: .85rem;
+            color: var(--ad-ink-soft);
+        }
+
+        .adarsh-project {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            overflow: hidden;
+            transition: transform var(--ad-transition), box-shadow var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-project:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-project-top {
+            padding: 20px 20px 18px;
+            background: var(--ad-primary);
+            color: #fff;
+        }
+        .adarsh-project-num {
+            font-family: var(--ad-mono);
+            font-size: .72rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            opacity: .7;
+        }
+        .adarsh-project-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 4px 0 8px;
+            letter-spacing: -0.01em;
+        }
+        .adarsh-project-stack {
+            font-family: var(--ad-mono);
+            font-size: .74rem;
+            background: rgba(255, 255, 255, 0.12);
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .adarsh-project-body {
+            padding: 20px;
+        }
+        .adarsh-project-text {
+            font-size: .94rem;
+            color: var(--ad-ink-soft);
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .adarsh-points {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+        .adarsh-point {
+            position: relative;
+            padding-left: 18px;
+            font-size: .9rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.5;
+        }
+        .adarsh-point::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: .55em;
+            width: 7px;
+            height: 7px;
+            border-radius: 2px;
+            background: var(--ad-primary);
+        }
+
+        .adarsh-stat {
+            background: rgba(255, 255, 255);
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-stat-num {
+            font-family: var(--ad-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFB089;
+            letter-spacing: -0.02em;
+        }
+        .adarsh-stat-label {
+            font-size: .85rem;
+            color: var(--ad-ink);
+            margin-top: 6px;
+        }
+
+        .adarsh-path {
+            display: grid;
+            gap: 14px;
+            counter-reset: adarshStep;
+        }
+        .adarsh-step {
+            display: flex;
+            gap: 16px;
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: 12px;
+            padding: 18px 20px;
+            transition: border-color var(--ad-transition), box-shadow var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-step:hover {
+            border-color: var(--ad-primary);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-step-num {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: var(--ad-primary);
+            color: #fff;
+            font-family: var(--ad-mono);
+            font-weight: 700;
+            font-size: .9rem;
+        }
+        .adarsh-step-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--ad-ink);
+        }
+        .adarsh-step-text {
+            font-size: .92rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.5;
+        }
+        .adarsh-step-body {
+            flex: 1;
+        }
+
+        .adarsh-chip {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: 12px;
+            padding: 18px 14px;
+            text-align: center;
+            transition: background var(--ad-transition), color var(--ad-transition), transform var(--ad-transition), border-color var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-chip:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(23, 23, 23, 0.14);
+        }
+        .adarsh-chip-mark {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--ad-primary);
+            display: grid;
+            place-items: center;
+        }
+        .adarsh-chip-name {
+            font-size: .95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--ad-ink);
+        }
+        .adarsh-chip-text {
+            font-size: .84rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.4;
+        }
+
+        .adarsh-cert-visual {
+            background: #FFFFFF;
+            border-radius: var(--ad-radius-xl);
+            padding: 36px 24px;
+            text-align: center;
+            color: var(--ad-ink);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-cert-seal {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--ad-primary-soft);
+            font-size: 3.2rem;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .certificate-icon {
+            width: 42px;
+            height: 42px;
+            color: #FF5421;
+            stroke-width: 1.8;
+        }
+        .deco-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .deco-row svg {
+            width: 22px;
+            height: 22px;
+            color: #FF5421;
+            stroke-width: 1.8;
+        }
+        .deco-row span {
+            height: 2px;
+            width: 50px;
+            background: #FF5421;
+        }
+        .ad-highlight {
+            color: var(--ad-primary);
+        }
+        .adarsh-cert-name {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+        .adarsh-cert-by {
+            font-size: .98rem;
+            opacity: .8;
+            font-family: var(--ad-mono);
+        }
+        .adarsh-cert-by span {
+            line-height: 1.1;
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        .adarsh-cert-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+        .adarsh-cert-item {
+            position: relative;
+            padding: 0 0 12px 34px;
+            border-bottom: 1px solid var(--ad-line);
+            font-size: .94rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.5;
+        }
+        .adarsh-cert-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .adarsh-cert-item::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--ad-primary);
+            color: #fff;
+            font-size: .75rem;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+        }
+
+        .adarsh-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .adarsh-logo {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: 10px;
+            padding: 14px 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: .88rem;
+            color: var(--ad-ink-soft);
+            transition: transform var(--ad-transition), color var(--ad-transition), border-color var(--ad-transition);
+        }
+        .adarsh-logo:hover {
+            transform: scale(1.04);
+            color: var(--ad-primary);
+            border-color: #FDD6C6;
+        }
+
+        .adarsh-quote {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            padding: 24px 22px;
+            position: relative;
+            box-shadow: var(--ad-shadow-card);
+            transition: transform var(--ad-transition), box-shadow var(--ad-transition);
+        }
+        .adarsh-quote:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-quote-mark {
+            font-family: Georgia, serif;
+            font-size: 3.6rem;
+            line-height: 1;
+            color: var(--ad-primary);
+            opacity: .12;
+            position: absolute;
+            top: 8px;
+            right: 18px;
+        }
+        .adarsh-quote-text {
+            font-size: .96rem;
+            color: var(--ad-ink-soft);
+            margin-bottom: 18px;
+            line-height: 1.65;
+        }
+        .adarsh-quote-by {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .adarsh-avatar {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--ad-primary);
+            color: #fff;
+            font-weight: 600;
+            font-size: .9rem;
+        }
+        .adarsh-quote-name {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--ad-ink);
+        }
+        .adarsh-quote-role {
+            font-size: .85rem;
+            color: var(--ad-primary);
+            font-weight: 500;
+        }
+
+        .adarsh-batch {
+            background: #fff;
+            border: 1.5px solid var(--ad-line);
+            border-radius: var(--ad-radius);
+            padding: 24px 20px;
+            transition: border-color var(--ad-transition), transform var(--ad-transition), box-shadow var(--ad-transition);
+            box-shadow: var(--ad-shadow-card);
+        }
+        .adarsh-batch:hover {
+            border-color: var(--ad-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .adarsh-batch-tag {
+            display: inline-block;
+            background: var(--ad-primary);
+            color: #fff;
+            font-family: var(--ad-mono);
+            font-size: .7rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+        .adarsh-batch-tag-live {
+            background: var(--ad-primary);
+        }
+        .adarsh-batch-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: var(--ad-ink);
+        }
+        .adarsh-batch-list {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+        .adarsh-batch-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 9px 0;
+            border-bottom: 1px dashed var(--ad-line);
+            font-size: .9rem;
+            color: var(--ad-ink-soft);
+        }
+        .adarsh-batch-item:last-child {
+            border-bottom: none;
+        }
+        .adarsh-batch-key {
+            font-weight: 600;
+            color: var(--ad-ink);
+        }
+        .adarsh-seats {
+            color: var(--ad-primary);
+            font-weight: 700;
+        }
+
+        .adarsh-faq-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            display: grid;
+            gap: 10px;
+        }
+        .adarsh-faq {
+            background: #fff;
+            border: 1px solid var(--ad-line);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color var(--ad-transition), box-shadow var(--ad-transition);
+        }
+        .adarsh-faq-open {
+            border-color: var(--ad-primary);
+            box-shadow: 0 4px 20px rgba(255, 84, 33, 0.06);
+        }
+        .adarsh-faq-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 16px 20px;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ad-ink);
+            transition: background var(--ad-transition);
+        }
+        .adarsh-faq-btn:hover {
+            background: var(--ad-paper-alt);
+        }
+        .adarsh-faq-sign {
+            width: 28px;
+            height: 28px;
+            flex: 0 0 28px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            background: var(--ad-primary-soft);
+            color: var(--ad-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform var(--ad-transition), background var(--ad-transition), color var(--ad-transition);
+        }
+        .adarsh-faq-open .adarsh-faq-sign {
+            transform: rotate(45deg);
+            background: var(--ad-primary);
+            color: #fff;
+        }
+        .adarsh-faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease;
+        }
+        .adarsh-faq-open .adarsh-faq-body {
+            max-height: 900px;
+        }
+        .adarsh-faq-text {
+            padding: 0 20px 20px;
+            font-size: .94rem;
+            color: var(--ad-ink-soft);
+            line-height: 1.65;
+        }
+
+        .adarsh-close {
+            background: var(--ad-primary);
+            color: #fff;
+            text-align: center;
+            padding: 35px 0;
+        }
+        .adarsh-close-title {
+            font-size: clamp(1.6rem, 5.2vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+        }
+        .adarsh-close-text {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.90);
+            max-width: 60ch;
+            margin: 0 auto 4px;
+            line-height: 1.6;
+        }
+
+        .adarsh-footer {
+            background: #151515;
+            color: #fff;
+            padding: 40px 0 30px;
+        }
+        .adarsh-footer-text {
+            font-size: .85rem;
+            color: rgba(255, 255, 255, 0.50);
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+        .adarsh-footer-text a {
+            color: var(--ad-primary);
+            text-decoration: none;
+        }
+        .adarsh-footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        .adarsh-contact-detail,
+        .adarsh-quote-meta {
+            display: block;
+        }
+        .adarsh-contact-label,
+        .adarsh-contact-text,
+        .adarsh-quote-name,
+        .adarsh-quote-role {
+            display: block;
+        }
+        .adarsh-btn-row-mid {
+            justify-content: center;
+        }
+        .adarsh-mono {
+            font-family: var(--ad-mono);
+        }
+        .adarsh-sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .adarsh-btn:focus-visible,
+        .adarsh-faq-btn:focus-visible,
+        .adarsh-field:focus-visible,
+        .adarsh-submit:focus-visible {
+            outline: 3px solid var(--ad-primary);
+            outline-offset: 2px;
+        }
+
+        /* inline icon helper */
+        .adarsh-inline-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+            color: var(--ad-primary);
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+        .adarsh-badge-icon {
+            width: 26px;
+            height: 26px;
+            color: var(--ad-primary);
+            stroke-width: 2;
+        }
+        .adarsh-badge-ink .adarsh-badge-icon {
+            color: #fff;
+        }
+        .adarsh-badge-green .adarsh-badge-icon {
+            color: #0F7B3A;
+        }
+        .adarsh-tool-icon {
+            width: 30px;
+            height: 30px;
+            color: var(--ad-primary);
+            stroke-width: 1.8;
+        }
+        .adarsh-chip-icon {
+            width: 28px;
+            height: 28px;
+            color: var(--ad-primary);
+            stroke-width: 1.8;
+        }
+        .adarsh-role-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--ad-primary);
+            stroke-width: 2;
+        }
+        .adarsh-contact-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--ad-primary);
+            stroke-width: 2;
+        }
+        .adarsh-panel-title svg {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+            color: #FFB089;
+            stroke-width: 1.8;
+        }
+
+        @media (min-width:600px) {
+            :root {
+                --ad-pad: 28px;
+            }
+            .adarsh-block {
+                padding: 60px 0;
+            }
+            .adarsh-intro-card {
+                padding: 32px 30px;
+            }
+            .adarsh-form-card {
+                padding: 30px 28px;
+            }
+            .adarsh-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .adarsh-grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .adarsh-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .adarsh-logo-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .adarsh-btn-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .adarsh-btn {
+                width: auto;
+            }
+            .adarsh-panel {
+                padding: 28px 26px;
+            }
+        }
+
+        @media (min-width:900px) {
+            :root {
+                --ad-pad: 40px;
+            }
+            .adarsh-block {
+                padding: 72px 0;
+            }
+            .adarsh-grid {
+                gap: 24px;
+            }
+            .adarsh-grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .adarsh-grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .adarsh-grid-6 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .adarsh-split {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                align-items: start;
+            }
+            .adarsh-enquire-grid {
+                grid-template-columns: 1.05fr 0.95fr;
+                gap: 40px;
+                align-items: center;
+            }
+            .adarsh-logo-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            .adarsh-path {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .adarsh-intro-card {
+                padding: 38px 38px;
+            }
+            .adarsh-cert-visual {
+                padding: 44px 32px;
+            }
+        }
+
+        @media (min-width:1200px) {
+            .adarsh-grid-6 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .adarsh-logo-grid {
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            .adarsh-card,
+            .adarsh-tool,
+            .adarsh-project,
+            .adarsh-chip,
+            .adarsh-role,
+            .adarsh-batch,
+            .adarsh-btn {
+                transition: none;
+            }
+            .adarsh-shown {
+                animation: none;
+            }
+        }
+
+        @media print {
+            .adarsh-enquire,
+            .adarsh-close,
+            .adarsh-btn,
+            .adarsh-more-wrap {
+                display: none;
+            }
+            .adarsh-fold {
+                max-height: none;
+            }
+            .adarsh-block {
+                padding: 24px 0;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+    </style>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [{
+                "@type": "EducationalOrganization",
+                "@id": "https://uncodemy.com/#org",
+                "name": "Uncodemy",
+                "legalName": "Uncodemy Edutech Pvt. Ltd.",
+                "url": "https://uncodemy.com",
+                "logo": "https://uncodemy.com/image/Uncodemy%20logo-10.png",
+                "email": "info@uncodemy.com",
+                "telephone": "+91-9818366550",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "B 14-15, Sector 1",
+                    "addressLocality": "Noida",
+                    "addressRegion": "Uttar Pradesh",
+                    "postalCode": "201301",
+                    "addressCountry": "IN"
+                },
+                "geo": { "@type": "GeoCoordinates", "latitude": 28.5852, "longitude": 77.3122 },
+                "areaServed": ["Noida", "Greater Noida", "Ghaziabad", "Delhi NCR", "India"],
+                "sameAs": [
+                    "https://facebook.com/uncodemyofficial/",
+                    "https://twitter.com/uncodemy",
+                    "https://linkedin.com/company/uncodemy",
+                    "https://instagram.com/uncodemyofficial"
+                ],
+                "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "3800",
+                    "bestRating": "5" }
+            }, {
+                "@type": "Course",
+                "name": "Playwright Automation Testing Course in Noida",
+                "description": "Instructor-led Playwright automation testing training covering cross-browser testing, mobile emulation, network interception, API and visual testing, framework design and CI/CD, with 15+ industry projects and placement assistance.",
+                "url": "https://uncodemy.com/playwright-automation-testing-course",
+                "inLanguage": "en",
+                "provider": { "@id": "https://uncodemy.com/#org" },
+                "educationalLevel": "Beginner to Advanced",
+                "teaches": ["Playwright", "TypeScript", "Cross-browser testing", "API testing",
+                    "Visual regression testing", "CI/CD for test automation"
+                ],
+                "coursePrerequisites": "No prior programming experience required",
+                "hasCourseInstance": [{
+                    "@type": "CourseInstance",
+                    "name": "Weekday morning batch",
+                    "courseMode": ["Onsite", "Online"],
+                    "courseWorkload": "PT80H",
+                    "location": { "@type": "Place", "name": "Uncodemy Noida",
+                        "address": "B 14-15, Sector 1, Noida, Uttar Pradesh 201301, India" },
+                    "instructor": { "@type": "Person", "name": "Uncodemy Senior SDET Faculty" }
+                }, {
+                    "@type": "CourseInstance",
+                    "name": "Weekend batch",
+                    "courseMode": ["Onsite", "Online"],
+                    "courseWorkload": "PT80H",
+                    "location": { "@type": "Place", "name": "Uncodemy Noida",
+                        "address": "B 14-15, Sector 1, Noida, Uttar Pradesh 201301, India" },
+                    "instructor": { "@type": "Person", "name": "Uncodemy Senior SDET Faculty" }
+                }, {
+                    "@type": "CourseInstance",
+                    "name": "Fast-track batch",
+                    "courseMode": "Onsite",
+                    "courseWorkload": "PT80H",
+                    "location": { "@type": "Place", "name": "Uncodemy Noida",
+                        "address": "B 14-15, Sector 1, Noida, Uttar Pradesh 201301, India" },
+                    "instructor": { "@type": "Person", "name": "Uncodemy Senior SDET Faculty" }
+                }],
+                "offers": {
+                    "@type": "Offer",
+                    "category": "Paid",
+                    "priceCurrency": "INR",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://uncodemy.com/playwright-automation-testing-course#adarsh-contact"
+                }
+            }, {
+                "@type": "FAQPage",
+                "mainEntity": [{ "@type": "Question", "name": "Do I need programming experience to join this Playwright course?",
+                    "acceptedAnswer": { "@type": "Answer",
+                        "text": "No prior programming experience is required. The course starts with the JavaScript and TypeScript concepts needed for automation testing, and extra foundation sessions are available for absolute beginners." } }, { "@type": "Question",
+                        "name": "What is the course duration and schedule for Playwright training?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "Weekday batches run 8 weeks at 2 hours daily, weekend batches run 10 weeks at 4 hours on Saturday and Sunday, and fast-track batches run 6 weeks at 4 hours daily. Every batch includes 80+ hours of instructor-led training." } }, { "@type": "Question",
+                        "name": "Will I get placement assistance after completing the Playwright course?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "Yes. Placement support includes resume building, mock interviews, interview preparation and interview calls from 200+ hiring partners, continuing until you are placed." } }, { "@type": "Question",
+                        "name": "What certificate will I receive after the Playwright course?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "You receive the Playwright Automation Testing Professional certificate from Uncodemy in digital and physical formats, with lifetime validity and a unique verification ID." } }, { "@type": "Question",
+                        "name": "Are flexible payment options available for the Playwright course?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "Yes. Options include a 15% discount on full upfront payment, 3 or 6 interest-free instalments, partner-bank EMI at 0% for 6 months, and merit or need-based scholarships." } }, { "@type": "Question",
+                        "name": "What if I miss a class or need to reschedule?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "All sessions are recorded with lifetime LMS access. You can also attend the same topic in another batch, book one-on-one doubt sessions, or transfer batches subject to availability." } }, { "@type": "Question",
+                        "name": "Is online Playwright training as effective as classroom training?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "Yes. Online batches are live and interactive with screen-shared demos, cloud labs, recorded sessions and a digital whiteboard. A hybrid mode combining classroom and online is also available." } }, { "@type": "Question",
+                        "name": "What is the average salary after completing the Playwright course?",
+                        "acceptedAnswer": { "@type": "Answer",
+                            "text": "Freshers typically earn ₹6-10 LPA, engineers with 1-3 years earn ₹8-15 LPA, senior SDETs with 3-5 years earn ₹12-20 LPA, and architects with 5+ years earn ₹18-30 LPA." } }]
+            }, {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uncodemy.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Courses", "item": "https://uncodemy.com/all-courses" },
+                    { "@type": "ListItem", "position": 3, "name": "Playwright Automation Testing Course",
+                        "item": "https://uncodemy.com/playwright-automation-testing-course" }
+                ]
+            }]
+        }
+    </script>
+
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "xmqak04f7r");
+    </script>
+</head>
+
+<body class="adarsh-body">
+    <uncodemy-navbar></uncodemy-navbar>
+    <div class="container-fluid p-0">
+        <section class="jeet-hero" style="margin-top: 111px;">
+            <main class="uc-shell">
+
+                <!-- ==================== HERO ==================== -->
+                <section class="uc-hero" style="margin-top: 10px !important;">
+
+                    <!-- LEFT -->
+                    <div class="uc-hero-left">
+                        <h1 class="uc-hero-heading">
+                            <span class="uc-heading-accent">Data Science Training Course in Noida With Gen AI by Uncodemy
+                        </h1>
+
+                        <p class="uc-hero-desc">
+                            Welcome to Uncodemy, your go-to place for upskilling and discovering the latest trending skills! We offer a top-notch Data Science Training Program with Gen AI right here in Noida. Our engaging and comprehensive range of Data Science courses includes a variety of cutting-edge programs, all designed to equip you with the essential knowledge and skills you need to thrive in today's tech-savvy, data-driven world </p>
+
+                        <div style="display: flex; margin-bottom: 22px; flex-wrap:wrap ;" class="rating-img">
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/Google_Icon.svg" alt="Google_Icon"><span style="color: black;">5/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/sul.png" alt="sul"><span style="color: black;">4.5/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/urbonpro.png" alt="urbonpro"><span style="color: black;">4.6/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/just-dial.png" alt="just-dial"><span style="color: black;">4.5/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/Facebook.svg" alt="Facebook"><span style="color: black;">4.5/5</span></div>
+                        </div>
+
+                        <div class="uc-review-card">
+                            <div class="uc-stars">
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                            </div>
+                            <div class="uc-review-text">
+                                <span class="uc-review-score">4.9 out of 5</span>
+                                <span class="uc-review-count">based on 6850+ reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="collaboration-line">
+                            <span> In Collaboration with : </span>
+                            <div class="collabimg">
+                                <img class="lazy-loaded" alt="Microsoft" src="/image/ibm.png">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CENTER : OFFER CARD -->
+                    <div id="offer-card-container">
+                        <div class="uc-offer-wrap">
+                            <div class="uc-offer-card">
+                                <span class="uc-offer-ribbon">LIMITED TIME OFFER</span>
+
+                                <h2 class="uc-offer-heading">Special Offer Fee</h2>
+                                <p class="uc-offer-sub" style="text-align: center !important; margin: 0 !important;">(For Limited Seats Only)</p>
+
+                                <span class="uc-old-price">
+                                    <span class="uc-old-amount">₹ 50,000/-</span><span class="uc-gst">+GST</span>
+                                </span>
+
+                                <p class="uc-now-pay" style="text-align: center !important;">Now Pay Only</p>
+
+                                <span class="uc-price-box">₹ 17,500/-<span class="uc-price-gst">+GST</span></span>
+
+                                <div class="uc-emi-box">
+                                    <span class="uc-emi-label">EMI AVAILABLE</span>
+                                    <span class="uc-emi-value">Starts at ₹ 2,999 / Month</span>
+                                </div>
+
+                                <ul class="uc-offer-list">
+
+                                    <li class="uc-offer-li">
+                                        <i class="uc-offer-li-icon fa-solid fa-bullseye"></i>
+                                        <span class="uc-offer-li-text">Risk-Free Trial – Attend 2 Classes</span>
+                                    </li>
+
+                                    <li class="uc-offer-li">
+                                        <i class="uc-offer-li-icon fa-regular fa-circle-check"></i>
+                                        <span class="uc-offer-li-text">No Hidden Charges</span>
+                                    </li>
+                                </ul>
+
+                                <button class="uc-book-btn" type="button" onclick="showForm()" fdprocessedid="sd42p">Book Your Seat Now</button>
+                                <p class="uc-filling">Seats are filling fast!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT : ACCREDITATIONS -->
+                    <div class="uc-accred">
+
+                        <div class="uc-accred-card uc-card-nasscom">
+                            <div class="uc-accred-inner">
+                                <img src="./assets/img/jeet-img/nasscom.png" alt="nasscom logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-fsp">
+                            <div class="uc-accred-inner">
+                                <img src="./assets/img/jeet-img/fulllogo.png" alt="fullskill logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-nsdca">
+                            <div class="uc-nsdca-row">
+                                <img src="./assets/img/jeet-img/nsdc.png" alt="nsdc logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-gpartner">
+                            <div class="uc-gp-row">
+                                <img src="./assets/img/jeet-img/google.png" alt="google logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-iabac">
+                            <div class="uc-iabac-row">
+                                <img src="./assets/img/jeet-img/iabac.png" alt="iabac logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-iso">
+                            <div class="uc-iso-row">
+                                <img src="./assets/img/jeet-img/iso.png" alt="iso logo" srcset="">
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <div class="uc-placement-training">
+
+                    <button class="uc-placement-btn uc-placement-btn-outline" onclick="showForm(); setDownload('DataAnalyticsBtn')" fdprocessedid="7fejz">
+                        <img src="/img/tools/download.svg" alt="" aria-hidden="true">
+                        <span>Download Curriculum</span>
+                    </button>
+
+                    <button class="uc-placement-btn uc-placement-btn-fill" onclick="showForm()" fdprocessedid="wpf8g">
+                        Apply Now
+                    </button>
+
+                    <button class="uc-placement-btn uc-placement-btn-outline" onclick="showForm()" fdprocessedid="y70g3">
+                        <img src="/img/tools/download.svg" alt="" aria-hidden="true">
+                        <span>Request a Call</span>
+                    </button>
+
+                    <button class="uc-placement-btn uc-placement-btn-fill" onclick="showPopUpForm()" fdprocessedid="2r72k">
+                        Schedule a Demo
+                    </button>
+
+                </div>
+                <!-- ==================== FEATURE BAR ==================== -->
+                <section class="uc-feature-bar">
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-users"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Industry Expert Trainers</span>
+                            <span class="uc-feature-desc">Learn from 10+ years experienced professionals</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-desktop"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Live Projects</span>
+                            <span class="uc-feature-desc">Work on real-time projects &amp; case studies</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-book-open"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Lifetime Access</span>
+                            <span class="uc-feature-desc">Get lifetime access to recorded sessions &amp;
+                                materials</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-award"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Placement Assistance</span>
+                            <span class="uc-feature-desc">Resume Building, Mock Interviews &amp; Job Support</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-certificate"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Certified Course</span>
+                            <span class="uc-feature-desc">Industry-recognized certificate</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-regular fa-calendar-days"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Flexible Batches</span>
+                            <span class="uc-feature-desc">Weekday &amp; Weekend Online &amp; Offline</span>
+                        </span>
+                    </div>
+                </section>
+
+                <!-- ==================== WHY CHOOSE ==================== -->
+                <div id="stats-container">
+                    <section class="uc-why-card">
+
+                        <h2 class="uc-why-heading">
+                            Why Choose<br class="uc-why-br">
+                            <span class="uc-why-accent">Uncodemy?</span>
+                        </h2>
+
+                        <div class="uc-stat uc-stat-1">
+                            <i class="uc-stat-icon fa-solid fa-award"></i>
+                            <span class="uc-stat-value">14+</span>
+                            <span class="uc-stat-label">Years of Excellence<br class="uc-stat-br-1"></span>
+                        </div>
+
+                        <div class="uc-stat uc-stat-2">
+                            <i class="uc-stat-icon fa-solid fa-handshake"></i>
+                            <span class="uc-stat-value">850+</span>
+                            <span class="uc-stat-label">Hiring Partners</span>
+                        </div>
+
+                        <div class="uc-stat uc-stat-3">
+                            <i class="uc-stat-icon fa-solid fa-user-group"></i>
+                            <span class="uc-stat-value">54,000+</span>
+                            <span class="uc-stat-label">Students Trained</span>
+                        </div>
+
+                        <div class="uc-stat uc-stat-4">
+                            <i class="uc-stat-icon fa-solid fa-people-arrows"></i>
+                            <span class="uc-stat-value">200+</span>
+                            <span class="uc-stat-label">Corporate Tie-ups</span>
+                        </div>
+
+                        <div class="uc-stat uc-stat-5">
+                            <i class="uc-stat-icon fa-solid fa-location-dot"></i>
+                            <span class="uc-stat-value">40+</span>
+                            <span class="uc-stat-label">Cities Across India</span>
+                        </div>
+
+                        <div class="uc-stat uc-stat-6">
+                            <i class="uc-stat-icon fa-solid fa-clock-rotate-left"></i>
+                            <span class="uc-stat-value">95%</span>
+                            <span class="uc-stat-label">Placement Support</span>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ==================== BOTTOM STRIP ==================== -->
+                <section class="uc-strip">
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-laptop-file"></i>
+                        <span class="uc-strip-text">Online &amp; Offline Classes</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-regular fa-calendar-check"></i>
+                        <span class="uc-strip-text">Weekend &amp; Weekday Batches</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-code"></i>
+                        <span class="uc-strip-text">100% Practical Training</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-hand-holding-dollar"></i>
+                        <span class="uc-strip-text">Affordable Fees</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-regular fa-credit-card"></i>
+                        <span class="uc-strip-text">EMI Options Available</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-headset"></i>
+                        <span class="uc-strip-text">Dedicated Support</span>
+                    </div>
+                </section>
+                <div class="program-details animated-fade">
+                    <h3>Program Details</h3>
+
+                    <p class="program-subtext">
+                        Data Science with <strong>AI</strong> — Training &amp; Placement Program
+                        <em>Master Data Science from Fundamentals to Advanced AI Applications</em>
+                    </p>
+
+                    <p class="program-description">
+                        A comprehensive <strong>8-9 months industry-focused training program</strong> designed to build strong
+                        <strong>Data Science, Machine Learning &amp; Gen-AI skills</strong> through real-time projects, personalized mentoring,
+                        and dedicated <strong>placement support</strong> that prepares you for top-tier data-driven roles.
+                    </p>
+
+                    <ul class="program-highlights">
+                        <li><i data-lucide="bot" class="adarsh-inline-icon"></i> <span>Core Skills Covered:</span> Python, Statistics, Machine Learning, Deep Learning, Gen AI, NLP</li>
+                        <li><i data-lucide="clock" class="adarsh-inline-icon"></i> <span>Program Duration:</span> 8-9 Months</li>
+                        <li><i data-lucide="briefcase" class="adarsh-inline-icon"></i> <span>Average Salary Package:</span> <strong>₹8–28 LPA</strong></li>
+                        <li><i data-lucide="rocket" class="adarsh-inline-icon"></i> <span>Placement Support:</span> Guaranteed Interview Opportunities + Resume &amp; Interview Preparation</li>
+                        <li><i data-lucide="building-2" class="adarsh-inline-icon"></i> <span>Placement Drives:</span> With Top MNCs &amp; High-Growth Startups</li>
+                        <li><i data-lucide="target" class="adarsh-inline-icon"></i> <span>Career Paths:</span> Data Scientist, ML Engineer, AI Engineer, Data Researcher</li>
+                    </ul>
+                </div>
+            </main>
+        </section>
+
+    </div>
+
+    <!-- ============ 1. WHAT IS PLAYWRIGHT (LCP block, above the fold) ============ -->
+    <section class="adarsh-block" id="adarsh-about">
+        <div class="adarsh-shell">
+            <div class="adarsh-head">
+                <span class="adarsh-eyebrow">Playwright training · Noida</span>
+                <h1 class="adarsh-h2">Playwright Automation Testing Course in Noida</h1>
+                <div class="adarsh-rule"></div>
+                <p class="adarsh-lede">80+ hours of live training on Microsoft Playwright — cross-browser automation, mobile emulation, API and visual testing, framework design and CI/CD — with 15+ industry projects and 100% placement assistance.</p>
+            </div>
+
+            <div class="adarsh-intro-card">
+                <div class="adarsh-intro-strip">
+                    <span class="adarsh-dot adarsh-dot-a"></span>
+                    <span class="adarsh-dot adarsh-dot-b"></span>
+                    <span class="adarsh-dot adarsh-dot-c"></span>
+                    <span class="adarsh-intro-file">what-is-playwright.spec.ts</span>
+                </div>
+
+                <h2 class="adarsh-h2">What is Playwright automation testing?</h2>
+                <p class="adarsh-copy"><span class="adarsh-copy-strong">Playwright</span> is a modern, open-source automation framework built by Microsoft for testing web applications across every modern browser. One API drives Chromium, Firefox, WebKit and Safari, so a single suite covers your entire browser matrix.</p>
+                <p class="adarsh-copy">Unlike older tools, Playwright ships native mobile emulation, automatic waiting, deep debugging and true cross-browser execution — which is why teams building modern web apps keep moving to it.</p>
+
+                <h3 class="adarsh-h3 adarsh-h3-primary">Why Playwright is changing web testing</h3>
+                <p class="adarsh-copy">It solves the problems automation engineers actually complain about:</p>
+                <ul class="adarsh-ticks">
+                    <li class="adarsh-tick"><span class="adarsh-copy-strong">Cross-browser testing:</span> the same API runs on Chromium, Firefox and WebKit.</li>
+                    <li class="adarsh-tick"><span class="adarsh-copy-strong">Auto-waiting:</span> elements are waited for automatically, so flaky tests mostly disappear.</li>
+                    <li class="adarsh-tick"><span class="adarsh-copy-strong">Mobile emulation:</span> viewport, geolocation and permissions for responsive web apps.</li>
+                    <li class="adarsh-tick"><span class="adarsh-copy-strong">Network interception:</span> mock and modify requests for full-coverage scenarios.</li>
+                    <li class="adarsh-tick"><span class="adarsh-copy-strong">Visual testing:</span> capture screenshots and compare visual changes across browsers.</li>
+                    <li class="adarsh-tick"><span class="adarsh-copy-strong">Parallel execution:</span> run suites across browsers and devices at the same time.</li>
+                </ul>
+
+                <div class="adarsh-fold" id="adarsh-fold-intro">
+                    <h3 class="adarsh-h3 adarsh-h3-primary">Key features of Playwright</h3>
+                    <p class="adarsh-copy">The feature set is what separates Playwright from the rest of the field:</p>
+                    <ul class="adarsh-ticks">
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Multi-language support:</span> write tests in JavaScript/TypeScript, Python, .NET or Java.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Headless and headful runs:</span> debug visually, then run headless in CI.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Powerful selectors:</span> CSS, XPath, text and custom selectors with built-in waiting.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Frame management:</span> iframes and nested frames handled with simple APIs.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Uploads and downloads:</span> file operations tested without workarounds.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Geolocation and permissions:</span> location-based features and permission APIs.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Browser contexts:</span> isolated sessions that make parallel runs safe.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Tracing and video:</span> full execution traces and recordings of every run.</li>
+                    </ul>
+
+                    <h3 class="adarsh-h3 adarsh-h3-primary">Industry adoption and growth</h3>
+                    <p class="adarsh-copy">Adoption has grown sharply since release. Microsoft, Adobe, GitHub and thousands of other engineering teams run Playwright in production pipelines, driven by its reliability, speed and completeness.</p>
+
+                    <h3 class="adarsh-h3 adarsh-h3-primary">Playwright vs other testing frameworks</h3>
+                    <ul class="adarsh-ticks">
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Faster execution:</span> suites typically run 2-3x faster than Selenium.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Better reliability:</span> built-in auto-waiting removes most flakiness.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Modern architecture:</span> designed for SPAs, PWAs and microservice front-ends.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Complete tooling:</span> runner, reporter, tracing and codegen in one package.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Active development:</span> frequent releases and new features from Microsoft.</li>
+                    </ul>
+
+                    <h3 class="adarsh-h3 adarsh-h3-primary">Career opportunities with Playwright</h3>
+                    <p class="adarsh-copy">As adoption spreads, demand for Playwright engineers keeps climbing. Skilled professionals can expect:</p>
+                    <ul class="adarsh-ticks">
+                        <li class="adarsh-tick">A 20-40% premium over traditional automation tool salaries.</li>
+                        <li class="adarsh-tick">Openings at top product companies and fast-growing startups.</li>
+                        <li class="adarsh-tick">Roles such as Automation Engineer, SDET, QA Lead and Test Architect.</li>
+                        <li class="adarsh-tick">Remote-friendly work and flexible career paths.</li>
+                        <li class="adarsh-tick">Continuous learning as the framework evolves.</li>
+                    </ul>
+
+                    <h3 class="adarsh-h3 adarsh-h3-primary">Real-world applications</h3>
+                    <ul class="adarsh-ticks">
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">E-commerce:</span> complete journeys from product discovery to checkout.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Banking and finance:</span> secure transaction flows and compliance checks.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Healthcare:</span> patient portals and medical record systems.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">SaaS platforms:</span> multi-tenant apps with role-based access.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Media and entertainment:</span> video streaming and interactive content.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Travel and hospitality:</span> booking engines and reservation systems.</li>
+                    </ul>
+
+                    <h3 class="adarsh-h3 adarsh-h3-primary">Future trends in Playwright testing</h3>
+                    <ul class="adarsh-ticks">
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">AI-powered testing:</span> test generation and self-maintaining suites.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Mobile app testing:</span> expanding coverage for native applications.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Performance testing:</span> built-in metrics and load scenarios.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Accessibility testing:</span> automated compliance checks in the pipeline.</li>
+                        <li class="adarsh-tick"><span class="adarsh-copy-strong">Cloud testing:</span> tighter integration with cloud device grids.</li>
+                    </ul>
+                </div>
+
+                <div class="adarsh-more-wrap">
+                    <button class="adarsh-btn adarsh-btn-line adarsh-btn-more" id="adarsh-intro-toggle" type="button" aria-expanded="false" aria-controls="adarsh-fold-intro">Read more</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 2. WHY CHOOSE THIS COURSE ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-why">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Why Uncodemy</span>
+                <h2 class="adarsh-h2">Why choose our Playwright automation course</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Industry-recognised training built to make you job-ready in modern web automation testing.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-3">
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="target" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Industry-relevant curriculum</h3>
+                    <p class="adarsh-card-text">Master cross-browser testing, mobile emulation, API automation and visual regression testing. Learn TypeScript integration, Page Object Model patterns and the test architecture Fortune 500 teams actually use.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="briefcase" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Expert instructors</h3>
+                    <p class="adarsh-card-text">Train under certified professionals with 10+ years in test automation from Google, Microsoft and Amazon. Our instructors have delivered 500+ enterprise projects and trained 5000+ QA professionals globally.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="briefcase" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Real-world projects</h3>
+                    <p class="adarsh-card-text">Build a portfolio of 15+ production-grade projects: e-commerce automation, banking systems, healthcare platforms, SaaS applications and enterprise dashboards with complex workflows and payment integrations.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="trophy" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Industry certification</h3>
+                    <p class="adarsh-card-text">Earn a globally recognised certificate with a verifiable credential ID, LinkedIn badge integration and acceptance by 1000+ companies hiring for SDET and QA automation roles.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="rocket" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">100% job assistance</h3>
+                    <p class="adarsh-card-text">A dedicated placement team with 200+ hiring partners. Resume building, portfolio optimisation, 10+ mock interviews, salary negotiation guidance and a guaranteed minimum of 5 interview calls after completion.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="clock" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Flexible learning options</h3>
+                    <p class="adarsh-card-text">Weekday, weekend or fast-track batches in classroom, live online and self-paced modes — with lifetime access to 150+ hours of HD recordings, downloadable resources and free course updates.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="monitor" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Cloud-based lab environment</h3>
+                    <p class="adarsh-card-text">24/7 cloud labs with Playwright pre-configured, multiple browsers and ready test environments. Practise on real staging servers, run tests in parallel and work with Docker without any local setup.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="microscope" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Advanced testing techniques</h3>
+                    <p class="adarsh-card-text">Parallel execution, test data management, advanced locators, screenshot comparison, video recording, trace debugging, network interception, authentication handling and multi-tab scenarios.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="rotate-ccw" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">CI/CD pipeline integration</h3>
+                    <p class="adarsh-card-text">Automate testing in Jenkins, GitHub Actions, GitLab CI and Azure DevOps. Learn Docker containerisation, cloud execution on AWS, BrowserStack and LambdaTest, plus Allure and custom dashboards.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="zap" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Performance and API testing</h3>
+                    <p class="adarsh-card-text">Extend into REST and GraphQL API testing. Learn performance profiling, load-time analysis, Lighthouse integration, network throttling and combining UI with API tests for complete coverage.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="users" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Community and lifetime support</h3>
+                    <p class="adarsh-card-text">Join 5000+ QA alumni with a private community, weekly live Q&amp;A, monthly webinars and lifetime email support — plus job referrals, freelance leads and long-term career mentorship.</p>
+                </div>
+                <div class="adarsh-card">
+                    <div class="adarsh-badge"><i data-lucide="chart-line" class="adarsh-badge-icon"></i></div>
+                    <h3 class="adarsh-card-title">Career growth roadmap</h3>
+                    <p class="adarsh-card-text">Move from Junior QA Engineer (₹3-6 LPA) to Senior Automation Engineer (₹8-15 LPA) to SDET (₹15-25 LPA), with guidance on complementary skills and freelancing at $30-80/hour internationally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 3. ENQUIRY / CONTACT ============ -->
+    <section class="adarsh-enquire adarsh-defer" id="adarsh-contact">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Admissions open</span>
+                <h2 class="adarsh-h2">Talk to a counsellor today</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Take the first step towards your automation testing career.</p>
+            </div>
+
+            <div class="adarsh-enquire-grid">
+                <div class="adarsh-enquire-text">
+                    <h3 class="adarsh-h3">Ready to master Playwright?</h3>
+                    <p class="adarsh-copy">Join the Playwright Automation Testing course and move faster with live expert sessions, hands-on projects and real interview preparation. Seats per batch are limited so your doubts always get answered.</p>
+
+                    <ul class="adarsh-contact-list">
+                        <li class="adarsh-contact-row">
+                            <span class="adarsh-contact-icon"><i data-lucide="map-pin"></i></span>
+                            <span class="adarsh-contact-detail">
+                                <span class="adarsh-contact-label">Visit our centres</span>
+                                <span class="adarsh-contact-text">Noida head office: B-25, Sector 2, Noida, Uttar Pradesh 201301<br>India office: B-14/15, Sector 1, Noida, UP 201301</span>
+                            </span>
+                        </li>
+                        <li class="adarsh-contact-row">
+                            <span class="adarsh-contact-icon"><i data-lucide="phone"></i></span>
+                            <span class="adarsh-contact-detail">
+                                <span class="adarsh-contact-label">Call us</span>
+                                <span class="adarsh-contact-text">
+                                    <a class="adarsh-contact-link" href="tel:+919818366550">+91 98183 66550</a> ·
+                                    <a class="adarsh-contact-link" href="tel:+918448807675">+91 84488 07675</a> ·
+                                    <a class="adarsh-contact-link" href="tel:+918766313646">+91 87663 13646</a>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="adarsh-contact-row">
+                            <span class="adarsh-contact-icon"><i data-lucide="mail"></i></span>
+                            <span class="adarsh-contact-detail">
+                                <span class="adarsh-contact-label">Email us</span>
+                                <span class="adarsh-contact-text">
+                                    <a class="adarsh-contact-link" href="mailto:admissions@uncodemy.com">admissions@uncodemy.com</a><br>
+                                    <a class="adarsh-contact-link" href="mailto:info@uncodemy.com">info@uncodemy.com</a>
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="adarsh-form-card">
+                    <h3 class="adarsh-form-title">Book your seat</h3>
+                    <p class="adarsh-form-note">Fill this in and a counsellor calls you back the same working day.</p>
+                    <form id="form" onsubmit="submitForm(event)">
+                        <div class="adarsh-field-set">
+                            <label class="adarsh-label" for="name">Name</label>
+                            <input class="adarsh-field" type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required>
+                        </div>
+                        <div class="adarsh-field-set">
+                            <label class="adarsh-label" for="email">Email address</label>
+                            <input class="adarsh-field" type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required>
+                        </div>
+                        <div class="adarsh-field-set">
+                            <label class="adarsh-label" for="mobile">Phone number</label>
+                            <input class="adarsh-field" type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" inputmode="numeric" autocomplete="tel" required oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)" onchange="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+                        </div>
+                        <div class="adarsh-field-set">
+                            <label class="adarsh-label" for="location">Location</label>
+                            <input class="adarsh-field" type="text" id="location" name="location" placeholder="Your city" autocomplete="address-level2" required>
+                        </div>
+                        <div class="adarsh-field-set">
+                            <label class="adarsh-label" for="staticCourse">Course</label>
+                            <select class="adarsh-field" id="staticCourse" name="course" required data-course-loaded="false">
+                                <option value="" disabled selected>Select your course</option>
+                            </select>
+                        </div>
+                        <input class="adarsh-submit" type="submit" id="submitBtn" value="Request a call back">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 4. COURSE OVERVIEW ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-overview">
+        <div class="adarsh-shell">
+
+            <div class="adarsh-split">
+
+                <div class="adarsh-overview-text">
+                    <div class="adarsh-head">
+                        <span class="adarsh-eyebrow">Course overview</span>
+                        <h2 class="adarsh-h2">Why learn Playwright testing</h2>
+                        <div class="adarsh-rule"></div>
+                    </div>
+                    <ul class="adarsh-ticks">
+                        <li class="adarsh-tick">Playwright is the fastest-growing automation framework, with 300% adoption growth in 2026.</li>
+                        <li class="adarsh-tick">Playwright suites run up to 85% faster and more reliably than traditional Selenium suites.</li>
+                        <li class="adarsh-tick">Modern web applications need modern testing tools — and Playwright was built for them.</li>
+                        <li class="adarsh-tick">Critical for testing single page applications (SPAs) and progressive web apps (PWAs).</li>
+                        <li class="adarsh-tick">High demand, with average salaries of ₹8-18 LPA for Playwright specialists.</li>
+                        <li class="adarsh-tick">Essential for DevOps, CI/CD pipelines and Agile delivery teams.</li>
+                    </ul>
+                </div>
+
+                <div class="adarsh-panel">
+                    <div class="adarsh-panel-item">
+                        <h3 class="adarsh-panel-title"><i data-lucide="chart-bar"></i> Growing demand</h3>
+                        <p class="adarsh-panel-text">Playwright job openings rose by 400% in the last year as companies actively hunt for skilled automation testers.</p>
+                    </div>
+                    <div class="adarsh-panel-item">
+                        <h3 class="adarsh-panel-title"><i data-lucide="briefcase"></i> Lucrative career</h3>
+                        <p class="adarsh-panel-text">Playwright testers earn around 40% more than Selenium testers, with senior professionals reaching ₹15-25 LPA.</p>
+                    </div>
+                    <div class="adarsh-panel-item">
+                        <h3 class="adarsh-panel-title"><i data-lucide="globe"></i> Future-proof skill</h3>
+                        <p class="adarsh-panel-text">As web technology keeps moving, Playwright skills stay in demand across every industry that ships a web product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 5. CURRICULUM ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="curriculum">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">8 modules · 80+ hours</span>
+                <h2 class="adarsh-h2">Comprehensive course curriculum</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">From fundamentals to a production-grade automation framework, in the order a real team would teach it.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-3" id="adarsh-module-grid">
+                <div class="adarsh-module">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">01</span>
+                        <h3 class="adarsh-module-name">Playwright fundamentals</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Introduction to Playwright and modern web testing</li>
+                            <li class="adarsh-topic">Playwright architecture and core concepts</li>
+                            <li class="adarsh-topic">Setting up the Playwright environment</li>
+                            <li class="adarsh-topic">Writing your first Playwright test</li>
+                            <li class="adarsh-topic">Understanding browser contexts and pages</li>
+                            <li class="adarsh-topic">Playwright configuration and best practices</li>
+                            <li class="adarsh-topic">Debugging Playwright tests</li>
+                            <li class="adarsh-topic">Playwright test runner overview</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">02</span>
+                        <h3 class="adarsh-module-name">Core concepts and selectors</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Playwright selectors and locators</li>
+                            <li class="adarsh-topic">CSS, XPath and text selectors</li>
+                            <li class="adarsh-topic">Auto-waiting mechanisms</li>
+                            <li class="adarsh-topic">Handling dynamic content</li>
+                            <li class="adarsh-topic">Best practices for element selection</li>
+                            <li class="adarsh-topic">Custom selectors and utilities</li>
+                            <li class="adarsh-topic">Waiting strategies and timeouts</li>
+                            <li class="adarsh-topic">Element state verification</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">03</span>
+                        <h3 class="adarsh-module-name">Advanced interactions</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Mouse and keyboard actions</li>
+                            <li class="adarsh-topic">Drag and drop operations</li>
+                            <li class="adarsh-topic">File uploads and downloads</li>
+                            <li class="adarsh-topic">Handling multiple windows and tabs</li>
+                            <li class="adarsh-topic">Working with iframes and shadow DOM</li>
+                            <li class="adarsh-topic">Browser storage and cookies</li>
+                            <li class="adarsh-topic">Geolocation and permissions testing</li>
+                            <li class="adarsh-topic">Touch events and mobile interactions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module adarsh-hidden">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">04</span>
+                        <h3 class="adarsh-module-name">Cross-browser testing</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Configuring different browsers</li>
+                            <li class="adarsh-topic">Browser contexts and pages</li>
+                            <li class="adarsh-topic">Mobile device emulation</li>
+                            <li class="adarsh-topic">Viewport and responsive testing</li>
+                            <li class="adarsh-topic">Cross-browser compatibility</li>
+                            <li class="adarsh-topic">Browser-specific configurations</li>
+                            <li class="adarsh-topic">Headless and headful execution</li>
+                            <li class="adarsh-topic">Browser launch options</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module adarsh-hidden">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">05</span>
+                        <h3 class="adarsh-module-name">Network interception and API testing</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Mocking network requests</li>
+                            <li class="adarsh-topic">Intercepting and modifying responses</li>
+                            <li class="adarsh-topic">API testing with Playwright</li>
+                            <li class="adarsh-topic">Handling authentication</li>
+                            <li class="adarsh-topic">Performance monitoring</li>
+                            <li class="adarsh-topic">Request and response inspection</li>
+                            <li class="adarsh-topic">Network condition simulation</li>
+                            <li class="adarsh-topic">Offline testing scenarios</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module adarsh-hidden">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">06</span>
+                        <h3 class="adarsh-module-name">Visual testing and reporting</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Visual regression testing</li>
+                            <li class="adarsh-topic">Screenshot and video capture</li>
+                            <li class="adarsh-topic">Generating test reports</li>
+                            <li class="adarsh-topic">Integrating with Allure reports</li>
+                            <li class="adarsh-topic">Custom reporting solutions</li>
+                            <li class="adarsh-topic">Test result analysis</li>
+                            <li class="adarsh-topic">HTML and PDF reports</li>
+                            <li class="adarsh-topic">Dashboard integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module adarsh-hidden">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">07</span>
+                        <h3 class="adarsh-module-name">Framework design and best practices</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Page Object Model design</li>
+                            <li class="adarsh-topic">Data-driven testing</li>
+                            <li class="adarsh-topic">Configuration management</li>
+                            <li class="adarsh-topic">Error handling and debugging</li>
+                            <li class="adarsh-topic">Code organisation and structure</li>
+                            <li class="adarsh-topic">Test data management</li>
+                            <li class="adarsh-topic">Environment configuration</li>
+                            <li class="adarsh-topic">Best practices and patterns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-module adarsh-hidden">
+                    <div class="adarsh-module-top">
+                        <span class="adarsh-module-num">08</span>
+                        <h3 class="adarsh-module-name">CI/CD integration and advanced topics</h3>
+                    </div>
+                    <div class="adarsh-module-body">
+                        <ul class="adarsh-topics">
+                            <li class="adarsh-topic">Integrating with Jenkins and GitHub Actions</li>
+                            <li class="adarsh-topic">Dockerising Playwright tests</li>
+                            <li class="adarsh-topic">Parallel test execution</li>
+                            <li class="adarsh-topic">Cloud testing platforms</li>
+                            <li class="adarsh-topic">Performance and load testing</li>
+                            <li class="adarsh-topic">Accessibility testing</li>
+                            <li class="adarsh-topic">Security testing with Playwright</li>
+                            <li class="adarsh-topic">Advanced configuration scenarios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="adarsh-more-wrap">
+                <button class="adarsh-btn adarsh-btn-solid adarsh-btn-more" id="adarsh-module-toggle" type="button" aria-expanded="false" aria-controls="adarsh-module-grid">View all 8 modules</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 6. TOOLS ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-tools">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Toolchain</span>
+                <h2 class="adarsh-h2">Tools and technologies covered</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">The full ecosystem a modern automation engineer is expected to know on day one.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="clapperboard" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Playwright</h3><p class="adarsh-tool-text">Modern framework for reliable end-to-end testing across Chrome, Firefox, Safari and Edge with parallel execution.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="zap" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">TypeScript</h3><p class="adarsh-tool-text">Typed JavaScript for better code quality, earlier error detection and far stronger editor tooling.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="circle" class="adarsh-tool-icon" style="color:#22c55e;"></i></div><h3 class="adarsh-tool-name">Node.js</h3><p class="adarsh-tool-text">The runtime that executes your tests, manages packages and hosts scalable automation frameworks.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="chart-bar" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Allure Reports</h3><p class="adarsh-tool-text">Detailed reporting with charts, graphs and timeline views that make failures easy to explain.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="box" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Docker</h3><p class="adarsh-tool-text">Consistent test environments, parallel execution and clean CI/CD pipeline integration.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="rotate-ccw" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">GitHub Actions</h3><p class="adarsh-tool-text">Run automated tests on every commit, pull request and scheduled nightly job.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="target" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Visual Studio Code</h3><p class="adarsh-tool-text">Editor of choice with the Playwright extension, IntelliSense, debugging and an integrated terminal.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="smartphone" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">BrowserStack</h3><p class="adarsh-tool-text">Cloud grid with 3000+ real browsers and devices, so you test everywhere without owning hardware.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="wrench" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Jenkins</h3><p class="adarsh-tool-text">Open-source automation server for continuous integration, orchestration and scheduled runs.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="globe" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">REST API testing</h3><p class="adarsh-tool-text">Playwright's request context for hitting endpoints, validating responses and pairing API with UI tests.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="mail" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Postman</h3><p class="adarsh-tool-text">Collections, automated API tests, mock servers and clean API documentation.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="git-branch" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Git and GitHub</h3><p class="adarsh-tool-text">Version control for test code, plus collaboration, code review and project history.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="cloud" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Azure DevOps</h3><p class="adarsh-tool-text">Pipelines, test plans, work tracking and integrated reporting on Microsoft infrastructure.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="file-text" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Cucumber BDD</h3><p class="adarsh-tool-text">Plain-English scenarios in Gherkin syntax so product and QA read the same specification.</p></div>
+                <div class="adarsh-tool"><div class="adarsh-tool-mark"><i data-lucide="cog" class="adarsh-tool-icon"></i></div><h3 class="adarsh-tool-name">Lighthouse and K6</h3><p class="adarsh-tool-text">Web vitals, page speed, accessibility scores and load testing for the performance side of quality.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 7. COMPARISON ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-compare">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Framework comparison</span>
+                <h2 class="adarsh-h2">Playwright vs other testing frameworks</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Swipe the table sideways on mobile to see every column.</p>
+            </div>
+
+            <div class="adarsh-table-scroll">
+                <table class="adarsh-table">
+                    <thead>
+                        <tr>
+                            <th class="adarsh-th" scope="col">Capability</th>
+                            <th class="adarsh-th adarsh-th-hero" scope="col" style="color: #fff;">Playwright</th>
+                            <th class="adarsh-th" scope="col">Selenium</th>
+                            <th class="adarsh-th" scope="col">Cypress</th>
+                            <th class="adarsh-th" scope="col">Puppeteer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="adarsh-td adarsh-td-key">Cross-browser support</td>
+                            <td class="adarsh-td adarsh-yes">✅ All modern browsers</td>
+                            <td class="adarsh-td adarsh-yes">✅ All browsers</td>
+                            <td class="adarsh-td adarsh-no">❌ Chrome / Firefox only</td>
+                            <td class="adarsh-td adarsh-no">❌ Chrome only</td>
+                        </tr>
+                        <tr class="adarsh-row-zebra">
+                            <td class="adarsh-td adarsh-td-key">Auto-waiting</td>
+                            <td class="adarsh-td adarsh-yes">✅ Built in</td>
+                            <td class="adarsh-td adarsh-no">❌ Manual</td>
+                            <td class="adarsh-td adarsh-yes">✅ Built in</td>
+                            <td class="adarsh-td adarsh-no">❌ Manual</td>
+                        </tr>
+                        <tr>
+                            <td class="adarsh-td adarsh-td-key">Mobile emulation</td>
+                            <td class="adarsh-td adarsh-yes">✅ Native</td>
+                            <td class="adarsh-td adarsh-no">❌ Limited</td>
+                            <td class="adarsh-td adarsh-no">❌ Limited</td>
+                            <td class="adarsh-td adarsh-yes">✅ Good</td>
+                        </tr>
+                        <tr class="adarsh-row-zebra">
+                            <td class="adarsh-td adarsh-td-key">Network interception</td>
+                            <td class="adarsh-td adarsh-yes">✅ Full control</td>
+                            <td class="adarsh-td adarsh-no">❌ Limited</td>
+                            <td class="adarsh-td adarsh-yes">✅ Good</td>
+                            <td class="adarsh-td adarsh-yes">✅ Good</td>
+                        </tr>
+                        <tr>
+                            <td class="adarsh-td adarsh-td-key">Parallel execution</td>
+                            <td class="adarsh-td adarsh-yes">✅ Native</td>
+                            <td class="adarsh-td adarsh-yes">✅ With setup</td>
+                            <td class="adarsh-td adarsh-no">❌ Limited</td>
+                            <td class="adarsh-td adarsh-yes">✅ With setup</td>
+                        </tr>
+                        <tr class="adarsh-row-zebra">
+                            <td class="adarsh-td adarsh-td-key">Visual testing</td>
+                            <td class="adarsh-td adarsh-yes">✅ Built in</td>
+                            <td class="adarsh-td adarsh-no">❌ Third-party</td>
+                            <td class="adarsh-td adarsh-yes">✅ Plugins</td>
+                            <td class="adarsh-td adarsh-yes">✅ Good</td>
+                        </tr>
+                        <tr>
+                            <td class="adarsh-td adarsh-td-key">Execution speed</td>
+                            <td class="adarsh-td adarsh-yes">✅ Fastest</td>
+                            <td class="adarsh-td adarsh-no">❌ Slowest</td>
+                            <td class="adarsh-td adarsh-yes">✅ Fast</td>
+                            <td class="adarsh-td adarsh-yes">✅ Fast</td>
+                        </tr>
+                        <tr class="adarsh-row-zebra">
+                            <td class="adarsh-td adarsh-td-key">Learning curve</td>
+                            <td class="adarsh-td adarsh-yes">✅ Easy</td>
+                            <td class="adarsh-td adarsh-no">❌ Steep</td>
+                            <td class="adarsh-td adarsh-yes">✅ Easy</td>
+                            <td class="adarsh-td adarsh-yes">✅ Moderate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 8. ADVANCED FEATURES ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-features">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Deep dive</span>
+                <h2 class="adarsh-h2">Advanced Playwright features</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">The capabilities that make Playwright the default choice for new automation projects.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="rotate-ccw" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Auto-waiting</h3><p class="adarsh-card-text">Waits for elements to be actionable before acting, which removes most flakiness and cuts maintenance time sharply.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="smartphone" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Mobile emulation</h3><p class="adarsh-card-text">Full device emulation — viewport, user agent, geolocation and touch events — across 50+ device profiles.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="globe" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Cross-browser testing</h3><p class="adarsh-card-text">Identical tests on Chromium, Firefox and WebKit through one API, confirming consistent behaviour everywhere.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="chart-bar" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Visual testing</h3><p class="adarsh-card-text">Screenshot capture and comparison with built-in visual regression for pixel-level validation.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="link" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Network interception</h3><p class="adarsh-card-text">Mock requests, stub API responses and reproduce offline scenarios with full network monitoring.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="zap" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Parallel execution</h3><p class="adarsh-card-text">Run across browsers and devices at once, cutting suite time by up to 80% versus sequential runs.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="search" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Trace viewer</h3><p class="adarsh-card-text">Debug failures with action snapshots, network activity and a step-by-step timeline of the run.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="clapperboard" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Browser contexts</h3><p class="adarsh-card-text">Isolated sessions inside one browser instance for multi-user scenarios with separate cookies and storage.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 9. CAREERS ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-careers">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Career outcomes</span>
+                <h2 class="adarsh-h2">Roles you can target after this course</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Salary bands reflect current hiring across Delhi NCR, Bengaluru, Pune and Hyderabad.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-3">
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="clapperboard"></i></span><h3 class="adarsh-role-name">Playwright Test Engineer</h3></div>
+                    <span class="adarsh-pay">₹6-12 LPA</span>
+                    <p class="adarsh-card-text">Entry-level role writing test cases and running automation scripts for modern web applications.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="cog"></i></span><h3 class="adarsh-role-name">QA Automation Engineer</h3></div>
+                    <span class="adarsh-pay">₹8-15 LPA</span>
+                    <p class="adarsh-card-text">Design and implement automation frameworks and own the quality of web applications end to end.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="wrench"></i></span><h3 class="adarsh-role-name">SDET</h3></div>
+                    <span class="adarsh-pay">₹10-18 LPA</span>
+                    <p class="adarsh-card-text">Build testing frameworks and automation infrastructure alongside the development team.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="chart-bar"></i></span><h3 class="adarsh-role-name">Performance Test Engineer</h3></div>
+                    <span class="adarsh-pay">₹9-16 LPA</span>
+                    <p class="adarsh-card-text">Run load, stress and performance testing using Playwright with performance monitoring tooling.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="globe"></i></span><h3 class="adarsh-role-name">API Test Automation Engineer</h3></div>
+                    <span class="adarsh-pay">₹7-14 LPA</span>
+                    <p class="adarsh-card-text">Specialise in API testing, validate REST and GraphQL endpoints and pair them with UI automation.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="rocket"></i></span><h3 class="adarsh-role-name">DevOps QA Engineer</h3></div>
+                    <span class="adarsh-pay">₹10-18 LPA</span>
+                    <p class="adarsh-card-text">Wire Playwright into CI/CD pipelines, manage containers and automate deployment testing in the cloud.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="shield"></i></span><h3 class="adarsh-role-name">Test Automation Architect</h3></div>
+                    <span class="adarsh-pay">₹15-25 LPA</span>
+                    <p class="adarsh-card-text">Define enterprise automation strategy and framework standards for large engineering organisations.</p>
+                </div>
+                <div class="adarsh-role">
+                    <div class="adarsh-role-top"><span class="adarsh-role-icon"><i data-lucide="briefcase"></i></span><h3 class="adarsh-role-name">QA Lead / Manager</h3></div>
+                    <span class="adarsh-pay">₹12-22 LPA</span>
+                    <p class="adarsh-card-text">Lead QA teams, set the testing strategy, run automation programmes and mentor junior engineers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 10. SALARY TRENDS ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-salary">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Pay by experience</span>
+                <h2 class="adarsh-h2">Playwright testing salary trends in India</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+            </div>
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-pay-card"><div class="adarsh-pay-amount">₹6-10L</div><h3 class="adarsh-pay-role">Junior Playwright Tester</h3><p class="adarsh-pay-exp">0-2 years experience</p></div>
+                <div class="adarsh-pay-card"><div class="adarsh-pay-amount">₹8-15L</div><h3 class="adarsh-pay-role">Automation Engineer</h3><p class="adarsh-pay-exp">2-4 years experience</p></div>
+                <div class="adarsh-pay-card"><div class="adarsh-pay-amount">₹12-20L</div><h3 class="adarsh-pay-role">Senior SDET</h3><p class="adarsh-pay-exp">4-6 years experience</p></div>
+                <div class="adarsh-pay-card"><div class="adarsh-pay-amount">₹18-30L</div><h3 class="adarsh-pay-role">Automation Architect</h3><p class="adarsh-pay-exp">6+ years experience</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 11. PROJECTS ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-projects">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Hands-on work</span>
+                <h2 class="adarsh-h2">Industry projects you will ship</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Each project ends as a GitHub repository you can walk an interviewer through.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-3" id="adarsh-project-grid">
+                <div class="adarsh-project">
+                    <div class="adarsh-project-top">
+                        <span class="adarsh-project-num">Project 01</span>
+                        <h3 class="adarsh-project-name">E-commerce platform testing</h3>
+                        <span class="adarsh-project-stack">Playwright · TypeScript · Allure</span>
+                    </div>
+                    <div class="adarsh-project-body">
+                        <p class="adarsh-project-text">Build a complete automation framework covering the buyer journey from product discovery to checkout with payment processing.</p>
+                        <ul class="adarsh-points">
+                            <li class="adarsh-point">Product search and filtering automation</li>
+                            <li class="adarsh-point">Shopping cart and wishlist management</li>
+                            <li class="adarsh-point">Payment gateway integration testing</li>
+                            <li class="adarsh-point">Order tracking and support flows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-project">
+                    <div class="adarsh-project-top">
+                        <span class="adarsh-project-num">Project 02</span>
+                        <h3 class="adarsh-project-name">Banking portal automation</h3>
+                        <span class="adarsh-project-stack">Playwright · Page Objects · Docker</span>
+                    </div>
+                    <div class="adarsh-project-body">
+                        <p class="adarsh-project-text">Create a robust framework for an online banking portal with security testing, transaction flows and compliance validation.</p>
+                        <ul class="adarsh-points">
+                            <li class="adarsh-point">Authentication and security testing</li>
+                            <li class="adarsh-point">Account management and transactions</li>
+                            <li class="adarsh-point">Fund transfer and bill payment automation</li>
+                            <li class="adarsh-point">Compliance and regulatory checks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-project">
+                    <div class="adarsh-project-top">
+                        <span class="adarsh-project-num">Project 03</span>
+                        <h3 class="adarsh-project-name">SaaS application testing</h3>
+                        <span class="adarsh-project-stack">Playwright · API · Visual testing</span>
+                    </div>
+                    <div class="adarsh-project-body">
+                        <p class="adarsh-project-text">Implement end-to-end testing for a multi-tenant SaaS platform with user management, subscriptions and an admin dashboard.</p>
+                        <ul class="adarsh-points">
+                            <li class="adarsh-point">Multi-tenant user management</li>
+                            <li class="adarsh-point">Subscription and billing automation</li>
+                            <li class="adarsh-point">Admin dashboard and reporting</li>
+                            <li class="adarsh-point">API integration and data validation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-project adarsh-hidden">
+                    <div class="adarsh-project-top">
+                        <span class="adarsh-project-num">Project 04</span>
+                        <h3 class="adarsh-project-name">Healthcare management system</h3>
+                        <span class="adarsh-project-stack">Playwright · Data-driven · Performance</span>
+                    </div>
+                    <div class="adarsh-project-body">
+                        <p class="adarsh-project-text">Automate a healthcare platform covering patient records, appointments, prescriptions and billing workflows.</p>
+                        <ul class="adarsh-points">
+                            <li class="adarsh-point">Patient registration and medical history</li>
+                            <li class="adarsh-point">Appointment scheduling system</li>
+                            <li class="adarsh-point">Prescription and lab report management</li>
+                            <li class="adarsh-point">Insurance and billing integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-project adarsh-hidden">
+                    <div class="adarsh-project-top">
+                        <span class="adarsh-project-num">Project 05</span>
+                        <h3 class="adarsh-project-name">Travel booking platform</h3>
+                        <span class="adarsh-project-stack">Playwright · Cross-browser · Mobile</span>
+                    </div>
+                    <div class="adarsh-project-body">
+                        <p class="adarsh-project-text">Test a travel booking platform with flight, hotel and car rental integrations across browsers and devices.</p>
+                        <ul class="adarsh-points">
+                            <li class="adarsh-point">Flight search and booking automation</li>
+                            <li class="adarsh-point">Hotel selection and reservation flows</li>
+                            <li class="adarsh-point">Payment processing and confirmation</li>
+                            <li class="adarsh-point">Mobile responsiveness testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="adarsh-project adarsh-hidden">
+                    <div class="adarsh-project-top">
+                        <span class="adarsh-project-num">Project 06</span>
+                        <h3 class="adarsh-project-name">Social media platform</h3>
+                        <span class="adarsh-project-stack">Playwright · Network mocking · Visual</span>
+                    </div>
+                    <div class="adarsh-project-body">
+                        <p class="adarsh-project-text">Cover social features including posts, comments, messaging, notifications and media uploads.</p>
+                        <ul class="adarsh-points">
+                            <li class="adarsh-point">Profile and content creation</li>
+                            <li class="adarsh-point">Social interactions and notifications</li>
+                            <li class="adarsh-point">Media upload and sharing</li>
+                            <li class="adarsh-point">Real-time messaging testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="adarsh-more-wrap">
+                <button class="adarsh-btn adarsh-btn-solid adarsh-btn-more" id="adarsh-project-toggle" type="button" aria-expanded="false" aria-controls="adarsh-project-grid">View all 6 projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 12. INDUSTRY STATS ============ -->
+    <section class="adarsh-block adarsh-block-ink adarsh-defer" id="adarsh-stats">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow adarsh-eyebrow-ghost">Market data</span>
+                <h2 class="adarsh-h2 adarsh-h2-light">Playwright industry insights</h2>
+                <div class="adarsh-rule adarsh-rule-mid" style="background: #FFB089;"></div>
+                <p class="adarsh-lede adarsh-lede-mid adarsh-lede-light">Where the Playwright testing market stands in India right now.</p>
+            </div>
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-stat"><div class="adarsh-stat-num">85%</div><p class="adarsh-stat-label">Faster test execution</p></div>
+                <div class="adarsh-stat"><div class="adarsh-stat-num">₹8-18L</div><p class="adarsh-stat-label">Average tester salary</p></div>
+                <div class="adarsh-stat"><div class="adarsh-stat-num">300%</div><p class="adarsh-stat-label">Adoption growth in 2026</p></div>
+                <div class="adarsh-stat"><div class="adarsh-stat-num">92%</div><p class="adarsh-stat-label">Test reliability</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 13. BENEFITS ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-benefits">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">What you take away</span>
+                <h2 class="adarsh-h2">What you'll gain</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Skills, proof of skills and the support to convert both into an offer.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">01</div><h3 class="adarsh-card-title">Industry-ready skills</h3><p class="adarsh-card-text">The exact tools, frameworks and methods used by Microsoft, Google, Amazon and Adobe for modern web testing.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">02</div><h3 class="adarsh-card-title">Live project experience</h3><p class="adarsh-card-text">15+ real projects across domains, forming a portfolio that shows recruiters what you can actually build.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">03</div><h3 class="adarsh-card-title">Expert mentorship</h3><p class="adarsh-card-text">Guidance from engineers with 10+ years in the field, covering technical decisions and career moves alike.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">04</div><h3 class="adarsh-card-title">Placement support</h3><p class="adarsh-card-text">100% placement assistance with interview calls from a network of 200+ hiring partners and startups.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">05</div><h3 class="adarsh-card-title">Lifetime access</h3><p class="adarsh-card-text">Course material, recordings and future updates stay with you as the framework evolves.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">06</div><h3 class="adarsh-card-title">Community support</h3><p class="adarsh-card-text">An alumni network of 5000+ professionals for referrals, networking and continuous learning.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">07</div><h3 class="adarsh-card-title">Certification and recognition</h3><p class="adarsh-card-text">A verifiable credential to showcase your Playwright expertise on LinkedIn and in applications.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-ink">08</div><h3 class="adarsh-card-title">Resume and interview prep</h3><p class="adarsh-card-text">Resume building, portfolio review, mock interviews and technical prep for real recruitment rounds.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 14. LEARNING PATH ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-path">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Six stages · in order</span>
+                <h2 class="adarsh-h2">Your learning journey</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">A structured path from first script to job-ready automation engineer.</p>
+            </div>
+
+            <div class="adarsh-path">
+                <div class="adarsh-step">
+                    <span class="adarsh-step-num">1</span>
+                    <span class="adarsh-step-body">
+                        <h3 class="adarsh-step-name">Foundation building</h3>
+                        <p class="adarsh-step-text">JavaScript and TypeScript fundamentals, testing concepts and Playwright basics. You write and run your first automation scripts.</p>
+                    </span>
+                </div>
+                <div class="adarsh-step">
+                    <span class="adarsh-step-num">2</span>
+                    <span class="adarsh-step-body">
+                        <h3 class="adarsh-step-name">Core automation skills</h3>
+                        <p class="adarsh-step-text">Element selection, interactions, waits and navigation — plus dynamic content, iframes and complex user journeys.</p>
+                    </span>
+                </div>
+                <div class="adarsh-step">
+                    <span class="adarsh-step-num">3</span>
+                    <span class="adarsh-step-body">
+                        <h3 class="adarsh-step-name">Advanced testing techniques</h3>
+                        <p class="adarsh-step-text">Cross-browser runs, mobile emulation, visual testing, network interception and API testing with Playwright.</p>
+                    </span>
+                </div>
+                <div class="adarsh-step">
+                    <span class="adarsh-step-num">4</span>
+                    <span class="adarsh-step-body">
+                        <h3 class="adarsh-step-name">Framework development</h3>
+                        <p class="adarsh-step-text">Page Object Model, data-driven testing, configuration management and custom reporting built to production standards.</p>
+                    </span>
+                </div>
+                <div class="adarsh-step">
+                    <span class="adarsh-step-num">5</span>
+                    <span class="adarsh-step-body">
+                        <h3 class="adarsh-step-name">CI/CD and DevOps integration</h3>
+                        <p class="adarsh-step-text">Pipelines, parallel execution, Dockerised runs, plus performance and accessibility testing methods.</p>
+                    </span>
+                </div>
+                <div class="adarsh-step">
+                    <span class="adarsh-step-num">6</span>
+                    <span class="adarsh-step-body">
+                        <h3 class="adarsh-step-name">Capstone projects and career prep</h3>
+                        <p class="adarsh-step-text">Finish e-commerce, banking and SaaS capstones, publish your GitHub portfolio and start interviewing.</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 15. ECOSYSTEM ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-ecosystem">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Ecosystem</span>
+                <h2 class="adarsh-h2">Everything inside the Playwright ecosystem</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="globe" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Cross-browser</h3><p class="adarsh-chip-text">Chromium, Firefox, WebKit and Safari with one consistent API</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="smartphone" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Mobile testing</h3><p class="adarsh-chip-text">Device emulation, touch events and responsive coverage</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="wrench" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Debugging tools</h3><p class="adarsh-chip-text">Inspector, trace viewer and video recording of every run</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="chart-bar" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Reporting</h3><p class="adarsh-chip-text">HTML reports, Allure integration and custom reporters</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="rotate-ccw" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">CI/CD integration</h3><p class="adarsh-chip-text">GitHub Actions, Jenkins, Azure DevOps and more</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="cloud" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Cloud testing</h3><p class="adarsh-chip-text">BrowserStack, Sauce Labs and cloud device grids</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="puzzle" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Component testing</h3><p class="adarsh-chip-text">React, Vue and Angular components tested in isolation</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="globe" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">API testing</h3><p class="adarsh-chip-text">REST and GraphQL through the built-in request context</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="zap" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Codegen tool</h3><p class="adarsh-chip-text">Generate test scripts by recording browser interactions</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="link" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Network mocking</h3><p class="adarsh-chip-text">Intercept and mock requests for controlled scenarios</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="cog" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Parallel execution</h3><p class="adarsh-chip-text">Shard suites across workers for far faster feedback</p></div>
+                <div class="adarsh-chip"><div class="adarsh-chip-mark"><i data-lucide="target" class="adarsh-chip-icon"></i></div><h3 class="adarsh-chip-name">Auto-waiting</h3><p class="adarsh-chip-text">Built-in waiting that quietly removes flaky failures</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 16. WHO SHOULD JOIN ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-audience">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Eligibility</span>
+                <h2 class="adarsh-h2">Who should join this course</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Built for anyone serious about a career in modern software testing and automation.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="graduation-cap" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Fresh graduates</h3><p class="adarsh-card-text">BCA, MCA, B.Tech and IT graduates starting a career in software testing and quality assurance.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="rotate-ccw" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Career switchers</h3><p class="adarsh-card-text">Professionals from non-IT backgrounds moving into high-demand web automation testing.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="flask-conical" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Manual testers</h3><p class="adarsh-card-text">QA professionals upskilling into automation to raise their market value considerably.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="laptop" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Software developers</h3><p class="adarsh-card-text">Developers adding testing depth or moving into SDET roles with stronger prospects.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="chart-line" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">QA leads</h3><p class="adarsh-card-text">Team leads modernising testing practice and leading the shift to Playwright.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="rocket" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Freelancers</h3><p class="adarsh-card-text">Independent professionals offering modern testing services to clients worldwide.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="cog" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">DevOps engineers</h3><p class="adarsh-card-text">Engineers embedding automated testing into pipelines to protect deployment quality.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="clipboard" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Business analysts</h3><p class="adarsh-card-text">BAs who want to understand automation for sharper requirements and better collaboration.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="target" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">IT consultants</h3><p class="adarsh-card-text">Consultants advising on QA strategy who need hands-on framework expertise.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge adarsh-badge-green"><i data-lucide="lightbulb" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Tech founders</h3><p class="adarsh-card-text">Startup founders who need to judge product quality and run a testing team well.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 17. CERTIFICATION ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-certificate">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Certification</span>
+                <h2 class="adarsh-h2">An industry-recognised certificate</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+            </div>
+
+            <div class="adarsh-split">
+                <div class="adarsh-cert-visual">
+                    <div class="adarsh-cert-seal"><i data-lucide="file-badge-2" class="certificate-icon"></i></div>
+                    <h3 class="adarsh-cert-name">Playwright Automation <br><span class="ad-highlight">Testing Professional</span></h3>
+                    <div class="deco-row"><span></span><i data-lucide="asteroid"></i><span></span></div>
+                    <p class="adarsh-cert-by">Certified by <br><span>unco</span><span class="ad-highlight">demy</span></p>
+                </div>
+                <div class="adarsh-cert-info">
+                    <h3 class="adarsh-h3" style="margin-top: 0px;">What the certificate gives you</h3>
+                    <ul class="adarsh-cert-list">
+                        <li class="adarsh-cert-item"><span class="adarsh-copy-strong">Industry recognition:</span> accepted by top IT companies and recognised globally for Playwright expertise.</li>
+                        <li class="adarsh-cert-item"><span class="adarsh-copy-strong">Skill validation:</span> proof of ability in Playwright automation, cross-browser testing, mobile testing and framework design.</li>
+                        <li class="adarsh-cert-item"><span class="adarsh-copy-strong">Digital and physical:</span> a digital copy for LinkedIn plus a printed certificate couriered to you.</li>
+                        <li class="adarsh-cert-item"><span class="adarsh-copy-strong">Lifetime validity:</span> no expiry date, so it keeps its value across your whole career.</li>
+                        <li class="adarsh-cert-item"><span class="adarsh-copy-strong">Verification system:</span> a unique ID employers can check instantly on our verification portal.</li>
+                        <li class="adarsh-cert-item"><span class="adarsh-copy-strong">Career advantage:</span> certified candidates report around 40% more interview calls than non-certified peers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 18. PLACEMENT ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-placement">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Placement support</span>
+                <h2 class="adarsh-h2">100% placement assistance</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Everything between finishing the course and signing an offer letter.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-4">
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="pen" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Resume building</h3><p class="adarsh-card-text">A resume that highlights your Playwright skills, projects and certification, and clears ATS screening.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="mic" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Mock interviews</h3><p class="adarsh-card-text">One-on-one technical, automation and HR rounds with detailed feedback on what to fix.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="briefcase" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Interview preparation</h3><p class="adarsh-card-text">Common questions, coding challenges, Playwright scenarios and framework design discussions.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="handshake" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Company tie-ups</h3><p class="adarsh-card-text">Direct opportunities with 200+ partner companies hiring Playwright testers at every level.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="bell" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Job alerts</h3><p class="adarsh-card-text">Openings matched to your profile, skill level and preferred location, with direct apply links.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="phone" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Guaranteed calls</h3><p class="adarsh-card-text">A minimum of 8 interview calls within 3 months of completion, with support until you are hired.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="lightbulb" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Soft skills training</h3><p class="adarsh-card-text">Communication, professional etiquette, email writing and workplace behaviour coaching.</p></div>
+                <div class="adarsh-card"><div class="adarsh-badge"><i data-lucide="chart-bar" class="adarsh-badge-icon"></i></div><h3 class="adarsh-card-title">Portfolio development</h3><p class="adarsh-card-text">A GitHub portfolio of frameworks and scripts that proves your practical expertise.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 19. COMPANIES ============ -->
+    <section class="adarsh-block adarsh-defer" id="adarsh-companies">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Hiring partners</span>
+                <h2 class="adarsh-h2">Companies hiring our alumni</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+            </div>
+            <div class="adarsh-logo-grid">
+                <div class="adarsh-logo">TCS</div>
+                <div class="adarsh-logo">Infosys</div>
+                <div class="adarsh-logo">Wipro</div>
+                <div class="adarsh-logo">Accenture</div>
+                <div class="adarsh-logo">Cognizant</div>
+                <div class="adarsh-logo">HCL Tech</div>
+                <div class="adarsh-logo">Tech Mahindra</div>
+                <div class="adarsh-logo">Capgemini</div>
+                <div class="adarsh-logo">IBM</div>
+                <div class="adarsh-logo">Amazon</div>
+                <div class="adarsh-logo">Microsoft</div>
+                <div class="adarsh-logo">LTIMindtree</div>
+                <div class="adarsh-logo">Mphasis</div>
+                <div class="adarsh-logo">Persistent</div>
+                <div class="adarsh-logo">Hexaware</div>
+                <div class="adarsh-logo">Coforge</div>
+                <div class="adarsh-logo">Deloitte</div>
+                <div class="adarsh-logo">Oracle</div>
+                <div class="adarsh-logo">Adobe</div>
+                <div class="adarsh-logo">Flipkart</div>
+                <div class="adarsh-logo">Paytm</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 20. TESTIMONIALS ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-stories">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Success stories</span>
+                <h2 class="adarsh-h2">Students who switched with Playwright</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-3">
+                <div class="adarsh-quote">
+                    <span class="adarsh-quote-mark">”</span>
+                    <p class="adarsh-quote-text">The Playwright course at Uncodemy completely changed my career. I was a manual tester earning ₹4 LPA, and within 3 months of finishing I joined Microsoft as an SDET at ₹16 LPA. The instructors are excellent and the curriculum matches what companies actually ask for.</p>
+                    <div class="adarsh-quote-by">
+                        <span class="adarsh-avatar">RS</span>
+                        <span class="adarsh-quote-meta">
+                            <span class="adarsh-quote-name">Rahul Sharma</span><br>
+                            <span class="adarsh-quote-role">SDET at Microsoft</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="adarsh-quote">
+                    <span class="adarsh-quote-mark">”</span>
+                    <p class="adarsh-quote-text">As a fresher with a CS degree but no testing experience, I was worried about automation. The curriculum is structured so well that beginners keep up easily. I got placed at Amazon with a ₹12 LPA package. Strongly recommended for freshers and career switchers.</p>
+                    <div class="adarsh-quote-by">
+                        <span class="adarsh-avatar">PV</span>
+                        <span class="adarsh-quote-meta">
+                            <span class="adarsh-quote-name">Priya Verma</span><br>
+                            <span class="adarsh-quote-role">QA Engineer at Amazon</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="adarsh-quote">
+                    <span class="adarsh-quote-mark">”</span>
+                    <p class="adarsh-quote-text">The hands-on projects gave me a portfolio that recruiters took seriously. The placement team lined up multiple interviews with top companies. I am now at Google with a 150% hike over my previous job. Thank you Uncodemy for a life-changing opportunity.</p>
+                    <div class="adarsh-quote-by">
+                        <span class="adarsh-avatar">AK</span>
+                        <span class="adarsh-quote-meta">
+                            <span class="adarsh-quote-name">Amit Kumar</span><br>
+                            <span class="adarsh-quote-role">Senior SDET at Google</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 21. BATCHES ============ -->
+    <section class="adarsh-block adarsh-defer" id="enroll">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">Upcoming batches</span>
+                <h2 class="adarsh-h2">Pick the batch that fits your week</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+                <p class="adarsh-lede adarsh-lede-mid">Seats are capped so every learner gets time with the instructor.</p>
+            </div>
+
+            <div class="adarsh-grid adarsh-grid-3">
+                <div class="adarsh-batch">
+                    <span class="adarsh-batch-tag">Weekday batch</span>
+                    <h3 class="adarsh-batch-name">Morning batch</h3>
+                    <ul class="adarsh-batch-list">
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Timing</span><span>9:00 AM - 11:00 AM</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Duration</span><span>8 weeks</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Mode</span><span>Classroom + online</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Starts</span><span>20 November 2026</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Seats left</span><span class="adarsh-seats">8 of 25</span></li>
+                    </ul>
+                    <a class="adarsh-btn adarsh-btn-solid" href="#adarsh-contact">Book this batch</a>
+                </div>
+
+                <div class="adarsh-batch">
+                    <span class="adarsh-batch-tag adarsh-batch-tag-live">Weekend batch</span>
+                    <h3 class="adarsh-batch-name">Saturday - Sunday</h3>
+                    <ul class="adarsh-batch-list">
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Timing</span><span>10:00 AM - 2:00 PM</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Duration</span><span>10 weeks</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Mode</span><span>Classroom + online</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Starts</span><span>25 November 2026</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Seats left</span><span class="adarsh-seats">5 of 20</span></li>
+                    </ul>
+                    <a class="adarsh-btn adarsh-btn-solid" href="#adarsh-contact">Book this batch</a>
+                </div>
+
+                <div class="adarsh-batch">
+                    <span class="adarsh-batch-tag">Fast-track batch</span>
+                    <h3 class="adarsh-batch-name">Intensive programme</h3>
+                    <ul class="adarsh-batch-list">
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Timing</span><span>2:00 PM - 6:00 PM</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Duration</span><span>6 weeks</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Mode</span><span>Classroom only</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Starts</span><span>28 November 2026</span></li>
+                        <li class="adarsh-batch-item"><span class="adarsh-batch-key">Seats left</span><span class="adarsh-seats">3 of 15</span></li>
+                    </ul>
+                    <a class="adarsh-btn adarsh-btn-solid" href="#adarsh-contact">Book this batch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 22. FAQ ============ -->
+    <section class="adarsh-block adarsh-block-alt adarsh-defer" id="adarsh-faq">
+        <div class="adarsh-shell">
+            <div class="adarsh-head adarsh-head-mid">
+                <span class="adarsh-eyebrow">FAQ</span>
+                <h2 class="adarsh-h2">Frequently asked questions</h2>
+                <div class="adarsh-rule adarsh-rule-mid"></div>
+            </div>
+
+            <div class="adarsh-faq-wrap">
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">Do I need programming experience to join this Playwright course?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">No prior programming experience is needed. We start with the JavaScript and TypeScript concepts required for automation testing. Basic computer skills and a willingness to code are enough. The curriculum suits complete beginners and experienced professionals upskilling, and extra foundation sessions are available for absolute beginners.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">What is the course duration and schedule?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">Weekday batches run 8 weeks at 2 hours daily. Weekend batches run 10 weeks at 4 hours on Saturday and Sunday. Fast-track batches run 6 weeks at 4 hours daily. Every batch includes 80+ hours of instructor-led training, hands-on projects and placement preparation, and self-paced options exist for working professionals.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">Will I get placement assistance after the course?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">Yes. You get 100% placement assistance: resume building, mock interviews, interview preparation and interview calls from 200+ partner companies. The placement team works with each student individually until they secure a role. 95% of our Playwright students are placed within 3 months of completion, with an average hike of 60-120%.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">What certificate will I receive?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">You receive the Playwright Automation Testing Professional certificate from Uncodemy, recognised by leading IT companies. It comes in digital and physical formats, has lifetime validity and carries a unique verification ID. Students report it helps them get around 40% more interview calls.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">Are flexible payment options available?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">Yes. Pay the full fee upfront for a 15% discount, split it into 3 or 6 interest-free instalments, use partner-bank EMI at 0% interest for 6 months, or apply for merit and need-based scholarships. Talk to a counsellor for the current fee structure and the option that suits you.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">What if I miss a class or need to reschedule?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">Every class is recorded and available on the LMS with lifetime access. You can also attend the same topic in another batch at no cost, book one-on-one doubt sessions with instructors, or transfer to a different batch subject to availability.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">Is online training as effective as classroom training?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">Yes. Online batches are live and interactive with real-time instructor access, screen-shared coding demos, cloud labs that skip local setup problems, recorded sessions for revision and a digital whiteboard. Many working professionals prefer online for flexibility, and hybrid mode combines both.</p></div>
+                </div>
+
+                <div class="adarsh-faq">
+                    <button class="adarsh-faq-btn" type="button" aria-expanded="false">What is the average salary after this course?<span class="adarsh-faq-sign">+</span></button>
+                    <div class="adarsh-faq-body"><p class="adarsh-faq-text">It depends on experience: freshers ₹6-10 LPA as Playwright Test Engineer, 1-3 years ₹8-15 LPA as QA Automation Engineer, 3-5 years ₹12-20 LPA as Senior SDET, and 5+ years ₹18-30 LPA as Test Automation Architect. Certified candidates typically see 60-150% hikes, with location, company size and interview performance affecting the final package.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 23. CLOSING CTA ============ -->
+    <section class="adarsh-close adarsh-defer" id="adarsh-cta">
+        <div class="adarsh-shell">
+            <h2 class="adarsh-close-title">Ready to launch your Playwright career?</h2>
+            <p class="adarsh-close-text">Join 5000+ professionals who changed careers with Uncodemy. Seats for the next batch are limited — reserve yours today.</p>
+            <div class="adarsh-btn-row adarsh-btn-row-mid">
+                <a class="adarsh-btn adarsh-btn-line" href="#adarsh-contact" style="border-color:rgba(255,255,255,0.4);color:var(--ad-ink);">Request a call back</a>
+                <a class="adarsh-btn adarsh-btn-ghost" href="tel:+919818366550">Call +91 98183 66550</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 24. FOOTER ============ -->
+    <footer class="adarsh-footer">
+        <div class="adarsh-shell">
+            <p class="adarsh-footer-text">&copy; 2026 <a href="#">Uncodemy Edutech Pvt. Ltd.</a> &middot; All rights reserved &middot; <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+     <div id="UnCodeMy-Footer"></div>
+    <script src="js/placement-carousel-dynamic.js"></script>
+    <script src="js/curriculum-dynamic.js"></script>
+    <script src="js/offer-card.js"></script>
+    <script src="js/stats-renderer.js"></script>
+    <script src="js/placement-carousel.js"></script>
+    <script>
+        lucide.createIcons();
+
+        function setHeroMargin() {
+            const navbar = document.getElementById('main-nav');
+            const hero = document.querySelector('.jeet-hero');
+            if (navbar && hero) {
+                const navbarHeight = navbar.offsetHeight;
+                hero.style.marginTop = navbarHeight + 'px';
+            }
+        }
+        window.addEventListener('load', setHeroMargin);
+        window.addEventListener('resize', setHeroMargin);
+    </script>
+
+    <script>
+        (function() {
+            'use strict';
+
+            var introBtn = document.getElementById('adarsh-intro-toggle');
+            var introFold = document.getElementById('adarsh-fold-intro');
+            if (introBtn && introFold) {
+                introBtn.addEventListener('click', function() {
+                    var open = introFold.classList.toggle('adarsh-fold-open');
+                    introBtn.textContent = open ? 'Read less' : 'Read more';
+                    introBtn.setAttribute('aria-expanded', String(open));
+                });
+            }
+
+            function wireGrid(gridId, btnId, itemClass, labelMore, labelLess) {
+                var grid = document.getElementById(gridId);
+                var btn = document.getElementById(btnId);
+                if (!grid || !btn) return;
+                var items = grid.getElementsByClassName(itemClass);
+                btn.addEventListener('click', function() {
+                    var expanded = btn.getAttribute('aria-expanded') === 'true';
+                    for (var i = 3; i < items.length; i++) {
+                        if (expanded) {
+                            items[i].classList.add('adarsh-hidden');
+                            items[i].classList.remove('adarsh-shown');
+                        } else {
+                            items[i].classList.remove('adarsh-hidden');
+                            items[i].classList.add('adarsh-shown');
+                        }
+                    }
+                    btn.setAttribute('aria-expanded', String(!expanded));
+                    btn.textContent = expanded ? labelMore : labelLess;
+                    if (expanded) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+            wireGrid('adarsh-module-grid', 'adarsh-module-toggle', 'adarsh-module', 'View all 8 modules',
+                'Show fewer modules');
+            wireGrid('adarsh-project-grid', 'adarsh-project-toggle', 'adarsh-project', 'View all 6 projects',
+                'Show fewer projects');
+
+            var faqButtons = document.getElementsByClassName('adarsh-faq-btn');
+            Array.prototype.forEach.call(faqButtons, function(btn) {
+                btn.addEventListener('click', function() {
+                    var item = btn.parentNode;
+                    var isOpen = item.classList.contains('adarsh-faq-open');
+                    var all = document.getElementsByClassName('adarsh-faq');
+                    Array.prototype.forEach.call(all, function(node) {
+                        node.classList.remove('adarsh-faq-open');
+                        var b = node.getElementsByClassName('adarsh-faq-btn')[0];
+                        var s = node.getElementsByClassName('adarsh-faq-sign')[0];
+                        if (b) b.setAttribute('aria-expanded', 'false');
+                        if (s) s.textContent = '+';
+                    });
+                    if (!isOpen) {
+                        item.classList.add('adarsh-faq-open');
+                        btn.setAttribute('aria-expanded', 'true');
+                        var sign = item.getElementsByClassName('adarsh-faq-sign')[0];
+                        if (sign) sign.textContent = '+';
+                    }
+                });
+            });
+
+            var jumps = document.querySelectorAll('[href^="#"]');
+            Array.prototype.forEach.call(jumps, function(link) {
+                link.addEventListener('click', function(e) {
+                    var id = link.getAttribute('href');
+                    if (id.length < 2) return;
+                    var target = document.querySelector(id);
+                    if (!target) return;
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // re-run lucide after dynamic content
+            setTimeout(function() {
+                lucide.createIcons();
+            }, 500);
+        })();
+    </script>
+
+    <script src="/js/form.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+</body>
+</html>

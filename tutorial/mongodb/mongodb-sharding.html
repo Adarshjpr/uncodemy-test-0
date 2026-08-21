@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB Sharding | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Horizontal Scaling, Shard Keys, and Distributed Data Storage" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 16 of 20: MongoDB Sharding</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html" class="active"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-th-large"></i> Horizontal Scaling, Shard Keys, and Distributed Data Storage</span>
+        <h1>MongoDB Sharding</h1>
+
+        <div class="card">
+
+            <p>As data grows beyond what a single server can handle, <strong>sharding</strong> distributes data horizontally across multiple machines — enabling MongoDB to scale to massive datasets and high throughput.</p>
+
+            <h2>1. Sharded Cluster Architecture</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Component</th><th>Role</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Shard</strong></td><td>Stores a subset of the sharded data (often a replica set itself)</td></tr>
+                        <tr><td><strong>mongos (Router)</strong></td><td>Routes queries to the correct shard(s)</td></tr>
+                        <tr><td><strong>Config Servers</strong></td><td>Store cluster metadata and chunk mapping</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Choosing a Shard Key</h2>
+            <p>The <strong>shard key</strong> determines how documents are distributed across shards. A good shard key has high cardinality, even distribution, and matches common query patterns.</p>
+
+            <pre class="code-block"><code>sh.shardCollection("ecommerceDB.orders", { customerId: "hashed" })</code></pre>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Shard Key Strategy</th><th>Pros</th><th>Cons</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Ranged</strong></td><td>Efficient range queries</td><td>Risk of "hot" shards for sequential keys</td></tr>
+                        <tr><td><strong>Hashed</strong></td><td>Even data distribution</td><td>Range queries scatter across all shards</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issue:</strong> Choosing a monotonically increasing shard key (like a timestamp) causes all new writes to land on the same shard, creating a "hot" shard bottleneck.
+            </div>
+
+            <h2>3. Enabling Sharding</h2>
+            <pre class="code-block"><code>// Enable sharding on a database
+sh.enableSharding("ecommerceDB")
+
+// Shard a collection with a chosen key
+sh.shardCollection("ecommerceDB.products", { category: 1, _id: 1 })
+
+// Check shard distribution
+sh.status()</code></pre>
+
+            <h2>4. Chunks and Balancing</h2>
+            <p>Data within a sharded collection is split into <strong>chunks</strong> based on shard key ranges. The <strong>balancer</strong> automatically migrates chunks between shards to keep data evenly distributed.</p>
+
+            <h2>5. When to Shard</h2>
+            <ul>
+                <li>Your working data set exceeds available RAM on a single server</li>
+                <li>Write throughput exceeds what a single primary can handle</li>
+                <li>You need to distribute data geographically for lower latency</li>
+            </ul>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Don't shard prematurely. Sharding adds operational complexity — first optimize indexes, query patterns, and consider vertical scaling or read replicas.
+            </div>
+
+            <h2>6. Sharding Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand shards, mongos, and config servers</strong></li>
+                <li><strong>✅ Choose a shard key with high cardinality and even distribution</strong></li>
+                <li><strong>✅ Enable sharding on a database and collection</strong></li>
+                <li><strong>✅ Understand chunks and the balancer</strong></li>
+                <li><strong>✅ Know when sharding is (and isn't) the right solution</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Sharding unlocks horizontal scalability, but the shard key decision is nearly permanent and hugely consequential — choose it based on real query and write patterns, not guesswork.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-replication.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>MongoDB Replication</a>
+            <a href="mongodb-transactions-acid.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Transactions and ACID Compliance</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

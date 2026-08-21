@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schema Validation | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Defining validation rules using JSON Schema for data integrity" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 10 of 20: Schema Validation</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html" class="active"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-check-double"></i> Defining validation rules using JSON Schema for data integrity</span>
+        <h1>Schema Validation</h1>
+
+        <div class="card">
+
+            <p>MongoDB's schema is flexible by default — but flexibility without guardrails can lead to inconsistent data. <strong>Schema validation</strong> lets you enforce structure and data integrity using JSON Schema, without giving up MongoDB's flexibility entirely.</p>
+
+            <h2>1. Why Validate?</h2>
+            <ul>
+                <li>Prevent malformed documents (missing required fields, wrong types)</li>
+                <li>Catch bugs early — at the database layer, not just the application layer</li>
+                <li>Document your schema intentions directly in the database</li>
+            </ul>
+
+            <h2>2. Creating a Collection with Validation</h2>
+            <pre class="code-block"><code>db.createCollection("employees", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "email", "department"],
+      properties: {
+        name: { bsonType: "string", description: "must be a string and is required" },
+        email: {
+          bsonType: "string",
+          pattern: "^.+@.+$",
+          description: "must be a valid email address"
+        },
+        department: {
+          enum: ["Engineering", "Sales", "HR", "Marketing"],
+          description: "must be one of the enum values"
+        },
+        age: {
+          bsonType: "int",
+          minimum: 18,
+          maximum: 65,
+          description: "must be an integer between 18 and 65"
+        }
+      }
+    }
+  }
+})</code></pre>
+
+            <h2>3. Validation Levels and Actions</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Option</th><th>Values</th><th>Effect</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>validationLevel</code></td><td>"strict" (default) / "moderate"</td><td>Strict validates all writes; moderate skips existing invalid documents</td></tr>
+                        <tr><td><code>validationAction</code></td><td>"error" (default) / "warn"</td><td>Error rejects invalid writes; warn logs but allows them</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Adding Validation to an Existing Collection</h2>
+            <pre class="code-block"><code>db.runCommand({
+  collMod: "employees",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "email"]
+    }
+  },
+  validationLevel: "moderate"
+})</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issue:</strong> Applying strict validation to a collection with existing "bad" documents will block future updates to those documents unless you use <code>validationLevel: "moderate"</code>.
+            </div>
+
+            <h2>5. Testing Validation</h2>
+            <pre class="code-block"><code>// This insert fails validation (missing required "department")
+db.employees.insertOne({ name: "Kabir Singh", email: "kabir@example.com" })
+
+// MongoServerError: Document failed validation</code></pre>
+
+            <h2>6. Schema Validation Checklist</h2>
+            <ul>
+                <li><strong>✅ Define required fields and types with $jsonSchema</strong></li>
+                <li><strong>✅ Use enum for restricted value sets</strong></li>
+                <li><strong>✅ Choose validationLevel and validationAction appropriately</strong></li>
+                <li><strong>✅ Apply validation to existing collections with collMod</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Schema validation gives you the best of both worlds — MongoDB's flexibility during development, with the safety of enforced structure as your application matures.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-data-modeling.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Data Modeling and Schema Design</a>
+            <a href="mongodb-indexing-fundamentals.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Indexing Fundamentals</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suffix Array and Suffix Tree in Data Structures & Applications | DSA Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn about Suffix Arrays and Suffix Trees — powerful string data structures for pattern matching, text processing, and bioinformatics applications." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Data Structures & Algorithms (DSA) Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 59 of 81: Suffix Array and Suffix Tree in Data Structures & Applications</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="radix-sort-for-strings.html"><span class="num">01</span>Radix Sort for Strings</a></li>
+            <li><a href="most-asked-dsa-interview-practice-questions.html"><span class="num">02</span>Most Asked DSA Interview Practice Questions</a></li>
+            <li><a href="maximum-subarray-sum-problem.html"><span class="num">03</span>Maximum Subarray Sum Problem</a></li>
+            <li><a href="merge-sorted-arrays.html"><span class="num">04</span>Merge Sorted Arrays</a></li>
+            <li><a href="linear-search-with-duplicates.html"><span class="num">05</span>Linear Search with Duplicates</a></li>
+            <li><a href="quick-sort-with-pivot-selection.html"><span class="num">06</span>Quick Sort with Pivot Selection</a></li>
+            <li><a href="insertion-sort-for-nearly-sorted-array.html"><span class="num">07</span>Insertion Sort for Nearly Sorted Array</a></li>
+            <li><a href="two-sum-problem.html"><span class="num">08</span>Two Sum Problem</a></li>
+            <li><a href="selection-sort-algorithm.html"><span class="num">09</span>Selection Sort Algorithm</a></li>
+            <li><a href="bubble-sort-algorithm.html"><span class="num">10</span>Bubble Sort Algorithm</a></li>
+            <li><a href="0-1-knapsack-problem.html"><span class="num">11</span>0/1 Knapsack Problem</a></li>
+            <li><a href="bellman-ford-algorithm-working-example-applications.html"><span class="num">12</span>Bellman-Ford Algorithm — Working, Example and Applications</a></li>
+            <li><a href="introduction-to-non-linear-data-structures.html"><span class="num">13</span>Introduction to Non-Linear Data Structures</a></li>
+            <li><a href="difference-between-stack-and-queue-data-structure.html"><span class="num">14</span>Difference Between Stack and Queue Data Structure</a></li>
+            <li><a href="breadth-first-search-vs-depth-first-search.html"><span class="num">15</span>Breadth First Search vs Depth First Search</a></li>
+            <li><a href="abstract-data-type-in-data-structure-with-example.html"><span class="num">16</span>Abstract Data Type in Data Structure with Example</a></li>
+            <li><a href="binary-tree-traversal-in-data-structure.html"><span class="num">17</span>Binary Tree Traversal in Data Structure</a></li>
+            <li><a href="binary-tree-array-implementation.html"><span class="num">18</span>Binary Tree Array Implementation</a></li>
+            <li><a href="binary-tree-in-data-structure-types-and-implementation.html"><span class="num">19</span>Binary Tree in Data Structure — Types and Implementation</a></li>
+            <li><a href="dsa-examples-a-to-z-guide.html"><span class="num">20</span>DSA Examples: A-Z Guide</a></li>
+            <li><a href="deque-in-data-structure.html"><span class="num">21</span>Deque in Data Structure</a></li>
+            <li><a href="priority-queue-in-data-structure-implementation-types.html"><span class="num">22</span>Priority Queue in Data Structure — Implementation, Types & More</a></li>
+            <li><a href="implementing-circular-queue-in-data-structure.html"><span class="num">23</span>Implementing Circular Queue in Data Structure</a></li>
+            <li><a href="queue-in-data-structure-types-and-algorithms.html"><span class="num">24</span>Queue in Data Structure — Types & Algorithms (with Examples)</a></li>
+            <li><a href="understanding-trie-data-structure.html"><span class="num">25</span>Understanding Trie Data Structure</a></li>
+            <li><a href="spanning-tree-and-minimum-spanning-tree-kruskal-prim.html"><span class="num">26</span>Spanning Tree and Minimum Spanning Tree — Kruskal's and Prim's Algorithm</a></li>
+            <li><a href="avl-tree-in-data-structure-with-example.html"><span class="num">27</span>AVL Tree in Data Structure with Example</a></li>
+            <li><a href="trees-in-data-structure-structure-operations-applications.html"><span class="num">28</span>Trees in Data Structure — Structure, Operations & Applications</a></li>
+            <li><a href="segment-tree-in-data-structure-operations-advantages-disadvantages.html"><span class="num">29</span>Segment Tree in Data Structure — Operations, Advantages and Disadvantages</a></li>
+            <li><a href="k-dimensional-tree-in-data-structure.html"><span class="num">30</span>K-Dimensional Tree in Data Structure</a></li>
+            <li><a href="singly-linked-list.html"><span class="num">31</span>Singly Linked List</a></li>
+            <li><a href="reverse-linked-list.html"><span class="num">32</span>Reverse Linked List</a></li>
+            <li><a href="linked-list-in-data-structure-types-and-applications.html"><span class="num">33</span>Linked List in Data Structure — Types and Applications</a></li>
+            <li><a href="doubly-linked-list-in-data-structure-with-example.html"><span class="num">34</span>Doubly Linked List in Data Structure with Example</a></li>
+            <li><a href="circular-linked-list-in-data-structure.html"><span class="num">35</span>Circular Linked List in Data Structure</a></li>
+            <li><a href="dijkstras-algorithm-in-data-structure.html"><span class="num">36</span>Dijkstra's Algorithm in Data Structure</a></li>
+            <li><a href="binary-search-in-data-structure.html"><span class="num">37</span>Binary Search in Data Structure</a></li>
+            <li><a href="data-structure-sorting-types-and-examples-explained.html"><span class="num">38</span>Data Structure Sorting: Types and Examples Explained in Detail</a></li>
+            <li><a href="bubble-sort-in-data-structure.html"><span class="num">39</span>Bubble Sort in Data Structure</a></li>
+            <li><a href="selection-sort-in-data-structure.html"><span class="num">40</span>Selection Sort in Data Structure</a></li>
+            <li><a href="insertion-sort-in-data-structure-algorithm-working-advantages.html"><span class="num">41</span>Insertion Sort in Data Structure — Algorithm, Working and Advantages</a></li>
+            <li><a href="merge-sort-in-data-structure-implementation-cpp-java-python.html"><span class="num">42</span>Merge Sort in Data Structure and Algorithm — with Implementation in C++, Java and Python</a></li>
+            <li><a href="counting-sort-in-data-structure.html"><span class="num">43</span>Counting Sort in Data Structure</a></li>
+            <li><a href="radix-sort-in-data-structure-algorithm-working-complexity.html"><span class="num">44</span>Radix Sort in Data Structure — Algorithm, Working and Complexity</a></li>
+            <li><a href="bucket-sort-in-data-structure.html"><span class="num">45</span>Bucket Sort in Data Structure</a></li>
+            <li><a href="shell-sort-in-data-structure-algorithm-visualization-complexity.html"><span class="num">46</span>Shell Sort in Data Structure — Algorithm, Visualization and Complexity</a></li>
+            <li><a href="heap-sort-algorithm-in-data-structure-working-implementation-applications.html"><span class="num">47</span>Heap Sort Algorithm in Data Structure — Working, Implementation and Applications</a></li>
+            <li><a href="tower-of-hanoi-in-data-structure.html"><span class="num">48</span>Tower of Hanoi in Data Structure</a></li>
+            <li><a href="counting-sort-limited-range.html"><span class="num">49</span>Counting Sort for Limited Range</a></li>
+            <li><a href="binary-search-rotated-sorted-array.html"><span class="num">50</span>Binary Search in Rotated Sorted Array</a></li>
+            <li><a href="inorder-traversal-binary-search-tree.html"><span class="num">51</span>In-order Traversal of Binary Search Tree</a></li>
+            <li><a href="binary-search-tree-data-structure.html"><span class="num">52</span>Binary Search Tree in Data Structures</a></li>
+            <li><a href="merge-sort-linked-list.html"><span class="num">53</span>Merge Sort for Linked List</a></li>
+            <li><a href="quick-sort-algorithm-types-examples.html"><span class="num">54</span>Quick Sort Algorithm in Data Structures — Its Types ( With Examples )</a></li>
+            <li><a href="greedy-algorithm-data-structures.html"><span class="num">55</span>Greedy Algorithm in Data Structures</a></li>
+            <li><a href="array-vs-linked-list-differences.html"><span class="num">56</span>Differences Between Array and Linked List</a></li>
+            <li><a href="multi-dimensional-array.html"><span class="num">57</span>Multi dimensional array in Data Structures</a></li>
+            <li><a href="one-dimensional-array-example.html"><span class="num">58</span>One dimensional Array in Data Structures with Example</a></li>
+            <li><a href="suffix-array-suffix-tree-applications.html" class="active"><span class="num">59</span>Suffix Array and Suffix Tree in Data Structures &amp; Applications</a></li>
+            <li><a href="two-dimensional-array.html"><span class="num">60</span>Two dimensional Array In Data Structure</a></li>
+            <li><a href="types-of-arrays-2d-3d-jagged.html"><span class="num">61</span>Types of Arrays in Data Structures: 2D, 3D, Jagged Arrays</a></li>
+            <li><a href="arrays-data-structures-types-representation.html"><span class="num">62</span>Arrays in Data Structures — Types, Representation &amp; Algorithm (With Examples)</a></li>
+            <li><a href="b-tree-data-structure.html"><span class="num">63</span>B Tree: An Efficient Data Structure</a></li>
+            <li><a href="what-are-data-structures-guide.html"><span class="num">64</span>What are Data Structures — Types of Data Structures (Complete Guide)</a></li>
+            <li><a href="recursion-data-structures-recursive-function.html"><span class="num">65</span>Recursion in Data Structures: Recursive Function</a></li>
+            <li><a href="complexity-analysis-of-algorithms.html"><span class="num">66</span>Complexity Analysis of Data Structures and Algorithms</a></li>
+            <li><a href="searching-data-structures-types-methods.html"><span class="num">67</span>Searching in Data Structures — Its Types, Methods &amp; Techniques</a></li>
+            <li><a href="brute-force-algorithm-types-advantages.html"><span class="num">68</span>Brute Force Algorithm in Data Structures: Types, Advantages, Disadvantages</a></li>
+            <li><a href="big-o-notation-time-space-complexity.html"><span class="num">69</span>Big O Notation in Data Structures: Time and Space Complexity</a></li>
+            <li><a href="stack-data-structure-implementations.html"><span class="num">70</span>Stack in Data Structures: Implementations in Java, Python, &amp; C++</a></li>
+            <li><a href="linear-search-algorithm-working-complexity.html"><span class="num">71</span>What is Linear Search in Data Structures — Its Algorithm, Working, &amp; Complexity</a></li>
+            <li><a href="divide-and-conquer-algorithm-working-advantages.html"><span class="num">72</span>Divide and Conquer Algorithm in Data Structures — Its Working, Advantages &amp; Disadvantages</a></li>
+            <li><a href="heap-data-structure.html"><span class="num">73</span>Heap in Data Structures</a></li>
+            <li><a href="hashing-types-functions-examples.html"><span class="num">74</span>Hashing in Data Structures: Types and Functions [With Examples]</a></li>
+            <li><a href="hash-table-data-structure.html"><span class="num">75</span>Hash Table in Data Structures</a></li>
+            <li><a href="graph-data-structure-types.html"><span class="num">76</span>What is a Graph in Data Structures and its Types?</a></li>
+            <li><a href="bfs-dfs-traversal-data-structure.html"><span class="num">77</span>Breadth First Traversal and Depth First Traversal in Data Structure</a></li>
+            <li><a href="dsa-mcq-questions-answers.html"><span class="num">78</span>Top 45+ DSA MCQ Questions with Answers {Updated}</a></li>
+            <li><a href="dsa-interview-questions-answers.html"><span class="num">79</span>DSA Interview Questions and Answers (Freshers to Experienced)</a></li>
+            <li><a href="dsa-roadmap-step-by-step-guide.html"><span class="num">80</span>DSA Roadmap for Beginners: Step-by-Step Guide to Master in DSA</a></li>
+            <li><a href="data-structure-cheat-sheet-complete.html"><span class="num">81</span>Data Structure Cheat Sheet: Complete Guide</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-code"></i> String Data Structures</span>
+        <h1>Suffix Array and Suffix Tree in Data Structures &amp; Applications</h1>
+
+        <div class="card">
+
+            <p><strong>Suffix Arrays</strong> and <strong>Suffix Trees</strong> are powerful data structures used for efficient string processing, pattern matching, and text analysis. Both represent all suffixes of a given string but offer different trade‑offs in terms of construction time, memory usage, and query efficiency.</p>
+
+            <h2>What is a Suffix Array?</h2>
+            <p>A <strong>Suffix Array</strong> is a sorted array of all suffixes of a string. Instead of storing the actual suffixes (which would be memory‑intensive), it stores the starting indices of the suffixes in sorted lexicographical order.</p>
+            <pre class="code-block"><code>String: "banana"
+Suffixes:
+0: banana
+1: anana
+2: nana
+3: ana
+4: na
+5: a
+
+Sorted suffixes:
+5: a
+3: ana
+1: anana
+0: banana
+4: na
+2: nana
+
+Suffix Array: [5, 3, 1, 0, 4, 2]
+</code></pre>
+
+            <h3>Suffix Array Construction (Naïve)</h3>
+            <pre class="code-block"><code>def build_suffix_array(s):
+    suffixes = [(s[i:], i) for i in range(len(s))]
+    suffixes.sort()
+    return [idx for _, idx in suffixes]
+
+s = "banana"
+print(build_suffix_array(s))  # Output: [5, 3, 1, 0, 4, 2]
+</code></pre>
+
+            <h3>Efficient Construction (Manber-Myers Algorithm)</h3>
+            <pre class="code-block"><code>def build_suffix_array_manber_myers(s):
+    """
+    O(n log n) construction using prefix doubling.
+    Returns suffix array sorted lexicographically.
+    """
+    n = len(s)
+    suffixes = list(range(n))
+    rank = [ord(c) for c in s] + [-1]  # Initial ranks
+    k = 1
+
+    while k < n:
+        suffixes.sort(key=lambda x: (rank[x], rank[x + k] if x + k < n else -1))
+        new_rank = [0] * n
+        for i in range(1, n):
+            prev = suffixes[i - 1]
+            curr = suffixes[i]
+            if (rank[prev], rank[prev + k] if prev + k < n else -1) != \
+               (rank[curr], rank[curr + k] if curr + k < n else -1):
+                new_rank[curr] = new_rank[prev] + 1
+            else:
+                new_rank[curr] = new_rank[prev]
+        rank = new_rank
+        k *= 2
+
+    return suffixes
+
+s = "banana"
+print(build_suffix_array_manber_myers(s))  # Output: [5, 3, 1, 0, 4, 2]
+</code></pre>
+
+            <h2>What is a Suffix Tree?</h2>
+            <p>A <strong>Suffix Tree</strong> is a compressed trie (prefix tree) of all suffixes of a string. Each edge is labeled with a substring, and every suffix corresponds to a path from the root to a leaf. It enables extremely fast pattern matching (O(m) where m is the pattern length) but is more memory‑intensive than a suffix array.</p>
+
+            <h3>Key Properties of a Suffix Tree</h3>
+            <ul>
+                <li>Each internal node has at least two children.</li>
+                <li>Edges are labeled with non‑empty substrings.</li>
+                <li>No two edges from the same node have labels starting with the same character.</li>
+                <li>Each leaf represents a suffix of the original string.</li>
+            </ul>
+
+            <h2>Suffix Array vs Suffix Tree</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>Suffix Array</th><th>Suffix Tree</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Memory Usage</strong></td><td>Low (O(n))</td><td>High (O(n) but with larger constant factors)</td></tr>
+                        <tr><td><strong>Construction Time</strong></td><td>O(n log n) or O(n)</td><td>O(n) (Ukkonen's algorithm)</td></tr>
+                        <tr><td><strong>Pattern Search</strong></td><td>O(m log n) with binary search</td><td>O(m) (optimal)</td></tr>
+                        <tr><td><strong>Space Overhead</strong></td><td>Minimal</td><td>High (pointers, edge labels)</td></tr>
+                        <tr><td><strong>Implementation Complexity</strong></td><td>Moderate</td><td>High</td></tr>
+                        <tr><td><strong>LCP Array Support</strong></td><td>Can be extended with LCP</td><td>Built‑in via nodes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Longest Common Prefix (LCP) Array</h2>
+            <p>An <strong>LCP (Longest Common Prefix) array</strong> stores the length of the longest common prefix between consecutive suffixes in the suffix array. It is essential for many suffix array applications.</p>
+            <pre class="code-block"><code>def build_lcp_array(s, suffix_arr):
+    n = len(s)
+    rank = [0] * n
+    for i in range(n):
+        rank[suffix_arr[i]] = i
+
+    lcp = [0] * (n - 1)
+    k = 0
+    for i in range(n):
+        if rank[i] == n - 1:
+            k = 0
+            continue
+        j = suffix_arr[rank[i] + 1]
+        while i + k < n and j + k < n and s[i + k] == s[j + k]:
+            k += 1
+        lcp[rank[i]] = k
+        if k:
+            k -= 1
+    return lcp
+
+s = "banana"
+suffix_arr = build_suffix_array(s)
+print(build_lcp_array(s, suffix_arr))  # Output: [1, 3, 0, 0, 2]
+</code></pre>
+
+            <h2>Applications</h2>
+            <h3>1. Pattern Matching</h3>
+            <p>Find all occurrences of a pattern in a text efficiently.</p>
+            <pre class="code-block"><code>def search_pattern(text, pattern):
+    suffix_arr = build_suffix_array(text)
+    # Binary search on suffix array
+    low, high = 0, len(suffix_arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        suffix = text[suffix_arr[mid]:]
+        if suffix.startswith(pattern):
+            # Find all matching occurrences
+            occurrences = []
+            idx = mid
+            while idx >= 0 and text[suffix_arr[idx]:].startswith(pattern):
+                occurrences.append(suffix_arr[idx])
+                idx -= 1
+            idx = mid + 1
+            while idx < len(suffix_arr) and text[suffix_arr[idx]:].startswith(pattern):
+                occurrences.append(suffix_arr[idx])
+                idx += 1
+            return sorted(occurrences)
+        elif pattern < suffix:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return []
+</code></pre>
+
+            <h3>2. Longest Repeated Substring</h3>
+            <p>Find the longest substring that occurs at least twice.</p>
+            <pre class="code-block"><code>def longest_repeated_substring(s):
+    suffix_arr = build_suffix_array(s)
+    lcp = build_lcp_array(s, suffix_arr)
+    max_lcp = max(lcp) if lcp else 0
+    idx = lcp.index(max_lcp) if max_lcp else -1
+    if idx != -1:
+        return s[suffix_arr[idx]:suffix_arr[idx] + max_lcp]
+    return ""
+</code></pre>
+
+            <h3>3. Longest Common Substring</h3>
+            <p>Find the longest common substring between two strings.</p>
+            <pre class="code-block"><code>def longest_common_substring(s1, s2):
+    # Concatenate with a unique separator
+    combined = s1 + "$" + s2 + "#"
+    suffix_arr = build_suffix_array(combined)
+    lcp = build_lcp_array(combined, suffix_arr)
+    # Find max LCP where suffixes belong to different strings
+    max_len = 0
+    for i in range(len(lcp)):
+        if (suffix_arr[i] < len(s1) and suffix_arr[i + 1] > len(s1)) or \
+           (suffix_arr[i] > len(s1) and suffix_arr[i + 1] < len(s1)):
+            max_len = max(max_len, lcp[i])
+    return max_len
+</code></pre>
+
+            <h3>4. Bioinformatics Applications</h3>
+            <ul>
+                <li><strong>Genome Assembly:</strong> Finding overlapping reads.</li>
+                <li><strong>DNA Sequence Analysis:</strong> Identifying repeated patterns.</li>
+                <li><strong>Multiple Sequence Alignment:</strong> Finding common subsequences.</li>
+            </ul>
+
+            <h3>5. Other Applications</h3>
+            <ul>
+                <li><strong>Data Compression:</strong> Identifying repeated substrings for compression algorithms.</li>
+                <li><strong>Plagiarism Detection:</strong> Finding common substrings in documents.</li>
+                <li><strong>Spell Checking:</strong> Efficient dictionary lookups.</li>
+                <li><strong>Full‑Text Search Engines:</strong> Indexing and searching large text corpora.</li>
+            </ul>
+
+            <h2>Complexity Summary</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Operation</th><th>Suffix Array</th><th>Suffix Tree</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Construction</td><td>O(n log n) or O(n)</td><td>O(n)</td></tr>
+                        <tr><td>Space</td><td>O(n)</td><td>O(n) with higher constant</td></tr>
+                        <tr><td>Pattern Search</td><td>O(m log n)</td><td>O(m)</td></tr>
+                        <tr><td>LCP Array Build</td><td>O(n)</td><td>Built‑in</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Suffix Arrays</strong> are simpler, more memory‑efficient, and easier to implement.</li>
+                <li><strong>Suffix Trees</strong> provide faster pattern matching and more powerful queries but are more complex.</li>
+                <li>Many applications (like those in bioinformatics and text processing) benefit from either structure.</li>
+                <li>The <strong>LCP array</strong> extends suffix arrays to support many of the same operations as suffix trees.</li>
+            </ul>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="one-dimensional-array-example.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>One dimensional Array in Data Structures with Example</a>
+            <a href="two-dimensional-array.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Two dimensional Array In Data Structure</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Data Structures &amp; Algorithms?</h3>
+                <p>Learn DSA hands-on with mentor-led sessions, real interview practice, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>DSA Training Course</h4>
+            <p class="batch-sub">Kickstart your problem-solving journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

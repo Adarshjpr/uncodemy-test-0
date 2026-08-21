@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RecyclerView &amp; Adapters — Displaying Lists of Data | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Master RecyclerView in Android — Adapters, ViewHolders, LayoutManagers, item click handling, and efficient list display with practical examples." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 6 of 12: RecyclerView &amp; Adapters — Displaying Lists of Data</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html" class="active"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-list-ul"></i> Lists</span>
+        <h1>RecyclerView &amp; Adapters — Displaying Lists of Data</h1>
+
+        <div class="card">
+
+            <p>In almost every Android app, you need to display a list of items — contacts, messages, products, posts, etc. <strong>RecyclerView</strong> is the modern, powerful, and efficient way to display large lists of data in Android. It replaces the older ListView and provides better performance, more flexibility, and built-in animations.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> RecyclerView is the most frequently used UI component in modern Android apps. Mastering it is essential for building professional applications that handle large datasets efficiently.
+            </div>
+
+            <h2>1. What is RecyclerView?</h2>
+
+            <p><strong>RecyclerView</strong> is an advanced version of ListView that displays a scrollable list of items. It's more flexible and efficient because it:</p>
+            <ul>
+                <li><strong>Reuses views</strong> — Only creates enough views to fill the screen and recycles them as you scroll.</li>
+                <li><strong>Supports multiple layouts</strong> — You can have different item types in the same list.</li>
+                <li><strong>Handles animations</strong> — Built-in support for adding, removing, and reordering items.</li>
+                <li><strong>Separates concerns</strong> — Uses the Adapter pattern to separate data from UI.</li>
+            </ul>
+
+            <h3>RecyclerView Architecture</h3>
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">RecyclerView Architecture</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │                    RecyclerView                           │<br />
+                    │           (Displays the list on screen)                   │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                    ┌────────────────┴────────────────┐<br />
+                    │                                 │<br />
+                    ▼                                 ▼<br />
+            ┌──────────────────────┐          ┌──────────────────────┐<br />
+            │    Adapter           │          │   LayoutManager      │<br />
+            │  (Manages data &     │          │ (Arranges items on   │<br />
+            │   creates views)     │          │  the screen)         │<br />
+            └──────────────────────┘          └──────────────────────┘<br />
+                    │                                 │<br />
+                    │                                 │<br />
+                    ▼                                 ▼<br />
+            ┌──────────────────────┐          ┌──────────────────────┐<br />
+            │    ViewHolder        │          │   ItemAnimator       │<br />
+            │ (Holds the view for  │          │ (Handles add/remove/ │<br />
+            │  a single item)      │          │  reorder animations) │<br />
+            └──────────────────────┘          └──────────────────────┘
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Responsibility</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>RecyclerView</strong></td><td>The UI component that displays the list</td></tr>
+                        <tr><td><strong>Adapter</strong></td><td>Binds data to views and creates ViewHolders</td></tr>
+                        <tr><td><strong>ViewHolder</strong></td><td>Holds references to views for a single item</td></tr>
+                        <tr><td><strong>LayoutManager</strong></td><td>Arranges items (Linear, Grid, Staggered Grid)</td></tr>
+                        <tr><td><strong>ItemAnimator</strong></td><td>Animates add/remove/reorder changes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Setting Up RecyclerView</h2>
+
+            <h3>Step 1: Add Dependency</h3>
+            <p>Add the following dependency to your <code>build.gradle</code> (Module) file:</p>
+            <pre class="code-block"><code>dependencies {
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+}</code></pre>
+
+            <h3>Step 2: Add RecyclerView to Your Layout</h3>
+            <pre class="code-block"><code>&lt;!-- activity_main.xml --&gt;
+&lt;androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical" /&gt;</code></pre>
+
+            <h2>3. Creating the Item Layout</h2>
+
+            <p>Create an XML layout file for each item in the list. For a simple contact list:</p>
+
+            <pre class="code-block"><code>&lt;!-- item_contact.xml --&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground"&gt;
+
+    &lt;!-- Avatar/Initials Circle --&gt;
+    &lt;TextView
+        android:id="@+id/avatarText"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/avatar_circle"
+        android:gravity="center"
+        android:text="JD"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" /&gt;
+
+    &lt;!-- Contact Name --&gt;
+    &lt;TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintStart_toEndOf="@id/avatarText"
+        app:layout_constraintEnd_toStartOf="@id/statusIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp" /&gt;
+
+    &lt;!-- Contact Email / Last Message --&gt;
+    &lt;TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="john@example.com"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        app:layout_constraintStart_toEndOf="@id/avatarText"
+        app:layout_constraintEnd_toStartOf="@id/statusIcon"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        android:layout_marginStart="12dp" /&gt;
+
+    &lt;!-- Status Icon (Online/Offline) --&gt;
+    &lt;View
+        android:id="@+id/statusIcon"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@drawable/status_indicator_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
+
+            <h2>4. Creating the Data Model</h2>
+
+            <pre class="code-block"><code>// Contact.kt
+data class Contact(
+    val id: Long,
+    val name: String,
+    val email: String,
+    val isOnline: Boolean = false,
+    val initials: String
+) {
+    constructor(name: String, email: String, isOnline: Boolean = false) : this(
+        id = System.currentTimeMillis() + name.hashCode(),
+        name = name,
+        email = email,
+        isOnline = isOnline,
+        initials = name.split(" ")
+            .mapNotNull { it.firstOrNull()?.toString() }
+            .joinToString("")
+            .take(2)
+            .uppercase()
+    )
+}</code></pre>
+
+            <h2>5. Creating the Adapter</h2>
+
+            <p>The <strong>Adapter</strong> is the core component that binds data to the RecyclerView. It creates ViewHolders and binds data to them.</p>
+
+            <pre class="code-block"><code>// ContactAdapter.kt
+package com.example.myapp
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+
+class ContactAdapter(
+    private var contacts: List&lt;Contact&gt;,
+    private val onItemClick: (Contact) -> Unit
+) : RecyclerView.Adapter&lt;ContactAdapter.ContactViewHolder&gt;() {
+
+    // ViewHolder class — holds references to views
+    class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val avatarText: TextView = itemView.findViewById(R.id.avatarText)
+        val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
+        val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
+        val statusIcon: View = itemView.findViewById(R.id.statusIcon)
+    }
+
+    // 1. Create new ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_contact, parent, false)
+        return ContactViewHolder(view)
+    }
+
+    // 2. Bind data to ViewHolder
+    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+        val contact = contacts[position]
+
+        // Set avatar initials
+        holder.avatarText.text = contact.initials
+        // Set name
+        holder.nameTextView.text = contact.name
+        // Set email
+        holder.emailTextView.text = contact.email
+
+        // Set status indicator color
+        val statusColor = if (contact.isOnline) {
+            ContextCompat.getColor(holder.itemView.context, R.color.status_online)
+        } else {
+            ContextCompat.getColor(holder.itemView.context, R.color.status_offline)
+        }
+        holder.statusIcon.setBackgroundColor(statusColor)
+
+        // Set click listener
+        holder.itemView.setOnClickListener {
+            onItemClick(contact)
+        }
+    }
+
+    // 3. Return number of items
+    override fun getItemCount(): Int = contacts.size
+
+    // 4. Update data and refresh the list
+    fun updateData(newContacts: List&lt;Contact&gt;) {
+        contacts = newContacts
+        notifyDataSetChanged()
+    }
+}</code></pre>
+
+            <h2>6. Setting Up the Activity</h2>
+
+            <pre class="code-block"><code>// MainActivity.kt
+package com.example.myapp
+
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: ContactAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // 1. Initialize RecyclerView
+        recyclerView = findViewById(R.id.recyclerView)
+
+        // 2. Set LayoutManager
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+
+        // 3. Create sample data
+        val contacts = listOf(
+            Contact("Alice Johnson", "alice@example.com", true),
+            Contact("Bob Smith", "bob@example.com", false),
+            Contact("Charlie Brown", "charlie@example.com", true),
+            Contact("Diana Prince", "diana@example.com", false),
+            Contact("Eve Wilson", "eve@example.com", true),
+            Contact("Frank Castle", "frank@example.com", false),
+        )
+
+        // 4. Create and set adapter
+        adapter = ContactAdapter(contacts) { contact ->
+            Toast.makeText(this, "Selected: ${contact.name}", Toast.LENGTH_SHORT).show()
+        }
+        recyclerView.adapter = adapter
+    }
+}</code></pre>
+
+            <h2>7. LayoutManager Types</h2>
+
+            <p>RecyclerView supports multiple layout managers for different visual arrangements:</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>LayoutManager</th><th>Description</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>LinearLayoutManager</strong></td><td>Arranges items in a single column or row</td><td>Standard lists (vertical/horizontal)</td></tr>
+                        <tr><td><strong>GridLayoutManager</strong></td><td>Arranges items in a grid</td><td>Photo galleries, product grids</td></tr>
+                        <tr><td><strong>StaggeredGridLayoutManager</strong></td><td>Arranges items in a staggered grid</td><td>Pinterest-style layouts</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>// Vertical Linear Layout (default)
+val linearLayoutManager = LinearLayoutManager(this)
+recyclerView.layoutManager = linearLayoutManager
+
+// Horizontal Linear Layout
+val horizontalLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+recyclerView.layoutManager = horizontalLayoutManager
+
+// Grid Layout (2 columns)
+val gridLayoutManager = GridLayoutManager(this, 2)
+recyclerView.layoutManager = gridLayoutManager
+
+// Staggered Grid Layout (2 columns)
+val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+recyclerView.layoutManager = staggeredGridLayoutManager</code></pre>
+
+            <h2>8. Adding Item Click Handling</h2>
+
+            <p>There are multiple ways to handle item clicks in RecyclerView. Here's the recommended approach using a click listener interface:</p>
+
+            <pre class="code-block"><code>// 1. Define click listener interface
+interface OnItemClickListener {
+    fun onItemClick(position: Int)
+    fun onItemLongClick(position: Int): Boolean
+}
+
+// 2. Modify adapter to include click listener
+class ContactAdapter(
+    private var contacts: List&lt;Contact&gt;,
+    private val clickListener: OnItemClickListener
+) : RecyclerView.Adapter&lt;ContactAdapter.ContactViewHolder&gt;() {
+
+    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+        // ... binding code ...
+
+        holder.itemView.setOnClickListener {
+            clickListener.onItemClick(position)
+        }
+
+        holder.itemView.setOnLongClickListener {
+            clickListener.onItemLongClick(position)
+            true
+        }
+    }
+}
+
+// 3. Implement in Activity
+class MainActivity : AppCompatActivity(), OnItemClickListener {
+
+    override fun onItemClick(position: Int) {
+        val contact = contacts[position]
+        Toast.makeText(this, "Clicked: ${contact.name}", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onItemLongClick(position: Int): Boolean {
+        val contact = contacts[position]
+        Toast.makeText(this, "Long pressed: ${contact.name}", Toast.LENGTH_SHORT).show()
+        return true
+    }
+}</code></pre>
+
+            <h2>9. DiffUtil — Efficient Updates</h2>
+
+            <p><strong>DiffUtil</strong> calculates the difference between two lists and updates only the changed items, improving performance for large lists.</p>
+
+            <pre class="code-block"><code>// ContactDiffCallback.kt
+class ContactDiffCallback(
+    private val oldList: List&lt;Contact&gt;,
+    private val newList: List&lt;Contact&gt;
+) : DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList.size
+
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition].id == newList[newItemPosition].id
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition] == newList[newItemPosition]
+    }
+}
+
+// In Adapter — update using DiffUtil
+fun updateData(newContacts: List&lt;Contact&gt;) {
+    val diffResult = DiffUtil.calculateDiff(
+        ContactDiffCallback(contacts, newContacts)
+    )
+    contacts = newContacts
+    diffResult.dispatchUpdatesTo(this)
+}</code></pre>
+
+            <h2>10. Multiple View Types</h2>
+
+            <p>You can display different item layouts in the same RecyclerView:</p>
+
+            <pre class="code-block"><code>// In Adapter
+companion object {
+    private const val VIEW_TYPE_CONTACT = 0
+    private const val VIEW_TYPE_HEADER = 1
+    private const val VIEW_TYPE_FOOTER = 2
+}
+
+override fun getItemViewType(position: Int): Int {
+    return when {
+        position == 0 -> VIEW_TYPE_HEADER
+        position == itemCount - 1 -> VIEW_TYPE_FOOTER
+        else -> VIEW_TYPE_CONTACT
+    }
+}
+
+override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    return when (viewType) {
+        VIEW_TYPE_HEADER -> {
+            val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_header, parent, false)
+            HeaderViewHolder(view)
+        }
+        VIEW_TYPE_FOOTER -> {
+            val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_footer, parent, false)
+            FooterViewHolder(view)
+        }
+        else -> {
+            val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_contact, parent, false)
+            ContactViewHolder(view)
+        }
+    }
+}</code></pre>
+
+            <h2>11. Common Pitfalls &amp; Solutions</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Mistakes to Avoid:</strong>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 1: Not using ViewHolder pattern correctly</strong></p>
+                <p><strong>Problem:</strong> Finding views in <code>onBindViewHolder</code> every time causes performance issues.</p>
+                <p><strong>Solution:</strong> Always find and store view references in the ViewHolder constructor, not in <code>onBindViewHolder</code>.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 2: Not using the correct LayoutManager for your use case</strong></p>
+                <p><strong>Problem:</strong> Using LinearLayoutManager when GridLayoutManager would be more appropriate.</p>
+                <p><strong>Solution:</strong> Choose the right LayoutManager for your data presentation needs.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 3: Creating new objects in onBindViewHolder</strong></p>
+                <p><strong>Problem:</strong> Creating objects (like listeners) every time a view is bound creates memory churn.</p>
+                <p><strong>Solution:</strong> Use a single listener instance or set listeners in the ViewHolder constructor.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 4: Using notifyDataSetChanged() for small updates</strong></p>
+                <p><strong>Problem:</strong> <code>notifyDataSetChanged()</code> redraws the entire list, which is inefficient for small changes.</p>
+                <p><strong>Solution:</strong> Use <code>notifyItemInserted()</code>, <code>notifyItemRemoved()</code>, <code>notifyItemChanged()</code>, or DiffUtil.</p>
+            </div>
+
+            <h2>12. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use ViewHolder pattern</strong> — Hold view references for performance.</li>
+                <li><strong>✅ Use DiffUtil</strong> — For efficient list updates.</li>
+                <li><strong>✅ Choose the right LayoutManager</strong> — Linear, Grid, or Staggered Grid.</li>
+                <li><strong>✅ Handle item clicks</strong> — Use an interface for clean separation.</li>
+                <li><strong>✅ Support multiple view types</strong> — If needed, implement <code>getItemViewType()</code>.</li>
+                <li><strong>✅ Use stable IDs</strong> — Override <code>getItemId()</code> and <code>setHasStableIds(true)</code>.</li>
+                <li><strong>✅ Set LayoutManager efficiently</strong> — Initialize once, not on every configuration change.</li>
+                <li><strong>✅ Add scroll listeners</strong> — For infinite scrolling/pagination.</li>
+                <li><strong>✅ Use item decorations</strong> — For dividers and spacing.</li>
+                <li><strong>✅ Test with large datasets</strong> — Ensure smooth scrolling with 1000+ items.</li>
+                <li><strong>✅ Handle configuration changes</strong> — Save and restore scroll position.</li>
+                <li><strong>✅ Add animations</strong> — Use <code>RecyclerView.ItemAnimator</code> for add/remove animations.</li>
+            </ul>
+
+            <h2>13. Quick Reference — RecyclerView Methods</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>onCreateViewHolder()</code></td><td>Called to create a new ViewHolder</td></tr>
+                        <tr><td><code>onBindViewHolder()</code></td><td>Called to bind data to a ViewHolder</td></tr>
+                        <tr><td><code>getItemCount()</code></td><td>Returns the number of items</td></tr>
+                        <tr><td><code>getItemViewType()</code></td><td>Returns the view type for a position</td></tr>
+                        <tr><td><code>notifyDataSetChanged()</code></td><td>Refresh all items</td></tr>
+                        <tr><td><code>notifyItemInserted()</code></td><td>Refresh a single inserted item</td></tr>
+                        <tr><td><code>notifyItemRemoved()</code></td><td>Refresh a single removed item</td></tr>
+                        <tr><td><code>notifyItemChanged()</code></td><td>Refresh a single changed item</td></tr>
+                        <tr><td><code>notifyItemRangeInserted()</code></td><td>Refresh a range of inserted items</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> RecyclerView is the backbone of data presentation in Android. Understanding the Adapter, ViewHolder, and LayoutManager pattern is essential for building any app that displays lists. Use DiffUtil for efficient updates and always test with large datasets to ensure smooth performance.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-intents.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Intents &amp; Intent Filters — Navigating Between Screens</a>
+            <a href="android-sharedpreferences.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>SharedPreferences &amp; Data Storage — Saving User Data</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is XPath in XML? | Uncodemy</title>
+<meta name="description" content="Learn what XPath is, how it lets you navigate and select nodes in an XML document, and why it's central to XML tooling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb">
+  <a href="https://uncodemy.com/">XML Course</a><span class="sep">/</span><span class="current">Page 29 of 58</span>
+</nav>
+
+<div class="page-container">
+
+  <aside class="left-sidebar">
+    <button class="mobile-sidebar-toggle">Browse Topics &#9660;</button>
+    <h4>Topics</h4>
+                <div class="topic-links">
+        <a class="topic-link" href="standard-libraries.html">Standard Libraries</a>
+        <a class="topic-link" href="packages-and-import-statements.html">Packages and Import Statements</a>
+        <a class="topic-link" href="working-with-modules-and-handling-exceptions.html">Working with Modules and Handling Exceptions</a>
+        <a class="topic-link" href="what-is-xml.html">What is XML?</a>
+        <a class="topic-link" href="who-should-learn-xml.html">Who Should Learn XML?</a>
+        <a class="topic-link" href="why-should-you-learn-xml.html">Why Should You Learn XML?</a>
+        <a class="topic-link" href="getting-started-with-xml.html">Getting Started with XML</a>
+        <a class="topic-link" href="xml-syntax-and-rules.html">XML Syntax and Rules</a>
+        <a class="topic-link" href="xml-elements-and-attributes.html">XML Elements and Attributes</a>
+        <a class="topic-link" href="xml-prolog-and-declaration.html">XML Prolog and Declaration</a>
+        <a class="topic-link" href="xml-comments-and-processing-instructions.html">XML Comments and Processing Instructions</a>
+        <a class="topic-link" href="xml-tree-structure.html">XML Tree Structure</a>
+        <a class="topic-link" href="xml-parent-child-relationships.html">XML Parent-Child Relationships</a>
+        <a class="topic-link" href="xml-root-element.html">XML Root Element</a>
+        <a class="topic-link" href="xml-namespaces.html">XML Namespaces</a>
+        <a class="topic-link" href="what-is-dtd-in-xml.html">What is DTD in XML?</a>
+        <a class="topic-link" href="internal-dtd-vs-external-dtd.html">Internal DTD vs External DTD</a>
+        <a class="topic-link" href="dtd-elements-and-attributes.html">DTD Elements and Attributes</a>
+        <a class="topic-link" href="dtd-entities.html">DTD Entities</a>
+        <a class="topic-link" href="what-is-xml-schema-xsd.html">What is XML Schema (XSD)?</a>
+        <a class="topic-link" href="xsd-elements-and-attributes.html">XSD Elements and Attributes</a>
+        <a class="topic-link" href="xsd-simple-types-vs-complex-types.html">XSD Simple Types vs Complex Types</a>
+        <a class="topic-link" href="xsd-validation.html">XSD Validation</a>
+        <a class="topic-link" href="what-is-xml-parsing.html">What is XML Parsing?</a>
+        <a class="topic-link" href="dom-parser-vs-sax-parser.html">DOM Parser vs SAX Parser</a>
+        <a class="topic-link" href="stax-parser.html">StAX Parser</a>
+        <a class="topic-link" href="xml-parsing-in-java.html">XML Parsing in Java</a>
+        <a class="topic-link" href="xml-parsing-in-python.html">XML Parsing in Python</a>
+        <a class="topic-link active" href="what-is-xpath-in-xml.html">What is XPath in XML?</a>
+        <a class="topic-link" href="xpath-syntax-and-expressions.html">XPath Syntax and Expressions</a>
+        <a class="topic-link" href="xpath-axes.html">XPath Axes</a>
+        <a class="topic-link" href="xpath-functions.html">XPath Functions</a>
+        <a class="topic-link" href="what-is-xslt.html">What is XSLT?</a>
+        <a class="topic-link" href="xslt-templates.html">XSLT Templates</a>
+        <a class="topic-link" href="xslt-functions-and-elements.html">XSLT Functions and Elements</a>
+        <a class="topic-link" href="xslt-transformation-examples.html">XSLT Transformation Examples</a>
+        <a class="topic-link" href="what-is-xquery.html">What is XQuery?</a>
+        <a class="topic-link" href="xquery-syntax-and-expressions.html">XQuery Syntax and Expressions</a>
+        <a class="topic-link" href="xquery-vs-xpath.html">XQuery vs XPath</a>
+        <a class="topic-link" href="xquery-examples.html">XQuery Examples</a>
+        <a class="topic-link" href="what-is-xml-dom.html">What is XML DOM?</a>
+        <a class="topic-link" href="dom-nodes-and-node-types.html">DOM Nodes and Node Types</a>
+        <a class="topic-link" href="dom-methods-and-properties.html">DOM Methods and Properties</a>
+        <a class="topic-link" href="dom-traversal-and-manipulation.html">DOM Traversal and Manipulation</a>
+        <a class="topic-link" href="what-is-ajax-with-xml.html">What is AJAX with XML?</a>
+        <a class="topic-link" href="xmlhttprequest-object.html">XMLHttpRequest Object</a>
+        <a class="topic-link" href="ajax-xml-response-handling.html">AJAX XML Response Handling</a>
+        <a class="topic-link" href="ajax-xml-example.html">AJAX XML Example</a>
+        <a class="topic-link" href="what-are-xml-web-services.html">What are XML Web Services?</a>
+        <a class="topic-link" href="soap-and-xml.html">SOAP and XML</a>
+        <a class="topic-link" href="rest-and-xml.html">REST and XML</a>
+        <a class="topic-link" href="wsdl-and-xml.html">WSDL and XML</a>
+        <a class="topic-link" href="xml-developer-roadmap.html">XML Developer Roadmap</a>
+        <a class="topic-link" href="how-to-become-an-xml-developer.html">How to Become an XML Developer</a>
+        <a class="topic-link" href="xml-developer-skills.html">XML Developer Skills</a>
+        <a class="topic-link" href="xml-developer-salary.html">XML Developer Salary</a>
+        <a class="topic-link" href="is-xml-worth-learning-in-2026.html">Is XML Worth Learning in 2026?</a>
+        <a class="topic-link" href="xml-cheat-sheet-quick-reference-guide.html">XML Cheat Sheet – Quick Reference Guide</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <article class="content-card">
+      <h1>What is XPath in XML?</h1>
+      <p class="subtitle">Estimated study time: 13 minutes.</p>
+
+<p><strong>XPath (XML Path Language)</strong> is a query language for selecting nodes from an XML document. Instead of writing custom code to walk the tree, you describe a path, and XPath finds every element or attribute that matches it.</p>
+
+<h2>A Simple Example</h2>
+<pre><code>&lt;course&gt;
+  &lt;modules&gt;
+    &lt;module&gt;Excel Basics&lt;/module&gt;
+    &lt;module&gt;SQL for Analysis&lt;/module&gt;
+  &lt;/modules&gt;
+&lt;/course&gt;</code></pre>
+<pre><code>/course/modules/module</code></pre>
+<p>This XPath expression selects every <code>module</code> element nested inside <code>modules</code> inside the root <code>course</code> element — returning both <code>module</code> nodes.</p>
+
+<h2>Why XPath Matters</h2>
+<ul>
+<li>It's the addressing system XSLT uses to select which parts of a document to transform.</li>
+<li>It powers node selection in most XML-processing libraries and tools.</li>
+<li>The same path syntax works consistently across many technologies (XSLT, XQuery, and testing tools).</li>
+</ul>
+
+<h2>Where You'll See XPath</h2>
+<ul>
+<li>Inside XSLT stylesheets, to select which nodes to transform.</li>
+<li>In test automation tools, to locate elements in an HTML/XML DOM.</li>
+<li>In XML-processing libraries like <code>lxml</code> in Python.</li>
+</ul>
+
+<div class="highlight-box">💡 <strong>Tip:</strong> Think of XPath as a "file path for XML" — once you're comfortable navigating folders with <code>/</code> and <code>..</code>, XPath's syntax will feel familiar.</div>
+
+    </article>
+
+    <nav class="prev-next-nav">
+      <a class="prev-link" href="xml-parsing-in-python.html"><span class="label">&laquo; Previous</span><span class="title">XML Parsing in Python</span></a>
+      <a class="next-link" href="xpath-syntax-and-expressions.html"><span class="label">Next &raquo;</span><span class="title">XPath Syntax and Expressions</span></a>
+    </nav>
+
+    <div class="cta-box">
+      <h3>Ready to go beyond the basics?</h3>
+      <p>Get hands-on training, live mentorship, and placement support with the Data Analytics Course at Uncodemy.</p>
+      <a class="cta-btn" href="https://uncodemy.com/">Explore XML Course &rarr;</a>
+    </div>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="batch-card">
+      <span class="badge">&#128293; Upcoming Batch</span>
+      <h4 data-editable="batchCourseName">XML</h4>
+      <div class="course-name">Next Batch</div>
+      <div class="batch-meta">Starts: <b data-editable="batchStartDate">Coming Soon</b></div>
+      <div class="batch-meta">Duration: <b data-editable="batchDuration">4 Months</b></div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">Batch Starts In</div>
+        <div class="countdown-timer">
+          <div class="unit"><div class="num" data-countdown="days">05</div><div class="lbl">Days</div></div>
+          <div class="unit"><div class="num" data-countdown="hours">00</div><div class="lbl">Hrs</div></div>
+          <div class="unit"><div class="num" data-countdown="minutes">00</div><div class="lbl">Min</div></div>
+          <div class="unit"><div class="num" data-countdown="seconds">00</div><div class="lbl">Sec</div></div>
+        </div>
+      </div>
+
+      <ul class="feature-list">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+
+      <div class="limited-seats">&#9889; Limited Seats Available</div>
+      <button class="landing-cta-btn" onclick="goToLandingPage()">Go to Course Landing Page</button>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-row">&#128222; <a data-config="phoneNumber" href="#">+91 9818366550</a></div>
+      <div class="help-row">&#128172; <a data-config="whatsappLink" href="#" target="_blank" rel="noopener">Talk to our Counselor on WhatsApp</a></div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API in Software Testing — Complete Tutorial for Beginners (2026) | Uncodemy</title>
+    <meta name="description" content="Master API in software testing: learn what is API testing, types, tools, best practices, and interview questions. Free tutorial with examples, code snippets, and quiz.">
+    <link rel="canonical" href="https://uncodemy.com/tutorials/api-in-software-testing">
+    <meta property="og:title" content="API in Software Testing — Complete Tutorial for Beginners (2026) | Uncodemy">
+    <meta property="og:description" content="Learn API testing from scratch: what, why, how, types, tools (Postman, SoapUI, JMeter), best practices, and interview Q&A. Free guide with practical examples.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img">
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput">
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials">
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free learning library · 480+ tutorials</p>
+                <h1>API in Software Testing <mark>Complete Beginner's Guide</mark></h1>
+                <p class="lede">Learn what API testing is, why it matters, and how to test APIs like a pro. This tutorial covers types, tools, best practices, and interview questions — all with practical examples.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;api in software testing&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox">
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">API Testing</button>
+                    <button class="chip" aria-pressed="false">Postman</button>
+                    <button class="chip" aria-pressed="false">Automation</button>
+                    <button class="chip" aria-pressed="true">REST API</button>
+                    <button class="chip" aria-pressed="false">SOAP</button>
+                    <button class="chip" aria-pressed="false">Security Testing</button>
+                    <button class="chip" aria-pressed="false">Performance</button>
+                    <button class="chip" aria-pressed="false">Interview Prep</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>API Testing Flow · Live diagram</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different API test scenarios">
+                        <button aria-pressed="true" data-r="functional">Functional</button>
+                        <button aria-pressed="false" data-r="security">Security</button>
+                        <button aria-pressed="false" data-r="performance">Performance</button>
+                    </div>
+                    <div class="api-flow" id="apiFlow">
+                        <div class="flow-step"><div class="s-l">Request</div><div class="s-v" id="reqVal">—</div><div class="s-d">Method + Endpoint</div></div>
+                        <div class="flow-step"><div class="s-l">Response</div><div class="s-v" id="resVal">—</div><div class="s-d">Status + Body</div></div>
+                        <div class="flow-step"><div class="s-l">Assertion</div><div class="s-v" id="assertVal">—</div><div class="s-d">Validation</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Client</span>
+                        <span class="arrow">→</span>
+                        <span>API Request</span>
+                        <span class="arrow">→</span>
+                        <span>Server</span>
+                        <span class="arrow">→</span>
+                        <span>Response</span>
+                        <span class="arrow">→</span>
+                        <span>Assert</span>
+                    </div>
+                    <div class="demo-cap">Click a test type to see how metrics change. APIs are the backbone of modern software — testing them early saves hours of debugging.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Tutorials</a> / <a href="#top">API Testing</a> / <span>API in Software Testing</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">API Testing · Beginner to job‑ready</p>
+                <h1>API in Software Testing: What, Why, How — Complete Tutorial</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 8 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>14 min read</span>
+                    <span class="badge">Free · with examples</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="API testing flow diagram: client → API request → server → response → assertion">
+                        <defs>
+                            <marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g2)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">CLIENT</text>
+                            <text x="280" y="40">API REQUEST</text>
+                            <text x="510" y="40">SERVER</text>
+                            <text x="720" y="40">RESPONSE</text>
+                        </g>
+                        <rect x="20" y="58" width="200" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Browser / App</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Sends HTTP request</text>
+                        <text x="50" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Headers, body, params</text>
+                        <rect x="40" y="164" width="150" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="65" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">GET /users</text>
+
+                        <rect x="250" y="58" width="210" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="280" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">API Call</text>
+                        <text x="280" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Method + Endpoint</text>
+                        <text x="280" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Authentication</text>
+                        <rect x="280" y="164" width="150" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="310" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">POST /orders</text>
+
+                        <rect x="490" y="58" width="190" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="520" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Backend Server</text>
+                        <text x="520" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Processes request</text>
+                        <text x="520" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Business logic</text>
+                        <rect x="520" y="164" width="130" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="545" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">200 OK</text>
+
+                        <rect x="710" y="58" width="170" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="740" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Assertions</text>
+                        <text x="740" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Validate response</text>
+                        <text x="740" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Status code, body</text>
+                        <rect x="740" y="164" width="110" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="760" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Pass ✓</text>
+
+                        <path d="M220 148 H236" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar2)"/>
+                        <path d="M460 148 H476" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar2)"/>
+                        <path d="M680 148 H696" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar2)"/>
+                    </svg>
+                    <figcaption>API testing flow: Client → Request → Server → Response → Assertion. Each step can be automated and validated.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — API in software testing</h2>
+                    <p><b>API testing</b> is the process of verifying that application programming interfaces (APIs) work as expected — in terms of functionality, security, performance, and reliability. It is done at the message layer (without a UI) and is critical for catching issues early.</p>
+                    <p>In this tutorial you will learn:</p>
+                    <ol>
+                        <li><b>What is API testing</b> — definition and importance.</li>
+                        <li><b>Types of API testing</b> — functional, security, performance, and more.</li>
+                        <li><b>Tools</b> — Postman, SoapUI, JMeter, RestAssured, and others.</li>
+                        <li><b>Best practices</b> — how to write effective API tests.</li>
+                        <li><b>Common interview questions</b> — with model answers.</li>
+                        <li><b>Test your knowledge</b> — a quick quiz to check your understanding.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What is API testing?</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why is API testing important?</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Types of API testing</a></li>
+                        <li><a href="#s4"><span class="n">04</span>API testing tools</a></li>
+                        <li><a href="#s5"><span class="n">05</span>How to test an API — step by step</a></li>
+                        <li><a href="#s6"><span class="n">06</span>API testing best practices</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Common API errors &amp; fixes</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>What is API testing?</h2>
+                <p><strong>API testing</strong> is a type of software testing that verifies that APIs (Application Programming Interfaces) meet expectations for functionality, reliability, performance, and security. Unlike UI testing, API testing is performed at the message layer — directly testing the business logic and data responses without a graphical interface.</p>
+                <p>In simple terms: <b>API in software testing</b> means checking if the "behind the scenes" communication between different software systems works correctly.</p>
+                <div class="note"><b>Key point:</b> API testing is often the fastest and most reliable way to find bugs. Since APIs are the backbone of modern applications (web, mobile, IoT), testing them early prevents issues from reaching the UI.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why is API testing important?</h2>
+                <ul>
+                    <li><b>Early bug detection</b> — APIs are tested before the UI is ready, catching issues early in the development cycle.</li>
+                    <li><b>Reduces cost</b> — fixing bugs at the API layer is cheaper than fixing them at the UI layer.</li>
+                    <li><b>Improves test coverage</b> — APIs cover the business logic and data layers, which are often missed in UI-only testing.</li>
+                    <li><b>Ensures security</b> — APIs are a common attack vector; testing them for vulnerabilities is critical.</li>
+                    <li><b>Enables automation</b> — API tests are fast, reliable, and easy to automate in CI/CD pipelines.</li>
+                </ul>
+                <p>According to industry data, <strong>API testing</strong> can reduce overall testing effort by up to 40% while increasing coverage significantly.</p>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Types of API testing</h2>
+
+                <h3>1. Functional Testing</h3>
+                <p>Verifies that the API performs its intended functions correctly — returns the right data, handles edge cases, and responds with appropriate status codes.</p>
+                <ul>
+                    <li><b>Example:</b> Sending a <code>GET /users</code> request and verifying the response contains the correct user list.</li>
+                    <li><b>Tools:</b> Postman, RestAssured, SoapUI.</li>
+                </ul>
+
+                <h3>2. Security Testing</h3>
+                <p>Ensures the API is secure from threats — authentication, authorization, encryption, and vulnerability checks.</p>
+                <ul>
+                    <li><b>Example:</b> Attempting to access an endpoint without a valid token.</li>
+                    <li><b>Common checks:</b> SQL injection, XSS, token expiration, rate limiting.</li>
+                    <li><b>Tools:</b> OWASP ZAP, Burp Suite, Postman (with security scripts).</li>
+                </ul>
+
+                <h3>3. Performance Testing</h3>
+                <p>Measures how the API behaves under load — response time, throughput, and resource usage.</p>
+                <ul>
+                    <li><b>Example:</b> Simulating 1,000 concurrent users hitting the <code>POST /orders</code> endpoint.</li>
+                    <li><b>Key metrics:</b> Response time (p95, p99), throughput, error rate.</li>
+                    <li><b>Tools:</b> JMeter, LoadRunner, k6.</li>
+                </ul>
+
+                <h3>4. Integration Testing</h3>
+                <p>Verifies that the API works correctly with other APIs, databases, and third-party services.</p>
+                <ul>
+                    <li><b>Example:</b> Testing that the API correctly writes to a database and sends a notification to a third-party service.</li>
+                </ul>
+
+                <h3>5. Contract Testing</h3>
+                <p>Ensures that the API meets the expectations of its consumers — checking the request/response format, fields, and data types.</p>
+                <ul>
+                    <li><b>Example:</b> Using Pact or OpenAPI specification to validate that the API matches its contract.</li>
+                </ul>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>API testing tools</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Tool</th><th>Best for</th><th>Key features</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Postman</b></td><td>Manual &amp; automated functional testing</td><td>GUI interface, collections, environments, CI/CD integration, Newman</td></tr>
+                            <tr><td><b>SoapUI</b></td><td>SOAP &amp; REST testing</td><td>Support for both SOAP and REST, security testing, load testing</td></tr>
+                            <tr><td><b>JMeter</b></td><td>Performance &amp; load testing</td><td>Multi-threaded, supports many protocols, detailed reports</td></tr>
+                            <tr><td><b>RestAssured</b></td><td>Automated API testing (Java)</td><td>BDD-style syntax, integrates with JUnit/TestNG, supports JSON/XML</td></tr>
+                            <tr><td><b>Pact</b></td><td>Contract testing</td><td>Consumer-driven contract testing, supports multiple languages</td></tr>
+                            <tr><td><b>k6</b></td><td>Performance testing</td><td>Modern, scriptable with JavaScript, lightweight, open-source</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>Pro tip:</b> Start with Postman for manual testing and basic automation. For large-scale automation, integrate RestAssured or similar tools into your CI/CD pipeline.</div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>How to test an API — step by step</h2>
+
+                <p>Here's a practical approach to API testing, using a simple REST API as an example.</p>
+
+                <ol class="steps">
+                    <li><b>Understand the API contract</b> — Review the API documentation (OpenAPI/Swagger). Know the endpoints, methods, request/response formats, and authentication requirements.</li>
+                    <li><b>Set up the test environment</b> — Use a tool like Postman or a scripting framework. Configure your test data, environment variables, and authentication tokens.</li>
+                    <li><b>Write positive test cases</b> — Test the "happy path" first. Send valid requests and verify that responses are correct (status code 2xx, proper body).</li>
+                    <li><b>Write negative test cases</b> — Test edge cases: invalid input, missing fields, unauthorized access, malformed data. Verify that the API returns appropriate error codes (4xx, 5xx).</li>
+                    <li><b>Automate and run in CI/CD</b> — Integrate your API tests into your CI/CD pipeline (Jenkins, GitHub Actions, GitLab CI). Run tests on every commit.</li>
+                    <li><b>Monitor and maintain</b> — Regularly review test results, update tests as the API evolves, and add new test cases for new features.</li>
+                </ol>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Postman (Collection)</button>
+                        <button role="tab" aria-selected="false" data-t="1">RestAssured (Java)</button>
+                        <button role="tab" aria-selected="false" data-t="2">JavaScript (Supertest)</button>
+                    </div>
+                    <pre data-p="0"><code>// Postman test script (pm.test)
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response body has users array", function () {
+    const jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an('array');
+    pm.expect(jsonData.length).to.be.greaterThan(0);
+});
+
+pm.test("User has correct fields", function () {
+    const jsonData = pm.response.json();
+    jsonData.forEach(user => {
+        pm.expect(user).to.have.property('id');
+        pm.expect(user).to.have.property('name');
+        pm.expect(user).to.have.property('email');
+    });
+});</code></pre>
+                    <pre data-p="1" hidden><code>// RestAssured test (Java)
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+@Test
+public void testGetUsers() {
+    given()
+        .header("Authorization", "Bearer " + token)
+        .param("page", "1")
+    .when()
+        .get("https://api.example.com/users")
+    .then()
+        .statusCode(200)
+        .body("size()", greaterThan(0))
+        .body("[0].id", notNullValue())
+        .body("[0].name", notNullValue())
+        .body("[0].email", notNullValue())
+        .time(lessThan(500L));
+}</code></pre>
+                    <pre data-p="2" hidden><code>// Supertest (JavaScript/Node.js)
+const request = require('supertest');
+const app = require('../app');
+
+describe('GET /api/users', () => {
+    it('should return 200 and array of users', async () => {
+        const res = await request(app)
+            .get('/api/users')
+            .set('Authorization', 'Bearer ' + token)
+            .query({ page: 1 });
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toBeInstanceOf(Array);
+        expect(res.body.length).toBeGreaterThan(0);
+        expect(res.body[0]).toHaveProperty('id');
+        expect(res.body[0]).toHaveProperty('name');
+        expect(res.body[0]).toHaveProperty('email');
+    });
+});</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">postman · GET /users test</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>API testing best practices</h2>
+                <ul>
+                    <li><b>Test both positive and negative scenarios</b> — don't just test the happy path. Send invalid inputs, missing fields, and unexpected data types.</li>
+                    <li><b>Use proper authentication</b> — always test with valid and invalid tokens. Test token expiration and refresh flows.</li>
+                    <li><b>Validate status codes</b> — ensure your API returns the correct HTTP status codes (2xx, 4xx, 5xx) for different scenarios.</li>
+                    <li><b>Check response body format</b> — verify that the response structure matches the contract (OpenAPI/JSON schema).</li>
+                    <li><b>Test error messages</b> — ensure error messages are clear, consistent, and helpful for debugging.</li>
+                    <li><b>Maintain test independence</b> — each test should be able to run independently without depending on the order of execution.</li>
+                    <li><b>Use environment variables</b> — never hard-code URLs, tokens, or credentials in your test scripts.</li>
+                    <li><b>Run tests in CI/CD</b> — automate API tests as part of your deployment pipeline to catch issues early.</li>
+                    <li><b>Monitor test flakiness</b> — if a test fails intermittently, investigate and fix it immediately.</li>
+                </ul>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Common API errors &amp; fixes</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Error</th><th>Cause</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td><code>401 Unauthorized</code></td><td>Missing or invalid authentication token</td><td>Ensure the token is present and valid. Check token expiration.</td></tr>
+                            <tr><td><code>403 Forbidden</code></td><td>Valid token but insufficient permissions</td><td>Check user roles and permissions. Update the test user's role if needed.</td></tr>
+                            <tr><td><code>404 Not Found</code></td><td>Incorrect endpoint URL</td><td>Verify the endpoint path. Check for typos or versioning issues.</td></tr>
+                            <tr><td><code>400 Bad Request</code></td><td>Invalid or missing request parameters</td><td>Validate the request body format. Check required fields and data types.</td></tr>
+                            <tr><td><code>500 Internal Server Error</code></td><td>Server-side bug or unhandled exception</td><td>Check server logs. Reproduce and fix the bug in the API code.</td></tr>
+                            <tr><td><code>Timeout / 504 Gateway Timeout</code></td><td>API taking too long to respond</td><td>Optimize database queries. Consider caching. Increase timeout settings.</td></tr>
+                            <tr><td><code>Rate limit exceeded</code></td><td>Too many requests in a short time</td><td>Add delays between requests. Test with appropriate throttling.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — API testing</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>What is API testing and why is it important?</summary>
+                    <div class="body"><p>API testing is the process of verifying that APIs work correctly in terms of functionality, security, performance, and reliability. It is important because APIs are the backbone of modern applications — testing them early catches bugs before they reach the UI, reduces costs, and ensures better security.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>What are the main types of API testing?</summary>
+                    <div class="body"><p>The main types are: <b>Functional</b> (verifies functionality), <b>Security</b> (checks for vulnerabilities), <b>Performance</b> (measures response time and throughput), <b>Integration</b> (tests with other systems), and <b>Contract</b> (ensures API meets consumer expectations).</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>What is the difference between API testing and UI testing?</summary>
+                    <div class="body"><p>UI testing verifies the graphical interface and user interactions. API testing validates the underlying business logic, data flow, and system integration — without a UI. API testing is faster, more stable, and can be done earlier in the development cycle.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>What tools are commonly used for API testing?</summary>
+                    <div class="body"><p>Popular tools include <b>Postman</b> (manual and automated), <b>SoapUI</b> (SOAP and REST), <b>JMeter</b> (performance), <b>RestAssured</b> (Java automation), <b>Pact</b> (contract testing), and <b>k6</b> (performance/load testing).</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>How do you handle authentication in API testing?</summary>
+                    <div class="body"><p>You typically use <b>API keys</b>, <b>OAuth 2.0</b>, <b>JWT</b> (JSON Web Tokens), or <b>Basic Auth</b>. In tests, you should store tokens in environment variables, generate fresh tokens for each test run, and test both valid and invalid authentication scenarios.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>What are some common API test scenarios?</summary>
+                    <div class="body"><p>Common scenarios include: verifying status codes (200, 201, 400, 401, 403, 404, 500), checking response body structure and content, testing CRUD operations (GET, POST, PUT, DELETE), handling edge cases (empty arrays, null values, large payloads), and testing error handling.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>How do you test API performance?</summary>
+                    <div class="body"><p>Use tools like <b>JMeter</b> or <b>k6</b> to simulate multiple concurrent users. Measure key metrics: response time (p95, p99), throughput (requests per second), error rate, and resource usage. Test under different load levels (normal, peak, stress) to understand the API's behaviour under pressure.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>What is contract testing and why is it useful?</summary>
+                    <div class="body"><p>Contract testing verifies that the API meets the expectations of its consumers (e.g., frontend apps, other services). It checks that request/response formats, fields, and data types match the documented contract. Tools like <b>Pact</b> enable consumer-driven contract testing, which helps prevent integration issues.</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — API testing quiz</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>What is API testing in software testing?</summary><div class="body"><p>API testing is the process of verifying that APIs function correctly, are secure, perform well, and integrate properly with other systems — all without using a user interface.</p></div></details>
+                <details class="acc"><summary>What is the difference between API testing and unit testing?</summary><div class="body"><p>Unit testing tests individual functions or methods in isolation (developer-focused). API testing tests the actual API endpoints — including request/response flow, authentication, and integration (QA-focused).</p></div></details>
+                <details class="acc"><summary>Can I test APIs without a tool?</summary><div class="body"><p>Yes, you can use <code>curl</code> or <code>httpie</code> from the command line. However, tools like Postman and RestAssured provide much better capabilities for organizing tests, assertions, and automation.</p></div></details>
+                <details class="acc"><summary>How do I test an API that requires authentication?</summary><div class="body"><p>You typically need to obtain a token (OAuth, JWT, or API key) and include it in the request headers. In Postman, you can use the "Authorization" tab. In scripts, you can generate tokens dynamically before each test.</p></div></details>
+                <details class="acc"><summary>What is the best tool for API testing?</summary><div class="body"><p>It depends on your needs: <b>Postman</b> is best for manual testing and simple automation, <b>RestAssured</b> for Java-based automation, <b>JMeter</b> for performance testing, and <b>Pact</b> for contract testing. Many teams use a combination of tools.</p></div></details>
+                <details class="acc"><summary>Is API testing difficult?</summary><div class="body"><p>It is more technical than UI testing but is actually simpler in many ways — because APIs have a structured request/response format and no UI to deal with. With the right tools and practice, it's very approachable.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Postman tutorial for beginners</span><span class="m">API · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">REST API vs SOAP — what's the difference?</span><span class="m">API · 8 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">API security testing guide</span><span class="m">Security · 15 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Automation testing with RestAssured</span><span class="m">Automation · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Performance testing with JMeter</span><span class="m">Performance · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">CI/CD for API testing — GitLab + Postman</span><span class="m">DevOps · 14 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Master API testing with hands-on projects</h3>
+                    <p>Our Full Stack Development programme covers API design, testing automation (Postman + RestAssured), performance testing (JMeter), and integration with CI/CD pipelines — with live projects and mock interviews.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live API testing session</div>
+                    <p>Two hours, no payment, no commitment. Learn Postman, write your first API test, and get hands-on feedback from industry trainers.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes all code samples</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>API testing interview questions</a></li>
+                        <li><a href="#"><span class="rank">02</span>Postman collection examples</a></li>
+                        <li><a href="#"><span class="rank">03</span>REST API best practices</a></li>
+                        <li><a href="#"><span class="rank">04</span>Security testing checklist</a></li>
+                        <li><a href="#"><span class="rank">05</span>JMeter performance testing</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">API Testing · 50 questions</a></li>
+                        <li><a href="#">Postman · 40 questions</a></li>
+                        <li><a href="#">RestAssured · 35 questions</a></li>
+                        <li><a href="#">Performance · 30 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Full Stack Development</div>
+                    <p>API testing, automation, performance, and security — all covered. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in API &amp; Backend</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Postman tutorial for beginners <small>Collections, variables, automation</small></a></li>
+                    <li><a href="#">REST API design best practices <small>Resource naming, status codes</small></a></li>
+                    <li><a href="#">API security testing with OWASP ZAP <small>Find vulnerabilities early</small></a></li>
+                    <li><a href="#">Performance testing with k6 <small>Load testing for APIs</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">QA Automation Engineer roadmap <small>Manual → API → Automation</small></a></li>
+                    <li><a href="#">Backend Developer roadmap <small>APIs → Databases → Cloud</small></a></li>
+                    <li><a href="#">DevOps Engineer roadmap <small>CI/CD → Monitoring → Infrastructure</small></a></li>
+                    <li><a href="#">Full Stack Developer roadmap <small>Frontend → Backend → API</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Postman collection for REST API <small>Ready-to-use test suite</small></a></li>
+                    <li><a href="#">API testing cheat sheet <small>Status codes, assertions, tips</small></a></li>
+                    <li><a href="#">OpenAPI 3.0 specification template <small>Design-first API docs</small></a></li>
+                    <li><a href="#">JMeter test plan for REST API <small>Load testing script</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">GraphQL vs REST — which is better? <small>8 August 2026</small></a></li>
+                    <li><a href="#">API versioning strategies <small>6 August 2026</small></a></li>
+                    <li><a href="#">Mocking APIs for frontend development <small>4 August 2026</small></a></li>
+                    <li><a href="#">WebSocket testing with Postman <small>2 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img">
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and testing in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">API Testing &amp; Automation</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                        <li><a href="#">Data Analytics with Gen AI</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Career roadmaps</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                functional: { req: "GET /users", res: "200 OK (12 users)", assert: "Pass ✓" },
+                security: { req: "GET /admin", res: "403 Forbidden", assert: "Fail ✗" },
+                performance: { req: "POST /orders (500 req/s)", res: "200 OK (45ms)", assert: "Pass ✓" }
+            },
+            stateOrder: ["functional", "security", "performance"],
+            renderScene: function(s) {
+                document.getElementById("reqVal").textContent = s.req;
+                document.getElementById("resVal").textContent = s.res;
+                document.getElementById("assertVal").textContent = s.assert;
+            },
+            defaultTrack: "API",
+            emptyMsg: 'Nothing matches that yet. Try “API testing”, “Postman” or “RestAssured”.',
+            LIB: [
+                { t: "API in software testing — complete guide", g: "API" },
+                { t: "What is API testing? — beginner's tutorial", g: "API" },
+                { t: "Postman tutorial for API testing", g: "Postman" },
+                { t: "REST API testing with RestAssured", g: "Automation" },
+                { t: "API security testing with OWASP ZAP", g: "Security" },
+                { t: "Performance testing APIs with JMeter", g: "Performance" },
+                { t: "API testing interview questions and answers", g: "Interview" },
+                { t: "SOAP vs REST API testing", g: "API" },
+                { t: "How to test APIs without a UI", g: "API" },
+                { t: "API automation testing with Postman Newman", g: "Automation" }
+            ],
+            QUIZ: [{
+                q: "What is the primary goal of API testing?",
+                o: ["To test the user interface", "To verify API functionality, security, and performance",
+                    "To test the database schema", "To test network hardware"
+                ],
+                a: 1,
+                e: "API testing focuses on verifying functionality, security, performance, and integration of APIs — without involving the UI."
+            }, {
+                q: "Which HTTP status code indicates a successful API request?",
+                o: ["404 Not Found", "500 Internal Server Error", "200 OK", "401 Unauthorized"],
+                a: 2,
+                e: "200 OK is the standard success status code. 404 means not found, 500 means server error, and 401 means unauthorized."
+            }, {
+                q: "Which tool is best for performance testing of APIs?",
+                o: ["Postman", "SoapUI", "JMeter", "Pact"],
+                a: 2,
+                e: "JMeter is the most popular tool for performance and load testing of APIs. Postman is for functional testing, SoapUI for SOAP, and Pact for contract testing."
+            }, {
+                q: "What does a 401 status code mean in API testing?",
+                o: ["Success", "Unauthorized", "Forbidden", "Not found"],
+                a: 1,
+                e: "401 Unauthorized means the request lacks valid authentication credentials. 403 Forbidden means the credentials are valid but access is denied."
+            }, {
+                q: "Which testing type ensures an API meets its consumer's expectations?",
+                o: ["Functional testing", "Performance testing", "Security testing", "Contract testing"],
+                a: 3,
+                e: "Contract testing ensures that the API matches the expectations of its consumers — checking request/response formats, fields, and data types."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You're ready for API testing interviews! Practice with Postman and explore automation next.",
+                fail: "Revisit sections 03 and 04 — understanding the types of API testing and tools is key to acing interviews."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

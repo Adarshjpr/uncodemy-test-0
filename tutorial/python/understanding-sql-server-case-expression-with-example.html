@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Server CASE Expression Explained with Examples | Uncodemy</title>
+<meta name="description" content="Learn how the SQL Server CASE expression works, its simple and searched forms, and see practical examples for conditional logic in queries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb">
+  <a href="https://uncodemy.com/">Data Analytics Course</a><span class="sep">/</span><span>Page 7 of 41</span>
+</nav>
+
+<div class="page-container">
+
+  <aside class="left-sidebar">
+    <button class="mobile-sidebar-toggle">Browse Topics &#9660;</button>
+    <h4>Topics</h4>
+      <a class="topic-link" href="standard-libraries.html">Standard Libraries</a>
+      <a class="topic-link" href="packages-and-import-statements.html">Packages and Import Statements</a>
+      <a class="topic-link" href="working-with-modules-and-handling-exceptions.html">Working with Modules and Handling Exceptions</a>
+      <a class="topic-link" href="sql-cheat-sheet-full-guide-for-beginners-professionals.html">SQL Cheat Sheet: Full Guide for Beginners & Professionals</a>
+      <a class="topic-link" href="clear-list-of-recent-sql-server-connections-from-ssms.html">Clear List of Recent SQL Server Connections From SQL Server Management Studio</a>
+      <a class="topic-link" href="sql-vs-nosql-difference-between-sql-and-nosql-database.html">SQL Vs. NoSQL: Difference Between SQL and NoSQL Database</a>
+      <a class="topic-link active" href="understanding-sql-server-case-expression-with-example.html">Understanding SQL Server Case Expression with Example</a>
+      <a class="topic-link" href="sql-server-database-mail-setup.html">SQL Server Database Mail Setup</a>
+      <a class="topic-link" href="enable-intellisense-in-sql-server.html">Enable Intellisense in SQL Server</a>
+      <a class="topic-link" href="drop-all-tables-stored-procedures-views-and-triggers.html">Drop all Tables, Stored Procedures, Views and Triggers</a>
+      <a class="topic-link" href="how-to-insert-values-into-identity-column-in-sql-server.html">How to Insert Values to Identity Column in SQL Server?</a>
+      <a class="topic-link" href="calculate-running-total-and-total-of-a-column-and-row.html">Calculate Running Total, Total of a Column and Row</a>
+      <a class="topic-link" href="top-sql-mcq-questions-to-boost-your-knowledge-and-skills.html">Top SQL MCQ Questions to Boost Your Knowledge and Skills</a>
+      <a class="topic-link" href="different-types-of-sql-server-functions.html">Different Types of SQL Server Functions</a>
+      <a class="topic-link" href="swap-the-values-of-two-columns-in-sql-server.html">Swap the Values of Two Columns in SQL Server</a>
+      <a class="topic-link" href="sql-server-setting-triggers-firing-order.html">SQL Server Setting Triggers Firing Order</a>
+      <a class="topic-link" href="get-nth-highest-and-lowest-salary-of-an-employee.html">Get nth Highest and Lowest Salary of an Employee</a>
+      <a class="topic-link" href="logical-tables-in-sql-server-inserted-and-deleted.html">Logical Tables in SQL Server: Inserted and Deleted Logical Table</a>
+      <a class="topic-link" href="top-sql-joins-interview-questions-you-need-to-know.html">Top SQL Joins Interview Questions You Need to Know</a>
+      <a class="topic-link" href="tips-to-improve-sql-server-performance-and-database-design.html">Tips to Improve SQL Server Performance & Database Design</a>
+      <a class="topic-link" href="sql-viva-questions-a-must-read-for-tech-students.html">SQL Viva Questions: A Must-Read for Tech Students</a>
+      <a class="topic-link" href="sql-server-2026-new-features-and-enhancements.html">SQL Server 2026: New Features and Enhancements</a>
+      <a class="topic-link" href="what-are-the-5-basic-sql-commands-ddl-dml-dcl-tcl-dql.html">What are the 5 Basic SQL Commands? (DDL, DML, DCL, TCL, DQL)</a>
+      <a class="topic-link" href="self-join-in-sql-a-step-by-step-guide.html">Self Join in SQL: A Step-by-Step Guide</a>
+      <a class="topic-link" href="sql-server-naming-conventions-and-standards.html">SQL Server Naming Conventions and Standards</a>
+      <a class="topic-link" href="understanding-database-normalization-in-sql-with-example.html">Understanding Database Normalization in SQL with Example</a>
+      <a class="topic-link" href="different-types-of-sql-keys.html">Different Types of SQL Keys</a>
+      <a class="topic-link" href="group-by-and-having-clause-definition-and-use.html">Definition, Use of Group by and Having Clause</a>
+      <a class="topic-link" href="top-sql-developer-skills-you-need-to-master-in-2026.html">Top SQL Developer Skills You Need to Master in 2026</a>
+      <a class="topic-link" href="sql-server-system-defined-database.html">SQL Server System Defined Database</a>
+      <a class="topic-link" href="difference-between-primary-key-and-unique-key.html">Difference between Primary Key and Unique Key</a>
+      <a class="topic-link" href="difference-between-inner-join-equi-join-and-natural-join.html">Difference between Inner Join and Equi Join and Natural Join</a>
+      <a class="topic-link" href="sql-having-clause-explained.html">SQL HAVING Clause Explained: Filter Your Data Like a Pro</a>
+      <a class="topic-link" href="difference-between-primary-key-and-foreign-key.html">Differences between Primary Key and Foreign Key</a>
+      <a class="topic-link" href="remove-unsent-database-email-from-sql-server.html">Remove Unsent Database Email from SQL Server</a>
+      <a class="topic-link" href="sql-where-clause-explained-filter-data-with-precision.html">SQL WHERE Clause Explained: Filter Data with Precision</a>
+      <a class="topic-link" href="group-by-clause-in-sql-unveiling-patterns-in-data.html">Group By Clause in SQL: Unveiling Patterns in Data</a>
+      <a class="topic-link" href="get-field-name-data-type-and-size-of-database-table.html">Get field name, data type and size of database table</a>
+      <a class="topic-link" href="sql-server-2012-new-features-and-programmability-enhancements.html">SQL Server 2012 New Features and Programmability Enhancements</a>
+      <a class="topic-link" href="inner-join-in-sql-how-it-works.html">Inner Join in SQL: How It Works</a>
+      <a class="topic-link" href="sql-server-2019-new-features.html">Sql Server 2019 New Features</a>
+  </aside>
+
+  <main class="main-content">
+    <article class="content-card">
+      <h1>Understanding SQL Server Case Expression with Example</h1>
+      <p class="subtitle">Add conditional, if-else style logic directly inside your SQL queries.</p>
+      
+<p>The <strong>CASE expression</strong> is SQL Server's way of writing conditional logic inside a query — similar to an if-else statement in programming languages. It's one of the most useful tools for turning raw column values into readable, categorized output.</p>
+<h2>Simple CASE Expression</h2>
+<p>Compares one expression against a list of possible values:</p>
+<pre>SELECT product_name,
+  CASE category_id
+    WHEN 1 THEN 'Electronics'
+    WHEN 2 THEN 'Clothing'
+    ELSE 'Other'
+  END AS category_name
+FROM products;</pre>
+<h2>Searched CASE Expression</h2>
+<p>Evaluates a set of boolean conditions, giving you more flexibility than the simple form:</p>
+<pre>SELECT student_name, marks,
+  CASE
+    WHEN marks >= 90 THEN 'A Grade'
+    WHEN marks >= 75 THEN 'B Grade'
+    WHEN marks >= 50 THEN 'C Grade'
+    ELSE 'Needs Improvement'
+  END AS grade
+FROM student_results;</pre>
+<h2>Using CASE Inside ORDER BY</h2>
+<pre>SELECT * FROM employees
+ORDER BY
+  CASE WHEN department = 'Sales' THEN 0 ELSE 1 END, name;</pre>
+<div class="highlight-box">💡 <strong>Tip:</strong> A CASE expression always returns a single value — you can use it inside SELECT, WHERE, ORDER BY, and even GROUP BY clauses.</div>
+<h2>Common Use Cases</h2>
+<ul>
+  <li>Converting numeric codes into readable labels</li>
+  <li>Building custom sort orders</li>
+  <li>Creating pivot-style summaries alongside <code>SUM()</code> or <code>COUNT()</code></li>
+</ul>
+<p>Once you're comfortable with CASE, you can express business rules directly in SQL — no need to push that logic into the application layer.</p>
+
+    </article>
+
+    <nav class="prev-next-nav">
+      <a class="prev-link" href="sql-vs-nosql-difference-between-sql-and-nosql-database.html"><span class="label">&laquo; Previous</span><span class="title">SQL Vs. NoSQL: Difference Between SQL and NoSQL Database</span></a>
+      <a class="next-link" href="sql-server-database-mail-setup.html"><span class="label">Next &raquo;</span><span class="title">SQL Server Database Mail Setup</span></a>
+    </nav>
+
+    <div class="cta-box">
+      <h3>Ready to go beyond the basics?</h3>
+      <p>Get hands-on training, live mentorship, and placement support with Uncodemy's Data Analytics Course.</p>
+      <a class="cta-btn" href="https://uncodemy.com/">Explore Data Analytics Course &rarr;</a>
+    </div>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="batch-card">
+      <span class="badge">&#128293; Upcoming Batch</span>
+      <h4>Graphic Designing</h4>
+      <div class="course-name">Next Batch</div>
+      <div class="batch-meta">Starts: <b data-editable="batchStartDate">Coming Soon</b></div>
+      <div class="batch-meta">Duration: <b data-editable="batchDuration">3 Months</b></div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">Batch Starts In</div>
+        <div class="countdown-timer">
+          <div class="unit"><div class="num" data-countdown="days">05</div><div class="lbl">Days</div></div>
+          <div class="unit"><div class="num" data-countdown="hours">00</div><div class="lbl">Hrs</div></div>
+          <div class="unit"><div class="num" data-countdown="minutes">00</div><div class="lbl">Min</div></div>
+          <div class="unit"><div class="num" data-countdown="seconds">00</div><div class="lbl">Sec</div></div>
+        </div>
+      </div>
+
+      <ul class="feature-list">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+
+      <div class="limited-seats">&#9889; Limited Seats Available</div>
+      <button class="landing-cta-btn" onclick="goToLandingPage()">Go to Course Landing Page</button>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-row">&#128222; <a data-config="phoneNumber" href="#">+91 9818366550</a></div>
+      <div class="help-row">&#128172; <a data-config="whatsappLink" href="#" target="_blank" rel="noopener">Talk to our Counselor on WhatsApp</a></div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

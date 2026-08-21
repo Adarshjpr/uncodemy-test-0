@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 50+ Docker Interview Questions {Freshers + Experienced} | Docker Tutorial | Uncodemy</title>
+    <meta name="description" content="Prepare for your Docker interview with 50+ curated questions and answers covering images, containers, networking, volumes, Docker Compose, and security." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-are-containers-in-devops-explained">Docker &amp; Kubernetes Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 5 of 6: Top 50+ Docker Interview Questions {Freshers + Experienced}</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="docker-why-use-2026.html"><span class="num">01</span>Why Use Docker in 2026</a></li>
+            <li><a href="docker-what-is-deep-dive.html"><span class="num">02</span>What is Docker? Docker Container: A Deep Dive into Docker</a></li>
+            <li><a href="docker-top-commands.html"><span class="num">03</span>Top Docker Commands You Should Know</a></li>
+            <li><a href="docker-vs-kubernetes.html"><span class="num">04</span>Kubernetes vs Docker: Analyzing The Differences</a></li>
+            <li><a href="docker-interview-questions.html" class="active"><span class="num">05</span>Top 50+ Docker Interview Questions {Freshers + Experienced}</a></li>
+            <li><a href="docker-azure-devops-interview-questions.html"><span class="num">06</span>Top 50 Azure DevOps Interview Questions and Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-comments"></i> Interview Preparation</span>
+        <h1>Top 50+ Docker Interview Questions {Freshers + Experienced}</h1>
+
+        <div class="card">
+
+            <p>This guide covers the most frequently asked Docker interview questions — from fundamental concepts to advanced topics like networking, volumes, multi-stage builds, and security. Whether you're a fresher or an experienced DevOps engineer, these questions will help you prepare with confidence.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Interview Tip:</strong> Be ready to explain concepts using real examples from your own projects. Interviewers often care more about your reasoning and hands-on experience than a textbook definition.
+            </div>
+
+            <h2>Section 1: Docker Basics</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q1. What is Docker?</strong></p>
+                <p><strong>Answer:</strong> Docker is an open-source platform that automates the packaging, distribution, and running of applications inside lightweight, portable units called containers.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q2. What is a Docker image?</strong></p>
+                <p><strong>Answer:</strong> A Docker image is a read-only template containing an application's code, runtime, libraries, and dependencies. Containers are created from images.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q3. What is a Docker container?</strong></p>
+                <p><strong>Answer:</strong> A container is a running instance of a Docker image — an isolated process with its own filesystem, network, and resource limits, sharing the host OS kernel.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q4. What is a Dockerfile?</strong></p>
+                <p><strong>Answer:</strong> A Dockerfile is a text file containing a series of instructions (FROM, COPY, RUN, CMD, etc.) that Docker uses to build an image.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q5. What is Docker Hub?</strong></p>
+                <p><strong>Answer:</strong> Docker Hub is a public cloud registry where Docker images can be stored, shared, and pulled from — similar to how GitHub hosts code repositories.</p>
+            </div>
+
+            <h2>Section 2: Images &amp; Containers</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q6. What is the difference between an image and a container?</strong></p>
+                <p><strong>Answer:</strong> An image is a static, read-only template; a container is a running (or stopped) instance created from that image. Many containers can be created from a single image.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q7. What are Docker image layers?</strong></p>
+                <p><strong>Answer:</strong> Each instruction in a Dockerfile creates a new, cached layer. Layers are stacked using a union file system, allowing Docker to reuse unchanged layers across builds for speed and efficiency.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q8. What is a multi-stage build?</strong></p>
+                <p><strong>Answer:</strong> A multi-stage build uses multiple FROM statements in one Dockerfile, allowing you to compile or build an application in one stage and copy only the final artifacts into a smaller, production-ready image — reducing final image size.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q9. How do you reduce Docker image size?</strong></p>
+                <p><strong>Answer:</strong> Use minimal base images (like alpine), combine RUN commands to reduce layers, remove build-time dependencies in the same layer they were installed, use multi-stage builds, and add a .dockerignore file.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q10. What is the difference between CMD and ENTRYPOINT?</strong></p>
+                <p><strong>Answer:</strong> CMD provides default arguments that can be overridden at runtime, while ENTRYPOINT defines the fixed executable that always runs. They are often combined: ENTRYPOINT for the executable, CMD for default arguments.</p>
+            </div>
+
+            <h2>Section 3: Networking &amp; Storage</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q11. What is a Docker volume?</strong></p>
+                <p><strong>Answer:</strong> A volume is a persistent storage mechanism managed by Docker, stored outside the container's writable layer, allowing data to survive container restarts and removal.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q12. What is the difference between a volume and a bind mount?</strong></p>
+                <p><strong>Answer:</strong> A volume is fully managed by Docker and stored in Docker's storage area, while a bind mount maps a specific host directory or file directly into the container, giving more control but less portability.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q13. What are the default Docker network drivers?</strong></p>
+                <p><strong>Answer:</strong> The main drivers are bridge (default for standalone containers), host (shares the host's network stack directly), none (no networking), and overlay (used for multi-host communication, often with Swarm or Kubernetes).</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q14. How do containers communicate with each other?</strong></p>
+                <p><strong>Answer:</strong> Containers on the same custom bridge network can communicate using their container name as a hostname, thanks to Docker's built-in DNS resolution.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q15. What happens to data when a container is removed?</strong></p>
+                <p><strong>Answer:</strong> Any data written inside the container's writable layer is lost when the container is removed, unless that data was stored in a volume or bind mount.</p>
+            </div>
+
+            <h2>Section 4: Docker Compose &amp; Orchestration</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q16. What is Docker Compose?</strong></p>
+                <p><strong>Answer:</strong> Docker Compose is a tool for defining and running multi-container applications using a single YAML file, letting you start, stop, and configure an entire application stack with one command.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q17. What is the difference between docker run and docker compose up?</strong></p>
+                <p><strong>Answer:</strong> docker run starts a single container from the command line, while docker compose up starts one or more services defined declaratively in a docker-compose.yml file, wiring up networks and volumes automatically.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q18. What is Docker Swarm?</strong></p>
+                <p><strong>Answer:</strong> Docker Swarm is Docker's native clustering and orchestration tool, allowing multiple Docker hosts to be managed as a single virtual system, with built-in service scaling and load balancing.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q19. How does Kubernetes relate to Docker?</strong></p>
+                <p><strong>Answer:</strong> Kubernetes orchestrates containers across a cluster of machines — scheduling, scaling, and healing them — while Docker (or another container runtime) is often used to build and run the underlying containers.</p>
+            </div>
+
+            <h2>Section 5: Security &amp; Best Practices</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q20. How do you keep Docker images secure?</strong></p>
+                <p><strong>Answer:</strong> Use official or verified base images, keep images updated, avoid running containers as root, scan images for vulnerabilities, and remove unnecessary tools and packages from production images.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q21. What is a .dockerignore file used for?</strong></p>
+                <p><strong>Answer:</strong> It tells Docker which files and directories to exclude from the build context, reducing image size and preventing sensitive files (like .env or .git) from being copied into the image.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q22. What is the principle of least privilege in Docker?</strong></p>
+                <p><strong>Answer:</strong> It means running containers with only the permissions they need — for example, avoiding the --privileged flag, running as a non-root user, and limiting resource access — to reduce the impact of a potential compromise.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q23. How do you limit container resource usage?</strong></p>
+                <p><strong>Answer:</strong> Using flags like --memory and --cpus with docker run, or resource requests/limits in Compose and Kubernetes manifests, to cap how much CPU and memory a container can consume.</p>
+            </div>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q24. What is container image scanning?</strong></p>
+                <p><strong>Answer:</strong> The process of analyzing an image's layers and dependencies for known vulnerabilities using tools like Docker Scout, Trivy, or Snyk, typically integrated into a CI/CD pipeline.</p>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="docker-vs-kubernetes.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Kubernetes vs Docker: Analyzing The Differences</a>
+            <a href="docker-azure-devops-interview-questions.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Top 50 Azure DevOps Interview Questions and Answers</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Docker?</h3>
+                <p>Build, ship, and run containerized applications with confidence. Learn Docker and Kubernetes from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/blog/what-are-containers-in-devops-explained">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Docker & Kubernetes Training Course</h4>
+            <p class="batch-sub">Kickstart your DevOps and containerization journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

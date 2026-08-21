@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playwright Automation Course – Year-End Opportunity 2026 | Uncodemy</title>
+  <meta name="description" content="Join Uncodemy's NASSCOM certified Playwright Automation course. Industrial training, placement support, ₹8–28 LPA package. Rated 4.8★ on Google.">
+  <meta name="keywords" content="Playwright Automation, Uncodemy, Year-End Opportunity 2026, IT Training, Placement, Career Growth, NASSCOM Certified">
+  <link rel="icon" href="image/logo.png" type="image/x-icon">
+  <link rel="icon" href="image/logo.png" type="image/x-icon">
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* ========== Global Styles ========== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: #f9fbfd; 
+      color: #222; 
+      line-height: 1.7; 
+      overflow-x: hidden; 
+    }
+    
+    /* ========== Navigation Bar ========== */
+    .navbar {
+      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-logo span {
+      color: #ffae1a;
+    }
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+    .navbar-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+    .navbar-menu a:hover {
+      color: #ffae1a;
+    }
+    .navbar-cta {
+      background: #ffae1a;
+      color: #0066cc;
+      padding: 10px 26px;
+      border-radius: 30px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .navbar-cta:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+    .navbar-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    
+    /* Mobile Menu */
+    @media (max-width: 968px) {
+      .navbar-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+        transition: left 0.4s;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      }
+      .navbar-menu.active {
+        left: 0;
+      }
+      .navbar-toggle {
+        display: block;
+      }
+    }
+
+    /* ========== Hero Banner ========== */
+    .hero-banner {
+      background: linear-gradient(135deg, #0066cc 0%, #0052a3 50%, #ff9500 100%);
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px 60px 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 42px rgba(0,0,0,0.15);
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      top: -250px; left: -150px;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      bottom: -200px; right: -100px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    @keyframes float { 
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    .hero-content { position: relative; z-index: 10; max-width: 920px; margin: 0 auto; }
+    .hero-badge { 
+      background: #ffae1a; 
+      color: #fff; 
+      display: inline-block; 
+      padding: 8px 26px; 
+      border-radius: 30px; 
+      font-size: 0.95rem; 
+      font-weight: 700; 
+      letter-spacing: 0.8px; 
+      margin-bottom: 18px;
+      box-shadow: 0 6px 18px rgba(255,174,26,0.3);
+    }
+    .hero-content h1 { 
+      font-size: 3rem; 
+      font-weight: 900; 
+      line-height: 1.2; 
+      margin-bottom: 14px; 
+      text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .hero-content .subtitle { 
+      font-size: 1.3rem; 
+      margin-bottom: 10px; 
+      font-weight: 500; 
+      line-height: 1.6;
+    }
+    .hero-stats { 
+      display: flex; 
+      justify-content: center; 
+      gap: 32px; 
+      margin: 28px 0; 
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat-box { 
+      background: rgba(255,255,255,0.15); 
+      padding: 16px 26px; 
+      border-radius: 18px; 
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .hero-stats .stat-box strong { 
+      display: block; 
+      font-size: 2rem; 
+      color: #ffae1a;
+    }
+    .hero-stats .stat-box span { 
+      font-size: 1rem; 
+      font-weight: 600;
+    }
+    .hero-cta { 
+      background: #ffae1a; 
+      color: #0066cc; 
+      border: none; 
+      padding: 16px 50px; 
+      font-size: 1.2rem; 
+      font-weight: 800; 
+      border-radius: 40px; 
+      cursor: pointer; 
+      margin-top: 24px;
+      box-shadow: 0 8px 28px rgba(255,174,26,0.4);
+      transition: all 0.3s ease;
+    }
+    .hero-cta:hover { 
+      background: #fff; 
+      transform: translateY(-4px); 
+      box-shadow: 0 12px 38px rgba(255,174,26,0.5);
+    }
+
+    /* ========== Stats Counter Section ========== */
+    .stats-section {
+      background: linear-gradient(135deg, #0066cc, #0052a3);
+      color: #fff;
+      padding: 50px 20px;
+      margin: 0;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 3rem;
+      color: #ffae1a;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .stat-item p {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* ========== Section Container ========== */
+    section { 
+      max-width: 1150px; 
+      margin: 42px auto; 
+      padding: 0 18px;
+    }
+    .section-title { 
+      font-size: 2.3rem; 
+      color: #0066cc; 
+      margin-bottom: 24px; 
+      font-weight: 800; 
+      text-align: center;
+      position: relative;
+      padding-bottom: 14px;
+    }
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 5px;
+      background: #ffae1a;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+
+    /* ========== Info Card ========== */
+    .info-card { 
+      background: #fff; 
+      padding: 36px; 
+      border-radius: 22px; 
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08); 
+      margin-bottom: 32px;
+    }
+    .info-card h3 { 
+      color: #0066cc; 
+      font-size: 1.7rem; 
+      margin-bottom: 16px; 
+      font-weight: 700;
+    }
+    .info-card p, .info-card li { 
+      font-size: 1.08rem; 
+      color: #333; 
+      margin-bottom: 12px; 
+      line-height: 1.8;
+    }
+    .info-card ul { 
+      list-style: none; 
+      padding-left: 0;
+    }
+    .info-card ul li::before { 
+      content: '✔'; 
+      color: #ffae1a; 
+      font-weight: bold; 
+      margin-right: 12px;
+    }
+
+    /* ========== Features Grid ========== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .feature-box {
+      background: #fff;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .feature-box:hover {
+      transform: translateY(-8px);
+    }
+    .feature-box .emoji {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+    .feature-box h4 {
+      color: #0066cc;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .feature-box p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ========== Tools Grid with Emojis ========== */
+    .tools-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+      gap: 22px; 
+      margin-top: 28px;
+    }
+    .tool-box { 
+      background: linear-gradient(135deg, #0066cc, #0052a3); 
+      color: #fff; 
+      padding: 28px 20px; 
+      border-radius: 18px; 
+      text-align: center; 
+      font-weight: 700; 
+      font-size: 1.05rem; 
+      box-shadow: 0 6px 20px rgba(0,102,204,0.2);
+      transition: transform 0.3s ease;
+    }
+    .tool-box:hover { 
+      transform: translateY(-6px) scale(1.05);
+    }
+    .tool-box .tool-emoji {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ========== Learning Path ========== */
+    .learning-path {
+      background: #fff;
+      padding: 40px;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      margin-bottom: 32px;
+    }
+    .path-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .path-step {
+      background: linear-gradient(135deg, #f7f9fc, #fff);
+      padding: 24px;
+      border-radius: 16px;
+      border-left: 5px solid #ffae1a;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .path-step .step-number {
+      background: #ffae1a;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+    .path-step h4 {
+      color: #0066cc;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .path-step p {
+      color: #555;
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    /* ========== Placement Banner Image Section ========== */
+    .placement-banner {
+      margin: 50px auto;
+      max-width: 1150px;
+      padding: 0 18px;
+    }
+    .placement-banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 12px 42px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .placement-banner img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ========== Projects Section ========== */
+    .project-card { 
+      background: #fff; 
+      border-left: 6px solid #ffae1a; 
+      padding: 28px; 
+      margin-bottom: 26px; 
+      border-radius: 16px; 
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    }
+    .project-card h4 { 
+      color: #0066cc; 
+      font-size: 1.5rem; 
+      margin-bottom: 12px; 
+      font-weight: 700;
+    }
+    .project-card .domain-tag { 
+      background: #ffae1a; 
+      color: #fff; 
+      padding: 5px 16px; 
+      border-radius: 20px; 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      display: inline-block; 
+      margin-bottom: 10px;
+    }
+    .project-card p { 
+      font-size: 1.05rem; 
+      margin-bottom: 10px;
+    }
+    .project-card ul { 
+      margin-left: 20px; 
+      margin-bottom: 12px;
+    }
+    .project-card ul li { 
+      margin-bottom: 8px; 
+      font-size: 1.02rem;
+    }
+
+    /* ========== Placement Section ========== */
+    .placement-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 28px; 
+      margin-top: 28px;
+    }
+    .placement-box { 
+      background: linear-gradient(135deg, #0066cc, #0052a3); 
+      color: #fff; 
+      padding: 32px; 
+      border-radius: 20px; 
+      box-shadow: 0 8px 28px rgba(0,102,204,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .placement-box::before {
+      content: '';
+      position: absolute;
+      width: 150px; height: 150px;
+      background: rgba(255,174,26,0.15);
+      border-radius: 50%;
+      top: -50px; right: -30px;
+    }
+    .placement-box h4 { 
+      font-size: 1.4rem; 
+      margin-bottom: 8px; 
+      font-weight: 700;
+    }
+    .placement-box .company { 
+      color: #ffae1a; 
+      font-weight: 700; 
+      font-size: 1.15rem; 
+      margin-bottom: 6px;
+    }
+    .placement-box .package { 
+      font-size: 2rem; 
+      font-weight: 900; 
+      color: #ffae1a; 
+      margin-bottom: 14px;
+    }
+    .placement-box p { 
+      font-size: 1.02rem; 
+      line-height: 1.7; 
+      font-style: italic;
+    }
+
+    /* ========== Google Reviews ========== */
+    .reviews-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 24px; 
+      margin-top: 28px;
+    }
+    .review-box { 
+      background: #fff; 
+      padding: 28px; 
+      border-radius: 18px; 
+      box-shadow: 0 6px 22px rgba(0,0,0,0.08); 
+      border-top: 4px solid #ffae1a;
+      position: relative;
+    }
+    .review-box .stars { 
+      color: #ffae1a; 
+      font-size: 1.3rem; 
+      margin-bottom: 10px;
+    }
+    .review-box .reviewer { 
+      font-weight: 700; 
+      color: #0066cc; 
+      font-size: 1.15rem; 
+      margin-bottom: 8px;
+    }
+    .review-box p { 
+      font-size: 1.02rem; 
+      color: #444; 
+      font-style: italic; 
+      line-height: 1.7;
+    }
+
+    /* ========== FAQ Section ========== */
+    .faq-section {
+      background: #fff;
+      padding: 40px;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      margin-bottom: 32px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 16px;
+    }
+    .faq-item h4 {
+      color: #0066cc;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq-item h4::before {
+      content: '❓';
+      font-size: 1.3rem;
+    }
+    .faq-item p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      padding-left: 32px;
+    }
+
+    /* ========== Course Cards ========== */
+    .course-cards { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 30px; 
+      margin-top: 36px;
+    }
+    .course-card { 
+      background: #fff; 
+      border-radius: 22px; 
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1); 
+      overflow: hidden; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .course-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 14px 42px rgba(0,102,204,0.15);
+    }
+    .course-card .card-header { 
+      background: linear-gradient(135deg, #0066cc, #0052a3); 
+      color: #fff; 
+      padding: 28px; 
+      text-align: center;
+    }
+    .course-card .card-header h3 { 
+      font-size: 1.6rem; 
+      font-weight: 800; 
+      margin-bottom: 8px;
+    }
+    .course-card .card-body { 
+      padding: 26px;
+    }
+    .course-card .card-body p { 
+      font-size: 1.05rem; 
+      color: #444; 
+      margin-bottom: 22px; 
+      line-height: 1.7;
+    }
+    .course-card .download-btn { 
+      background: #ffae1a; 
+      color: #fff; 
+      border: none; 
+      padding: 14px 0; 
+      width: 100%; 
+      font-size: 1.1rem; 
+      font-weight: 700; 
+      border-radius: 30px; 
+      cursor: pointer; 
+      transition: background 0.3s ease;
+      box-shadow: 0 6px 18px rgba(255,174,26,0.3);
+    }
+    .course-card .download-btn a{
+      text-decoration: none;
+      color: #f0f0f0;
+    }
+    .course-card .download-btn:hover { 
+      background: #0066cc;
+    }
+    .course-card .label { 
+      position: absolute; 
+      top: 16px; 
+      right: 16px; 
+      background: #ffae1a; 
+      color: #fff; 
+      padding: 8px 18px; 
+      border-radius: 24px; 
+      font-weight: 700; 
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(255,174,26,0.4);
+    }
+
+    /* ========== Footer ========== */
+    .footer {
+      background: linear-gradient(135deg, #001a33, #003366);
+      color: #fff;
+      padding: 50px 20px 20px 20px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    .footer-section h3 {
+      color: #ffae1a;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+    .footer-section p, .footer-section a {
+      color: #ddd;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .footer-section a:hover {
+      color: #ffae1a;
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .social-icons a {
+      background: #ffae1a;
+      color: #003366;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: transform 0.3s, background 0.3s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      transform: scale(1.15);
+      background: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 1rem;
+      color: #bbb;
+    }
+    .footer-bottom strong {
+      color: #ffae1a;
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-content .subtitle { font-size: 1.1rem; }
+      .hero-stats { flex-direction: column; gap: 18px; }
+      .section-title { font-size: 1.9rem; }
+      .course-cards, .placement-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .navbar-container { flex-wrap: wrap; }
+    }
+
+    /* ========== Scroll to Top Button ========== */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ffae1a;
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255,174,26,0.4);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+    }
+    .scroll-top:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Navigation Bar ========== -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="navbar-logo">
+        🎓 <span>Uncodemy</span>
+      </a>
+      <ul class="navbar-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#placements">Placements</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <button class="navbar-cta" onclick="window.location.href='https://uncodemy.com/register-now'">Enroll Now</button>
+      </ul>
+      <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero Banner Section ========== -->
+  <div class="hero-banner" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">🏆 NASSCOM® Certified Member</div>
+      <h1>Year-End Opportunity Program 2026</h1>
+      <div class="subtitle">
+        "India's IT sector expected to add nearly <strong>40% more jobs in FY 2026-27</strong>,<br>
+        translating into approximately <strong>1 million new IT-related vacancies</strong>" – Survey
+      </div>
+      <h2 style="margin-top:24px; font-size:2rem;">Professional Certificate Program in<br><strong>Playwright Automation</strong></h2>
+      <p style="font-size:1.15rem; margin-top:12px;">🚀 Industrial Training with Hands-On Learning That Prepares You for the Real World</p>
+      
+      <div class="hero-stats">
+        <div class="stat-box">
+          <strong>₹8–28 LPA</strong>
+          <span>Average Package</span>
+        </div>
+        <div class="stat-box">
+          <strong>2.5–3 Months</strong>
+          <span>Program Duration</span>
+        </div>
+        <div class="stat-box">
+          <strong>4.8★</strong>
+          <span>Rated on Google</span>
+        </div>
+      </div>
+      
+      <button class="hero-cta" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+        🎯 Explore Courses Now
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== Statistics Counter Section ========== -->
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>10,000+</h3>
+        <p>Students Trained</p>
+      </div>
+      <div class="stat-item">
+        <h3>500+</h3>
+        <p>Companies Hiring</p>
+      </div>
+      <div class="stat-item">
+        <h3>95%</h3>
+        <p>Placement Success</p>
+      </div>
+      <div class="stat-item">
+        <h3>4.8★</h3>
+        <p>Google Rating</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== About Program Section ========== -->
+  <section>
+    <div class="info-card">
+      <h3>🎓 Why Choose This Program?</h3>
+      <p>
+        Uncodemy's <strong>Professional Certificate Program in Playwright Automation</strong> is designed for aspiring test automation engineers who want to master modern browser automation, cross-platform testing, CI/CD integration, and AI-powered testing tools. With a perfect blend of theory and hands-on industrial training, this program prepares you to work on real-world projects across top IT domains like E-Commerce, FinTech, HealthTech, and HRTech.
+      </p>
+      <ul>
+        <li>✅ NASSCOM certified curriculum trusted by 10,000+ learners</li>
+        <li>💰 Average placement package: ₹8–28 LPA</li>
+        <li>👨‍🏫 Learn from industry experts with live project experience</li>
+        <li>🎯 100% placement assistance with interview preparation and resume building</li>
+        <li>🛠️ Access to modern tools: Playwright, Jenkins, GitHub, Allure, AI Tools (ChatGPT, Gemini, Copilot)</li>
+        <li>📜 Globally recognized NASSCOM certification</li>
+        <li>🌐 Flexible online and offline training modes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Key Features Section ========== -->
+  <section id="features">
+    <h2 class="section-title">✨ Key Program Features</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="emoji">💼</div>
+        <h4>Industry Projects</h4>
+        <p>Work on 5+ real-world projects across E-Commerce, Banking, Healthcare, and HRTech domains.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">🎯</div>
+        <h4>100% Placement Support</h4>
+        <p>Dedicated placement team with resume building, mock interviews, and job referrals.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">🏆</div>
+        <h4>NASSCOM Certified</h4>
+        <p>Get globally recognized certification that adds credibility to your professional profile.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">👨‍💻</div>
+        <h4>Expert Mentors</h4>
+        <p>Learn from trainers with 10+ years of industry experience in top MNCs.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">🤖</div>
+        <h4>AI-Powered Tools</h4>
+        <p>Master modern AI testing tools including ChatGPT, Gemini, and GitHub Copilot.</p>
+      </div>
+      <div class="feature-box">
+        <div class="emoji">📚</div>
+        <h4>Lifetime Access</h4>
+        <p>Get lifetime access to course materials, recordings, and community support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Learning Path Section ========== -->
+  <section>
+    <h2 class="section-title">🗺️ Your Learning Journey</h2>
+    <div class="learning-path">
+      <div class="path-steps">
+        <div class="path-step">
+          <div class="step-number">1</div>
+          <h4>Foundation</h4>
+          <p>Learn automation fundamentals, JavaScript basics, and Playwright setup.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">2</div>
+          <h4>Core Skills</h4>
+          <p>Master cross-browser testing, locators, assertions, and test frameworks.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">3</div>
+          <h4>Advanced Topics</h4>
+          <p>API testing, CI/CD with Jenkins, GitHub Actions, and AI tools integration.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">4</div>
+          <h4>Live Projects</h4>
+          <p>Apply your skills on 5+ industry projects with real-world scenarios.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">5</div>
+          <h4>Placement Prep</h4>
+          <p>Resume building, mock interviews, and soft skills training for job success.</p>
+        </div>
+        <div class="path-step">
+          <div class="step-number">6</div>
+          <h4>Career Launch</h4>
+          <p>Get placed in top IT companies with dedicated placement assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Placement Banner Image Section ========== -->
+  <div class="placement-banner">
+    <img src="/image/placementbanner.png" alt="Uncodemy - Trusted by 10,000+ Learners - India's Most Trusted IT Training Institute - Rated 4.8★ On Google" loading="lazy">
+  </div>
+
+  <!-- ========== Tools Covered Section ========== -->
+  <section>
+    <h2 class="section-title">🛠️ Tools & Technologies Covered</h2>
+    <div class="tools-grid">
+      <div class="tool-box">
+        <span class="tool-emoji">⚡</span>
+        JavaScript (JS)
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🎭</span>
+        Playwright
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">☕</span>
+        Mocha
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🔌</span>
+        API Testing
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🔧</span>
+        Jenkins
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🌐</span>
+        Cross Browser Testing
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🤖</span>
+        AI Tools
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🔄</span>
+        CI/CD
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📂</span>
+        Git & GitHub
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">📊</span>
+        Allure Report
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">💬</span>
+        ChatGPT
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">✨</span>
+        Gemini
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">👨‍💻</span>
+        Copilot
+      </div>
+      <div class="tool-box">
+        <span class="tool-emoji">🔁</span>
+        Regression Testing
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Live Projects Section ========== -->
+  <section>
+    <h2 class="section-title">💼 Live Industrial Projects</h2>
+    
+    <div class="project-card">
+      <span class="domain-tag">🛒 Retail Domain</span>
+      <h4>1. E-Commerce Web Application</h4>
+      <p><strong>Description:</strong> Automating end-to-end test cases for an online shopping platform.</p>
+      <p><strong>Functionalities:</strong></p>
+      <ul>
+        <li>User Registration & Authentication</li>
+        <li>Product Search & Filtering</li>
+        <li>Add to Cart & Checkout Flow</li>
+      </ul>
+      <p><strong>What We Do:</strong> Automate browser workflows using Playwright for multiple browsers, including Chrome and Firefox, with visual and API validation.</p>
+      <p><strong>Tools:</strong> Playwright (JavaScript), Allure Report for reporting, GitHub for version control, Jenkins for CI/CD.</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">👔 HRTech</span>
+      <h4>2. HR Management System</h4>
+      <p><strong>Description:</strong> Automating employee lifecycle management processes like onboarding, attendance, and payroll.</p>
+      <p><strong>Functionalities:</strong></p>
+      <ul>
+        <li>Employee Profile Management</li>
+        <li>Attendance & Leave Tracking</li>
+        <li>Payroll Calculation & Reports</li>
+      </ul>
+      <p><strong>What We Do:</strong> Automate test scripts for HR module validation and ensure workflow accuracy across multiple environments.</p>
+      <p><strong>Tools:</strong> Playwright, Mocha/Chai for assertions, Allure Report, Jenkins for CI/CD.</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">💳 FinTech</span>
+      <h4>3. Banking Web Portal</h4>
+      <p><strong>Description:</strong> Automating UI and functional testing for a secure online banking platform.</p>
+      <p><strong>Functionalities:</strong></p>
+      <ul>
+        <li>Account Login & Dashboard Access</li>
+        <li>Fund Transfer & Transaction History</li>
+        <li>Customer Support & Notifications</li>
+      </ul>
+      <p><strong>What We Do:</strong> Automate critical banking workflows with Playwright, including form validations, data synchronization, and visual regression testing.</p>
+      <p><strong>Tools:</strong> Playwright, Allure Report, Jenkins for CI/CD, GitHub for version control.</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🏥 MedTech</span>
+      <h4>4. Healthcare Appointment Booking System</h4>
+      <p><strong>Description:</strong> Automating an online platform that allows patients to book, reschedule, and manage appointments.</p>
+      <p><strong>Functionalities:</strong></p>
+      <ul>
+        <li>Doctor & Patient Registration</li>
+        <li>Appointment Scheduling & Cancellations</li>
+        <li>Medical Record Access</li>
+      </ul>
+      <p><strong>What We Do:</strong> Automate functional and regression test cases for user workflows and ensure cross-browser compatibility.</p>
+      <p><strong>Tools:</strong> Playwright, Mocha/Chai, Allure Report, Jenkins for CI/CD.</p>
+    </div>
+
+    <div class="project-card">
+      <span class="domain-tag">🩺 Healthcare</span>
+      <h4>5. Hospital Management Portal</h4>
+      <p><strong>Description:</strong> Automating end-to-end testing of a hospital management system that integrates multiple departments.</p>
+      <p><strong>Functionalities:</strong></p>
+      <ul>
+        <li>Patient Admission & Discharge Module</li>
+        <li>Doctor & Staff Management</li>
+        <li>Billing & Insurance Verification</li>
+      </ul>
+      <p><strong>What We Do:</strong> Build automation suites to validate patient data flow, hospital operations, and billing integration with precision.</p>
+      <p><strong>Tools:</strong> Playwright, Mocha/Chai, Allure Report, Jenkins, GitHub.</p>
+    </div>
+  </section>
+
+  <!-- ========== Student Placements Section ========== -->
+  <section id="placements">
+    <h2 class="section-title">🎯 Our Students' Success Stories</h2>
+    <div class="placement-grid">
+      
+      <div class="placement-box">
+        <h4>Pawanpreet Singh</h4>
+        <div class="company">🏢 TSYS, Noida (UP)</div>
+        <div class="package">₹18 LPA</div>
+        <p>"Uncodemy has been a game-changer in my career journey. The mentors explained every concept from the basics, making complex topics easy to grasp. Their continuous guidance and real-time project experience helped me boost my confidence and technical skills."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Gunjan</h4>
+        <div class="company">💼 Infosys</div>
+        <div class="package">₹16 LPA</div>
+        <p>"Being a part of Uncodemy was a life-changing experience. The trainers provided not only in-depth technical knowledge but also real-world insights that strengthened my foundation. I'm truly grateful for helping me secure my dream role as a Quality Engineering Lead."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Abhinav Pandey</h4>
+        <div class="company">🚀 DXC Technology, Gurgaon</div>
+        <div class="package">₹16 LPA</div>
+        <p>"Joining Uncodemy was one of the best decisions of my career. The mentors provided great hands-on training and the placement team guided me through every step, helping me land my role as an Automation Test Engineer."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Sahil Siddique</h4>
+        <div class="company">💻 Hewlett Packard Enterprise</div>
+        <div class="package">₹14.5 LPA</div>
+        <p>"Uncodemy played a key role in shaping my IT career. The practical training, real-world projects, and mentor support gave me the confidence to excel and secure my role as an Automation Tester."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Ravi</h4>
+        <div class="company">🎯 Virtusa</div>
+        <div class="package">₹14 LPA</div>
+        <p>"Uncodemy helped me turn my learning into a rewarding career. The mentors made every concept clear with real-time examples, and the placement team supported me throughout the interview process."</p>
+      </div>
+
+      <div class="placement-box">
+        <h4>Rekha</h4>
+        <div class="company">🌟 LTIMindtree</div>
+        <div class="package">₹13 LPA</div>
+        <p>"Uncodemy has truly transformed my learning experience. The mentors provided hands-on training and deep insights into real-world ETL testing. The placement support was exceptional."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== Google Reviews Section ========== -->
+  <section id="reviews">
+    <h2 class="section-title">⭐ Trusted by 10,000+ Learners – Google Reviews (4.8★)</h2>
+    <div class="reviews-grid">
+      
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Vipin Pandey</div>
+        <p>"I was searching for a good API Testing course online and found Uncodemy. The classes were well-organized and easy to follow. Thanks to the course, I now feel confident about switching to an automation testing role."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Sakshi Sharma</div>
+        <p>"The course was well-structured and covered everything from the basics to advanced-level automation with tools like Postman and REST Assured. By the end of the course, I was not just learning—I was job-ready."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Anjali Kashyap</div>
+        <p>"I joined the API testing course to upgrade my skills. The course included scripting, practical assignments, and mock tests. Now I feel confident applying to top QA jobs."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Mudrika Pandey</div>
+        <p>"The decision to take the API Testing course at Uncodemy was a turning point in my career. This course gave me the knowledge and practical exposure I was missing. Now, I feel confident handling automation tasks in my job."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Anamika Yadav</div>
+        <p>"Before joining Uncodemy, I was struggling to get a job because I lacked technical skills. This course changed that. The training was clear, structured, and full of practical use cases."</p>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <div class="reviewer">Devanshi Dwivedi</div>
+        <p>"Uncodemy delivered exactly what I needed. The sessions were practical, the tools were taught clearly, and every doubt I had was addressed in detail. I would definitely recommend this course to anyone."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FAQ Section ========== -->
+  <section>
+    <h2 class="section-title">❓ Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <h4>What is the duration of the Playwright Automation course?</h4>
+        <p>The program duration is 2.5 to 3 months with flexible batch timings for working professionals and students.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is this course suitable for beginners?</h4>
+        <p>Yes! The course starts from basics and gradually progresses to advanced topics. No prior coding experience required.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What is the average placement package?</h4>
+        <p>Our students receive average placement packages ranging from ₹8 LPA to ₹28 LPA depending on skills and company requirements.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you provide placement assistance?</h4>
+        <p>Yes, we provide 100% placement assistance including resume building, mock interviews, job referrals, and soft skills training.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is the certification recognized globally?</h4>
+        <p>Yes, Uncodemy is a NASSCOM certified training partner, and the certification is recognized globally by top IT companies.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I attend classes online?</h4>
+        <p>Yes, we offer both online and offline training modes with live interactive sessions and lifetime access to recordings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Trending Courses Cards ========== -->
+  <section id="courses">
+    <h2 class="section-title">🔥 Explore Our Trending Courses</h2>
+    <div class="course-cards">
+      
+      <div class="course-card">
+        <span class="label">🏆 Most Popular</span>
+        <div class="card-header">
+          <h3>Playwright Automation</h3>
+        </div>
+        <div class="card-body">
+          <p>Master cross-browser testing, CI/CD pipelines, API validation, and AI-powered tools with hands-on industry projects. Secure top placements with ₹8–28 LPA packages.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/Playwright-Automation.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="label">📈 High Demand</span>
+        <div class="card-header">
+          <h3>Data Science</h3>
+        </div>
+        <div class="card-body">
+          <p>Become a data expert with Python, machine learning, AI, deep learning, and data visualization. Work on real-world datasets and predictive models for top IT roles.</p>
+          <button class="download-btn"><a href="/course/data-science-training-course-in-noida" target="_blank" rel="noopener noreferrer"> 📥 Download Course PDF</a></button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="label">🔥 Trending</span>
+        <div class="card-header">
+          <h3>Data Analytics</h3>
+        </div>
+        <div class="card-body">
+          <p>Learn advanced analytics, business intelligence, SQL, Power BI, Tableau, and data-driven decision-making for FinTech, E-Commerce, and enterprise domains.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/DA.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="label">💼 Career Boost</span>
+        <div class="card-header">
+          <h3>Full Stack Development</h3>
+        </div>
+        <div class="card-body">
+          <p>Build modern web applications with React, Node.js, MongoDB, Express, and cloud deployment. Learn end-to-end development with live industry projects.</p>
+          <button class="download-btn" ><a href="/course/full-stack-development-training-course-in-noida" target="_blank" rel="noopener noreferrer">📥 Download Course PDF</a> </button>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="label">🧪 Automation Expert</span>
+        <div class="card-header">
+          <h3>Professional Certificate Program in API Automation Testing</h3>
+        </div>
+        <div class="card-body">
+          <p>Master REST & SOAP API testing using Postman, RestAssured, Selenium, and automation frameworks. Learn API validations, CI/CD integration, token-based auth, test reporting, and real-time industry projects.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/API-Automation.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+      
+      <div class="course-card">
+        <span class="label">📊 High Demand</span>
+        <div class="card-header">
+          <h3>Professional Certificate Program in Business Analytics With AI</h3>
+        </div>
+        <div class="card-body">
+          <p>Become a certified business analyst with AI-powered tools. Learn data analytics, forecasting, Power BI, SQL, Python, ML models, dashboards, and decision-making with real-world case studies.</p>
+          <button class="download-btn" onclick="downloadPDF('pdf/BA-with-ai.pdf')">📥 Download Course PDF</button>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <!-- ========== Why Students Choose Uncodemy ========== -->
+  <section>
+    <div class="info-card">
+      <h3>🏆 Why 10,000+ Students Choose Uncodemy</h3>
+      <ul>
+        <li>🌟 India's #1 IT training institute rated 4.8★ on Google</li>
+        <li>🎓 NASSCOM certified curriculum designed for industry readiness</li>
+        <li>👥 10,000+ students trained and placed in top MNCs</li>
+        <li>💼 100% placement assistance with dedicated support team</li>
+        <li>🌐 Flexible online and offline training modes</li>
+        <li>♾️ Lifetime access to course materials and community support</li>
+        <li>🚀 Real-time projects across E-Commerce, FinTech, HealthTech, HRTech domains</li>
+        <li>👨‍🏫 Expert trainers with 10+ years of industry experience</li>
+        <li>📝 Resume building, mock interviews, and soft skills training included</li>
+        <li>🔄 Regular doubt-clearing sessions and mentorship</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      
+      <div class="footer-section">
+        <h3>🎓 Uncodemy</h3>
+        <p>India's Most Trusted IT Training Institute</p>
+        <p>NASSCOM® Certified Member</p>
+        <p>Empowering 10,000+ students to achieve their dream careers in technology.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/uncodemyofficial/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        
+          <a href="https://twitter.com/uncodemy?lang=en" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+          <a href="https://www.linkedin.com/company/uncodemy?originalSubdomain=in" 
+             target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        
+          <a href="https://www.instagram.com/uncodemyofficial/?hl=en" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        
+          <a href="https://www.youtube.com/@uncodemylearning" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        
+      </div>
+
+      <div class="footer-section">
+        <h3>🔗 Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/all-courses">Courses</a></li>
+          <li><a href="/placement">Placements</a></li>
+          <li><a href="/instructors">Instructors</a></li>
+          <li><a href="/contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>📚 Popular Courses</h3>
+        <ul>
+          <li><a href="/course/playwright-training-course-in-noida">Playwright Automation</a></li>
+          <li><a href="/course/data-science-training-course-in-noida">Data Science</a></li>
+          <li><a href="/course/data-analytics-training-course-in-noida">Data Analytics</a></li>
+          <li><a href="/course/full-stack-with-nodejs-training-course-in-noida">Full Stack Development</a></li>
+          <li><a href="/course/cloud-computing-training-course-in-noida">Cloud Computing</a></li>
+          <li><a href="/course/artificial-intelligence-training-course-in-noida">AI & Machine Learning</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>📞 Contact Info</h3>
+      
+        <p><strong>📍 Address:</strong><br>
+          <a href="https://maps.app.goo.gl/6Q3VsPojbbkNNiKNA" target="_blank" style="color: inherit; text-decoration: none;">
+            B 14-15, Udhyog Marg, Sector 1, Noida<br>
+            (Near Noida Sector 15 Metro)<br>
+            Uttar Pradesh 201301
+          </a>
+        </p>
+      
+        <p><strong>📱 Call/WhatsApp:</strong><br>
+          <a href="tel:+919818366550" style="color: inherit; text-decoration: none;">+91 9818366550</a> 
+          <a href="tel:+918448807675" style="color: inherit; text-decoration: none;">+91 8448807675</a>
+        </p>
+      
+        <p><strong>💬 WhatsApp Chat:</strong><br>
+          <a href="https://wa.me/919818366550" target="_blank" style="color: inherit; text-decoration: none;">
+            Chat on WhatsApp
+          </a>
+        </p>
+      
+        <p><strong>✉️ Email:</strong><br>
+          <a href="mailto:info@uncodemy.com" style="color: inherit; text-decoration: none;">info@uncodemy.com</a>
+        </p>
+      
+        <p><strong>🌐 Website:</strong><br>
+          <a href="https://uncodemy.com" target="_blank" style="color: inherit; text-decoration: none;">uncodemy.com</a>
+        </p>
+      </div>
+      
+
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>Uncodemy Edutech Pvt. LTD</strong> | CIN No. U85499UP2024PTC195902</p>
+      <p>Rated <strong>4.8★</strong> on Google | Trusted by <strong>10,000+ Learners</strong></p>
+      <p style="margin-top:12px; font-style:italic;">"We rise by lifting others."</p>
+    </div>
+  </footer>
+
+  <!-- ========== Scroll to Top Button ========== -->
+  <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ⬆️
+  </div>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+
+    // Scroll to Top Button Visibility
+    window.addEventListener('scroll', function() {
+      const scrollTop = document.getElementById('scrollTop');
+      if (window.pageYOffset > 300) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    // Download PDF Function
+    function downloadPDF(filename) {
+      // Update path to your actual PDF hosting location
+      let pdfPath = '/' + filename;
+      window.open(pdfPath, '_blank');
+    }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

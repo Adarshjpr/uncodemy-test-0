@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Which Course Is Future Proof for a Fresh Graduate in 2026? | Uncodemy</title>
+    <meta name="description" content="Complete guide for fresh graduates to choose the best future-proof course in 2026. Compare Full Stack, Data Science, Cloud, Cybersecurity, DevOps, and AI/ML with salary, demand, and roadmap." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/future-proof-courses-for-fresh-graduates-2026" />
+    <meta property="og:title" content="Which Course Is Future Proof for a Fresh Graduate in 2026? | Uncodemy" />
+    <meta property="og:description" content="A step-by-step guide for fresh graduates to choose the right IT course. Compare top specialisations, salaries, demand, and learning paths." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+    <style>
+        .course-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .course-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .course-box .c-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .course-box .c-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .course-box .c-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .course-box .c-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .course-box .c-v {
+                font-size: 14px;
+            }
+            .course-box .c-l {
+                font-size: 8px;
+            }
+            .course-box .c-d {
+                font-size: 9px;
+            }
+        }
+        .badge-course {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .chip-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .chip-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+        .flow-row .icon-row {
+            display: inline-flex;
+            gap: 4px;
+        }
+        .flow-row .icon-row svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+        .demo-bar .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .s-card h4 .icon-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .s-card h4 .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .rating-stars {
+            display: inline-flex;
+            gap: 1px;
+            vertical-align: -2px;
+        }
+        .rating-stars svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--primary);
+            color: var(--primary);
+        }
+        .grad-tip {
+            border-left: 3px solid #22C55E;
+            background: #f0faf5;
+            padding: 14px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <i data-lucide="menu" style="width:24px;height:24px;stroke:currentColor;stroke-width:2;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Which Course Is Future Proof for a Fresh Graduate in 2026? <mark>Complete Decision Guide</mark></h1>
+                <p class="lede">You've just graduated. Now what? The IT industry offers dozens of paths — but only some are truly future‑proof. This guide compares the top specialisations based on demand, salary, learning curve, and long‑term growth. Find the one that fits you best.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search 'future proof courses for fresh graduates'" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+    <span class="lbl">Tracks</span>
+    <button class="chip" aria-pressed="false">Full Stack</button>
+    <button class="chip" aria-pressed="false">Data Science</button>
+    <button class="chip" aria-pressed="true">Cloud</button>
+    <button class="chip" aria-pressed="false">Cybersecurity</button>
+    <button class="chip" aria-pressed="false">DevOps</button>
+    <button class="chip" aria-pressed="false">AI/ML</button>
+    <button class="chip" aria-pressed="false">Career Advice</button>
+</div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <i data-lucide="bar-chart-3" style="width:16px;height:16px;color:var(--primary);"></i>
+                        <b>Course Comparison · Live metrics</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different courses">
+                        <button aria-pressed="true" data-r="fullstack">Full Stack</button>
+                        <button aria-pressed="false" data-r="datascience">Data Science</button>
+                        <button aria-pressed="false" data-r="cloud">Cloud</button>
+                        <button aria-pressed="false" data-r="cyber">Cybersecurity</button>
+                        <button aria-pressed="false" data-r="devops">DevOps</button>
+                        <button aria-pressed="false" data-r="aiml">AI/ML</button>
+                    </div>
+                    <div class="course-grid" id="courseTiers">
+                        <div class="course-box"><div class="c-l">Demand (2026)</div><div class="c-v" id="demandVal">—</div><div class="c-d">Job openings growth</div></div>
+                        <div class="course-box"><div class="c-l">Fresher Salary</div><div class="c-v" id="salaryVal">—</div><div class="c-d">Avg. package (India)</div></div>
+                        <div class="course-box"><div class="c-l">Learning Curve</div><div class="c-v" id="curveVal">—</div><div class="c-d">Time to job-ready</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Fresh Graduate</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Choose Course</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Learn &amp; Build</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Land Your First Job</span>
+                    </div>
+                    <div class="demo-cap">Click a course to see demand, salary potential, and learning curve. All are future‑proof — choose based on your interest.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs">
+            <a href="#top">Home</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Career Guides</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Fresh Graduates</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <span>Future Proof Courses 2026</span>
+        </p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Fresh Graduates · Future‑Proof Career</p>
+                <h1>Which Course Is Future Proof for a Fresh Graduate in 2026? — Complete Guide</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 16 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 980 300" role="img" aria-label="Fresh graduate future-proof courses overview">
+                        <defs>
+                            <marker id="ar15" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g15" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="980" height="300" fill="url(#g15)" />
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="35">FRESH GRADUATE</text>
+                            <text x="360" y="35">SKILLS TO BUILD</text>
+                            <text x="670" y="35">CAREER OUTCOMES</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="50" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Your starting point</text>
+                        <text x="50" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Degree (any stream)</text>
+                        <text x="50" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• No work experience</text>
+                        <text x="50" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Eager to learn</text>
+                        <text x="50" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Looking for direction</text>
+                        <rect x="35" y="215" width="210" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="70" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Fresh start</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="340" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Future‑proof skills</text>
+                        <text x="340" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Programming &amp; logic</text>
+                        <text x="340" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data &amp; analytics</text>
+                        <text x="340" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Cloud &amp; infrastructure</text>
+                        <text x="340" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• AI/ML &amp; security</text>
+                        <rect x="325" y="215" width="210" height="28" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">High demand</text>
+
+                        <!-- Column 3 -->
+                        <rect x="630" y="55" width="320" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="660" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Career outcomes</text>
+                        <text x="660" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Software Developer</text>
+                        <text x="660" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data Scientist / Analyst</text>
+                        <text x="660" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Cloud / DevOps Engineer</text>
+                        <text x="660" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• AI/ML / Security Engineer</text>
+                        <rect x="655" y="215" width="270" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="695" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">High salary &amp; growth</text>
+
+                        <path d="M260 160 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar15)" />
+                        <path d="M550 160 H616" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar15)" />
+                    </svg>
+                    <figcaption>Fresh graduates have a blank slate — the right course can launch a high‑growth career. All six specialisations offer excellent opportunities.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — which course is future‑proof for fresh graduates?</h2>
+                    <p><b>Every fresh graduate faces the same question: what should I learn to build a secure, well‑paid career?</b> The good news is that all six major IT specialisations are future‑proof. The better news: you can choose based on your interests, not just market trends.</p>
+                    <p>Best courses for fresh graduates in 2026:</p>
+                    <ul>
+                        <li><b>Full Stack Development</b> — the most versatile and accessible path. Build web and mobile apps.</li>
+                        <li><b>Data Science &amp; Analytics</b> — if you're curious and enjoy working with data.</li>
+                        <li><b>Cloud Computing</b> — infrastructure is the backbone of modern IT.</li>
+                        <li><b>Cybersecurity</b> — protect systems and data from threats.</li>
+                        <li><b>DevOps</b> — bridge development and operations with automation.</li>
+                        <li><b>AI &amp; Machine Learning</b> — the cutting edge of technology.</li>
+                    </ul>
+                    <p>Each offers excellent salary potential, high demand, and long‑term relevance. The best choice is the one that aligns with your natural strengths.</p>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Why fresh graduates need to choose wisely</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Top future‑proof courses — comparison</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Full Stack Development</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Data Science &amp; Analytics</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Cloud Computing</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Cybersecurity</a></li>
+                        <li><a href="#s7"><span class="n">07</span>DevOps</a></li>
+                        <li><a href="#s8"><span class="n">08</span>AI &amp; Machine Learning</a></li>
+                        <li><a href="#s9"><span class="n">09</span>How to choose — decision framework</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Step‑by‑step roadmap for fresh graduates</a></li>
+                        <li><a href="#s11"><span class="n">11</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">12</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">13</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">14</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Why fresh graduates need to choose wisely</h2>
+                <p>Your first career choice after graduation sets the trajectory for the next 5–10 years. Here's why it matters:</p>
+                <ul>
+                    <li><b>Foundation matters</b> — your first skills become your core expertise. Choose something that can scale with you.</li>
+                    <li><b>Employability</b> — some fields have thousands of openings; others are niche. Choose a field with volume and growth.</li>
+                    <li><b>Salary trajectory</b> — starting salary matters, but the growth rate matters more. AI/ML and Cloud have the steepest growth curves.</li>
+                    <li><b>Future‑proofing</b> — AI is automating repetitive tasks. Choose a field that requires human judgment, creativity, and complex problem‑solving.</li>
+                    <li><b>Transferability</b> — skills that work across industries (programming, data, cloud) offer more flexibility.</li>
+                </ul>
+                <div class="grad-tip"><i data-lucide="lightbulb" style="width:16px;height:16px;display:inline;vertical-align:-2px;color:#22C55E;"></i> <b>Key insight:</b> The best time to start is now. Your first 6–12 months after graduation are your best opportunity to learn full‑time before work and life responsibilities pile up.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Top future‑proof courses — comparison</h2>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Course</th><th>Demand (2026)</th><th>Fresher Salary (India)</th><th>Learning Curve</th><th>Best For</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Full Stack</b></td><td><span class="rating-stars"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span></td><td>₹6–10 LPA</td><td>Moderate</td><td>Versatile, web &amp; app development</td></tr>
+                            <tr><td><b>Data Science</b></td><td><span class="rating-stars"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span></td><td>₹8–14 LPA</td><td>Moderate–Steep</td><td>Curious, data‑driven</td></tr>
+                            <tr><td><b>Cloud</b></td><td><span class="rating-stars"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span></td><td>₹8–15 LPA</td><td>Moderate</td><td>Infrastructure, scalability</td></tr>
+                            <tr><td><b>Cybersecurity</b></td><td><span class="rating-stars"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></td><td>₹7–14 LPA</td><td>Moderate</td><td>Detail‑oriented, security</td></tr>
+                            <tr><td><b>DevOps</b></td><td><span class="rating-stars"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></td><td>₹7–12 LPA</td><td>Moderate</td><td>Automation, systems</td></tr>
+                            <tr><td><b>AI/ML</b></td><td><span class="rating-stars"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span></td><td>₹8–15 LPA</td><td>Steep</td><td>Math, algorithms, cutting-edge</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Full Stack Development — the most versatile</h2>
+                <p>Full Stack developers build complete web applications, covering both frontend and backend. It's the most accessible and widely‑demanded skill in the industry.</p>
+                <h3>Why it's future‑proof</h3>
+                <ul>
+                    <li>Every company needs web applications — demand is consistent and growing.</li>
+                    <li>You can work in any industry — tech, finance, healthcare, retail, government.</li>
+                    <li>It's the easiest path to freelance and remote work.</li>
+                </ul>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript (ES6+)</li>
+                    <li>React (or Angular/Vue) for frontend</li>
+                    <li>Node.js (or Django/Spring Boot) for backend</li>
+                    <li>SQL and NoSQL databases</li>
+                    <li>REST APIs and authentication</li>
+                    <li>Deployment on cloud platforms</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="badge-course">Full Stack Developer</span> <span class="badge-course">Frontend Engineer</span> <span class="badge-course">Backend Engineer</span> <span class="badge-course">Software Engineer</span></p>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Data Science &amp; Analytics — for the curious</h2>
+                <p>Data science is about extracting insights from data. If you're naturally curious and enjoy asking "why," this is your path.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Python (pandas, matplotlib, seaborn)</li>
+                    <li>SQL for data extraction</li>
+                    <li>Statistical analysis and A/B testing</li>
+                    <li>Machine learning basics (regression, classification)</li>
+                    <li>Data visualisation (Tableau, Power BI)</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="badge-course">Data Analyst</span> <span class="badge-course">Data Scientist</span> <span class="badge-course">BI Developer</span> <span class="badge-course">Analytics Manager</span></p>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Cloud Computing — infrastructure for the future</h2>
+                <p>Cloud is the backbone of modern IT. Companies are migrating to AWS, Azure, and GCP at record speed.</p>
+                <h3>Why it's future‑proof</h3>
+                <ul>
+                    <li>Cloud adoption is accelerating — spending expected to exceed $1 trillion by 2028.</li>
+                    <li>Cloud skills are among the most sought‑after by employers.</li>
+                    <li>Career paths include architecture, engineering, and consulting.</li>
+                </ul>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Cloud fundamentals (IaaS, PaaS, SaaS)</li>
+                    <li>AWS / Azure / GCP core services (EC2, S3, VPC, RDS)</li>
+                    <li>Infrastructure as Code (Terraform)</li>
+                    <li>Security and compliance in the cloud</li>
+                    <li>Cost optimisation and scaling</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="badge-course">Cloud Engineer</span> <span class="badge-course">Cloud Architect</span> <span class="badge-course">Solutions Architect</span> <span class="badge-course">DevOps Engineer</span></p>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Cybersecurity — protect what matters</h2>
+                <p>Cybersecurity professionals protect organisations from digital threats. With cyberattacks increasing, this field is critical.</p>
+                <h3>Why it's future‑proof</h3>
+                <ul>
+                    <li>Cybercrime is projected to cost $10.5 trillion annually by 2025.</li>
+                    <li>Millions of unfilled cybersecurity jobs globally.</li>
+                    <li>Rapid advancement and high job security.</li>
+                </ul>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Network security (firewalls, VPNs, IDS/IPS)</li>
+                    <li>Ethical hacking and penetration testing</li>
+                    <li>Security frameworks (NIST, ISO 27001)</li>
+                    <li>Incident response and forensics</li>
+                    <li>Identity and access management</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="badge-course">Security Analyst</span> <span class="badge-course">Penetration Tester</span> <span class="badge-course">Security Engineer</span> <span class="badge-course">CISO</span></p>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>DevOps — bridge development and operations</h2>
+                <p>DevOps automates software delivery and infrastructure management. It's a high‑growth field with strong salary progression.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Linux system administration and scripting</li>
+                    <li>CI/CD pipelines (Jenkins, GitHub Actions)</li>
+                    <li>Containerisation (Docker, Kubernetes)</li>
+                    <li>Infrastructure as Code (Terraform, Ansible)</li>
+                    <li>Monitoring (Prometheus, Grafana, ELK)</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="badge-course">DevOps Engineer</span> <span class="badge-course">Site Reliability Engineer</span> <span class="badge-course">Release Manager</span> <span class="badge-course">Cloud Engineer</span></p>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>AI &amp; Machine Learning — the cutting edge</h2>
+                <p>AI/ML is arguably the most future‑proof field. It involves building algorithms that learn from data and make predictions.</p>
+                <h3>Why it's future‑proof</h3>
+                <ul>
+                    <li>AI is being adopted across every industry.</li>
+                    <li>Demand for ML engineers is growing at ~30% annually.</li>
+                    <li>Salaries are among the highest in tech.</li>
+                </ul>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Python (pandas, numpy, scikit‑learn)</li>
+                    <li>Deep learning (TensorFlow, PyTorch)</li>
+                    <li>Statistics, linear algebra, calculus</li>
+                    <li>Natural Language Processing (NLP) and Computer Vision</li>
+                    <li>Model deployment (MLOps)</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="badge-course">ML Engineer</span> <span class="badge-course">AI Engineer</span> <span class="badge-course">Data Scientist</span> <span class="badge-course">Research Scientist</span></p>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>How to choose — decision framework</h2>
+                <p>Ask yourself these questions:</p>
+                <ul>
+                    <li><b>Do you enjoy building things you can see?</b> → Full Stack</li>
+                    <li><b>Do you love working with data and numbers?</b> → Data Science or AI/ML</li>
+                    <li><b>Do you like infrastructure and systems?</b> → Cloud or DevOps</li>
+                    <li><b>Are you detail‑oriented and security‑conscious?</b> → Cybersecurity</li>
+                    <li><b>Do you prefer a moderate learning curve?</b> → Full Stack, Cloud, or DevOps</li>
+                    <li><b>Are you willing to invest in advanced math?</b> → AI/ML or Data Science</li>
+                </ul>
+                <div class="grad-tip"><i data-lucide="lightbulb" style="width:16px;height:16px;display:inline;vertical-align:-2px;color:#22C55E;"></i> <b>Tip:</b> You can always start with Full Stack and later specialise. Many AI/ML engineers and DevOps professionals started as developers.</div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Step‑by‑step roadmap for fresh graduates</h2>
+                <p>Here's a realistic 6–12 month plan for a fresh graduate starting from zero:</p>
+                <ol class="steps">
+                    <li><b>Month 1–3: Foundations</b> — Choose a language (Python or JavaScript). Learn programming fundamentals, data structures, and basic algorithms. Build 2–3 small projects.</li>
+                    <li><b>Month 4–6: Specialisation</b> — Dive deep into your chosen field. Take advanced courses, earn certifications, and build 2–3 solid projects.</li>
+                    <li><b>Month 7–9: Portfolio &amp; Open Source</b> — Contribute to open‑source projects, write technical blog posts, and create a GitHub portfolio.</li>
+                    <li><b>Month 10–12: Interview Prep &amp; Jobs</b> — Practise coding challenges, system design, and behavioural questions. Apply for internships and junior roles.</li>
+                </ol>
+                <p>Consistent effort (10–15 hours/week) will make you job‑ready in 9–12 months. With full‑time focus, you can accelerate to 6 months.</p>
+
+                <!-- ===== S11 ===== -->
+                <h2 id="s11"><span class="num">SECTION 11</span>Interview Q&amp;A — for fresh graduates</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Which course should a fresh graduate choose in 2026?</summary>
+                    <div class="body"><p>All six are excellent. Full Stack is the most accessible and versatile. Data Science and AI/ML have the highest long‑term growth. Cloud and DevOps offer strong salaries and remote opportunities. Choose based on your interests.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>Do I need a master's degree to get into AI/ML?</summary>
+                    <div class="body"><p>Not necessarily. Many AI/ML engineers have only a bachelor's with strong projects and certifications. A master's can help but isn't mandatory. Focus on building a solid portfolio.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>Which course has the easiest learning curve for a beginner?</summary>
+                    <div class="body"><p>Full Stack and Cloud have moderate learning curves. They require less advanced math than AI/ML or Data Science. Start with JavaScript or Python and build from there.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>What certifications should I pursue as a fresh graduate?</summary>
+                    <div class="body"><p>For Cloud: AWS Certified Solutions Architect. For Cybersecurity: CEH or CompTIA Security+. For DevOps: Docker Certified Associate. For AI/ML: TensorFlow Developer Certificate. For Full Stack: portfolio projects matter more than certifications.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>Can I switch between these fields later?</summary>
+                    <div class="body"><p>Yes. Many skills overlap (programming, databases, Linux). For example, a Full Stack developer can transition to DevOps or Cloud with additional training. The core fundamentals remain valuable.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>Which field pays the most for freshers?</summary>
+                    <div class="body"><p>AI/ML and Cloud roles tend to pay the highest for freshers, with Data Science close behind. However, all fields offer excellent salaries after 3–5 years of experience.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>What should I include in my portfolio as a fresher?</summary>
+                    <div class="body"><p>For Full Stack: a complete web app with authentication and database. For Data Science: a predictive model deployed as an API. For Cloud: a multi‑tier architecture on AWS. Always include documentation and a live demo link.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Is my non‑CS degree a disadvantage?</summary>
+                    <div class="body"><p>Not at all. Employers value skills, projects, and certifications over the degree name. With the right upskilling, you can compete with CS graduates. In fact, diverse backgrounds are increasingly valued in tech.</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 12</span>Test yourself — future‑proof course selection</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 13</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Which course is best for a fresh graduate with no technical background?</summary><div class="body"><p>Full Stack Development is the most accessible. It has abundant resources and a clear learning path. Cloud and DevOps are also good options if you enjoy infrastructure.</p></div></details>
+                <details class="acc"><summary>Is AI/ML too difficult for a fresh graduate?</summary><div class="body"><p>Not at all. With dedication and the right resources, fresh graduates can learn AI/ML. Start with Python and statistics, then gradually move to ML libraries.</p></div></details>
+                <details class="acc"><summary>Which field has the most remote job opportunities?</summary><div class="body"><p>Cloud, DevOps, and Full Stack have abundant remote roles. Cybersecurity and Data Science also offer many remote positions.</p></div></details>
+                <details class="acc"><summary>Should I choose a single course or learn multiple?</summary><div class="body"><p>Focus on one primary specialisation to build depth. You can add adjacent skills later (e.g., Full Stack + DevOps). Depth is more valued than breadth for freshers.</p></div></details>
+                <details class="acc"><summary>How important are certifications for freshers?</summary><div class="body"><p>Certifications are valuable but not mandatory. They help validate your skills, especially for Cloud and Cybersecurity. For Full Stack and AI/ML, projects matter more.</p></div></details>
+                <details class="acc"><summary>Can I get a job in these fields without internships?</summary><div class="body"><p>Yes, but internships make it easier. If you don't have one, focus on building a strong portfolio of real‑world projects and contributing to open‑source.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 14</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Full Stack development roadmap 2026</span><span class="m">Web · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Data science roadmap for fresh graduates</span><span class="m">Data · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">AWS certification — step‑by‑step plan</span><span class="m">Cloud · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Cybersecurity career guide for beginners</span><span class="m">Security · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">DevOps — the complete guide</span><span class="m">DevOps · 22 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">How to build a tech portfolio as a fresher</span><span class="m">Career · 12 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Start your career with our job‑ready programmes</h3>
+                    <p>Our Full Stack, Data Science, Cloud, Cybersecurity, DevOps, and AI/ML programmes are designed for fresh graduates. Get hands‑on projects, industry certifications, and placement support.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                        <li>Placement support</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4><i data-lucide="graduation-cap" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Free demo class</h4>
+                    <div class="big">Find your perfect course</div>
+                    <p>Attend a live session across any of our future‑proof courses — Full Stack, Data Science, Cloud, Cybersecurity, DevOps, or AI/ML.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <i data-lucide="file-text" style="width:26px;height:26px;stroke:#FF5421;stroke-width:1.8;flex:none;"></i>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes course comparison</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4><i data-lucide="book-open" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Fresh graduate to Full Stack — roadmap</a></li>
+                        <li><a href="#"><span class="rank">02</span>Fresh graduate to Data Science — step guide</a></li>
+                        <li><a href="#"><span class="rank">03</span>Fresh graduate to Cloud — certification path</a></li>
+                        <li><a href="#"><span class="rank">04</span>Fresh graduate to DevOps — beginner's guide</a></li>
+                        <li><a href="#"><span class="rank">05</span>How to build a portfolio as a fresher</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="help-circle" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Full Stack · 80 questions</a></li>
+                        <li><a href="#">Data Science · 70 questions</a></li>
+                        <li><a href="#">Cloud · 50 questions</a></li>
+                        <li><a href="#">Cybersecurity · 55 questions</a></li>
+                        <li><a href="#">DevOps · 45 questions</a></li>
+                        <li><a href="#">AI/ML · 60 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Future‑Proof Courses</div>
+                    <p>Full Stack, Data Science, Cloud, Cybersecurity, DevOps, and AI/ML — all with live projects and placement support.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="briefcase" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">20+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">10</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going — fresh graduate career guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Full Stack development roadmap 2026 <small>Step‑by‑step plan</small></a></li>
+                    <li><a href="#">Data science roadmap for freshers <small>Projects and certifications</small></a></li>
+                    <li><a href="#">Cloud certification path <small>AWS, Azure, GCP</small></a></li>
+                    <li><a href="#">How to build a tech portfolio <small>For freshers</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Full Stack Engineer roadmap <small>Frontend → Backend → DevOps</small></a></li>
+                    <li><a href="#">Data Scientist roadmap <small>SQL → Python → ML</small></a></li>
+                    <li><a href="#">Cloud Architect roadmap <small>Fundamentals → Advanced</small></a></li>
+                    <li><a href="#">DevOps Engineer roadmap <small>Linux → CI/CD → Cloud</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Career decision matrix <small>Choose your course</small></a></li>
+                    <li><a href="#">Python cheat sheet <small>For data &amp; web</small></a></li>
+                    <li><a href="#">Cloud certification guide <small>AWS, Azure, GCP</small></a></li>
+                    <li><a href="#">Portfolio project ideas <small>For freshers</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Top IT skills for 2026 — fresher perspective <small>16 August 2026</small></a></li>
+                    <li><a href="#">How to choose between Full Stack and Data Science <small>14 August 2026</small></a></li>
+                    <li><a href="#">Cloud vs DevOps — which to learn first? <small>12 August 2026</small></a></li>
+                    <li><a href="#">Cybersecurity certifications for freshers <small>10 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We offer future‑proof courses in Full Stack, Data Science, Cloud, Cybersecurity, DevOps, and AI/ML — with placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">AI &amp; Machine Learning</a></li>
+                        <li><a href="#">Data Science &amp; Analytics</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">DevOps</a></li>
+                        <li><a href="#">Backend with Python</a></li>
+                        <li><a href="#">AWS &amp; Big Data</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        UncodemyPage.init({
+            SCENARIOS: {
+                fullstack: { demand: "★★★★★", salary: "₹6–10 LPA", curve: "Moderate" },
+                datascience: { demand: "★★★★★", salary: "₹8–14 LPA", curve: "Moderate–Steep" },
+                cloud: { demand: "★★★★★", salary: "₹8–15 LPA", curve: "Moderate" },
+                cyber: { demand: "★★★★", salary: "₹7–14 LPA", curve: "Moderate" },
+                devops: { demand: "★★★★", salary: "₹7–12 LPA", curve: "Moderate" },
+                aiml: { demand: "★★★★★", salary: "₹8–15 LPA", curve: "Steep" }
+            },
+            stateOrder: ["fullstack", "datascience", "cloud", "cyber", "devops", "aiml"],
+            renderScene: function(s) {
+                document.getElementById("demandVal").textContent = s.demand;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("curveVal").textContent = s.curve;
+            },
+            defaultTrack: "Career Advice",
+            emptyMsg: 'Nothing matches that yet. Try “Full Stack”, “Cloud” or “Data Science”.',
+            LIB: [
+                { t: "Future proof courses for fresh graduates 2026 — complete guide", g: "Career Advice" },
+                { t: "Full Stack development roadmap for beginners", g: "Full Stack" },
+                { t: "Data Science roadmap for fresh graduates", g: "Data Science" },
+                { t: "Cloud computing certifications for freshers", g: "Cloud" },
+                { t: "Cybersecurity career path for beginners", g: "Cybersecurity" },
+                { t: "DevOps — complete guide for freshers", g: "DevOps" },
+                { t: "AI/ML career guide for freshers", g: "AI/ML" },
+                { t: "How to choose between Full Stack and Data Science", g: "Career Advice" },
+                { t: "Best IT certifications for fresh graduates", g: "Career Advice" },
+                { t: "How to build a portfolio as a fresher", g: "Career Advice" }
+            ],
+            QUIZ: [{
+                q: "Which course is most versatile and has the most entry‑level opportunities?",
+                o: ["AI/ML", "Full Stack Development", "Data Science", "DevOps"],
+                a: 1,
+                e: "Full Stack Development has the most entry‑level opportunities and is the most versatile path. It's also the most widely taught."
+            }, {
+                q: "Which course requires the least advanced math?",
+                o: ["AI/ML", "Data Science", "Full Stack", "Cybersecurity"],
+                a: 2,
+                e: "Full Stack, Cloud, and DevOps require minimal advanced math. Cybersecurity also has moderate math requirements."
+            }, {
+                q: "What is the best way to demonstrate your skills as a fresh graduate?",
+                o: ["Certifications", "College grades", "Portfolio projects", "Resume"],
+                a: 2,
+                e: "Portfolio projects are the most effective way to demonstrate practical skills. They show you can apply knowledge to real‑world problems."
+            }, {
+                q: "Which course has the most remote job opportunities?",
+                o: ["Cybersecurity", "Full Stack", "Cloud & DevOps", "All of the above"],
+                a: 3,
+                e: "All of these fields have abundant remote opportunities. Cloud, DevOps, and Full Stack are particularly remote‑friendly."
+            }, {
+                q: "Which certification is most recognised for cloud computing?",
+                o: ["CEH", "AWS Certified Solutions Architect", "TensorFlow Developer", "PMP"],
+                a: 1,
+                e: "AWS Certified Solutions Architect is one of the most recognised cloud certifications, followed by Azure and GCP equivalents."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You're well‑informed about future‑proof courses! Now choose one based on your interest and start learning.",
+                fail: "Revisit sections 02 to 08 — understanding the details of each course will help you make a confident decision."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

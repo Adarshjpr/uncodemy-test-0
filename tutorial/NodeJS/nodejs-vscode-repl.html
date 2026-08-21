@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting Up VS Code &amp; REPL Terminal for Node.js Development | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Complete guide to setting up Visual Studio Code for Node.js development — extensions, debugging, integrated terminal, and mastering the Node.js REPL." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 6 of 12: Setting Up VS Code &amp; REPL Terminal for Node.js Development</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html" class="active"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-code"></i> Development</span>
+        <h1>Setting Up VS Code &amp; REPL Terminal for Node.js Development</h1>
+
+        <div class="card">
+
+            <p>Your development environment is where you'll spend the majority of your time as a Node.js developer. <strong>Visual Studio Code (VS Code)</strong> is the most popular code editor for Node.js development — and for good reason. Combined with the <strong>Node.js REPL</strong> (Read-Eval-Print Loop), you have a powerful setup for building, testing, and debugging applications.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> A well-configured IDE with proper extensions, debugging setup, and linting rules will catch errors before they reach production. The time invested in setting up your development environment is one of the highest-ROI activities you can do.
+            </div>
+
+            <h2>1. Why VS Code for Node.js?</h2>
+
+            <ul>
+                <li><strong>Free &amp; Open Source:</strong> No licensing costs, active community.</li>
+                <li><strong>Excellent Node.js Integration:</strong> Built-in debugging, terminal, and Git support.</li>
+                <li><strong>Massive Extension Ecosystem:</strong> Thousands of extensions for every need.</li>
+                <li><strong>Cross-Platform:</strong> Works on Windows, macOS, and Linux.</li>
+                <li><strong>Lightweight:</strong> Fast startup and low memory usage.</li>
+                <li><strong>IntelliSense:</strong> Smart code completion for JavaScript/TypeScript.</li>
+            </ul>
+
+            <h2>2. Installing VS Code</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Platform</th><th>Method</th><th>Command/Download</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Windows</strong></td><td>Official Installer</td><td><a href="https://code.visualstudio.com/Download" target="_blank">Download from code.visualstudio.com</a></td></tr>
+                        <tr><td><strong>macOS</strong></td><td>Official Installer / Homebrew</td><td><code>brew install --cask visual-studio-code</code></td></tr>
+                        <tr><td><strong>Linux (Ubuntu/Debian)</strong></td><td>Debian Package</td><td><code>sudo dpkg -i code_*.deb</code> or <a href="https://code.visualstudio.com/Download" target="_blank">Download .deb</a></td></tr>
+                        <tr><td><strong>Linux (Snap)</strong></td><td>Snap</td><td><code>sudo snap install --classic code</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Essential VS Code Extensions for Node.js</h2>
+
+            <p>These extensions will dramatically improve your Node.js development experience:</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Extension</th><th>Description</th><th>Publisher</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>ESLint</strong></td><td>JavaScript linting (find and fix problems)</td><td>Microsoft</td></tr>
+                        <tr><td><strong>Prettier</strong></td><td>Code formatter (consistent code style)</td><td>Prettier</td></tr>
+                        <tr><td><strong>NPM IntelliSense</strong></td><td>Auto-completes npm module imports</td><td>Christian Kohler</td></tr>
+                        <tr><td><strong>Node.js Modules</strong></td><td>Auto-completion for Node.js core modules</td><td>LeetCode</td></tr>
+                        <tr><td><strong>REST Client</strong></td><td>Test APIs directly from VS Code</td><td>Huachao Mao</td></tr>
+                        <tr><td><strong>GitLens</strong></td><td>Git history, blame annotations, and more</td><td>GitKraken</td></tr>
+                        <tr><td><strong>Thunder Client</strong></td><td>API testing (Postman alternative)</td><td>Ranga Vadhineni</td></tr>
+                        <tr><td><strong>DotENV</strong></td><td>Syntax highlighting for .env files</td><td>mikestead</td></tr>
+                        <tr><td><strong>Better Comments</strong></td><td>Color-coded comments (TODO, FIXME)</td><td>Aaron Bond</td></tr>
+                        <tr><td><strong>Error Lens</strong></td><td>Inline error highlighting</td><td>Usernamehw</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>How to Install Extensions</h3>
+            <pre class="code-block"><code># From command line
+code --install-extension ms-vscode.vscode-typescript-next
+code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+
+# Or search by name in VS Code's Extensions panel (Ctrl+Shift+X)</code></pre>
+
+            <h2>4. VS Code Settings for Node.js</h2>
+
+            <p>Add these settings to your <code>settings.json</code> file for an optimized Node.js development experience:</p>
+
+            <pre class="code-block"><code>{
+    // Format on save
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // ESLint auto-fix on save
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+
+    // Use Node.js for terminals
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+
+    // Auto-import suggestions
+    "typescript.suggest.autoImports": true,
+    "javascript.suggest.autoImports": true,
+
+    // Show npm scripts in explorer
+    "npm.enableScriptExplorer": true,
+
+    // Auto-close tags (HTML/JSX)
+    "html.autoClosingTags": true,
+    "javascript.autoClosingTags": true,
+    "typescript.autoClosingTags": true
+}</code></pre>
+
+            <h2>5. Debugging Node.js Applications in VS Code</h2>
+
+            <p>VS Code has built-in debugging support for Node.js. You can debug with breakpoints, step through code, inspect variables, and view the call stack.</p>
+
+            <h3>Method 1: Run &amp; Debug (Auto-attach)</h3>
+            <ol>
+                <li>Open your Node.js project in VS Code.</li>
+                <li>Press <code>Ctrl+Shift+D</code> (or <code>Cmd+Shift+D</code> on macOS) to open the Debug panel.</li>
+                <li>Click the "Run and Debug" button and select "Node.js".</li>
+                <li>VS Code will automatically attach to your Node.js process.</li>
+            </ol>
+
+            <h3>Method 2: Configure launch.json</h3>
+            <p>Create a <code>.vscode/launch.json</code> file for more control:</p>
+            <pre class="code-block"><code>{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/index.js",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["--max-old-space-size=4096"]
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 9229,
+            "restart": true,
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Tests",
+            "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+            "args": ["--runInBand"],
+            "console": "integratedTerminal"
+        }
+    ]
+}</code></pre>
+
+            <h3>Debugging with Breakpoints</h3>
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>To set a breakpoint:</strong> Click in the gutter (left margin) next to a line number. A red dot will appear.</p>
+                <p><strong>To start debugging:</strong> Press <code>F5</code> or click the green play button.</p>
+                <p><strong>To step through:</strong> Use <code>F10</code> (Step Over), <code>F11</code> (Step Into), or <code>Shift+F11</code> (Step Out).</p>
+                <p><strong>To inspect variables:</strong> Hover over any variable in the editor or view the VARIABLES panel.</p>
+            </div>
+
+            <h2>6. Integrated Terminal in VS Code</h2>
+
+            <p>The integrated terminal allows you to run npm commands, start your Node.js server, and execute scripts without leaving the editor.</p>
+
+            <ul>
+                <li>Open terminal: <code>Ctrl+`</code> (or <code>Cmd+`</code> on macOS)</li>
+                <li>Create a new terminal: <code>Ctrl+Shift+`</code></li>
+                <li>Split terminal: <code>Ctrl+Shift+5</code></li>
+                <li>Run npm scripts: Click the "Run" icon that appears above npm scripts in package.json</li>
+            </ul>
+
+            <h2>7. The Node.js REPL (Read-Eval-Print Loop)</h2>
+
+            <p>The <strong>REPL</strong> is an interactive shell where you can execute JavaScript code instantly. It's perfect for testing snippets, experimenting with Node.js APIs, and debugging on the fly.</p>
+
+            <h3>Starting the REPL</h3>
+            <pre class="code-block"><code># In your terminal
+node
+
+# You'll see:
+# Welcome to Node.js v22.x.x.
+# Type ".help" for more information.
+# ></code></pre>
+
+            <h3>Basic REPL Usage</h3>
+            <pre class="code-block"><code>// Simple arithmetic
+> 2 + 2
+4
+
+// Variables
+> const greeting = 'Hello, Node.js!';
+undefined
+> greeting
+'Hello, Node.js!'
+
+// Functions
+> const add = (a, b) => a + b;
+undefined
+> add(5, 3)
+8
+
+// Arrays & Objects
+> const user = { name: 'John', age: 30 };
+undefined
+> user.name
+'John'</code></pre>
+
+            <h3>REPL Features</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Feature</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Autocomplete</strong></td><td>Press Tab to autocomplete</td><td><code>cons</code> → <code>console</code></td></tr>
+                        <tr><td><strong>Editor Mode</strong></td><td>Write multi-line code</td><td><code>.editor</code></td></tr>
+                        <tr><td><strong>Load File</strong></td><td>Load and execute a file</td><td><code>.load app.js</code></td></tr>
+                        <tr><td><strong>Save Session</strong></td><td>Save REPL session to file</td><td><code>.save session.txt</code></td></tr>
+                        <tr><td><strong>Help</strong></td><td>Show available commands</td><td><code>.help</code></td></tr>
+                        <tr><td><strong>Exit</strong></td><td>Exit REPL</td><td><code>.exit</code> or <code>Ctrl+C</code> twice</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Using .editor Mode</h3>
+            <p>Write multi-line functions easily in the REPL:</p>
+            <pre class="code-block"><code>> .editor
+// Entering editor mode (Ctrl+D to finish)
+function calculateTotal(items) {
+    return items.reduce((sum, item) => sum + item.price, 0);
+}
+
+// Calculate total
+const cart = [{ price: 10 }, { price: 20 }, { price: 30 }];
+calculateTotal(cart);
+
+// Output after Ctrl+D:
+// 60
+> </code></pre>
+
+            <h3>Loading Files in REPL</h3>
+            <pre class="code-block"><code>// Load and execute a JavaScript file
+> .load app.js
+// Output: [file content and execution results]
+
+// Load a module
+> const fs = require('fs');
+undefined
+> fs.readFileSync('.help') // Shows help content</code></pre>
+
+            <h3>Using REPL for Quick Testing</h3>
+            <pre class="code-block"><code>// Test a regular expression
+> const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+undefined
+> regex.test('user@example.com')
+true
+> regex.test('invalid-email')
+false
+
+// Test a Node.js API
+> const path = require('path');
+undefined
+> path.join('/user', 'docs', 'file.txt')
+'/user/docs/file.txt'
+> path.extname('file.txt')
+'.txt'</code></pre>
+
+            <h2>8. VS Code Extensions for REPL Enhancement</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Extension</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Code Runner</strong></td><td>Run code snippets directly in VS Code</td></tr>
+                        <tr><td><strong>Quokka.js</strong></td><td>Real-time code execution feedback</td></tr>
+                        <tr><td><strong>JavaScript REPL</strong></td><td>Run JavaScript in VS Code's integrated terminal</td></tr>
+                        <tr><td><strong>Node.js REPL</strong></td><td>Node.js REPL inside VS Code</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>9. Common Issues &amp; Solutions</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 1: "command not found: node" in VS Code terminal</strong></p>
+                <p><strong>Solution:</strong> VS Code uses your system's PATH. Restart VS Code after installing Node.js. If it persists:</p>
+                <ul>
+                    <li>Windows: Add Node.js to your PATH in System Environment Variables.</li>
+                    <li>macOS/Linux: Check if Node.js is in your shell profile (<code>echo $PATH</code>).</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 2: ESLint not working</strong></p>
+                <p><strong>Solution:</strong> Make sure ESLint is installed locally (<code>npm install eslint --save-dev</code>). Install the ESLint extension and run <code>npx eslint --init</code> to generate config.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 3: Debugger not attaching</strong></p>
+                <p><strong>Solution:</strong> Start your Node.js application with the <code>--inspect</code> flag:</p>
+                <pre class="code-block"><code>node --inspect app.js
+# Or with a specific port
+node --inspect=9229 app.js</code></pre>
+                <p>Then use the "Attach to Process" configuration in launch.json.</p>
+            </div>
+
+            <h2>10. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Install VS Code</strong> — Latest version from code.visualstudio.com.</li>
+                <li><strong>✅ Install essential extensions</strong> — ESLint, Prettier, GitLens, npm IntelliSense.</li>
+                <li><strong>✅ Configure ESLint</strong> — <code>npx eslint --init</code> and add rules.</li>
+                <li><strong>✅ Set up Prettier</strong> — Add <code>.prettierrc</code> and format on save.</li>
+                <li><strong>✅ Configure launch.json</strong> — Set up debugging configurations.</li>
+                <li><strong>✅ Add .vscode folder</strong> — Share settings with your team.</li>
+                <li><strong>✅ Use integrated terminal</strong> — Run npm commands without leaving VS Code.</li>
+                <li><strong>✅ Master the REPL</strong> — Use it for testing and exploration.</li>
+                <li><strong>✅ Install Git</strong> — Version control is essential.</li>
+                <li><strong>✅ Set up .gitignore</strong> — Exclude node_modules/, .env, and dist/.</li>
+                <li><strong>✅ Use workspace settings</strong> — Project-specific settings in <code>.vscode/settings.json</code>.</li>
+                <li><strong>✅ Enable auto-save</strong> — Reduces the risk of losing changes.</li>
+            </ul>
+
+            <h2>11. Quick Reference — VS Code Shortcuts for Node.js Developers</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Shortcut</th><th>Action</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>Ctrl+`</code> (Cmd+`)</td><td>Open Integrated Terminal</td></tr>
+                        <tr><td><code>Ctrl+Shift+D</code></td><td>Open Debug Panel</td></tr>
+                        <tr><td><code>F5</code></td><td>Start Debugging</td></tr>
+                        <tr><td><code>Ctrl+Shift+X</code></td><td>Open Extensions Panel</td></tr>
+                        <tr><td><code>Ctrl+P</code></td><td>Quick Open (find files)</td></tr>
+                        <tr><td><code>Ctrl+Shift+P</code></td><td>Command Palette</td></tr>
+                        <tr><td><code>Ctrl+Space</code></td><td>Trigger IntelliSense</td></tr>
+                        <tr><td><code>F12</code></td><td>Go to Definition</td></tr>
+                        <tr><td><code>Shift+F12</code></td><td>Find All References</td></tr>
+                        <tr><td><code>Ctrl+Shift+F</code></td><td>Search Across Files</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> Your development environment is your cockpit. A well-configured VS Code setup with linting, formatting, and debugging will make you significantly more productive. The REPL is a powerful tool for testing and exploration — use it often to validate your code before writing full files.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-installation-cli.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Node.js Installation Guide &amp; CLI Basics</a>
+            <a href="nodejs-code-execution.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Exploring Node.js Code Execution Process</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

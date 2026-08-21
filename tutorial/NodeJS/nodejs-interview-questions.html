@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Prepare for your Node.js interview with 80+ curated questions and answers — from basics to advanced topics including event loop, clustering, streams, and security." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 12 of 12: Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html" class="active"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-comments"></i> Interview Preparation</span>
+        <h1>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</h1>
+
+        <div class="card">
+
+            <p>This comprehensive guide covers the most frequently asked Node.js interview questions — from basic concepts to advanced topics. Whether you're a fresher preparing for your first interview or an experienced developer aiming for a senior role, these questions will help you succeed.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Interview Tip:</strong> Practice explaining concepts out loud. Write code on paper. Focus on understanding the <strong>why</strong> behind each answer — interviewers value deep understanding over memorization.
+            </div>
+
+            <h2>Section 1: Node.js Basics</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q1. What is Node.js?</strong></p>
+                <p><strong>Answer:</strong> Node.js is an open-source, cross-platform JavaScript runtime environment built on Chrome's V8 engine. It allows JavaScript to run on the server side, enabling developers to build scalable, high-performance applications.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q2. Is Node.js single-threaded or multi-threaded?</strong></p>
+                <p><strong>Answer:</strong> Node.js is single-threaded for JavaScript execution (using the event loop) but uses a thread pool (via libuv) for I/O operations. The main thread handles all requests, while background threads handle I/O operations asynchronously.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q3. What is the difference between Node.js and JavaScript?</strong></p>
+                <p><strong>Answer:</strong> JavaScript is a programming language that runs in browsers. Node.js is a runtime environment that executes JavaScript outside the browser, providing APIs for file system, networking, and other server-side operations.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q4. What is npm?</strong></p>
+                <p><strong>Answer:</strong> npm (Node Package Manager) is the default package manager for Node.js. It allows developers to install, manage, and share reusable packages (libraries) from the npm registry — the largest software registry in the world.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q5. What is the difference between <code>require</code> and <code>import</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>require</code> is the CommonJS module system (synchronous, dynamic), while <code>import</code> is the ES module system (asynchronous, static). ES modules support tree shaking and better static analysis.</p>
+            </div>
+
+            <h2>Section 2: Event Loop &amp; Asynchronous Programming</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q6. What is the event loop in Node.js?</strong></p>
+                <p><strong>Answer:</strong> The event loop is a mechanism that allows Node.js to perform non-blocking I/O operations despite being single-threaded. It continuously checks the call stack and callback queue, moving callbacks to the stack when it's empty.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q7. What are the phases of the event loop?</strong></p>
+                <p><strong>Answer:</strong> The event loop has six phases:</p>
+                <ol>
+                    <li><strong>Timers:</strong> Executes callbacks scheduled by setTimeout/setInterval.</li>
+                    <li><strong>Pending Callbacks:</strong> Executes I/O callbacks (errors).</li>
+                    <li><strong>Idle/Prepare:</strong> Internal use only.</li>
+                    <li><strong>Poll:</strong> Retrieves new I/O events and executes callbacks.</li>
+                    <li><strong>Check:</strong> Executes setImmediate() callbacks.</li>
+                    <li><strong>Close Callbacks:</strong> Executes close/cleanup callbacks.</li>
+                </ol>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q8. What is the difference between <code>setTimeout</code> and <code>setImmediate</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>setImmediate</code> executes in the "Check" phase after I/O events, while <code>setTimeout(fn, 0)</code> executes in the "Timers" phase. In practice, the order depends on when the event loop enters each phase, but <code>setImmediate</code> generally executes before <code>setTimeout(fn, 0)</code>.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q9. What is <code>process.nextTick()</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>process.nextTick()</code> schedules a callback to be executed in the current phase of the event loop, immediately after the current operation completes — before the next event loop phase starts.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q10. What is "callback hell" and how do you avoid it?</strong></p>
+                <p><strong>Answer:</strong> "Callback hell" is deeply nested callbacks that make code hard to read and maintain. Avoid it using:</p>
+                <ul>
+                    <li>Promises with async/await</li>
+                    <li>Modularization (breaking into smaller functions)</li>
+                    <li>Using libraries like async.js</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q11. What is the difference between blocking and non-blocking code in Node.js?</strong></p>
+                <p><strong>Answer:</strong> Blocking code (e.g., <code>fs.readFileSync</code>) stops the event loop until the operation completes. Non-blocking code (e.g., <code>fs.readFile</code>) delegates the operation to libuv and continues execution, allowing other operations to run while waiting for I/O.</p>
+            </div>
+
+            <h2>Section 3: Core Modules</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q12. What are the core modules in Node.js?</strong></p>
+                <p><strong>Answer:</strong> Core modules are built-in modules that come with Node.js installation:</p>
+                <ul>
+                    <li><code>fs</code> — File system operations</li>
+                    <li><code>path</code> — Path manipulation</li>
+                    <li><code>http/https</code> — HTTP/HTTPS servers</li>
+                    <li><code>os</code> — Operating system info</li>
+                    <li><code>events</code> — Event emitter</li>
+                    <li><code>crypto</code> — Cryptography</li>
+                    <li><code>util</code> — Utility functions</li>
+                    <li><code>stream</code> — Streaming data</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q13. What is the <code>fs</code> module used for?</strong></p>
+                <p><strong>Answer:</strong> The <code>fs</code> (File System) module provides an API for interacting with the file system — reading/writing files, creating/deleting directories, getting file stats, watching for changes, and streaming file data.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q14. What is the <code>events</code> module and how does it work?</strong></p>
+                <p><strong>Answer:</strong> The <code>events</code> module provides the EventEmitter class, which implements the observer pattern. Objects can emit events and listeners can subscribe to those events.</p>
+                <pre class="code-block"><code>const EventEmitter = require('events');
+const emitter = new EventEmitter();
+emitter.on('event', (data) => console.log(data));
+emitter.emit('event', 'Hello!');</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q15. What is the <code>crypto</code> module used for?</strong></p>
+                <p><strong>Answer:</strong> The <code>crypto</code> module provides cryptographic functionality — hashing (SHA, MD5), HMAC, random number generation, encryption/decryption (AES), and password-based key derivation (PBKDF2).</p>
+            </div>
+
+            <h2>Section 4: Express.js &amp; Routing</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q16. What is Express.js?</strong></p>
+                <p><strong>Answer:</strong> Express.js is a minimal, unopinionated web framework for Node.js. It provides a thin layer of fundamental web application features — routing, middleware, templating, and HTTP utilities — without obscuring Node.js features.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q17. What is middleware in Express?</strong></p>
+                <p><strong>Answer:</strong> Middleware is a function that has access to the request and response objects and the next middleware function. It can:</p>
+                <ul>
+                    <li>Execute any code</li>
+                    <li>Modify the request/response</li>
+                    <li>End the request-response cycle</li>
+                    <li>Call the next middleware</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q18. What are the types of middleware in Express?</strong></p>
+                <p><strong>Answer:</strong> Express has several types:</p>
+                <ul>
+                    <li><strong>Application-level:</strong> <code>app.use()</code></li>
+                    <li><strong>Router-level:</strong> <code>router.use()</code></li>
+                    <li><strong>Error-handling:</strong> <code>app.use((err, req, res, next) => {})</code></li>
+                    <li><strong>Built-in:</strong> <code>express.json()</code>, <code>express.static()</code></li>
+                    <li><strong>Third-party:</strong> <code>cors()</code>, <code>helmet()</code></li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q19. How do you handle errors in Express.js?</strong></p>
+                <p><strong>Answer:</strong> Use error-handling middleware with four parameters:</p>
+                <pre class="code-block"><code>app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(err.status || 500).json({
+        error: err.message || 'Internal server error'
+    });
+});</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q20. What is the purpose of <code>express.Router()</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>express.Router()</code> creates modular, mountable route handlers. It helps organize routes into separate modules, making the codebase more maintainable and scalable.</p>
+            </div>
+
+            <h2>Section 5: Databases &amp; Authentication</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q21. What is JWT and how is it used in Node.js?</strong></p>
+                <p><strong>Answer:</strong> JWT (JSON Web Token) is a compact, URL-safe token format for secure data exchange. In Node.js, it's used for stateless authentication:</p>
+                <pre class="code-block"><code>const jwt = require('jsonwebtoken');
+const token = jwt.sign({ userId: 123 }, 'secret', { expiresIn: '1h' });
+const decoded = jwt.verify(token, 'secret');</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q22. What is the difference between authentication and authorization?</strong></p>
+                <p><strong>Answer:</strong> Authentication verifies <em>who</em> the user is (login), while authorization determines <em>what</em> the user can do (roles, permissions). Authentication always comes before authorization.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q23. How do you hash passwords in Node.js?</strong></p>
+                <p><strong>Answer:</strong> Use bcrypt with high salt rounds (12+):</p>
+                <pre class="code-block"><code>const bcrypt = require('bcrypt');
+const hash = await bcrypt.hash(password, 12);
+const isValid = await bcrypt.compare(password, hash);</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q24. What is the difference between SQL and NoSQL databases in Node.js?</strong></p>
+                <p><strong>Answer:</strong> SQL databases (PostgreSQL, MySQL) are relational with schemas, ACID transactions, and SQL queries. NoSQL databases (MongoDB) are schema-less, document-based, and horizontally scalable. Node.js works well with both, but MongoDB is often preferred for its JSON-like document structure.</p>
+            </div>
+
+            <h2>Section 6: Streaming &amp; Performance</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q25. What are streams in Node.js?</strong></p>
+                <p><strong>Answer:</strong> Streams are objects that allow reading/writing data in chunks rather than loading the entire data into memory. They're ideal for handling large files, network data, and real-time processing.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q26. What are the types of streams in Node.js?</strong></p>
+                <p><strong>Answer:</strong> There are four types:</p>
+                <ul>
+                    <li><strong>Readable:</strong> Reading data (e.g., <code>fs.createReadStream</code>)</li>
+                    <li><strong>Writable:</strong> Writing data (e.g., <code>fs.createWriteStream</code>)</li>
+                    <li><strong>Duplex:</strong> Both readable and writable (e.g., <code>net.Socket</code>)</li>
+                    <li><strong>Transform:</strong> Duplex streams that modify data (e.g., <code>zlib.createGzip</code>)</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q27. What is the difference between <code>pipe</code> and <code>pipeline</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>pipe</code> is the older method for piping streams; it doesn't handle errors well and can cause memory leaks. <code>pipeline</code> (from <code>stream</code> module) is the modern approach with better error handling and cleanup.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q28. How do you improve Node.js performance?</strong></p>
+                <p><strong>Answer:</strong></p>
+                <ul>
+                    <li>Use asynchronous/non-blocking code</li>
+                    <li>Use clustering to utilize multiple CPU cores</li>
+                    <li>Implement caching (Redis, in-memory)</li>
+                    <li>Use streams for large data</li>
+                    <li>Optimize database queries</li>
+                    <li>Use a reverse proxy (Nginx)</li>
+                    <li>Enable HTTP/2</li>
+                    <li>Use production-grade process managers (PM2)</li>
+                </ul>
+            </div>
+
+            <h2>Section 7: Security</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q29. How do you secure a Node.js application?</strong></p>
+                <p><strong>Answer:</strong></p>
+                <ul>
+                    <li>Use Helmet.js for security headers</li>
+                    <li>Implement rate limiting</li>
+                    <li>Validate user input (express-validator)</li>
+                    <li>Sanitize output (prevent XSS)</li>
+                    <li>Use HTTPS in production</li>
+                    <li>Store secrets in environment variables</li>
+                    <li>Use JWT for authentication</li>
+                    <li>Implement CORS properly</li>
+                    <li>Keep dependencies updated</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q30. What is CORS and how is it handled in Express?</strong></p>
+                <p><strong>Answer:</strong> CORS (Cross-Origin Resource Sharing) is a security mechanism that restricts cross-origin requests. In Express, use the <code>cors</code> package:</p>
+                <pre class="code-block"><code>const cors = require('cors');
+app.use(cors({
+    origin: 'https://myapp.com',
+    credentials: true
+}));</code></pre>
+            </div>
+
+            <h2>Section 8: Advanced Concepts</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q31. What is clustering in Node.js?</strong></p>
+                <p><strong>Answer:</strong> Clustering allows Node.js to utilize multiple CPU cores by creating child processes (workers) that share the same server port. This is achieved using the <code>cluster</code> module or process managers like PM2.</p>
+                <pre class="code-block"><code>const cluster = require('cluster');
+if (cluster.isMaster) {
+    // Fork workers
+    for (let i = 0; i < require('os').cpus().length; i++) {
+        cluster.fork();
+    }
+} else {
+    // Worker process
+    require('./server.js');
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q32. What are Worker Threads?</strong></p>
+                <p><strong>Answer:</strong> Worker Threads (introduced in Node.js 10.5.0) allow running JavaScript in parallel on separate threads, useful for CPU-intensive tasks. Unlike clustering, Worker Threads share memory.</p>
+                <pre class="code-block"><code>const { Worker } = require('worker_threads');
+const worker = new Worker(`
+    const { parentPort } = require('worker_threads');
+    // CPU-intensive work
+    parentPort.postMessage(result);
+`, { eval: true });
+worker.on('message', (result) => console.log(result));</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q33. What is the difference between clustering and Worker Threads?</strong></p>
+                <p><strong>Answer:</strong> Clustering creates separate processes (IPC communication), ideal for handling HTTP requests across CPU cores. Worker Threads share memory (more efficient for CPU tasks) but require careful management of shared state.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q34. What is the libuv library?</strong></p>
+                <p><strong>Answer:</strong> libuv is a cross-platform C++ library that implements the event loop, thread pool, and asynchronous I/O in Node.js. It provides the underlying mechanism for non-blocking operations.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q35. What is the V8 engine?</strong></p>
+                <p><strong>Answer:</strong> V8 is Google's open-source JavaScript engine, written in C++. It compiles JavaScript to native machine code (JIT compilation) and handles memory management and garbage collection. Node.js uses V8 to execute JavaScript.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q36. How does garbage collection work in Node.js?</strong></p>
+                <p><strong>Answer:</strong> V8 uses a generational garbage collector. It divides memory into generations — the young generation (new objects) and the old generation (long-lived objects). The young generation is collected frequently (Scavenge), while the old generation uses Mark-Sweep-Compact.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q37. What is the difference between <code>process.env</code> and <code>process.argv</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>process.env</code> contains environment variables (e.g., <code>process.env.PORT</code>). <code>process.argv</code> contains command-line arguments passed when starting the Node.js process.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q38. What is the difference between <code>require.resolve</code> and <code>require.cache</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>require.resolve</code> resolves the path of a module without loading it. <code>require.cache</code> is an object containing all cached module objects, allowing you to invalidate the cache.</p>
+            </div>
+
+            <h2>Section 9: Testing &amp; Debugging</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q39. What testing frameworks are commonly used in Node.js?</strong></p>
+                <p><strong>Answer:</strong> Popular frameworks include:</p>
+                <ul>
+                    <li><strong>Jest:</strong> Zero-config, built-in assertions, mocking</li>
+                    <li><strong>Mocha:</strong> Flexible, many assertion libraries</li>
+                    <li><strong>Jasmine:</strong> BDD-style, built-in assertions</li>
+                    <li><strong>AVA:</strong> Concurrent test execution</li>
+                    <li><strong>Supertest:</strong> HTTP assertions</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q40. How do you debug a Node.js application?</strong></p>
+                <p><strong>Answer:</strong></p>
+                <ul>
+                    <li><code>node --inspect app.js</code> and use Chrome DevTools</li>
+                    <li>VS Code's built-in debugger</li>
+                    <li>Logging with <code>console.log</code> or debug libraries</li>
+                    <li>Use <code>--inspect-brk</code> to break at the start</li>
+                    <li>Use APM tools for production debugging</li>
+                </ul>
+            </div>
+
+            <h2>Section 10: Deployment &amp; Production</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q41. How do you deploy a Node.js application in production?</strong></p>
+                <p><strong>Answer:</strong></p>
+                <ul>
+                    <li>Use a process manager (PM2, Forever)</li>
+                    <li>Use a reverse proxy (Nginx, Apache)</li>
+                    <li>Containerize with Docker</li>
+                    <li>Use cloud platforms (AWS, Heroku, DigitalOcean)</li>
+                    <li>Set environment variables</li>
+                    <li>Enable logging and monitoring</li>
+                    <li>Implement CI/CD pipelines</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q42. What is PM2 and why is it used?</strong></p>
+                <p><strong>Answer:</strong> PM2 is a production process manager for Node.js. It provides features like:</p>
+                <ul>
+                    <li>Auto-restart on crashes</li>
+                    <li>Cluster mode (multi-core support)</li>
+                    <li>Zero-downtime reloads</li>
+                    <li>Log management</li>
+                    <li>Monitoring and health checks</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q43. What is the difference between development and production dependencies?</strong></p>
+                <p><strong>Answer:</strong> Development dependencies (<code>--save-dev</code>) are only needed during development (testing, building, linting). Production dependencies (<code>--save</code>) are required to run the application. Use <code>npm install --production</code> to install only production dependencies.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q44. What is the <code>NODE_ENV</code> environment variable used for?</strong></p>
+                <p><strong>Answer:</strong> <code>NODE_ENV</code> is a standard environment variable that indicates the environment (development, production, test). It's used to enable/disable features like logging, debugging, and caching.</p>
+            </div>
+
+            <h2>Section 11: Real-Time &amp; WebSockets</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q45. What is Socket.IO?</strong></p>
+                <p><strong>Answer:</strong> Socket.IO is a library that enables real-time, bidirectional communication between clients and servers. It uses WebSocket when available and falls back to other transports (long polling, etc.) for compatibility.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q46. How does Socket.IO handle reconnection?</strong></p>
+                <p><strong>Answer:</strong> Socket.IO automatically handles reconnection with exponential backoff. It stores messages while disconnected and sends them after reconnection.</p>
+                <pre class="code-block"><code>const socket = io('https://api.example.com', {
+    reconnection: true,
+    reconnectionAttempts: 10,
+    reconnectionDelay: 1000
+});</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q47. What are rooms and namespaces in Socket.IO?</strong></p>
+                <p><strong>Answer:</strong> Namespaces allow separating concerns (e.g., <code>/chat</code>, <code>/notifications</code>). Rooms allow grouping clients within a namespace for targeted messaging.</p>
+            </div>
+
+            <h2>Section 12: Common Interview Coding Challenges</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q48. Write a function to read a file asynchronously in Node.js.</strong></p>
+                <pre class="code-block"><code>const fs = require('fs').promises;
+
+async function readFile(filePath) {
+    try {
+        const data = await fs.readFile(filePath, 'utf8');
+        return data;
+    } catch (err) {
+        console.error('Error reading file:', err.message);
+        return null;
+    }
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q49. Write a simple HTTP server in Node.js.</strong></p>
+                <pre class="code-block"><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World!');
+});
+
+server.listen(3000, () => {
+    console.log('Server running on port 3000');
+});</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q50. Write a function that uses async/await with error handling.</strong></p>
+                <pre class="code-block"><code>async function fetchUserData(userId) {
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            throw new Error('User not found');
+        }
+        const posts = await Post.find({ userId });
+        return { user, posts };
+    } catch (err) {
+        console.error('Error fetching user data:', err.message);
+        return null;
+    }
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q51. Write a middleware that logs request details.</strong></p>
+                <pre class="code-block"><code>const loggerMiddleware = (req, res, next) => {
+    const start = Date.now();
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    res.on('finish', () => {
+        const duration = Date.now() - start;
+        console.log(`[${new Date().toISOString()}] ${req.method} ${req.url} - ${res.statusCode} (${duration}ms)`);
+    });
+    next();
+};
+
+app.use(loggerMiddleware);</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q52. Write a simple Express route with route parameters.</strong></p>
+                <pre class="code-block"><code>app.get('/api/users/:id', (req, res) => {
+    const { id } = req.params;
+    // Fetch user by ID
+    res.json({ userId: id, name: `User ${id}` });
+});</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q53. Write a function that uses the event emitter.</strong></p>
+                <pre class="code-block"><code>const EventEmitter = require('events');
+
+class OrderService extends EventEmitter {
+    createOrder(order) {
+        this.emit('order.created', order);
+        // Process order...
+        this.emit('order.processed', order);
+    }
+}
+
+const service = new OrderService();
+service.on('order.created', (order) => console.log('Order created:', order));</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q54. Write a function that creates a JWT token.</strong></p>
+                <pre class="code-block"><code>const jwt = require('jsonwebtoken');
+
+function generateToken(user) {
+    return jwt.sign(
+        { userId: user.id, email: user.email },
+        process.env.JWT_SECRET,
+        { expiresIn: '7d' }
+    );
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q55. Write a function that uses streams to process a large file.</strong></p>
+                <pre class="code-block"><code>const fs = require('fs');
+const { pipeline } = require('stream');
+const { promisify } = require('util');
+
+const pipelineAsync = promisify(pipeline);
+
+async function processLargeFile(source, destination) {
+    const readStream = fs.createReadStream(source);
+    const writeStream = fs.createWriteStream(destination);
+    await pipelineAsync(readStream, writeStream);
+    console.log('File processed successfully');
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q56. Write a function that implements rate limiting for an API.</strong></p>
+                <pre class="code-block"><code>const rateLimit = new Map();
+
+function rateLimiter(req, res, next) {
+    const ip = req.ip;
+    const now = Date.now();
+    const window = 60000; // 1 minute
+    const maxRequests = 100;
+
+    if (!rateLimit.has(ip)) {
+        rateLimit.set(ip, []);
+    }
+
+    const requests = rateLimit.get(ip)
+        .filter(time => time > now - window);
+
+    if (requests.length >= maxRequests) {
+        return res.status(429).json({ error: 'Too many requests' });
+    }
+
+    requests.push(now);
+    rateLimit.set(ip, requests);
+    next();
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q57. Write a function that connects to MongoDB using Mongoose.</strong></p>
+                <pre class="code-block"><code>const mongoose = require('mongoose');
+
+async function connectDB() {
+    try {
+        await mongoose.connect(process.env.MONGODB_URI);
+        console.log('✅ Connected to MongoDB');
+    } catch (err) {
+        console.error('❌ MongoDB connection error:', err);
+        process.exit(1);
+    }
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q58. Write a function that implements a simple cache using Map.</strong></p>
+                <pre class="code-block"><code>class Cache {
+    constructor(ttl = 60000) {
+        this.cache = new Map();
+        this.ttl = ttl;
+    }
+
+    set(key, value) {
+        this.cache.set(key, {
+            value,
+            expires: Date.now() + this.ttl
+        });
+    }
+
+    get(key) {
+        const entry = this.cache.get(key);
+        if (!entry || entry.expires < Date.now()) {
+            this.cache.delete(key);
+            return null;
+        }
+        return entry.value;
+    }
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q59. Write a function that handles graceful shutdown in a Node.js app.</strong></p>
+                <pre class="code-block"><code>process.on('SIGTERM', () => {
+    console.log('📦 SIGTERM received. Shutting down gracefully...');
+    server.close(() => {
+        console.log('✅ Server closed');
+        db.disconnect();
+        process.exit(0);
+    });
+});
+
+process.on('SIGINT', () => {
+    console.log('📦 SIGINT received. Shutting down...');
+    process.exit(0);
+});</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q60. Write a function that logs unhandled promise rejections.</strong></p>
+                <pre class="code-block"><code>process.on('unhandledRejection', (reason, promise) => {
+    console.error('❌ Unhandled Rejection at:', promise);
+    console.error('❌ Reason:', reason);
+    // Optionally exit or continue
+});</code></pre>
+            </div>
+
+            <h2>Section 13: Quick Reference — Key Concepts</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Concept</th><th>Description</th><th>When to Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Event Loop</strong></td><td>Non-blocking I/O mechanism</td><td>Every Node.js application</td></tr>
+                        <tr><td><strong>Clustering</strong></td><td>Utilize multi-core CPUs</td><td>High-traffic production apps</td></tr>
+                        <tr><td><strong>Worker Threads</strong></td><td>CPU-intensive tasks</td><td>Image processing, heavy computation</td></tr>
+                        <tr><td><strong>Streams</strong></td><td>Process data in chunks</td><td>Large files, network data</td></tr>
+                        <tr><td><strong>JWT</strong></td><td>Stateless authentication</td><td>APIs, microservices</td></tr>
+                        <tr><td><strong>Socket.IO</strong></td><td>Real-time communication</td><td>Chat, live updates, gaming</td></tr>
+                        <tr><td><strong>PM2</strong></td><td>Production process manager</td><td>Deployment, monitoring</td></tr>
+                        <tr><td><strong>Helmet.js</strong></td><td>Security headers</td><td>Every Express app</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <h3 style="margin-top: 0;">🎉 Congratulations! You've Completed the Node.js Series! 🎉</h3>
+                <p style="margin-bottom: 0;">You now have a solid foundation in Node.js development — from architecture and core modules to production-ready applications. Keep practicing, stay curious, and never stop learning!</p>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-real-time-application.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>A Guide to Build Real-Time Application Using Node.js</a>
+            <span class="disabled"><span class="label">Next <i class="fas fa-arrow-right"></i></span>You've completed the series! 🎉</span>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

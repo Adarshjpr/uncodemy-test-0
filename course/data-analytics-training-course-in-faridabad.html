@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- SEO meta (option 1 of 3 from the content deliverable) -->
+<title>Data Analyst Training Course in Faridabad | Uncodemy</title>
+<meta name="description" content="Data Analyst Training Course in Faridabad with Gen AI modules. 5-6 months, ₹17,500 offer fee, EMI from ₹2,999/mo. Enroll now!" />
+<link rel="canonical" href="https://uncodemy.com/course/data-analyst-training-course-in-faridabad" />
+<link rel="stylesheet" href="../tutorial/components/All.css">
+<link rel="stylesheet" href="../tutorial/components/footer-style.css">
+<script src="../tutorial/components/uncodemy-navbar.js"></script>
+<style>
+/* ============================================================
+   1. DESIGN TOKENS — edit here to retheme the whole page
+   ============================================================ */
+:root{
+  /* Colour palette */
+  --color-primary-bg:#FFFFFF;
+  --color-surface-alt:#FAFAFA;
+  --color-divider:#F5F5F5;
+  --color-border:#E8E8E8;
+  --color-accent-orange:#FF6B00;
+  --color-accent-orange-hi:#FF8A00;
+  --color-accent-soft:#FFF5EE;      /* very light orange wash */
+  --color-text:#1A1A1A;
+  --color-text-muted:#5B5B5B;
+  --color-text-invert:#FFFFFF;
+
+  /* Orange grid pattern */
+  --grid-line:rgba(255,107,0,.09);  /* ~9% opacity accent lines */
+  --grid-size:34px;
+
+  /* Radii, shadow, motion */
+  --radius-btn:10px;
+  --radius-card:14px;
+  --radius-pill:999px;
+  --shadow-card:0 1px 2px rgba(26,26,26,.04), 0 6px 18px rgba(26,26,26,.05);
+  --shadow-card-hover:0 2px 4px rgba(26,26,26,.06), 0 12px 28px rgba(255,107,0,.14);
+  --shadow-btn-hover:0 8px 20px rgba(255,107,0,.32);
+  --ease:.22s cubic-bezier(.4,0,.2,1);
+
+  /* Layout */
+  --wrap:1200px;
+  --gutter:1.25rem;
+  --section-y:3rem;
+  --tap:48px;                        /* min touch target (> 44px rule) */
+}
+
+/* ============================================================
+   2. RESET + BASE (mobile-first, 375px up)
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--color-primary-bg);
+  color:var(--color-text);
+  font-family:"Inter","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  font-size:1rem;
+  line-height:1.65;
+  padding-bottom:calc(var(--tap) + 1.25rem); /* clears the sticky mobile bar */
+}
+img{max-width:100%;display:block}
+a{color:var(--color-accent-orange);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Responsive type scale */
+h1,h2,h3{line-height:1.2;letter-spacing:-.02em;margin:0 0 .6em;font-weight:800}
+h1{font-size:clamp(1.75rem,6.2vw,3.25rem)}
+h2{font-size:clamp(1.375rem,3.6vw,2.125rem);margin-top:0}
+h3{font-size:clamp(1.0625rem,2vw,1.25rem);font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1rem}
+strong{font-weight:700}
+
+/* The standalone answer sentence that opens every section (AEO/GEO) */
+.answer-first{
+  font-size:clamp(1.0625rem,2.1vw,1.1875rem);
+  font-weight:600;
+  color:var(--color-text);
+  border-left:3px solid var(--color-accent-orange);
+  padding-left:.875rem;
+}
+
+/* Layout helpers */
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:var(--section-y);position:relative}
+.section--alt{                                  /* soft gradient, no flat block */
+  background:linear-gradient(180deg,#FFFFFF 0%,var(--color-surface-alt) 40%,#FFFFFF 100%);
+}
+.section--soft-orange{
+  background:linear-gradient(180deg,#FFFFFF 0%,var(--color-accent-soft) 45%,#FFFFFF 100%);
+}
+.section-divider{height:1px;background:var(--color-divider);border:0;margin:0}
+.eyebrow{
+  display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--color-accent-orange);margin-bottom:.5rem;
+}
+.lede{color:var(--color-text-muted)}
+
+/* ============================================================
+   3. REUSABLE ORANGE GRID + FADE  (.grid-fade-section)
+   Pure CSS: two 1px linear-gradients tiled, masked so the grid
+   is visible near the top and gone by the bottom. No image files.
+   ============================================================ */
+.grid-fade-section{position:relative;isolation:isolate;overflow:hidden}
+.grid-fade-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-image:
+    linear-gradient(to right,var(--grid-line) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);
+  background-position:center top;
+  /* fade the grid out toward the bottom and the horizontal edges */
+  -webkit-mask-image:
+    linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,0) 92%),
+    linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 18%,rgba(0,0,0,1) 82%,rgba(0,0,0,0) 100%);
+  -webkit-mask-composite:source-in;
+          mask-image:
+    linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,0) 92%),
+    linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 18%,rgba(0,0,0,1) 82%,rgba(0,0,0,0) 100%);
+          mask-composite:intersect;
+  pointer-events:none;
+}
+/* very light orange-to-white wash sitting under the grid */
+.grid-fade-section::after{
+  content:"";
+  position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(180deg,var(--color-accent-soft) 0%,rgba(255,255,255,0) 78%);
+  pointer-events:none;
+}
+
+/* ============================================================
+   4. BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:var(--tap);padding:.75rem 1.375rem;
+  border:0;border-radius:var(--radius-btn);
+  font:inherit;font-weight:700;font-size:1rem;
+  cursor:pointer;text-align:center;transition:transform var(--ease),box-shadow var(--ease),background var(--ease);
+}
+.btn:hover{text-decoration:none}
+.btn--primary{background:var(--color-accent-orange);color:var(--color-text-invert)}
+.btn--primary:hover{background:var(--color-accent-orange-hi);box-shadow:var(--shadow-btn-hover);transform:translateY(-1px)}
+.btn--ghost{background:#FFFFFF;color:var(--color-text);box-shadow:inset 0 0 0 1px var(--color-border)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1px var(--color-accent-orange);color:var(--color-accent-orange)}
+.btn--block{width:100%}
+.btn-row{display:flex;flex-direction:column;gap:.75rem}
+:where(a,button,summary):focus-visible{outline:3px solid var(--color-accent-orange);outline-offset:2px;border-radius:6px}
+
+/* ============================================================
+   5. HEADER / NAV — sticky, hamburger on mobile
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(160%) blur(8px);
+  border-bottom:1px solid var(--color-divider);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:60px}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.125rem;color:var(--color-text)}
+.brand:hover{text-decoration:none}
+.brand-mark{
+  width:26px;height:26px;border-radius:7px;
+  background:linear-gradient(140deg,var(--color-accent-orange),var(--color-accent-orange-hi));
+}
+.nav-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:var(--tap);height:var(--tap);
+  background:none;border:1px solid var(--color-border);border-radius:var(--radius-btn);cursor:pointer;
+}
+.nav-toggle-bars,.nav-toggle-bars::before,.nav-toggle-bars::after{
+  content:"";display:block;width:18px;height:2px;background:var(--color-text);border-radius:2px;position:relative;
+}
+.nav-toggle-bars::before{position:absolute;top:-6px}
+.nav-toggle-bars::after{position:absolute;top:6px}
+.nav-menu{display:none;list-style:none;margin:0;padding:0 0 .75rem}
+.nav-menu.is-open{display:block}
+.nav-menu a{
+  display:flex;align-items:center;min-height:var(--tap);
+  color:var(--color-text);font-weight:600;font-size:.9375rem;
+  border-bottom:1px solid var(--color-divider);
+}
+.nav-menu a:hover{color:var(--color-accent-orange);text-decoration:none}
+.nav-cta{display:none}
+
+/* ============================================================
+   6. HERO
+   ============================================================ */
+.hero{padding-block:2.25rem 2.75rem}
+.hero-grid{display:grid;gap:1.75rem}
+.hero-copy p{color:var(--color-text-muted)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:1.25rem 0 0;padding:0}
+.hero-stats li{
+  background:#FFFFFF;border:1px solid var(--color-border);border-radius:var(--radius-pill);
+  padding:.375rem .875rem;font-size:.8125rem;font-weight:600;
+}
+/* Fee card — visually distinct */
+.fee-card{
+  background:#FFFFFF;border:1px solid var(--color-border);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-card);padding:1.5rem;border-top:4px solid var(--color-accent-orange);
+}
+.fee-card__tag{
+  display:inline-block;background:var(--color-accent-soft);color:var(--color-accent-orange);
+  font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  padding:.25rem .625rem;border-radius:var(--radius-pill);margin-bottom:.875rem;
+}
+.fee-card__prices{display:flex;align-items:baseline;flex-wrap:wrap;gap:.625rem}
+.fee-card__now{font-size:clamp(1.875rem,7vw,2.5rem);font-weight:800;letter-spacing:-.03em}
+.fee-card__was{color:var(--color-text-muted);text-decoration:line-through;font-weight:600}
+.fee-card__gst{font-size:.875rem;color:var(--color-text-muted);margin:.25rem 0 1rem}
+.fee-card__meta{list-style:none;margin:0 0 1.25rem;padding:0;font-size:.9375rem}
+.fee-card__meta li{display:flex;gap:.5rem;padding:.375rem 0;border-bottom:1px dashed var(--color-divider)}
+.fee-card__meta li:last-child{border-bottom:0}
+.fee-card__meta span{margin-left:auto;font-weight:700}
+.fee-card__note{font-size:.8125rem;color:var(--color-text-muted);margin:.875rem 0 0;text-align:center}
+
+/* ============================================================
+   7. CARDS, LISTS, TABLES
+   ============================================================ */
+.card{
+  background:#FFFFFF;border:1px solid var(--color-border);border-radius:var(--radius-card);
+  padding:1.25rem;box-shadow:var(--shadow-card);transition:box-shadow var(--ease),transform var(--ease);
+}
+.card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
+.card--accent-top{border-top:3px solid var(--color-accent-orange)}
+.card h3{margin-bottom:.25rem}
+.card p{margin-bottom:0;color:var(--color-text-muted);font-size:.9375rem}
+.card-grid{display:grid;gap:1rem}
+
+.check-list{list-style:none;margin:0;padding:0;display:grid;gap:.625rem}
+.check-list li{display:flex;gap:.625rem;font-size:.9375rem}
+.check-list li::before{
+  content:"";flex:0 0 auto;width:8px;height:8px;margin-top:.5rem;border-radius:2px;
+  background:var(--color-accent-orange);
+}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.25rem 0 0}
+table{border-collapse:collapse;width:100%;min-width:340px;font-size:.9375rem}
+caption{text-align:left;font-size:.8125rem;color:var(--color-text-muted);padding-bottom:.5rem}
+th,td{text-align:left;padding:.75rem .875rem;border-bottom:1px solid var(--color-border)}
+thead th{
+  background:var(--color-accent-soft);color:var(--color-text);
+  font-weight:700;font-size:.8125rem;letter-spacing:.04em;text-transform:uppercase;
+}
+tbody tr:nth-child(even){background:var(--color-surface-alt)}
+td:last-child,th:last-child{font-weight:600;white-space:nowrap}
+
+/* ============================================================
+   8. ACCORDIONS (curriculum + FAQ)
+   ============================================================ */
+.accordion{display:grid;gap:.625rem;margin-top:1.5rem}
+.accordion details{
+  background:#FFFFFF;border:1px solid var(--color-border);border-radius:var(--radius-card);
+  overflow:hidden;transition:box-shadow var(--ease);
+}
+.accordion details[open]{box-shadow:var(--shadow-card);border-color:#F0D6C0}
+.accordion summary{
+  display:flex;align-items:center;gap:.875rem;
+  min-height:var(--tap);padding:.875rem 1rem;
+  font-weight:700;font-size:1rem;cursor:pointer;list-style:none;
+}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{                        /* chevron */
+  content:"";margin-left:auto;flex:0 0 auto;width:9px;height:9px;
+  border-right:2px solid var(--color-accent-orange);
+  border-bottom:2px solid var(--color-accent-orange);
+  transform:rotate(45deg);transition:transform var(--ease);
+}
+.accordion details[open] summary::after{transform:rotate(-135deg)}
+.accordion summary:hover{color:var(--color-accent-orange)}
+.accordion .module-no{
+  flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:8px;
+  background:var(--color-accent-soft);color:var(--color-accent-orange);
+  font-size:.8125rem;font-weight:800;
+}
+.accordion__body{padding:0 1rem 1.125rem;color:var(--color-text-muted);font-size:.9375rem}
+.accordion__body :last-child{margin-bottom:0}
+.accordion__body h3{
+  font-size:.9375rem;color:var(--color-text);margin:0 0 .5rem;
+  text-transform:none;letter-spacing:0;
+}
+
+/* ============================================================
+   9. TRAINERS — horizontal scroll on mobile, grid on desktop
+   ============================================================ */
+.trainer-rail{
+  display:grid;grid-auto-flow:column;grid-auto-columns:78%;
+  gap:1rem;margin-top:1.5rem;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:.25rem .25rem 1rem;margin-inline:calc(var(--gutter)*-1);padding-inline:var(--gutter);
+  -webkit-overflow-scrolling:touch;
+}
+.trainer-rail>*{scroll-snap-align:start}
+.trainer-card__role{
+  font-size:.75rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--color-accent-orange);margin-bottom:.375rem;
+}
+.trainer-card__avatar{
+  width:44px;height:44px;border-radius:12px;margin-bottom:.75rem;
+  background:linear-gradient(140deg,var(--color-accent-soft),#FFE6D3);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:var(--color-accent-orange);
+}
+.scroll-hint{font-size:.8125rem;color:var(--color-text-muted);margin:.25rem 0 0}
+
+/* Testimonials */
+.quote-card blockquote{margin:0 0 .875rem;font-size:.9375rem;color:var(--color-text)}
+.quote-card figcaption{font-size:.8125rem;color:var(--color-text-muted);font-weight:600}
+
+/* ============================================================
+   10. FINAL CTA + FOOTER
+   ============================================================ */
+.cta-panel{text-align:center;max-width:680px;margin-inline:auto}
+.cta-panel .btn-row{margin-top:1.5rem}
+.site-footer{
+  border-top:1px solid var(--color-divider);
+  background:linear-gradient(180deg,#FFFFFF,var(--color-surface-alt));
+  padding-block:2rem;font-size:.875rem;color:var(--color-text-muted);
+}
+.site-footer h2{font-size:1rem;margin-bottom:.5rem}
+
+/* ============================================================
+   11. STICKY MOBILE ACTION BAR — mobile only, slim
+   ============================================================ */
+.mobile-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;gap:.5rem;align-items:center;
+  padding:.4375rem .75rem;
+  padding-bottom:calc(.4375rem + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.97);
+  border-top:1px solid var(--color-border);
+  box-shadow:0 -6px 18px rgba(26,26,26,.07);
+}
+.mobile-bar .btn{flex:1;min-height:44px;padding:.5rem .75rem;font-size:.9375rem}
+.mobile-bar__fee{display:none}
+
+/* ============================================================
+   12. MEDIA QUERIES — mobile-first, min-width only
+   ============================================================ */
+@media (min-width:768px){
+  :root{--gutter:2rem;--section-y:4rem}
+  .nav-bar{min-height:72px}
+  .nav-toggle{display:none}
+  .nav-menu{display:flex;gap:1.5rem;padding:0;align-items:center}
+  .nav-menu a{min-height:auto;border-bottom:0;font-size:.875rem}
+  .nav-cta{display:inline-flex}
+  .btn-row{flex-direction:row}
+  .btn--block{width:auto}
+  .hero{padding-block:3rem 3.5rem}
+  .card-grid--2{grid-template-columns:repeat(2,1fr)}
+  .card-grid--3{grid-template-columns:repeat(2,1fr)}
+  .check-list{grid-template-columns:repeat(2,1fr)}
+  .trainer-rail{
+    grid-auto-flow:row;grid-template-columns:repeat(2,1fr);
+    overflow:visible;margin-inline:0;padding-inline:0;
+  }
+  .scroll-hint{display:none}
+  .mobile-bar{display:none}
+  body{padding-bottom:0}
+}
+
+@media (min-width:1200px){
+  :root{--section-y:5rem}
+  .hero-grid{grid-template-columns:1.15fr .85fr;align-items:start;gap:3rem}
+  .fee-card{position:sticky;top:96px}
+  .card-grid--3{grid-template-columns:repeat(3,1fr)}
+  .card-grid--4{grid-template-columns:repeat(4,1fr)}
+  .trainer-rail{grid-template-columns:repeat(4,1fr)}
+  .section-inner--split{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:start}
+  .accordion{max-width:920px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+
+<body>
+ <uncodemy-navbar></uncodemy-navbar>
+<!-- =========================================================
+     HEADER + NAV (sticky on all sizes; hamburger under 768px)
+     ========================================================= -->
+
+
+<main>
+
+  <!-- =======================================================
+       HERO — H1 + intro paragraph + fee banner card
+       Grid-fade section #1
+       ======================================================= -->
+  <section class="section hero grid-fade-section" aria-labelledby="page-title">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="hero-copy">
+          <span class="eyebrow">Classroom &amp; live online · Faridabad</span>
+          <!-- H1 -->
+          <h1 id="page-title">Data Analytics Training Course with Gen AI in Faridabad</h1>
+
+          <!-- Intro paragraph (no heading) goes here -->
+          <p class="answer-first">The Data Analytics Training Course with Gen AI in Faridabad is a 5–6 month program that teaches you to clean data, write queries, build dashboards, and apply AI tools inside real analyst work.</p>
+          <p>Seats are open now at an offer fee of ₹17,500 + GST, reduced from the listed fee of ₹50,000 + GST. Classes run in batches of 18 learners, so every person gets trainer time. You finish the course with 12 portfolio projects, 6 recorded mock interviews, and a resume mapped to real Faridabad hiring roles across IT services, product startups, fintech, and e-commerce firms.</p>
+
+          <ul class="hero-stats">
+            <li>18 learners per batch</li>
+            <li>12 graded projects</li>
+            <li>14 tools</li>
+            <li>180 hiring partners</li>
+            <li>6 mock interviews</li>
+          </ul>
+        </div>
+
+        <!-- Fee banner card -->
+        <aside class="fee-card" id="apply" aria-label="Course fee and enrolment">
+          <span class="fee-card__tag">Limited seats offer</span>
+          <div class="fee-card__prices">
+            <span class="fee-card__now">₹17,500</span>
+            <span class="fee-card__was">₹50,000</span>
+          </div>
+          <p class="fee-card__gst">+ GST · offer fee applies to a fixed number of seats per batch</p>
+          <ul class="fee-card__meta">
+            <li>EMI from <span>₹2,999/month</span></li>
+            <li>Duration <span>5–6 months</span></li>
+            <li>Batch size <span>18 learners</span></li>
+            <li>Placement support <span>12 months</span></li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--primary btn--block" href="#apply">Apply now</a>
+            <a class="btn btn--ghost btn--block" href="#apply">Book free demo</a>
+          </div>
+          <p class="fee-card__note">Sit through one live session before you pay anything.</p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- =======================================================
+       H2: Why Learn Data Analytics with Gen AI in Faridabad?
+       ======================================================= -->
+  <section class="section" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <h2 id="why-h">Why Learn Data Analytics with Gen AI in Faridabad?</h2>
+
+      <div class="section-inner--split">
+        <p class="answer-first">Faridabad pays data analysts 10–15% more than Tier-2 cities such as Indore, Jaipur, or Coimbatore, and analysts who use Gen AI tools clear tasks faster than those who do not.</p>
+        <div>
+          <p>The city holds four hiring pools that all run on data. IT services firms in Whitefield and Electronic City need analysts for client reporting. Product startups near Koramangala and HSR Layout track user funnels every week. Fintech teams review payment failures and fraud flags daily. E-commerce companies watch stock levels, returns, and delivery delays.</p>
+          <p>Gen AI changes the daily job, not the fundamentals. Analysts still verify numbers by hand. What changes is speed: ChatGPT drafts a SQL query, Copilot explains a broken formula, and Power BI Copilot writes a DAX measure in seconds. Hiring managers here now ask candidates how they check AI output for errors. This course trains both halves, so you can move fast and still defend your numbers in a review meeting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Course Fee & Duration  (+ fee comparison table)
+       Grid-fade section #2
+       ======================================================= -->
+  <section class="section grid-fade-section" id="fee" aria-labelledby="fee-h">
+    <div class="wrap">
+      <h2 id="fee-h">Course Fee &amp; Duration</h2>
+
+      <p class="answer-first">The course fee is ₹17,500 + GST as a limited-seat offer, down from the listed fee of ₹50,000 + GST, and the course runs 5–6 months.</p>
+      <p>An EMI option starts at ₹2,999/month for learners who prefer to pay in parts. The offer applies to a fixed number of seats per batch, not to every batch of the year. Duration depends on the track you pick: weekday batches finish nearer 5 months, and weekend batches run closer to 6 months. Both tracks cover the same syllabus, the same 12 projects, and the same placement support. Nothing is trimmed from the weekend option.</p>
+
+      <div class="table-scroll">
+        <table>
+          <caption>Fee and duration at a glance</caption>
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Listed fee</th><td>₹50,000 + GST</td></tr>
+            <tr><th scope="row">Special offer fee (limited seats)</th><td>₹17,500 + GST</td></tr>
+            <tr><th scope="row">EMI option</th><td>Starting ₹2,999/month</td></tr>
+            <tr><th scope="row">Course duration</th><td>5–6 months</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#apply">Reserve an offer seat</a>
+        <a class="btn btn--ghost" href="#apply">Talk to a counsellor</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- =======================================================
+       H2: Who Should Join This Course?
+       ======================================================= -->
+  <section class="section" id="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <h2 id="who-h">Who Should Join This Course?</h2>
+      <p class="answer-first">Join this course if you want an analyst job and can give 8–10 hours a week.</p>
+      <p>It fits final-year students, freshers from any degree stream, support and operations staff who already work in Excel, testers or developers moving into data roles, and career-break returners. You need basic maths and comfort with a laptop. You do not need a coding background. Non-engineering graduates make up close to half of every batch, so the pace is set for beginners, not for developers.</p>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Data Analytics + Gen AI Curriculum
+       Accordion — collapsed by default, one H3 module each
+       ======================================================= -->
+  <section class="section section--alt" id="curriculum" aria-labelledby="curriculum-h">
+<div class="container sylla containers">
+          <div class="section-title text-center position-relative">
+            <h2>
+              Curriculums for Data Analytics Training
+              <b style="color: #ff5421" class="d-inline-block position-relative text-capitalize">Courses in Faridabad</b>
+            </h2>
+          </div>
+          <div class="row row-reverse">
+            
+        <div class="col-xl-4 col-lg-5 col-md-5 col-12 mobile-display-none">
+          <div class="curriculum">
+            <span class="curr-head">Data Analytics Curriculum</span>
+            <p>The curriculum has been designed by faculty from IITs, and Expert Industry Professionals.</p>
+            
+            <div class="sy-img-con">
+              <div class="syllabus-img">
+                <img class="lazy-load" data-src="/img/time.png" alt="time" src="/img/time.png">
+              </div>
+              <div class="syllabus-content">
+                <span>120+</span>
+                <p>Hours of Content</p>
+              </div>
+            </div>
+
+            <div class="sy-img-con">
+              <div class="syllabus-img">
+                <img class="lazy-load" data-src="/img/tools/live1-removebg-preview.png" alt="live1-removebg-preview" src="/img/tools/live1-removebg-preview.png">
+              </div>
+              <div class="syllabus-content">
+                <span>75+</span>
+                <p>Live Sessions</p>
+              </div>
+            </div>
+
+            <div class="sy-img-con">
+              <div class="syllabus-img">
+                <img class="lazy-load" data-src="/img/tools.png" alt="tools" src="/img/tools.png">
+              </div>
+              <div class="syllabus-content">
+                <span>10+</span>
+                <p>Tools and Software</p>
+              </div>
+            </div>
+            <button type="button" class="down-cum" data-toggle="modal" download onclick="(showForm(), setDownload('DataAnalyticsBtn'))">
+              Download Curriculum
+            </button>
+          </div>
+        </div>
+            <div class="col-xl-8 col-lg-7 col-md-7 col-12">
+              <div class="accordion md-accordion" id="accordion-inv">
+                <div class="syllabus-newbox">
+                  <strong class="module-heading">Set the Basics Right</strong>
+                  <p>At Uncodemy, we offer a comprehensive Data Analytics training course in Faridabad designed to equip students with the skills and knowledge required to excel in the field of data analysis. Our curriculum is meticulously crafted to cover all essential aspects of data analytics, ensuring that our students gain a deep understanding and practical experience.</p>
+<p>Here’s a detailed overview of what you can expect from our Data Analytics course curriculum:</p>
+                  
+        <h4 class="module-heading">1. Python for Data Analytics</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading9">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+              <span class="mb-0">Python Basics<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse9" class="collapse" role="tabpanel" aria-labelledby="heading9" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Need for Programming</li>
+<li>Advantages of Programming</li>
+<li>Overview of Python</li>
+<li>Organizations using Python</li>
+<li>Python Applications in Various Domains</li>
+<li>Python Installation</li>
+<li>Variables</li>
+<li>Operands and Expressions</li>
+<li>Conditional Statements</li>
+<li>Loops</li>
+<li>Command Line Arguments</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading10">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+              <span class="mb-0">Data Structure and File Operations<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="heading10" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Method of Accepting User Input and eval Function</li>
+<li>Python - Files Input/Output Functions</li>
+<li>Lists and Related Operations</li>
+<li>Tuples and Related Operations</li>
+<li>Strings and Related Operations</li>
+<li>Sets and Related Operations</li>
+<li>Dictionaries and Related Operations</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading11">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+              <span class="mb-0">Functions and Object Oriented Programming<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>User-Defined Functions</li>
+<li>Concept of Return Statement</li>
+<li>Concept of name=” main ”</li>
+<li>Function Parameters</li>
+<li>Different Types of Arguments</li>
+<li>Global Variables</li>
+<li>Global Keyword</li>
+<li>Variable Scope and Returning Values</li>
+<li>Lambda Functions</li>
+<li>Various Built-In Functions</li>
+<li>Introduction to Object-Oriented Concepts</li>
+<li>Built-In Class Attributes</li>
+<li>Public, Protected and Private Attributes, and Methods</li>
+<li>Class Variable and Instance Variable</li>
+<li>Constructor and Destructor</li>
+<li>Decorator in Python</li>
+<li>Core Object-Oriented Principles</li>
+<li>Inheritance and Its Types</li>
+<li>Method Resolution Order</li>
+<li>Overloading</li>
+<li>Overriding</li>
+<li>Getter and Setter Methods</li>
+<li>Inheritance-In-Class Case Study</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading12">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+              <span class="mb-0">Working with Modules and Handling Exceptions<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Standard Libraries</li>
+<li>Packages and Import Statements</li>
+<li>Topics : Working with Modules and Handling Exceptions</li>
+<li>Info@uncodemy.com | +91-9818366550 | www.uncodemy.com</li>
+<li>Reload Function</li>
+<li>Important Modules in Python</li>
+<li>Sys Module</li>
+<li>Os Module</li>
+<li>Math Module</li>
+<li>Date-Time Module</li>
+<li>Random Module</li>
+<li>JSON Module</li>
+<li>Regular Expression</li>
+<li>Exception Handling</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading13">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+              <span class="mb-0">Introduction to NumPy<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Basics of Data Analysis</li>
+<li>NumPy - Arrays</li>
+<li>Operations on Arrays</li>
+<li>Indexing Slicing and Iterating</li>
+<li>NumPy ArrayAttributes</li>
+<li>Matrix Product</li>
+<li>NumPy Functions</li>
+<li>Functions</li>
+<li>Array Manipulation</li>
+<li>File Handling Using NumPy</li>
+<li>Array Creation and Logic Functions</li>
+<li>File Handling Using Numpy</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading14">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse14" aria-expanded="false" aria-controls="collapse14">
+              <span class="mb-0">Data Manipulation using pandas<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse14" class="collapse" role="tabpanel" aria-labelledby="heading14" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to pandas</li>
+<li>Data structures in pandas</li>
+<li>Series</li>
+<li>Data Frames</li>
+<li>Importing and Exporting Files in Python</li>
+<li>Basic Functionalities of a Data Object</li>
+<li>Merging of Data Objects</li>
+<li>Concatenation of Data Objects</li>
+<li>Types of Joins on Data Objects</li>
+<li>Data Cleaning using pandas</li>
+<li>Exploring Datasets</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">2. Data Science Primer and Statistics</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading15">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
+              <span class="mb-0">Basics of Data Science<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse15" class="collapse" role="tabpanel" aria-labelledby="heading15" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>What is Data Science?</li>
+<li>What does Data Science involve?</li>
+<li>Era of Data Science</li>
+<li>Business Intelligence vs Data Science</li>
+<li>Life cycle of Data Science</li>
+<li>Tools of Data Science</li>
+<li>Application of Data Science</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading16">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+              <span class="mb-0">Exploratory Data Analysis<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse16" class="collapse" role="tabpanel" aria-labelledby="heading16" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction</li>
+<li>Stages of Analytics</li>
+<li>CRISP DM Data Life Cycle</li>
+<li>Data Types</li>
+<li>Introduction to EDA</li>
+<li>First Business Moment Decision</li>
+<li>Second Business Moment Decision</li>
+<li>Third Business Moment Decision</li>
+<li>Fourth Business Moment Decision</li>
+<li>Correlation</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading17">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
+              <span class="mb-0">Feature Engineering<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse17" class="collapse" role="tabpanel" aria-labelledby="heading17" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>What is Feature</li>
+<li>Feature Engineering</li>
+<li>Feature Engineering Process</li>
+<li>Benefit</li>
+<li>Feature Engineering Techniques</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading18">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
+              <span class="mb-0">Inferential Statistics &amp; Hypothesis Testing<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse18" class="collapse" role="tabpanel" aria-labelledby="heading18" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Basics Of Probability</li>
+<li>Discrete Probability Distributions</li>
+<li>Continuous Probability Distributions</li>
+<li>Central Limit Theorem</li>
+<li>Concepts Of Hypothesis Testing - I: Null And Alternate Hypothesis, Making</li>
+<li>A Decision, And Critical Value Method</li>
+<li>Concepts Of Hypothesis Testing - II: P-Value Method And Types Of Errors</li>
+<li>Industry Demonstration Of Hypothesis Testing: Two-Sample Mean And</li>
+<li>Proportion Test, A/B Testing</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">3. Machine Learning</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading19">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
+              <span class="mb-0">Linear Regression<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse19" class="collapse" role="tabpanel" aria-labelledby="heading19" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Simple Linear Regression</li>
+<li>Simple Linear Regression In Python</li>
+<li>Multiple Linear Regression</li>
+<li>Multiple Linear Regression In Python</li>
+<li>Industry Relevance Of Linear Regression</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading20">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
+              <span class="mb-0">Logistic Regression<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse20" class="collapse" role="tabpanel" aria-labelledby="heading20" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Univariate Logistic Regression</li>
+<li>Multivariate Logistic Regression: Model</li>
+<li>Building And Evaluation</li>
+<li>Logistic Regression:</li>
+<li>Industry Applications</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading21">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+              <span class="mb-0">KNN classifier<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse21" class="collapse" role="tabpanel" aria-labelledby="heading21" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Data mining classifier technique</li>
+<li>Application of KNN classifier</li>
+<li>Lazy learner classifier</li>
+<li>Altering hyperparameter(k) for better accuracy</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading22">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse22" aria-expanded="false" aria-controls="collapse22">
+              <span class="mb-0">Support Vector classifier<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse22" class="collapse" role="tabpanel" aria-labelledby="heading22" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Black box</li>
+<li>SVM hyperplane</li>
+<li>Max margin hyperplane</li>
+<li>Kernel tricks for non linear spaces</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading23">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
+              <span class="mb-0">Decision Tree Classifier<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse23" class="collapse" role="tabpanel" aria-labelledby="heading23" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Rule based classification method</li>
+<li>Different nodes for develop decision trees</li>
+<li>Discretization</li>
+<li>Entropy</li>
+<li>Greedy approach</li>
+<li>Information gain</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">4. SQL</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading24">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse24" aria-expanded="false" aria-controls="collapse24">
+              <span class="mb-0">Getting Started and Creating, Selecting &amp; Retrieving Data with SQL<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse24" class="collapse" role="tabpanel" aria-labelledby="heading24" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Databases</li>
+<li>How to create a Database instance on Cloud?</li>
+<li>Provision a Cloud hosted Database instance.</li>
+<li>What is SQL?</li>
+<li>Thinking About Your Data</li>
+<li>Relational vs. Transactional Models ER Diagram</li>
+<li>CREATE Table Statement and DROP tables</li>
+<li>UPDATE and DELETE Statements</li>
+<li>Retrieving Data with a SELECT Statement</li>
+<li>Creating Temporary Tables</li>
+<li>Adding Comments to SQL</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading25">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse25" aria-expanded="false" aria-controls="collapse25">
+              <span class="mb-0">Filtering, Sorting, and Calculating Data with SQL<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse25" class="collapse" role="tabpanel" aria-labelledby="heading25" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Basics of Filtering with SQL</li>
+<li>Advanced Filtering: IN, OR, and NOT</li>
+<li>Using Wildcards in SQL</li>
+<li>Sorting with ORDER BY</li>
+<li>Math Operations</li>
+<li>Aggregate Functions</li>
+<li>Grouping Data with SQL</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading26">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse26" aria-expanded="false" aria-controls="collapse26">
+              <span class="mb-0">Subqueries and Joins in SQL<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse26" class="collapse" role="tabpanel" aria-labelledby="heading26" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Using Subqueries</li>
+<li>Subquery Best Practices and Considerations</li>
+<li>Joining Tables</li>
+<li>Cartesian (Cross) Joins</li>
+<li>Inner Joins</li>
+<li>Aliases and Self Joins</li>
+<li>Advanced Joins: Left, Right, and Full Outer Joins</li>
+<li>Unions</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading27">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse27" aria-expanded="false" aria-controls="collapse27">
+              <span class="mb-0">Modifying and Analyzing Data with SQL<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse27" class="collapse" role="tabpanel" aria-labelledby="heading27" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Working with Text Strings</li>
+<li>Working with Date and Time Strings</li>
+<li>Date and Time Strings Examples</li>
+<li>Case Statements</li>
+<li>Views</li>
+<li>Data Governance and Profiling</li>
+<li>Using SQL for Data Science</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading28">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse28" aria-expanded="false" aria-controls="collapse28">
+              <span class="mb-0">Accessing Databases using Python<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse28" class="collapse" role="tabpanel" aria-labelledby="heading28" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>How to access databases using Python?</li>
+<li>Writing code using DB-API</li>
+<li>Connecting to a database using DB API</li>
+<li>Create Database Credentials</li>
+<li>Connecting to a database instance</li>
+<li>Creating tables, loading, inserting, data and querying data</li>
+<li>Analysing data with Python</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">5. Excel</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading29">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse29" aria-expanded="false" aria-controls="collapse29">
+              <span class="mb-0">Analyzing and Visualizing Data using Excel<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse29" class="collapse" role="tabpanel" aria-labelledby="heading29" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Input data &amp; handling large spreadsheets</li>
+<li>Tricks to get your work done faster</li>
+<li>Automating data analysis (Excel VLOOKUP, IF Function, ROUND and more)</li>
+<li>Transforming messy data into shape</li>
+<li>Cleaning, Processing and Organizing large data</li>
+<li>Spreadsheet design principles</li>
+<li>Drop-down lists in Excel and adding data validation to the cells.</li>
+<li>Creating Charts &amp; Interactive reports with Excel Pivot Tables, PivotCharts, Slicers and Timelines</li>
+<li>Functions like: - COUNTIFS, COUNT, SUMIFS, AVERAGE and many more.</li>
+<li>Excel features: - Sort, Filter, Search &amp; Replace Go to Special etc...</li>
+<li>Importing and Transforming data (with Power Query)</li>
+<li>Customize the Microsoft Excel interface</li>
+<li>Formatting correctly for professional reports.</li>
+<li>Commenting on cells.</li>
+<li>Automate data entry with Autofill and Flash-fill.</li>
+<li>Writing Excel formulas &amp; referencing to other workbooks / worksheets.</li>
+<li>Printing options</li>
+<li>Charts beyond column and bar charts: - Pareto chart, Histogram, Treemap, Sunburst</li>
+<li>charts &amp; more</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading30">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse30" aria-expanded="false" aria-controls="collapse30">
+              <span class="mb-0">Excel for Data Analytics<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse30" class="collapse" role="tabpanel" aria-labelledby="heading30" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Excel for Data Analytics</li>
+<li>Data Cleaning in Excel</li>
+<li>Formulas and Functions</li>
+<li>Lookup Functions</li>
+<li>Conditional Functions</li>
+<li>Sorting and Filtering</li>
+<li>Pivot Tables</li>
+<li>Pivot Charts</li>
+<li>Data Visualization</li>
+<li>Excel Dashboards</li>
+<li>Advanced Excel Analytics</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">6. Tableau</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading31">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse31" aria-expanded="false" aria-controls="collapse31">
+              <span class="mb-0">Analyzing and Visualizing Data using Tableau<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse31" class="collapse" role="tabpanel" aria-labelledby="heading31" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Data Visualization</li>
+<li>Tableau Introduction and Tableau Architecture</li>
+<li>Exploring Data using Tableau</li>
+<li>Working with Data using Tableau including Data Extraction and</li>
+<li>Blending</li>
+<li>Various Charts in Tableau(Basics to Advanced)</li>
+<li>Sorting-Quick Sort, Sort from Axis, Legends, Axis, Sort by Fields</li>
+<li>Filtering- Dimension Filters, Measure Filters, Date Filters, Tableau</li>
+<li>Context Filters</li>
+<li>Groups , Sets and Combined Sets</li>
+<li>Reference Lines, Bands and Distribution</li>
+<li>Parameters, Dynamic Parameters and Actions</li>
+<li>Forecasting-Exponential Smoothening Techniques</li>
+<li>Clustering</li>
+<li>Calculated Fields in Tableau, Quick Tables</li>
+<li>Tableau Mapping Features</li>
+<li>Tableau Dashboards, Dashboards Action and Stories</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading32">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse32" aria-expanded="false" aria-controls="collapse32">
+              <span class="mb-0">Data Visualization using Tableau<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Tableau</li>
+<li>Tableau Interface and Navigation</li>
+<li>Connecting Data Sources</li>
+<li>Data Preparation in Tableau</li>
+<li>Dimensions and Measures</li>
+<li>Charts and Visualizations</li>
+<li>Filters and Sorting</li>
+<li>Calculated Fields</li>
+<li>Dashboards</li>
+<li>Interactive Dashboards</li>
+<li>Tableau Stories</li>
+<li>Publishing and Sharing Dashboards</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">7. Power BI</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading33">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse33" aria-expanded="false" aria-controls="collapse33">
+              <span class="mb-0">Introduction To Power BI<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse33" class="collapse" role="tabpanel" aria-labelledby="heading33" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Power BI – Need, Importance</li>
+<li>Power BI – Advantages and Scalable Options</li>
+<li>Power BI Data Source Library and DW Files</li>
+<li>Business Analyst Tools, MS Cloud Tools</li>
+<li>Power BI Installation</li>
+<li>Power BI Desktop – Instalation, Usage</li>
+<li>Sample Reports and Visualization Controls</li>
+<li>Understanding Desktop &amp; Mobile Editions</li>
+<li>Report Rendering Options and End User Access</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading34">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse34" aria-expanded="false" aria-controls="collapse34">
+              <span class="mb-0">Creating Power BI Reports, Auto Filters<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse34" class="collapse" role="tabpanel" aria-labelledby="heading34" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Report Design with Databse Tables</li>
+<li>Report Visuals, Fields and UI Options</li>
+<li>Reports with Multiple Pages and Advantages</li>
+<li>Pages with Multiple Visualizations. Data Access</li>
+<li>“GET DATA” Options and Report Fields, Filters</li>
+<li>Report View Options: Full, Fit Page, Width Scale</li>
+<li>Report Design using Databases &amp; Queries</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">8. Artificial Intelligence (AI) & Generative AI</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading35">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse35" aria-expanded="false" aria-controls="collapse35">
+              <span class="mb-0">Introduction to AI and its Applications<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse35" class="collapse" role="tabpanel" aria-labelledby="heading35" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>What is Artificial Intelligence?</li>
+<li>History and Evolution of AI</li>
+<li>Types of AI: Narrow AI, General AI, Super AI</li>
+<li>AI vs Machine Learning vs Deep Learning</li>
+<li>Real-world Applications of AI</li>
+<li>AI in Business, Healthcare, Finance, and Retail</li>
+<li>Ethical Considerations in AI</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading36">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse36" aria-expanded="false" aria-controls="collapse36">
+              <span class="mb-0">Generative AI Fundamentals<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse36" class="collapse" role="tabpanel" aria-labelledby="heading36" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>What is Generative AI?</li>
+<li>How Generative AI Works: Overview of GANs, VAEs, and Transformers</li>
+<li>Popular Generative AI Models: GPT, DALL-E, Stable Diffusion</li>
+<li>Prompt Engineering: Basics and Best Practices</li>
+<li>Use Cases of Generative AI: Content Creation, Code Generation, Image Synthesis</li>
+<li>Ethical and Bias Issues in Generative AI</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading37">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse37" aria-expanded="false" aria-controls="collapse37">
+              <span class="mb-0">Prompt Engineering & AI Tools for Analysts<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse37" class="collapse" role="tabpanel" aria-labelledby="heading37" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Generative AI and Large Language Models (LLMs)</li>
+<li>Prompt Engineering fundamentals for data tasks</li>
+<li>Using ChatGPT/Claude for Exploratory Data Analysis (EDA)</li>
+<li>AI-assisted data cleaning and preprocessing</li>
+<li>Writing and debugging SQL queries using AI tools</li>
+<li>AI-assisted Python scripting for data analysis</li>
+<li>Using Copilot in Microsoft Excel for automation</li>
+<li>Power BI Copilot for report and dashboard generation</li>
+<li>AI-generated data visualizations and insights summaries</li>
+<li>Automating repetitive analytics tasks with AI</li>
+<li>Ethical use of AI in data analytics (bias, accuracy, data privacy)</li>
+<li>Case Study: Using AI to speed up a real-world analytics project</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading38">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse38" aria-expanded="false" aria-controls="collapse38">
+              <span class="mb-0">Natural Language Processing (NLP) and LLMs<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse38" class="collapse" role="tabpanel" aria-labelledby="heading38" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to NLP</li>
+<li>Tokenization, Stemming, Lemmatization</li>
+<li>Bag of Words, TF-IDF, Word Embeddings (Word2Vec, GloVe)</li>
+<li>Transformers and Attention Mechanism</li>
+<li>Large Language Models (LLMs): GPT, BERT, LLaMA</li>
+<li>Fine-tuning LLMs for Specific Tasks</li>
+<li>Building Chatbots and Conversational AI</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading39">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse39" aria-expanded="false" aria-controls="collapse39">
+              <span class="mb-0">Deep Learning for AI<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse39" class="collapse" role="tabpanel" aria-labelledby="heading39" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Neural Networks: Perceptron, Activation Functions</li>
+<li>Feedforward Neural Networks (FNN)</li>
+<li>Convolutional Neural Networks (CNN) for Image Data</li>
+<li>Recurrent Neural Networks (RNN) and LSTMs for Sequential Data</li>
+<li>Autoencoders and Variational Autoencoders (VAEs)</li>
+<li>Introduction to GANs (Generative Adversarial Networks)</li>
+<li>Using TensorFlow / Keras for Deep Learning</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading40">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse40" aria-expanded="false" aria-controls="collapse40">
+              <span class="mb-0">AI Implementation and Deployment<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse40" class="collapse" role="tabpanel" aria-labelledby="heading40" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Building AI Models using Python (Scikit-learn, TensorFlow, PyTorch)</li>
+<li>Model Evaluation and Hyperparameter Tuning</li>
+<li>Deploying AI Models using Flask / FastAPI</li>
+<li>Introduction to MLOps</li>
+<li>AI Model Monitoring and Maintenance</li>
+<li>Using Cloud AI Services: AWS SageMaker, Azure AI, Google AI</li>
+<li>Building End-to-End AI Applications</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="heading41">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse41" aria-expanded="false" aria-controls="collapse41">
+              <span class="mb-0">Responsible AI and Future Trends<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse41" class="collapse" role="tabpanel" aria-labelledby="heading41" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>AI Fairness, Accountability, and Transparency</li>
+<li>Bias Detection and Mitigation in AI Models</li>
+<li>Explainable AI (XAI)</li>
+<li>Data Privacy and Security in AI</li>
+<li>Emerging Trends: Multimodal AI, Self-supervised Learning</li>
+<li>AI and the Future of Work</li>
+<li>Career Opportunities in AI and Gen AI</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">9. R Programming for Data Analytics</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading42">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse42" aria-expanded="false" aria-controls="collapse42">
+              <span class="mb-0">R Programming for Data Analytics<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse42" class="collapse" role="tabpanel" aria-labelledby="heading42" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to R</li>
+<li>R Programming Basics</li>
+<li>Variables and Data Types</li>
+<li>Operators and Expressions</li>
+<li>Conditional Statements</li>
+<li>Loops and Functions</li>
+<li>Data Structures in R</li>
+<li>Vectors, Lists and Matrices</li>
+<li>Data Frames and Factors</li>
+<li>Data Import and Export</li>
+<li>Data Manipulation using R</li>
+<li>Data Cleaning using R</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">10. Data Visualization with ggplot2</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading43">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse43" aria-expanded="false" aria-controls="collapse43">
+              <span class="mb-0">Data Visualization using R<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse43" class="collapse" role="tabpanel" aria-labelledby="heading43" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Data Visualization</li>
+<li>Introduction to ggplot2</li>
+<li>Basic Plots using ggplot2</li>
+<li>Bar Charts</li>
+<li>Histograms</li>
+<li>Box Plots</li>
+<li>Scatter Plots</li>
+<li>Line Charts</li>
+<li>Customizing ggplot2 Visualizations</li>
+<li>Themes, Labels and Annotations</li>
+<li>Multiple Plots and Facets</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">11. Business Intelligence with Looker</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading44">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse44" aria-expanded="false" aria-controls="collapse44">
+              <span class="mb-0">Business Intelligence using Looker<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse44" class="collapse" role="tabpanel" aria-labelledby="heading44" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to Business Intelligence</li>
+<li>Introduction to Looker</li>
+<li>Looker Interface and Navigation</li>
+<li>Connecting Data Sources</li>
+<li>Data Exploration in Looker</li>
+<li>Creating Reports and Dashboards</li>
+<li>Filters and Dimensions</li>
+<li>Measures and Visualizations</li>
+<li>Creating Interactive Dashboards</li>
+<li>LookML Basics</li>
+<li>Sharing and Scheduling Reports</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="module-heading">12. MATLAB for Data Analysis</h4>
+        
+        <div class="card">
+          <div class="card-header" id="heading45">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion-inv" href="#collapse45" aria-expanded="false" aria-controls="collapse45">
+              <span class="mb-0">MATLAB for Data Analysis<i class="fa fa-caret-down"></i></span>
+            </a>
+          </div>
+          <div id="collapse45" class="collapse" role="tabpanel" aria-labelledby="heading45" data-parent="#accordion-inv">
+            <div class="card-body cer">
+              <div class="row">
+                <div class="col-lg-12">
+                  <li>Introduction to MATLAB</li>
+<li>MATLAB Environment and Interface</li>
+<li>Variables and Data Types</li>
+<li>Arrays and Matrices</li>
+<li>Operators and Expressions</li>
+<li>Conditional Statements and Loops</li>
+<li>Functions in MATLAB</li>
+<li>Data Import and Export</li>
+<li>Data Manipulation using MATLAB</li>
+<li>Data Visualization using MATLAB</li>
+<li>Statistical Analysis using MATLAB</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+                  <p>Uncodemy's Data Analytics training course in Faridabad not only covers these fundamental topics but also includes hands-on experience with real-world data, ensuring that students are well-prepared for the demands of the industry. Our curriculum is designed to provide a balanced mix of theoretical knowledge and practical skills, making it one of the best data analytics courses available.</p>
+<p>By choosing Uncodemy, you are opting for a program that is tailored to meet the needs of aspiring data analysts, offering a robust education in a field that is both dynamic and in high demand. Whether you are looking for offline or online data analytics courses in Faridabad, our training programs are structured to provide the best learning experience possible.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
+
+  <!-- =======================================================
+       H2: Tools & Technologies Covered
+       ======================================================= -->
+  <section class="section" id="tools" aria-labelledby="tools-h">
+    <div class="wrap">
+      <h2 id="tools-h">Tools &amp; Technologies Covered</h2>
+      <p class="answer-first">You work hands-on with 14 tools across the course:</p>
+      <ul class="check-list">
+        <li><span><strong>Languages:</strong> Python (pandas, NumPy, Matplotlib, Seaborn), SQL</span></li>
+        <li><span><strong>Databases:</strong> MySQL, PostgreSQL</span></li>
+        <li><span><strong>Reporting:</strong> Advanced Excel, Power Query, Tableau, Power BI with DAX</span></li>
+        <li><span><strong>Gen AI:</strong> ChatGPT, GitHub Copilot, Power BI Copilot, Claude for document analysis</span></li>
+        <li><span><strong>Workflow:</strong> Jupyter Notebook, Git and GitHub for version control</span></li>
+      </ul>
+      <p class="lede">Every tool appears in at least one graded project, so nothing stays theory-only.</p>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Trainers & Mentors
+       Horizontal card rail on mobile, grid on desktop
+       ======================================================= -->
+  <section class="section section--alt" id="trainers" aria-labelledby="trainers-h">
+    <div class="wrap">
+      <h2 id="trainers-h">Trainers &amp; Mentors</h2>
+      <p class="answer-first">Four working analysts teach this course, and each one still holds a full-time industry job.</p>
+      <p class="scroll-hint">Swipe to see all four trainers →</p>
+
+      <div class="trainer-rail">
+
+        <article class="card card--accent-top">
+          <div class="trainer-card__avatar" aria-hidden="true">RD</div>
+          <p class="trainer-card__role">SQL &amp; Databases</p>
+          <h3>Rukmini Deshpande</h3>
+          <p>Nine years in reporting roles at a Faridabad payments company, now manages a five-person analytics team. Her sessions focus on query performance and interview patterns.</p>
+        </article>
+
+        <article class="card card--accent-top">
+          <div class="trainer-card__avatar" aria-hidden="true">AQ</div>
+          <p class="trainer-card__role">Python &amp; Statistics</p>
+          <h3>Aftab Qureshi</h3>
+          <p>Moved from mechanical engineering into analytics himself, which shapes how he explains code to non-programmers. He has trained more than 600 learners.</p>
+        </article>
+
+        <article class="card card--accent-top">
+          <div class="trainer-card__avatar" aria-hidden="true">SB</div>
+          <p class="trainer-card__role">Tableau &amp; Power BI</p>
+          <h3>Sneha Balakrishnan</h3>
+          <p>Built reporting systems for two e-commerce firms. She handles dashboard design and reviews every learner dashboard line by line.</p>
+        </article>
+
+        <article class="card card--accent-top">
+          <div class="trainer-card__avatar" aria-hidden="true">VR</div>
+          <p class="trainer-card__role">Gen AI &amp; Mock Interviews</p>
+          <h3>Vivek Rathi</h3>
+          <p>Works on internal AI tooling at a product startup and tests every prompt workflow himself before it reaches the classroom, so nothing taught here is untested theory.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Placement Assistance & Hiring Partners
+       ======================================================= -->
+  <section class="section" id="placement" aria-labelledby="placement-h">
+    <div class="wrap">
+      <h2 id="placement-h">Placement Assistance &amp; Hiring Partners</h2>
+      <p class="answer-first">Placement support starts in month three, not after the course ends.</p>
+      <p>Our team works with 180 hiring partners across Faridabad, including IT services companies, product startups in Koramangala and HSR Layout, fintech firms, e-commerce sellers, and analytics consultancies.</p>
+
+      <div class="card-grid card-grid--3">
+        <article class="card"><h3>1. Resume rebuild</h3><p>One page, project-led, matched to the exact keywords in analyst job posts.</p></article>
+        <article class="card"><h3>2. Portfolio cleanup</h3><p>LinkedIn and GitHub tidied so recruiters open your dashboards and query code in one click.</p></article>
+        <article class="card"><h3>3. Six mock interviews</h3><p>Two SQL rounds, one Python round, one dashboard walkthrough, one case study, one HR round — all recorded, all reviewed with written feedback.</p></article>
+        <article class="card"><h3>4. Interview scheduling</h3><p>Relevant openings by email and WhatsApp, with a referral where a partner allows it.</p></article>
+        <article class="card"><h3>5. Salary negotiation</h3><p>Coaching before you sign an offer, so you know what your band is worth.</p></article>
+        <article class="card card--accent-top"><h3>12 months of cover</h3><p>Support continues for 12 months after your final project. You can also rejoin any live batch once at no extra cost, which helps when you want to revise a module a week before an interview round.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Data Analyst Salary in Faridabad (2026) + table
+       ======================================================= -->
+  <section class="section section--alt" id="salary" aria-labelledby="salary-h">
+    <div class="wrap">
+      <h2 id="salary-h">Data Analyst Salary in Faridabad (2026)</h2>
+      <p class="answer-first">A fresher data analyst in Faridabad earns ₹4.5–7 lakh per year in 2026, which sits 10–15% above pay for the same role in Tier-2 cities.</p>
+      <p>Pay rises fast with proof of work. Analysts with two to four years of experience and a dashboard portfolio typically reach ₹8–14 lakh, and senior analysts who own reporting for a business unit cross ₹18 lakh.</p>
+      <p>Sector matters as much as experience. Fintech and product startups pay at the top of each band but expect strong SQL and faster delivery. IT services firms pay in the middle and offer steadier hours plus client exposure. E-commerce sits between the two, with heavier weekend reporting cycles. Candidates who can show a verified Gen AI workflow in interviews report offers near the upper end of their band. Location within the city matters less than sector, though roles in Whitefield and Electronic City often include a shift or on-call allowance.</p>
+
+      <div class="table-scroll">
+        <table>
+          <caption>Data analyst salary by experience level, Faridabad, 2026</caption>
+          <thead>
+            <tr><th scope="col">Experience level</th><th scope="col">Annual salary range</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Fresher (0–1 year)</th><td>₹4.5–7 lakh</td></tr>
+            <tr><th scope="row">Junior analyst (1–2 years)</th><td>₹6.5–9.5 lakh</td></tr>
+            <tr><th scope="row">Mid-level analyst (2–4 years)</th><td>₹8–14 lakh</td></tr>
+            <tr><th scope="row">Senior analyst (5+ years)</th><td>₹15–24 lakh</td></tr>
+            <tr><th scope="row">Lead / analytics manager (8+ years)</th><td>₹26–38 lakh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Certification Details
+       ======================================================= -->
+  <section class="section" id="certification" aria-labelledby="cert-h">
+    <div class="wrap">
+      <h2 id="cert-h">Certification Details</h2>
+      <div class="section-inner--split">
+        <p class="answer-first">You receive an industry-recognised course completion certificate with a unique verification ID that any recruiter can check online.</p>
+        <div>
+          <p>The certificate is issued after two conditions are met: 75% attendance and submission of all 12 graded projects. It lists the modules covered, the tools used, and your final project title, so it reads as evidence rather than a name on paper.</p>
+          <p>You also get guided preparation for two external exams — the Microsoft Power BI Data Analyst certification and the Tableau Desktop Specialist — with practice question sets and a revision week. External exam fees are paid directly to the exam body.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Data Analytics Job Trends in Faridabad
+       ======================================================= -->
+  <section class="section section--alt" id="trends" aria-labelledby="trends-h">
+    <div class="wrap">
+      <h2 id="trends-h">Data Analytics Job Trends in Faridabad</h2>
+      <p class="answer-first">Faridabad posts more analytics openings than any other Indian city, and the job description itself has shifted in the last two years.</p>
+      <p>Three trends matter for anyone joining now.</p>
+
+      <div class="card-grid card-grid--3">
+        <article class="card"><h3>Gen AI is becoming baseline</h3><p>Job posts increasingly name prompt-based querying or Copilot use, and interviewers ask how you validate AI-written SQL. Nobody hires an analyst who pastes unchecked output into a report.</p></article>
+        <article class="card"><h3>The tool list is consolidating</h3><p>Power BI has gained ground in IT services and mid-size firms, while Tableau holds strong in product companies. SQL remains the non-negotiable screening skill in almost every first round.</p></article>
+        <article class="card"><h3>Proof beats pedigree</h3><p>Take-home tasks and live dashboard reviews are now common, which favours candidates with a public portfolio over candidates with only a certificate.</p></article>
+      </div>
+
+      <p>Demand is spread across sectors too. Fintech hires for risk and payment analytics, e-commerce for supply chain and pricing, healthtech and edtech for user behaviour, and global capability centres for reporting teams that serve overseas business units. That spread is why analyst openings here hold steady even when one sector slows down.</p>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: How This Course Is Different (USP)
+       ======================================================= -->
+  <section class="section" id="usp" aria-labelledby="usp-h">
+    <div class="wrap">
+      <h2 id="usp-h">How This Course Is Different (USP)</h2>
+      <p class="answer-first">Four things separate this course from a recorded video library.</p>
+      <p>Batch size is capped at 18 learners, so trainers review your code, not just your attendance. Gen AI is a full module with a verification workflow, not a single bonus session bolted onto the end. All 12 projects use Faridabad datasets, which gives you local context to discuss in interviews.</p>
+      <p>And the doubt-clearing runs daily, not weekly: a one-hour open session every evening where you can bring a broken query or a failing script and leave with it working. You also keep lifetime access to session recordings and one free batch repeat, so revising a module before an interview costs you nothing extra.</p>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Student Reviews / Success Stories
+       ======================================================= -->
+  <section class="section section--alt" id="reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <h2 id="reviews-h">Student Reviews / Success Stories</h2>
+      <div class="card-grid card-grid--3">
+
+        <figure class="card quote-card">
+          <blockquote>“I had six years in operations and no coding. The SQL problem sets were hard for the first month, then they clicked. My delivery dashboard project came up in both interview rounds. I joined a logistics team in Whitefield in month seven.”</blockquote>
+          <figcaption>Meghana R. — moved from process associate to data analyst</figcaption>
+        </figure>
+
+        <figure class="card quote-card">
+          <blockquote>“I applied for 40 analyst roles before this course and got two replies. The difference was the portfolio. Recruiters opened my GitHub. The Gen AI module also helped in interviews — I could explain how I check a generated query instead of just saying I use ChatGPT.”</blockquote>
+          <figcaption>Tarun Iyengar — mechanical engineering graduate</figcaption>
+        </figure>
+
+        <figure class="card quote-card">
+          <blockquote>“I was away from work for four years, so the weekend batch mattered — it fitted around school hours. The recorded mock interviews were uncomfortable to watch, and that is exactly why they helped. I fixed the same rambling answer three times before it sounded clear.”</blockquote>
+          <figcaption>Nabeela Firdaus — career-break returner</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Frequently Asked Questions
+       Accordion — one question open at a time
+       ======================================================= -->
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">Frequently Asked Questions</h2>
+
+      <div class="accordion" id="faqAccordion">
+
+        <details name="faq">
+          <summary>What is the fee for this course?</summary>
+          <div class="accordion__body"><p>The listed fee is ₹50,000 + GST. The current special offer fee is ₹17,500 + GST for a limited number of seats per batch. An EMI option starts at ₹2,999/month. There is no separate charge for placement support, project reviews, mock interviews, or your course completion certificate.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>How long is the course?</summary>
+          <div class="accordion__body"><p>The course runs 5–6 months. Weekday batches usually finish nearer 5 months, and weekend batches take closer to 6 months. Both cover the same six modules and the same 12 projects. Placement support continues for 12 months after you submit your final project.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>Do I need coding experience to join?</summary>
+          <div class="accordion__body"><p>No. The course starts with plain Python basics and assumes zero programming background. Close to half of each batch comes from non-engineering degrees, including commerce, arts, and science streams. You do need basic maths and regular practice time of 8–10 hours a week.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>Is this classroom or online training?</summary>
+          <div class="accordion__body"><p>Both options run. You can attend at the Faridabad centre or join the same live batch online. Sessions are recorded either way, and you keep lifetime access. Online learners get the same project reviews, the same 6 mock interviews, and the same placement support.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>What is the batch size?</summary>
+          <div class="accordion__body"><p>Each batch is capped at 18 learners. The cap exists so trainers can review individual code and dashboards during class rather than only answering questions in a chat window. Weekday, weekend, and online batches all follow the same cap.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>Will I get a job guarantee?</summary>
+          <div class="accordion__body"><p>No, and any institute promising one is worth questioning. We provide 180 hiring partner connections, referrals where partners allow them, 6 recorded mock interviews, resume and portfolio work, and 12 months of interview scheduling support. Your results depend on practice and interview performance.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>How many projects will I build?</summary>
+          <div class="accordion__body"><p>You build 12 graded projects, one or two per module, plus a final capstone. Datasets include Faridabad cab trips, food delivery orders, UPI payments, and retail sales. All 12 go into a public GitHub portfolio that recruiters can open during screening.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>Which Gen AI tools does the course cover?</summary>
+          <div class="accordion__body"><p>You work with ChatGPT, GitHub Copilot, Power BI Copilot, and Claude for document analysis. The focus is a verification workflow: prompt, test the output against known results, then fix. You also cover data privacy rules so client data never enters a public AI tool.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>Can I pay in instalments?</summary>
+          <div class="accordion__body"><p>Yes. An EMI option starts at ₹2,999/month through partner finance providers. You can also split the offer fee of ₹17,500 + GST across agreed milestones. Our counsellors explain both paths in full, including any processing charge, before you enrol.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>What certificate do I receive?</summary>
+          <div class="accordion__body"><p>You receive a course completion certificate with an online verification ID, issued after 75% attendance and all 12 project submissions. It lists your modules, tools, and capstone title. The course also prepares you for the Power BI Data Analyst and Tableau Desktop Specialist exams.</p></div>
+        </details>
+
+        <details name="faq">
+          <summary>What if I miss a class or fall behind?</summary>
+          <div class="accordion__body"><p>Every session is recorded and posted the same day. A daily one-hour doubt session covers anything you missed. If you fall well behind, you can repeat one module with a later live batch, or repeat the full batch once, at no additional fee.</p></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       H2: Final CTA Section
+       Grid-fade section #3
+       ======================================================= -->
+  <section class="section grid-fade-section" id="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2 id="cta-h">Final CTA Section</h2>
+        <p class="answer-first">Seats at the offer fee of ₹17,500 + GST, down from ₹50,000 + GST, are limited for each batch.</p>
+        <p>The EMI option starts at ₹2,999/month, and the course runs 5–6 months. Book a free demo class, sit through one live session, and check the trainers and batch size yourself before you pay anything.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#apply">Book free demo</a>
+          <a class="btn btn--ghost" href="#apply">Talk to a counsellor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<div id="UnCodeMy-Footer"></div>
+
+<!-- =========================================================
+     STICKY MOBILE ACTION BAR — hidden from 768px up
+     ========================================================= -->
+<div class="mobile-bar" role="region" aria-label="Enrolment actions">
+  <a class="btn btn--ghost" href="#apply">Talk to counsellor</a>
+  <a class="btn btn--primary" href="#apply">Apply now</a>
+</div>
+
+<!-- FAQ structured data for rich results / AI answer engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is the fee for the Data Analytics with Gen AI course in Faridabad?","acceptedAnswer":{"@type":"Answer","text":"The listed fee is ₹50,000 + GST. The current special offer fee is ₹17,500 + GST for limited seats. An EMI option starts at ₹2,999/month, and placement support is included at no extra charge."}},
+    {"@type":"Question","name":"How long is the Data Analytics with Gen AI course in Faridabad?","acceptedAnswer":{"@type":"Answer","text":"The course runs 5–6 months. Weekday batches finish nearer 5 months and weekend batches closer to 6 months. Both cover the same six modules and 12 projects, with 12 months of placement support afterwards."}},
+    {"@type":"Question","name":"Do I need coding experience to join this data analytics course?","acceptedAnswer":{"@type":"Answer","text":"No. The course starts with plain Python basics and assumes no programming background. Nearly half of each batch comes from non-engineering degrees. You need basic maths and 8–10 hours of practice a week."}},
+    {"@type":"Question","name":"Is the training available online as well as in classroom?","acceptedAnswer":{"@type":"Answer","text":"Both options run. You can attend at the Faridabad centre or join the same live batch online. Sessions are recorded, and online learners get identical project reviews, mock interviews, and placement support."}},
+    {"@type":"Question","name":"What is the batch size for this course?","acceptedAnswer":{"@type":"Answer","text":"Each batch is capped at 18 learners so trainers can review individual code and dashboards in class. Weekday and weekend batches follow the same cap."}},
+    {"@type":"Question","name":"Is there a job guarantee after the course?","acceptedAnswer":{"@type":"Answer","text":"No. The course provides 180 hiring partner connections, referrals where allowed, 6 recorded mock interviews, resume and portfolio support, and 12 months of interview scheduling. Results depend on your practice and interview performance."}},
+    {"@type":"Question","name":"How many projects are included in the course?","acceptedAnswer":{"@type":"Answer","text":"You build 12 graded projects plus a capstone, using Faridabad datasets such as cab trips, food delivery orders, UPI payments, and retail sales. All go into a public GitHub portfolio."}},
+    {"@type":"Question","name":"Which Generative AI tools are taught in this data analytics course?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT, GitHub Copilot, Power BI Copilot, and Claude for document analysis. The module teaches a verification workflow — prompt, test output against known results, then fix — plus data privacy rules for client data."}},
+    {"@type":"Question","name":"Can I pay the course fee in instalments?","acceptedAnswer":{"@type":"Answer","text":"Yes. An EMI option starts at ₹2,999/month through partner finance providers, or you can split the ₹17,500 + GST offer fee across agreed milestones. Counsellors explain any processing charge before enrolment."}},
+    {"@type":"Question","name":"What certificate do I get after completing the course?","acceptedAnswer":{"@type":"Answer","text":"A course completion certificate with an online verification ID, issued after 75% attendance and all 12 project submissions. It lists modules, tools, and capstone title, and prepares you for Power BI and Tableau exams."}},
+    {"@type":"Question","name":"What is the salary of a data analyst in Faridabad in 2026?","acceptedAnswer":{"@type":"Answer","text":"Freshers earn ₹4.5–7 lakh per year, mid-level analysts with 2–4 years earn ₹8–14 lakh, and senior analysts earn ₹15–24 lakh. Faridabad pay sits 10–15% above Tier-2 city levels."}}
+  ]
+}
+</script>
+
+<script>
+/* Mobile hamburger menu */
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('navMenu');
+  toggle.addEventListener('click', function () {
+    var open = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  /* Close the menu after tapping a link on mobile */
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
+/* FAQ: one question open at a time.
+   Modern browsers do this natively via <details name="faq">.
+   This fallback covers browsers without exclusive accordion support. */
+(function () {
+  var supportsExclusive = 'name' in document.createElement('details');
+  if (supportsExclusive) return;
+  var items = document.querySelectorAll('#faqAccordion details');
+  items.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (!item.open) return;
+      items.forEach(function (other) { if (other !== item) other.open = false; });
+    });
+  });
+})();
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="../tutorial/components/footer-script.js"></script>
+
+</body>
+</html>

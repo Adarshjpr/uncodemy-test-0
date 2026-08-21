@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Buttons, Forms &amp; Tables — Essential Components | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Bootstrap's essential components — buttons (styles, sizes, states), forms (inputs, validation, layout), and tables (styling, responsive)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 4 of 9: Bootstrap Buttons, Forms &amp; Tables — Essential Components</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html" class="active"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cubes"></i> Components</span>
+        <h1>Bootstrap Buttons, Forms &amp; Tables — Essential Components</h1>
+
+        <div class="card">
+
+            <p>Buttons, forms, and tables are the <strong>most frequently used components</strong> in web development. Bootstrap provides beautifully styled, accessible, and responsive versions of all three. Mastering these components will allow you to build functional, professional interfaces quickly.</p>
+
+            <h2>1. Bootstrap Buttons</h2>
+            <p>Bootstrap buttons are versatile, accessible, and come in multiple styles, sizes, and states. Use the <code>.btn</code> class with a contextual color class.</p>
+
+            <h3>Button Styles</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Style</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.btn-primary</code></td><td>Primary (brand blue)</td><td>Primary actions (Submit, Save)</td></tr>
+                        <tr><td><code>.btn-secondary</code></td><td>Secondary (gray)</td><td>Secondary actions (Cancel, Back)</td></tr>
+                        <tr><td><code>.btn-success</code></td><td>Success (green)</td><td>Positive actions (Approve, Confirm)</td></tr>
+                        <tr><td><code>.btn-danger</code></td><td>Danger (red)</td><td>Destructive actions (Delete, Remove)</td></tr>
+                        <tr><td><code>.btn-warning</code></td><td>Warning (yellow)</td><td>Cautionary actions (Alert, Notice)</td></tr>
+                        <tr><td><code>.btn-info</code></td><td>Info (cyan)</td><td>Informational actions (Help, More)</td></tr>
+                        <tr><td><code>.btn-light</code></td><td>Light (white)</td><td>Light backgrounds</td></tr>
+                        <tr><td><code>.btn-dark</code></td><td>Dark (black)</td><td>Dark backgrounds</td></tr>
+                        <tr><td><code>.btn-link</code></td><td>Link style</td><td>Text-like button</td></tr>
+                        <tr><td><code>.btn-outline-*</code></td><td>Outlined</td><td>Less prominent actions</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Button Examples</h3>
+            <pre class="code-block"><code>&lt;!-- Solid buttons --&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn-light"&gt;Light&lt;/button&gt;
+&lt;button type="button" class="btn btn-dark"&gt;Dark&lt;/button&gt;
+
+&lt;!-- Outline buttons --&gt;
+&lt;button type="button" class="btn btn-outline-primary"&gt;Outline Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-danger"&gt;Outline Danger&lt;/button&gt;
+
+&lt;!-- Link button --&gt;
+&lt;button type="button" class="btn btn-link"&gt;Link Button&lt;/button&gt;</code></pre>
+
+            <h3>Button Sizes</h3>
+            <p>Use <code>.btn-lg</code> (large), <code>.btn-sm</code> (small), or <code>.btn-xs</code> (extra small) to control button size.</p>
+            <pre class="code-block"><code>&lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;</code></pre>
+
+            <h3>Button States</h3>
+            <pre class="code-block"><code>&lt;!-- Active state --&gt;
+&lt;button type="button" class="btn btn-primary active"&gt;Active&lt;/button&gt;
+
+&lt;!-- Disabled state --&gt;
+&lt;button type="button" class="btn btn-primary" disabled&gt;Disabled&lt;/button&gt;
+
+&lt;!-- Block (full width) button --&gt;
+&lt;button type="button" class="btn btn-primary d-block w-100"&gt;Full Width&lt;/button&gt;
+
+&lt;!-- Button with icon --&gt;
+&lt;button type="button" class="btn btn-success"&gt;
+    &lt;i class="fas fa-check"&gt;&lt;/i&gt; Save
+&lt;/button&gt;</code></pre>
+
+            <h3>Button Groups</h3>
+            <p>Group buttons together using <code>.btn-group</code>.</p>
+            <pre class="code-block"><code>&lt;div class="btn-group" role="group" aria-label="Basic example"&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;Left&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;Middle&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>2. Bootstrap Forms</h2>
+            <p>Bootstrap forms provide a clean, consistent, and accessible way to collect user input. They support validation, responsive layouts, and various input types.</p>
+
+            <h3>Basic Form Structure</h3>
+            <pre class="code-block"><code>&lt;form&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="email" class="form-label"&gt;Email address&lt;/label&gt;
+        &lt;input type="email" class="form-control" id="email" placeholder="name@example.com"&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="password" class="form-label"&gt;Password&lt;/label&gt;
+        &lt;input type="password" class="form-control" id="password"&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="textarea" class="form-label"&gt;Textarea&lt;/label&gt;
+        &lt;textarea class="form-control" id="textarea" rows="3"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <h3>Form Input Types</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Input Type</th><th>Example Class</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>text</code></td><td><code>.form-control</code></td><td>Single line text</td></tr>
+                        <tr><td><code>email</code></td><td><code>.form-control</code></td><td>Email addresses</td></tr>
+                        <tr><td><code>password</code></td><td><code>.form-control</code></td><td>Passwords</td></tr>
+                        <tr><td><code>number</code></td><td><code>.form-control</code></td><td>Numbers</td></tr>
+                        <tr><td><code>textarea</code></td><td><code>.form-control</code></td><td>Multi-line text</td></tr>
+                        <tr><td><code>select</code></td><td><code>.form-select</code></td><td>Dropdown selection</td></tr>
+                        <tr><td><code>checkbox</code></td><td><code>.form-check-input</code></td><td>Checkboxes</td></tr>
+                        <tr><td><code>radio</code></td><td><code>.form-check-input</code></td><td>Radio buttons</td></tr>
+                        <tr><td><code>range</code></td><td><code>.form-range</code></td><td>Slider</td></tr>
+                        <tr><td><code>file</code></td><td><code>.form-control</code></td><td>File upload</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Form Layout Options</h3>
+
+            <h4>Inline Form</h4>
+            <pre class="code-block"><code>&lt;form class="row g-3"&gt;
+    &lt;div class="col-auto"&gt;
+        &lt;label for="inlineEmail" class="visually-hidden"&gt;Email&lt;/label&gt;
+        &lt;input type="text" class="form-control" id="inlineEmail" placeholder="Email"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-auto"&gt;
+        &lt;label for="inlinePassword" class="visually-hidden"&gt;Password&lt;/label&gt;
+        &lt;input type="password" class="form-control" id="inlinePassword" placeholder="Password"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-auto"&gt;
+        &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+            <h4>Horizontal Form</h4>
+            <pre class="code-block"><code>&lt;form&gt;
+    &lt;div class="row mb-3"&gt;
+        &lt;label for="inputEmail3" class="col-sm-2 col-form-label"&gt;Email&lt;/label&gt;
+        &lt;div class="col-sm-10"&gt;
+            &lt;input type="email" class="form-control" id="inputEmail3"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row mb-3"&gt;
+        &lt;label for="inputPassword3" class="col-sm-2 col-form-label"&gt;Password&lt;/label&gt;
+        &lt;div class="col-sm-10"&gt;
+            &lt;input type="password" class="form-control" id="inputPassword3"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <h4>Form Sizing</h4>
+            <pre class="code-block"><code>&lt;!-- Large form --&gt;
+&lt;input class="form-control form-control-lg" type="text" placeholder="Large input"&gt;
+
+&lt;!-- Default form --&gt;
+&lt;input class="form-control" type="text" placeholder="Default input"&gt;
+
+&lt;!-- Small form --&gt;
+&lt;input class="form-control form-control-sm" type="text" placeholder="Small input"&gt;</code></pre>
+
+            <h3>Floating Labels</h3>
+            <p>Floating labels create a modern, clean look where the label floats above the input when focused or filled.</p>
+            <pre class="code-block"><code>&lt;div class="form-floating mb-3"&gt;
+    &lt;input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"&gt;
+    &lt;label for="floatingInput"&gt;Email address&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-floating"&gt;
+    &lt;textarea class="form-control" id="floatingTextarea" style="height: 100px"&gt;&lt;/textarea&gt;
+    &lt;label for="floatingTextarea"&gt;Comments&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Form Validation</h3>
+            <p>Bootstrap provides validation styles for form feedback using <code>.was-validated</code> and <code>.is-valid</code>/<code>.is-invalid</code> classes.</p>
+            <pre class="code-block"><code>&lt;form class="was-validated"&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="validationName" class="form-label"&gt;Name&lt;/label&gt;
+        &lt;input type="text" class="form-control is-valid" id="validationName" value="John Doe" required&gt;
+        &lt;div class="valid-feedback"&gt;Looks good!&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="validationEmail" class="form-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" class="form-control is-invalid" id="validationEmail" value="invalid" required&gt;
+        &lt;div class="invalid-feedback"&gt;Please provide a valid email.&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <h3>Input Groups</h3>
+            <p>Add text, buttons, or icons before/after inputs using <code>.input-group</code>.</p>
+            <pre class="code-block"><code>&lt;div class="input-group mb-3"&gt;
+    &lt;span class="input-group-text"&gt;$&lt;/span&gt;
+    &lt;input type="text" class="form-control" placeholder="Amount"&gt;
+    &lt;span class="input-group-text"&gt;.00&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="input-group mb-3"&gt;
+    &lt;input type="text" class="form-control" placeholder="Search..."&gt;
+    &lt;button class="btn btn-primary" type="button"&gt;Search&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>3. Bootstrap Tables</h2>
+            <p>Bootstrap tables are clean, responsive, and highly customizable. Use the <code>.table</code> class on any <code>&lt;table&gt;</code> element.</p>
+
+            <h3>Basic Table</h3>
+            <pre class="code-block"><code>&lt;table class="table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;First Name&lt;/th&gt;
+            &lt;th&gt;Last Name&lt;/th&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;Doe&lt;/td&gt;
+            &lt;td&gt;john@example.com&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;Jane&lt;/td&gt;
+            &lt;td&gt;Smith&lt;/td&gt;
+            &lt;td&gt;jane@example.com&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+            <h3>Table Variants</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Effect</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.table-striped</code></td><td>Adds zebra-striping to rows</td></tr>
+                        <tr><td><code>.table-bordered</code></td><td>Adds borders on all sides</td></tr>
+                        <tr><td><code>.table-hover</code></td><td>Highlight row on hover</td></tr>
+                        <tr><td><code>.table-sm</code></td><td>Compact table (smaller padding)</td></tr>
+                        <tr><td><code>.table-dark</code></td><td>Dark theme table</td></tr>
+                        <tr><td><code>.table-responsive</code></td><td>Makes table horizontally scrollable</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Table Examples</h3>
+            <pre class="code-block"><code>&lt;!-- Striped + Hover + Bordered --&gt;
+&lt;table class="table table-striped table-hover table-bordered"&gt;
+    &lt;!-- table content --&gt;
+&lt;/table&gt;
+
+&lt;!-- Responsive table (scrollable on small screens) --&gt;
+&lt;div class="table-responsive"&gt;
+    &lt;table class="table"&gt;
+        &lt;!-- table content --&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Contextual Table Rows</h3>
+            <p>Use contextual classes on rows (<code>&lt;tr&gt;</code>) to highlight specific data.</p>
+            <pre class="code-block"><code>&lt;table class="table"&gt;
+    &lt;tbody&gt;
+        &lt;tr class="table-primary"&gt;
+            &lt;td&gt;Primary row&lt;/td&gt;
+            &lt;td&gt;Info&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="table-success"&gt;
+            &lt;td&gt;Success row&lt;/td&gt;
+            &lt;td&gt;Positive&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="table-danger"&gt;
+            &lt;td&gt;Danger row&lt;/td&gt;
+            &lt;td&gt;Negative&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="table-warning"&gt;
+            &lt;td&gt;Warning row&lt;/td&gt;
+            &lt;td&gt;Caution&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="table-info"&gt;
+            &lt;td&gt;Info row&lt;/td&gt;
+            &lt;td&gt;Neutral&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+            <h3>Table Head Options</h3>
+            <pre class="code-block"><code>&lt;table class="table"&gt;
+    &lt;thead class="table-dark"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;thead class="table-light"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;!-- data --&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+            <h2>Putting It All Together</h2>
+            <p>Here's a complete example combining buttons, forms, and tables:</p>
+            <pre class="code-block"><code>&lt;div class="container mt-4"&gt;
+    &lt;h2&gt;User Management&lt;/h2&gt;
+    
+    &lt;!-- Form to add a user --&gt;
+    &lt;form class="row g-3 mb-4"&gt;
+        &lt;div class="col-md-4"&gt;
+            &lt;input type="text" class="form-control" placeholder="First name"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-4"&gt;
+            &lt;input type="text" class="form-control" placeholder="Last name"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-3"&gt;
+            &lt;input type="email" class="form-control" placeholder="Email"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-1"&gt;
+            &lt;button type="submit" class="btn btn-success"&gt;
+                &lt;i class="fas fa-plus"&gt;&lt;/i&gt; Add
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+
+    &lt;!-- Table of users --&gt;
+    &lt;div class="table-responsive"&gt;
+        &lt;table class="table table-striped table-hover"&gt;
+            &lt;thead class="table-dark"&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;#&lt;/th&gt;
+                    &lt;th&gt;First Name&lt;/th&gt;
+                    &lt;th&gt;Last Name&lt;/th&gt;
+                    &lt;th&gt;Email&lt;/th&gt;
+                    &lt;th&gt;Actions&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;1&lt;/td&gt;
+                    &lt;td&gt;John&lt;/td&gt;
+                    &lt;td&gt;Doe&lt;/td&gt;
+                    &lt;td&gt;john@example.com&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;button class="btn btn-primary btn-sm"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+                        &lt;button class="btn btn-danger btn-sm"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;2&lt;/td&gt;
+                    &lt;td&gt;Jane&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;jane@example.com&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;button class="btn btn-primary btn-sm"&gt;&lt;i class="fas fa-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+                        &lt;button class="btn btn-danger btn-sm"&gt;&lt;i class="fas fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> These three components (buttons, forms, tables) appear on almost every web application. Practice combining them to build CRUD (Create, Read, Update, Delete) interfaces — it's the most common pattern in web development.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-typography-colors-spacing.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a>
+            <a href="bootstrap-navbar-cards.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

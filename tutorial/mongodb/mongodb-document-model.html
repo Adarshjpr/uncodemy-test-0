@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Document Model | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="BSON Data Types, Embedded Documents, and Arrays" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 4 of 20: The Document Model</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html" class="active"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-file-code"></i> BSON Data Types, Embedded Documents, and Arrays</span>
+        <h1>The Document Model</h1>
+
+        <div class="card">
+
+            <p>At the heart of MongoDB is the <strong>document model</strong>. Every piece of data you store is a document encoded in <strong>BSON</strong> (Binary JSON) — a binary-encoded format that extends JSON with additional data types and is optimized for speed and storage efficiency.</p>
+
+            <h2>1. BSON vs JSON</h2>
+            <p>BSON supports everything JSON supports, plus richer types that JSON lacks natively — dates, binary data, and precise numeric types.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>BSON Type</th><th>Description</th><th>Example</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>String</code></td><td>UTF-8 text</td><td>"Hello World"</td></tr>
+                        <tr><td><code>Int32 / Int64</code></td><td>Whole numbers</td><td>42</td></tr>
+                        <tr><td><code>Double</code></td><td>Floating point numbers</td><td>19.99</td></tr>
+                        <tr><td><code>Boolean</code></td><td>true / false</td><td>true</td></tr>
+                        <tr><td><code>Date</code></td><td>Milliseconds since Unix epoch</td><td>ISODate("2026-07-18")</td></tr>
+                        <tr><td><code>ObjectId</code></td><td>12-byte unique identifier</td><td>ObjectId("64f1a2...")</td></tr>
+                        <tr><td><code>Array</code></td><td>Ordered list of values</td><td>["mongo", "sql"]</td></tr>
+                        <tr><td><code>Object (Embedded Document)</code></td><td>Nested document</td><td>{ "city": "Delhi" }</td></tr>
+                        <tr><td><code>Null</code></td><td>No value</td><td>null</td></tr>
+                        <tr><td><code>Binary Data</code></td><td>Raw binary (images, files)</td><td>BinData(...)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. The ObjectId</h2>
+            <p>Every document has a unique <code>_id</code> field. If you don't provide one, MongoDB auto-generates an <code>ObjectId</code> — a 12-byte value encoding a timestamp, machine identifier, process ID, and counter.</p>
+
+            <pre class="code-block"><code>ObjectId("64f1a2b3c4d5e6f7a8b9c0d1")
+// 4 bytes timestamp | 5 bytes random value | 3 bytes incrementing counter</code></pre>
+
+            <h2>3. Embedded Documents</h2>
+            <p>Related data can be nested directly inside a parent document — ideal for "contains" relationships that are usually queried together.</p>
+
+            <pre class="code-block"><code>{
+  "_id": ObjectId("..."),
+  "name": "Rohan Verma",
+  "address": {
+    "street": "12 MG Road",
+    "city": "Pune",
+    "zip": "411001"
+  }
+}</code></pre>
+
+            <h2>4. Arrays</h2>
+            <p>Arrays let a single field hold multiple values — including multiple embedded documents.</p>
+
+            <pre class="code-block"><code>{
+  "_id": ObjectId("..."),
+  "title": "MongoDB Fundamentals",
+  "tags": ["database", "nosql", "backend"],
+  "reviews": [
+    { "user": "Priya", "rating": 5 },
+    { "user": "Karan", "rating": 4 }
+  ]
+}</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issue:</strong> Documents have a hard 16MB size limit. Extremely large arrays (e.g., thousands of embedded reviews) should typically be referenced in a separate collection instead.
+            </div>
+
+            <h2>5. Document Model Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand BSON's extra types</strong> — Date, ObjectId, Binary, Int32/64</li>
+                <li><strong>✅ Know when to embed</strong> — tightly related, frequently accessed together data</li>
+                <li><strong>✅ Know the 16MB document size limit</strong></li>
+                <li><strong>✅ Comfortable reading nested field and array syntax</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Mastering BSON types, embedding, and arrays is foundational — nearly every later topic, from schema design to aggregation, builds on this document model.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-shell-gui-tools.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>MongoDB Shell and GUI Tools</a>
+            <a href="mongodb-databases-collections.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Creating Databases and Collections</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

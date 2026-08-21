@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting, Limiting, and Pagination | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Using sort(), limit(), skip() for efficient data retrieval" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 8 of 20: Sorting, Limiting, and Pagination</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html" class="active"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-sort"></i> Using sort(), limit(), skip() for efficient data retrieval</span>
+        <h1>Sorting, Limiting, and Pagination</h1>
+
+        <div class="card">
+
+            <p>Retrieving data efficiently matters just as much as retrieving it correctly. This lesson covers <code>sort()</code>, <code>limit()</code>, and <code>skip()</code> — the trio that powers ordered results and pagination in MongoDB.</p>
+
+            <h2>1. Sorting Results</h2>
+            <pre class="code-block"><code>// Sort ascending (1) by price
+db.products.find().sort({ price: 1 })
+
+// Sort descending (-1) by price
+db.products.find().sort({ price: -1 })
+
+// Sort by multiple fields
+db.products.find().sort({ category: 1, price: -1 })</code></pre>
+
+            <h2>2. Limiting Results</h2>
+            <pre class="code-block"><code>// Return only the first 10 documents
+db.products.find().limit(10)
+
+// Combine sort and limit — top 5 most expensive products
+db.products.find().sort({ price: -1 }).limit(5)</code></pre>
+
+            <h2>3. Skipping Results</h2>
+            <pre class="code-block"><code>// Skip the first 20 documents
+db.products.find().skip(20)
+
+// Pagination: page 3, 10 results per page
+db.products.find().sort({ _id: 1 }).skip(20).limit(10)</code></pre>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Page</th><th>skip()</th><th>limit()</th></tr></thead>
+                    <tbody>
+                        <tr><td>Page 1</td><td>0</td><td>10</td></tr>
+                        <tr><td>Page 2</td><td>10</td><td>10</td></tr>
+                        <tr><td>Page 3</td><td>20</td><td>10</td></tr>
+                        <tr><td>Page N</td><td>(N-1) × pageSize</td><td>pageSize</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Performance Warning:</strong> <code>skip()</code> becomes slow on large collections because MongoDB still has to scan and discard skipped documents. For deep pagination, prefer <strong>range-based (cursor) pagination</strong> instead.
+            </div>
+
+            <h2>4. Cursor-Based (Range) Pagination</h2>
+            <p>Instead of skipping N documents, filter using the last seen <code>_id</code> — far more efficient at scale.</p>
+            <pre class="code-block"><code>// First page
+db.products.find().sort({ _id: 1 }).limit(10)
+
+// Next page: use the last _id from the previous page
+db.products.find({ _id: { $gt: lastSeenId } }).sort({ _id: 1 }).limit(10)</code></pre>
+
+            <h2>5. Sorting on Indexed Fields</h2>
+            <p>Sorting is far more efficient when the sort field is indexed, since MongoDB can retrieve documents already in order instead of sorting them in memory.</p>
+            <pre class="code-block"><code>db.products.createIndex({ price: -1 })
+db.products.find().sort({ price: -1 })  // Uses the index — no in-memory sort</code></pre>
+
+            <h2>6. Pagination Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand sort(), limit(), and skip() individually</strong></li>
+                <li><strong>✅ Combine them correctly for classic offset pagination</strong></li>
+                <li><strong>✅ Know skip()'s performance cost on large datasets</strong></li>
+                <li><strong>✅ Implement cursor-based pagination for scale</strong></li>
+                <li><strong>✅ Index fields used for sorting</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Offset pagination with skip() is fine for small datasets and admin UIs, but production-scale infinite scrolls and APIs should use cursor-based pagination for consistent performance.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-query-operators.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Query Operators</a>
+            <a href="mongodb-data-modeling.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Data Modeling and Schema Design</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

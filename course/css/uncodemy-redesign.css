@@ -1,0 +1,3539 @@
+/* ==========================================================================
+   UNCODEMY — DATA SCIENCE COURSE PAGE (DELHI)
+   Redesign stylesheet
+   --------------------------------------------------------------------------
+   Scope note: every rule below is scoped to a redesigned <section>.
+   Navbar, Hero, Footer and the Lead Form are NOT touched by this file.
+   Selector pattern: html-tag + meaningful class name.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+    --uc-orange: #ff5421;
+    --uc-orange-600: #e8410f;
+    --uc-orange-400: #ff8a4c;
+    --uc-orange-100: #ffe6dc;
+    --uc-orange-50: #fff4ef;
+
+    --uc-ink: #101828;
+    --uc-ink-700: #344054;
+    --uc-muted: #667085;
+    --uc-line: #e7ebf0;
+    --uc-line-soft: #f1f4f8;
+
+    --uc-surface: #ffffff;
+    --uc-surface-soft: #f8fafc;
+    --uc-surface-warm: #fff8f5;
+    --uc-surface-dark: #0f1720;
+
+    --uc-green: #0f9d58;
+    --uc-blue: #1d6ff2;
+
+    --uc-radius-sm: 12px;
+    --uc-radius: 18px;
+    --uc-radius-lg: 24px;
+    --uc-radius-pill: 999px;
+
+    --uc-shadow-xs: 0 1px 2px rgba(16, 24, 40, .05);
+    --uc-shadow-sm: 0 4px 16px rgba(16, 24, 40, .06);
+    --uc-shadow-md: 0 12px 32px rgba(16, 24, 40, .08);
+    --uc-shadow-orange: 0 16px 36px rgba(255, 84, 33, .18);
+
+    --uc-space-section: 84px;
+    --uc-max: 1200px;
+
+    --uc-font: 'Roboto', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    --uc-ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. SHARED PRIMITIVES FOR REDESIGNED SECTIONS
+   -------------------------------------------------------------------------- */
+section.uc-redesign,
+section.uc-redesign *,
+section.uc-redesign *::before,
+section.uc-redesign *::after {
+    box-sizing: border-box;
+}
+
+section[class$="-section"].uc-redesign {
+    position: relative;
+    padding: var(--uc-space-section) 0;
+    font-family: var(--uc-font);
+    color: var(--uc-ink);
+    background: var(--uc-surface);
+    overflow: hidden;
+}
+
+section.uc-redesign.uc-tone-soft {
+    background: var(--uc-surface-soft);
+}
+
+section.uc-redesign.uc-tone-warm {
+    background: linear-gradient(180deg, var(--uc-surface-warm) 0%, #ffffff 100%);
+}
+
+section.uc-redesign.uc-tone-dark {
+    background: radial-gradient(1200px 500px at 80% -10%, #1e2a38 0%, var(--uc-surface-dark) 60%);
+    color: #ffffff;
+}
+
+section.uc-redesign div.uc-shell {
+    width: 100%;
+    max-width: var(--uc-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section.uc-redesign header.uc-head {
+    max-width: 780px;
+    margin: 0 auto 52px;
+    text-align: center;
+}
+
+section.uc-redesign header.uc-head.uc-head-left {
+    margin-left: 0;
+    text-align: left;
+}
+
+section.uc-redesign span.uc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    margin-bottom: 18px;
+    border: 1px solid var(--uc-orange-100);
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+section.uc-redesign.uc-tone-dark span.uc-eyebrow {
+    background: rgba(255, 84, 33, .14);
+    border-color: rgba(255, 138, 76, .38);
+    color: #ffb08c;
+}
+
+section.uc-redesign h2.uc-title {
+    margin: 0 0 16px;
+    font-size: clamp(26px, 3.4vw, 42px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: inherit;
+}
+
+section.uc-redesign h2.uc-title em.uc-title-accent {
+    font-style: normal;
+    color: var(--uc-orange);
+}
+
+section.uc-redesign p.uc-sub {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--uc-muted);
+    font-weight: 400;
+}
+
+section.uc-redesign.uc-tone-dark p.uc-sub {
+    color: rgba(255, 255, 255, .72);
+}
+
+section.uc-redesign a.uc-btn,
+section.uc-redesign button.uc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border: 0;
+    border-radius: var(--uc-radius-pill);
+    background: linear-gradient(135deg, var(--uc-orange) 0%, var(--uc-orange-600) 100%);
+    color: #fff;
+    font-family: var(--uc-font);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: var(--uc-shadow-orange);
+    transition: transform .28s var(--uc-ease), box-shadow .28s var(--uc-ease), filter .28s var(--uc-ease);
+}
+
+section.uc-redesign a.uc-btn:hover,
+section.uc-redesign button.uc-btn:hover {
+    transform: translateY(-3px);
+    filter: saturate(1.08);
+    box-shadow: 0 22px 44px rgba(255, 84, 33, .28);
+    color: #fff;
+}
+
+section.uc-redesign a.uc-btn:active,
+section.uc-redesign button.uc-btn:active {
+    transform: translateY(-1px) scale(.99);
+}
+
+section.uc-redesign a.uc-btn-ghost,
+section.uc-redesign button.uc-btn-ghost {
+    background: transparent;
+    color: var(--uc-ink);
+    border: 1.5px solid var(--uc-line);
+    box-shadow: none;
+}
+
+section.uc-redesign a.uc-btn-ghost:hover,
+section.uc-redesign button.uc-btn-ghost:hover {
+    border-color: var(--uc-orange);
+    color: var(--uc-orange-600);
+    background: var(--uc-orange-50);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.uc-redesign.uc-tone-dark a.uc-btn-ghost,
+section.uc-redesign.uc-tone-dark button.uc-btn-ghost {
+    color: #fff;
+    border-color: rgba(255, 255, 255, .28);
+}
+
+section.uc-redesign.uc-tone-dark a.uc-btn-ghost:hover,
+section.uc-redesign.uc-tone-dark button.uc-btn-ghost:hover {
+    background: rgba(255, 255, 255, .08);
+    border-color: rgba(255, 255, 255, .5);
+    color: #fff;
+}
+
+/* Decorative background glow used by a few sections */
+/* section.uc-redesign span.uc-glow {
+    position: absolute;
+    z-index: 0;
+    display: block;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 84, 33, .16) 0%, rgba(255, 84, 33, 0) 68%);
+    pointer-events: none;
+} */
+
+section.uc-redesign span.uc-glow-tl {
+    top: -160px;
+    left: -140px;
+}
+
+section.uc-redesign span.uc-glow-br {
+    right: -160px;
+    bottom: -180px;
+}
+
+section.uc-redesign div.uc-shell {
+    position: relative;
+    z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. SCROLL / ENTRANCE ANIMATIONS
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .7s var(--uc-ease), transform .7s var(--uc-ease);
+    transition-delay: var(--uc-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+    transform: translateX(-32px);
+}
+
+[data-reveal="right"] {
+    transform: translateX(32px);
+}
+
+[data-reveal="zoom"] {
+    transform: scale(.94);
+}
+
+[data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+@keyframes ucFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes ucPulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(255, 84, 33, .38); }
+    70% { box-shadow: 0 0 0 16px rgba(255, 84, 33, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 84, 33, 0); }
+}
+
+@keyframes ucMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    section.uc-redesign * {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. COURSE HIGHLIGHTS  (replaces the old feature bar)
+   -------------------------------------------------------------------------- */
+section.course-highlights-section {
+    padding: 56px 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--uc-surface-soft) 100%);
+}
+
+section.course-highlights-section ul.course-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-highlights-section li.course-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 22px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius);
+    background: var(--uc-surface);
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.course-highlights-section li.course-highlight-item:hover {
+    transform: translateY(-6px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.course-highlights-section span.course-highlight-icon {
+    flex: 0 0 46px;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: linear-gradient(140deg, var(--uc-orange-50), var(--uc-orange-100));
+    color: var(--uc-orange-600);
+    font-size: 18px;
+    transition: transform .3s var(--uc-ease);
+}
+
+section.course-highlights-section li.course-highlight-item:hover span.course-highlight-icon {
+    transform: rotate(-6deg) scale(1.06);
+}
+
+section.course-highlights-section h3.course-highlight-title {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--uc-ink);
+    line-height: 1.3;
+}
+
+section.course-highlights-section p.course-highlight-description {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--uc-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. INSTITUTE METRICS  (wraps the JS-rendered stats block)
+   -------------------------------------------------------------------------- */
+section.institute-metrics-section {
+    padding: 72px 0;
+    background: var(--uc-surface);
+}
+
+section.institute-metrics-section div.institute-metrics-frame {
+    position: relative;
+    padding: 8px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(135deg, rgba(255, 84, 33, .16), rgba(255, 138, 76, .06) 45%, rgba(16, 24, 40, .04));
+}
+
+section.institute-metrics-section div.institute-metrics-inner {
+    border-radius: 20px;
+    background: var(--uc-surface);
+    box-shadow: var(--uc-shadow-sm);
+    overflow: hidden;
+}
+
+/* restyle of the markup produced by stats-renderer.js */
+section.institute-metrics-section section.uc-why-card {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    padding: 34px 30px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+section.institute-metrics-section h2.uc-why-heading {
+    grid-column: 1 / -1;
+    margin: 0 0 26px;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--uc-ink);
+    text-align: center;
+}
+
+section.institute-metrics-section span.uc-why-accent {
+    color: var(--uc-orange);
+}
+
+section.institute-metrics-section div.uc-stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 22px 14px;
+    text-align: center;
+    transition: transform .3s var(--uc-ease);
+}
+
+section.institute-metrics-section div.uc-stat::after {
+    content: "";
+    position: absolute;
+    top: 22%;
+    right: 0;
+    width: 1px;
+    height: 56%;
+    background: var(--uc-line);
+}
+
+section.institute-metrics-section div.uc-stat:hover {
+    transform: translateY(-5px);
+}
+
+section.institute-metrics-section i.uc-stat-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 6px;
+    border-radius: 50%;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange);
+    font-size: 17px;
+}
+
+section.institute-metrics-section span.uc-stat-value {
+    font-size: clamp(24px, 2.6vw, 32px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--uc-ink);
+    line-height: 1.1;
+}
+
+section.institute-metrics-section span.uc-stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--uc-muted);
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   6. COURSE ASSURANCE STRIP
+   -------------------------------------------------------------------------- */
+section.course-assurance-section {
+    padding: 0 0 72px;
+    background: var(--uc-surface);
+}
+
+section.course-assurance-section div.course-assurance-bar {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+    padding: 20px 18px;
+    border-radius: var(--uc-radius);
+    background: linear-gradient(120deg, #12202e 0%, #0f1720 100%);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.course-assurance-section div.course-assurance-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 8px;
+    border-radius: 14px;
+    text-align: center;
+    transition: background .3s var(--uc-ease), transform .3s var(--uc-ease);
+}
+
+section.course-assurance-section div.course-assurance-item:hover {
+    background: rgba(255, 255, 255, .06);
+    transform: translateY(-4px);
+}
+
+section.course-assurance-section i.course-assurance-icon {
+    color: var(--uc-orange-400);
+    font-size: 20px;
+}
+
+section.course-assurance-section span.course-assurance-text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, .88);
+}
+
+/* --------------------------------------------------------------------------
+   7. PROGRAM OVERVIEW
+   -------------------------------------------------------------------------- */
+section.program-overview-section {
+    background: var(--uc-surface-soft);
+}
+
+section.program-overview-section div.program-overview-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 46px;
+    align-items: start;
+}
+
+section.program-overview-section p.program-overview-lead {
+    margin: 0 0 26px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--uc-ink-700);
+}
+
+section.program-overview-section p.program-overview-lead strong {
+    color: var(--uc-ink);
+    font-weight: 700;
+}
+
+section.program-overview-section ul.program-overview-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+section.program-overview-section li.program-overview-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--uc-line);
+    border-left: 3px solid var(--uc-orange);
+    border-radius: 14px;
+    background: var(--uc-surface);
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease);
+}
+
+section.program-overview-section li.program-overview-item:hover {
+    transform: translateX(6px);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.program-overview-section span.program-overview-item-label {
+    min-width: 152px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.program-overview-section span.program-overview-item-value {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--uc-muted);
+}
+
+section.program-overview-section aside.program-overview-card {
+    position: sticky;
+    top: 120px;
+    padding: 30px 28px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(160deg, #ffffff 0%, var(--uc-orange-50) 100%);
+    border: 1px solid var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.program-overview-section h3.program-overview-card-title {
+    margin: 0 0 6px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.program-overview-section p.program-overview-card-text {
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--uc-muted);
+}
+
+section.program-overview-section dl.program-overview-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 24px;
+}
+
+section.program-overview-section div.program-overview-fact {
+    padding: 14px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .85);
+    border: 1px solid rgba(255, 84, 33, .16);
+}
+
+section.program-overview-section dt.program-overview-fact-label {
+    margin: 0 0 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--uc-orange-600);
+}
+
+section.program-overview-section dd.program-overview-fact-value {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.program-overview-section div.program-overview-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   8. PLACED STUDENTS  (keeps the JS carousel markup inside)
+   -------------------------------------------------------------------------- */
+section.placed-students-section {
+    background: var(--uc-surface);
+}
+
+section.placed-students-section div.placed-students-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0 0 46px;
+}
+
+section.placed-students-section article.placed-students-metric {
+    padding: 22px 20px;
+    border-radius: var(--uc-radius);
+    border: 1px solid var(--uc-line);
+    background: linear-gradient(180deg, #fff 0%, var(--uc-surface-soft) 100%);
+    text-align: center;
+    transition: transform .3s var(--uc-ease), border-color .3s var(--uc-ease), box-shadow .3s var(--uc-ease);
+}
+
+section.placed-students-section article.placed-students-metric:hover {
+    transform: translateY(-6px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.placed-students-section strong.placed-students-metric-value {
+    display: block;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    color: var(--uc-orange);
+    letter-spacing: -.02em;
+}
+
+section.placed-students-section span.placed-students-metric-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--uc-muted);
+}
+
+section.placed-students-section div.placed-students-carousel {
+    position: relative;
+    padding: 26px 0 6px;
+}
+
+/* refined look for the existing .wrapper / .carousel / .card markup */
+section.placed-students-section div.wrapper {
+    position: relative;
+}
+
+section.placed-students-section ul.carousel li.card {
+    border-radius: var(--uc-radius) !important;
+    border: 1px solid var(--uc-line);
+    background: var(--uc-surface);
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.placed-students-section ul.carousel li.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.placed-students-section ul.carousel li.card b.placed-student-name {
+    color: var(--uc-ink);
+    font-weight: 700;
+}
+
+section.placed-students-section i#left,
+section.placed-students-section i#right {
+    background: var(--uc-surface) !important;
+    color: var(--uc-orange) !important;
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-sm);
+    transition: background .25s var(--uc-ease), color .25s var(--uc-ease), transform .25s var(--uc-ease);
+}
+
+section.placed-students-section i#left:hover,
+section.placed-students-section i#right:hover {
+    background: var(--uc-orange) !important;
+    color: #fff !important;
+    transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   9. CAREER GROWTH  (why a data science career)
+   -------------------------------------------------------------------------- */
+section.career-growth-section {
+    background: var(--uc-surface-soft);
+}
+
+section.career-growth-section div.career-growth-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 48px;
+    align-items: start;
+}
+
+section.career-growth-section aside.career-growth-aside {
+    position: sticky;
+    top: 120px;
+}
+
+section.career-growth-section p.career-growth-intro {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+}
+
+section.career-growth-section ul.career-growth-outcomes {
+    display: grid;
+    gap: 10px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+section.career-growth-section li.career-growth-outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--uc-ink-700);
+}
+
+section.career-growth-section li.career-growth-outcome::before {
+    content: "\2713";
+    flex: 0 0 20px;
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+section.career-growth-section ol.career-growth-reasons {
+    counter-reset: careerReason;
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.career-growth-section li.career-growth-reason {
+    position: relative;
+    padding: 24px 26px 24px 74px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius);
+    background: var(--uc-surface);
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.career-growth-section li.career-growth-reason::before {
+    counter-increment: careerReason;
+    content: "0" counter(careerReason);
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    background: linear-gradient(140deg, var(--uc-orange), var(--uc-orange-600));
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(255, 84, 33, .28);
+}
+
+section.career-growth-section li.career-growth-reason:hover {
+    transform: translateY(-5px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.career-growth-section h3.career-growth-reason-title {
+    margin: 0 0 7px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.career-growth-section p.career-growth-reason-text {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--uc-muted);
+}
+
+section.career-growth-section ol.career-growth-reasons-extra {
+    counter-reset: careerReason 2;
+    margin-top: 16px;
+}
+
+/* keeps the original read-more toggle working (#dots / #more / #readMoreBtn) */
+section.career-growth-section span.career-growth-dots {
+    display: block;
+}
+
+section.career-growth-section div.career-growth-more {
+    display: none;
+}
+
+section.career-growth-section div.career-growth-more.is-open {
+    display: block;
+    animation: ucFadeUp .45s var(--uc-ease) both;
+}
+
+section.career-growth-section button.career-growth-toggle {
+    margin-top: 26px;
+    padding: 13px 28px;
+    border: 1.5px solid var(--uc-orange);
+    border-radius: var(--uc-radius-pill);
+    background: transparent;
+    color: var(--uc-orange-600);
+    font-family: var(--uc-font);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .28s var(--uc-ease), color .28s var(--uc-ease), transform .28s var(--uc-ease);
+}
+
+section.career-growth-section button.career-growth-toggle:hover {
+    background: var(--uc-orange);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   10. WHY UNCODEMY
+   -------------------------------------------------------------------------- */
+section.why-uncodemy-section {
+    background: var(--uc-surface);
+}
+
+section.why-uncodemy-section div.why-uncodemy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+section.why-uncodemy-section article.why-uncodemy-card {
+    position: relative;
+    padding: 34px 28px 30px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    overflow: hidden;
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.why-uncodemy-section article.why-uncodemy-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--uc-orange), var(--uc-orange-400));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s var(--uc-ease);
+}
+
+section.why-uncodemy-section article.why-uncodemy-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.why-uncodemy-section article.why-uncodemy-card:hover::before {
+    transform: scaleX(1);
+}
+
+section.why-uncodemy-section span.why-uncodemy-card-icon {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    background: linear-gradient(140deg, var(--uc-orange-50), var(--uc-orange-100));
+    color: var(--uc-orange-600);
+    font-size: 21px;
+    transition: transform .35s var(--uc-ease);
+}
+
+section.why-uncodemy-section article.why-uncodemy-card:hover span.why-uncodemy-card-icon {
+    transform: translateY(-4px) rotate(-6deg);
+}
+
+section.why-uncodemy-section h3.why-uncodemy-card-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.why-uncodemy-section p.why-uncodemy-card-text {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--uc-muted);
+}
+
+section.why-uncodemy-section div.why-uncodemy-summary {
+    margin-top: 34px;
+    padding: 28px 32px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(120deg, var(--uc-orange-50), #fff 70%);
+    border: 1px solid var(--uc-orange-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+section.why-uncodemy-section p.why-uncodemy-summary-text {
+    margin: 0;
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 600;
+    color: var(--uc-ink);
+}
+
+/* --------------------------------------------------------------------------
+   11. INSTITUTE COMPARISON
+   -------------------------------------------------------------------------- */
+section.institute-comparison-section {
+    background: var(--uc-surface-soft);
+}
+
+section.institute-comparison-section div.institute-comparison-board {
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    box-shadow: var(--uc-shadow-sm);
+    overflow: hidden;
+}
+
+section.institute-comparison-section div.institute-comparison-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+section.institute-comparison-section table.institute-comparison-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    font-size: 14.5px;
+}
+
+section.institute-comparison-section thead.institute-comparison-head th {
+    position: sticky;
+    top: 0;
+    padding: 20px 22px;
+    background: #0f1720;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: .01em;
+}
+
+section.institute-comparison-section thead.institute-comparison-head th.institute-comparison-col-us {
+    background: linear-gradient(135deg, var(--uc-orange) 0%, var(--uc-orange-600) 100%);
+    text-align: center;
+}
+
+section.institute-comparison-section thead.institute-comparison-head th.institute-comparison-col-them {
+    text-align: center;
+    color: rgba(255, 255, 255, .72);
+}
+
+section.institute-comparison-section tbody.institute-comparison-body tr {
+    transition: background .25s var(--uc-ease);
+}
+
+section.institute-comparison-section tbody.institute-comparison-body tr:nth-child(even) {
+    background: #fbfcfe;
+}
+
+section.institute-comparison-section tbody.institute-comparison-body tr:hover {
+    background: var(--uc-orange-50);
+}
+
+section.institute-comparison-section tbody.institute-comparison-body td {
+    padding: 15px 22px;
+    border-top: 1px solid var(--uc-line-soft);
+    color: var(--uc-ink-700);
+    vertical-align: middle;
+}
+
+section.institute-comparison-section td.institute-comparison-feature {
+    font-weight: 600;
+    color: var(--uc-ink);
+    width: 56%;
+}
+
+section.institute-comparison-section td.institute-comparison-us,
+section.institute-comparison-section td.institute-comparison-them {
+    text-align: center;
+    width: 22%;
+}
+
+section.institute-comparison-section span.institute-comparison-yes {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(15, 157, 88, .12);
+    color: var(--uc-green);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+section.institute-comparison-section span.institute-comparison-no {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(102, 112, 133, .1);
+    color: #98a2b3;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+section.institute-comparison-section footer.institute-comparison-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 22px 26px;
+    background: linear-gradient(120deg, var(--uc-orange-50), #fff);
+    border-top: 1px solid var(--uc-line);
+}
+
+section.institute-comparison-section p.institute-comparison-verdict {
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--uc-ink);
+}
+
+section.institute-comparison-section p.institute-comparison-verdict em {
+    font-style: normal;
+    color: var(--uc-orange-600);
+    font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   12. FEE COMPARISON / VALUE
+   -------------------------------------------------------------------------- */
+section.fee-comparison-section {
+    background: var(--uc-surface);
+}
+
+section.fee-comparison-section div.fee-comparison-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+section.fee-comparison-section article.fee-plan-card {
+    position: relative;
+    padding: 34px 30px;
+    border-radius: var(--uc-radius-lg);
+    border: 1px solid var(--uc-line);
+    background: var(--uc-surface);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease);
+}
+
+section.fee-comparison-section article.fee-plan-card-highlight {
+    border: 2px solid var(--uc-orange);
+    background: linear-gradient(170deg, #fff 0%, var(--uc-orange-50) 100%);
+    box-shadow: var(--uc-shadow-orange);
+}
+
+section.fee-comparison-section article.fee-plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.fee-comparison-section span.fee-plan-badge {
+    position: absolute;
+    top: -14px;
+    left: 30px;
+    padding: 7px 16px;
+    border-radius: var(--uc-radius-pill);
+    background: linear-gradient(135deg, var(--uc-orange), var(--uc-orange-600));
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 22px rgba(255, 84, 33, .3);
+}
+
+section.fee-comparison-section h3.fee-plan-title {
+    margin: 8px 0 14px;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.fee-comparison-section p.fee-plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 6px;
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--uc-ink);
+}
+
+section.fee-comparison-section article.fee-plan-card-highlight p.fee-plan-price {
+    color: var(--uc-orange-600);
+}
+
+section.fee-comparison-section span.fee-plan-price-note {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--uc-muted);
+}
+
+section.fee-comparison-section p.fee-plan-saving {
+    margin: 0 0 22px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--uc-green);
+}
+
+section.fee-comparison-section ul.fee-plan-list {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.fee-comparison-section li.fee-plan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--uc-ink-700);
+}
+
+section.fee-comparison-section li.fee-plan-item span.fee-plan-item-mark {
+    flex: 0 0 20px;
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 800;
+    background: rgba(15, 157, 88, .12);
+    color: var(--uc-green);
+}
+
+section.fee-comparison-section article.fee-plan-card-muted li.fee-plan-item {
+    color: var(--uc-muted);
+}
+
+section.fee-comparison-section article.fee-plan-card-muted li.fee-plan-item span.fee-plan-item-mark {
+    background: rgba(102, 112, 133, .1);
+    color: #98a2b3;
+}
+
+section.fee-comparison-section div.fee-value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 34px;
+}
+
+section.fee-comparison-section article.fee-value-card {
+    padding: 26px 24px;
+    border-radius: var(--uc-radius);
+    border: 1px solid var(--uc-line);
+    background: var(--uc-surface-soft);
+    transition: transform .3s var(--uc-ease), background .3s var(--uc-ease);
+}
+
+section.fee-comparison-section article.fee-value-card:hover {
+    transform: translateY(-6px);
+    background: var(--uc-surface);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.fee-comparison-section h3.fee-value-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.fee-comparison-section p.fee-value-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--uc-muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. CAMPUS SHOWCASE
+   -------------------------------------------------------------------------- */
+section.campus-showcase-section {
+    background: var(--uc-surface-soft);
+}
+
+section.campus-showcase-section div.campus-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+section.campus-showcase-section figure.campus-showcase-card {
+    position: relative;
+    margin: 0;
+    border-radius: var(--uc-radius-lg);
+    overflow: hidden;
+    background: #0f1720;
+    box-shadow: var(--uc-shadow-sm);
+    transition: transform .4s var(--uc-ease), box-shadow .4s var(--uc-ease);
+}
+
+section.campus-showcase-section figure.campus-showcase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.campus-showcase-section figure.campus-showcase-card-wide {
+    grid-column: span 2;
+}
+
+section.campus-showcase-section img.campus-showcase-image {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform .6s var(--uc-ease), filter .4s var(--uc-ease);
+}
+
+section.campus-showcase-section figure.campus-showcase-card:hover img.campus-showcase-image {
+    transform: scale(1.09);
+}
+
+section.campus-showcase-section figcaption.campus-showcase-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 44px 22px 20px;
+    background: linear-gradient(180deg, rgba(15, 23, 32, 0) 0%, rgba(15, 23, 32, .88) 68%);
+    color: #fff;
+}
+
+section.campus-showcase-section h3.campus-showcase-title {
+    margin: 0 0 4px;
+    font-size: 16.5px;
+    font-weight: 700;
+    color: #fff;
+}
+
+section.campus-showcase-section p.campus-showcase-text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .78);
+}
+
+/* --------------------------------------------------------------------------
+   14. LEARNER REVIEWS (owl carousels kept intact)
+   -------------------------------------------------------------------------- */
+section.learner-reviews-section {
+    background: var(--uc-surface);
+}
+
+section.learner-reviews-section div.learner-reviews-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin: 0 auto 44px;
+    padding: 18px 26px;
+    max-width: 640px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-surface-soft);
+    box-shadow: var(--uc-shadow-xs);
+}
+
+section.learner-reviews-section div.learner-reviews-rating-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.learner-reviews-section span.learner-reviews-rating-star {
+    color: #f5a524;
+}
+
+section.learner-reviews-section div.unc-carousel-wrapper,
+section.learner-reviews-section div.video-carousel-container {
+    position: relative;
+}
+
+section.learner-reviews-section div.unc-image-inner {
+    border-radius: var(--uc-radius);
+    overflow: hidden;
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-xs);
+    background: #fff;
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease);
+}
+
+section.learner-reviews-section div.unc-image-card:hover div.unc-image-inner {
+    transform: translateY(-6px);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.learner-reviews-section img.unc-carousel-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+section.learner-reviews-section div.video-card {
+    height: 100%;
+    padding: 26px 24px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.learner-reviews-section div.video-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.learner-reviews-section div.student-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+section.learner-reviews-section div.student-avatar {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, var(--uc-orange), var(--uc-orange-600));
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+section.learner-reviews-section div.student-name {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.learner-reviews-section div.student-course {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--uc-orange-600);
+}
+
+section.learner-reviews-section div.student-course svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+section.learner-reviews-section div.rating {
+    margin-bottom: 12px;
+    color: #f5a524;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+section.learner-reviews-section p.video-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--uc-muted);
+}
+
+section.learner-reviews-section div.carousel-nav,
+section.learner-reviews-section div.unc-carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+section.learner-reviews-section div.carousel-nav button,
+section.learner-reviews-section div.unc-carousel-nav button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--uc-line);
+    border-radius: 50%;
+    background: var(--uc-surface);
+    color: var(--uc-orange);
+    cursor: pointer;
+    transition: background .25s var(--uc-ease), color .25s var(--uc-ease), transform .25s var(--uc-ease);
+}
+
+section.learner-reviews-section div.carousel-nav button:hover,
+section.learner-reviews-section div.unc-carousel-nav button:hover {
+    background: var(--uc-orange);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+section.learner-reviews-section div.carousel-nav button svg,
+section.learner-reviews-section div.unc-carousel-nav button svg {
+    fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   15. BATCH SCHEDULE
+   -------------------------------------------------------------------------- */
+section.batch-schedule-section {
+    background: var(--uc-surface-soft);
+}
+
+section.batch-schedule-section div.batch-schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+section.batch-schedule-section article.batch-schedule-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    overflow: hidden;
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.batch-schedule-section article.batch-schedule-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.batch-schedule-section header.batch-schedule-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 22px;
+    background: linear-gradient(120deg, var(--uc-orange-50), #fff);
+    border-bottom: 1px solid var(--uc-line-soft);
+}
+
+section.batch-schedule-section span.batch-schedule-tag {
+    padding: 6px 13px;
+    border-radius: var(--uc-radius-pill);
+    background: rgba(29, 111, 242, .1);
+    color: var(--uc-blue);
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+section.batch-schedule-section span.batch-schedule-status {
+    padding: 6px 13px;
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-orange);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    animation: ucPulseRing 2.6s infinite;
+}
+
+section.batch-schedule-section div.batch-schedule-card-body {
+    flex: 1;
+    padding: 24px 22px;
+}
+
+section.batch-schedule-section h3.batch-schedule-title {
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.batch-schedule-section ul.batch-schedule-meta {
+    display: grid;
+    gap: 13px;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+section.batch-schedule-section li.batch-schedule-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 14px;
+    color: var(--uc-muted);
+}
+
+section.batch-schedule-section li.batch-schedule-meta-item i {
+    width: 18px;
+    color: var(--uc-orange);
+    text-align: center;
+}
+
+section.batch-schedule-section li.batch-schedule-meta-item strong {
+    color: var(--uc-ink);
+    font-weight: 700;
+}
+
+section.batch-schedule-section div.batch-schedule-progress {
+    height: 7px;
+    margin-top: 6px;
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-line-soft);
+    overflow: hidden;
+}
+
+section.batch-schedule-section span.batch-schedule-progress-bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--uc-orange), var(--uc-orange-400));
+    transition: width 1.2s var(--uc-ease);
+}
+
+section.batch-schedule-section p.batch-schedule-price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.batch-schedule-section del.batch-schedule-price-old {
+    font-size: 15px;
+    font-weight: 500;
+    color: #98a2b3;
+}
+
+section.batch-schedule-section footer.batch-schedule-card-foot {
+    display: flex;
+    gap: 10px;
+    padding: 0 22px 24px;
+}
+
+section.batch-schedule-section footer.batch-schedule-card-foot button.batch-schedule-btn,
+section.batch-schedule-section footer.batch-schedule-card-foot a.batch-schedule-btn {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: var(--uc-radius-pill);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: transform .28s var(--uc-ease), box-shadow .28s var(--uc-ease), background .28s var(--uc-ease), color .28s var(--uc-ease);
+}
+
+section.batch-schedule-section button.batch-schedule-btn-primary {
+    background: linear-gradient(135deg, var(--uc-orange), var(--uc-orange-600));
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(255, 84, 33, .22);
+}
+
+section.batch-schedule-section button.batch-schedule-btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+section.batch-schedule-section a.batch-schedule-btn-ghost {
+    background: transparent;
+    border-color: var(--uc-line);
+    color: var(--uc-ink-700);
+}
+
+section.batch-schedule-section a.batch-schedule-btn-ghost:hover {
+    border-color: var(--uc-orange);
+    color: var(--uc-orange-600);
+    background: var(--uc-orange-50);
+}
+
+/* --------------------------------------------------------------------------
+   16. SCHOLARSHIP + CAREER NAVIGATOR (two split blocks)
+   -------------------------------------------------------------------------- */
+section.scholarship-assessment-section {
+    background: var(--uc-surface);
+}
+
+section.scholarship-assessment-section div.scholarship-split,
+section.career-navigator-section div.career-navigator-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 46px;
+    align-items: center;
+}
+
+section.scholarship-assessment-section div.scholarship-visual {
+    position: relative;
+    padding: 36px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(150deg, #12202e, #0f1720);
+    color: #fff;
+    overflow: hidden;
+}
+
+section.scholarship-assessment-section div.scholarship-visual::after {
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 84, 33, .38), rgba(255, 84, 33, 0) 70%);
+}
+
+section.scholarship-assessment-section strong.scholarship-visual-value {
+    display: block;
+    font-size: clamp(46px, 7vw, 76px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.03em;
+    background: linear-gradient(120deg, #ff8a4c, #ff5421);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section.scholarship-assessment-section span.scholarship-visual-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .82);
+}
+
+section.scholarship-assessment-section ul.scholarship-visual-list {
+    position: relative;
+    z-index: 1;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+section.scholarship-assessment-section li.scholarship-visual-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .82);
+}
+
+section.scholarship-assessment-section li.scholarship-visual-item::before {
+    content: "\2713";
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255, 84, 33, .22);
+    color: #ff9a6b;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+section.scholarship-assessment-section ol.scholarship-steps,
+section.career-navigator-section ul.career-navigator-list {
+    display: grid;
+    gap: 16px;
+    margin: 26px 0 30px;
+    padding: 0;
+    list-style: none;
+}
+
+section.scholarship-assessment-section li.scholarship-step {
+    display: flex;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius);
+    background: var(--uc-surface);
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease);
+}
+
+section.scholarship-assessment-section li.scholarship-step:hover {
+    transform: translateX(6px);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.scholarship-assessment-section span.scholarship-step-index {
+    flex: 0 0 32px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+section.scholarship-assessment-section h3.scholarship-step-title {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.scholarship-assessment-section p.scholarship-step-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--uc-muted);
+}
+
+section.career-navigator-section {
+    background: var(--uc-surface-soft);
+}
+
+section.career-navigator-section li.career-navigator-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px 22px;
+    border-radius: var(--uc-radius);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.career-navigator-section li.career-navigator-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.career-navigator-section span.career-navigator-icon {
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: linear-gradient(140deg, var(--uc-orange-50), var(--uc-orange-100));
+    color: var(--uc-orange-600);
+    font-size: 17px;
+}
+
+section.career-navigator-section h3.career-navigator-title {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.career-navigator-section p.career-navigator-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--uc-muted);
+}
+
+section.career-navigator-section div.career-navigator-visual {
+    position: relative;
+    padding: 34px 30px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(160deg, #fff, var(--uc-orange-50));
+    border: 1px solid var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.career-navigator-section div.career-navigator-meter {
+    display: grid;
+    gap: 18px;
+}
+
+section.career-navigator-section div.career-navigator-meter-row span.career-navigator-meter-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.career-navigator-section div.career-navigator-meter-track {
+    height: 9px;
+    border-radius: var(--uc-radius-pill);
+    background: rgba(255, 84, 33, .12);
+    overflow: hidden;
+}
+
+section.career-navigator-section span.career-navigator-meter-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--uc-orange), var(--uc-orange-400));
+    transition: width 1.4s var(--uc-ease);
+}
+
+/* --------------------------------------------------------------------------
+   17. PROGRAM BENEFITS (salient hallmarks)
+   -------------------------------------------------------------------------- */
+section.program-benefits-section {
+    background: var(--uc-surface);
+}
+
+section.program-benefits-section p.program-benefits-intro {
+    max-width: 900px;
+    margin: 0 auto 42px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+    text-align: center;
+}
+
+section.program-benefits-section ul.program-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+}
+
+section.program-benefits-section li.program-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: var(--uc-surface-soft);
+    border: 1px solid transparent;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--uc-ink-700);
+    transition: transform .3s var(--uc-ease), background .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.program-benefits-section li.program-benefit-item:hover {
+    transform: translateY(-4px);
+    background: var(--uc-surface);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.program-benefits-section span.program-benefit-mark {
+    flex: 0 0 24px;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background: var(--uc-orange);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+section.program-benefits-section div.program-benefits-cta {
+    display: flex;
+    justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   18. INTERACTIVE CLASSES
+   -------------------------------------------------------------------------- */
+section.interactive-classes-section {
+    background: var(--uc-surface-soft);
+}
+
+section.interactive-classes-section div.interactive-classes-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 46px;
+    align-items: start;
+}
+
+section.interactive-classes-section p.interactive-classes-text {
+    margin: 0 0 18px;
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+}
+
+section.interactive-classes-section ul.interactive-classes-aspects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.interactive-classes-section li.interactive-classes-aspect {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 16px;
+    border-radius: 14px;
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--uc-ink);
+    transition: transform .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.interactive-classes-section li.interactive-classes-aspect:hover {
+    transform: translateY(-4px);
+    border-color: var(--uc-orange);
+}
+
+section.interactive-classes-section span.interactive-classes-aspect-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   19. CURRICULUM (bootstrap accordion preserved)
+   -------------------------------------------------------------------------- */
+section.course-curriculum-section {
+    background: var(--uc-surface);
+}
+
+section.course-curriculum-section div.course-curriculum-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 34px;
+    align-items: start;
+}
+
+section.course-curriculum-section aside.course-curriculum-aside {
+    position: sticky;
+    top: 120px;
+    padding: 30px 28px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(160deg, #12202e, #0f1720);
+    color: #fff;
+    box-shadow: var(--uc-shadow-md);
+    overflow: hidden;
+}
+
+section.course-curriculum-section h3.course-curriculum-aside-title {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+}
+
+section.course-curriculum-section p.course-curriculum-aside-text {
+    margin: 0 0 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, .7);
+}
+
+section.course-curriculum-section ul.course-curriculum-facts {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-curriculum-section li.course-curriculum-fact {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .09);
+}
+
+section.course-curriculum-section strong.course-curriculum-fact-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--uc-orange-400);
+    min-width: 62px;
+}
+
+section.course-curriculum-section span.course-curriculum-fact-label {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, .8);
+}
+
+section.course-curriculum-section button.course-curriculum-download {
+    width: 100%;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: var(--uc-radius-pill);
+    background: linear-gradient(135deg, var(--uc-orange), var(--uc-orange-600));
+    color: #fff;
+    font-family: var(--uc-font);
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--uc-shadow-orange);
+    transition: transform .28s var(--uc-ease);
+}
+
+section.course-curriculum-section button.course-curriculum-download:hover {
+    transform: translateY(-3px);
+}
+
+section.course-curriculum-section div.course-curriculum-modules {
+    min-width: 0;
+}
+
+section.course-curriculum-section h3.module-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 34px 0 16px;
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.course-curriculum-section h3.module-heading:first-of-type {
+    margin-top: 0;
+}
+
+section.course-curriculum-section h2.module-heading {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.course-curriculum-section div.syllabus-newbox > p {
+    margin: 0 0 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--uc-muted);
+}
+
+section.course-curriculum-section div.accordion div.card {
+    margin-bottom: 12px;
+    border: 1px solid var(--uc-line) !important;
+    border-radius: 14px !important;
+    background: var(--uc-surface);
+    box-shadow: none;
+    overflow: hidden;
+    transition: border-color .3s var(--uc-ease), box-shadow .3s var(--uc-ease);
+}
+
+section.course-curriculum-section div.accordion div.card:hover {
+    border-color: var(--uc-orange-100) !important;
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.course-curriculum-section div.accordion div.card-header {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+section.course-curriculum-section div.accordion div.card-header a {
+    display: block;
+    padding: 17px 22px;
+    text-decoration: none;
+    color: var(--uc-ink);
+}
+
+section.course-curriculum-section div.accordion div.card-header a span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: inherit;
+}
+
+section.course-curriculum-section div.accordion div.card-header a[aria-expanded="true"] {
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+}
+
+section.course-curriculum-section div.accordion div.card-header a i {
+    color: var(--uc-orange);
+    transition: transform .3s var(--uc-ease);
+}
+
+section.course-curriculum-section div.accordion div.card-header a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+section.course-curriculum-section div.accordion div.card-body {
+    padding: 6px 22px 20px;
+    background: var(--uc-surface);
+}
+
+section.course-curriculum-section div.accordion div.card-body ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-curriculum-section div.accordion div.card-body li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--uc-muted);
+}
+
+section.course-curriculum-section div.accordion div.card-body li::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--uc-orange);
+    opacity: .55;
+}
+
+/* --------------------------------------------------------------------------
+   20. CERTIFICATION
+   -------------------------------------------------------------------------- */
+section.certification-section {
+    background: var(--uc-surface-soft);
+}
+
+section.certification-section div.certification-layout {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+section.certification-section p.certification-text {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+}
+
+section.certification-section ul.certification-points {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+}
+
+section.certification-section li.certification-point {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 18px;
+    border-radius: 14px;
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--uc-ink);
+    transition: transform .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.certification-section li.certification-point:hover {
+    transform: translateX(6px);
+    border-color: var(--uc-orange);
+}
+
+section.certification-section span.certification-point-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 13px;
+}
+
+section.certification-section div.certification-slider {
+    padding: 16px;
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.certification-section div.certification-slider img {
+    border-radius: var(--uc-radius-sm);
+}
+
+section.certification-section a.carousel-control-prev,
+section.certification-section a.carousel-control-next {
+    width: 44px;
+    opacity: .9;
+}
+
+/* --------------------------------------------------------------------------
+   21. TOOLS & TECHNOLOGIES
+   -------------------------------------------------------------------------- */
+section.tools-technologies-section {
+    background: var(--uc-surface);
+}
+
+section.tools-technologies-section ul.tools-technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+}
+
+section.tools-technologies-section li.tools-technology-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* padding: 20px 10px; */
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius);
+    background: var(--uc-surface);
+    text-align: center;
+    transition: transform .3s var(--uc-ease), box-shadow .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.tools-technologies-section li.tools-technology-item:hover {
+    transform: translateY(-7px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.tools-technologies-section li.tools-technology-item img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    transition: transform .3s var(--uc-ease);
+}
+
+section.tools-technologies-section li.tools-technology-item:hover img {
+    transform: scale(1.12);
+}
+
+section.tools-technologies-section span.tools-technology-emoji {
+    font-size: 30px;
+    line-height: 42px;
+}
+
+section.tools-technologies-section span.tools-technology-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--uc-ink-700);
+    line-height: 1.3;
+}
+
+section.tools-technologies-section div.tools-technologies-cta {
+    display: flex;
+    justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   22. COURSE MASTERY (specialised training)
+   -------------------------------------------------------------------------- */
+section.course-mastery-section {
+    /* background: linear-gradient(160deg, #12202e 0%, #0f1720 100%); */
+    color:black;
+}
+
+section.course-mastery-section h2.uc-title {
+    color: black;
+}
+
+section.course-mastery-section p.course-mastery-text {
+    max-width: 880px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(21, 20, 20, 0.74);
+    text-align: center;
+}
+
+section.course-mastery-section ul.course-mastery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-mastery-section li.course-mastery-item {
+    padding: 26px 22px;
+    border-radius: var(--uc-radius);
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .1);
+    transition: transform .35s var(--uc-ease), background .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.course-mastery-section li.course-mastery-item:hover {
+    transform: translateY(-7px);
+    background: rgba(255, 84, 33, .12);
+    border-color: rgba(255, 138, 76, .4);
+}
+
+section.course-mastery-section strong.course-mastery-item-title {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--uc-orange-400);
+}
+
+section.course-mastery-section span.course-mastery-item-text {
+    display: block;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: rgba(12, 11, 11, 0.7);
+}
+
+/* --------------------------------------------------------------------------
+   23. ABOUT UNCODEMY + CITY LINKS
+   -------------------------------------------------------------------------- */
+section.about-uncodemy-section {
+    background: var(--uc-surface);
+}
+
+section.about-uncodemy-section div.about-uncodemy-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 46px;
+    align-items: start;
+}
+
+section.about-uncodemy-section p.about-uncodemy-text {
+    margin: 0 0 18px;
+    font-size: 15.5px;
+    line-height: 1.9;
+    color: var(--uc-muted);
+}
+
+section.about-uncodemy-section div.about-uncodemy-cities {
+    padding: 28px 26px;
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface-soft);
+    border: 1px solid var(--uc-line);
+}
+
+section.about-uncodemy-section h3.about-uncodemy-cities-title {
+    margin: 0 0 16px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.about-uncodemy-section ul.about-uncodemy-city-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.about-uncodemy-section a.about-uncodemy-city-link {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    color: var(--uc-ink-700);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .25s var(--uc-ease), background .25s var(--uc-ease), color .25s var(--uc-ease), border-color .25s var(--uc-ease);
+}
+
+section.about-uncodemy-section a.about-uncodemy-city-link:hover {
+    transform: translateY(-3px);
+    background: var(--uc-orange);
+    border-color: var(--uc-orange);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   24. INSTRUCTORS
+   -------------------------------------------------------------------------- */
+section.instructors-section {
+    background: var(--uc-surface-soft);
+}
+
+section.instructors-section ul.instructors-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 44px;
+    padding: 0;
+    list-style: none;
+}
+
+section.instructors-section li.instructors-highlight {
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--uc-ink-700);
+    text-align: center;
+    transition: transform .3s var(--uc-ease), border-color .3s var(--uc-ease);
+}
+
+section.instructors-section li.instructors-highlight:hover {
+    transform: translateY(-4px);
+    border-color: var(--uc-orange);
+}
+
+section.instructors-section div.instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+section.instructors-section article.instructor-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 26px;
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.instructors-section article.instructor-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.instructors-section figure.instructor-figure {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 16px;
+}
+
+section.instructors-section img.instructor-photo {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--uc-orange-100);
+    background: var(--uc-surface-soft);
+}
+
+section.instructors-section h3.instructor-name {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.instructors-section span.instructor-company {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--uc-orange-600);
+}
+
+section.instructors-section p.instructor-expertise {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--uc-muted);
+}
+
+section.instructors-section p.instructor-expertise strong {
+    color: var(--uc-ink);
+    font-weight: 700;
+}
+
+section.instructors-section div.instructor-project {
+    margin-top: auto;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--uc-surface-soft);
+    border-left: 3px solid var(--uc-orange);
+}
+
+section.instructors-section span.instructor-project-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--uc-orange-600);
+}
+
+section.instructors-section p.instructor-project-text {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--uc-muted);
+}
+
+/* --------------------------------------------------------------------------
+   25. INDUSTRY PROJECTS (owl carousel preserved)
+   -------------------------------------------------------------------------- */
+section.industry-projects-section {
+    background: var(--uc-surface);
+}
+
+section.industry-projects-section div.project-thumb {
+    height: 100%;
+    padding: 0 0 22px;
+    border: 1px solid var(--uc-line);
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    overflow: hidden;
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.industry-projects-section div.project-thumb:hover {
+    transform: translateY(-8px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.industry-projects-section img.project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 18px;
+    transition: transform .5s var(--uc-ease);
+}
+
+section.industry-projects-section div.project-thumb:hover img.project-img {
+    transform: scale(1.06);
+}
+
+section.industry-projects-section div.proj-title {
+    padding: 0 22px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--uc-orange) !important;
+}
+
+section.industry-projects-section span.proj-name {
+    display: block;
+    padding: 6px 22px 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--uc-ink);
+}
+
+section.industry-projects-section div.project-thumb > p {
+    padding: 10px 22px 14px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--uc-muted);
+}
+
+section.industry-projects-section ul.skills,
+section.industry-projects-section div.project-thumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 22px;
+    margin: 0;
+    list-style: none;
+}
+
+section.industry-projects-section ul.skills li,
+section.industry-projects-section div.project-thumb ul li {
+    padding: 5px 12px;
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   26. LEARNING JOURNEY (bootstrap tabs preserved)
+   -------------------------------------------------------------------------- */
+section.learning-journey-section {
+    background: var(--uc-surface-soft);
+}
+
+section.learning-journey-section ul.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 34px;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+section.learning-journey-section ul.nav-tabs li.nav-item {
+    margin: 0;
+}
+
+section.learning-journey-section ul.nav-tabs a.nav-link {
+    display: flex !important;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 20px !important;
+    border: 1px solid var(--uc-line) !important;
+    border-radius: var(--uc-radius-pill) !important;
+    background: var(--uc-surface) !important;
+    color: var(--uc-ink-700) !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    transition: transform .28s var(--uc-ease), background .28s var(--uc-ease), color .28s var(--uc-ease), border-color .28s var(--uc-ease);
+}
+
+section.learning-journey-section ul.nav-tabs a.nav-link img {
+    width: 22px !important;
+    height: 22px !important;
+    object-fit: contain;
+    margin: 0 !important;
+}
+
+section.learning-journey-section ul.nav-tabs a.nav-link:hover {
+    transform: translateY(-3px);
+    border-color: var(--uc-orange) !important;
+    color: var(--uc-orange-600) !important;
+}
+
+section.learning-journey-section ul.nav-tabs a.nav-link.active {
+    background: linear-gradient(135deg, var(--uc-orange), var(--uc-orange-600)) !important;
+    border-color: transparent !important;
+    color: #fff !important;
+    box-shadow: var(--uc-shadow-orange);
+}
+
+section.learning-journey-section div.tab-content {
+    padding: 32px;
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.learning-journey-section div.tab-pane.active {
+    animation: ucFadeUp .5s var(--uc-ease) both;
+}
+
+@keyframes ucFadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+}
+
+section.learning-journey-section div.duration-content img {
+    width: 100%;
+    border-radius: var(--uc-radius);
+    object-fit: cover;
+}
+
+section.learning-journey-section div.duration-content > div:first-child {
+    font-size: 21px !important;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--uc-ink);
+    margin-bottom: 14px;
+}
+
+section.learning-journey-section div.post {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+}
+
+section.learning-journey-section a.read {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 9px 20px;
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600) !important;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .25s var(--uc-ease), color .25s var(--uc-ease);
+}
+
+section.learning-journey-section a.read:hover {
+    background: var(--uc-orange);
+    color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   27. AWARDS
+   -------------------------------------------------------------------------- */
+section.awards-section {
+    background: var(--uc-surface);
+}
+
+section.awards-section ul.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.awards-section li.awards-item {
+    padding: 18px;
+    border-radius: var(--uc-radius);
+    border: 1px solid var(--uc-line);
+    background: var(--uc-surface-soft);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease);
+}
+
+section.awards-section li.awards-item:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--uc-shadow-md);
+    background: var(--uc-surface);
+}
+
+section.awards-section img.awards-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--uc-radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   28. INSIGHTS (long-form read-more blocks)
+   -------------------------------------------------------------------------- */
+section.insights-section {
+    background: var(--uc-surface-soft);
+}
+
+section.insights-section div.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+section.insights-section article.insights-card {
+    padding: 30px 28px;
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-xs);
+    transition: transform .35s var(--uc-ease), box-shadow .35s var(--uc-ease), border-color .35s var(--uc-ease);
+}
+
+section.insights-section article.insights-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.insights-section h3.insights-card-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.4;
+    color: var(--uc-ink);
+}
+
+section.insights-section span.insights-card-icon {
+    flex: 0 0 34px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 14px;
+}
+
+section.insights-section div.post {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+}
+
+section.insights-section div.post ul.Ulist {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+
+section.insights-section div.post ul.Ulist li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+section.insights-section div.post ul.Ulist li::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--uc-orange);
+    opacity: .6;
+}
+
+section.insights-section a.read {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 9px 20px;
+    border-radius: var(--uc-radius-pill);
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600) !important;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .25s var(--uc-ease), color .25s var(--uc-ease);
+}
+
+section.insights-section a.read:hover {
+    background: var(--uc-orange);
+    color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   29. FAQ
+   -------------------------------------------------------------------------- */
+section.faq-section {
+    background: var(--uc-surface);
+}
+
+section.faq-section div.faq-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 42px;
+    align-items: start;
+}
+
+section.faq-section aside.faq-aside {
+    position: sticky;
+    top: 120px;
+    padding: 30px 28px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(160deg, #fff, var(--uc-orange-50));
+    border: 1px solid var(--uc-orange-100);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.faq-section h3.faq-aside-title {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.faq-section p.faq-aside-text {
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--uc-muted);
+}
+
+section.faq-section div.accordion div.card {
+    margin-bottom: 12px;
+    border: 1px solid var(--uc-line) !important;
+    border-radius: 14px !important;
+    background: var(--uc-surface);
+    overflow: hidden;
+    transition: border-color .3s var(--uc-ease), box-shadow .3s var(--uc-ease);
+}
+
+section.faq-section div.accordion div.card:hover {
+    border-color: var(--uc-orange-100) !important;
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.faq-section div.accordion div.card-header {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+section.faq-section div.accordion div.card-header a {
+    display: block;
+    padding: 18px 22px;
+    text-decoration: none;
+}
+
+section.faq-section div.accordion div.card-header h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--uc-ink);
+}
+
+section.faq-section div.accordion div.card-header a[aria-expanded="true"] {
+    background: var(--uc-orange-50);
+}
+
+section.faq-section div.accordion div.card-header a[aria-expanded="true"] h3 {
+    color: var(--uc-orange-600);
+}
+
+section.faq-section div.accordion div.card-header i {
+    color: var(--uc-orange);
+    transition: transform .3s var(--uc-ease);
+}
+
+section.faq-section div.accordion div.card-header a[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+section.faq-section div.accordion div.card-body {
+    padding: 4px 22px 20px;
+}
+
+section.faq-section div.accordion div.card-body p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--uc-muted);
+}
+
+/* --------------------------------------------------------------------------
+   30. LOCATION
+   -------------------------------------------------------------------------- */
+section.location-section {
+    background: var(--uc-surface-soft);
+}
+
+section.location-section div.location-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 26px;
+    align-items: stretch;
+}
+
+section.location-section article.location-card {
+    padding: 32px 30px;
+    border-radius: var(--uc-radius-lg);
+    background: var(--uc-surface);
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-sm);
+}
+
+section.location-section h3.location-card-title {
+    margin: 0 0 22px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--uc-ink);
+}
+
+section.location-section ul.location-details {
+    display: grid;
+    gap: 16px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+section.location-section li.location-detail {
+    display: flex;
+    gap: 14px;
+}
+
+section.location-section span.location-detail-icon {
+    flex: 0 0 40px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--uc-orange-50);
+    color: var(--uc-orange-600);
+    font-size: 16px;
+}
+
+section.location-section h4.location-detail-title {
+    margin: 0 0 3px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--uc-ink);
+}
+
+section.location-section p.location-detail-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--uc-muted);
+}
+
+section.location-section ul.location-hours {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 18px 20px;
+    list-style: none;
+    border-radius: var(--uc-radius);
+    background: var(--uc-surface-soft);
+    border: 1px solid var(--uc-line);
+}
+
+section.location-section li.location-hour {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--uc-line);
+    font-size: 14px;
+}
+
+section.location-section li.location-hour:last-child {
+    border-bottom: 0;
+}
+
+section.location-section span.location-hour-day {
+    font-weight: 600;
+    color: var(--uc-ink);
+}
+
+section.location-section span.location-hour-time {
+    font-weight: 600;
+    color: var(--uc-orange-600);
+}
+
+section.location-section figure.location-map {
+    margin: 0;
+    border-radius: var(--uc-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--uc-line);
+    box-shadow: var(--uc-shadow-sm);
+    min-height: 420px;
+}
+
+section.location-section iframe.location-map-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   31. FINAL CTA
+   -------------------------------------------------------------------------- */
+section.enrollment-cta-section {
+    padding: 0 0 var(--uc-space-section);
+    background: var(--uc-surface-soft);
+}
+
+section.enrollment-cta-section div.enrollment-cta-panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 36px;
+    align-items: center;
+    padding: 48px 52px;
+    border-radius: var(--uc-radius-lg);
+    background: linear-gradient(125deg, #12202e 0%, #0f1720 55%, #221108 100%);
+    color: #fff;
+    overflow: hidden;
+    box-shadow: var(--uc-shadow-md);
+}
+
+section.enrollment-cta-section div.enrollment-cta-panel::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 84, 33, .34), rgba(255, 84, 33, 0) 68%);
+}
+
+section.enrollment-cta-section h2.enrollment-cta-title {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 12px;
+    font-size: clamp(26px, 3.4vw, 38px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    color: #fff;
+}
+
+section.enrollment-cta-section h2.enrollment-cta-title em {
+    font-style: normal;
+    color: var(--uc-orange-400);
+}
+
+section.enrollment-cta-section p.enrollment-cta-text {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, .76);
+}
+
+section.enrollment-cta-section div.enrollment-cta-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+section.enrollment-cta-section div.enrollment-cta-actions button.uc-btn,
+section.enrollment-cta-section div.enrollment-cta-actions a.uc-btn {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   32. RESPONSIVE — LAPTOP
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    :root {
+        --uc-space-section: 72px;
+    }
+
+    section.tools-technologies-section ul.tools-technologies-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    section.course-curriculum-section div.course-curriculum-layout,
+    section.faq-section div.faq-layout {
+        grid-template-columns: 300px 1fr;
+        gap: 28px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   33. RESPONSIVE — TABLET
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    :root {
+        --uc-space-section: 60px;
+    }
+
+    section.uc-redesign header.uc-head {
+        margin-bottom: 38px;
+    }
+
+    section.course-highlights-section ul.course-highlights-grid,
+    section.why-uncodemy-section div.why-uncodemy-grid,
+    section.campus-showcase-section div.campus-showcase-grid,
+    section.batch-schedule-section div.batch-schedule-grid,
+    section.instructors-section div.instructors-grid,
+    section.fee-comparison-section div.fee-value-grid,
+    section.program-benefits-section ul.program-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section.campus-showcase-section figure.campus-showcase-card-wide {
+        grid-column: span 2;
+    }
+
+    section.institute-metrics-section section.uc-why-card,
+    section.placed-students-section div.placed-students-metrics,
+    section.course-mastery-section ul.course-mastery-grid,
+    section.instructors-section ul.instructors-highlights,
+    section.awards-section ul.awards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section.institute-metrics-section div.uc-stat::after {
+        display: none;
+    }
+
+    section.course-assurance-section div.course-assurance-bar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    section.program-overview-section div.program-overview-layout,
+    section.career-growth-section div.career-growth-layout,
+    section.fee-comparison-section div.fee-comparison-columns,
+    section.scholarship-assessment-section div.scholarship-split,
+    section.career-navigator-section div.career-navigator-split,
+    section.interactive-classes-section div.interactive-classes-layout,
+    section.certification-section div.certification-layout,
+    section.about-uncodemy-section div.about-uncodemy-layout,
+    section.location-section div.location-layout,
+    section.course-curriculum-section div.course-curriculum-layout,
+    section.faq-section div.faq-layout,
+    section.insights-section div.insights-grid,
+    section.enrollment-cta-section div.enrollment-cta-panel {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    section.program-overview-section aside.program-overview-card,
+    section.career-growth-section aside.career-growth-aside,
+    section.course-curriculum-section aside.course-curriculum-aside,
+    section.faq-section aside.faq-aside {
+        position: static;
+    }
+
+    section.scholarship-assessment-section div.scholarship-visual {
+        order: -1;
+    }
+
+    section.course-curriculum-section div.accordion div.card-body ul {
+        grid-template-columns: 1fr;
+    }
+
+    section.enrollment-cta-section div.enrollment-cta-panel {
+        padding: 36px 30px;
+    }
+
+    section.location-section figure.location-map,
+    section.location-section iframe.location-map-frame {
+        min-height: 320px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   34. RESPONSIVE — MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    :root {
+        --uc-space-section: 48px;
+    }
+
+    section.uc-redesign div.uc-shell {
+        padding: 0 16px;
+    }
+
+    section.uc-redesign h2.uc-title {
+        font-size: 25px;
+    }
+
+    section.uc-redesign p.uc-sub {
+        font-size: 15px;
+    }
+
+    section.uc-redesign a.uc-btn,
+    section.uc-redesign button.uc-btn {
+        width: 100%;
+        padding: 15px 22px;
+    }
+
+    section.course-highlights-section ul.course-highlights-grid,
+    section.why-uncodemy-section div.why-uncodemy-grid,
+    section.campus-showcase-section div.campus-showcase-grid,
+    section.batch-schedule-section div.batch-schedule-grid,
+    section.instructors-section div.instructors-grid,
+    section.fee-comparison-section div.fee-value-grid,
+    section.fee-comparison-section div.fee-comparison-columns,
+    section.program-benefits-section ul.program-benefits-grid,
+    section.interactive-classes-section ul.interactive-classes-aspects,
+    section.awards-section ul.awards-grid,
+    section.instructors-section ul.instructors-highlights,
+    section.course-mastery-section ul.course-mastery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section.campus-showcase-section figure.campus-showcase-card-wide {
+        grid-column: span 1;
+    }
+
+    section.placed-students-section div.placed-students-metrics,
+    section.institute-metrics-section section.uc-why-card,
+    section.course-assurance-section div.course-assurance-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section.institute-metrics-section section.uc-why-card {
+        padding: 24px 16px;
+    }
+
+    section.tools-technologies-section ul.tools-technologies-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    section.tools-technologies-section li.tools-technology-item {
+        padding: 16px 6px;
+    }
+
+    section.program-overview-section aside.program-overview-card,
+    section.career-navigator-section div.career-navigator-visual,
+    section.scholarship-assessment-section div.scholarship-visual,
+    section.location-section article.location-card,
+    section.course-curriculum-section aside.course-curriculum-aside,
+    section.faq-section aside.faq-aside,
+    section.instructors-section article.instructor-card,
+    section.insights-section article.insights-card,
+    section.why-uncodemy-section article.why-uncodemy-card,
+    section.fee-comparison-section article.fee-plan-card {
+        padding: 24px 20px;
+    }
+
+    section.program-overview-section li.program-overview-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    section.learning-journey-section div.tab-content {
+        padding: 20px 16px;
+    }
+
+    section.learning-journey-section ul.nav-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    section.learning-journey-section ul.nav-tabs li.nav-item {
+        flex: 0 0 auto;
+    }
+
+    section.campus-showcase-section img.campus-showcase-image {
+        height: 210px;
+    }
+
+    section.institute-comparison-section footer.institute-comparison-footer,
+    section.why-uncodemy-section div.why-uncodemy-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 20px;
+    }
+
+    section.learner-reviews-section div.learner-reviews-rating {
+        gap: 14px;
+        padding: 14px 18px;
+        border-radius: var(--uc-radius);
+    }
+
+    section.enrollment-cta-section div.enrollment-cta-panel {
+        padding: 30px 22px;
+    }
+
+    section.batch-schedule-section footer.batch-schedule-card-foot {
+        flex-direction: column;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   35. GLOBAL SAFETY — no horizontal scroll
+   -------------------------------------------------------------------------- */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+section.uc-redesign img {
+    max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   36. SMALL COMPONENT FIXES / ADDITIONS
+   -------------------------------------------------------------------------- */
+section.batch-schedule-section p.batch-schedule-seats {
+    margin: 0 0 4px;
+    font-size: 13.5px;
+    color: var(--uc-muted);
+}
+
+section.batch-schedule-section p.batch-schedule-seats strong {
+    color: var(--uc-ink);
+    font-weight: 700;
+}
+
+section.batch-schedule-section div.batch-schedule-progress {
+    margin-bottom: 18px;
+}
+
+section.instructors-section figcaption.instructor-caption {
+    min-width: 0;
+}
+
+/* read-more spans used by the legacy js/script.js toggles */
+section.uc-redesign span.more {
+    display: none;
+}
+
+section.uc-redesign span.dots {
+    display: inline;
+}
+
+section.uc-redesign div.post > ul.Ulist li b {
+    color: var(--uc-ink);
+}
+
+/* keep the legacy owl carousels from overflowing their new shells */
+section.uc-redesign div.owl-carousel {
+    width: 100%;
+}
+
+section.uc-redesign div.owl-carousel div.owl-stage-outer {
+    padding: 6px 0 14px;
+}
+
+/* section anchors clear the fixed navbar when linked from the page nav */
+section.uc-redesign[id] {
+    scroll-margin-top: 120px;
+}
+
+.grid-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: linear-gradient(to right, rgba(242, 107, 33, .14) 1px, transparent 1px), linear-gradient(to bottom, rgba(242, 107, 33, .14) 1px, transparent 1px);
+    background-size: 46px 46px;
+    -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 10%, transparent 72%);
+    mask-image: radial-gradient(120% 80% at 50% 0%, #000 10%, transparent 72%);
+    filter: blur(.3px);
+    opacity: .9;
+}

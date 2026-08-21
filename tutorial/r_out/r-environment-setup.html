@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environment Setup | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Installing R, RStudio, and Essential Packages" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 2 of 20: Environment Setup</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html" class="active"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-download"></i> Setup</span>
+        <h1>Environment Setup</h1>
+
+        <div class="card">
+
+            <p>Before you can write a single line of R code, you need to set up your development environment. This involves installing <strong>R</strong> itself (the language engine) and <strong>RStudio</strong> (the IDE that makes working with R dramatically easier).</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> R and RStudio are two separate installations. R is the engine that executes your code; RStudio is the friendly interface you use to write and run it. You need both.
+            </div>
+
+            <h2>1. System Requirements</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Requirement</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Operating System</td><td>Windows 10/11, macOS 11+, or Linux (Ubuntu 20.04+)</td></tr>
+                        <tr><td>RAM</td><td>Minimum 4GB (8GB+ recommended for larger datasets)</td></tr>
+                        <tr><td>Storage</td><td>At least 2GB free for R, RStudio, and packages</td></tr>
+                        <tr><td>Internet</td><td>Required to download R, RStudio, and CRAN packages</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Installing R</h2>
+            <h3>Step 1: Download R</h3>
+            <p>Visit <a href="https://cran.r-project.org/" target="_blank">cran.r-project.org</a> and choose your operating system (Windows, macOS, or Linux).</p>
+
+            <h4>Windows</h4>
+            <ol>
+                <li>Click <strong>"Download R for Windows" → "base" → "Download R x.x.x for Windows"</strong>.</li>
+                <li>Run the <code>.exe</code> installer and follow the setup wizard using default options.</li>
+            </ol>
+
+            <h4>macOS</h4>
+            <ol>
+                <li>Click <strong>"Download R for macOS"</strong> and select the <code>.pkg</code> file matching your chip (Intel or Apple Silicon).</li>
+                <li>Open the package and follow the installer.</li>
+            </ol>
+
+            <h4>Linux (Ubuntu/Debian)</h4>
+                        <pre class="code-block"><code>sudo apt update
+sudo apt install --no-install-recommends r-base</code></pre>
+
+            <h2>3. Installing RStudio Desktop</h2>
+            <p>Visit <a href="https://posit.co/download/rstudio-desktop/" target="_blank">posit.co/download/rstudio-desktop</a> and download the free <strong>RStudio Desktop</strong> edition for your OS. Install it just like any regular application — RStudio will automatically detect your R installation.</p>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Always install R first, then RStudio. RStudio is just an interface — it looks for an existing R installation on your machine.
+            </div>
+
+            <h2>4. Verifying Your Installation</h2>
+            <p>Open RStudio and type the following in the Console pane, then press Enter:</p>
+                        <pre class="code-block"><code>print(&quot;Hello, R!&quot;)
+R.version.string</code></pre>
+            <p>You should see the greeting printed along with your installed R version, e.g. <code>"R version 4.4.1 (2024-06-14)"</code>.</p>
+
+            <h2>5. Installing Essential Packages</h2>
+            <p>R's real power comes from its package ecosystem. Install the most commonly used packages for this course using <code>install.packages()</code>:</p>
+                        <pre class="code-block"><code>install.packages(&quot;tidyverse&quot;)   # dplyr, ggplot2, tidyr, readr, and more
+install.packages(&quot;shiny&quot;)       # interactive web apps
+install.packages(&quot;rmarkdown&quot;)   # dynamic reports
+install.packages(&quot;caret&quot;)       # machine learning workflows
+install.packages(&quot;plotly&quot;)      # interactive charts</code></pre>
+            <p>Load a package into your session with <code>library()</code>:</p>
+                        <pre class="code-block"><code>library(tidyverse)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issues:</strong> If install.packages() fails on Linux, you may need system libraries first, e.g. sudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev.
+            </div>
+
+            <h2>6. Setting a CRAN Mirror</h2>
+            <p>On first use, R may ask you to choose a CRAN mirror (download server). Choose one close to your location, or use the global cloud mirror which auto-routes you:</p>
+                        <pre class="code-block"><code>options(repos = c(CRAN = &quot;https://cloud.r-project.org&quot;))</code></pre>
+
+            <h2>7. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Install R</strong> — Latest stable release from CRAN.</li>
+                <li><strong>✅ Install RStudio Desktop</strong> — Free open-source edition.</li>
+                <li><strong>✅ Verify installation</strong> — Run a test command in the Console.</li>
+                <li><strong>✅ Install tidyverse</strong> — The foundation for data wrangling and visualization.</li>
+                <li><strong>✅ Set a CRAN mirror</strong> — For fast, reliable package downloads.</li>
+            </ul>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Once R prints your test message and tidyverse loads without errors, your environment is production-ready for this entire course.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-introduction.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Introduction to R</a>
+            <a href="r-rstudio-ide.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>RStudio IDE Mastery</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

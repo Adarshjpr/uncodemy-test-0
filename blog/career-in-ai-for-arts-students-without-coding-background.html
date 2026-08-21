@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Career in AI for Arts Students: How to Start Without a Coding Background | Uncodemy</title>
+    <meta name="description" content="A practical guide for arts students starting a career in AI without any coding background. Low-code roles, the skills to learn, an 8-month plan, projects and interview answers." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/career-in-ai-for-arts-students-without-coding-background" />
+    <meta property="og:title" content="Career in AI for Arts Students: How to Start Without a Coding Background | Uncodemy" />
+    <meta property="og:description" content="Arts students can build AI careers. Start with the roles that need judgement and language rather than code, then add the technical layer at your own pace." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <style>
+        /* page-specific: career path diagram */
+        .career-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .career-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .career-box .c-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .career-box .c-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .career-box .c-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .career-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .career-box .c-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .career-box .c-v {
+                font-size: 14px;
+            }
+            .career-box .c-l {
+                font-size: 8px;
+            }
+            .career-box .c-d {
+                font-size: 9px;
+            }
+        }
+        /* role badges */
+        .role-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Career in AI for Arts Students <mark>How to Start Without a Coding Background</mark></h1>
+                <p class="lede">AI work is no longer only engineering. Evaluation, prompt design, AI content operations, data annotation quality and AI product roles all need people who can read carefully and write precisely. This guide starts you where you are &mdash; with no code &mdash; and adds the technical layer in stages.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;ai career for arts students no coding&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="true">Arts Students</button>
+                    <button class="chip" aria-pressed="false">No&#8209;Code AI</button>
+                    <button class="chip" aria-pressed="false">Prompt Engineering</button>
+                    <button class="chip" aria-pressed="false">AI Evaluation</button>
+                    <button class="chip" aria-pressed="false">AI Content</button>
+                    <button class="chip" aria-pressed="false">Python</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Career Path Explorer · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different career paths">
+                        <button aria-pressed="true" data-r="eval">AI Evaluator</button>
+                        <button aria-pressed="false" data-r="content">AI Content</button>
+                        <button aria-pressed="false" data-r="ops">AI Ops</button>
+                        <button aria-pressed="false" data-r="pm">AI Product</button>
+                    </div>
+                    <div class="career-grid" id="careerTiers">
+                        <div class="career-box"><div class="c-l">Role</div><div class="c-v" id="roleName">&mdash;</div><div class="c-d">Job title</div></div>
+                        <div class="career-box"><div class="c-l">Avg. Salary (India)</div><div class="c-v" id="salaryVal">&mdash;</div><div class="c-d">Fresher to mid-level</div></div>
+                        <div class="career-box"><div class="c-l">Learning Time</div><div class="c-v" id="timeVal">&mdash;</div><div class="c-d">From zero to job-ready</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Arts Graduate</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>AI Literacy + Judgement Skills</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Portfolio of AI Work</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>AI Job Without Coding</span>
+                    </div>
+                    <div class="demo-cap">Tap a role to see the entry band. Evaluation and content roles open in two to five months; product and operations roles take longer but pay more.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Career Guides</a> / <a href="#top">Arts &amp; Humanities to AI</a> / <span>Arts Students in AI</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Guide · Arts to AI · No&#8209;Code Start</p>
+                <h1>Career in AI for Arts Students: How to Start Without a Coding Background</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 12 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                               <figure>
+                    <svg viewBox="0 0 950 280" role="img" aria-label="Diagram showing arts students strengths leading through AI literacy skills into non-coding AI roles">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="950" height="280" fill="url(#g4)" />
+                        
+                        <!-- Titles -->
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">ARTS BACKGROUND</text>
+                            <text x="350" y="40">WHAT TO LEARN FIRST</text>
+                            <text x="660" y="40">AI ROLES WITHOUT CODE</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="45" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Your real strengths</text>
+                        <text x="45" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Close reading</text>
+                        <text x="45" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Precise writing</text>
+                        <text x="45" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Argument &amp; logic</text>
+                        <text x="45" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Cultural &amp; ethical context</text>
+                        <rect x="40" y="210" width="190" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="65" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Exactly what AI needs</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="335" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Learn in this order</text>
+                        <text x="335" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• How models work (concepts)</text>
+                        <text x="335" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Prompt &amp; instruction design</text>
+                        <text x="335" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Evaluation &amp; rubrics</text>
+                        <text x="335" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Spreadsheets &amp; basic SQL</text>
+                        <rect x="335" y="210" width="180" height="20" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8a6100">No coding for months</text>
+
+                        <!-- Column 3 -->
+                        <rect x="620" y="58" width="300" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="645" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Roles open to you</text>
+                        <text x="645" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• AI Evaluation Specialist</text>
+                        <text x="645" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Prompt / Instruction Designer</text>
+                        <text x="645" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• AI Content Strategist</text>
+                        <text x="645" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• AI Operations Analyst</text>
+                        <rect x="645" y="210" width="250" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="670" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Real, paid, growing</text>
+
+                        <!-- Arrows -->
+                        <path d="M250 148 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                        <path d="M540 148 H606" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                    </svg>
+                    <figcaption>Language models are trained and judged by people who can read and write with precision. That is an arts skill, and it is currently in short supply.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary &mdash; arts students starting a career in AI</h2>
+                    <p>There is a real category of AI work that does not begin with code. Every language model needs people to <b>write instructions, judge outputs against a rubric, design test sets, and catch the failures engineers miss</b> &mdash; and those tasks reward close reading and careful writing far more than programming. Start in that category within two to five months, then add spreadsheets, SQL and light Python while you are already employed in the field.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>The AI jobs that do not require coding</b> &mdash; and what they pay.</li>
+                        <li><b>Why arts training is genuinely useful</b>, not a consolation prize.</li>
+                        <li><b>What to learn first</b> &mdash; concepts, prompting, evaluation, then tools.</li>
+                        <li><b>Four portfolio pieces</b> you can build with no programming.</li>
+                        <li><b>An 8&#8209;month plan</b> with a coding&#8209;optional branch at month five.</li>
+                        <li><b>Interview answers</b> for &ldquo;but you cannot code&rdquo;.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Why arts training is genuinely valuable in AI</a></li>
+                        <li><a href="#s2"><span class="n">02</span>AI roles that do not require coding</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Step one &mdash; understand how these models work, without code</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Step two &mdash; prompt and instruction design</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Step three &mdash; evaluation, the most hireable skill here</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Step four &mdash; the light technical layer</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Four portfolio pieces you can build with no code</a></li>
+                        <li><a href="#s8"><span class="n">08</span>What you should be honest about</a></li>
+                        <li><a href="#s9"><span class="n">09</span>Step&#8209;by&#8209;step roadmap &mdash; eight months</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Skills to learn &mdash; the complete list</a></li>
+                        <li><a href="#s11"><span class="n">11</span>Interview Q&amp;A &mdash; for arts graduates entering AI</a></li>
+                        <li><a href="#quiz"><span class="n">12</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">13</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">14</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Why arts training is genuinely valuable in AI</h2>
+                <p>This is not encouragement. It is a description of what these systems actually need from humans.</p>
+
+                <ul>
+                    <li><b>Models are judged on language.</b> Deciding whether an answer is accurate, appropriately hedged, well&#8209;structured and free of subtle nonsense is a reading task.</li>
+                    <li><b>Instructions are documents.</b> A system prompt or an annotation guideline is a piece of technical writing, and ambiguity in it produces thousands of wrong labels.</li>
+                    <li><b>Failure modes are contextual.</b> Detecting a culturally wrong recommendation, a tone problem, or an implication a model missed needs a human with judgement.</li>
+                    <li><b>Ethics and policy have moved into product work.</b> Philosophy, sociology, law and political science graduates are being hired specifically for this.</li>
+                    <li><b>Rubric design is research design.</b> Defining what counts as a good answer, and testing whether two people agree on it, is social&#8209;science methodology.</li>
+                </ul>
+
+                <div class="note"><b>Key insight:</b> engineers can build the pipeline but frequently cannot tell you whether the output is good. That judgement gap is where arts graduates enter this industry.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>AI roles that do not require coding</h2>
+                <p>These are real job titles with real openings in India. Ordered by how quickly you can reach them.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Role</th><th>What you do</th><th>Time to entry</th><th>Salary (India)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>AI Evaluation Specialist</b></td><td>Score model outputs against rubrics, find failure patterns</td><td>2&ndash;4 months</td><td>&#8377;4&ndash;8 LPA</td></tr>
+                            <tr><td><b>Prompt / Instruction Designer</b></td><td>Write and test system prompts and annotation guidelines</td><td>3&ndash;5 months</td><td>&#8377;5&ndash;10 LPA</td></tr>
+                            <tr><td><b>AI Content Strategist</b></td><td>Design AI&#8209;assisted content workflows, quality standards, brand voice</td><td>3&ndash;5 months</td><td>&#8377;4.5&ndash;9 LPA</td></tr>
+                            <tr><td><b>AI Operations Analyst</b></td><td>Run annotation programmes, track quality metrics, manage vendors</td><td>5&ndash;7 months</td><td>&#8377;5&ndash;10 LPA</td></tr>
+                            <tr><td><b>AI Policy / Trust &amp; Safety Analyst</b></td><td>Policy writing, escalation review, harm analysis</td><td>5&ndash;8 months</td><td>&#8377;6&ndash;12 LPA</td></tr>
+                            <tr><td><b>Associate AI Product Manager</b></td><td>Requirements, user research, roadmap for AI features</td><td>8&ndash;12 months</td><td>&#8377;8&ndash;16 LPA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>Reality check:</b> some of these roles are contract or project&#8209;based at entry, especially evaluation work. Treat that as a paid entry point and a line on your CV rather than a destination.</div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Step one &mdash; understand how these models work, without code</h2>
+                <p>You cannot evaluate what you do not understand. This is a conceptual syllabus &mdash; no programming required, and it takes about three weeks.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Tokens and context windows &mdash; why long documents get truncated</li>
+                    <li>Training, fine&#8209;tuning and prompting &mdash; three different levers</li>
+                    <li>Why models hallucinate, and which prompts make it worse</li>
+                    <li>Temperature and sampling &mdash; why the same prompt gives different answers</li>
+                    <li>Retrieval (RAG) &mdash; how a model is grounded in real documents</li>
+                    <li>Benchmarks and their limits &mdash; why a leaderboard score is not quality</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">AI Evaluation Specialist</span> <span class="role-badge">AI Content Strategist</span> <span class="role-badge">AI Trainer</span> <span class="role-badge">Trust &amp; Safety Analyst</span></p>
+
+                <div class="note"><b>Pro tip:</b> keep a failure log while you learn. Fifty documented cases where a model got something wrong, with your analysis of why, is already a portfolio piece &mdash; and it is exactly what an evaluation interview asks about.</div>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Step two &mdash; prompt and instruction design</h2>
+                <p>This is technical writing under constraints. Arts graduates are frequently better at it than engineers, because the skill is precision in language rather than syntax.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Structure &mdash; role, task, constraints, format, examples</li>
+                    <li>Few&#8209;shot examples &mdash; choosing cases that teach the edge, not the middle</li>
+                    <li>Requesting structured output that a system can parse reliably</li>
+                    <li>Negative instructions and why they often fail</li>
+                    <li>Iteration discipline &mdash; changing one variable at a time</li>
+                    <li>Writing annotation guidelines that two strangers interpret identically</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">Prompt Engineer</span> <span class="role-badge">Instruction Designer</span> <span class="role-badge">AI Trainer</span> <span class="role-badge">Conversation Designer</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">A prompt as a specification</button>
+                    </div>
+                    <pre data-p="0"><code># Working with an LLM API - the everyday skill in AI-era analytics
+import os, json, requests
+
+def classify_feedback(text):
+    """Turn free-text customer feedback into structured data."""
+    prompt = (
+        "Classify the customer feedback below.\n"
+        "Return ONLY JSON with keys: sentiment (positive/neutral/negative), "
+        "topic (delivery/pricing/quality/support/other), urgent (true/false).\n\n"
+        f"Feedback: {text}"
+    )
+    r = requests.post(
+        "https://api.example-llm.com/v1/messages",
+        headers={"x-api-key": os.environ["API_KEY"]},
+        json={"model": "small-fast", "max_tokens": 200,
+              "messages": [{"role": "user", "content": prompt}]},
+        timeout=30,
+    )
+    return json.loads(r.json()["content"][0]["text"])
+
+rows = [classify_feedback(t) for t in open("feedback.txt")]
+print(rows[:3])
+# 2,000 rows of text become a table you can chart. That is the new analyst workflow.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Prompt &middot; structured classification spec</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Step three &mdash; evaluation, the most hireable skill here</h2>
+                <p>Evaluation is the bottleneck in every AI team. If you learn one thing from this page properly, learn this.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Rubric design &mdash; turning &ldquo;good answer&rdquo; into scoreable dimensions</li>
+                    <li>Inter&#8209;rater agreement &mdash; testing whether your rubric is actually usable</li>
+                    <li>Test set construction &mdash; covering normal, edge and adversarial cases</li>
+                    <li>Error taxonomy &mdash; grouping failures into fixable categories</li>
+                    <li>Regression testing &mdash; checking a new version did not break old behaviour</li>
+                    <li>Reporting &mdash; one page that tells engineers what to fix first</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">AI Evaluation Specialist</span> <span class="role-badge">Quality Analyst</span> <span class="role-badge">AI Research Associate</span> <span class="role-badge">Red Team Analyst</span></p>
+
+                <div class="note"><b>Why this works:</b> writing a rubric, testing agreement between raters, and grouping errors is social&#8209;science method. If you have written a research essay with a coding scheme, you have done this before under a different name.</div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Step four &mdash; the light technical layer</h2>
+                <p>At some point, spreadsheets and a little SQL stop being optional &mdash; not to build models, but to handle the results of your own evaluation work. This is where most arts graduates plateau, and pushing through is what doubles your salary band.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Spreadsheets &mdash; formulas, pivot tables, agreement rates, charts</li>
+                    <li>SQL basics &mdash; SELECT, WHERE, JOIN, GROUP BY on an evaluation database</li>
+                    <li>Reading a chart critically &mdash; sample size, base rates, cherry&#8209;picked slices</li>
+                    <li>Python at reading level &mdash; understanding a script someone else wrote</li>
+                    <li>Optional Python at writing level &mdash; loops, files, calling an API</li>
+                    <li>Git basics &mdash; storing prompts and rubrics with version history</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">AI Operations Analyst</span> <span class="role-badge">AI Program Manager</span> <span class="role-badge">Data Quality Analyst</span> <span class="role-badge">Associate AI PM</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">SQL &mdash; querying your own results</button>
+                        <button role="tab" aria-selected="false" data-t="1">Excel &mdash; agreement and quality maths</button>
+                    </div>
+                    <pre data-p="0"><code>-- SQL: the single most important skill for an analyst
+-- Question: which product category earned the most last quarter?
+
+SELECT
+    p.category,
+    COUNT(DISTINCT o.order_id)      AS orders,
+    ROUND(SUM(o.amount), 2)         AS revenue,
+    ROUND(AVG(o.amount), 2)         AS avg_order_value
+FROM orders o
+JOIN products p ON p.product_id = o.product_id
+WHERE o.order_date &gt;= '2026-04-01'
+  AND o.order_date &lt;  '2026-07-01'
+  AND o.status = 'completed'
+GROUP BY p.category
+HAVING SUM(o.amount) &gt; 100000
+ORDER BY revenue DESC
+LIMIT 10;
+
+-- If you can read this query, you can already do 40% of an analyst's daily work.</code></pre>
+                    <pre data-p="1" hidden><code>' Excel / Google Sheets - the formulas that get asked about in interviews
+
+' 1. Lookup a value from another sheet (modern, safe version)
+=XLOOKUP(A2, Customers!$A:$A, Customers!$D:$D, "Not found")
+
+' 2. Conditional total with two criteria
+=SUMIFS(Sales[Amount], Sales[Region], $A2, Sales[Month], B$1)
+
+' 3. Count unique customers
+=SUMPRODUCT(1/COUNTIF(Sales[Customer], Sales[Customer]))
+
+' 4. Month-on-month growth %
+=IFERROR((C2-B2)/B2, "")
+
+' 5. Clean text before analysis
+=TRIM(PROPER(CLEAN(A2)))
+
+' Master these five and pivot tables, and Excel stops being a blocker.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">SQL &middot; aggregate evaluation results</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Four portfolio pieces you can build with no code</h2>
+                <p>Every one of these is producible on a laptop in a weekend, and each maps directly to a job requirement.</p>
+
+                <ul>
+                    <li><b>1. A model evaluation report.</b> Pick one task &mdash; summarising news articles, say. Write a rubric with four scored dimensions, run 50 cases through two different models, score them, and report which fails where and why.</li>
+                    <li><b>2. A prompt improvement case study.</b> Take a badly performing prompt, document five numbered iterations with the reasoning for each change, and show the measured improvement on a fixed test set of 30 items.</li>
+                    <li><b>3. Annotation guidelines with an agreement test.</b> Write guidelines for a genuinely ambiguous labelling task, have two friends label 50 items independently, report the disagreement rate, then revise the guidelines and re&#8209;test.</li>
+                    <li><b>4. A failure taxonomy.</b> Collect 100 real model errors, group them into categories, quantify each category, and recommend which three an engineering team should fix first.</li>
+                </ul>
+
+                <div class="note"><b>Pro tip:</b> publish these as clean documents or a simple site, and lead with the numbers &mdash; disagreement rate, error distribution, improvement percentage. Quantified writing is what makes a non&#8209;technical portfolio credible.</div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>What you should be honest about</h2>
+                <p>Guides that promise arts graduates an AI engineering salary in three months are selling something. Here is the accurate picture.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Claim you will see online</th><th>The accurate version</th></tr></thead>
+                        <tbody>
+                            <tr><td>&ldquo;Prompt engineering pays &#8377;30 LPA&rdquo;</td><td>A few senior roles do; entry roles are &#8377;5&ndash;10 LPA, and pure prompting is increasingly bundled into wider jobs</td></tr>
+                            <tr><td>&ldquo;You never need to code&rdquo;</td><td>You can start without it. Progressing past &#8377;10&ndash;12 LPA almost always requires SQL and light Python</td></tr>
+                            <tr><td>&ldquo;AI has removed the need for skills&rdquo;</td><td>It removed some tasks and raised the bar on judgement, review and domain knowledge</td></tr>
+                            <tr><td>&ldquo;Evaluation work is easy&rdquo;</td><td>It is genuinely hard and often tedious. It is also the most reliable entry door</td></tr>
+                            <tr><td>&ldquo;Any certificate gets you hired&rdquo;</td><td>Portfolio evidence gets you hired. Certificates only get you past screening</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>Reality check:</b> plan for the coding branch even if you delay it. The arts graduates who stay in this field long term are the ones who eventually learned SQL and enough Python to be self&#8209;sufficient.</div>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>Step&#8209;by&#8209;step roadmap &mdash; eight months</h2>
+                <p>Assumes 8&ndash;10 hours a week and no technical starting point. Month 5 has a branch point.</p>
+
+                <ol class="steps">
+                    <li><b>Month 1: AI literacy</b> &mdash; how models work conceptually, plus daily hands&#8209;on use of two or three different assistants. Deliverable: a 50&#8209;entry failure log.</li>
+                    <li><b>Month 2: prompt and instruction design</b> &mdash; structure, examples, structured output. Deliverable: Portfolio piece 2, the prompt case study.</li>
+                    <li><b>Month 3: evaluation</b> &mdash; rubrics, agreement, test sets, error taxonomies. Deliverable: Portfolio piece 1, the evaluation report.</li>
+                    <li><b>Month 4: annotation and guidelines</b> &mdash; guideline writing and agreement testing. Deliverable: Portfolio pieces 3 and 4. <i>Start applying for evaluation and AI trainer roles now.</i></li>
+                    <li><b>Month 5: spreadsheets and data literacy</b> &mdash; pivot tables, agreement rates, honest charts. Branch point: continue no&#8209;code, or start the technical track.</li>
+                    <li><b>Month 6: SQL basics</b> &mdash; SELECT, JOIN, GROUP BY, so you can query your own evaluation data.</li>
+                    <li><b>Month 7: light Python</b> &mdash; reading scripts, then writing loops, file handling and one API call.</li>
+                    <li><b>Month 8: specialise and apply widely</b> &mdash; pick evaluation, content operations, trust and safety, or AI product. Rewrite your CV around the four portfolio pieces and apply to 10 roles a week.</li>
+                </ol>
+
+                <div class="note"><b>Pro tip:</b> apply from month four, not month eight. Evaluation and AI trainer roles hire on a work sample, and being inside the industry teaches you faster than any syllabus.</div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Skills to learn &mdash; the complete list</h2>
+                <p>The core list here is judgement&#8209;first, not tool&#8209;first. Then pick the specialisation you want.</p>
+
+                <h3>Core skills (needed on every path)</h3>
+                <ul>
+                    <li><b>How models work</b> &mdash; tokens, context, hallucination, retrieval</li>
+                    <li><b>Precise writing</b> &mdash; instructions two strangers read identically</li>
+                    <li><b>Rubric design</b> &mdash; turning quality into scoreable dimensions</li>
+                    <li><b>Test set thinking</b> &mdash; normal, edge and adversarial cases</li>
+                    <li><b>Spreadsheets</b> &mdash; pivot tables, rates, honest charts</li>
+                    <li><b>Basic SQL</b> &mdash; querying your own results</li>
+                    <li><b>Data literacy</b> &mdash; sample size, base rates, misleading slices</li>
+                    <li><b>Domain knowledge</b> &mdash; your degree subject is an asset, not a footnote</li>
+                </ul>
+
+                <h3>Path&#8209;specific skills</h3>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Path</th><th>Key skills</th><th>Tools / Technologies</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>AI Evaluation</b></td><td>Rubrics, agreement, error taxonomy</td><td>Spreadsheets, SQL, evaluation platforms</td></tr>
+                            <tr><td><b>Prompt / Instruction Design</b></td><td>Specification writing, iteration, testing</td><td>LLM chat tools, playgrounds, version control</td></tr>
+                            <tr><td><b>AI Content Strategy</b></td><td>Workflow design, quality standards, brand voice</td><td>CMS tools, SEO tools, LLM assistants</td></tr>
+                            <tr><td><b>Trust &amp; Safety / Policy</b></td><td>Policy writing, harm analysis, escalation review</td><td>Case management tools, spreadsheets, SQL</td></tr>
+                            <tr><td><b>AI Product (Associate)</b></td><td>Requirements, user research, metrics</td><td>Jira, Figma, SQL, analytics tools</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S11 ===== -->
+                <h2 id="s11"><span class="num">SECTION 11</span>Interview Q&amp;A &mdash; for arts graduates entering AI</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>You cannot code. Why should we hire you for an AI role?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Because the problem you are hiring for is judgement, not syntax. I wrote a four&#8209;dimension rubric for summarisation quality, scored 50 outputs from two models, and found that one failed specifically on numerical claims while the other failed on tone. That analysis is what tells your engineers what to fix, and it does not come out of a code editor.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>How would you evaluate whether a model output is good?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I start by defining what good means for the specific task &mdash; usually accuracy, completeness, tone and format compliance, scored separately. Then I build a test set covering normal, edge and adversarial cases, score blind where possible, and check whether a second rater agrees with me. Without an agreement check, a rubric is just my opinion.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>Give me an example of a prompt you improved.</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;A support&#8209;reply prompt that kept inventing refund policies. I added an explicit instruction to answer only from the supplied policy text and to say when the text did not cover the case, plus two examples of correct refusals. Fabricated policy claims dropped from eleven cases out of thirty to one, on a fixed test set.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>Why does a language model hallucinate?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;It is producing the most plausible continuation of text, not retrieving a verified fact. When the prompt asks for something it has no grounding for, plausible and true come apart, and the fluent answer wins. That is why retrieval, source citation and explicit permission to say &lsquo;not in the document&rsquo; reduce it.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>How does your degree help here?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Three years of close reading and argument analysis is training in noticing what a text implies but does not say, and where a claim is unsupported. That is exactly the skill evaluation work needs. My writing background also means I can produce guidelines that annotators actually interpret the same way.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>Are you willing to learn the technical side?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I have already started. I use spreadsheets for agreement rates and error distributions, and I can write basic SQL to query an evaluation table &mdash; joins and grouping. Python is next; I can read a script now and I am working towards writing my own.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>Two annotators disagree on 30% of items. What do you do?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;That is a guideline problem, not a people problem. I would pull the disagreed items, look for the pattern, and usually find one or two ambiguous categories doing most of the damage. Then I rewrite those definitions, add examples from the disagreements, and re&#8209;test on a fresh sample to confirm agreement improved.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you want to be in three years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Owning quality for an AI product &mdash; the rubrics, the test sets and the release decisions. I want the technical skills to be self&#8209;sufficient with the data behind those decisions, rather than depending on someone else to run every query for me.&rdquo;</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 12</span>Test yourself &mdash; arts to AI readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign&#8209;up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 13</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Can an arts student really get a job in AI?</summary><div class="body"><p>Yes, in the evaluation, instruction design, content operations, trust and safety, and AI product categories. These roles exist because model quality is judged by people, and they hire on demonstrated judgement rather than a computer science degree.</p></div></details>
+                <details class="acc"><summary>Is prompt engineering still a real career in 2026?</summary><div class="body"><p>As a standalone job title it has narrowed; as a skill it has spread into evaluation, content, product and support roles. Learn it as one component of a wider profile rather than as your only offering.</p></div></details>
+                <details class="acc"><summary>Will I need to learn coding eventually?</summary><div class="body"><p>For long-term growth, yes &mdash; usually SQL first and then light Python. You can be hired and useful before that point, which is why this roadmap delays it rather than skipping it.</p></div></details>
+                <details class="acc"><summary>What salary can I expect without coding skills?</summary><div class="body"><p>Typically ₹4&ndash;8 LPA at entry for evaluation and content roles, and ₹5&ndash;10 LPA for operations and policy work. Product roles pay more but take longer to reach.</p></div></details>
+                <details class="acc"><summary>Are these roles secure, or will AI automate them too?</summary><div class="body"><p>The specific tasks shift constantly, and some annotation work is being automated. The judgement layer &mdash; deciding what counts as good, and catching what the automated checks miss &mdash; has been growing, and it is the part worth building your skills around.</p></div></details>
+                <details class="acc"><summary>Do I need a certificate or a course?</summary><div class="body"><p>Neither is required. A portfolio of four documented pieces &mdash; an evaluation report, a prompt case study, annotation guidelines with an agreement test, and a failure taxonomy &mdash; is stronger evidence than any certificate.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 14</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Prompt engineering &mdash; a practical guide</span><span class="m">AI · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">How to write annotation guidelines</span><span class="m">AI Ops · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Model evaluation for beginners</span><span class="m">AI · 16 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">SQL for absolute beginners</span><span class="m">SQL · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">AI product management basics</span><span class="m">Product · 15 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Trust and safety career guide</span><span class="m">Policy · 13 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>AI careers programme for non&#8209;technical graduates</h3>
+                    <p>Starts with AI literacy, prompt design and evaluation &mdash; no coding for the first two months. Then adds spreadsheets, SQL and light Python, with four portfolio pieces and mock interviews.</p>
+                    <span class="price">&#8377;13,500 · full programme <s>&#8377;21,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>No coding to begin</li>
+                        <li>Evaluation projects</li>
+                        <li>Prompt design labs</li>
+                        <li>SQL from zero</li>
+                        <li>4 portfolio pieces</li>
+                        <li>Mock interviews</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live AI evaluation class</div>
+                    <p>Two hours, no payment, no commitment. Watch a rubric get built and tested on real model outputs.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes 8&#8209;month plan &amp; portfolio briefs</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>AI careers without coding</a></li>
+                        <li><a href="#"><span class="rank">02</span>Prompt engineering guide</a></li>
+                        <li><a href="#"><span class="rank">03</span>Model evaluation for beginners</a></li>
+                        <li><a href="#"><span class="rank">04</span>Annotation guideline writing</a></li>
+                        <li><a href="#"><span class="rank">05</span>SQL for absolute beginners</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">AI evaluation · 40 questions</a></li>
+                        <li><a href="#">Prompt design · 35 questions</a></li>
+                        <li><a href="#">AI product · 45 questions</a></li>
+                        <li><a href="#">Career switch · 50 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">AI Careers for Non&#8209;Technical Graduates</div>
+                    <p>AI literacy, prompt design, evaluation, spreadsheets, SQL and light Python. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">&infin;</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee &mdash; outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going &mdash; career guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Prompt engineering guide <small>Practical, not hype</small></a></li>
+                    <li><a href="#">Model evaluation for beginners <small>Rubrics and test sets</small></a></li>
+                    <li><a href="#">Annotation guideline writing <small>Agreement testing</small></a></li>
+                    <li><a href="#">SQL for absolute beginners <small>Query by query</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your data &amp; AI career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">AI Evaluation roadmap <small>Rubrics &rarr; Agreement &rarr; Reporting</small></a></li>
+                    <li><a href="#">AI Content roadmap <small>Voice &rarr; Workflow &rarr; Quality</small></a></li>
+                    <li><a href="#">AI Product roadmap <small>Research &rarr; Metrics &rarr; Roadmap</small></a></li>
+                    <li><a href="#">Data Analyst roadmap <small>Excel &rarr; SQL &rarr; BI</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">8&#8209;month study plan <small>Arts &rarr; AI</small></a></li>
+                    <li><a href="#">Rubric template pack <small>Four rubrics</small></a></li>
+                    <li><a href="#">Prompt iteration worksheet <small>One page</small></a></li>
+                    <li><a href="#">Failure log template <small>Start today</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">AI evaluation hiring trends <small>12 August 2026</small></a></li>
+                    <li><a href="#">Is prompt engineering still a job? <small>10 August 2026</small></a></li>
+                    <li><a href="#">Humanities graduates in AI teams <small>8 August 2026</small></a></li>
+                    <li><a href="#">How to document a prompt change <small>5 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and data in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Science &amp; Analytics</a></li>
+                        <li><a href="#">DevOps &amp; Cloud</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact &ndash; Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                "eval": {
+                                "role": "AI Evaluation Specialist",
+                                "salary": "₹4–8 LPA",
+                                "time": "2–4 months"
+                },
+                "content": {
+                                "role": "AI Content Strategist",
+                                "salary": "₹4.5–9 LPA",
+                                "time": "3–5 months"
+                },
+                "ops": {
+                                "role": "AI Operations Analyst",
+                                "salary": "₹5–10 LPA",
+                                "time": "5–7 months"
+                },
+                "pm": {
+                                "role": "Associate AI Product Manager",
+                                "salary": "₹8–16 LPA",
+                                "time": "8–12 months"
+                }
+            },
+            stateOrder: ["eval", "content", "ops", "pm"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("timeVal").textContent = s.time;
+            },
+            defaultTrack: "Arts Students",
+            emptyMsg: "Nothing matches that yet. Try “Prompt”, “Evaluation” or “SQL”.",
+            LIB: [
+                {
+                                "t": "AI careers for arts students",
+                                "g": "Arts Students"
+                },
+                {
+                                "t": "Prompt engineering practical guide",
+                                "g": "Prompt Engineering"
+                },
+                {
+                                "t": "Model evaluation for beginners",
+                                "g": "AI Evaluation"
+                },
+                {
+                                "t": "Annotation guidelines and agreement",
+                                "g": "AI Evaluation"
+                },
+                {
+                                "t": "AI content strategy basics",
+                                "g": "AI Content"
+                },
+                {
+                                "t": "Trust and safety career guide",
+                                "g": "No‑Code AI"
+                },
+                {
+                                "t": "SQL for absolute beginners",
+                                "g": "Python"
+                },
+                {
+                                "t": "AI product management basics",
+                                "g": "No‑Code AI"
+                },
+                {
+                                "t": "Python for non‑technical learners",
+                                "g": "Python"
+                },
+                {
+                                "t": "Career switch into AI",
+                                "g": "Career Change"
+                }
+],
+            QUIZ: [
+                {
+                                "q": "Which AI role is usually the fastest entry point without coding?",
+                                "o": [
+                                                "ML Engineer",
+                                                "AI Evaluation Specialist",
+                                                "Data Engineer",
+                                                "Research Scientist"
+                                ],
+                                "a": 1,
+                                "e": "Evaluation work. It hires on a work sample and careful reading rather than programming, and it is the bottleneck in most AI teams."
+                },
+                {
+                                "q": "What makes a rubric usable rather than just an opinion?",
+                                "o": [
+                                                "Using more categories",
+                                                "Checking that two independent raters agree",
+                                                "Writing it in bullet points",
+                                                "Adding numeric scores"
+                                ],
+                                "a": 1,
+                                "e": "Inter-rater agreement. If two people applying the same rubric reach different scores, the rubric is ambiguous and needs rewriting."
+                },
+                {
+                                "q": "Why do language models hallucinate?",
+                                "o": [
+                                                "They run out of memory",
+                                                "They generate plausible text rather than retrieving verified facts",
+                                                "The temperature is always too high",
+                                                "They are trained on false data only"
+                                ],
+                                "a": 1,
+                                "e": "They predict plausible continuations. When the prompt has no grounding, plausible and true diverge, which is why retrieval and permission to say 'not in the document' help."
+                },
+                {
+                                "q": "What is the honest limit of a no-code AI career path?",
+                                "o": [
+                                                "There is no limit",
+                                                "Progressing past roughly ₹10–12 LPA usually needs SQL and light Python",
+                                                "You can never get hired",
+                                                "Only content roles exist"
+                                ],
+                                "a": 1,
+                                "e": "You can enter without code, but growth past mid-level almost always requires SQL and enough Python to handle your own data."
+                },
+                {
+                                "q": "What should a non-technical AI portfolio lead with?",
+                                "o": [
+                                                "A list of courses completed",
+                                                "Quantified results such as error rates and agreement scores",
+                                                "A long personal statement",
+                                                "Screenshots of chat conversations"
+                                ],
+                                "a": 1,
+                                "e": "Numbers. Disagreement rates, error distributions and measured improvements make a non-technical portfolio credible to a technical hiring team."
+                }
+],
+            passScore: 4,
+            resultText: {
+                "pass": "You understand where you fit. Start the failure log in section 03 today and aim to apply by month four.",
+                "fail": "Re-read sections 02 and 05 — knowing which roles exist and how evaluation works is what makes this path real."
+}
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Playwright's approach to handling iframes? | Uncodemy Playwright Interview Questions</title>
+<meta name="description" content="Playwright allows interaction with elements inside iframes using the frame() method to access and manipulate iframe content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uc-orange: #FF5421;
+    --uc-orange-dark: #E03E0F;
+    --uc-dark: #191B23;
+    --uc-gray: #5B5F6B;
+    --uc-bg: #FAFAFB;
+    --uc-card: #FFFFFF;
+    --uc-border: #ECEBF0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--uc-bg);
+    color: var(--uc-dark);
+    line-height: 1.7;
+  }
+  header.topbar {
+    background: var(--uc-dark);
+    padding: 14px 20px;
+  }
+  .topbar-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  .brand span { color: var(--uc-orange); }
+  .back-link {
+    color: #fff;
+    background: var(--uc-orange);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .back-link:hover { background: var(--uc-orange-dark); }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+  .breadcrumb {
+    font-size: 12.5px;
+    color: var(--uc-gray);
+    margin-bottom: 18px;
+  }
+  .breadcrumb a { color: var(--uc-orange); text-decoration: none; font-weight: 600; }
+  .eyebrow {
+    display: inline-block;
+    color: var(--uc-orange);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: var(--uc-dark);
+  }
+  .answer-card {
+    background: var(--uc-card);
+    border: 1px solid var(--uc-border);
+    border-left: 4px solid var(--uc-orange);
+    border-radius: 10px;
+    padding: 26px 26px;
+    box-shadow: 0 1px 3px rgba(25,27,35,0.04);
+    font-size: 16px;
+    color: var(--uc-dark);
+  }
+  .answer-card p { margin: 0; }
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  .nav-row a {
+    flex: 1;
+    min-width: 140px;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--uc-dark);
+    background: #fff;
+    border: 1px solid var(--uc-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: center;
+  }
+  .nav-row a:hover { border-color: var(--uc-orange); color: var(--uc-orange); }
+  .nav-row .disabled { opacity: 0.4; pointer-events: none; }
+  .cta-box {
+    margin-top: 40px;
+    background: linear-gradient(135deg, var(--uc-orange), var(--uc-orange-dark));
+    border-radius: 14px;
+    padding: 30px 26px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-box h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    margin: 0 0 8px;
+  }
+  .cta-box p {
+    margin: 0 0 16px;
+    font-size: 13.5px;
+    opacity: 0.95;
+  }
+  .cta-box a.cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--uc-orange-dark);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 26px;
+    border-radius: 8px;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 20px;
+    color: var(--uc-gray);
+    font-size: 12.5px;
+  }
+  footer a { color: var(--uc-orange); text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="https://uncodemy.com/course/playwright-training-course-in-noida">Un<span>Codemy</span></a>
+    <a class="back-link" href="https://uncodemy.com/course/playwright-training-course-in-noida">← Back to Playwright Course</a>
+  </div>
+</header>
+
+<main>
+  <p class="breadcrumb"><a href="https://uncodemy.com/course/playwright-training-course-in-noida">Playwright Course</a> &nbsp;/&nbsp; Interview Question 15 of 50</p>
+  <span class="eyebrow">Playwright Interview Q&amp;A · #15</span>
+  <h1>What is Playwright's approach to handling iframes?</h1>
+
+  <div class="answer-card">
+    <p>Playwright allows interaction with elements inside iframes using the frame() method to access and manipulate iframe content.</p>
+  </div>
+
+  <div class="nav-row">
+    <a href="what-is-the-use-of-the-waitforselector-method.html">← Q14: What is the use of the waitForSelector m</a>
+    <a href="how-does-playwright-handle-network-interception.html">Q16: How does Playwright handle network inter →</a>
+  </div>
+
+  <div class="cta-box">
+    <h3>Want to master Playwright hands-on?</h3>
+    <p>Join Uncodemy's Playwright Automation Testing Course in Noida — 100% placement assistance.</p>
+    <a class="cta-btn" href="https://uncodemy.com/course/playwright-training-course-in-noida">Explore the Course →</a>
+  </div>
+</main>
+
+<div class="footer-fixed-section">
+        <div class="ask-for-demo fixed-section-child" onclick="showPopUpForm()"><span class="below-btn">Ask For
+                Demo</span></div><a class="contact-thumb" href="https://pages.razorpay.com/fees-uncodemy"
+            target="_blank">
+            <div class="fee-payment fixed-section-child"><span class="below-btn">Fee Payment</span></div>
+        </a><a href="https://api.whatsapp.com/send?phone=918800023723" target="_blank">
+            <div class="whatsapp fixed-section-child"><span class="below-btn">WhatsApp</span></div>
+        </a><a class="ail ail1" href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">
+            <div class="email-section fixed-section-child"><span class="below-btn">Email</span></div>
+        </a><a class="ail" href="tel:+9198183 66550">
+            <div class="phone fixed-section-child"><span class="below-btn">Call Us Now</span></div>
+        </a>
+    </div>
+<footer>
+  &copy; 2026 Uncodemy Edutech Pvt. Ltd. | <a href="https://uncodemy.com/course/playwright-training-course-in-noida">Playwright Training Course in Noida</a>
+</footer>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL vs NoSQL Databases: Complete Comparison | Uncodemy</title>
+<meta name="description" content="SQL vs NoSQL databases — structure, scalability, consistency, use cases, and how data scientists choose between relational and non-relational stores.">
+<meta name="keywords" content="mysql, sql vs nosql databases, complete comparison, mysql tutorial, data science course, uncodemy">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="SQL vs NoSQL Databases: Complete Comparison | Uncodemy">
+<meta property="og:description" content="SQL vs NoSQL databases — structure, scalability, consistency, use cases, and how data scientists choose between relational and non-relational stores.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://uncodemy.com/img/Logo%20(1).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#FF5421;--orange-dark:#e04416;--ink:#1e2330;--muted:#5b6472;--bg:#f7f8fb;--card:#ffffff;--line:#e8eaf0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+h1,h2,h3{font-family:'Poppins',Arial,sans-serif;line-height:1.3;}
+a{color:var(--orange);text-decoration:none;}
+.container{max-width:860px;margin:0 auto;padding:0 20px;}
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;box-shadow:0 1px 8px rgba(30,35,48,.05);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;}
+.logo img{height:44px;width:auto;display:block;}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-weight:600;font-size:14px;padding:10px 18px;border-radius:8px;transition:background .2s;white-space:nowrap;}
+.back-btn:hover{background:var(--orange-dark);}
+/* Breadcrumb */
+.breadcrumb{font-size:13px;color:var(--muted);padding:18px 0 0;}
+.breadcrumb a{color:var(--muted);}
+.breadcrumb a:hover{color:var(--orange);}
+.breadcrumb .sep{margin:0 6px;color:#c2c8d2;}
+.breadcrumb .current{color:var(--orange);font-weight:500;}
+/* Hero */
+.page-hero{padding:18px 0 8px;}
+.topic-tag{display:inline-block;background:rgba(255,84,33,.1);color:var(--orange);font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;}
+h1{font-size:clamp(26px,4.5vw,36px);font-weight:700;color:var(--ink);}
+/* Content card */
+.content-card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:14px;box-shadow:0 6px 24px rgba(30,35,48,.06);padding:32px;margin:26px 0;}
+.content-card p{margin-bottom:18px;color:#333a47;}
+.content-card p:last-child{margin-bottom:0;}
+.content-card h2{font-size:20px;font-weight:600;margin:6px 0 14px;color:var(--ink);}
+.key-points{list-style:none;margin:0 0 18px;}
+.key-points li{position:relative;padding:10px 0 10px 34px;border-bottom:1px dashed var(--line);color:#333a47;}
+.key-points li:last-child{border-bottom:none;}
+.key-points li::before{content:"✔";position:absolute;left:4px;top:10px;color:var(--orange);font-weight:700;}
+/* Prev / Next */
+.page-nav{display:flex;gap:14px;margin:30px 0;}
+.page-nav a{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .2s,box-shadow .2s;min-width:0;}
+.page-nav a:hover{border-color:var(--orange);box-shadow:0 4px 16px rgba(255,84,33,.12);}
+.page-nav .nav-label{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.page-nav .nav-title{display:block;font-weight:600;font-size:14px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.page-nav .next{text-align:right;}
+.page-nav .placeholder{flex:1;visibility:hidden;}
+/* CTA */
+.cta-box{background:linear-gradient(135deg,var(--orange) 0%,#ff7a4d 100%);border-radius:16px;padding:36px 32px;text-align:center;color:#fff;margin:34px 0;box-shadow:0 10px 30px rgba(255,84,33,.28);}
+.cta-box h2{font-size:24px;font-weight:700;margin-bottom:10px;color:#fff;}
+.cta-box p{max-width:600px;margin:0 auto 22px;font-size:15px;opacity:.95;}
+.cta-btn{display:inline-block;background:#fff;color:var(--orange);font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;padding:13px 34px;border-radius:10px;transition:transform .15s,box-shadow .15s;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.18);}
+/* Footer */
+.site-footer{background:var(--ink);color:#aeb4c0;text-align:center;padding:26px 20px;font-size:14px;margin-top:20px;}
+.site-footer a{color:var(--orange);font-weight:500;}
+@media (max-width:600px){
+  .logo img{height:36px;}
+  .back-btn{font-size:13px;padding:9px 14px;}
+  .content-card{padding:22px 18px;}
+  .page-nav{flex-direction:column;}
+  .page-nav .next{text-align:left;}
+  .page-nav .placeholder{display:none;}
+  .cta-box{padding:28px 20px;}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="https://uncodemy.com/course/data-science-training-course-in-noida" aria-label="Uncodemy"><img src="https://uncodemy.com/img/Logo%20(1).png" alt="Uncodemy Logo"></a>
+    <a class="back-btn" href="https://uncodemy.com/course/data-science-training-course-in-noida">&#8592; Back to Course</a>
+  </div>
+</header>
+<main class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://uncodemy.com/course/data-science-training-course-in-noida">Data Science Course</a><span class="sep">&rsaquo;</span><span class="current">Page 69 of 100</span>
+  </nav>
+  <section class="page-hero">
+    <span class="topic-tag">MySQL Tutorial &middot; Data Science</span>
+    <h1>SQL vs NoSQL Databases: Complete Comparison</h1>
+  </section>
+  <article class="content-card">
+    <p>SQL databases enforce structure and relationships; NoSQL databases trade some structure for flexibility and horizontal scale. Modern data teams routinely use both — the skill is matching the tool to the data.</p>
+    <h2>Key Points</h2>
+    <ul class="key-points">
+      <li>SQL (MySQL, PostgreSQL): tables, joins, ACID transactions, mature tooling</li>
+      <li>NoSQL families: document (MongoDB), key-value (Redis), column (Cassandra), graph (Neo4j)</li>
+      <li>SQL scales vertically + replicas; NoSQL scales horizontally by sharding</li>
+      <li>Strong consistency vs eventual consistency trade-offs (CAP theorem)</li>
+      <li>Analytics and reporting overwhelmingly speak SQL</li>
+      <li>Interview-ready line: structured relational data → SQL; massive flexible-scale data → NoSQL</li>
+    </ul>
+
+  </article>
+  <nav class="page-nav" aria-label="Page navigation">
+    <a class="prev" href="mysql-vs-mariadb.html"><span class="nav-label">&#8592; Previous</span><span class="nav-title">MySQL vs MariaDB: What&#x27;s the Difference?</span></a>
+    <a class="next" href="mysql-vs-excel-for-data-analysis.html"><span class="nav-label">Next &#8594;</span><span class="nav-title">MySQL vs Excel for Data Analysis: When to Switch</span></a>
+  </nav>
+  <section class="cta-box">
+    <h2>Launch Your Data Science Career</h2>
+    <p>Learn MySQL, Python, Machine Learning and AI with Uncodemy's Data Science Training in Noida — hands-on projects, industry mentors and 100% placement assistance.</p>
+    <a class="cta-btn" href="https://uncodemy.com/course/data-science-training-course-in-noida">Enroll in Data Science Course &#8594;</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  &copy; 2026 Uncodemy. All rights reserved. &middot; <a href="https://uncodemy.com/course/data-science-training-course-in-noida">Data Science Course in Noida</a>
+</footer>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

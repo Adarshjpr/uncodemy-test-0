@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is Node.js? — Introduction, History & Why Use It? | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn what Node.js is, its history, why it's revolutionary for backend development, and how it differs from traditional web servers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 1 of 12: What is Node.js? — Introduction, History & Why Use It?</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html" class="active"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-server"></i> Introduction</span>
+        <h1>What is Node.js? — Introduction, History &amp; Why Use It?</h1>
+
+        <div class="card">
+
+            <p><strong>Node.js</strong> is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It's built on Chrome's V8 JavaScript engine and enables developers to use JavaScript for server-side scripting — running scripts server-side to produce dynamic web page content before the page is sent to the user's browser.</p>
+
+            <h2>What Makes Node.js Special?</h2>
+            <p>Before Node.js, JavaScript was primarily a client-side language used for frontend interactions. Node.js revolutionized web development by bringing JavaScript to the server, enabling:</p>
+            <ul>
+                <li><strong>Full-stack JavaScript:</strong> Use the same language (JavaScript) for both frontend and backend development.</li>
+                <li><strong>Event-driven, non-blocking I/O:</strong> Handle thousands of concurrent connections with a single server.</li>
+                <li><strong>High performance:</strong> Powered by Google's V8 engine, which compiles JavaScript to native machine code.</li>
+                <li><strong>Vibrant ecosystem:</strong> Over 2 million packages available via npm (Node Package Manager).</li>
+            </ul>
+
+            <h2>A Brief History of Node.js</h2>
+            <ul>
+                <li><strong>2009:</strong> Ryan Dahl created Node.js while working at Joyent. He was frustrated with the limitations of traditional web servers (like Apache) that blocked on I/O operations. He wanted a lightweight, event-driven system for real-time web applications. Node.js was first presented at the JSConf EU conference in 2009.</li>
+                <li><strong>2010:</strong> npm (Node Package Manager) was introduced, revolutionizing how JavaScript libraries are shared and distributed.</li>
+                <li><strong>2011:</strong> Node.js gained widespread adoption with companies like LinkedIn, Uber, and PayPal using it for production applications.</li>
+                <li><strong>2014-2015:</strong> A fork called <strong>io.js</strong> was created due to governance disputes within Joyent. The split led to more rapid development and innovation. Eventually, the two projects merged back into a single Node.js foundation in 2015.</li>
+                <li><strong>2015-Present:</strong> Node.js has become the dominant choice for building scalable network applications, APIs, microservices, and real-time applications. Major companies like Netflix, Walmart, eBay, and NASA rely on Node.js.</li>
+            </ul>
+
+            <h2>Traditional Web Server vs Node.js</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>Traditional Web Server (Apache/Nginx)</th><th>Node.js</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>I/O Model</strong></td><td>Blocking (each request spawns a new thread/process)</td><td>Non-blocking, event-driven (single-threaded event loop)</td></tr>
+                        <tr><td><strong>Threading</strong></td><td>Multi-threaded (thread per request)</td><td>Single-threaded with async processing</td></tr>
+                        <tr><td><strong>Concurrency</strong></td><td>Limited by number of threads (memory heavy)</td><td>Handles thousands of concurrent connections efficiently</td></tr>
+                        <tr><td><strong>Memory Usage</strong></td><td>High (each thread consumes memory)</td><td>Low (single thread with event loop)</td></tr>
+                        <tr><td><strong>Use Case</strong></td><td>CPU-intensive tasks, legacy applications</td><td>I/O-heavy applications, real-time apps, APIs</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Why Use Node.js?</h2>
+            <ul>
+                <li><strong>Speed and Performance:</strong> V8 engine compiles JavaScript to machine code, making it incredibly fast.</li>
+                <li><strong>Non-blocking I/O:</strong> Asynchronous, event-driven architecture handles multiple requests without waiting.</li>
+                <li><strong>JavaScript Everywhere:</strong> Use the same language for frontend and backend — reduces context switching and improves developer productivity.</li>
+                <li><strong>Rich Ecosystem:</strong> npm provides access to over 2 million packages — the largest package registry in the world.</li>
+                <li><strong>Real-time Applications:</strong> Perfect for chat apps, gaming servers, live updates, and collaboration tools.</li>
+                <li><strong>Microservices Architecture:</strong> Lightweight and scalable, ideal for building microservices.</li>
+                <li><strong>Active Community:</strong> Backed by a massive community of developers, ensuring continuous improvement and support.</li>
+            </ul>
+
+            <h2>What Can You Build with Node.js?</h2>
+            <ul>
+                <li><strong>RESTful APIs</strong> — Backend services for web and mobile apps.</li>
+                <li><strong>Real-time Applications</strong> — Chat apps, gaming servers, live dashboards.</li>
+                <li><strong>Microservices</strong> — Scalable, decoupled services.</li>
+                <li><strong>SPA Backends</strong> — Backend for React, Angular, or Vue.js applications.</li>
+                <li><strong>Command-Line Tools</strong> — Build CLI applications with Node.js.</li>
+                <li><strong>Streaming Applications</strong> — Video streaming, file processing.</li>
+                <li><strong>IoT Applications</strong> — Lightweight server for Internet of Things devices.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Node.js is not just another server-side technology — it's a paradigm shift. It allows JavaScript developers to build fast, scalable, and real-time applications using the language they already know. Mastering Node.js opens doors to full-stack development, microservices, and high-performance backend engineering.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <span class="disabled"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>You're at the beginning!</span>
+            <a href="nodejs-advantages-limitations.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Advantages and Limitations of Node.js</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

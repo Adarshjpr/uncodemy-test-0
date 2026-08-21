@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Android Interview Questions &amp; Answers | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Prepare for your Android developer interview with 60+ curated questions and answers — from basics to advanced topics including Activity lifecycle, RecyclerView, Networking, and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 12 of 12: Top Android Interview Questions &amp; Answers</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html" class="active"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-comments"></i> Interview Preparation</span>
+        <h1>Top Android Interview Questions &amp; Answers</h1>
+
+        <div class="card">
+
+            <p>This comprehensive guide covers the most frequently asked Android interview questions — from fundamental concepts to advanced topics like the Activity lifecycle, RecyclerView, networking, permissions, and publishing. Whether you're a fresher or an experienced developer, these questions will help you succeed in your Android developer interview.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Interview Tip:</strong> Practice explaining concepts out loud. Write code on paper. Focus on understanding the <strong>why</strong> behind each answer — interviewers value deep understanding over memorization.
+            </div>
+
+            <h2>Section 1: Android Basics</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q1. What is Android?</strong></p>
+                <p><strong>Answer:</strong> Android is a mobile operating system based on a modified version of the Linux kernel. It's designed primarily for touchscreen mobile devices such as smartphones and tablets. It's developed by Google and the Open Handset Alliance.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q2. What are the four main components of an Android app?</strong></p>
+                <p><strong>Answer:</strong> The four main components are:</p>
+                <ul>
+                    <li><strong>Activity:</strong> A UI screen that the user interacts with.</li>
+                    <li><strong>Service:</strong> A background component for long-running operations.</li>
+                    <li><strong>Broadcast Receiver:</strong> Responds to system-wide broadcast announcements.</li>
+                    <li><strong>Content Provider:</strong> Manages access to a structured set of data.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q3. What is the difference between <code>dp</code>, <code>sp</code>, and <code>px</code>?</strong></p>
+                <p><strong>Answer:</strong></p>
+                <ul>
+                    <li><strong>dp (Density-independent pixels):</strong> Scales based on screen density. Use for layout dimensions.</li>
+                    <li><strong>sp (Scale-independent pixels):</strong> Scales based on screen density AND user font size preferences. Use for text sizes.</li>
+                    <li><strong>px (Pixels):</strong> Absolute pixel values. Avoid using — they don't scale across devices.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q4. What is the difference between <code>match_parent</code> and <code>wrap_content</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>match_parent</code> makes the view as large as its parent container. <code>wrap_content</code> makes the view only as large as its content requires.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q5. What is the AndroidManifest.xml file?</strong></p>
+                <p><strong>Answer:</strong> The AndroidManifest.xml is a required file that describes essential information about your app to the Android system. It declares all components (activities, services, etc.), permissions, features, and the app's package name.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q6. What is the difference between <code>java</code> and <code>kotlin</code> for Android development?</strong></p>
+                <p><strong>Answer:</strong> Kotlin is a modern, statically-typed language that is fully interoperable with Java. It offers null safety, extension functions, data classes, coroutines for async programming, and less boilerplate code. Google officially recommends Kotlin for Android development.</p>
+            </div>
+
+            <h2>Section 2: Activity &amp; Lifecycle</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q7. What is the Activity lifecycle?</strong></p>
+                <p><strong>Answer:</strong> The Activity lifecycle is a series of callback methods that the Android system calls as the activity transitions between different states:</p>
+                <ul>
+                    <li><code>onCreate()</code> — Activity is first created.</li>
+                    <li><code>onStart()</code> — Activity becomes visible.</li>
+                    <li><code>onResume()</code> — Activity is in the foreground and interactive.</li>
+                    <li><code>onPause()</code> — Activity is partially obscured.</li>
+                    <li><code>onStop()</code> — Activity is no longer visible.</li>
+                    <li><code>onRestart()</code> — Activity is restarting after being stopped.</li>
+                    <li><code>onDestroy()</code> — Activity is being destroyed.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q8. What happens when you rotate the screen?</strong></p>
+                <p><strong>Answer:</strong> By default, the activity is destroyed and recreated when the screen is rotated. The lifecycle methods called are: <code>onPause()</code> → <code>onStop()</code> → <code>onDestroy()</code> → <code>onCreate()</code> → <code>onStart()</code> → <code>onResume()</code>.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q9. How do you save and restore state on configuration changes?</strong></p>
+                <p><strong>Answer:</strong> Use <code>onSaveInstanceState()</code> to save data before destruction, and restore it in <code>onCreate()</code> or <code>onRestoreInstanceState()</code>. Alternatively, use <code>ViewModel</code> which survives configuration changes.</p>
+                <pre class="code-block"><code>override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString("key", "value")
+}
+
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    val value = savedInstanceState?.getString("key")
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q10. What is the difference between <code>onPause()</code> and <code>onStop()</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>onPause()</code> is called when the activity is partially obscured (e.g., a dialog appears) or when the user is leaving the activity. <code>onStop()</code> is called when the activity is no longer visible to the user (e.g., another activity covers it completely).</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q11. What is a Service and how is it different from an Activity?</strong></p>
+                <p><strong>Answer:</strong> A Service is a component that runs in the background without a user interface. An Activity has a UI and is visible to the user. Services are used for long-running operations like playing music, downloading files, or syncing data.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q12. What is the difference between a started service and a bound service?</strong></p>
+                <p><strong>Answer:</strong> A <strong>started service</strong> is launched by <code>startService()</code> and runs until it stops itself or is stopped. A <strong>bound service</strong> is launched by <code>bindService()</code> and allows client-server interaction. Bound services stop when all clients unbind.</p>
+            </div>
+
+            <h2>Section 3: UI &amp; Layouts</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q13. What is the difference between LinearLayout and ConstraintLayout?</strong></p>
+                <p><strong>Answer:</strong> LinearLayout arranges children in a single row or column. ConstraintLayout is more flexible and powerful, allowing you to create complex layouts with a flat view hierarchy. ConstraintLayout is more efficient and recommended for all new projects.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q14. What is <code>layout_weight</code> in LinearLayout?</strong></p>
+                <p><strong>Answer:</strong> <code>layout_weight</code> is used to distribute remaining space among children. A child with a weight of 1 will take up more space than a child with weight 0. The total weight sum determines the proportion of space each child receives.</p>
+                <pre class="code-block"><code>&lt;LinearLayout android:weightSum="2" ...&gt;
+    &lt;View android:layout_width="0dp" android:layout_weight="1" /&gt;
+    &lt;View android:layout_width="0dp" android:layout_weight="1" /&gt;
+&lt;/LinearLayout&gt;</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q15. What is RecyclerView and how is it better than ListView?</strong></p>
+                <p><strong>Answer:</strong> RecyclerView is a more advanced version of ListView. It:</p>
+                <ul>
+                    <li>Reuses views efficiently (ViewHolder pattern)</li>
+                    <li>Supports multiple layouts per list</li>
+                    <li>Has built-in animations</li>
+                    <li>Separates layout management (LayoutManager)</li>
+                    <li>Provides better performance for large lists</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q16. What is the ViewHolder pattern?</strong></p>
+                <p><strong>Answer:</strong> The ViewHolder pattern is a design pattern used in RecyclerView to improve performance. A ViewHolder object holds references to the views in a list item, avoiding expensive <code>findViewById()</code> calls during scrolling.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q17. What is the difference between <code>android:gravity</code> and <code>android:layout_gravity</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>android:gravity</code> aligns the content inside the view. <code>android:layout_gravity</code> aligns the view itself within its parent container.</p>
+            </div>
+
+            <h2>Section 4: Intents &amp; Navigation</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q18. What is an Intent?</strong></p>
+                <p><strong>Answer:</strong> An Intent is a messaging object used to request an action from another app component. It can be used to start activities, start services, or send broadcasts. There are two types: explicit and implicit intents.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q19. What is the difference between an explicit and implicit intent?</strong></p>
+                <p><strong>Answer:</strong> An <strong>explicit intent</strong> specifies the exact component (Activity, Service) to start by name. An <strong>implicit intent</strong> declares a general action to be performed, and the Android system finds the best component to handle it (e.g., opening a URL).</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q20. How do you pass data between activities?</strong></p>
+                <p><strong>Answer:</strong> Use <code>Intent.putExtra()</code> to pass data, and <code>getStringExtra()</code>, <code>getIntExtra()</code>, etc., to receive it. For custom objects, implement <code>Parcelable</code> or <code>Serializable</code>.</p>
+                <pre class="code-block"><code>// Send
+val intent = Intent(this, SecondActivity::class.java)
+intent.putExtra("key", "value")
+startActivity(intent)
+
+// Receive
+val value = intent.getStringExtra("key")</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q21. What is the difference between <code>startActivity()</code> and <code>startActivityForResult()</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>startActivity()</code> starts a new activity without expecting a result. <code>startActivityForResult()</code> starts an activity and expects a result to be returned via <code>onActivityResult()</code> (deprecated, use Activity Result API instead).</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q22. What is an Intent Filter?</strong></p>
+                <p><strong>Answer:</strong> An Intent Filter is declared in the AndroidManifest.xml file to specify what types of implicit intents an activity can handle. It defines the action, category, and data that the component supports.</p>
+            </div>
+
+            <h2>Section 5: Data Storage</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q23. What is SharedPreferences and when would you use it?</strong></p>
+                <p><strong>Answer:</strong> SharedPreferences is a key-value storage system for storing simple data like user preferences, settings, or login state. It's suitable for small amounts of data (less than 1-2 MB).</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q24. What is the difference between <code>apply()</code> and <code>commit()</code> in SharedPreferences?</strong></p>
+                <p><strong>Answer:</strong> <code>apply()</code> writes asynchronously on a background thread and returns immediately. <code>commit()</code> writes synchronously on the main thread and returns a boolean result. Use <code>apply()</code> unless you need the result immediately.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q25. What is SQLite and what is Room?</strong></p>
+                <p><strong>Answer:</strong> SQLite is a lightweight relational database embedded in Android. Room is a persistence library that provides an abstraction layer over SQLite, offering compile-time validation, less boilerplate, and better integration with LiveData and coroutines.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q26. What are the three main components of Room?</strong></p>
+                <p><strong>Answer:</strong></p>
+                <ul>
+                    <li><strong>Entity:</strong> Represents a table (data class with @Entity).</li>
+                    <li><strong>DAO (Data Access Object):</strong> Defines database operations (@Insert, @Update, @Delete, @Query).</li>
+                    <li><strong>Database:</strong> The main access point (@Database class).</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q27. What is the difference between internal and external storage?</strong></p>
+                <p><strong>Answer:</strong> <strong>Internal storage</strong> is private to the app, automatically deleted when the app is uninstalled, and not accessible by other apps. <strong>External storage</strong> (like SD card) is shared, can be accessed by other apps, and may be visible to the user.</p>
+            </div>
+
+            <h2>Section 6: Networking</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q28. What is Retrofit and why is it used?</strong></p>
+                <p><strong>Answer:</strong> Retrofit is a type-safe HTTP client for Android. It makes API calls easier by converting HTTP API responses into Java/Kotlin objects. It's the industry-standard networking library for Android.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q29. How do you handle network calls in Android without blocking the UI thread?</strong></p>
+                <p><strong>Answer:</strong> Use coroutines with <code>Dispatchers.IO</code> or <code>viewModelScope</code>. Never make network calls on the main thread — it causes ANR (Application Not Responding).</p>
+                <pre class="code-block"><code>viewModelScope.launch(Dispatchers.IO) {
+    val response = apiService.getUsers()
+    withContext(Dispatchers.Main) {
+        // Update UI
+    }
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q30. What is an interceptor in Retrofit?</strong></p>
+                <p><strong>Answer:</strong> An interceptor is a component that intercepts HTTP requests and responses. They are used for adding headers (authentication), logging, retrying failed requests, and modifying requests/responses.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q31. How do you handle network errors in Android?</strong></p>
+                <p><strong>Answer:</strong> Use try-catch blocks around network calls. Check for connectivity using <code>ConnectivityManager</code>. Handle HTTP status codes (200 OK, 404 Not Found, 500 Internal Server Error, etc.). Show user-friendly error messages.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q32. What is JSON and how is it parsed in Android?</strong></p>
+                <p><strong>Answer:</strong> JSON (JavaScript Object Notation) is a lightweight data-interchange format. In Android, it's parsed using Gson (with Retrofit), Moshi, or the built-in <code>JSONObject</code> and <code>JSONArray</code> classes.</p>
+            </div>
+
+            <h2>Section 7: Permissions</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q33. What is the difference between normal and dangerous permissions?</strong></p>
+                <p><strong>Answer:</strong> <strong>Normal permissions</strong> are low-risk and automatically granted (e.g., INTERNET). <strong>Dangerous permissions</strong> access sensitive data and must be requested at runtime (e.g., CAMERA, READ_CONTACTS).</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q34. How do you request runtime permissions in Android?</strong></p>
+                <p><strong>Answer:</strong> Use the Activity Result API (<code>registerForActivityResult</code> with <code>ActivityResultContracts.RequestPermission</code> or <code>RequestMultiplePermissions</code>) to request permissions and handle the result.</p>
+                <pre class="code-block"><code>private val permissionLauncher = registerForActivityResult(
+    ActivityResultContracts.RequestPermission()
+) { isGranted ->
+    if (isGranted) { /* Proceed */ } 
+    else { /* Handle denial */ }
+}
+
+permissionLauncher.launch(Manifest.permission.CAMERA)</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q35. What is <code>shouldShowRequestPermissionRationale()</code>?</strong></p>
+                <p><strong>Answer:</strong> This method returns true if the user has previously denied the permission but has not checked "Never ask again". Use it to show an explanation of why the permission is needed before requesting again.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q36. How do you handle permanently denied permissions?</strong></p>
+                <p><strong>Answer:</strong> Check <code>shouldShowRequestPermissionRationale()</code> — if it returns false and the permission is denied, the user has permanently denied it. Guide the user to app settings to enable the permission.</p>
+            </div>
+
+            <h2>Section 8: Advanced Topics</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q37. What is the difference between <code>android:exported</code> and <code>android:permission</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>android:exported</code> determines whether a component (activity, service, receiver) can be accessed by other apps. <code>android:permission</code> specifies the permission required to access that component.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q38. What is the difference between a Fragment and an Activity?</strong></p>
+                <p><strong>Answer:</strong> A Fragment is a modular UI component that runs inside an Activity. Fragments have their own lifecycle, receive their own input events, and can be added/removed dynamically. An Activity is a standalone UI screen.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q39. What is a ViewModel and why is it used?</strong></p>
+                <p><strong>Answer:</strong> ViewModel is a class that stores UI-related data in a lifecycle-conscious way. It survives configuration changes (like screen rotation) and is used to separate UI logic from activity/fragment lifecycle.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q40. What is the difference between <code>LiveData</code> and <code>Flow</code>?</strong></p>
+                <p><strong>Answer:</strong> LiveData is a lifecycle-aware observable data holder. Flow is a Kotlin coroutine-based stream that provides more powerful operators and more control over threading. Flow is recommended for new projects.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q41. What is the difference between a BroadcastReceiver and a Service?</strong></p>
+                <p><strong>Answer:</strong> A BroadcastReceiver is a short-lived component that responds to system events. A Service is a long-running component that performs background operations. BroadcastReceivers should not perform long-running operations — they can cause ANRs.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q42. What is a ContentProvider?</strong></p>
+                <p><strong>Answer:</strong> A ContentProvider is a component that manages access to a structured set of data. It's the only way to securely share data between different applications (e.g., contacts, media files).</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q43. What is the difference between <code>Parcelable</code> and <code>Serializable</code>?</strong></p>
+                <p><strong>Answer:</strong> Parcelable is an Android-specific interface for fast serialization. It's more efficient than Java's Serializable because it writes data in a structured format. Use Parcelable for passing data between components in Android.</p>
+            </div>
+
+            <h2>Section 9: Publishing &amp; Production</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q44. What is the difference between an APK and an AAB?</strong></p>
+                <p><strong>Answer:</strong> APK (Android Package Kit) is the traditional distribution format. AAB (Android App Bundle) is the newer format that allows Google Play to optimize and split the app for different device configurations, resulting in smaller download sizes.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q45. What is a keystore and why is it important?</strong></p>
+                <p><strong>Answer:</strong> A keystore is a digital certificate used to sign your app. It proves that you are the author of the app and is required for publishing updates. <strong>If you lose your keystore, you cannot update your app.</strong></p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q46. What is Proguard/R8 and why is it used?</strong></p>
+                <p><strong>Answer:</strong> Proguard (R8 is the newer version) is a tool that shrinks, optimizes, and obfuscates your code. It reduces the APK size and makes reverse engineering harder by renaming classes and methods to meaningless names.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q47. What are the release tracks in Google Play Console?</strong></p>
+                <p><strong>Answer:</strong> Google Play Console has four release tracks:</p>
+                <ul>
+                    <li><strong>Internal Testing:</strong> Up to 100 testers (quick testing).</li>
+                    <li><strong>Closed Testing:</strong> Up to 1000 testers (controlled testing).</li>
+                    <li><strong>Open Testing:</strong> Unlimited testers (public beta).</li>
+                    <li><strong>Production:</strong> Public release to all users.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q48. What is Google Play App Signing?</strong></p>
+                <p><strong>Answer:</strong> Google Play App Signing is a service where Google manages your app's signing key. It allows you to upload an AAB file and Google signs it before distributing. It's recommended because it enables features like AAB optimization and secure key management.</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q49. What is the difference between <code>versionCode</code> and <code>versionName</code>?</strong></p>
+                <p><strong>Answer:</strong> <code>versionCode</code> is an integer used by the system to determine if an update is available (must increment for each release). <code>versionName</code> is a human-readable version string (e.g., "1.0.0") shown to users.</p>
+            </div>
+
+            <h2>Section 10: Common Coding Challenges</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q50. Write a function to check if a permission is granted.</strong></p>
+                <pre class="code-block"><code>fun isPermissionGranted(context: Context, permission: String): Boolean {
+    return ContextCompat.checkSelfPermission(context, permission) 
+        == PackageManager.PERMISSION_GRANTED
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q51. Write a Retrofit API interface for a GET request.</strong></p>
+                <pre class="code-block"><code>interface ApiService {
+    @GET("users")
+    suspend fun getUsers(): Response&lt;List&lt;User&gt;&gt;
+    
+    @GET("users/{id}")
+    suspend fun getUserById(@Path("id") userId: Int): Response&lt;User&gt;
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q52. Write a Room Entity class.</strong></p>
+                <pre class="code-block"><code>@Entity(tableName = "users")
+data class User(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val name: String,
+    val email: String
+)</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q53. Write a RecyclerView Adapter.</strong></p>
+                <pre class="code-block"><code>class UserAdapter(
+    private var users: List&lt;User&gt;,
+    private val onItemClick: (User) -> Unit
+) : RecyclerView.Adapter&lt;UserAdapter.UserViewHolder&gt;() {
+    
+    class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
+    }
+    
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
+        return UserViewHolder(view)
+    }
+    
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        val user = users[position]
+        holder.nameTextView.text = user.name
+        holder.itemView.setOnClickListener { onItemClick(user) }
+    }
+    
+    override fun getItemCount(): Int = users.size
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q54. Write a function to save and retrieve data from SharedPreferences.</strong></p>
+                <pre class="code-block"><code>object PreferenceManager {
+    private const val PREF_NAME = "my_preferences"
+    
+    fun saveString(context: Context, key: String, value: String) {
+        val prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        prefs.edit().putString(key, value).apply()
+    }
+    
+    fun getString(context: Context, key: String, defaultValue: String = ""): String {
+        val prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        return prefs.getString(key, defaultValue) ?: defaultValue
+    }
+}</code></pre>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Q55. Write a function to check internet connectivity.</strong></p>
+                <pre class="code-block"><code>fun isNetworkAvailable(context: Context): Boolean {
+    val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val networkCapabilities = connectivityManager.activeNetwork ?: return false
+    val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+    return activeNetwork.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+}</code></pre>
+            </div>
+
+            <h2>Quick Reference — Key Concepts</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Concept</th><th>Description</th><th>When to Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Activity</strong></td><td>UI screen</td><td>Every screen in your app</td></tr>
+                        <tr><td><strong>Service</strong></td><td>Background operations</td><td>Music playback, downloads</td></tr>
+                        <tr><td><strong>BroadcastReceiver</strong></td><td>Respond to system events</td><td>Battery low, network changes</td></tr>
+                        <tr><td><strong>ContentProvider</strong></td><td>Share data across apps</td><td>Contacts, media access</td></tr>
+                        <tr><td><strong>RecyclerView</strong></td><td>Display lists</td><td>Any list of items</td></tr>
+                        <tr><td><strong>Retrofit</strong></td><td>Network API calls</td><td>All API communication</td></tr>
+                        <tr><td><strong>Room</strong></td><td>SQLite abstraction</td><td>Structured data storage</td></tr>
+                        <tr><td><strong>SharedPreferences</strong></td><td>Key-value storage</td><td>Settings, preferences, login state</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <h3 style="margin-top: 0;">🎉 Congratulations! You've Completed the Android Series! 🎉</h3>
+                <p style="margin-bottom: 0;">You now have a solid foundation in Android development — from setting up Android Studio to publishing your app on the Play Store. Keep practicing, build projects, and never stop learning!</p>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-publishing.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Publishing Your App — Play Store Deployment</a>
+            <span class="disabled"><span class="label">Next <i class="fas fa-arrow-right"></i></span>You've completed the series! 🎉</span>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

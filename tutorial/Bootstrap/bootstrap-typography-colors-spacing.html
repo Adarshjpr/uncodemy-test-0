@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Typography, Colors &amp; Spacing — Core Utilities | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Master Bootstrap's core utilities — typography (headings, text utilities), colors (text & background), and spacing (margin, padding, gap)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 3 of 9: Bootstrap Typography, Colors &amp; Spacing — Core Utilities</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html" class="active"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-palette"></i> Utilities</span>
+        <h1>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</h1>
+
+        <div class="card">
+
+            <p>Before diving into components, it's essential to understand Bootstrap's <strong>core utilities</strong>. These are the building blocks you'll use on every page — typography for text styling, colors for theming, and spacing for layout control. Mastering these utilities will make you significantly faster at building UIs.</p>
+
+            <h2>1. Typography</h2>
+            <p>Bootstrap provides a clean, consistent typography system built on native font stacks. Everything is designed to be readable and accessible out of the box.</p>
+
+            <h3>Headings</h3>
+            <p>Use standard HTML headings (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) or the <code>.h1</code> through <code>.h6</code> classes for matching heading styles on any element.</p>
+            <pre class="code-block"><code>&lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;
+&lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;
+&lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;
+&lt;h4&gt;h4. Bootstrap heading&lt;/h4&gt;
+&lt;h5&gt;h5. Bootstrap heading&lt;/h5&gt;
+&lt;h6&gt;h6. Bootstrap heading&lt;/h6&gt;
+
+&lt;!-- Or use classes on any element --&gt;
+&lt;p class="h1"&gt;This looks like an h1&lt;/p&gt;</code></pre>
+
+            <h3>Display Headings</h3>
+            <p>Display headings are larger, more prominent headings for extra visual impact. Use <code>.display-1</code> through <code>.display-6</code>.</p>
+            <pre class="code-block"><code>&lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;
+&lt;h1 class="display-2"&gt;Display 2&lt;/h1&gt;
+&lt;h1 class="display-3"&gt;Display 3&lt;/h1&gt;
+&lt;h1 class="display-4"&gt;Display 4&lt;/h1&gt;
+&lt;h1 class="display-5"&gt;Display 5&lt;/h1&gt;
+&lt;h1 class="display-6"&gt;Display 6&lt;/h1&gt;</code></pre>
+
+            <h3>Lead Paragraph</h3>
+            <p>Make a paragraph stand out with the <code>.lead</code> class.</p>
+            <pre class="code-block"><code>&lt;p class="lead"&gt;
+    This is a lead paragraph. It stands out from regular body text.
+&lt;/p&gt;</code></pre>
+
+            <h3>Inline Text Elements</h3>
+            <pre class="code-block"><code>&lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;This line of text is meant to be treated as deleted text.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;This line of text is meant to be treated as no longer accurate.&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;This line of text will render as underlined.&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;</code></pre>
+
+            <h3>Text Utilities</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Effect</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.text-start</code></td><td>Left-aligned text</td></tr>
+                        <tr><td><code>.text-center</code></td><td>Center-aligned text</td></tr>
+                        <tr><td><code>.text-end</code></td><td>Right-aligned text</td></tr>
+                        <tr><td><code>.text-wrap</code></td><td>Wrap text normally</td></tr>
+                        <tr><td><code>.text-nowrap</code></td><td>Prevent text wrapping</td></tr>
+                        <tr><td><code>.text-truncate</code></td><td>Truncate with ellipsis</td></tr>
+                        <tr><td><code>.text-lowercase</code></td><td>Convert to lowercase</td></tr>
+                        <tr><td><code>.text-uppercase</code></td><td>Convert to uppercase</td></tr>
+                        <tr><td><code>.text-capitalize</code></td><td>Capitalize each word</td></tr>
+                        <tr><td><code>.fw-bold</code></td><td>Bold font weight</td></tr>
+                        <tr><td><code>.fw-bolder</code></td><td>Bolder font weight</td></tr>
+                        <tr><td><code>.fw-semibold</code></td><td>Semibold font weight</td></tr>
+                        <tr><td><code>.fw-normal</code></td><td>Normal font weight</td></tr>
+                        <tr><td><code>.fw-light</code></td><td>Light font weight</td></tr>
+                        <tr><td><code>.fst-italic</code></td><td>Italic text</td></tr>
+                        <tr><td><code>.fst-normal</code></td><td>Normal font style</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>&lt;p class="text-center text-uppercase fw-bold"&gt;
+    CENTERED, UPPERCASE, BOLD TEXT
+&lt;/p&gt;
+
+&lt;p class="text-end text-lowercase fst-italic"&gt;
+    RIGHT ALIGNED, LOWERCASE, ITALIC
+&lt;/p&gt;
+
+&lt;p class="text-truncate" style="max-width: 200px;"&gt;
+    This long text will be truncated with an ellipsis...
+&lt;/p&gt;</code></pre>
+
+            <h2>2. Colors</h2>
+            <p>Bootstrap provides a consistent color system with contextual classes for text, backgrounds, and components.</p>
+
+            <h3>Text Colors</h3>
+            <p>Use <code>.text-{color}</code> classes to apply color to text.</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Color</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.text-primary</code></td><td>Primary (brand blue)</td></tr>
+                        <tr><td><code>.text-secondary</code></td><td>Secondary (gray)</td></tr>
+                        <tr><td><code>.text-success</code></td><td>Success (green)</td></tr>
+                        <tr><td><code>.text-danger</code></td><td>Danger (red)</td></tr>
+                        <tr><td><code>.text-warning</code></td><td>Warning (yellow)</td></tr>
+                        <tr><td><code>.text-info</code></td><td>Info (cyan)</td></tr>
+                        <tr><td><code>.text-light</code></td><td>Light (white)</td></tr>
+                        <tr><td><code>.text-dark</code></td><td>Dark (black)</td></tr>
+                        <tr><td><code>.text-body</code></td><td>Body default color</td></tr>
+                        <tr><td><code>.text-muted</code></td><td>Muted (light gray)</td></tr>
+                        <tr><td><code>.text-white</code></td><td>White</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>&lt;p class="text-primary"&gt;.text-primary - Primary text&lt;/p&gt;
+&lt;p class="text-success"&gt;.text-success - Success text&lt;/p&gt;
+&lt;p class="text-danger"&gt;.text-danger - Danger text&lt;/p&gt;
+&lt;p class="text-warning"&gt;.text-warning - Warning text&lt;/p&gt;
+&lt;p class="text-info"&gt;.text-info - Info text&lt;/p&gt;
+&lt;p class="text-muted"&gt;.text-muted - Muted text&lt;/p&gt;</code></pre>
+
+            <h3>Background Colors</h3>
+            <p>Use <code>.bg-{color}</code> classes to apply background colors.</p>
+            <pre class="code-block"><code>&lt;div class="bg-primary text-white p-3"&gt;Primary background&lt;/div&gt;
+&lt;div class="bg-success text-white p-3"&gt;Success background&lt;/div&gt;
+&lt;div class="bg-danger text-white p-3"&gt;Danger background&lt;/div&gt;
+&lt;div class="bg-warning p-3"&gt;Warning background&lt;/div&gt;
+&lt;div class="bg-info p-3"&gt;Info background&lt;/div&gt;
+&lt;div class="bg-light p-3"&gt;Light background&lt;/div&gt;
+&lt;div class="bg-dark text-white p-3"&gt;Dark background&lt;/div&gt;</code></pre>
+
+            <h3>Background Gradient</h3>
+            <p>Add <code>.bg-gradient</code> to any background color for a subtle gradient effect.</p>
+            <pre class="code-block"><code>&lt;div class="bg-primary bg-gradient text-white p-3"&gt;Primary with gradient&lt;/div&gt;</code></pre>
+
+            <h2>3. Spacing Utilities</h2>
+            <p>Spacing utilities control margin (<code>m</code>) and padding (<code>p</code>) with responsive options. The system uses a scale from 0 to 5 (and beyond with <code>auto</code>).</p>
+
+            <h3>The Spacing Scale</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Value</th><th>Size</th><th>Equivalent</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>0</code></td><td>0</td><td>0rem (none)</td></tr>
+                        <tr><td><code>1</code></td><td>$spacer * .25</td><td>0.25rem (4px)</td></tr>
+                        <tr><td><code>2</code></td><td>$spacer * .5</td><td>0.5rem (8px)</td></tr>
+                        <tr><td><code>3</code></td><td>$spacer</td><td>1rem (16px)</td></tr>
+                        <tr><td><code>4</code></td><td>$spacer * 1.5</td><td>1.5rem (24px)</td></tr>
+                        <tr><td><code>5</code></td><td>$spacer * 3</td><td>3rem (48px)</td></tr>
+                        <tr><td><code>auto</code></td><td>auto</td><td>Automatic margin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Margin Classes</h3>
+            <p>Margin classes use the format: <code>m{side}-{size}</code> or <code>m{breakpoint}-{side}-{size}</code>.</p>
+            <ul>
+                <li><code>m</code> — all sides</li>
+                <li><code>mt</code> — top</li>
+                <li><code>mb</code> — bottom</li>
+                <li><code>ms</code> — start (left in LTR)</li>
+                <li><code>me</code> — end (right in LTR)</li>
+                <li><code>mx</code> — left &amp; right</li>
+                <li><code>my</code> — top &amp; bottom</li>
+            </ul>
+            <pre class="code-block"><code>&lt;div class="mt-3"&gt;Margin top 1rem&lt;/div&gt;
+&lt;div class="mb-4"&gt;Margin bottom 1.5rem&lt;/div&gt;
+&lt;div class="mx-auto" style="width: 200px;"&gt;Centered horizontally&lt;/div&gt;
+&lt;div class="my-5"&gt;Margin top and bottom 3rem&lt;/div&gt;</code></pre>
+
+            <h3>Padding Classes</h3>
+            <p>Padding classes use the same format: <code>p{side}-{size}</code> or <code>p{breakpoint}-{side}-{size}</code>.</p>
+            <ul>
+                <li><code>p</code> — all sides</li>
+                <li><code>pt</code> — top</li>
+                <li><code>pb</code> — bottom</li>
+                <li><code>ps</code> — start (left in LTR)</li>
+                <li><code>pe</code> — end (right in LTR)</li>
+                <li><code>px</code> — left &amp; right</li>
+                <li><code>py</code> — top &amp; bottom</li>
+            </ul>
+            <pre class="code-block"><code>&lt;div class="p-3 bg-light"&gt;Padding 1rem on all sides&lt;/div&gt;
+&lt;div class="px-4 py-2 bg-primary text-white"&gt;Horizontal 1.5rem, vertical 0.5rem&lt;/div&gt;
+&lt;div class="pt-5"&gt;Padding top 3rem&lt;/div&gt;</code></pre>
+
+            <h3>Responsive Spacing</h3>
+            <p>Add breakpoints to apply spacing only at certain screen sizes.</p>
+            <pre class="code-block"><code>&lt;div class="mt-3 mt-md-5 mt-lg-0"&gt;
+    Top margin: 1rem on all screens,
+    3rem on medium screens and up,
+    0 on large screens and up
+&lt;/div&gt;
+
+&lt;div class="p-2 p-sm-3 p-md-4 p-lg-5"&gt;
+    Padding increases as screen size grows
+&lt;/div&gt;</code></pre>
+
+            <h3>Gap Utilities</h3>
+            <p>For flex and grid layouts, use <code>gap-{size}</code> to add space between items.</p>
+            <pre class="code-block"><code>&lt;div class="d-flex gap-3"&gt;
+    &lt;div&gt;Item 1&lt;/div&gt;
+    &lt;div&gt;Item 2&lt;/div&gt;
+    &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Putting It All Together</h2>
+            <p>Here's an example that combines typography, colors, and spacing:</p>
+            <pre class="code-block"><code>&lt;div class="container mt-5"&gt;
+    &lt;div class="row g-4"&gt;
+        &lt;div class="col-12"&gt;
+            &lt;h1 class="display-4 text-primary fw-bold"&gt;Welcome to My Site&lt;/h1&gt;
+            &lt;p class="lead text-muted"&gt;This is an introduction paragraph.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="bg-success text-white p-4 rounded"&gt;
+                &lt;h3 class="text-white"&gt;Success Message&lt;/h3&gt;
+                &lt;p&gt;This is a success alert with proper spacing.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="bg-danger text-white p-4 rounded"&gt;
+                &lt;h3 class="text-white"&gt;Danger Message&lt;/h3&gt;
+                &lt;p&gt;This is a danger alert with proper spacing.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> The spacing system is one of Bootstrap's most powerful features. Once you learn the pattern (<code>m/p + side + size</code>), you can control layout spacing without writing a single line of custom CSS.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-grid-system-foundation.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Grid System — The Foundation of Layouts</a>
+            <a href="bootstrap-buttons-forms-tables.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installing Selenium & Understanding Browser Drivers | Uncodemy</title>
+<meta name="description" content="Step-by-step guide to installing Selenium and understanding browser drivers like ChromeDriver and GeckoDriver for automated browser testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb">
+  <strong>Selenium Training Course</strong> / Module 1: Introduction to Selenium / Topic 3 of 3 &nbsp;(Page 3 of 55)
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar-left">
+    <h3>Course Topics</h3>
+    <ul class="topic-nav">
+      <li class="group-header"><span class="group-title">Module 1: Introduction to Selenium</span></li>
+      <li><a href="what-is-selenium-components-of-selenium-suite.html"><span class="num">01</span><span>What is Selenium? Components of Selenium Suite</span></a></li>
+      <li><a href="selenium-vs-other-automation-tools.html"><span class="num">02</span><span>Selenium vs Other Automation Tools</span></a></li>
+      <li class="active"><a href="installing-selenium-understanding-browser-drivers.html"><span class="num">03</span><span>Installing Selenium & Understanding Browser Drivers</span></a></li>
+      <li class="group-header"><span class="group-title">Module 2: Selenium Basics</span></li>
+      <li><a href="basics-of-web-automation.html"><span class="num">04</span><span>Basics of Web Automation</span></a></li>
+      <li><a href="setting-up-the-first-automation-script.html"><span class="num">05</span><span>Setting Up the First Automation Script</span></a></li>
+      <li><a href="locating-web-elements-using-locators.html"><span class="num">06</span><span>Locating Web Elements Using Locators</span></a></li>
+      <li class="group-header"><span class="group-title">Module 3: WebDriver Commands</span></li>
+      <li><a href="opening-a-browser-navigating-to-urls.html"><span class="num">07</span><span>Opening a Browser & Navigating to URLs</span></a></li>
+      <li><a href="managing-browser-windows-tabs-navigation.html"><span class="num">08</span><span>Managing Browser Windows, Tabs & Navigation</span></a></li>
+      <li><a href="taking-screenshots-managing-cookies.html"><span class="num">09</span><span>Taking Screenshots & Managing Cookies</span></a></li>
+      <li class="group-header"><span class="group-title">Module 4: Locating Web Elements</span></li>
+      <li><a href="types-of-locators-their-use-cases.html"><span class="num">10</span><span>Types of Locators & Their Use Cases</span></a></li>
+      <li><a href="writing-effective-xpath-expressions.html"><span class="num">11</span><span>Writing Effective XPath Expressions</span></a></li>
+      <li><a href="css-selectors-vs-xpath-handling-dynamic-elements.html"><span class="num">12</span><span>CSS Selectors vs XPath & Handling Dynamic Elements</span></a></li>
+      <li class="group-header"><span class="group-title">Module 5: Handling Web Elements</span></li>
+      <li><a href="interacting-with-text-boxes-buttons-dropdowns.html"><span class="num">13</span><span>Interacting with Text Boxes, Buttons & Dropdowns</span></a></li>
+      <li><a href="handling-checkboxes-radio-buttons-date-pickers.html"><span class="num">14</span><span>Handling Checkboxes, Radio Buttons & Date Pickers</span></a></li>
+      <li><a href="automating-file-uploads-and-downloads.html"><span class="num">15</span><span>Automating File Uploads and Downloads</span></a></li>
+      <li class="group-header"><span class="group-title">Module 6: Waits in Selenium</span></li>
+      <li><a href="implicit-waits-vs-explicit-waits.html"><span class="num">16</span><span>Implicit Waits vs Explicit Waits</span></a></li>
+      <li><a href="webdriverwait-class-for-advanced-waits.html"><span class="num">17</span><span>WebDriverWait Class for Advanced Waits</span></a></li>
+      <li><a href="fluent-waits-best-practices-for-timing-issues.html"><span class="num">18</span><span>Fluent Waits & Best Practices for Timing Issues</span></a></li>
+      <li class="group-header"><span class="group-title">Module 7: Handling Alerts and Pop-Ups</span></li>
+      <li><a href="handling-javascript-alerts-browser-pop-ups.html"><span class="num">19</span><span>Handling JavaScript Alerts & Browser Pop-Ups</span></a></li>
+      <li><a href="switching-between-windows-and-frames.html"><span class="num">20</span><span>Switching Between Windows and Frames</span></a></li>
+      <li class="group-header"><span class="group-title">Module 8: Advanced Selenium Interactions</span></li>
+      <li><a href="automating-mouse-actions-hover-drag-and-drop.html"><span class="num">21</span><span>Automating Mouse Actions (Hover, Drag and Drop)</span></a></li>
+      <li><a href="working-with-the-actions-class.html"><span class="num">22</span><span>Working with the Actions Class</span></a></li>
+      <li><a href="automating-keyboard-events-scrolling.html"><span class="num">23</span><span>Automating Keyboard Events & Scrolling</span></a></li>
+      <li class="group-header"><span class="group-title">Module 9: Handling Dynamic Web Applications</span></li>
+      <li><a href="handling-ajax-calls-dynamic-elements.html"><span class="num">24</span><span>Handling AJAX Calls & Dynamic Elements</span></a></li>
+      <li><a href="interacting-with-shadow-dom-infinite-scrolling.html"><span class="num">25</span><span>Interacting with Shadow DOM & Infinite Scrolling</span></a></li>
+      <li class="group-header"><span class="group-title">Module 10: Selenium Grid</span></li>
+      <li><a href="what-is-selenium-grid-hub-node-architecture.html"><span class="num">26</span><span>What is Selenium Grid? Hub-Node Architecture</span></a></li>
+      <li><a href="setting-up-selenium-grid-for-parallel-testing.html"><span class="num">27</span><span>Setting Up Selenium Grid for Parallel Testing</span></a></li>
+      <li><a href="using-docker-with-selenium-grid.html"><span class="num">28</span><span>Using Docker with Selenium Grid</span></a></li>
+      <li class="group-header"><span class="group-title">Module 11: Selenium Frameworks</span></li>
+      <li><a href="understanding-automation-frameworks.html"><span class="num">29</span><span>Understanding Automation Frameworks</span></a></li>
+      <li><a href="setting-up-a-simple-selenium-testing-framework.html"><span class="num">30</span><span>Setting Up a Simple Selenium Testing Framework</span></a></li>
+      <li class="group-header"><span class="group-title">Module 12: Integration with Testing Tools</span></li>
+      <li><a href="integrating-selenium-with-testng-junit-pytest.html"><span class="num">31</span><span>Integrating Selenium with TestNG/JUnit/Pytest</span></a></li>
+      <li><a href="creating-test-suites-generating-test-reports.html"><span class="num">32</span><span>Creating Test Suites & Generating Test Reports</span></a></li>
+      <li><a href="parallel-test-execution-with-testng.html"><span class="num">33</span><span>Parallel Test Execution with TestNG</span></a></li>
+      <li class="group-header"><span class="group-title">Module 13: Working with APIs and Selenium</span></li>
+      <li><a href="introduction-to-api-testing.html"><span class="num">34</span><span>Introduction to API Testing</span></a></li>
+      <li><a href="simulating-api-calls-using-rest-assured.html"><span class="num">35</span><span>Simulating API Calls & Using REST Assured</span></a></li>
+      <li class="group-header"><span class="group-title">Module 14: Selenium with Continuous Integration</span></li>
+      <li><a href="introduction-to-ci-cd.html"><span class="num">36</span><span>Introduction to CI/CD</span></a></li>
+      <li><a href="integrating-selenium-with-jenkins-github-actions.html"><span class="num">37</span><span>Integrating Selenium with Jenkins, GitHub Actions</span></a></li>
+      <li class="group-header"><span class="group-title">Module 15: Performance Testing with Selenium</span></li>
+      <li><a href="selenium-s-limitations-in-performance-testing.html"><span class="num">38</span><span>Selenium's Limitations in Performance Testing</span></a></li>
+      <li><a href="integrating-selenium-with-jmeter-gatling.html"><span class="num">39</span><span>Integrating Selenium with JMeter/Gatling</span></a></li>
+      <li class="group-header"><span class="group-title">Module 16: Debugging and Error Handling</span></li>
+      <li><a href="common-selenium-errors-and-fixes.html"><span class="num">40</span><span>Common Selenium Errors and Fixes</span></a></li>
+      <li><a href="exception-handling-in-selenium.html"><span class="num">41</span><span>Exception Handling in Selenium</span></a></li>
+      <li class="group-header"><span class="group-title">Module 17: Advanced Selenium Features</span></li>
+      <li><a href="running-selenium-tests-in-headless-mode.html"><span class="num">42</span><span>Running Selenium Tests in Headless Mode</span></a></li>
+      <li><a href="testing-mobile-applications-with-appium.html"><span class="num">43</span><span>Testing Mobile Applications with Appium</span></a></li>
+      <li><a href="automating-browser-devtools-protocol.html"><span class="num">44</span><span>Automating Browser DevTools Protocol</span></a></li>
+      <li class="group-header"><span class="group-title">Module 18: Cross-Browser Testing</span></li>
+      <li><a href="setting-up-selenium-for-chrome-firefox-edge.html"><span class="num">45</span><span>Setting Up Selenium for Chrome, Firefox, Edge</span></a></li>
+      <li><a href="running-cross-browser-tests-in-parallel.html"><span class="num">46</span><span>Running Cross-Browser Tests in Parallel</span></a></li>
+      <li class="group-header"><span class="group-title">Module 19: Selenium with Cloud Platforms</span></li>
+      <li><a href="running-tests-on-browserstack-sauce-labs.html"><span class="num">47</span><span>Running Tests on BrowserStack, Sauce Labs</span></a></li>
+      <li><a href="advantages-setup-of-cloud-testing-platforms.html"><span class="num">48</span><span>Advantages & Setup of Cloud Testing Platforms</span></a></li>
+      <li class="group-header"><span class="group-title">Module 20: Page Object Model & Design Patterns</span></li>
+      <li><a href="page-object-model-pom-design-pattern.html"><span class="num">49</span><span>Page Object Model (POM) Design Pattern</span></a></li>
+      <li><a href="data-driven-testing-with-external-files.html"><span class="num">50</span><span>Data-Driven Testing with External Files</span></a></li>
+      <li class="group-header"><span class="group-title">Module 21: Selenium Projects</span></li>
+      <li><a href="automating-login-registration-form.html"><span class="num">51</span><span>Automating Login/Registration Form</span></a></li>
+      <li><a href="end-to-end-testing-of-an-e-commerce-website.html"><span class="num">52</span><span>End-to-End Testing of an E-Commerce Website</span></a></li>
+      <li><a href="automating-data-scraping-tasks-with-selenium.html"><span class="num">53</span><span>Automating Data Scraping Tasks with Selenium</span></a></li>
+      <li class="group-header"><span class="group-title">Module 22: Best Practices in Selenium</span></li>
+      <li><a href="writing-clean-maintainable-code.html"><span class="num">54</span><span>Writing Clean & Maintainable Code</span></a></li>
+      <li><a href="reducing-flakiness-keeping-up-to-date.html"><span class="num">55</span><span>Reducing Flakiness & Keeping Up-to-Date</span></a></li>
+    </ul>
+  </aside>
+
+  <main class="main-card">
+    <h1>Installing Selenium & Understanding Browser Drivers</h1>
+    <h2>What You Need Before Installing Selenium</h2>
+    <p>Before installing Selenium, you need a working programming environment - such as Python with pip, or Java with Maven - along with a code editor and at least one browser you plan to automate.</p>
+    <h2>Installing Selenium (Python Example)</h2>
+    <p>Selenium can be installed as a language-specific package. In Python, this is done through pip, and in Java, through a Maven or Gradle dependency added to your project's configuration file. Once installed, Selenium's classes and methods become available in your scripts.</p>
+    <ul class="styled-list">
+      <li>Install via pip: pip install selenium</li>
+      <li>Verify installation by importing the selenium module in a script</li>
+      <li>Confirm the version using selenium.__version__</li>
+    </ul>
+    <h2>Understanding Browser Drivers</h2>
+    <p>A browser driver is a small executable that acts as a bridge between your Selenium script and the actual browser. Selenium sends commands to the driver, and the driver translates them into actions the browser understands, such as clicking or typing.</p>
+    <h2>Common Browser Drivers</h2>
+    <table class="data-table">
+      <thead><tr><th>Browser</th><th>Driver Name</th><th>Maintained By</th></tr></thead>
+      <tbody>
+        <tr><td>Google Chrome</td><td>ChromeDriver</td><td>Chromium Project</td></tr>
+        <tr><td>Mozilla Firefox</td><td>GeckoDriver</td><td>Mozilla</td></tr>
+        <tr><td>Microsoft Edge</td><td>EdgeDriver</td><td>Microsoft</td></tr>
+      </tbody>
+    </table>
+    <h2>Keeping Drivers Updated</h2>
+    <p>Browser drivers must match your installed browser version closely, or automation scripts may fail unexpectedly. Newer Selenium versions include Selenium Manager, which automatically downloads and manages the correct driver version for you.</p>
+    <div class="bridge-note">With Selenium installed and drivers configured, you're ready to explore the fundamentals of web automation itself.</div>
+
+    <div class="cta-box">
+      <div>
+        <h3>Ready to master Selenium Training Course?</h3>
+        <p>Join Uncodemy's hands-on training and build real automation skills with expert mentors.</p>
+      </div>
+      <a class="cta-btn" href="https://uncodemy.com">Explore Course</a>
+    </div>
+
+    <div class="pagination">
+      <a class="prev" href="selenium-vs-other-automation-tools.html"><span class="dir">&larr; Previous</span>Selenium vs Other Automation Tools</a>
+      <a class="next" href="basics-of-web-automation.html"><span class="dir">Next &rarr;</span>Basics of Web Automation</a>
+    </div>
+  </main>
+
+  <aside class="sidebar-right">
+    <div class="batch-card">
+      <span class="batch-badge">Enrolling Now</span>
+      <h3>Selenium Automation</h3>
+      <div class="batch-meta">
+        <div><span>Next Batch Starts</span><strong>In 7 Days</strong></div>
+        <div><span>Duration</span><strong>6 Weeks</strong></div>
+      </div>
+      <div class="countdown">
+        <div class="unit"><strong data-cd-days>00</strong><span>Days</span></div>
+        <div class="unit"><strong data-cd-hours>00</strong><span>Hrs</span></div>
+        <div class="unit"><strong data-cd-mins>00</strong><span>Min</span></div>
+        <div class="unit"><strong data-cd-secs>00</strong><span>Sec</span></div>
+      </div>
+      <ul class="perks">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+      <span class="seats-badge">Only a few seats left!</span>
+      <a class="landing-btn" data-landing-btn href="https://uncodemy.com">Go to Course Landing Page</a>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-links">
+        <a class="phone" data-phone-link href="tel:">&#128222; Call <span data-phone-text></span></a>
+        <a class="whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener">&#128172; Chat on WhatsApp</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>AI Certification 2026 | Python, Machine Learning, NLP | Uncodemy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="course/css/jeet.css">
+  <link rel="stylesheet" href="./tutorial/components/All.css">
+  <link rel="stylesheet" href="./tutorial/components/footer-style.css">
+  <script src="./tutorial/components/uncodemy-navbar.js"></script>
+  <style>
+    :root {
+      --orange: #FF5432;
+      --orange-dark: #E8472A;
+      --orange-soft: #FFF7F4;
+      --orange-mid: #FFE8E2;
+      --white: #FFFFFF;
+      --charcoal: #1A1A1A;
+      --grey: #666666;
+      --grey-light: #9CA3AF;
+      --border: #F0E6E2;
+      --radius: 18px;
+      --radius-sm: 14px;
+      --radius-lg: 24px;
+      --shadow: 0 4px 20px rgba(26, 26, 26, 0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    html, body { width: 100%; max-width: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--charcoal);
+      background-color: var(--orange-soft);
+      line-height: 1.55;
+      font-size: 15px;
+      overflow-x: hidden;
+      background-image:
+        linear-gradient(rgba(255, 84, 50, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 84, 50, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-attachment: fixed;
+    }
+    .app-nav, .section, .hero, .offer-strip, .final-cta, .bottom-bar {
+      box-sizing: border-box;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+    strong { font-weight: 700; }
+
+    .app-nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #FF5432, #FF7A5C);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 12px; font-weight: 800;
+    }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-cta {
+      background: var(--orange); color: #fff; font-size: 13px; font-weight: 600;
+      padding: 8px 14px; border-radius: 999px;
+    }
+    .hamburger {
+      width: 40px; height: 40px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 5px;
+      border-radius: 12px; background: var(--orange-soft);
+    }
+    .hamburger span { display: block; width: 18px; height: 2px; background: var(--charcoal); border-radius: 2px; transition: 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 0; top: 57px;
+      background: rgba(255,255,255,0.98); z-index: 190;
+      padding: 24px 20px; transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu a { font-size: 17px; font-weight: 600; padding: 14px 16px; border-radius: 14px; }
+    .nav-links-desktop { display: none; }
+
+    .hero { padding: 28px 16px 32px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--border);
+      padding: 6px 12px; border-radius: 999px;
+      font-size: 12px; font-weight: 600; color: var(--orange);
+      margin-bottom: 16px; box-shadow: var(--shadow);
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; background: var(--orange);
+      border-radius: 50%; animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 {
+      font-size: clamp(26px, 7vw, 34px); font-weight: 800; line-height: 1.2;
+      margin-bottom: 12px; letter-spacing: -0.02em;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #FF5432, #FF7A5C);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-desc { color: var(--grey); font-size: 15px; margin-bottom: 16px; max-width: 480px; }
+    .ratings-row {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      margin-bottom: 12px; font-size: 12px; color: var(--grey);
+    }
+    .ratings-row span {
+      background: #fff; border: 1px solid var(--border);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .stars-line {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--border);
+      padding: 8px 12px; border-radius: 12px; font-size: 13px; margin-bottom: 16px;
+    }
+    .stars-line .stars { color: #F59E0B; letter-spacing: 1px; }
+    .collab-line { font-size: 13px; color: var(--grey); margin-bottom: 8px; }
+    .collab-logos { display: flex; gap: 8px; margin-bottom: 20px; }
+    .collab-logos span {
+      background: var(--charcoal); color: #fff; padding: 6px 12px;
+      border-radius: 8px; font-size: 12px; font-weight: 700;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-weight: 600; font-size: 14px; padding: 13px 20px; border-radius: 14px; transition: 0.2s;
+    }
+    .btn-primary {
+      background: var(--orange); color: #fff;
+      box-shadow: 0 4px 16px rgba(255, 84, 50, 0.35);
+    }
+    .btn-primary:active { transform: scale(0.97); background: var(--orange-dark); }
+    .btn-secondary {
+      background: #fff; color: var(--charcoal); border: 1.5px solid var(--border);
+    }
+    .btn-secondary:active { background: var(--orange-soft); }
+    .float-skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-chip {
+      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      padding: 10px 14px; font-size: 13px; font-weight: 600;
+      box-shadow: var(--shadow); display: flex; align-items: center; gap: 6px;
+    }
+    .skill-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+
+    /* Offer strip */
+    .offer-strip {
+      margin: 0 16px 24px;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .offer-strip .badge {
+      display: inline-block; background: var(--orange); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 10px;
+    }
+    .offer-strip .old { text-decoration: line-through; color: var(--grey-light); font-size: 14px; }
+    .offer-strip .new {
+      font-size: 26px; font-weight: 800; color: var(--orange); margin: 6px 0;
+    }
+    .offer-strip .emi {
+      background: #FEF9C3; border: 1px dashed #F59E0B;
+      border-radius: 12px; padding: 10px; font-size: 13px; margin: 12px 0;
+    }
+    .offer-strip .risk { font-size: 12px; color: var(--grey); margin-bottom: 12px; }
+
+    .section { padding: 40px 16px; }
+    .section-alt { background: rgba(255,255,255,0.55); }
+    .section-head { margin-bottom: 24px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--orange); margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(22px, 5.5vw, 28px); font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 8px;
+    }
+    .section-sub { color: var(--grey); font-size: 14px; max-width: 520px; }
+
+    .info-scroll {
+      display: flex; gap: 12px; overflow-x: auto;
+      padding: 4px 16px 16px; margin: 0 -16px;
+      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .info-scroll::-webkit-scrollbar { display: none; }
+    .info-card {
+      flex: 0 0 148px; scroll-snap-align: start;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 14px;
+      box-shadow: var(--shadow); text-align: center;
+    }
+    .info-card .icon {
+      width: 44px; height: 44px; background: var(--orange-soft);
+      border-radius: 14px; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 12px; font-size: 20px;
+    }
+    .info-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .info-card p { font-size: 12px; color: var(--grey); }
+
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .stat-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 14px;
+      text-align: center; box-shadow: var(--shadow);
+    }
+    .stat-card .num { font-size: 24px; font-weight: 800; color: var(--orange); margin-bottom: 4px; }
+    .stat-card .label { font-size: 12px; color: var(--grey); font-weight: 500; }
+
+    .program-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 18px; box-shadow: var(--shadow);
+    }
+    .program-card h3 { font-size: 18px; margin-bottom: 4px; }
+    .program-card .tagline { color: var(--orange); font-weight: 600; font-size: 13px; margin-bottom: 12px; }
+    .program-card > p { color: var(--grey); font-size: 14px; margin-bottom: 16px; }
+    .meta-list { display: flex; flex-direction: column; gap: 10px; }
+    .meta-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--orange-soft); padding: 12px 14px; border-radius: 14px; font-size: 13px;
+    }
+    .meta-item .ic { font-size: 18px; flex-shrink: 0; }
+    .meta-item strong { display: block; font-size: 13px; margin-bottom: 2px; }
+
+    .students-scroll {
+      display: flex; gap: 12px; overflow-x: auto;
+      padding: 4px 0 12px; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .students-scroll::-webkit-scrollbar { display: none; }
+    .student-card {
+      flex: 0 0 160px; scroll-snap-align: start;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px 12px;
+      text-align: center; box-shadow: var(--shadow);
+    }
+    .student-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, #FF5432, #FF8A70);
+      margin: 0 auto 10px; display: flex; align-items: center;
+      justify-content: center; color: #fff; font-weight: 700; font-size: 16px;
+      position: relative;
+      align-items: center;
+    }
+    .student-card h4 { font-size: 13px; font-weight: 700; }
+    .student-card .uni { font-size: 11px; color: var(--grey-light); margin-top: 2px; }
+    .student-card .co { font-size: 11px; color: var(--orange); font-weight: 600; margin-top: 4px; }
+
+    /* Larger cards for Industry Experts */
+    .expert-card {
+      flex: 0 0 240px !important;
+      scroll-snap-align: start;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0 !important;
+      text-align: left;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .expert-card .student-avatar {
+      width: 100%;
+      height: 160px;
+      border-radius: 0;
+      margin: 0;
+      overflow: hidden;
+      font-size: 22px;
+      background: #f3f3f3;
+      flex-shrink: 0;
+    }
+    .expert-card .student-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+     
+      object-position: center top;   /* face upar rehta hai */
+    }
+    .expert-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 16px 0;
+    }
+    .expert-card .uni {
+      font-size: 12px;
+      color: var(--grey-light);
+      margin-top: 4px;
+      padding: 0 16px;
+    }
+    .expert-card .co {
+      font-size: 12px !important;
+      color: var(--orange);
+      font-weight: 600;
+      margin-top: 8px !important;
+      margin-bottom: 16px;
+      line-height: 1.45 !important;
+      padding: 0 16px;
+    }
+
+
+    .text-block {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 22px 18px; box-shadow: var(--shadow);
+    }
+    .text-block h3 { font-size: 18px; margin-bottom: 12px; }
+    .text-block p { color: var(--grey); font-size: 14px; margin-bottom: 12px; }
+    .text-block p:last-child { margin-bottom: 0; }
+
+    .features-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .feat {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px 12px;
+      font-size: 13px; font-weight: 500; box-shadow: var(--shadow);
+    }
+    .feat .ck { color: #10B981; font-size: 16px; flex-shrink: 0; }
+
+    .standout-list { display: flex; flex-direction: column; gap: 12px; }
+    .standout-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 16px; box-shadow: var(--shadow);
+    }
+    .standout-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+    .standout-card p { color: var(--grey); font-size: 13px; }
+
+    .curriculum { display: flex; flex-direction: column; gap: 10px; }
+    .mod {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    }
+    .mod-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px; cursor: pointer; user-select: none;
+    }
+    .mod-num {
+      width: 36px; height: 36px; background: var(--orange-soft); color: var(--orange);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px; flex-shrink: 0;
+    }
+    .mod.open .mod-num { background: var(--orange); color: #fff; }
+    .mod-title { flex: 1; font-weight: 700; font-size: 14px; }
+    .mod-chevron { color: var(--grey-light); font-size: 18px; transition: 0.25s; }
+    .mod.open .mod-chevron { transform: rotate(180deg); color: var(--orange); }
+    .mod-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .mod.open .mod-body { max-height: 600px; }
+    .mod-body-inner { padding: 0 16px 16px 66px; color: var(--grey); font-size: 13px; }
+    .mod-body-inner ul { margin-top: 8px; }
+    .mod-body-inner li {
+      padding: 3px 0 3px 14px; position: relative;
+    }
+    .mod-body-inner li::before {
+      content: ''; position: absolute; left: 0; top: 10px;
+      width: 5px; height: 5px; background: var(--orange); border-radius: 50%;
+    }
+
+    .c-stats {
+      display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .c-stat {
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      min-width: 110px;
+      box-shadow: var(--shadow);
+      flex: 1 1 100px;
+      max-width: 160px;
+    }
+    .c-stat .n { font-size: 28px; font-weight: 800; color: var(--orange); line-height: 1.2; margin-bottom: 4px; }
+    .c-stat .l { font-size: 12px; color: var(--grey); font-weight: 500; }
+
+    .clamp-text {
+      max-height: 140px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.35s ease;
+    }
+    .clamp-text.expanded { max-height: 3000px; }
+    .clamp-text:not(.expanded)::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 48px;
+      background: linear-gradient(transparent, #fff);
+      pointer-events: none;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 12px;
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .features-grid.collapsed .feat:nth-child(n+9) { display: none; }
+    .load-more-btn {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      color: var(--charcoal);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    .load-more-btn:active { background: var(--orange-soft); }
+    .features-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    /* Shadow edge fade on horizontal scrolls */
+    .slider-wrap {
+      position: relative;
+    }
+    .slider-wrap::before,
+    .slider-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 12px;
+      width: 32px;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .slider-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--orange-soft) 0%, transparent 100%);
+    }
+    .slider-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--orange-soft) 0%, transparent 100%);
+    }
+    .section-alt .slider-wrap::before {
+      background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, transparent 100%);
+    }
+    .section-alt .slider-wrap::after {
+      background: linear-gradient(to left, rgba(255,255,255,0.95) 0%, transparent 100%);
+    }
+
+
+
+    .tools-wrap { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .tool-pill {
+      background: #fff; border: 1px solid var(--border); border-radius: 999px;
+      padding: 10px 16px; font-weight: 600; font-size: 13px; color: var(--charcoal);
+    }
+
+    .projects-scroll {
+      display: flex; gap: 14px; overflow-x: auto;
+      padding: 4px 16px 16px; margin: 0 -16px;
+      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .projects-scroll::-webkit-scrollbar { display: none; }
+    .project-card {
+      flex: 0 0 260px; scroll-snap-align: start;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow);
+    }
+    .project-visual {
+      height: 110px; background: linear-gradient(135deg, #FFE8E2, #FFF7F4);
+      display: flex; align-items: center; justify-content: center; font-size: 40px;
+      position: relative;
+    }
+    .project-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,84,50,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,84,50,0.06) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+    .project-body { padding: 16px; }
+    .project-body h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .project-body p { font-size: 13px; color: var(--grey); margin-bottom: 12px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 11px; font-weight: 600; background: var(--orange-soft);
+      color: var(--orange); padding: 4px 10px; border-radius: 999px;
+    }
+
+    .career-box {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 22px 16px; box-shadow: var(--shadow);
+    }
+    .career-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .career-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--orange-soft); padding: 12px; border-radius: 14px;
+    }
+    .career-item .ci-icon {
+      width: 36px; height: 36px; background: #fff; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .career-item h4 { font-size: 14px; font-weight: 700; }
+    .career-item p { font-size: 12px; color: var(--grey); margin-top: 2px; }
+
+    .testi-scroll {
+      display: flex; gap: 14px; overflow-x: auto;
+      padding: 4px 16px 16px; margin: 0 -16px;
+      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .testi-scroll::-webkit-scrollbar { display: none; }
+    .testi-card {
+      flex: 0 0 280px; scroll-snap-align: start;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow);
+    }
+    .testi-stars { color: #F59E0B; font-size: 14px; letter-spacing: 1px; margin-bottom: 10px; }
+    .testi-text { font-size: 14px; color: var(--grey); margin-bottom: 16px; line-height: 1.5; }
+    .testi-user { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, #FF5432, #FF8A70);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 14px;
+    }
+    .testi-user h4 { font-size: 14px; font-weight: 700; }
+    .testi-user span { font-size: 12px; color: var(--grey-light); }
+
+.cert-box {
+  background: #fff;
+  color: #1A1A1A;
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+}
+.cert-box h3 { font-size: 20px; margin-bottom: 10px; }
+.cert-box p { font-size: 14px; opacity: 0.85; margin-bottom: 14px; }
+.cert-list li { font-size: 13px; opacity: 0.9; padding: 4px 0; }
+.cert-list li::before { content: '✓ '; color: #10B981; font-weight: 700; }
+
+    .cert-layout {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cert-content { flex: 1 1 280px; min-width: 0; }
+    .cert-slider {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      flex: 1 1 260px;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .cert-slides {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      min-height: 200px;
+      max-height: 360px;
+    }
+    .cert-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.45s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f8f8;
+    }
+    .cert-slide.active { opacity: 1; z-index: 1; }
+    .cert-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .cert-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      border: 1.5px solid var(--border);
+      color: var(--orange);
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    .cert-nav:active { background: var(--orange); color: #fff; }
+    .cert-nav.prev { left: 8px; }
+    .cert-nav.next { right: 8px; }
+    .cert-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 0 6px;
+      background: #1a1a1a;
+    }
+    .cert-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .cert-dot.active { background: var(--orange); width: 20px; border-radius: 999px; }
+
+    @media (min-width: 768px) {
+      .cert-layout { flex-wrap: nowrap; gap: 28px; }
+      .cert-content { flex: 1.1; }
+      .cert-slider { flex: 1; max-width: 46%; }
+      .cert-slides { max-height: none; height: 100%; min-height: 300px; aspect-ratio: auto; }
+    }
+
+
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px; font-weight: 600; font-size: 14px; cursor: pointer; user-select: none;
+    }
+    .faq-q .chev { color: var(--grey-light); font-size: 18px; transition: 0.25s; flex-shrink: 0; }
+    .faq.open .faq-q .chev { transform: rotate(180deg); color: var(--orange); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq.open .faq-a { max-height: 280px; }
+    .faq-a-inner { padding: 0 16px 16px; color: var(--grey); font-size: 14px; }
+
+    .final-cta {
+      margin: 20px 16px 100px;
+      background: linear-gradient(145deg, #FF5432 0%, #FF7A5C 100%);
+      border-radius: var(--radius-lg); padding: 36px 24px;
+      text-align: center; color: #fff; position: relative; overflow: hidden;
+      box-shadow: 0 12px 40px rgba(255, 84, 50, 0.3);
+    }
+    .final-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 24px 24px; pointer-events: none;
+    }
+    .final-cta h2 { font-size: clamp(22px, 5.5vw, 28px); font-weight: 800; margin-bottom: 10px; position: relative; }
+    .final-cta p { font-size: 14px; opacity: 0.9; margin-bottom: 24px; position: relative; }
+    .final-cta .cta-btns { display: flex; flex-direction: column; gap: 10px; position: relative; }
+    .btn-white {
+      background: #fff; color: var(--orange); font-weight: 700;
+      padding: 14px 24px; border-radius: 14px; font-size: 15px;
+    }
+    .btn-outline-white {
+      background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5);
+      font-weight: 600; padding: 14px 24px; border-radius: 14px; font-size: 15px;
+    }
+
+    .bottom-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      display: flex; gap: 8px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+    }
+    .bottom-bar a {
+      flex: 1; text-align: center; padding: 12px 8px;
+      border-radius: 14px; font-size: 13px; font-weight: 600;
+    }
+    .bb-ghost { background: var(--orange-soft); color: var(--charcoal); }
+    .bb-primary {
+      background: var(--orange); color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 84, 50, 0.3);
+    }
+
+    @media (min-width: 640px) {
+      .hero, .section { padding-left: 24px; padding-right: 24px; }
+      .info-scroll, .projects-scroll, .testi-scroll {
+        margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px;
+      }
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+      .offer-strip { margin-left: 24px; margin-right: 24px; }
+      .final-cta { margin-left: 24px; margin-right: 24px; }
+      .final-cta .cta-btns { flex-direction: row; justify-content: center; }
+    }
+    @media (min-width: 900px) {
+      .app-nav { padding: 14px 24px; max-width: 100%; margin: 0 auto; width: 100%; }
+      .hamburger { display: none; }
+      .nav-links-desktop {
+        display: flex; gap: 28px; font-size: 14px; font-weight: 500; color: var(--grey);
+      }
+      .nav-links-desktop a:hover { color: var(--orange); }
+      .hero, .section { max-width: 1280px; width: 100%; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+      .info-scroll {
+        display: grid; grid-template-columns: repeat(6, 1fr);
+        overflow: visible; margin: 0; padding: 0; gap: 14px;
+      }
+      .info-card { flex: none; }
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+      .features-grid { grid-template-columns: repeat(4, 1fr); }
+      .projects-scroll, .testi-scroll {
+        display: grid; grid-template-columns: repeat(3, 1fr);
+        overflow: visible; margin: 0; padding: 0; gap: 18px;
+      }
+      .project-card, .testi-card { flex: none; }
+      .standout-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .offer-strip { max-width: 1280px; width: 100%; margin-left: auto; margin-right: auto; }
+      .final-cta { max-width: 1280px; width: 100%; margin: 20px auto 120px; padding: 48px 40px; }
+      .bottom-bar {
+        max-width: 480px; left: 50%; transform: translateX(-50%);
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <uncodemy-navbar></uncodemy-navbar>
+
+  <!-- <nav class="app-nav">
+    <a href="#" class="logo"><span class="logo-mark">UC</span> UnCodemy</a>
+    <div class="nav-links-desktop">
+      <a href="#curriculum">Curriculum</a>
+      <a href="#projects">Projects</a>
+      <a href="#placement">Placement</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="#enroll" class="nav-cta">Enroll</a>
+      <button class="hamburger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav> -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why" onclick="closeMenu()">Why Uncodemy</a>
+    <a href="#program" onclick="closeMenu()">Program Details</a>
+    <a href="#curriculum" onclick="closeMenu()">Curriculum</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#placement" onclick="closeMenu()">Placement</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#enroll" onclick="closeMenu()" style="background:var(--orange);color:#fff;text-align:center;margin-top:12px;">Enroll Now</a>
+  </div>
+
+  <!-- HERO -->
+<div class="container-fluid p-0">
+        <section class="jeet-hero" style="margin-top: 111px;">
+            <main class="uc-shell">
+
+                <!-- ==================== HERO ==================== -->
+                <section class="uc-hero" style="margin-top: 10px !important;">
+
+                    <!-- LEFT -->
+                    <div class="uc-hero-left">
+                        <h1 class="uc-hero-heading">
+                            <span style="color:#666666;">Data Science Training Course in Noida With </span><span style="color:#FF5432;">Gen AI by Uncodemy</span>
+                        </h1>
+
+
+                        <p class="uc-hero-desc">
+                          Welcome to Uncodemy, your go-to place for upskilling and discovering the latest trending skills! We offer a top-notch Data Science Training Program with Gen AI right here in Noida. Our engaging and comprehensive range of Data Science courses includes a variety of cutting-edge programs, all designed to equip you with the essential knowledge and skills you need to thrive in today’s tech-savvy, data-driven world     </p>
+
+                        <div style="display: flex; margin-bottom: 22px; flex-wrap:wrap ;" class="rating-img">
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/Google_Icon.svg" alt="Google_Icon"><span style="color: black;">5/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/sul.png" alt="sul"><span style="color: black;">4.5/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/urbonpro.png" alt="urbonpro"><span style="color: black;">4.6/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/just-dial.png" alt="just-dial"><span style="color: black;">4.5/5</span></div>
+                            <div class="course-google-rating"><img width="15" height="15" src="/public/image/Facebook.svg" alt="Facebook"><span style="color: black;">4.5/5</span></div>
+                        </div>
+
+                        <div class="uc-review-card">
+                            <div class="uc-stars">
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                                <i class="uc-star fa-solid fa-star"></i>
+                            </div>
+                            <div class="uc-review-text">
+                                <span class="uc-review-score">4.9 out of 5</span>
+                                <span class="uc-review-count">based on 6850+ reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="collaboration-line">
+                            <span> In Collaboration with : </span>
+                            <div class="collabimg">
+                                <img class="lazy-loaded" alt="Microsoft" src="/image/ibm.png">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CENTER : OFFER CARD -->
+                    <div id="offer-card-container">
+        <div class="uc-offer-wrap">
+          <div class="uc-offer-card">
+            <span class="uc-offer-ribbon">LIMITED TIME OFFER</span>
+  
+            <h2 class="uc-offer-heading">Special Offer Fee</h2>
+            <p class="uc-offer-sub" style="text-align: center !important; margin: 0 !important;">(For Limited Seats Only)</p>
+  
+            <span class="uc-old-price">
+              <span class="uc-old-amount">₹ 50,000/-</span><span class="uc-gst">+GST</span>
+            </span>
+  
+            <p class="uc-now-pay" style="text-align: center !important;">Now Pay Only</p>
+  
+            <span class="uc-price-box">₹ 17,500/-<span class="uc-price-gst">+GST</span></span>
+  
+            <div class="uc-emi-box">
+              <span class="uc-emi-label">EMI AVAILABLE</span>
+              <span class="uc-emi-value">Starts at ₹ 2,999 / Month</span>
+            </div>
+  
+            <ul class="uc-offer-list">
+              
+            <li class="uc-offer-li">
+              <i class="uc-offer-li-icon fa-solid fa-bullseye"></i>
+              <span class="uc-offer-li-text">Risk-Free Trial – Attend 2 Classes</span>
+            </li>
+
+            <li class="uc-offer-li">
+              <i class="uc-offer-li-icon fa-regular fa-circle-check"></i>
+              <span class="uc-offer-li-text">No Hidden Charges</span>
+            </li>
+            </ul>
+  
+            <button class="uc-book-btn" type="button" onclick="showForm()" fdprocessedid="sd42p">Book Your Seat Now</button>
+            <p class="uc-filling">Seats are filling fast!</p>
+          </div>
+        </div></div>
+
+                    <!-- RIGHT : ACCREDITATIONS -->
+                    <div class="uc-accred">
+
+                        <div class="uc-accred-card uc-card-nasscom">
+                            <div class="uc-accred-inner">
+                                <img src="./assets/img/jeet-img/nasscom.png" alt="nasscom logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-fsp">
+                            <div class="uc-accred-inner">
+                                <img src="./assets/img/jeet-img/fulllogo.png" alt="fullskill logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-nsdca">
+                            <div class="uc-nsdca-row">
+                                <img src="./assets/img/jeet-img/nsdc.png" alt="nsdc logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-gpartner">
+                            <div class="uc-gp-row">
+                                <img src="./assets/img/jeet-img/google.png" alt="google logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-iabac">
+                            <div class="uc-iabac-row">
+                                <img src="./assets/img/jeet-img/iabac.png" alt="iabac logo" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="uc-accred-card uc-card-iso">
+                            <div class="uc-iso-row">
+                                <img src="./assets/img/jeet-img/iso.png" alt="iso logo" srcset="">
+                            </div>
+                        </div>
+
+                    </div>
+                 </section>
+                 <div class="uc-placement-training">
+
+                    <button class="uc-placement-btn uc-placement-btn-outline" onclick="showForm(); setDownload('DataAnalyticsBtn')" fdprocessedid="7fejz">
+                        <img src="/img/tools/download.svg" alt="" aria-hidden="true">
+                        <span>Download Curriculum</span>
+                    </button>
+                
+                    <button class="uc-placement-btn uc-placement-btn-fill" onclick="showForm()" fdprocessedid="wpf8g">
+                        Apply Now
+                    </button>
+                
+                    <button class="uc-placement-btn uc-placement-btn-outline" onclick="showForm()" fdprocessedid="y70g3">
+                        <img src="/img/tools/download.svg" alt="" aria-hidden="true">
+                        <span>Request a Call</span>
+                    </button>
+                
+                    <button class="uc-placement-btn uc-placement-btn-fill" onclick="showPopUpForm()" fdprocessedid="2r72k">
+                        Schedule a Demo
+                    </button>
+                
+                </div>
+                <!-- ==================== FEATURE BAR ==================== -->
+                <section class="uc-feature-bar">
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-users"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Industry Expert Trainers</span>
+                            <span class="uc-feature-desc">Learn from 10+ years experienced professionals</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-desktop"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Live Projects</span>
+                            <span class="uc-feature-desc">Work on real-time projects &amp; case studies</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-book-open"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Lifetime Access</span>
+                            <span class="uc-feature-desc">Get lifetime access to recorded sessions &amp;
+                                materials</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-award"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Placement Assistance</span>
+                            <span class="uc-feature-desc">Resume Building, Mock Interviews &amp; Job Support</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-solid fa-certificate"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Certified Course</span>
+                            <span class="uc-feature-desc">Industry-recognized certificate</span>
+                        </span>
+                    </div>
+                    <div class="uc-feature-item">
+                        <i class="uc-feature-icon fa-regular fa-calendar-days"></i>
+                        <span class="uc-feature-text">
+                            <span class="uc-feature-title">Flexible Batches</span>
+                            <span class="uc-feature-desc">Weekday &amp; Weekend Online &amp; Offline</span>
+                        </span>
+                    </div>
+                </section>
+
+                <!-- ==================== WHY CHOOSE ==================== -->
+                <div id="stats-container">
+        <section class="uc-why-card">
+          
+        <h2 class="uc-why-heading">
+          Why Choose<br class="uc-why-br">
+          <span class="uc-why-accent">Uncodemy?</span>
+        </h2>
+          
+            <div class="uc-stat uc-stat-1">
+              <i class="uc-stat-icon fa-solid fa-award"></i>
+              <span class="uc-stat-value">14+</span>
+              <span class="uc-stat-label">Years of Excellence<br class="uc-stat-br-1"></span>
+            </div>
+
+            <div class="uc-stat uc-stat-2">
+              <i class="uc-stat-icon fa-solid fa-handshake"></i>
+              <span class="uc-stat-value">850+</span>
+              <span class="uc-stat-label">Hiring Partners</span>
+            </div>
+
+            <div class="uc-stat uc-stat-3">
+              <i class="uc-stat-icon fa-solid fa-user-group"></i>
+              <span class="uc-stat-value">54,000+</span>
+              <span class="uc-stat-label">Students Trained</span>
+            </div>
+
+            <div class="uc-stat uc-stat-4">
+              <i class="uc-stat-icon fa-solid fa-people-arrows"></i>
+              <span class="uc-stat-value">200+</span>
+              <span class="uc-stat-label">Corporate Tie-ups</span>
+            </div>
+
+            <div class="uc-stat uc-stat-5">
+              <i class="uc-stat-icon fa-solid fa-location-dot"></i>
+              <span class="uc-stat-value">40+</span>
+              <span class="uc-stat-label">Cities Across India</span>
+            </div>
+
+            <div class="uc-stat uc-stat-6">
+              <i class="uc-stat-icon fa-solid fa-clock-rotate-left"></i>
+              <span class="uc-stat-value">95%</span>
+              <span class="uc-stat-label">Placement Support</span>
+            </div>
+        </section></div>
+
+                <!-- ==================== BOTTOM STRIP ==================== -->
+                <section class="uc-strip">
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-laptop-file"></i>
+                        <span class="uc-strip-text">Online &amp; Offline Classes</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-regular fa-calendar-check"></i>
+                        <span class="uc-strip-text">Weekend &amp; Weekday Batches</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-code"></i>
+                        <span class="uc-strip-text">100% Practical Training</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-hand-holding-dollar"></i>
+                        <span class="uc-strip-text">Affordable Fees</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-regular fa-credit-card"></i>
+                        <span class="uc-strip-text">EMI Options Available</span>
+                    </div>
+                    <div class="uc-strip-item">
+                        <i class="uc-strip-icon fa-solid fa-headset"></i>
+                        <span class="uc-strip-text">Dedicated Support</span>
+                    </div>
+                </section>
+              <!-- <div class="program-details animated-fade">
+                            <h3>Program Details</h3>
+                        
+                            <p class="program-subtext">
+                                Data Science with <strong>AI</strong> — Training &amp; Placement Program
+                                <em>Master Data Science from Fundamentals to Advanced AI Applications</em>
+                            </p>
+                        
+                            <p class="program-description">
+                                A comprehensive <strong>8-9 months industry-focused training program</strong> designed to build strong 
+                                <strong>Data Science, Machine Learning &amp; Gen-AI skills</strong> through real-time projects, personalized mentoring, 
+                                and dedicated <strong>placement support</strong> that prepares you for top-tier data-driven roles.
+                            </p>
+                        
+                            <ul class="program-highlights">
+                                <li>🤖 <span>Core Skills Covered:</span> Python, Statistics, Machine Learning, Deep Learning, Gen AI, NLP</li>
+                                <li>⏱️ <span>Program Duration:</span> 8-9 Months</li>
+                                <li>💼 <span>Average Salary Package:</span> <strong>₹8–28 LPA</strong></li>
+                                <li>🚀 <span>Placement Support:</span> Guaranteed Interview Opportunities + Resume &amp; Interview Preparation</li>
+                                <li>🏢 <span>Placement Drives:</span> With Top MNCs &amp; High-Growth Startups</li>
+                                <li>🎯 <span>Career Paths:</span> Data Scientist, ML Engineer, AI Engineer, Data Researcher</li>
+                            </ul>
+                        </div> -->
+            </main>
+        </section>
+
+    </div>
+  <!-- COURSE INFO -->
+  <section class="section" style="padding-top:8px;">
+    <div class="slider-wrap">
+      <div class="info-scroll" id="infoScroll">
+        <div class="info-card"><div class="icon">👨‍🏫</div><h4>Expert Trainers</h4><p>10+ years experience</p></div>
+        <div class="info-card"><div class="icon">🛠️</div><h4>Live Projects</h4><p>Real-time case studies</p></div>
+        <div class="info-card"><div class="icon">♾️</div><h4>Lifetime Access</h4><p>Sessions & materials</p></div>
+        <div class="info-card"><div class="icon">💼</div><h4>Placement Help</h4><p>Resume, mocks & jobs</p></div>
+        <div class="info-card"><div class="icon">📜</div><h4>Certified</h4><p>Industry recognized</p></div>
+        <div class="info-card"><div class="icon">📅</div><h4>Flexible Batches</h4><p>Weekday & weekend</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY CHOOSE STATS -->
+  <!-- <section class="section section-alt" id="why">
+    <div class="section-head">
+      <div class="section-label">Why Uncodemy</div>
+      <h2 class="section-title">Why Choose Uncodemy?</h2>
+      <p class="section-sub">Trusted by thousands of learners across India for practical, job-ready AI training.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">14+</div><div class="label">Years of Excellence</div></div>
+      <div class="stat-card"><div class="num">850+</div><div class="label">Hiring Partners</div></div>
+      <div class="stat-card"><div class="num">54,000+</div><div class="label">Students Trained</div></div>
+      <div class="stat-card"><div class="num">200+</div><div class="label">Corporate Tie-ups</div></div>
+      <div class="stat-card"><div class="num">40+</div><div class="label">Cities Across India</div></div>
+      <div class="stat-card"><div class="num">95%</div><div class="label">Placement Support</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="label">Practical Training</div></div>
+      <div class="stat-card"><div class="num">EMI</div><div class="label">Options Available</div></div>
+    </div>
+  </section> -->
+
+  <!-- PROGRAM DETAILS -->
+  <section class="section" id="program">
+    <div class="section-head">
+      <div class="section-label">Program</div>
+      <h2 class="section-title">Program Details</h2>
+    </div>
+    <div class="program-card">
+      <h3>Data Science with AI — Training & Placement Program</h3>
+      <div class="tagline">Master Data Science from Fundamentals to Advanced AI Applications</div>
+      <p>
+        A comprehensive <strong>8–9 months industry-focused training program</strong> designed to build strong
+        <strong>Data Science, Machine Learning & Gen-AI skills</strong> through real-time projects, personalized mentoring,
+        and dedicated <strong>placement support</strong> that prepares you for top-tier data-driven roles.
+      </p>
+      <div class="meta-list">
+        <div class="meta-item"><span class="ic">🤖</span><div><strong>Core Skills Covered</strong>Python, Statistics, Machine Learning, Deep Learning, Gen AI, NLP</div></div>
+        <div class="meta-item"><span class="ic">⏱️</span><div><strong>Program Duration</strong>8–9 Months</div></div>
+        <div class="meta-item"><span class="ic">💼</span><div><strong>Average Salary Package</strong>₹8–28 LPA</div></div>
+        <div class="meta-item"><span class="ic">🚀</span><div><strong>Placement Support</strong>Guaranteed Interview Opportunities + Resume & Interview Preparation</div></div>
+        <div class="meta-item"><span class="ic">🏢</span><div><strong>Placement Drives</strong>With Top MNCs & High-Growth Startups</div></div>
+        <div class="meta-item"><span class="ic">🎯</span><div><strong>Career Paths</strong>Data Scientist, ML Engineer, AI Engineer, Data Researcher</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACED STUDENTS -->
+  <section class="section section-alt" id="placement">
+    <div class="section-head">
+      <div class="section-label">Success Stories</div>
+      <h2 class="section-title">Meet Uncodemy’s Placed Students</h2>
+      <p class="section-sub">Uncodemy has successfully placed over 5500 students after completing the Artificial Intelligence Course.</p>
+    </div>
+    <div class="slider-wrap">
+      <div class="students-scroll" id="studentsScroll">
+        <div class="student-card"><div class="student-avatar">RY</div><h4>Rajendra Yadav</h4><div class="uni">Rajendra Institute</div><div class="co">Microsoft</div></div>
+        <div class="student-card"><div class="student-avatar">NN</div><h4>Neelam Nishad</h4><div class="uni">Ashoka University</div><div class="co">Deloitte</div></div>
+        <div class="student-card"><div class="student-avatar">AP</div><h4>Arun Pal</h4><div class="uni">Indiana University</div><div class="co">Maruti Suzuki</div></div>
+        <div class="student-card"><div class="student-avatar">JS</div><h4>Juhi Sharma</h4><div class="uni">Galgotias University</div><div class="co">Rapidops</div></div>
+        <div class="student-card"><div class="student-avatar">D</div><h4>Deepak</h4><div class="uni">Nalanda University</div><div class="co">IBM</div></div>
+        <div class="student-card"><div class="student-avatar">AR</div><h4>Abhilasha Rathi</h4><div class="uni">Amity University</div><div class="co">Infosys</div></div>
+        <div class="student-card"><div class="student-avatar">AS</div><h4>Aditya Singh</h4><div class="uni">LPU</div><div class="co">Deloitte</div></div>
+        <div class="student-card"><div class="student-avatar">RS</div><h4>Ritesh Singh</h4><div class="uni">Nalanda University</div><div class="co">Bloohash</div></div>
+        <div class="student-card"><div class="student-avatar">TS</div><h4>Tanvi Singh</h4><div class="uni">IMS Ghaziabad</div><div class="co">Deloitte</div></div>
+        <div class="student-card"><div class="student-avatar">RT</div><h4>Riya Tiwari</h4><div class="uni">Delhi University</div><div class="co">HCL</div></div>
+        <div class="student-card"><div class="student-avatar">VS</div><h4>Vishal Singh</h4><div class="uni">Amity University</div><div class="co">Mindit</div></div>
+        <div class="student-card"><div class="student-avatar">S</div><h4>Shruti</h4><div class="uni">Indiana University</div><div class="co">AppInventive</div></div>
+        <div class="student-card"><div class="student-avatar">P</div><h4>Prashant</h4><div class="uni">SRM University</div><div class="co">TechExactly</div></div>
+        <div class="student-card"><div class="student-avatar">BS</div><h4>Babita Singh</h4><div class="uni">SRM University</div><div class="co">HCL</div></div>
+        <div class="student-card"><div class="student-avatar">AK</div><h4>Abhishek Kumar</h4><div class="uni">Runex</div><div class="co">MamaEarth</div></div>
+        <div class="student-card"><div class="student-avatar">SM</div><h4>Saurabh Mishra</h4><div class="uni">NIIT</div><div class="co">KPMG</div></div>
+        <div class="student-card"><div class="student-avatar">NS</div><h4>Neha Sharma</h4><div class="uni">Sikkim University</div><div class="co">Infosys</div></div>
+        <div class="student-card"><div class="student-avatar">HT</div><h4>Himanshu Tyagi</h4><div class="uni">Grelogic</div><div class="co">RipensApps</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS AI -->
+
+  <section class="section">
+    <div class="section-head">
+      <div class="section-label">About AI</div>
+      <h2 class="section-title">What is Artificial Intelligence?</h2>
+    </div>
+    <div class="text-block">
+      <p>
+        Artificial Intelligence, often abbreviated as AI, refers to the simulation of human intelligence in machines.
+        These machines are programmed to think, learn, reason, and solve problems just like humans — but often faster and more accurately.
+        At its core, AI mimics cognitive functions such as learning from data, recognizing patterns, making predictions, understanding language, and making decisions.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE AI COURSE (long form) -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">Why Choose Uncodemy AI Training Course?</h2>
+    </div>
+    <div class="text-block">
+      <div class="clamp-text" id="whyChooseText">
+        <p>
+          In today’s digital-first era, where artificial intelligence is becoming the bedrock of innovation and decision-making across industries,
+          choosing the right platform to learn and master AI isn’t just important — it’s critical. That’s where Uncodemy stands apart.
+        </p>
+        <p>
+          When you enroll in Uncodemy’s <strong>AI training course</strong>, you’re not just accessing a curriculum — you’re entering an ecosystem
+          designed to empower learners of every background. Whether you’re a complete beginner or someone with basic coding knowledge,
+          our learning path adapts to your pace and goals. We don’t believe in one-size-fits-all learning. We believe in mentorship, mastery, and measurable results.
+        </p>
+        <p>
+          Our <strong>AI training program</strong> is built by industry experts, not just academic instructors — so every concept is grounded in real-world relevance.
+          You’ll not only understand how AI works, but you’ll also build models that solve practical challenges — like predicting consumer behavior,
+          automating tasks, and developing smart assistants. From fundamental math and programming to the complexities of neural networks and natural language processing,
+          we guide you through every layer with clarity and confidence.
+        </p>
+        <p>
+          What truly makes Uncodemy the preferred choice for thousands of learners across India is the holistic support system we offer.
+          Our dedicated trainers walk with you every step of the way — answering doubts in real time during live classes, helping you debug errors in your code,
+          and even reviewing your projects to ensure you understand the “why” behind every decision. You also get access to 24/7 learner support,
+          recorded sessions, revision tools, and a community that grows with you.
+        </p>
+        <p>
+          Moreover, we understand that learning AI is not just about acquiring knowledge — it’s about becoming job-ready.
+          That’s why our course also includes <strong>career-oriented training</strong>, resume development workshops, and mock interviews tailored to AI roles.
+          We actively connect you with hiring partners and guide you until you crack your first (or next) job.
+        </p>
+        <p>
+          And we do all of this while ensuring that cost is never a barrier. Our course fees are among the most affordable in the industry —
+          without ever compromising on quality. With EMI options, lifetime access to course materials, and ongoing alumni support,
+          we offer value far beyond the course duration.
+        </p>
+        <p>
+          So, if you're looking for the <strong>best AI certification course</strong> in a flexible, supportive, and impactful learning environment —
+          Uncodemy is where your AI journey begins, accelerates, and thrives.
+        </p>
+      </div>
+      <button type="button" class="read-more-btn" id="whyChooseBtn" onclick="toggleWhyChoose()">Read More →</button>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-label">Benefits</div>
+      <h2 class="section-title">Key Features to Join Uncodemy</h2>
+      <p class="section-sub">Benefits that make Uncodemy the Best Artificial Intelligence institute, with excellent return on your educational investment.</p>
+    </div>
+    <div class="features-grid collapsed" id="keyFeaturesGrid">
+      <div class="feat"><span class="ck">✅</span> 100% placement assistance</div>
+      <div class="feat"><span class="ck">💰</span> Affordable bootcamps</div>
+      <div class="feat"><span class="ck">🌐</span> Globally recognized certifications</div>
+      <div class="feat"><span class="ck">⏱️</span> Flexible schedules</div>
+      <div class="feat"><span class="ck">👔</span> Special batches for working professionals</div>
+      <div class="feat"><span class="ck">💻</span> Online/offline training options</div>
+      <div class="feat"><span class="ck">🎯</span> One-on-one personalized learning</div>
+      <div class="feat"><span class="ck">📊</span> Multiple live projects</div>
+      <div class="feat"><span class="ck">💼</span> Paid internships</div>
+      <div class="feat"><span class="ck">📜</span> Certificates upon completion</div>
+      <div class="feat"><span class="ck">👨‍🏫</span> Industry-experienced mentors</div>
+      <div class="feat"><span class="ck">📝</span> Experience letter</div>
+      <div class="feat"><span class="ck">❓</span> Q&A sessions after every class</div>
+      <div class="feat"><span class="ck">💬</span> 24/7 chat support with tutors</div>
+      <div class="feat"><span class="ck">💎</span> One-time investment with lifetime validity</div>
+      <div class="feat"><span class="ck">📚</span> 100+ Hours of Live Training</div>
+      <div class="feat"><span class="ck">🛠️</span> 10+ Real-World Projects</div>
+      <div class="feat"><span class="ck">📝</span> Resume & LinkedIn Optimization</div>
+      <div class="feat"><span class="ck">📂</span> Lifetime Access to Materials & Recordings</div>
+      <div class="feat"><span class="ck">🎓</span> Regular Masterclasses & Alumni Meetups</div>
+    </div>
+    <div class="features-actions">
+      <button type="button" class="load-more-btn" id="loadMoreFeatures" onclick="toggleKeyFeatures()">Load More</button>
+      <a href="#enroll" class="btn btn-primary">Apply Now</a>
+    </div>
+  </section>
+
+
+
+  <!-- WHAT MAKES US STAND OUT -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="section-label">Difference</div>
+      <h2 class="section-title">What Makes Uncodemy Stand Out?</h2>
+    </div>
+    <div class="standout-list">
+      <div class="standout-card">
+        <h4>📘 A Curriculum That Mirrors the Real World</h4>
+        <p>What sets Uncodemy apart is our commitment to teaching what actually matters in the industry. Our AI training course is designed in collaboration with top engineers and data scientists. From foundational programming with Python to deep neural networks, every module reflects the tools, challenges, and solutions you’ll encounter in the real world. Whether it’s data preprocessing or deploying a chatbot with NLP, our curriculum ensures you know what you’re doing and why.</p>
+      </div>
+      <div class="standout-card">
+        <h4>🎥 Immersive Learning That Goes Beyond Videos</h4>
+        <p>At Uncodemy, learning AI is not a passive experience — it’s a fully immersive journey. Our sessions are live, interactive, and mentor-led. You’re not watching someone code — you’re coding along with them, experimenting, failing, succeeding, and growing. Combined with regular assessments, doubt-clearing sessions, and recorded videos for revision.</p>
+      </div>
+      <div class="standout-card">
+        <h4>🛠️ Hands-On Projects That Build Your Confidence</h4>
+        <p>AI can’t be learned in theory alone. Every concept is paired with an application-based mini-project or case study. You’ll build real solutions — from recommendation systems to face detection apps and AI-powered sentiment analysis models. These projects help you build a strong GitHub portfolio and explain your work confidently in interviews.</p>
+      </div>
+      <div class="standout-card">
+        <h4>💼 Job Readiness, Not Just Course Completion</h4>
+        <p>Most courses stop at handing you a certificate — we begin where they end. You receive personal mentorship on resume-building, portfolio review, technical interview prep, and mock interviews tailored for AI and machine learning roles. Our placement team connects you to real job opportunities and stays involved until you land the role.</p>
+      </div>
+      <div class="standout-card">
+        <h4>👨‍💻 Trainers Who’ve Been There, Built That</h4>
+        <p>Uncodemy’s trainers are industry practitioners — engineers, data scientists, AI researchers — who’ve built what they teach. They share insights beyond the curriculum, including real-world challenges, optimization techniques, and the thinking that distinguishes great AI engineers from average ones.</p>
+      </div>
+      <div class="standout-card">
+        <h4>🤝 A Support System That Doesn’t Disappear</h4>
+        <p>AI can be intimidating when starting from scratch. Uncodemy has built a robust learner support system throughout your journey — and after. Recorded classes, doubt-clearing platform, revision bootcamps, and alumni communities for networking and peer learning help you stay consistent and secure opportunities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section class="section" id="curriculum">
+    <div class="section-head">
+      <div class="section-label">Syllabus</div>
+      <h2 class="section-title">Curriculum for Artificial Intelligence Training Course</h2>
+      <p class="section-sub">Designed by faculty from IITs and Expert Industry Professionals.</p>
+    </div>
+    <div class="c-stats">
+      <div class="c-stat"><div class="n">200+</div><div class="l">Hours of Content</div></div>
+      <div class="c-stat"><div class="n">130+</div><div class="l">Live Sessions</div></div>
+      <div class="c-stat"><div class="n">15+</div><div class="l">Tools & Software</div></div>
+    </div>
+    <div style="text-align:center;margin-bottom:20px;">
+      <a href="#" class="btn btn-secondary">↓ Download Curriculum</a>
+    </div>
+    <div class="curriculum">
+      <div class="mod open">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">01</div>
+          <div class="mod-title">Introduction</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Why / What machine learning</li>
+            <li>Real-time applications of machine learning</li>
+            <li>Data science project life cycle</li>
+            <li>Overview of data, tools and processes</li>
+            <li>Environment setup – Anaconda distribution setup</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">02</div>
+          <div class="mod-title">Python Programming Language</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Basic data structures – List, Set, Tuple, Dictionary</li>
+            <li>Functions and loops</li>
+            <li>Object-oriented programming: classes & objects</li>
+            <li>Packages</li>
+            <li>Overview of Python libraries (pandas, sklearn, keras, spacy, nltk, etc.)</li>
+            <li>Variables, user input, file I/O</li>
+            <li>Modules, exceptions, sys, os, math, datetime, random, JSON</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">03</div>
+          <div class="mod-title">Mathematics & Statistics</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Basics of data science & life cycle</li>
+            <li>Business Intelligence vs Data Science</li>
+            <li>Descriptive & inferential statistics</li>
+            <li>Probability, hypothesis testing, A/B testing</li>
+            <li>Tools and applications of data science</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">04</div>
+          <div class="mod-title">Machine Learning</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Supervised learning – Regression, Classification</li>
+            <li>Unsupervised learning – Clustering, dimensionality reduction</li>
+            <li>Reinforcement learning</li>
+            <li>Simple & multiple linear regression (with Python / sklearn)</li>
+            <li>Assumptions of linear regression</li>
+            <li>Information gain & decision trees</li>
+            <li>Model evaluation and industry relevance</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">05</div>
+          <div class="mod-title">Deep Learning</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Neural networks: Perceptron, activation functions</li>
+            <li>CNNs, RNNs concepts</li>
+            <li>Autoencoders & Variational Autoencoders (VAEs)</li>
+            <li>Transfer learning</li>
+            <li>GANs – Generative Adversarial Networks</li>
+            <li>Using TensorFlow / Keras for deep learning</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">06</div>
+          <div class="mod-title">Natural Language Processing (NLP)</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Introduction to NLP</li>
+            <li>Tokenization, stemming, lemmatization</li>
+            <li>Embeddings and language models</li>
+            <li>Building chatbots and conversational AI</li>
+            <li>NLTK, SpaCy & transformers intro</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">07</div>
+          <div class="mod-title">Generative AI</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>What is Generative AI?</li>
+            <li>How GenAI works: GANs, VAEs, Transformers</li>
+            <li>Popular models: GPT, DALL-E, Stable Diffusion</li>
+            <li>Prompt engineering: basics and best practices</li>
+            <li>Use cases: content creation, code generation, image synthesis</li>
+            <li>Ethical and bias issues in Generative AI</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">08</div>
+          <div class="mod-title">Computer Vision & AI Implementation</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Image classification & detection</li>
+            <li>OpenCV fundamentals</li>
+            <li>CNN-based vision projects</li>
+            <li>Building AI models with Scikit-learn, TensorFlow, PyTorch</li>
+            <li>Model evaluation and hyperparameter tuning</li>
+            <li>Career opportunities in AI and Gen AI</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">09</div>
+          <div class="mod-title">AI Projects & Capstone</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>End-to-end real-world AI solutions</li>
+            <li>GitHub portfolio building</li>
+            <li>Mentor-guided project reviews</li>
+            <li>Capstone: design, debug, and present your project</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="mod">
+        <div class="mod-head" onclick="toggleMod(this)">
+          <div class="mod-num">10</div>
+          <div class="mod-title">Interview & Placement Preparation</div>
+          <div class="mod-chevron">▾</div>
+        </div>
+        <div class="mod-body"><div class="mod-body-inner">
+          <ul>
+            <li>Resume & LinkedIn optimization</li>
+            <li>Mock interviews & HR rounds</li>
+            <li>Technical question banks for AI/ML roles</li>
+            <li>Portfolio review and interview storytelling</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="section-label">Stack</div>
+      <h2 class="section-title">Tools and Technologies Covered</h2>
+      <p class="section-sub">Master the complete toolkit used by professional data scientists in top companies worldwide.</p>
+    </div>
+    <div class="tools-wrap">
+      <span class="tool-pill">Python</span>
+      <span class="tool-pill">NumPy</span>
+      <span class="tool-pill">Pandas</span>
+      <span class="tool-pill">Scikit-learn</span>
+      <span class="tool-pill">TensorFlow</span>
+      <span class="tool-pill">Keras</span>
+      <span class="tool-pill">PyTorch</span>
+      <span class="tool-pill">NLTK</span>
+      <span class="tool-pill">SpaCy</span>
+      <span class="tool-pill">OpenCV</span>
+      <span class="tool-pill">SQL</span>
+      <span class="tool-pill">Tableau</span>
+      <span class="tool-pill">Power BI</span>
+      <span class="tool-pill">Excel</span>
+      <span class="tool-pill">Anaconda</span>
+      <span class="tool-pill">Hugging Face</span>
+      <span class="tool-pill">LangChain</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-head">
+      <div class="section-label">Hands-On</div>
+      <h2 class="section-title">Build Real AI Projects</h2>
+      <p class="section-sub">Apply concepts by shipping projects that recruiters care about — recommendation systems, face detection, sentiment analysis, and more.</p>
+    </div>
+    <div class="slider-wrap">
+      <div class="projects-scroll" id="projectsScroll">
+      <div class="project-card">
+        <div class="project-visual">💬</div>
+        <div class="project-body">
+          <h4>AI Chatbot</h4>
+          <p>Conversational agent using NLP and intent classification.</p>
+          <div class="tags"><span class="tag">NLP</span><span class="tag">Python</span><span class="tag">NLTK</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-visual">🎯</div>
+        <div class="project-body">
+          <h4>Recommendation System</h4>
+          <p>Personalized recommendations with collaborative filtering.</p>
+          <div class="tags"><span class="tag">ML</span><span class="tag">Python</span><span class="tag">Scikit-learn</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-visual">🖼️</div>
+        <div class="project-body">
+          <h4>Image / Face Detection</h4>
+          <p>CNN-based classification and detection models.</p>
+          <div class="tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span><span class="tag">OpenCV</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-visual">😊</div>
+        <div class="project-body">
+          <h4>Sentiment Analysis</h4>
+          <p>AI-powered polarity analysis for reviews and social content.</p>
+          <div class="tags"><span class="tag">NLP</span><span class="tag">ML</span><span class="tag">Python</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-visual">✨</div>
+
+        <div class="project-body">
+          <h4>Generative AI Application</h4>
+          <p>Text or image generation with modern GenAI techniques.</p>
+          <div class="tags"><span class="tag">GenAI</span><span class="tag">LLM</span><span class="tag">Python</span></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Turn Your AI Skills Into a Career</h2>
+      <p class="section-sub">Job readiness is the goal — not just course completion.</p>
+    </div>
+    <div class="career-box">
+      <div class="career-list">
+        <div class="career-item"><div class="ci-icon">📋</div><div><h4>Job-Oriented Training</h4><p>Aligned with Data Scientist, ML Engineer & AI Engineer roles.</p></div></div>
+        <div class="career-item"><div class="ci-icon">📄</div><div><h4>Resume Preparation</h4><p>Resume building and LinkedIn optimization workshops.</p></div></div>
+        <div class="career-item"><div class="ci-icon">🎤</div><div><h4>Mock Interviews</h4><p>Technical and HR mocks tailored to AI & ML positions.</p></div></div>
+        <div class="career-item"><div class="ci-icon">❓</div><div><h4>Interview Questions</h4><p>Curated banks covering ML, DL, Python and system design basics.</p></div></div>
+        <div class="career-item"><div class="ci-icon">🤝</div><div><h4>Placement Assistance</h4><p>Interview opportunities with MNCs & startups; guidance until you land the role.</p></div></div>
+        <div class="career-item"><div class="ci-icon">💼</div><div><h4>Average Package</h4><p>₹8–28 LPA range for roles targeted by this program.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION -->
+  <section class="section">
+    <div class="cert-box">
+      <div class="cert-layout">
+        <div class="cert-content">
+          <h3>Certification that Gets You Noticed</h3>
+          <p>
+            Upon completion, you’ll receive a <strong>globally recognized AI Certification</strong> from Uncodemy —
+            showcasing skills in Python, machine learning, deep learning, NLP, and computer vision.
+            Along with it: project portfolio, GitHub contributions, and confidence for technical interviews.
+          </p>
+          <p>
+            Uncodemy is an <strong>Approved Training Partner of NSDC</strong> (National Skill Development Corporation),
+            an <strong>IIBA Endorsed Education Provider</strong>, and delivers training under
+            <strong>ISO 9001:2015</strong> quality standards — in association with Skill India, NASSCOM, and Google Partner initiatives.
+            Your certificate is verifiable and carries weight with employers across India and abroad.
+          </p>
+          <ul class="cert-list">
+            <li><strong>Industry-Recognized:</strong> Enhance your resume with a certification valued by employers.</li>
+            <li><strong>Career Advancement:</strong> Open new job opportunities and career paths in Artificial Intelligence.</li>
+            <li><strong>Skill Development:</strong> Master tools such as Python, SQL, TensorFlow, and more.</li>
+            <li><strong>NSDC &amp; Skill India:</strong> Government-aligned skill credentials for higher credibility.</li>
+            <li><strong>IIBA Endorsed:</strong> International recognition as a quality education provider.</li>
+            <li><strong>ISO 9001:2015:</strong> Quality-assured training process and delivery.</li>
+          </ul>
+          <p style="font-size:12px;opacity:0.7;margin-top:12px;margin-bottom:0;">
+            In association with ISO, NASSCOM, Skill India &amp; Google Partner. Roles: AI Engineer, ML Engineer, Data Scientist, NLP Engineer, Computer Vision Specialist.
+          </p>
+        </div>
+
+        <div class="cert-slider" id="certSlider">
+          <div class="cert-slides">
+            <div class="cert-slide active"><img src="img/c1 (1).png" alt="NSDC Certificate of Partnership - Uncodemy" /></div>
+            <div class="cert-slide"><img src="img/c1 (2).png" alt="IIBA Endorsed Education Provider - Uncodemy" /></div>
+            <div class="cert-slide"><img src="img/c5.jpeg" alt="Uncodemy Certificate of Training ISO 9001:2015" /></div>
+          </div>
+          <button type="button" class="cert-nav prev" onclick="certGo(-1)" aria-label="Previous certificate">‹</button>
+          <button type="button" class="cert-nav next" onclick="certGo(1)" aria-label="Next certificate">›</button>
+          <div class="cert-dots">
+            <button type="button" class="cert-dot active" onclick="certGoTo(5)" aria-label="Certificate 1"></button>
+            <button type="button" class="cert-dot" onclick="certGoTo(10)" aria-label="Certificate 2"></button>
+            <button type="button" class="cert-dot" onclick="certGoTo(15)" aria-label="Certificate 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">What Learners Say</h2>
+      <p class="section-sub">4.9 out of 5 based on 6850+ reviews · Experiences from AI course graduates.</p>
+    </div>
+    <div class="slider-wrap">
+      <div class="testi-scroll" id="testiScroll">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">“The live projects and mentor support helped me build a solid portfolio. Placement guidance was practical and focused.”</p>
+        <div class="testi-user"><div class="testi-avatar">AR</div><div><h4>Abhilasha Rathi</h4><span>Placed at Infosys</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">“Coming from a non-tech background, the structured curriculum and doubt sessions made learning AI approachable.”</p>
+        <div class="testi-user"><div class="testi-avatar">AS</div><div><h4>Aditya Singh</h4><span>Placed at Deloitte</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">“Hands-on projects and mock interviews prepared me well for technical rounds. Highly recommend for career switchers.”</p>
+        <div class="testi-user"><div class="testi-avatar">TS</div><div><h4>Tanvi Singh</h4><span>Placed at Deloitte</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">“Good balance of theory and practice. GenAI and NLP modules were especially relevant to current industry needs.”</p>
+        <div class="testi-user"><div class="testi-avatar">RS</div><div><h4>Ritesh Singh</h4><span>Placed at Bloohash</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">“Trainers are industry practitioners. Real-world projects and placement drives made the difference for me.”</p>
+        <div class="testi-user"><div class="testi-avatar">NN</div><div><h4>Neelam Nishad</h4><span>Placed at Deloitte</span></div></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACE THEIR INTERVIEW -->
+
+  <section class="section">
+    <div class="section-head">
+      <div class="section-label">Interview Prep</div>
+      <h2 class="section-title">Uncodemy helping students to Ace Their Interview</h2>
+      <p class="section-sub">Uncodemy, the Best Data Science institute, equips students with essential skills and strategies to excel in interviews at any level.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat"><span class="ck">🛠️</span> <div><strong>Live Project Work</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Solve real business problems using actual datasets from Fortune 500 companies</span></div></div>
+      <div class="feat"><span class="ck">📄</span> <div><strong>ATS-Friendly Resume</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Resumes that pass automated screening systems</span></div></div>
+      <div class="feat"><span class="ck">👔</span> <div><strong>Grooming Session</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Master professional etiquette and corporate communication</span></div></div>
+      <div class="feat"><span class="ck">🎤</span> <div><strong>Interview Session</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Learn to answer tricky technical and behavioral questions</span></div></div>
+      <div class="feat"><span class="ck">🤝</span> <div><strong>Mock Interview</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Practice with real interviewers from Amazon, Google, Microsoft</span></div></div>
+      <div class="feat"><span class="ck">📞</span> <div><strong>MNC Interview Calls</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Direct referrals to our 500+ hiring partners</span></div></div>
+      <div class="feat"><span class="ck">💰</span> <div><strong>Salary Negotiation</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Learn to negotiate 20–40% higher packages</span></div></div>
+      <div class="feat"><span class="ck">💼</span> <div><strong>LinkedIn Profile</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Optimize profile to attract recruiters</span></div></div>
+      <div class="feat"><span class="ck">🏆</span> <div><strong>FAANG Strategies</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Crack top tech company interviews</span></div></div>
+      <div class="feat"><span class="ck">🏗️</span> <div><strong>System Design</strong><br/><span style="font-weight:400;color:var(--grey);font-size:12px;">Design scalable systems for senior engineer roles</span></div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT UNCODEMY -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">About Uncodemy — India’s Trusted Tech Learning Platform</h2>
+    </div>
+    <div class="text-block">
+      <p>
+        Uncodemy is one of India’s most respected and rapidly growing <strong>edtech platforms</strong>, known for delivering
+        <strong>job-focused training programs</strong> that are both affordable and industry-relevant. With a mission to bridge the gap between theoretical knowledge and practical application,
+        Uncodemy offers a wide range of professional courses designed for real-world success.
+      </p>
+      <p>
+        Our programs are curated by industry experts and supported by dedicated mentors, helping learners gain the
+        <strong>skills, certifications, and confidence</strong> they need to thrive in a rapidly changing job market.
+        Whether you’re a student, working professional, or career switcher, Uncodemy ensures a guided, hands-on learning experience that delivers measurable outcomes.
+      </p>
+      <p>
+        Over the years, we’ve built a strong community of learners across India—thanks to our commitment to quality, transparency, and personalized support.
+        From Artificial Intelligence and Full Stack Development to Cloud Computing and Cybersecurity, our training programs are built to make you job-ready.
+      </p>
+      <p style="margin-bottom:0;">
+        Uncodemy offers an exceptional learning experience with live Artificial Intelligence sessions, comprehensive recordings, assignments, and real-world projects,
+        all led by top-tier mentors and industry experts. Enhance your expertise with the best Artificial Intelligence course content available.
+      </p>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="#enroll" class="btn btn-primary">Join Uncodemy</a>
+      <a href="#" class="btn btn-secondary" style="margin-left:8px;">Know More</a>
+    </div>
+  </section>
+
+  <!-- LEARN FROM INDUSTRY EXPERTS -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-label">Mentors</div>
+      <h2 class="section-title">Learn From Industry Experts</h2>
+      <p class="section-sub">Our instructors bring real-world experience from top tech companies to your learning journey.</p>
+    </div>
+    <div class="features-grid" style="margin-bottom:24px;">
+      <div class="feat"><span class="ck">🔍</span> Hands-on Project Guidance</div>
+      <div class="feat"><span class="ck">📊</span> Industry Best Practices</div>
+      <div class="feat"><span class="ck">👨‍💻</span> 10+ Years Experience</div>
+      <div class="feat"><span class="ck">🤝</span> Corporate Training Experts</div>
+    </div>
+    <div class="students-scroll">
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/gangesh.png" alt=""></div>
+        <h4>Gangesh Gaur</h4>
+        <div class="uni">12+ Years · CEO, GvCloud Secure</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Ex: Sony | HP | Ericsson | EY<br/>AI, Cloud Security, DevOps, Full Stack</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/vijay1.png" alt=""></div>
+        <h4>Dr. Vijay K. Gupta</h4>
+        <div class="uni">20+ Years · Ex: MoSJ&amp;E, Govt. of India</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Data Science, ML, Generative AI, Cloud-Native</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/irshad.jpg" alt=""></div>
+        <h4>Irshad Khan</h4>
+        <div class="uni">8+ Years · Ex: KPMG | Global Logic</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Data Analytics, BI, Predictive Modeling, MLOps</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/kunal.jpg" alt=""></div>
+        <h4>Kunal Arora</h4>
+        <div class="uni">5+ Years · Ex: Delhivery | Keventers</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">NLP, Predictive Analytics, Chatbots, IoT</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/pradyumn.jpg" alt=""></div>
+        <h4>Pradyumn Singh</h4>
+        <div class="uni">8+ Years · Head of Training &amp; Placement</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Interview Prep, Resume Building, Job Placement</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/upendra.jpg" alt=""></div>
+        <h4>Upendra Kumar Tiwari</h4>
+        <div class="uni">10+ Years · Ex: Walmart | Ericsson</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Data Science, ML, Deep Learning, NLP, Big Data</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/syed.jpg" alt=""></div>
+        <h4>Syed Najeeb</h4>
+        <div class="uni">12+ Years · Ex: Air India | ISAP</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Python, ML, Deep Learning, NLP, Power BI, Tableau</div>
+      </div>
+      <div class="expert-card">
+        <div class="student-avatar"><img src="https://uncodemy.com/image/trainer-priyanka.jpg" alt=""></div>
+        <h4>Priyanka</h4>
+        <div class="uni">10+ Years · Head of HR &amp; Placement</div>
+        <div class="co" style="margin-top:6px;font-size:11px;line-height:1.4;">Interview Coaching, Salary Negotiation, HR Strategy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="section-head">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Who can join the AI course?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Anyone interested in a career in AI or data science — students, freshers, and working professionals. Beginners and those with basic coding knowledge can both join; the path adapts to your pace.</div></div>
+      </div>
+
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Is programming knowledge required?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No advanced programming is required. The course starts with Python fundamentals and builds step by step. Basic computer literacy is helpful.</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the course duration?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">The program is an 8–9 month industry-focused training covering fundamentals through advanced AI, projects, and placement preparation.</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Is the course online or offline?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Both options are available. Online live classes or offline batches, with weekday and weekend schedules to suit working professionals and students.</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Will I work on real projects?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Multiple real-world projects including chatbots, recommendation systems, image/face detection, sentiment analysis, and Generative AI applications — plus a capstone.</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Is placement assistance available?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Placement assistance includes resume building, mock interviews, interview preparation, and support with interview opportunities through hiring partners (850+ partners; placement drives with MNCs & startups).</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Will I receive a certificate?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Upon successful completion you receive an industry-recognized AI certification from Uncodemy (associated with ISO, NASSCOM, Skill India), suitable for resume and LinkedIn.</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Are EMI options available?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. EMI is available (e.g. starting around ₹5,310/month on the current special offer). There is also a risk-free trial — attend 2 classes with no hidden charges.</div></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I get lifetime access?<span class="chev">▾</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Lifetime access to recorded sessions, course materials, and ongoing alumni support so you can revise and stay connected after the program.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+ <div id="UnCodeMy-Footer"></div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMenu() {
+      menuBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+    function toggleMod(el) {
+      const mod = el.parentElement;
+      const wasOpen = mod.classList.contains('open');
+      document.querySelectorAll('.mod').forEach(m => m.classList.remove('open'));
+      if (!wasOpen) mod.classList.add('open');
+    }
+    function toggleFaq(el) {
+      const faq = el.parentElement;
+      const wasOpen = faq.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(f => f.classList.remove('open'));
+      if (!wasOpen) faq.classList.add('open');
+    }
+    function toggleWhyChoose() {
+      const text = document.getElementById('whyChooseText');
+      const btn = document.getElementById('whyChooseBtn');
+      text.classList.toggle('expanded');
+      btn.textContent = text.classList.contains('expanded') ? 'Read Less ↑' : 'Read More →';
+    }
+    function toggleKeyFeatures() {
+      const grid = document.getElementById('keyFeaturesGrid');
+      const btn = document.getElementById('loadMoreFeatures');
+      grid.classList.toggle('collapsed');
+      btn.textContent = grid.classList.contains('collapsed') ? 'Load More' : 'Show Less';
+    }
+    function scrollSlider(id, dir) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const amount = Math.min(280, el.clientWidth * 0.8);
+      el.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    }
+
+    /* Certificate auto-slider */
+    let certIndex = 0;
+    let certTimer = null;
+    const certSlides = () => document.querySelectorAll('#certSlider .cert-slide');
+    const certDots = () => document.querySelectorAll('#certSlider .cert-dot');
+
+    function certShow(i) {
+      const slides = certSlides();
+      const dots = certDots();
+      if (!slides.length) return;
+      certIndex = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => s.classList.toggle('active', n === certIndex));
+      dots.forEach((d, n) => d.classList.toggle('active', n === certIndex));
+    }
+    function certGo(dir) {
+      certShow(certIndex + dir);
+      restartCertTimer();
+    }
+    function certGoTo(i) {
+      certShow(i);
+      restartCertTimer();
+    }
+    function restartCertTimer() {
+      clearInterval(certTimer);
+      certTimer = setInterval(() => certShow(certIndex + 1), 1000);
+    }
+    restartCertTimer();
+  </script>
+
+<script src="./tutorial/components//footer-script.js"></script>
+
+</body>
+</html>

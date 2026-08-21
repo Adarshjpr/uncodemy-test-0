@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Cheat Sheet — Complete Reference | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="The ultimate Bootstrap cheat sheet — complete reference for all classes, components, utilities, grid system, typography, colors, spacing, and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 9 of 9: Bootstrap Cheat Sheet — Complete Reference</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html" class="active"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-file-alt"></i> Quick Reference</span>
+        <h1>Bootstrap Cheat Sheet — Complete Reference</h1>
+
+        <div class="card">
+
+            <p>Welcome to the ultimate Bootstrap cheat sheet! This comprehensive reference consolidates every class, component, utility, and concept from our Bootstrap tutorial series. Use it as a quick reference during development, interview preparation, or when building your next project.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-star" style="color: var(--primary);"></i> Pro Tip:</strong> Bookmark this page! It's your one-stop reference for all Bootstrap classes. The <strong>responsive breakpoints</strong> apply to most utilities: <code>sm</code> (≥576px), <code>md</code> (≥768px), <code>lg</code> (≥992px), <code>xl</code> (≥1200px), <code>xxl</code> (≥1400px).
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 1: GRID SYSTEM                                         -->
+            <!-- ============================================================ -->
+            <h2>1. Grid System</h2>
+            <p><i>Bootstrap's 12-column responsive grid is the foundation of all layouts.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.container</code></td><td>Fixed-width container (responsive)</td><td><code>&lt;div class="container"&gt;</code></td></tr>
+                        <tr><td><code>.container-fluid</code></td><td>Full-width container (100% width)</td><td><code>&lt;div class="container-fluid"&gt;</code></td></tr>
+                        <tr><td><code>.container-{breakpoint}</code></td><td>Fixed-width until breakpoint</td><td><code>.container-md</code>, <code>.container-lg</code></td></tr>
+                        <tr><td><code>.row</code></td><td>Horizontal group of columns</td><td><code>&lt;div class="row"&gt;</code></td></tr>
+                        <tr><td><code>.col</code></td><td>Auto-width column (equal distribution)</td><td><code>&lt;div class="col"&gt;</code></td></tr>
+                        <tr><td><code>.col-{number}</code></td><td>Column spanning 1-12 columns</td><td><code>.col-4</code>, <code>.col-8</code></td></tr>
+                        <tr><td><code>.col-{breakpoint}-{number}</code></td><td>Responsive column</td><td><code>.col-md-6</code>, <code>.col-lg-4</code></td></tr>
+                        <tr><td><code>.col-auto</code></td><td>Column sized to content</td><td><code>&lt;div class="col-auto"&gt;</code></td></tr>
+                        <tr><td><code>.offset-{number}</code></td><td>Push column right by number of columns</td><td><code>.offset-4</code> (centers a col-4)</td></tr>
+                        <tr><td><code>.offset-{breakpoint}-{number}</code></td><td>Responsive offset</td><td><code>.offset-md-3</code></td></tr>
+                        <tr><td><code>.order-{number}</code></td><td>Change visual order (0-5)</td><td><code>.order-2</code>, <code>.order-first</code></td></tr>
+                        <tr><td><code>.order-{breakpoint}-{number}</code></td><td>Responsive ordering</td><td><code>.order-md-1</code></td></tr>
+                        <tr><td><code>.row-cols-{number}</code></td><td>Auto-columns per row</td><td><code>.row-cols-2</code>, <code>.row-cols-md-3</code></td></tr>
+                        <tr><td><code>.g-{size}</code></td><td>Gutters (gap between columns)</td><td><code>.g-3</code>, <code>.g-5</code></td></tr>
+                        <tr><td><code>.gx-{size}</code></td><td>Horizontal gutters only</td><td><code>.gx-4</code></td></tr>
+                        <tr><td><code>.gy-{size}</code></td><td>Vertical gutters only</td><td><code>.gy-4</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Grid Breakpoints</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Breakpoint</th><th>Class Infix</th><th>Min Width</th><th>Device</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Extra Small</td><td><em>none</em></td><td>&lt;576px</td><td>Phones</td></tr>
+                        <tr><td>Small</td><td><code>sm</code></td><td>≥576px</td><td>Large phones</td></tr>
+                        <tr><td>Medium</td><td><code>md</code></td><td>≥768px</td><td>Tablets</td></tr>
+                        <tr><td>Large</td><td><code>lg</code></td><td>≥992px</td><td>Desktops</td></tr>
+                        <tr><td>Extra Large</td><td><code>xl</code></td><td>≥1200px</td><td>Large desktops</td></tr>
+                        <tr><td>Extra Extra Large</td><td><code>xxl</code></td><td>≥1400px</td><td>Extra large screens</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 2: TYPOGRAPHY                                          -->
+            <!-- ============================================================ -->
+            <h2>2. Typography</h2>
+            <p><i>Bootstrap's typography system provides clean, readable text styling.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class/Element</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code></td><td>HTML headings</td><td><code>&lt;h1&gt;Heading&lt;/h1&gt;</code></td></tr>
+                        <tr><td><code>.h1</code> - <code>.h6</code></td><td>Heading styles on any element</td><td><code>&lt;p class="h3"&gt;Looks like h3&lt;/p&gt;</code></td></tr>
+                        <tr><td><code>.display-1</code> - <code>.display-6</code></td><td>Larger display headings</td><td><code>&lt;h1 class="display-1"&gt;</code></td></tr>
+                        <tr><td><code>.lead</code></td><td>Emphasized paragraph</td><td><code>&lt;p class="lead"&gt;</code></td></tr>
+                        <tr><td><code>.text-start</code></td><td>Left-aligned text</td><td><code>&lt;p class="text-start"&gt;</code></td></tr>
+                        <tr><td><code>.text-center</code></td><td>Center-aligned text</td><td><code>&lt;p class="text-center"&gt;</code></td></tr>
+                        <tr><td><code>.text-end</code></td><td>Right-aligned text</td><td><code>&lt;p class="text-end"&gt;</code></td></tr>
+                        <tr><td><code>.text-wrap</code></td><td>Wrap text normally</td><td><code>&lt;p class="text-wrap"&gt;</code></td></tr>
+                        <tr><td><code>.text-nowrap</code></td><td>Prevent text wrapping</td><td><code>&lt;p class="text-nowrap"&gt;</code></td></tr>
+                        <tr><td><code>.text-truncate</code></td><td>Truncate with ellipsis</td><td><code>&lt;p class="text-truncate"&gt;</code></td></tr>
+                        <tr><td><code>.text-lowercase</code></td><td>Convert to lowercase</td><td><code>&lt;p class="text-lowercase"&gt;</code></td></tr>
+                        <tr><td><code>.text-uppercase</code></td><td>Convert to uppercase</td><td><code>&lt;p class="text-uppercase"&gt;</code></td></tr>
+                        <tr><td><code>.text-capitalize</code></td><td>Capitalize each word</td><td><code>&lt;p class="text-capitalize"&gt;</code></td></tr>
+                        <tr><td><code>.fw-bold</code></td><td>Bold font weight</td><td><code>&lt;p class="fw-bold"&gt;</code></td></tr>
+                        <tr><td><code>.fw-bolder</code></td><td>Bolder font weight</td><td><code>&lt;p class="fw-bolder"&gt;</code></td></tr>
+                        <tr><td><code>.fw-semibold</code></td><td>Semibold font weight</td><td><code>&lt;p class="fw-semibold"&gt;</code></td></tr>
+                        <tr><td><code>.fw-normal</code></td><td>Normal font weight</td><td><code>&lt;p class="fw-normal"&gt;</code></td></tr>
+                        <tr><td><code>.fw-light</code></td><td>Light font weight</td><td><code>&lt;p class="fw-light"&gt;</code></td></tr>
+                        <tr><td><code>.fst-italic</code></td><td>Italic text</td><td><code>&lt;p class="fst-italic"&gt;</code></td></tr>
+                        <tr><td><code>.fst-normal</code></td><td>Normal font style</td><td><code>&lt;p class="fst-normal"&gt;</code></td></tr>
+                        <tr><td><code>.text-decoration-none</code></td><td>Remove text decoration</td><td><code>&lt;a class="text-decoration-none"&gt;</code></td></tr>
+                        <tr><td><code>.text-decoration-underline</code></td><td>Underline text</td><td><code>&lt;p class="text-decoration-underline"&gt;</code></td></tr>
+                        <tr><td><code>.text-decoration-line-through</code></td><td>Strikethrough</td><td><code>&lt;p class="text-decoration-line-through"&gt;</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 3: COLORS                                              -->
+            <!-- ============================================================ -->
+            <h2>3. Colors</h2>
+            <p><i>Bootstrap's contextual color system for text, backgrounds, and borders.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Context</th><th>Text Color</th><th>Background Color</th><th>Border Color</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Primary</strong></td><td><code>.text-primary</code></td><td><code>.bg-primary</code></td><td><code>.border-primary</code></td></tr>
+                        <tr><td><strong>Secondary</strong></td><td><code>.text-secondary</code></td><td><code>.bg-secondary</code></td><td><code>.border-secondary</code></td></tr>
+                        <tr><td><strong>Success</strong></td><td><code>.text-success</code></td><td><code>.bg-success</code></td><td><code>.border-success</code></td></tr>
+                        <tr><td><strong>Danger</strong></td><td><code>.text-danger</code></td><td><code>.bg-danger</code></td><td><code>.border-danger</code></td></tr>
+                        <tr><td><strong>Warning</strong></td><td><code>.text-warning</code></td><td><code>.bg-warning</code></td><td><code>.border-warning</code></td></tr>
+                        <tr><td><strong>Info</strong></td><td><code>.text-info</code></td><td><code>.bg-info</code></td><td><code>.border-info</code></td></tr>
+                        <tr><td><strong>Light</strong></td><td><code>.text-light</code></td><td><code>.bg-light</code></td><td><code>.border-light</code></td></tr>
+                        <tr><td><strong>Dark</strong></td><td><code>.text-dark</code></td><td><code>.bg-dark</code></td><td><code>.border-dark</code></td></tr>
+                        <tr><td><strong>Muted</strong></td><td><code>.text-muted</code></td><td>—</td><td>—</td></tr>
+                        <tr><td><strong>White</strong></td><td><code>.text-white</code></td><td><code>.bg-white</code></td><td><code>.border-white</code></td></tr>
+                        <tr><td><strong>Body</strong></td><td><code>.text-body</code></td><td><code>.bg-body</code></td><td><code>.border-body</code></td></tr>
+                        <tr><td><strong>Transparent</strong></td><td>—</td><td><code>.bg-transparent</code></td><td><code>.border-transparent</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Opacity Utilities:</strong> <code>.bg-opacity-10</code>, <code>.bg-opacity-25</code>, <code>.bg-opacity-50</code>, <code>.bg-opacity-75</code>, <code>.bg-opacity-100</code></p>
+            <p><strong>Gradient:</strong> <code>.bg-gradient</code> (adds gradient to background)</p>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 4: SPACING                                             -->
+            <!-- ============================================================ -->
+            <h2>4. Spacing Utilities</h2>
+            <p><i>Margin (<code>m</code>) and padding (<code>p</code>) with 0-5 scale and <code>auto</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class Pattern</th><th>Description</th><th>Examples</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>m-{size}</code></td><td>Margin on all sides</td><td><code>m-3</code>, <code>m-5</code></td></tr>
+                        <tr><td><code>mt-{size}</code></td><td>Margin top</td><td><code>mt-2</code>, <code>mt-4</code></td></tr>
+                        <tr><td><code>mb-{size}</code></td><td>Margin bottom</td><td><code>mb-1</code>, <code>mb-3</code></td></tr>
+                        <tr><td><code>ms-{size}</code></td><td>Margin start (left in LTR)</td><td><code>ms-3</code></td></tr>
+                        <tr><td><code>me-{size}</code></td><td>Margin end (right in LTR)</td><td><code>me-3</code></td></tr>
+                        <tr><td><code>mx-{size}</code></td><td>Margin left &amp; right</td><td><code>mx-auto</code> (centers block)</td></tr>
+                        <tr><td><code>my-{size}</code></td><td>Margin top &amp; bottom</td><td><code>my-4</code></td></tr>
+                        <tr><td><code>p-{size}</code></td><td>Padding on all sides</td><td><code>p-3</code>, <code>p-5</code></td></tr>
+                        <tr><td><code>pt-{size}</code></td><td>Padding top</td><td><code>pt-2</code>, <code>pt-4</code></td></tr>
+                        <tr><td><code>pb-{size}</code></td><td>Padding bottom</td><td><code>pb-1</code>, <code>pb-3</code></td></tr>
+                        <tr><td><code>ps-{size}</code></td><td>Padding start</td><td><code>ps-3</code></td></tr>
+                        <tr><td><code>pe-{size}</code></td><td>Padding end</td><td><code>pe-3</code></td></tr>
+                        <tr><td><code>px-{size}</code></td><td>Padding left &amp; right</td><td><code>px-4</code></td></tr>
+                        <tr><td><code>py-{size}</code></td><td>Padding top &amp; bottom</td><td><code>py-4</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Spacing Scale</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Size</th><th>Value</th><th>Equivalent</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>0</code></td><td>0</td><td>0rem (none)</td></tr>
+                        <tr><td><code>1</code></td><td>$spacer × .25</td><td>0.25rem (4px)</td></tr>
+                        <tr><td><code>2</code></td><td>$spacer × .5</td><td>0.5rem (8px)</td></tr>
+                        <tr><td><code>3</code></td><td>$spacer</td><td>1rem (16px)</td></tr>
+                        <tr><td><code>4</code></td><td>$spacer × 1.5</td><td>1.5rem (24px)</td></tr>
+                        <tr><td><code>5</code></td><td>$spacer × 3</td><td>3rem (48px)</td></tr>
+                        <tr><td><code>auto</code></td><td>auto</td><td>Automatic (margin only)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 5: BUTTONS                                             -->
+            <!-- ============================================================ -->
+            <h2>5. Buttons</h2>
+            <p><i>Use <code>.btn</code> with contextual classes for styled buttons.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.btn</code></td><td>Base button class</td><td><code>&lt;button class="btn"&gt;</code></td></tr>
+                        <tr><td><code>.btn-primary</code></td><td>Primary button</td><td><code>&lt;button class="btn btn-primary"&gt;</code></td></tr>
+                        <tr><td><code>.btn-secondary</code></td><td>Secondary button</td><td><code>&lt;button class="btn btn-secondary"&gt;</code></td></tr>
+                        <tr><td><code>.btn-success</code></td><td>Success button</td><td><code>&lt;button class="btn btn-success"&gt;</code></td></tr>
+                        <tr><td><code>.btn-danger</code></td><td>Danger button</td><td><code>&lt;button class="btn btn-danger"&gt;</code></td></tr>
+                        <tr><td><code>.btn-warning</code></td><td>Warning button</td><td><code>&lt;button class="btn btn-warning"&gt;</code></td></tr>
+                        <tr><td><code>.btn-info</code></td><td>Info button</td><td><code>&lt;button class="btn btn-info"&gt;</code></td></tr>
+                        <tr><td><code>.btn-light</code></td><td>Light button</td><td><code>&lt;button class="btn btn-light"&gt;</code></td></tr>
+                        <tr><td><code>.btn-dark</code></td><td>Dark button</td><td><code>&lt;button class="btn btn-dark"&gt;</code></td></tr>
+                        <tr><td><code>.btn-link</code></td><td>Link-style button</td><td><code>&lt;button class="btn btn-link"&gt;</code></td></tr>
+                        <tr><td><code>.btn-outline-*</code></td><td>Outline buttons</td><td><code>.btn-outline-primary</code></td></tr>
+                        <tr><td><code>.btn-lg</code></td><td>Large button</td><td><code>&lt;button class="btn btn-primary btn-lg"&gt;</code></td></tr>
+                        <tr><td><code>.btn-sm</code></td><td>Small button</td><td><code>&lt;button class="btn btn-primary btn-sm"&gt;</code></td></tr>
+                        <tr><td><code>.active</code></td><td>Active state</td><td><code>&lt;button class="btn btn-primary active"&gt;</code></td></tr>
+                        <tr><td><code>disabled</code></td><td>Disabled state</td><td><code>&lt;button disabled&gt;</code></td></tr>
+                        <tr><td><code>.d-block</code> + <code>.w-100</code></td><td>Full-width button</td><td><code>&lt;button class="btn btn-primary d-block w-100"&gt;</code></td></tr>
+                        <tr><td><code>.btn-group</code></td><td>Group of buttons</td><td><code>&lt;div class="btn-group"&gt;</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 6: FORMS                                               -->
+            <!-- ============================================================ -->
+            <h2>6. Forms</h2>
+            <p><i>Form controls with <code>.form-control</code>, labels with <code>.form-label</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class/Element</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.form-control</code></td><td>Text input, textarea, select</td><td><code>&lt;input class="form-control"&gt;</code></td></tr>
+                        <tr><td><code>.form-label</code></td><td>Label for form controls</td><td><code>&lt;label class="form-label"&gt;</code></td></tr>
+                        <tr><td><code>.form-text</code></td><td>Helper text</td><td><code>&lt;div class="form-text"&gt;</code></td></tr>
+                        <tr><td><code>.form-select</code></td><td>Select dropdown</td><td><code>&lt;select class="form-select"&gt;</code></td></tr>
+                        <tr><td><code>.form-check</code></td><td>Checkbox/radio container</td><td><code>&lt;div class="form-check"&gt;</code></td></tr>
+                        <tr><td><code>.form-check-input</code></td><td>Checkbox/radio input</td><td><code>&lt;input class="form-check-input" type="checkbox"&gt;</code></td></tr>
+                        <tr><td><code>.form-check-label</code></td><td>Checkbox/radio label</td><td><code>&lt;label class="form-check-label"&gt;</code></td></tr>
+                        <tr><td><code>.form-switch</code></td><td>Toggle switch</td><td><code>&lt;div class="form-check form-switch"&gt;</code></td></tr>
+                        <tr><td><code>.form-range</code></td><td>Range slider</td><td><code>&lt;input type="range" class="form-range"&gt;</code></td></tr>
+                        <tr><td><code>.form-floating</code></td><td>Floating label</td><td><code>&lt;div class="form-floating"&gt;</code></td></tr>
+                        <tr><td><code>.form-control-lg</code></td><td>Large input</td><td><code>&lt;input class="form-control form-control-lg"&gt;</code></td></tr>
+                        <tr><td><code>.form-control-sm</code></td><td>Small input</td><td><code>&lt;input class="form-control form-control-sm"&gt;</code></td></tr>
+                        <tr><td><code>.is-valid</code></td><td>Valid state</td><td><code>&lt;input class="form-control is-valid"&gt;</code></td></tr>
+                        <tr><td><code>.is-invalid</code></td><td>Invalid state</td><td><code>&lt;input class="form-control is-invalid"&gt;</code></td></tr>
+                        <tr><td><code>.valid-feedback</code></td><td>Validation success message</td><td><code>&lt;div class="valid-feedback"&gt;</code></td></tr>
+                        <tr><td><code>.invalid-feedback</code></td><td>Validation error message</td><td><code>&lt;div class="invalid-feedback"&gt;</code></td></tr>
+                        <tr><td><code>.input-group</code></td><td>Input with add-ons</td><td><code>&lt;div class="input-group"&gt;</code></td></tr>
+                        <tr><td><code>.input-group-text</code></td><td>Text add-on</td><td><code>&lt;span class="input-group-text"&gt;</code></td></tr>
+                        <tr><td><code>.was-validated</code></td><td>Form validation trigger</td><td><code>&lt;form class="was-validated"&gt;</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 7: TABLES                                              -->
+            <!-- ============================================================ -->
+            <h2>7. Tables</h2>
+            <p><i>Use <code>.table</code> on any <code>&lt;table&gt;</code> for Bootstrap styling.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.table</code></td><td>Base table styling</td></tr>
+                        <tr><td><code>.table-striped</code></td><td>Zebra-striping on rows</td></tr>
+                        <tr><td><code>.table-bordered</code></td><td>Borders on all sides</td></tr>
+                        <tr><td><code>.table-hover</code></td><td>Hover effect on rows</td></tr>
+                        <tr><td><code>.table-sm</code></td><td>Compact table (less padding)</td></tr>
+                        <tr><td><code>.table-dark</code></td><td>Dark theme table</td></tr>
+                        <tr><td><code>.table-primary</code></td><td>Primary-colored row</td></tr>
+                        <tr><td><code>.table-secondary</code></td><td>Secondary-colored row</td></tr>
+                        <tr><td><code>.table-success</code></td><td>Success-colored row</td></tr>
+                        <tr><td><code>.table-danger</code></td><td>Danger-colored row</td></tr>
+                        <tr><td><code>.table-warning</code></td><td>Warning-colored row</td></tr>
+                        <tr><td><code>.table-info</code></td><td>Info-colored row</td></tr>
+                        <tr><td><code>.table-light</code></td><td>Light-colored row</td></tr>
+                        <tr><td><code>.table-responsive</code></td><td>Scrollable table on small screens</td></tr>
+                        <tr><td><code>.table-responsive-{breakpoint}</code></td><td>Responsive table at specific breakpoint</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 8: NAVBAR                                              -->
+            <!-- ============================================================ -->
+            <h2>8. Navbar</h2>
+            <p><i>Responsive navigation header with <code>.navbar</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.navbar</code></td><td>Base navbar container</td></tr>
+                        <tr><td><code>.navbar-expand-{breakpoint}</code></td><td>Breakpoint where navbar expands</td></tr>
+                        <tr><td><code>.navbar-brand</code></td><td>Brand/logo text or image</td></tr>
+                        <tr><td><code>.navbar-nav</code></td><td>Navigation links container</td></tr>
+                        <tr><td><code>.nav-item</code></td><td>Individual nav item</td></tr>
+                        <tr><td><code>.nav-link</code></td><td>Navigation link</td></tr>
+                        <tr><td><code>.navbar-toggler</code></td><td>Hamburger menu button</td></tr>
+                        <tr><td><code>.navbar-toggler-icon</code></td><td>Hamburger icon</td></tr>
+                        <tr><td><code>.collapse</code></td><td>Collapsible content</td></tr>
+                        <tr><td><code>.navbar-collapse</code></td><td>Collapsible navbar section</td></tr>
+                        <tr><td><code>.navbar-dark</code></td><td>Dark theme (light text)</td></tr>
+                        <tr><td><code>.navbar-light</code></td><td>Light theme (dark text)</td></tr>
+                        <tr><td><code>.bg-dark</code>, <code>.bg-light</code></td><td>Background colors</td></tr>
+                        <tr><td><code>.fixed-top</code></td><td>Fixed to top of viewport</td></tr>
+                        <tr><td><code>.fixed-bottom</code></td><td>Fixed to bottom of viewport</td></tr>
+                        <tr><td><code>.sticky-top</code></td><td>Sticky when scrolling</td></tr>
+                        <tr><td><code>.me-auto</code></td><td>Push items to the right</td></tr>
+                        <tr><td><code>.ms-auto</code></td><td>Push items to the left</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 9: CARDS                                               -->
+            <!-- ============================================================ -->
+            <h2>9. Cards</h2>
+            <p><i>Flexible content container with <code>.card</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.card</code></td><td>Base card container</td></tr>
+                        <tr><td><code>.card-header</code></td><td>Card header section</td></tr>
+                        <tr><td><code>.card-body</code></td><td>Main card content</td></tr>
+                        <tr><td><code>.card-footer</code></td><td>Card footer section</td></tr>
+                        <tr><td><code>.card-title</code></td><td>Card title</td></tr>
+                        <tr><td><code>.card-text</code></td><td>Card text content</td></tr>
+                        <tr><td><code>.card-img-top</code></td><td>Image at top of card</td></tr>
+                        <tr><td><code>.card-img-bottom</code></td><td>Image at bottom of card</td></tr>
+                        <tr><td><code>.card-img</code></td><td>Full-width image in card</td></tr>
+                        <tr><td><code>.card-img-overlay</code></td><td>Overlay text on image</td></tr>
+                        <tr><td><code>.card-subtitle</code></td><td>Card subtitle</td></tr>
+                        <tr><td><code>.card-link</code></td><td>Link inside card</td></tr>
+                        <tr><td><code>.card-group</code></td><td>Group of equal-height cards</td></tr>
+                        <tr><td><code>.card-deck</code></td><td>Deck of cards (deprecated)</td></tr>
+                        <tr><td><code>.list-group-flush</code></td><td>List group inside card</td></tr>
+                        <tr><td><code>.text-bg-*</code></td><td>Card with colored background</td></tr>
+                        <tr><td><code>.border-*</code></td><td>Card with colored border</td></tr>
+                        <tr><td><code>.h-100</code></td><td>Card fills container height</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 10: MODALS                                             -->
+            <!-- ============================================================ -->
+            <h2>10. Modals</h2>
+            <p><i>Dialog/popup with <code>.modal</code> and <code>data-bs-toggle="modal"</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class/Attribute</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.modal</code></td><td>Modal container (hidden by default)</td></tr>
+                        <tr><td><code>.modal-dialog</code></td><td>Modal dialog container</td></tr>
+                        <tr><td><code>.modal-content</code></td><td>Modal content wrapper</td></tr>
+                        <tr><td><code>.modal-header</code></td><td>Modal header (title + close button)</td></tr>
+                        <tr><td><code>.modal-body</code></td><td>Modal body content</td></tr>
+                        <tr><td><code>.modal-footer</code></td><td>Modal footer (buttons)</td></tr>
+                        <tr><td><code>.modal-title</code></td><td>Modal title</td></tr>
+                        <tr><td><code>.btn-close</code></td><td>Close button (X)</td></tr>
+                        <tr><td><code>.modal-sm</code></td><td>Small modal</td></tr>
+                        <tr><td><code>.modal-lg</code></td><td>Large modal</td></tr>
+                        <tr><td><code>.modal-xl</code></td><td>Extra large modal</td></tr>
+                        <tr><td><code>.modal-fullscreen</code></td><td>Full-screen modal</td></tr>
+                        <tr><td><code>.modal-dialog-scrollable</code></td><td>Scrollable modal body</td></tr>
+                        <tr><td><code>.modal-dialog-centered</code></td><td>Vertically centered modal</td></tr>
+                        <tr><td><code>data-bs-toggle="modal"</code></td><td>Triggers modal</td></tr>
+                        <tr><td><code>data-bs-target="#id"</code></td><td>Targets modal ID</td></tr>
+                        <tr><td><code>data-bs-dismiss="modal"</code></td><td>Closes modal</td></tr>
+                        <tr><td><code>.fade</code></td><td>Fade animation</td></tr>
+                        <tr><td><code>data-bs-backdrop="static"</code></td><td>Prevents closing on backdrop click</td></tr>
+                        <tr><td><code>data-bs-keyboard="false"</code></td><td>Prevents closing with ESC key</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 11: CAROUSEL                                           -->
+            <!-- ============================================================ -->
+            <h2>11. Carousel</h2>
+            <p><i>Image slider/slideshow with <code>.carousel</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class/Attribute</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.carousel</code></td><td>Carousel container</td></tr>
+                        <tr><td><code>.carousel-inner</code></td><td>Slides wrapper</td></tr>
+                        <tr><td><code>.carousel-item</code></td><td>Individual slide</td></tr>
+                        <tr><td><code>.active</code></td><td>Active/visible slide</td></tr>
+                        <tr><td><code>.carousel-indicators</code></td><td>Slide indicators (dots)</td></tr>
+                        <tr><td><code>.carousel-control-prev</code></td><td>Previous button</td></tr>
+                        <tr><td><code>.carousel-control-next</code></td><td>Next button</td></tr>
+                        <tr><td><code>.carousel-control-prev-icon</code></td><td>Previous arrow icon</td></tr>
+                        <tr><td><code>.carousel-control-next-icon</code></td><td>Next arrow icon</td></tr>
+                        <tr><td><code>.carousel-caption</code></td><td>Caption overlay on slide</td></tr>
+                        <tr><td><code>.carousel-dark</code></td><td>Dark theme (dark controls)</td></tr>
+                        <tr><td><code>.carousel-fade</code></td><td>Fade transition instead of slide</td></tr>
+                        <tr><td><code>data-bs-ride="carousel"</code></td><td>Autoplay</td></tr>
+                        <tr><td><code>data-bs-interval="2000"</code></td><td>Slide interval (milliseconds)</td></tr>
+                        <tr><td><code>data-bs-slide-to="0"</code></td><td>Slide to specific index</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 12: ACCORDION                                          -->
+            <!-- ============================================================ -->
+            <h2>12. Accordion</h2>
+            <p><i>Expandable sections with <code>.accordion</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class/Attribute</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.accordion</code></td><td>Accordion container</td></tr>
+                        <tr><td><code>.accordion-item</code></td><td>Individual accordion item</td></tr>
+                        <tr><td><code>.accordion-header</code></td><td>Header containing toggle button</td></tr>
+                        <tr><td><code>.accordion-button</code></td><td>Toggle button</td></tr>
+                        <tr><td><code>.accordion-collapse</code></td><td>Collapsible content container</td></tr>
+                        <tr><td><code>.accordion-body</code></td><td>Accordion content</td></tr>
+                        <tr><td><code>.accordion-flush</code></td><td>Borderless accordion</td></tr>
+                        <tr><td><code>.show</code></td><td>Expanded/visible state</td></tr>
+                        <tr><td><code>.collapsed</code></td><td>Collapsed state of button</td></tr>
+                        <tr><td><code>data-bs-parent="#id"</code></td><td>Parent accordion (close others)</td></tr>
+                        <tr><td><code>data-bs-toggle="collapse"</code></td><td>Toggle collapse</td></tr>
+                        <tr><td><code>data-bs-target="#id"</code></td><td>Target collapsible content</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 13: DROPDOWNS                                          -->
+            <!-- ============================================================ -->
+            <h2>13. Dropdowns</h2>
+            <p><i>Contextual menus with <code>.dropdown</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class/Attribute</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.dropdown</code></td><td>Dropdown container</td></tr>
+                        <tr><td><code>.dropdown-toggle</code></td><td>Toggle button</td></tr>
+                        <tr><td><code>.dropdown-menu</code></td><td>Dropdown menu container</td></tr>
+                        <tr><td><code>.dropdown-item</code></td><td>Individual menu item</td></tr>
+                        <tr><td><code>.dropdown-divider</code></td><td>Divider line in menu</td></tr>
+                        <tr><td><code>.dropdown-header</code></td><td>Header text in menu</td></tr>
+                        <tr><td><code>.dropdown-menu-dark</code></td><td>Dark dropdown menu</td></tr>
+                        <tr><td><code>.dropdown-menu-end</code></td><td>Right-aligned dropdown menu</td></tr>
+                        <tr><td><code>.dropup</code></td><td>Dropdown opens upward</td></tr>
+                        <tr><td><code>.dropend</code></td><td>Dropdown opens to the right</td></tr>
+                        <tr><td><code>.dropstart</code></td><td>Dropdown opens to the left</td></tr>
+                        <tr><td><code>data-bs-toggle="dropdown"</code></td><td>Triggers dropdown</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 14: FLEXBOX UTILITIES                                  -->
+            <!-- ============================================================ -->
+            <h2>14. Flexbox Utilities</h2>
+            <p><i>CSS Flexbox utilities with <code>.d-flex</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.d-flex</code></td><td>Flex container (block-level)</td></tr>
+                        <tr><td><code>.d-inline-flex</code></td><td>Flex container (inline-level)</td></tr>
+                        <tr><td><code>.flex-row</code></td><td>Horizontal direction (default)</td></tr>
+                        <tr><td><code>.flex-row-reverse</code></td><td>Horizontal reversed</td></tr>
+                        <tr><td><code>.flex-column</code></td><td>Vertical direction</td></tr>
+                        <tr><td><code>.flex-column-reverse</code></td><td>Vertical reversed</td></tr>
+                        <tr><td><code>.flex-wrap</code></td><td>Wrap items to next line</td></tr>
+                        <tr><td><code>.flex-nowrap</code></td><td>No wrap (default)</td></tr>
+                        <tr><td><code>.flex-wrap-reverse</code></td><td>Wrap reversed</td></tr>
+                        <tr><td><code>.justify-content-start</code></td><td>Items at start (left)</td></tr>
+                        <tr><td><code>.justify-content-end</code></td><td>Items at end (right)</td></tr>
+                        <tr><td><code>.justify-content-center</code></td><td>Items centered</td></tr>
+                        <tr><td><code>.justify-content-between</code></td><td>Space between items</td></tr>
+                        <tr><td><code>.justify-content-around</code></td><td>Space around items</td></tr>
+                        <tr><td><code>.justify-content-evenly</code></td><td>Evenly distributed space</td></tr>
+                        <tr><td><code>.align-items-start</code></td><td>Items at top</td></tr>
+                        <tr><td><code>.align-items-end</code></td><td>Items at bottom</td></tr>
+                        <tr><td><code>.align-items-center</code></td><td>Items centered vertically</td></tr>
+                        <tr><td><code>.align-items-baseline</code></td><td>Items aligned by baseline</td></tr>
+                        <tr><td><code>.align-items-stretch</code></td><td>Items stretched (default)</td></tr>
+                        <tr><td><code>.align-self-start</code></td><td>Self at top</td></tr>
+                        <tr><td><code>.align-self-end</code></td><td>Self at bottom</td></tr>
+                        <tr><td><code>.align-self-center</code></td><td>Self centered</td></tr>
+                        <tr><td><code>.align-self-stretch</code></td><td>Self stretched</td></tr>
+                        <tr><td><code>.align-self-baseline</code></td><td>Self baseline</td></tr>
+                        <tr><td><code>.flex-grow-1</code></td><td>Item grows to fill space</td></tr>
+                        <tr><td><code>.flex-shrink-0</code></td><td>Item does not shrink</td></tr>
+                        <tr><td><code>.flex-fill</code></td><td>Force equal width items</td></tr>
+                        <tr><td><code>.order-0</code> to <code>.order-5</code></td><td>Change visual order</td></tr>
+                        <tr><td><code>.order-first</code></td><td>First (-1)</td></tr>
+                        <tr><td><code>.order-last</code></td><td>Last (6)</td></tr>
+                        <tr><td><code>.gap-{size}</code></td><td>Gap between flex items</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 15: DISPLAY UTILITIES                                  -->
+            <!-- ============================================================ -->
+            <h2>15. Display Utilities</h2>
+            <p><i>Control element visibility and display behavior.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.d-none</code></td><td>Hidden (display: none)</td></tr>
+                        <tr><td><code>.d-block</code></td><td>Block element</td></tr>
+                        <tr><td><code>.d-inline</code></td><td>Inline element</td></tr>
+                        <tr><td><code>.d-inline-block</code></td><td>Inline-block element</td></tr>
+                        <tr><td><code>.d-flex</code></td><td>Flex container</td></tr>
+                        <tr><td><code>.d-inline-flex</code></td><td>Inline flex container</td></tr>
+                        <tr><td><code>.d-grid</code></td><td>Grid container</td></tr>
+                        <tr><td><code>.d-table</code></td><td>Table element</td></tr>
+                        <tr><td><code>.d-table-cell</code></td><td>Table cell</td></tr>
+                        <tr><td><code>.d-table-row</code></td><td>Table row</td></tr>
+                        <tr><td><code>.visible</code></td><td>Visible (default)</td></tr>
+                        <tr><td><code>.invisible</code></td><td>Invisible (still takes space)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Responsive Display:</strong> Use <code>.d-{breakpoint}-{value}</code> (e.g., <code>.d-md-none</code>, <code>.d-lg-block</code>)</p>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 16: POSITIONING UTILITIES                              -->
+            <!-- ============================================================ -->
+            <h2>16. Positioning Utilities</h2>
+            <p><i>Control element positioning with <code>.position-*</code>.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.position-static</code></td><td>Default static position</td></tr>
+                        <tr><td><code>.position-relative</code></td><td>Relative position</td></tr>
+                        <tr><td><code>.position-absolute</code></td><td>Absolute position</td></tr>
+                        <tr><td><code>.position-fixed</code></td><td>Fixed position (viewport)</td></tr>
+                        <tr><td><code>.position-sticky</code></td><td>Sticky position</td></tr>
+                        <tr><td><code>.top-0</code></td><td>Top: 0</td></tr>
+                        <tr><td><code>.bottom-0</code></td><td>Bottom: 0</td></tr>
+                        <tr><td><code>.start-0</code></td><td>Left: 0</td></tr>
+                        <tr><td><code>.end-0</code></td><td>Right: 0</td></tr>
+                        <tr><td><code>.top-50</code></td><td>Top: 50%</td></tr>
+                        <tr><td><code>.start-50</code></td><td>Left: 50%</td></tr>
+                        <tr><td><code>.translate-middle</code></td><td>Transform: translate(-50%, -50%)</td></tr>
+                        <tr><td><code>.translate-middle-x</code></td><td>Transform: translateX(-50%)</td></tr>
+                        <tr><td><code>.translate-middle-y</code></td><td>Transform: translateY(-50%)</td></tr>
+                        <tr><td><code>.z-0</code> to <code>.z-3</code></td><td>Z-index values</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 17: SIZING & BORDERS                                   -->
+            <!-- ============================================================ -->
+            <h2>17. Sizing &amp; Borders</h2>
+            <p><i>Element sizing and border utilities.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.w-25</code>, <code>.w-50</code>, <code>.w-75</code>, <code>.w-100</code></td><td>Width percentage</td></tr>
+                        <tr><td><code>.mw-100</code></td><td>Max-width: 100%</td></tr>
+                        <tr><td><code>.h-25</code>, <code>.h-50</code>, <code>.h-75</code>, <code>.h-100</code></td><td>Height percentage</td></tr>
+                        <tr><td><code>.mh-100</code></td><td>Max-height: 100%</td></tr>
+                        <tr><td><code>.min-vw-100</code></td><td>Min-width: 100vw</td></tr>
+                        <tr><td><code>.min-vh-100</code></td><td>Min-height: 100vh</td></tr>
+                        <tr><td><code>.vw-100</code></td><td>Width: 100vw</td></tr>
+                        <tr><td><code>.vh-100</code></td><td>Height: 100vh</td></tr>
+                        <tr><td><code>.border</code></td><td>Border</td></tr>
+                        <tr><td><code>.border-0</code></td><td>No border</td></tr>
+                        <tr><td><code>.border-top</code>, <code>.border-bottom</code></td><td>Border on specific side</td></tr>
+                        <tr><td><code>.border-start</code>, <code>.border-end</code></td><td>Border on specific side</td></tr>
+                        <tr><td><code>.border-{color}</code></td><td>Border color</td></tr>
+                        <tr><td><code>.border-opacity-10</code> to <code>.border-opacity-100</code></td><td>Border opacity</td></tr>
+                        <tr><td><code>.rounded</code></td><td>Rounded corners</td></tr>
+                        <tr><td><code>.rounded-0</code></td><td>No rounding</td></tr>
+                        <tr><td><code>.rounded-top</code>, <code>.rounded-bottom</code></td><td>Rounded specific side</td></tr>
+                        <tr><td><code>.rounded-circle</code></td><td>Circle shape</td></tr>
+                        <tr><td><code>.rounded-pill</code></td><td>Pill shape</td></tr>
+                        <tr><td><code>.shadow</code></td><td>Box shadow</td></tr>
+                        <tr><td><code>.shadow-sm</code></td><td>Small shadow</td></tr>
+                        <tr><td><code>.shadow-lg</code></td><td>Large shadow</td></tr>
+                        <tr><td><code>.shadow-none</code></td><td>No shadow</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 18: SASS THEMING VARIABLES                            -->
+            <!-- ============================================================ -->
+            <h2>18. Sass Theming Variables</h2>
+            <p><i>Key Sass variables for customizing Bootstrap themes.</i></p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Variable</th><th>Description</th><th>Default</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>$primary</code></td><td>Primary brand color</td><td><code>#0d6efd</code></td></tr>
+                        <tr><td><code>$secondary</code></td><td>Secondary color</td><td><code>#6c757d</code></td></tr>
+                        <tr><td><code>$success</code></td><td>Success color</td><td><code>#198754</code></td></tr>
+                        <tr><td><code>$danger</code></td><td>Danger color</td><td><code>#dc3545</code></td></tr>
+                        <tr><td><code>$warning</code></td><td>Warning color</td><td><code>#ffc107</code></td></tr>
+                        <tr><td><code>$info</code></td><td>Info color</td><td><code>#0dcaf0</code></td></tr>
+                        <tr><td><code>$light</code></td><td>Light color</td><td><code>#f8f9fa</code></td></tr>
+                        <tr><td><code>$dark</code></td><td>Dark color</td><td><code>#212529</code></td></tr>
+                        <tr><td><code>$font-family-base</code></td><td>Base font family</td><td><code>system-ui, -apple-system, ...</code></td></tr>
+                        <tr><td><code>$font-size-base</code></td><td>Base font size</td><td><code>1rem</code></td></tr>
+                        <tr><td><code>$spacer</code></td><td>Base spacing unit</td><td><code>1rem</code></td></tr>
+                        <tr><td><code>$border-radius</code></td><td>Base border radius</td><td><code>.375rem</code></td></tr>
+                        <tr><td><code>$box-shadow</code></td><td>Default shadow</td><td><code>0 .5rem 1rem rgba(0,0,0,.15)</code></td></tr>
+                        <tr><td><code>$grid-gutter-width</code></td><td>Grid gutter width</td><td><code>1.5rem</code></td></tr>
+                        <tr><td><code>$navbar-padding-y</code></td><td>Navbar vertical padding</td><td><code>.5rem</code></td></tr>
+                        <tr><td><code>$card-border-radius</code></td><td>Card border radius</td><td><code>.375rem</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 19: QUICK COMMON PATTERNS                             -->
+            <!-- ============================================================ -->
+            <h2>19. Quick Common Patterns</h2>
+            <p><i>Ready-to-use pattern snippets for common use cases.</i></p>
+
+            <h3>Centering Content</h3>
+            <pre class="code-block"><code>&lt;!-- Flexbox center --&gt;
+&lt;div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;"&gt;
+    Centered content
+&lt;/div&gt;
+
+&lt;!-- Text center --&gt;
+&lt;div class="text-center"&gt;Centered text&lt;/div&gt;
+
+&lt;!-- Block center (margin auto) --&gt;
+&lt;div class="mx-auto" style="width: 200px;"&gt;Centered block&lt;/div&gt;</code></pre>
+
+            <h3>Spacing Helper</h3>
+            <pre class="code-block"><code>&lt;!-- Consistent spacing --&gt;
+&lt;div class="p-3 mb-4 bg-light rounded"&gt;Content with spacing&lt;/div&gt;</code></pre>
+
+            <h3>Mobile-First Responsive</h3>
+            <pre class="code-block"><code>&lt;!-- Show/hide on different screens --&gt;
+&lt;div class="d-none d-md-block"&gt;Visible on medium+&lt;/div&gt;
+&lt;div class="d-block d-md-none"&gt;Visible only on mobile&lt;/div&gt;
+
+&lt;!-- Responsive grid --&gt;
+&lt;div class="row row-cols-1 row-cols-md-2 row-cols-lg-4"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Button with Icon</h3>
+            <pre class="code-block"><code>&lt;button class="btn btn-primary"&gt;
+    &lt;i class="fas fa-plus"&gt;&lt;/i&gt; Add Item
+&lt;/button&gt;</code></pre>
+
+            <h3>Card Grid</h3>
+            <pre class="code-block"><code>&lt;div class="row row-cols-1 row-cols-md-3 g-4"&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card h-100"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Modal Trigger</h3>
+            <pre class="code-block"><code>&lt;button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"&gt;
+    Open Modal
+&lt;/button&gt;</code></pre>
+
+            <h3>Navbar with Toggle</h3>
+            <pre class="code-block"><code>&lt;nav class="navbar navbar-expand-lg bg-light"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="nav"&gt;
+            &lt;ul class="navbar-nav ms-auto"&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h3>Form Input with Validation</h3>
+            <pre class="code-block"><code>&lt;div class="mb-3"&gt;
+    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="form-control is-valid" value="user@example.com"&gt;
+    &lt;div class="valid-feedback"&gt;Looks good!&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 20: CONCLUSION                                         -->
+            <!-- ============================================================ -->
+            <div style="margin-top: 30px; padding: 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary); text-align: center;">
+                <h3 style="margin-top: 0;">🎉 Congratulations! You've Mastered Bootstrap! 🎉</h3>
+                <p style="margin-bottom: 0;">You now have a complete reference for Bootstrap. Keep this page bookmarked for quick access during development. Happy building!</p>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-customization-sass-theming.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Customization — Sass &amp; Theming</a>
+            <span class="disabled"><span class="label">Next <i class="fas fa-arrow-right"></i></span>You've completed the series! 🎉</span>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

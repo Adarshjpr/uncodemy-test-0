@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build a Career in Data Science or AI After MSc? Complete Roadmap | Uncodemy</title>
+    <meta name="description" content="A data science and AI roadmap for MSc graduates in physics, chemistry, mathematics, statistics and life sciences. Convert your research training into an industry job." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/career-in-data-science-or-ai-after-msc-roadmap" />
+    <meta property="og:title" content="How to Build a Career in Data Science or AI After MSc? Complete Roadmap | Uncodemy" />
+    <meta property="og:description" content="MSc to data science or AI. Your research training is worth more than you think &mdash; here is what to add, and how to translate a thesis into an industry portfolio." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <style>
+        /* page-specific: career path diagram */
+        .career-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .career-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .career-box .c-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .career-box .c-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .career-box .c-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .career-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .career-box .c-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .career-box .c-v {
+                font-size: 14px;
+            }
+            .career-box .c-l {
+                font-size: 8px;
+            }
+            .career-box .c-d {
+                font-size: 9px;
+            }
+        }
+        /* role badges */
+        .role-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>How to Build a Career in Data Science or AI After MSc? <mark>Complete Roadmap for Science Postgraduates</mark></h1>
+                <p class="lede">An MSc already trained you in the hardest part of data science: designing an investigation and defending a conclusion. This roadmap covers the engineering layer you are missing, and how to turn your thesis into a portfolio industry recruiters understand.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;msc data science ai career roadmap&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="true">MSc / Science PG</button>
+                    <button class="chip" aria-pressed="false">Data Science</button>
+                    <button class="chip" aria-pressed="false">AI Engineer</button>
+                    <button class="chip" aria-pressed="false">Statistics</button>
+                    <button class="chip" aria-pressed="false">Python</button>
+                    <button class="chip" aria-pressed="false">Research to Industry</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Career Path Explorer · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different career paths">
+                        <button aria-pressed="true" data-r="ds">Data Scientist</button>
+                        <button aria-pressed="false" data-r="ml">ML Engineer</button>
+                        <button aria-pressed="false" data-r="ai">AI Engineer</button>
+                        <button aria-pressed="false" data-r="quant">Quant / Research</button>
+                    </div>
+                    <div class="career-grid" id="careerTiers">
+                        <div class="career-box"><div class="c-l">Role</div><div class="c-v" id="roleName">&mdash;</div><div class="c-d">Job title</div></div>
+                        <div class="career-box"><div class="c-l">Avg. Salary (India)</div><div class="c-v" id="salaryVal">&mdash;</div><div class="c-d">Fresher to mid-level</div></div>
+                        <div class="career-box"><div class="c-l">Learning Time</div><div class="c-v" id="timeVal">&mdash;</div><div class="c-d">From zero to job-ready</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>MSc Graduate</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Python + Engineering Layer</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Translate Thesis to Portfolio</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Data Science / AI Job</span>
+                    </div>
+                    <div class="demo-cap">Tap a role to compare outcomes. MSc graduates in mathematics, statistics and physics usually reach interview standard faster than any other non-CS background.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Career Guides</a> / <a href="#top">Postgraduate to Data</a> / <span>MSc to Data Science / AI</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Guide · MSc to Data Science &amp; AI</p>
+                <h1>How to Build a Career in Data Science or AI After MSc: The Complete Roadmap for Science Postgraduates</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 12 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>17 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                               <figure>
+                    <svg viewBox="0 0 950 280" role="img" aria-label="Diagram showing MSc research skills plus an engineering layer leading to data science and AI roles">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="950" height="280" fill="url(#g4)" />
+                        
+                        <!-- Titles -->
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">YOUR MSc TRAINING</text>
+                            <text x="350" y="40">THE MISSING LAYER</text>
+                            <text x="660" y="40">ROLES YOU CAN TARGET</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="45" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Already strong</text>
+                        <text x="45" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Mathematics &amp; statistics</text>
+                        <text x="45" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Experiment design</text>
+                        <text x="45" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Literature review</text>
+                        <text x="45" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Writing &amp; defending results</text>
+                        <rect x="40" y="210" width="190" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="65" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Rare in the market</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="335" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Add the engineering</text>
+                        <text x="335" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Production Python &amp; Git</text>
+                        <text x="335" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• SQL at scale</text>
+                        <text x="335" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• ML libraries &amp; validation</text>
+                        <text x="335" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Deployment &amp; cloud basics</text>
+                        <rect x="335" y="210" width="180" height="20" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8a6100">6&ndash;12 months</text>
+
+                        <!-- Column 3 -->
+                        <rect x="620" y="58" width="300" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="645" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Target roles</text>
+                        <text x="645" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data Scientist</text>
+                        <text x="645" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• ML Engineer</text>
+                        <text x="645" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• AI / GenAI Engineer</text>
+                        <text x="645" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Quantitative Analyst</text>
+                        <rect x="645" y="210" width="250" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="670" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Higher entry bands</text>
+
+                        <!-- Arrows -->
+                        <path d="M250 148 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                        <path d="M540 148 H606" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                    </svg>
+                    <figcaption>Your MSc supplied the statistics and the research discipline. What is missing is engineering practice &mdash; version control, clean code, databases and deployment.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary &mdash; MSc graduates in data science and AI</h2>
+                    <p>MSc graduates are the strongest non&#8209;CS candidates in this field, and they often undersell themselves. You have already done the thing companies struggle to teach: <b>design a study, handle uncertainty, and defend a conclusion in writing</b>. What you usually lack is engineering practice &mdash; version control, readable code, databases, and getting a model out of a notebook. Close that gap in six to twelve months and you can enter at a higher band than most career switchers.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>Which MSc streams map to which roles</b> &mdash; physics, maths, stats, chemistry, biology.</li>
+                        <li><b>The engineering layer</b> you are missing, in detail.</li>
+                        <li><b>How to translate a thesis</b> into a portfolio recruiters read.</li>
+                        <li><b>Research versus industry</b> &mdash; the working&#8209;style changes that surprise people.</li>
+                        <li><b>A 9&#8209;month plan</b> including a PhD&#8209;or&#8209;industry decision point.</li>
+                        <li><b>Interview answers</b> for academic&#8209;to&#8209;industry questions.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Which MSc stream maps to which role</a></li>
+                        <li><a href="#s2"><span class="n">02</span>What your MSc already gave you</a></li>
+                        <li><a href="#s3"><span class="n">03</span>The engineering layer &mdash; what you are actually missing</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Data Scientist &mdash; the most direct route</a></li>
+                        <li><a href="#s5"><span class="n">05</span>ML and AI Engineer &mdash; if you like building</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Quantitative and research roles &mdash; the high&#8209;mathematics route</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Translating your thesis into a portfolio</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Research versus industry &mdash; the adjustment nobody warns you about</a></li>
+                        <li><a href="#s9"><span class="n">09</span>Step&#8209;by&#8209;step roadmap &mdash; nine months</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Skills to learn &mdash; the complete list</a></li>
+                        <li><a href="#s11"><span class="n">11</span>Interview Q&amp;A &mdash; academic to industry</a></li>
+                        <li><a href="#quiz"><span class="n">12</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">13</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">14</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Which MSc stream maps to which role</h2>
+                <p>Your subject changes the fastest route. All of these routes work; they differ in what you must add.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>MSc stream</th><th>Natural fit</th><th>What you must add</th><th>Time</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Statistics / Mathematics</b></td><td>Data Scientist, Quantitative Analyst</td><td>Python engineering, SQL, ML libraries</td><td>6&ndash;8 months</td></tr>
+                            <tr><td><b>Physics</b></td><td>Data Scientist, ML Engineer, Quant</td><td>SQL, software practice, business framing</td><td>7&ndash;9 months</td></tr>
+                            <tr><td><b>Computer Applications / IT</b></td><td>AI Engineer, ML Engineer</td><td>Statistics depth, ML validation</td><td>6&ndash;9 months</td></tr>
+                            <tr><td><b>Chemistry / Materials</b></td><td>Data Scientist (R&amp;D), Simulation Analyst</td><td>Python, SQL, ML, and a domain bridge</td><td>9&ndash;12 months</td></tr>
+                            <tr><td><b>Biology / Biotech</b></td><td>Bioinformatics, Healthcare Analytics</td><td>Python, SQL, sequence or clinical data tooling</td><td>9&ndash;12 months</td></tr>
+                            <tr><td><b>Economics</b></td><td>Decision Scientist, Business Analyst</td><td>Python, SQL, causal methods in practice</td><td>6&ndash;9 months</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>Key insight:</b> do not abandon your domain. A chemistry MSc who can model reaction data, or a biology MSc who understands clinical trial structure, is far more valuable than a generic analyst &mdash; and competes in a much smaller pool.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>What your MSc already gave you</h2>
+                <p>Name these explicitly in interviews. Most candidates cannot claim any of them.</p>
+
+                <ul>
+                    <li><b>Statistical thinking</b> &mdash; you already know what a confidence interval means and why a single measurement is not a result.</li>
+                    <li><b>Experiment design</b> &mdash; controls, confounders and sample size are the same ideas as A/B testing.</li>
+                    <li><b>Handling uncertainty</b> &mdash; error bars, propagation and significance are daily concepts in industry modelling.</li>
+                    <li><b>Literature review</b> &mdash; you can read a technical paper and implement the method, which is exactly how new AI techniques enter a company.</li>
+                    <li><b>Long project stamina</b> &mdash; a two&#8209;year thesis proves you can carry an open&#8209;ended problem to a conclusion.</li>
+                    <li><b>Technical writing</b> &mdash; you can produce a document that survives review.</li>
+                </ul>
+
+                <div class="note"><b>Pro tip:</b> in interviews, translate rather than describe. &ldquo;I ran a controlled study with 40 samples and reported effect size with confidence intervals&rdquo; is an A/B testing answer, even if the subject was spectroscopy.</div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>The engineering layer &mdash; what you are actually missing</h2>
+                <p>This is the honest gap. Academic code is written once for one person; industry code is read by others and run repeatedly.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Gap</th><th>How it shows up in academia</th><th>Industry standard</th></tr></thead>
+                        <tbody>
+                            <tr><td>Version control</td><td>final_v3_really_final.ipynb</td><td>Git branches, commits, pull requests</td></tr>
+                            <tr><td>Code structure</td><td>One long notebook</td><td>Functions, modules, tests, a README</td></tr>
+                            <tr><td>Data access</td><td>CSV files on a laptop</td><td>SQL against a warehouse, scheduled pipelines</td></tr>
+                            <tr><td>Reproducibility</td><td>&ldquo;It worked on my machine&rdquo;</td><td>Environment files, Docker, pinned dependencies</td></tr>
+                            <tr><td>Deployment</td><td>Not applicable</td><td>An API endpoint or a scheduled job in production</td></tr>
+                            <tr><td>Scope discipline</td><td>Explore until it is interesting</td><td>Ship a good&#8209;enough answer by Thursday</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Python &mdash; industry style</button>
+                        <button role="tab" aria-selected="false" data-t="1">SQL &mdash; the data layer</button>
+                    </div>
+                    <pre data-p="0"><code># Python + pandas: clean a messy sales file and answer a business question
+import pandas as pd
+
+df = pd.read_csv("sales_2026.csv")
+
+# 1. Clean
+df.columns = df.columns.str.strip().str.lower()
+df["order_date"] = pd.to_datetime(df["order_date"], errors="coerce")
+df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
+df = df.dropna(subset=["order_date", "amount"])
+
+# 2. Answer: monthly revenue per region
+monthly = (
+    df.groupby([df["order_date"].dt.to_period("M"), "region"])["amount"]
+      .sum()
+      .unstack(fill_value=0)
+      .round(0)
+)
+print(monthly.tail(6))
+
+# 3. Flag the drop that a manager will actually ask about
+change = monthly.pct_change().iloc[-1] * 100
+print(change[change &lt; -10].sort_values())</code></pre>
+                    <pre data-p="1" hidden><code>-- SQL: the single most important skill for an analyst
+-- Question: which product category earned the most last quarter?
+
+SELECT
+    p.category,
+    COUNT(DISTINCT o.order_id)      AS orders,
+    ROUND(SUM(o.amount), 2)         AS revenue,
+    ROUND(AVG(o.amount), 2)         AS avg_order_value
+FROM orders o
+JOIN products p ON p.product_id = o.product_id
+WHERE o.order_date &gt;= '2026-04-01'
+  AND o.order_date &lt;  '2026-07-01'
+  AND o.status = 'completed'
+GROUP BY p.category
+HAVING SUM(o.amount) &gt; 100000
+ORDER BY revenue DESC
+LIMIT 10;
+
+-- If you can read this query, you can already do 40% of an analyst's daily work.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Python &middot; clean and summarise sales</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Data Scientist &mdash; the most direct route</h2>
+                <p>For statistics, mathematics, physics and economics postgraduates this is the shortest path, because the theory half is already done.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Python engineering &mdash; functions, modules, Git, environments</li>
+                    <li>SQL &mdash; joins, aggregation, window functions on large tables</li>
+                    <li>scikit&#8209;learn workflow &mdash; pipelines, cross&#8209;validation, no leakage</li>
+                    <li>Business framing &mdash; turning a vague ask into a measurable target</li>
+                    <li>Experiment analysis at industry scale &mdash; A/B tests, guardrails</li>
+                    <li>Communicating to non&#8209;technical stakeholders in one page</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">Data Scientist</span> <span class="role-badge">Decision Scientist</span> <span class="role-badge">Applied Scientist</span> <span class="role-badge">Research Analyst</span></p>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>ML and AI Engineer &mdash; if you like building</h2>
+                <p>This route pays well and asks more of your software skills than your statistics. It suits MSc graduates who enjoyed the computational part of their research.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Strong Python plus API design with FastAPI</li>
+                    <li>LLM application work &mdash; prompting, structured output, tool calling</li>
+                    <li>RAG &mdash; embeddings, chunking, vector stores, retrieval quality</li>
+                    <li>Evaluation harnesses &mdash; labelled test sets and regression checks</li>
+                    <li>Docker, CI, and one cloud provider to a working standard</li>
+                    <li>Monitoring, cost and latency trade&#8209;offs in production</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">ML Engineer</span> <span class="role-badge">AI Engineer</span> <span class="role-badge">GenAI Developer</span> <span class="role-badge">MLOps Engineer</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Python &mdash; LLM API work</button>
+                    </div>
+                    <pre data-p="0"><code># Working with an LLM API - the everyday skill in AI-era analytics
+import os, json, requests
+
+def classify_feedback(text):
+    """Turn free-text customer feedback into structured data."""
+    prompt = (
+        "Classify the customer feedback below.\n"
+        "Return ONLY JSON with keys: sentiment (positive/neutral/negative), "
+        "topic (delivery/pricing/quality/support/other), urgent (true/false).\n\n"
+        f"Feedback: {text}"
+    )
+    r = requests.post(
+        "https://api.example-llm.com/v1/messages",
+        headers={"x-api-key": os.environ["API_KEY"]},
+        json={"model": "small-fast", "max_tokens": 200,
+              "messages": [{"role": "user", "content": prompt}]},
+        timeout=30,
+    )
+    return json.loads(r.json()["content"][0]["text"])
+
+rows = [classify_feedback(t) for t in open("feedback.txt")]
+print(rows[:3])
+# 2,000 rows of text become a table you can chart. That is the new analyst workflow.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Python &middot; classify text with an LLM</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Quantitative and research roles &mdash; the high&#8209;mathematics route</h2>
+                <p>If your MSc was mathematics&#8209;heavy and you enjoyed it, quant and research roles pay the highest entry bands in this list &mdash; with correspondingly hard interviews.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Probability and stochastic processes at interview depth</li>
+                    <li>Time series &mdash; stationarity, ARIMA, volatility modelling</li>
+                    <li>Optimisation and numerical methods</li>
+                    <li>Python plus C++ or Rust basics for latency&#8209;sensitive work</li>
+                    <li>Backtesting discipline and avoiding overfitting to history</li>
+                    <li>Reading and implementing methods straight from papers</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">Quantitative Analyst</span> <span class="role-badge">Quant Researcher</span> <span class="role-badge">Risk Modeller</span> <span class="role-badge">Research Scientist</span></p>
+
+                <div class="note"><b>Reality check:</b> quant interviews are brutal on probability puzzles and mental mathematics. Prepare for those specifically or aim at data science instead &mdash; it is a much wider door.</div>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Translating your thesis into a portfolio</h2>
+                <p>Your thesis is a genuine project. It just needs re&#8209;packaging for an audience that has ninety seconds, not ninety pages.</p>
+
+                <ol class="steps">
+                    <li><b>Lead with the question and the outcome</b> &mdash; one line each. No literature background, no method history.</li>
+                    <li><b>Re&#8209;write the method in industry vocabulary</b> &mdash; sample size instead of n, feature instead of variable, holdout instead of validation set.</li>
+                    <li><b>Publish the code cleanly</b> &mdash; move it from notebooks into a repository with functions, a README and a requirements file.</li>
+                    <li><b>Add a business analogue</b> &mdash; state which commercial problem uses the same structure. Signal detection in noisy data is fraud detection; dose response is pricing sensitivity.</li>
+                    <li><b>Add one commercial project</b> &mdash; a churn model or a sales dashboard, so recruiters can place you.</li>
+                    <li><b>Show a deployed artefact</b> &mdash; one endpoint or dashboard, live. This is the single strongest signal that you have crossed from academia to industry.</li>
+                </ol>
+
+                <div class="note"><b>Pro tip:</b> name the transferable structure explicitly on the repository page. Recruiters rarely make the leap from &ldquo;photoluminescence decay fitting&rdquo; to &ldquo;survival analysis&rdquo; on their own.</div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Research versus industry &mdash; the adjustment nobody warns you about</h2>
+                <p>The technical gap is smaller than the cultural one. These four differences cause most early friction.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Dimension</th><th>Academia</th><th>Industry</th></tr></thead>
+                        <tbody>
+                            <tr><td>Standard of proof</td><td>Correct and complete</td><td>Good enough to make a better decision than yesterday</td></tr>
+                            <tr><td>Timeline</td><td>Months per question</td><td>Days, sometimes hours</td></tr>
+                            <tr><td>Ownership</td><td>Your project, your pace</td><td>Shared codebase, shared roadmap, review before merge</td></tr>
+                            <tr><td>Success measure</td><td>Novelty and publication</td><td>Impact on a metric someone is accountable for</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>What to practise:</b> stopping early. Deliver a defensible answer with stated limitations by the deadline, rather than a perfect answer two weeks late. Interviewers probe for this directly.</div>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>Step&#8209;by&#8209;step roadmap &mdash; nine months</h2>
+                <p>Assumes strong mathematics already and 12&ndash;15 hours a week. Compress to five months if you are studying full time.</p>
+
+                <ol class="steps">
+                    <li><b>Month 1: Python as an engineer</b> &mdash; functions, modules, error handling, Git, virtual environments. Deliverable: your thesis analysis rewritten as a clean repository.</li>
+                    <li><b>Month 2: SQL</b> &mdash; joins to window functions on a real schema. Deliverable: 100 solved queries.</li>
+                    <li><b>Month 3: industry statistics</b> &mdash; A/B testing, power, guardrail metrics, causal basics. Deliverable: an experiment analysis write&#8209;up.</li>
+                    <li><b>Month 4&ndash;5: machine learning workflow</b> &mdash; scikit&#8209;learn pipelines, validation, metrics, error analysis. Deliverable: a prediction project with honest holdout results.</li>
+                    <li><b>Month 6: choose your specialisation</b> &mdash; data science, ML/AI engineering, or quant. Then go deep rather than wide.</li>
+                    <li><b>Month 7: deployment</b> &mdash; FastAPI, Docker, one cloud service. Deliverable: a live endpoint or dashboard.</li>
+                    <li><b>Month 8: AI tooling</b> &mdash; LLM APIs, RAG, evaluation. Deliverable: a text or retrieval project with a measured accuracy figure.</li>
+                    <li><b>Month 9: portfolio, applications, interviews</b> &mdash; repository clean&#8209;up, thesis re&#8209;written for recruiters, timed SQL practice, case rounds, and referral outreach to alumni in industry.</li>
+                </ol>
+
+                <div class="note"><b>Pro tip:</b> if you are deciding between a PhD and industry, do month 1 to 4 first. Four months of applied work tells you more about which you prefer than any amount of reading about it.</div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Skills to learn &mdash; the complete list</h2>
+                <p>Your MSc covers much of the statistics row. The gap is concentrated in engineering practice.</p>
+
+                <h3>Core skills (needed on every path)</h3>
+                <ul>
+                    <li><b>Python engineering</b> &mdash; modules, tests, error handling, environments</li>
+                    <li><b>Git &amp; GitHub</b> &mdash; branches, commits, reviewable history</li>
+                    <li><b>SQL</b> &mdash; joins, aggregation, window functions at scale</li>
+                    <li><b>ML workflow</b> &mdash; pipelines, cross&#8209;validation, leakage checks</li>
+                    <li><b>Industry statistics</b> &mdash; A/B testing, power, guardrail metrics</li>
+                    <li><b>Deployment basics</b> &mdash; API, container, one cloud service</li>
+                    <li><b>Business framing</b> &mdash; turning a vague ask into a measurable target</li>
+                    <li><b>Concise writing</b> &mdash; one page instead of one chapter</li>
+                </ul>
+
+                <h3>Path&#8209;specific skills</h3>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Path</th><th>Key skills</th><th>Tools / Technologies</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Data Scientist</b></td><td>Statistics, ML, experimentation, framing</td><td>Python, scikit&#8209;learn, statsmodels, SQL, MLflow</td></tr>
+                            <tr><td><b>ML / AI Engineer</b></td><td>Production ML, LLM apps, evaluation</td><td>Python, FastAPI, Docker, vector DBs, AWS/Azure</td></tr>
+                            <tr><td><b>Quantitative Analyst</b></td><td>Probability, time series, optimisation</td><td>Python, C++, NumPy, backtesting frameworks</td></tr>
+                            <tr><td><b>Domain scientist (bio / chem / physics)</b></td><td>Domain modelling plus data engineering</td><td>Python, SQL, domain libraries, cloud compute</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S11 ===== -->
+                <h2 id="s11"><span class="num">SECTION 11</span>Interview Q&amp;A &mdash; academic to industry</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>You come from a research background. Why leave it?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I liked the investigation and I wanted a shorter feedback loop. In my thesis a result took eighteen months to matter. In industry a model can change a decision the same quarter. I kept the method and changed the timescale &mdash; and I rebuilt my thesis analysis as a proper repository to make that shift concrete.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>Your experience is academic. Can you work at industry pace?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Yes, and that adjustment is the one I worked on deliberately. I now scope to a deadline: a defensible answer with stated limitations by Thursday, rather than a complete answer in three weeks. My last project had a fixed two&#8209;week box and I shipped inside it.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>How does your thesis relate to this job?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Structurally it is the same problem. I was extracting a weak signal from noisy measurements with confounding factors, which is what fraud detection and churn prediction also are. I designed the controls, quantified uncertainty, and defended the conclusion under questioning &mdash; the same steps as a model review here.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>Explain the difference between correlation and causation, and how you would establish causation at work.</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Correlation says two things move together; causation says one produces the other. At work, the clean route is a randomised experiment with a control group and a pre&#8209;registered metric. Where randomisation is impossible, I would use difference&#8209;in&#8209;differences or an instrumental variable, and I would be explicit about the assumptions those methods require.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>What is data leakage and how do you prevent it?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;It is when information unavailable at prediction time leaks into training, giving a score that collapses in production. I prevent it by splitting before any fitting, putting all preprocessing inside a pipeline fitted on training folds only, and splitting by time when the data is temporal.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>How comfortable are you with SQL?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Comfortable. I can write multi&#8209;table joins, window functions for running and ranked calculations, and CTEs to structure a long query. I have around 100 solved problems in a repository, and I use SQL rather than exporting CSVs whenever the data lives in a warehouse.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>Have you deployed anything?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Yes &mdash; a small prediction service behind a FastAPI endpoint, containerised with Docker and running on a cloud instance, with request logging and a simple accuracy check on incoming data. It is not large&#8209;scale infrastructure, but it means I understand what production requires beyond a notebook.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Why not do a PhD?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I considered it seriously and spent four months doing applied work to test the question. I found I preferred problems with a business consequence and a shorter cycle. If I later want depth in a specific area, industry research teams are a route back to it.&rdquo;</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 12</span>Test yourself &mdash; MSc to data science readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign&#8209;up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 13</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is an MSc enough for a data science job in India, or do I need a PhD?</summary><div class="body"><p>An MSc is enough for the large majority of applied data science and AI engineering roles. A PhD is mainly relevant for research scientist positions and some specialised modelling teams, and it is not a requirement for high-paying industry work.</p></div></details>
+                <details class="acc"><summary>Which is better after MSc &mdash; data science or AI engineering?</summary><div class="body"><p>Data science suits you if you enjoyed the statistical and experimental side of your research. AI engineering suits you if you enjoyed the computational and building side. Pay is comparable at entry; AI engineering demands more software skill, data science more statistical judgement.</p></div></details>
+                <details class="acc"><summary>Do I need to redo mathematics for machine learning?</summary><div class="body"><p>Usually not. An MSc in a quantitative science already covers the linear algebra, calculus and probability that machine learning uses. Spend that time on engineering practice and validation discipline instead.</p></div></details>
+                <details class="acc"><summary>Can a chemistry or biology MSc get into data science?</summary><div class="body"><p>Yes, and the strongest route keeps your domain: R&amp;D analytics, bioinformatics, clinical or healthcare data science, materials informatics. The pool of candidates who understand both the science and the tooling is small, which works in your favour.</p></div></details>
+                <details class="acc"><summary>How do I explain a two-year gap spent on a thesis?</summary><div class="body"><p>It is not a gap, it is a project. Describe it as a long-running investigation with a defined question, a designed method, quantified uncertainty and a defended conclusion &mdash; which is what industry calls project ownership.</p></div></details>
+                <details class="acc"><summary>Should I take a lower title to enter the industry?</summary><div class="body"><p>Sometimes it is the fastest route, but MSc graduates frequently enter directly at data scientist or ML engineer level once they have a deployed project and solid SQL. Apply at the level you want before compromising on the title.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 14</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Machine learning validation done right</span><span class="m">ML · 16 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">SQL for scientists &mdash; from CSV to warehouse</span><span class="m">SQL · 15 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Deploy your first model with FastAPI</span><span class="m">MLOps · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">A/B testing for research graduates</span><span class="m">Statistics · 13 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">AI Engineer roadmap &mdash; LLMs and RAG</span><span class="m">AI · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Quant interview preparation guide</span><span class="m">Quant · 18 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Data Science &amp; AI programme for science postgraduates</h3>
+                    <p>Skips the basic mathematics and concentrates on the engineering layer: Python at production standard, SQL, ML pipelines, deployment, LLM applications and thesis&#8209;to&#8209;portfolio conversion.</p>
+                    <span class="price">&#8377;22,500 · full programme <s>&#8377;35,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>Engineering&#8209;focused</li>
+                        <li>Code reviews</li>
+                        <li>Deployment module</li>
+                        <li>GenAI &amp; RAG projects</li>
+                        <li>Thesis to portfolio</li>
+                        <li>Mock interviews</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live ML engineering class</div>
+                    <p>Two hours, no payment, no commitment. See a model go from notebook to endpoint and judge the level for yourself.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes 9&#8209;month plan &amp; portfolio guide</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>MSc to data science roadmap</a></li>
+                        <li><a href="#"><span class="rank">02</span>ML validation done right</a></li>
+                        <li><a href="#"><span class="rank">03</span>Deploy a model with FastAPI</a></li>
+                        <li><a href="#"><span class="rank">04</span>SQL for scientists</a></li>
+                        <li><a href="#"><span class="rank">05</span>AI Engineer roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Data Science · 60 questions</a></li>
+                        <li><a href="#">Machine Learning · 50 questions</a></li>
+                        <li><a href="#">GenAI &amp; LLM · 40 questions</a></li>
+                        <li><a href="#">Quant · 45 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Data Science &amp; AI Engineering</div>
+                    <p>Production Python, SQL, ML pipelines, deployment and LLM applications for science postgraduates. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">&infin;</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee &mdash; outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going &mdash; career guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">ML validation done right <small>Avoid leakage</small></a></li>
+                    <li><a href="#">Deploy a model with FastAPI <small>Notebook to endpoint</small></a></li>
+                    <li><a href="#">SQL for scientists <small>CSV to warehouse</small></a></li>
+                    <li><a href="#">Thesis to portfolio guide <small>Repackage your research</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your data &amp; AI career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data Scientist roadmap <small>Stats &rarr; ML &rarr; Deployment</small></a></li>
+                    <li><a href="#">ML Engineer roadmap <small>Python &rarr; Docker &rarr; Cloud</small></a></li>
+                    <li><a href="#">AI Engineer roadmap <small>LLM APIs &rarr; RAG &rarr; Eval</small></a></li>
+                    <li><a href="#">Quant Analyst roadmap <small>Probability &rarr; Time series &rarr; Backtesting</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">9&#8209;month study plan <small>MSc &rarr; Industry</small></a></li>
+                    <li><a href="#">ML project brief pack <small>Four briefs</small></a></li>
+                    <li><a href="#">Deployment checklist <small>One page</small></a></li>
+                    <li><a href="#">Academic CV to industry CV <small>Before and after</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">MSc graduates in AI teams <small>12 August 2026</small></a></li>
+                    <li><a href="#">Top ML engineering skills 2026 <small>10 August 2026</small></a></li>
+                    <li><a href="#">PhD or industry &mdash; how to decide <small>8 August 2026</small></a></li>
+                    <li><a href="#">Research to product transitions <small>5 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and data in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Science &amp; Analytics</a></li>
+                        <li><a href="#">DevOps &amp; Cloud</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact &ndash; Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                "ds": {
+                                "role": "Data Scientist",
+                                "salary": "₹8–16 LPA",
+                                "time": "6–9 months"
+                },
+                "ml": {
+                                "role": "ML Engineer",
+                                "salary": "₹10–18 LPA",
+                                "time": "9–12 months"
+                },
+                "ai": {
+                                "role": "AI Engineer",
+                                "salary": "₹10–20 LPA",
+                                "time": "10–14 months"
+                },
+                "quant": {
+                                "role": "Quantitative Analyst",
+                                "salary": "₹12–24 LPA",
+                                "time": "9–12 months"
+                }
+            },
+            stateOrder: ["ds", "ml", "ai", "quant"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("timeVal").textContent = s.time;
+            },
+            defaultTrack: "MSc / Science PG",
+            emptyMsg: "Nothing matches that yet. Try “Machine Learning”, “SQL” or “Deployment”.",
+            LIB: [
+                {
+                                "t": "MSc to data science and AI roadmap",
+                                "g": "MSc / Science PG"
+                },
+                {
+                                "t": "ML validation and leakage",
+                                "g": "Data Science"
+                },
+                {
+                                "t": "Deploy a model with FastAPI",
+                                "g": "AI Engineer"
+                },
+                {
+                                "t": "SQL for scientists",
+                                "g": "Python"
+                },
+                {
+                                "t": "A/B testing for researchers",
+                                "g": "Statistics"
+                },
+                {
+                                "t": "Thesis to portfolio conversion",
+                                "g": "Research to Industry"
+                },
+                {
+                                "t": "AI Engineer roadmap — RAG",
+                                "g": "AI Engineer"
+                },
+                {
+                                "t": "Quant interview preparation",
+                                "g": "Statistics"
+                },
+                {
+                                "t": "Python at production standard",
+                                "g": "Python"
+                },
+                {
+                                "t": "Academic to industry CV",
+                                "g": "Career Change"
+                }
+],
+            QUIZ: [
+                {
+                                "q": "What is usually the real gap for an MSc graduate entering data science?",
+                                "o": [
+                                                "Statistics",
+                                                "Engineering practice such as Git, SQL and deployment",
+                                                "Mathematics",
+                                                "Report writing"
+                                ],
+                                "a": 1,
+                                "e": "Engineering practice. The statistics and research discipline are usually strong; version control, database work, code structure and deployment are the missing layer."
+                },
+                {
+                                "q": "Which MSc stream has the shortest route to a data scientist role?",
+                                "o": [
+                                                "Statistics or Mathematics",
+                                                "Chemistry",
+                                                "Biology",
+                                                "Geology"
+                                ],
+                                "a": 0,
+                                "e": "Statistics and mathematics postgraduates need only the engineering layer, so they typically reach interview standard in six to eight months."
+                },
+                {
+                                "q": "How should you present your thesis to a recruiter?",
+                                "o": [
+                                                "Full literature review first",
+                                                "Question and outcome in one line each, then the business analogue",
+                                                "A link to the PDF only",
+                                                "Method chapter in detail"
+                                ],
+                                "a": 1,
+                                "e": "Lead with the question and the result, then name the commercial problem with the same structure. Recruiters have ninety seconds, not ninety pages."
+                },
+                {
+                                "q": "What is data leakage?",
+                                "o": [
+                                                "A privacy breach",
+                                                "Information unavailable at prediction time entering the training data",
+                                                "Losing rows during a join",
+                                                "A memory error"
+                                ],
+                                "a": 1,
+                                "e": "It is when training data contains information that would not exist at prediction time, producing an inflated score that fails in production."
+                },
+                {
+                                "q": "Which working-style change most often causes friction for academic hires?",
+                                "o": [
+                                                "Using Python instead of MATLAB",
+                                                "Shipping a good-enough answer by a deadline",
+                                                "Attending meetings",
+                                                "Writing documentation"
+                                ],
+                                "a": 1,
+                                "e": "Scope discipline. Industry rewards a defensible answer with stated limitations delivered on time over a complete answer delivered late."
+                }
+],
+            passScore: 4,
+            resultText: {
+                "pass": "Your foundation is already strong. Start with month 1 in section 09 and rebuild your thesis code as a clean repository.",
+                "fail": "Re-read sections 03 and 08 — the engineering layer and the working-pace shift are what the interviews actually probe."
+}
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

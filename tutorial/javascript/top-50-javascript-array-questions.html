@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 50 JavaScript Array Questions and Answer | JavaScript Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Top 50 JavaScript Array Questions and Answer with clear explanations, examples, and best practices as part of the complete JavaScript tutorial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+        /* additional in-page styles for Q&A */
+        .qa-block {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+        .qa-block:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .qa-block .q {
+            font-weight: 600;
+            color: var(--ink);
+            font-size: 1.05rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: baseline;
+        }
+        .qa-block .q .qnum {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            min-width: 2.2rem;
+        }
+        .qa-block .a {
+            color: var(--ink-soft);
+            margin-top: 0.4rem;
+            padding-left: 2.8rem;
+        }
+        .qa-block .a code {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+        }
+        .qa-block .a pre {
+            background: #1E2230;
+            color: #F3F4F8;
+            padding: 14px 16px;
+            border-radius: var(--radius-sm);
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0.6rem 0 0.2rem;
+        }
+        .qa-block .a pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        .qa-block .a ul,
+        .qa-block .a ol {
+            padding-left: 1.4rem;
+            margin: 0.4rem 0 0.2rem;
+        }
+        .qa-block .a ul li,
+        .qa-block .a ol li {
+            margin-bottom: 0.2rem;
+        }
+        .qa-toc {
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0 1.8rem;
+        }
+        .qa-toc h3 {
+            font-size: 1rem;
+            margin: 0 0 0.4rem;
+            color: var(--primary-dark);
+        }
+        .qa-toc ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.2rem 1.2rem;
+            list-style: none;
+            padding: 0;
+        }
+        .qa-toc ul li {
+            font-size: 0.85rem;
+        }
+        .qa-toc ul li a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s;
+        }
+        .qa-toc ul li a:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+        @media (max-width: 600px) {
+            .qa-block .a {
+                padding-left: 0;
+            }
+            .qa-toc ul {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <!-- ===== TOPBAR ===== -->
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+                             <a href="https://uncodemy.com/course/playwright-training-course-in-noida">JavaScript</a>
+            <span class="sep">/</span>
+            <span class="current">Page 35 of 36: Top 50 JavaScript Array Questions and Answer</span>
+        </div>
+    </div>
+
+    <!-- ===== LAYOUT ===== -->
+    <div class="layout">
+
+        <!-- ===== LEFT SIDEBAR ===== -->
+        <aside class="sidebar-left">
+            <h4>JavaScript Tutorial</h4>
+            <ul class="topic-list">
+                <li><a href="introduction-to-javascript.html"><span class="num">01</span>Introduction to JavaScript</a></li>
+                <li><a href="top-features-of-javascript.html"><span class="num">02</span>Top Features of JavaScript You Need to Know!</a></li>
+                <li><a href="variable-in-javascript.html"><span class="num">03</span>Variable in JavaScript</a></li>
+                <li><a href="variables-declaration-types-scope.html"><span class="num">04</span>Variables in JavaScript: Declaration, Types, Scope</a></li>
+                <li><a href="local-and-global-variables.html"><span class="num">05</span>Understanding Local and Global Variables in JavaScript</a></li>
+                <li><a href="data-types-primitive-non-primitive.html"><span class="num">06</span>Data Types in JavaScript: Primitive &amp; Non-Primitive</a></li>
+                <li><a href="numbers-in-javascript.html"><span class="num">07</span>Numbers in JavaScript</a></li>
+                <li><a href="strings-in-javascript.html"><span class="num">08</span>Strings in JavaScript</a></li>
+                <li><a href="ternary-operator-in-javascript.html"><span class="num">09</span>Ternary Operator in JavaScript: Simplifying Conditional Logic</a></li>
+                <li><a href="array-access-methods.html"><span class="num">10</span>An Easy Solution for Array Methods in JavaScript</a></li>
+                <li><a href="filtering-arrays.html"><span class="num">11</span>Filtering Arrays in JavaScript: The Essential Guide</a></li>
+                <li><a href="map-in-javascript.html"><span class="num">12</span>Map in Javascript</a></li>
+                <li><a href="foreach-in-javascript.html"><span class="num">13</span>forEach() in JavaScript</a></li>
+                <li><a href="functions-user-defined-and-standard.html"><span class="num">14</span>Functions in JavaScript: User-Defined and Standard Library Functions</a></li>
+                <li><a href="arrow-functions.html"><span class="num">15</span>Mastering Arrow Functions in JavaScript</a></li>
+                <li><a href="callback-functions-in-javascript.html"><span class="num">16</span>Callback Functions in JavaScript: A Comprehensive Guide</a></li>
+                <li><a href="closure-in-javascript.html"><span class="num">17</span>Closure in JavaScript: Explanation with Example</a></li>
+                <li><a href="hoisting-in-javascript.html"><span class="num">18</span>Hoisting in JavaScript: Variable Hoisting and Function Hoisting</a></li>
+                <li><a href="prototypes-in-javascript.html"><span class="num">19</span>A Complete Guide to Prototypes in JavaScript: How They Work and Why They Matter</a></li>
+                <li><a href="understanding-prototype-in-javascript.html"><span class="num">20</span>Understanding Prototype in JavaScript</a></li>
+                <li><a href="restrict-numeric-value-in-textbox.html"><span class="num">21</span>Restrict user to enter numeric value in textbox using javascript</a></li>
+                <li><a href="convert-string-to-xml-and-xml-to-string.html"><span class="num">22</span>Convert string to xml and xml to string using javascript</a></li>
+                <li><a href="email-validation-using-regex.html"><span class="num">23</span>JavaScript Email Address validation using Regular Expression</a></li>
+                <li><a href="defining-namespace-or-nested-objects.html"><span class="num">24</span>Defining Namespace or Nested Objects in JavaScript</a></li>
+                <li><a href="switch-statement-in-javascript.html"><span class="num">25</span>Switch Statement in JavaScript: Implementation with Examples</a></li>
+                <li><a href="mastering-loops-in-javascript.html"><span class="num">26</span>Mastering Loops in JavaScript: A Comprehensive Guide</a></li>
+                <li><a href="for-loop-in-javascript.html"><span class="num">27</span>for Loop in JavaScript: A Detailed Discussion with Examples</a></li>
+                <li><a href="javascript-events-easy-learner.html"><span class="num">28</span>JavaScript Events An Easy Learner</a></li>
+                <li><a href="form-validation-in-javascript.html"><span class="num">29</span>Master Form Validation in Javascript: Learn How to Improve Your Forms Now!</a></li>
+                <li><a href="understanding-dom-and-bom.html"><span class="num">30</span>Understanding DOM and BOM</a></li>
+                <li><a href="javascript-design-patterns.html"><span class="num">31</span>Learn JavaScript Design Patterns to Simplify Your Development</a></li>
+                <li><a href="become-full-stack-javascript-developer.html"><span class="num">32</span>How to Become a Full Stack JavaScript Developer?</a></li>
+                <li><a href="javascript-cheat-sheet.html"><span class="num">33</span>JavaScript Cheat Sheet: Full Guide</a></li>
+                <li><a href="javascript-developer-salary.html"><span class="num">34</span>JavaScript Developer Salary</a></li>
+                <li><a href="top-50-javascript-array-questions.html" class="active"><span class="num">35</span>Top 50 JavaScript Array Questions and Answer</a></li>
+                <li><a href="javascript-interview-questions-and-answer.html"><span class="num">36</span>JavaScript Interview Questions and Answer</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="content">
+
+            <span class="eyebrow"><i class="fas fa-code"></i> Interview Prep</span>
+            <h1>Top 50 JavaScript Array Questions and Answer</h1>
+
+            <div class="card">
+
+                <p style="font-size:1.05rem; color:var(--ink);">
+                    Arrays are one of the most fundamental data structures in JavaScript. Mastering array operations is essential for any JavaScript developer — whether you're preparing for a technical interview or building real-world applications.
+                </p>
+                <p>
+                    This comprehensive guide covers <strong>50 frequently asked array questions</strong>, ranging from beginner-friendly concepts to advanced problem-solving techniques. Each question includes a clear explanation and practical code examples.
+                </p>
+
+                <!-- ===== TABLE OF CONTENTS ===== -->
+                <div class="qa-toc">
+                    <h3><i class="fas fa-list-ul"></i> Quick Jump</h3>
+                    <ul>
+                        <li><a href="#q1">1–10: Basics &amp; Creation</a></li>
+                        <li><a href="#q11">11–20: Iteration &amp; Transformation</a></li>
+                        <li><a href="#q21">21–30: Searching &amp; Filtering</a></li>
+                        <li><a href="#q31">31–40: Manipulation &amp; Mutation</a></li>
+                        <li><a href="#q41">41–50: Advanced &amp; Problem-Solving</a></li>
+                    </ul>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 1–10: BASICS & CREATION                                           -->
+                <!-- ============================================================ -->
+                <h2 id="q1">1–10: Basics &amp; Array Creation</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q1</span> How do you create an array in JavaScript?</div>
+                    <div class="a">
+                        There are two primary ways:
+                        <ul>
+                            <li><strong>Array literal:</strong> <code>let arr = [1, 2, 3];</code></li>
+                            <li><strong>Array constructor:</strong> <code>let arr = new Array(1, 2, 3);</code></li>
+                        </ul>
+                        The literal syntax is preferred for readability and performance.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q2</span> How do you check if a variable is an array?</div>
+                    <div class="a">
+                        Use <code>Array.isArray()</code> — it returns <code>true</code> if the value is an array.
+                        <pre><code>let arr = [1, 2, 3];
+        console.log(Array.isArray(arr)); // true
+        console.log(Array.isArray({}));   // false</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q3</span> What is the difference between <code>Array.from()</code> and <code>Array.of()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>Array.from()</code> creates an array from an iterable or array-like object.</li>
+                            <li><code>Array.of()</code> creates an array from a list of arguments, avoiding the <code>new Array(n)</code> pitfall.</li>
+                        </ul>
+                        <pre><code>Array.from('abc');        // ['a', 'b', 'c']
+        Array.of(3);              // [3]
+        new Array(3);            // [empty × 3]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q4</span> How do you access the first and last element of an array?</div>
+                    <div class="a">
+                        <ul>
+                            <li>First: <code>arr[0]</code></li>
+                            <li>Last: <code>arr[arr.length - 1]</code></li>
+                        </ul>
+                        <pre><code>let arr = [10, 20, 30, 40];
+        console.log(arr[0]);              // 10
+        console.log(arr[arr.length - 1]); // 40</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q5</span> What is the <code>length</code> property of an array?</div>
+                    <div class="a">
+                        The <code>length</code> property returns the number of elements in an array. It is mutable — you can truncate or extend an array by assigning a new value.
+                        <pre><code>let arr = [1, 2, 3];
+        console.log(arr.length); // 3
+        arr.length = 2;
+        console.log(arr);        // [1, 2]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q6</span> How do you create an array with a fixed size filled with a default value?</div>
+                    <div class="a">
+                        Use <code>Array(n).fill(value)</code>:
+                        <pre><code>let arr = Array(5).fill(0);
+        console.log(arr); // [0, 0, 0, 0, 0]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q7</span> Can arrays hold different data types?</div>
+                    <div class="a">
+                        Yes, JavaScript arrays are heterogeneous — they can hold values of different types:
+                        <pre><code>let mixed = [42, 'hello', true, null, { name: 'John' }];</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q8</span> What is a sparse array?</div>
+                    <div class="a">
+                        A sparse array has empty slots (holes). This happens when you create an array with <code>new Array(n)</code> or delete an element.
+                        <pre><code>let sparse = new Array(3);
+        console.log(sparse.length); // 3
+        console.log(sparse[0]);     // undefined (hole)</code></pre>
+                        Sparse arrays can cause unexpected behavior with iteration methods.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q9</span> How do you clone an array?</div>
+                    <div class="a">
+                        Several ways:
+                        <ul>
+                            <li>Spread: <code>let copy = [...arr];</code></li>
+                            <li><code>slice()</code>: <code>let copy = arr.slice();</code></li>
+                            <li><code>Array.from()</code>: <code>let copy = Array.from(arr);</code></li>
+                        </ul>
+                        <strong>Note:</strong> These create shallow copies — nested objects are still shared.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q10</span> How do you convert an array to a string?</div>
+                    <div class="a">
+                        Use <code>join()</code> to specify a separator:
+                        <pre><code>let arr = ['a', 'b', 'c'];
+        console.log(arr.join(',')); // 'a,b,c'
+        console.log(arr.join(''));  // 'abc'</code></pre>
+                        <code>toString()</code> also works but uses commas by default.
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 11–20: ITERATION & TRANSFORMATION                                -->
+                <!-- ============================================================ -->
+                <h2 id="q11">11–20: Iteration &amp; Transformation</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q11</span> What is the difference between <code>forEach()</code> and <code>map()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>forEach()</code> executes a function for each element but does <strong>not</strong> return a new array (returns <code>undefined</code>).</li>
+                            <li><code>map()</code> creates a <strong>new array</strong> by applying a function to each element.</li>
+                        </ul>
+                        <pre><code>let nums = [1, 2, 3];
+        let doubled = nums.map(n => n * 2); // [2, 4, 6]
+        nums.forEach(n => console.log(n));  // logs 1,2,3</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q12</span> How does <code>filter()</code> work?</div>
+                    <div class="a">
+                        <code>filter()</code> creates a new array with all elements that pass a test (predicate) function.
+                        <pre><code>let nums = [1, 2, 3, 4, 5];
+        let evens = nums.filter(n => n % 2 === 0);
+        console.log(evens); // [2, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q13</span> What does <code>reduce()</code> do?</div>
+                    <div class="a">
+                        <code>reduce()</code> reduces an array to a single value by iteratively applying a reducer function. It takes an accumulator and current value.
+                        <pre><code>let nums = [1, 2, 3, 4];
+        let sum = nums.reduce((acc, cur) => acc + cur, 0);
+        console.log(sum); // 10</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q14</span> What is the difference between <code>map()</code> and <code>forEach()</code> in terms of chaining?</div>
+                    <div class="a">
+                        <code>map()</code> returns an array, so it can be chained with other methods like <code>filter()</code> or <code>reduce()</code>. <code>forEach()</code> returns <code>undefined</code>, so chaining is not possible.
+                        <pre><code>let result = [1,2,3,4]
+          .map(n => n * 2)
+          .filter(n => n > 4);
+        console.log(result); // [6, 8]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q15</span> How do you flatten a nested array?</div>
+                    <div class="a">
+                        Use <code>flat()</code> — it creates a new array with all sub-array elements concatenated up to the specified depth.
+                        <pre><code>let nested = [1, [2, [3, 4]]];
+        console.log(nested.flat(1)); // [1, 2, [3, 4]]
+        console.log(nested.flat(2)); // [1, 2, 3, 4]</code></pre>
+                        For deeply nested arrays, use <code>Infinity</code> as depth.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q16</span> What is <code>flatMap()</code>?</div>
+                    <div class="a">
+                        <code>flatMap()</code> maps each element using a function, then flattens the result by one level — it's equivalent to <code>map().flat(1)</code>.
+                        <pre><code>let arr = ['hello', 'world'];
+        let result = arr.flatMap(word => word.split(''));
+        console.log(result); // ['h','e','l','l','o','w','o','r','l','d']</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q17</span> How do you iterate over an array of objects?</div>
+                    <div class="a">
+                        You can use any iteration method like <code>forEach()</code>, <code>map()</code>, or a <code>for...of</code> loop:
+                        <pre><code>let users = [{ name: 'Alice' }, { name: 'Bob' }];
+        users.forEach(user => console.log(user.name));</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q18</span> How do you transform an array of numbers to their squares?</div>
+                    <div class="a">
+                        Use <code>map()</code>:
+                        <pre><code>let nums = [1, 2, 3, 4];
+        let squares = nums.map(n => n ** 2);
+        console.log(squares); // [1, 4, 9, 16]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q19</span> What is the difference between <code>some()</code> and <code>every()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>some()</code> returns <code>true</code> if <strong>any</strong> element passes the test.</li>
+                            <li><code>every()</code> returns <code>true</code> if <strong>all</strong> elements pass the test.</li>
+                        </ul>
+                        <pre><code>let nums = [2, 4, 6];
+        console.log(nums.some(n => n > 5)); // true
+        console.log(nums.every(n => n > 5)); // false</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q20</span> How do you count the occurrences of a value in an array?</div>
+                    <div class="a">
+                        Use <code>filter()</code> with <code>length</code>, or <code>reduce()</code>:
+                        <pre><code>let arr = [1, 2, 2, 3, 2];
+        let count = arr.filter(v => v === 2).length;
+        console.log(count); // 3
+        
+        // using reduce
+        let count2 = arr.reduce((acc, v) => acc + (v === 2 ? 1 : 0), 0);</code></pre>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 21–30: SEARCHING & FILTERING                                     -->
+                <!-- ============================================================ -->
+                <h2 id="q21">21–30: Searching &amp; Filtering</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q21</span> How do you find an element in an array?</div>
+                    <div class="a">
+                        Use <code>find()</code> — it returns the first element that satisfies a condition, or <code>undefined</code> if none.
+                        <pre><code>let users = [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }];
+        let user = users.find(u => u.id === 2);
+        console.log(user); // { id: 2, name: 'Bob' }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q22</span> What is the difference between <code>find()</code> and <code>filter()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>find()</code> returns the <strong>first</strong> matching element.</li>
+                            <li><code>filter()</code> returns an <strong>array</strong> of <strong>all</strong> matching elements.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q23</span> How do you find the index of an element?</div>
+                    <div class="a">
+                        Use <code>indexOf()</code> (for primitive values) or <code>findIndex()</code> (for complex conditions):
+                        <pre><code>let arr = ['a', 'b', 'c'];
+        console.log(arr.indexOf('b')); // 1
+        
+        let users = [{ id: 1 }, { id: 2 }];
+        console.log(users.findIndex(u => u.id === 2)); // 1</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q24</span> How do you check if an array contains a value?</div>
+                    <div class="a">
+                        Use <code>includes()</code> for primitive values:
+                        <pre><code>let arr = [1, 2, 3];
+        console.log(arr.includes(2)); // true
+        console.log(arr.includes(4)); // false</code></pre>
+                        For objects, use <code>some()</code>.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q25</span> How do you find the largest number in an array?</div>
+                    <div class="a">
+                        Use <code>Math.max()</code> with the spread operator:
+                        <pre><code>let nums = [10, 5, 20, 8];
+        console.log(Math.max(...nums)); // 20</code></pre>
+                        Or use <code>reduce()</code> for large arrays (to avoid stack overflow).
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q26</span> How do you find the smallest number in an array?</div>
+                    <div class="a">
+                        Use <code>Math.min()</code> with spread:
+                        <pre><code>let nums = [10, 5, 20, 8];
+        console.log(Math.min(...nums)); // 5</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q27</span> How do you remove falsy values from an array?</div>
+                    <div class="a">
+                        Use <code>filter()</code> with <code>Boolean</code>:
+                        <pre><code>let arr = [0, 1, false, 2, '', 3, null, undefined];
+        let cleaned = arr.filter(Boolean);
+        console.log(cleaned); // [1, 2, 3]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q28</span> How do you find the intersection of two arrays?</div>
+                    <div class="a">
+                        Use <code>filter()</code> and <code>includes()</code>:
+                        <pre><code>let a = [1, 2, 3, 4];
+        let b = [3, 4, 5, 6];
+        let intersection = a.filter(x => b.includes(x));
+        console.log(intersection); // [3, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q29</span> How do you find the difference between two arrays?</div>
+                    <div class="a">
+                        Use <code>filter()</code> with <code>includes()</code>:
+                        <pre><code>let a = [1, 2, 3, 4];
+        let b = [3, 4, 5, 6];
+        let diff = a.filter(x => !b.includes(x));
+        console.log(diff); // [1, 2]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q30</span> How do you get unique values from an array?</div>
+                    <div class="a">
+                        Use <code>Set</code>:
+                        <pre><code>let arr = [1, 2, 2, 3, 3, 4];
+        let unique = [...new Set(arr)];
+        console.log(unique); // [1, 2, 3, 4]</code></pre>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 31–40: MANIPULATION & MUTATION                                   -->
+                <!-- ============================================================ -->
+                <h2 id="q31">31–40: Manipulation &amp; Mutation</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q31</span> What is the difference between <code>slice()</code> and <code>splice()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>slice()</code> returns a new array (shallow copy) without modifying the original.</li>
+                            <li><code>splice()</code> modifies the original array by adding, removing, or replacing elements.</li>
+                        </ul>
+                        <pre><code>let arr = [1, 2, 3, 4];
+        let sliced = arr.slice(1, 3);   // [2, 3] — arr unchanged
+        let spliced = arr.splice(1, 2); // [2, 3] — arr now [1, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q32</span> How do you add an element to the end of an array?</div>
+                    <div class="a">
+                        Use <code>push()</code>:
+                        <pre><code>let arr = [1, 2];
+        arr.push(3);
+        console.log(arr); // [1, 2, 3]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q33</span> How do you remove the last element from an array?</div>
+                    <div class="a">
+                        Use <code>pop()</code>:
+                        <pre><code>let arr = [1, 2, 3];
+        arr.pop();
+        console.log(arr); // [1, 2]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q34</span> How do you add an element to the beginning of an array?</div>
+                    <div class="a">
+                        Use <code>unshift()</code>:
+                        <pre><code>let arr = [2, 3];
+        arr.unshift(1);
+        console.log(arr); // [1, 2, 3]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q35</span> How do you remove the first element from an array?</div>
+                    <div class="a">
+                        Use <code>shift()</code>:
+                        <pre><code>let arr = [1, 2, 3];
+        arr.shift();
+        console.log(arr); // [2, 3]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q36</span> How do you reverse an array?</div>
+                    <div class="a">
+                        Use <code>reverse()</code> — it mutates the original array.
+                        <pre><code>let arr = [1, 2, 3];
+        arr.reverse();
+        console.log(arr); // [3, 2, 1]</code></pre>
+                        To reverse without mutation, use <code>[...arr].reverse()</code>.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q37</span> How do you sort an array of numbers?</div>
+                    <div class="a">
+                        Use <code>sort()</code> with a compare function:
+                        <pre><code>let nums = [3, 1, 4, 2];
+        nums.sort((a, b) => a - b); // ascending
+        console.log(nums); // [1, 2, 3, 4]</code></pre>
+                        Without a compare function, <code>sort()</code> converts elements to strings, which gives unexpected results for numbers.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q38</span> How do you merge two arrays?</div>
+                    <div class="a">
+                        Use the spread operator or <code>concat()</code>:
+                        <pre><code>let a = [1, 2];
+        let b = [3, 4];
+        let merged = [...a, ...b]; // [1, 2, 3, 4]
+        let merged2 = a.concat(b); // [1, 2, 3, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q39</span> How do you replace an element at a specific index?</div>
+                    <div class="a">
+                        Use <code>splice()</code>:
+                        <pre><code>let arr = [1, 2, 3, 4];
+        arr.splice(2, 1, 99); // replace index 2 with 99
+        console.log(arr); // [1, 2, 99, 4]</code></pre>
+                        Or use bracket notation: <code>arr[2] = 99</code>.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q40</span> How do you remove an element at a specific index?</div>
+                    <div class="a">
+                        Use <code>splice()</code>:
+                        <pre><code>let arr = [1, 2, 3, 4];
+        arr.splice(2, 1); // remove index 2
+        console.log(arr); // [1, 2, 4]</code></pre>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 41–50: ADVANCED & PROBLEM-SOLVING                               -->
+                <!-- ============================================================ -->
+                <h2 id="q41">41–50: Advanced &amp; Problem-Solving</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q41</span> How do you rotate an array by k steps?</div>
+                    <div class="a">
+                        Use <code>slice()</code> and spread:
+                        <pre><code>function rotate(arr, k) {
+          k = k % arr.length;
+          return [...arr.slice(-k), ...arr.slice(0, -k)];
+        }
+        console.log(rotate([1,2,3,4,5], 2)); // [4,5,1,2,3]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q42</span> How do you find the missing number in an array of 1 to n?</div>
+                    <div class="a">
+                        Use the sum formula: <code>n*(n+1)/2</code> minus the sum of the array.
+                        <pre><code>function missingNumber(arr, n) {
+          let total = (n * (n + 1)) / 2;
+          let sum = arr.reduce((a, b) => a + b, 0);
+          return total - sum;
+        }
+        console.log(missingNumber([1,2,4,5], 5)); // 3</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q43</span> How do you find duplicates in an array?</div>
+                    <div class="a">
+                        Use a <code>Set</code> or <code>filter()</code>:
+                        <pre><code>let arr = [1, 2, 2, 3, 4, 4];
+        let seen = new Set();
+        let duplicates = arr.filter(n => seen.has(n) ? true : (seen.add(n), false));
+        console.log(duplicates); // [2, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q44</span> How do you chunk an array into smaller arrays of a given size?</div>
+                    <div class="a">
+                        Use <code>slice()</code> inside a loop:
+                        <pre><code>function chunk(arr, size) {
+          let result = [];
+          for (let i = 0; i < arr.length; i += size) {
+            result.push(arr.slice(i, i + size));
+          }
+          return result;
+        }
+        console.log(chunk([1,2,3,4,5], 2)); // [[1,2],[3,4],[5]]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q45</span> How do you shuffle an array?</div>
+                    <div class="a">
+                        Use the Fisher–Yates (Knuth) shuffle:
+                        <pre><code>function shuffle(arr) {
+          let a = [...arr];
+          for (let i = a.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+          }
+          return a;
+        }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q46</span> How do you group objects by a property?</div>
+                    <div class="a">
+                        Use <code>reduce()</code>:
+                        <pre><code>let people = [
+          { name: 'Alice', age: 25 },
+          { name: 'Bob', age: 30 },
+          { name: 'Charlie', age: 25 }
+        ];
+        let grouped = people.reduce((acc, person) => {
+          (acc[person.age] = acc[person.age] || []).push(person);
+          return acc;
+        }, {});
+        console.log(grouped); // { 25: [Alice, Charlie], 30: [Bob] }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q47</span> How do you find the sum of all elements in an array?</div>
+                    <div class="a">
+                        Use <code>reduce()</code>:
+                        <pre><code>let nums = [1, 2, 3, 4];
+        let sum = nums.reduce((acc, cur) => acc + cur, 0);
+        console.log(sum); // 10</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q48</span> How do you find the average of an array?</div>
+                    <div class="a">
+                        Sum divided by length:
+                        <pre><code>let nums = [2, 4, 6, 8];
+        let avg = nums.reduce((a, b) => a + b, 0) / nums.length;
+        console.log(avg); // 5</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q49</span> How do you remove a specific element from an array?</div>
+                    <div class="a">
+                        Use <code>filter()</code> (non-mutating) or <code>splice()</code> (mutating):
+                        <pre><code>let arr = [1, 2, 3, 4];
+        // non-mutating
+        let filtered = arr.filter(n => n !== 3);
+        console.log(filtered); // [1, 2, 4]
+        // mutating
+        let index = arr.indexOf(3);
+        if (index !== -1) arr.splice(index, 1);
+        console.log(arr); // [1, 2, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q50</span> How do you check if an array is sorted?</div>
+                    <div class="a">
+                        Use <code>every()</code>:
+                        <pre><code>function isSorted(arr) {
+          return arr.every((v, i) => i === 0 || v >= arr[i - 1]);
+        }
+        console.log(isSorted([1, 2, 3, 4])); // true
+        console.log(isSorted([1, 3, 2, 4])); // false</code></pre>
+                    </div>
+                </div>
+
+                <!-- ===== END OF Q&A ===== -->
+
+                <div style="margin-top:2.4rem; padding:1.2rem 1.6rem; background:var(--primary-light); border-radius:var(--radius-sm);">
+                    <p style="margin:0; font-weight:500; color:var(--primary-dark);">
+                        <i class="fas fa-lightbulb"></i> &nbsp; <strong>Pro Tip:</strong> Practice these questions with a code editor — writing actual code is the best way to build confidence for technical interviews.
+                    </p>
+                </div>
+
+            </div><!-- /card -->
+
+            <!-- ===== PREV / NEXT ===== -->
+            <div class="prev-next">
+                <a href="javascript-developer-salary.html">
+                    <span class="label"><i class="fas fa-arrow-left"></i> Previous</span>
+                    JavaScript Developer Salary
+                </a>
+                <a href="javascript-interview-questions-and-answer.html" class="next">
+                    <span class="label">Next <i class="fas fa-arrow-right"></i></span>
+                    JavaScript Interview Questions and Answer
+                </a>
+            </div>
+
+            <!-- ===== CTA BOX ===== -->
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world JavaScript development?</h3>
+                    <p>Learn JavaScript hands-on with mentor-led, live sessions.</p>
+                </div>
+                <a class="btn-cta" href="https://uncodemy.com/course/playwright-training-course-in-noida">
+                    Explore Course <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </main>
+
+        <!-- ===== RIGHT SIDEBAR ===== -->
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>JavaScript Training</h4>
+                <p class="batch-sub">Kickstart your development journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div><!-- /layout -->
+
+    <!-- ===== FOOTER ===== -->
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

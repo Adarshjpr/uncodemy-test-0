@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Dashboards | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Introduction to Shiny and Plotly for Dynamic Visuals" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 12 of 20: Interactive Dashboards</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html" class="active"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-tachometer-alt"></i> Dashboards</span>
+        <h1>Interactive Dashboards</h1>
+
+        <div class="card">
+
+            <p>Static charts tell a story once. <strong>Shiny</strong> and <strong>Plotly</strong> let your audience explore the data themselves — filtering, zooming, and interacting with live dashboards built entirely in R.</p>
+
+            <h2>1. What is Shiny?</h2>
+            <p><strong>Shiny</strong> is an R package for building interactive web applications directly from R code — no HTML, CSS, or JavaScript required (though you can add them for polish).</p>
+                        <pre class="code-block"><code>install.packages(&quot;shiny&quot;)
+library(shiny)</code></pre>
+
+            <h2>2. Anatomy of a Shiny App</h2>
+            <p>Every Shiny app has two core parts: a <strong>UI</strong> (what the user sees) and a <strong>server</strong> function (the logic that responds to input).</p>
+                        <pre class="code-block"><code>library(shiny)
+
+ui &lt;- fluidPage(
+  titlePanel(&quot;Simple Shiny Dashboard&quot;),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput(&quot;bins&quot;, &quot;Number of bins:&quot;, min = 5, max = 50, value = 20)
+    ),
+    mainPanel(
+      plotOutput(&quot;histPlot&quot;)
+    )
+  )
+)
+
+server &lt;- function(input, output) {
+  output$histPlot &lt;- renderPlot({
+    hist(rnorm(500), breaks = input$bins,
+         col = &quot;steelblue&quot;, main = &quot;Live Histogram&quot;)
+  })
+}
+
+shinyApp(ui = ui, server = server)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> The reactive connection between input$bins and output$histPlot is Shiny's core idea — outputs automatically re-render whenever an input changes.
+            </div>
+
+            <h2>3. Key UI Input Widgets</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Function</th><th>Widget</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>sliderInput()</td><td>Numeric slider</td></tr>
+                        <tr><td>selectInput()</td><td>Dropdown menu</td></tr>
+                        <tr><td>textInput()</td><td>Free text box</td></tr>
+                        <tr><td>checkboxInput()</td><td>Single checkbox</td></tr>
+                        <tr><td>dateRangeInput()</td><td>Date range picker</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Reactive Expressions</h2>
+            <p>Use <code>reactive()</code> to cache and reuse computed values across multiple outputs, avoiding redundant calculations:</p>
+                        <pre class="code-block"><code>server &lt;- function(input, output) {
+  filtered_data &lt;- reactive({
+    subset(df, department == input$dept)
+  })
+
+  output$table &lt;- renderTable({ filtered_data() })
+  output$plot &lt;- renderPlot({ hist(filtered_data()$salary) })
+}</code></pre>
+
+            <h2>5. Plotly — Interactive Charts in R</h2>
+            <p><code>plotly</code> converts static ggplot2 charts into fully interactive ones (hover tooltips, zoom, pan) with a single function call:</p>
+                        <pre class="code-block"><code>install.packages(&quot;plotly&quot;)
+library(plotly)
+library(ggplot2)
+
+p &lt;- ggplot(df, aes(x = age, y = salary, color = department)) +
+  geom_point()
+
+ggplotly(p)   # instantly interactive!</code></pre>
+
+            <h2>6. Combining Shiny + Plotly</h2>
+                        <pre class="code-block"><code>library(shiny)
+library(plotly)
+
+ui &lt;- fluidPage(
+  plotlyOutput(&quot;interactivePlot&quot;)
+)
+
+server &lt;- function(input, output) {
+  output$interactivePlot &lt;- renderPlotly({
+    ggplotly(ggplot(df, aes(age, salary)) + geom_point())
+  })
+}
+
+shinyApp(ui, server)</code></pre>
+
+            <h2>7. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand ui + server structure</strong> — the two building blocks of every Shiny app.</li>
+                <li><strong>✅ Use reactive() to avoid redundant computation</strong> — for cleaner, faster apps.</li>
+                <li><strong>✅ Use ggplotly() for instant interactivity</strong> — on top of existing ggplot2 charts.</li>
+                <li><strong>✅ Test with runApp()</strong> — before considering deployment (covered in the final lesson).</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Start small — a single slider and one output. Shiny apps grow in complexity fast, so build up incrementally and test each new reactive piece.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-ggplot2.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Advanced Visualizations with ggplot2</a>
+            <a href="r-descriptive-stats.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Descriptive Statistics and Probability Distributions</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

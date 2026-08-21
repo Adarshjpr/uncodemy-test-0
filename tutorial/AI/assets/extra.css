@@ -1,0 +1,16 @@
+.table-wrap { overflow-x: auto; margin: 16px 0 20px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.data-table th, .data-table td {
+    border: 1px solid var(--line, #e3e3e3);
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+    color: var(--ink, #222);
+}
+.data-table th {
+    background: var(--bg, #f6f7fb);
+    font-family: var(--font-head, 'Poppins', sans-serif);
+    font-weight: 600;
+}
+.data-table tr:nth-child(even) td { background: rgba(0,0,0,0.015); }
+.code-block { overflow-x: auto; }

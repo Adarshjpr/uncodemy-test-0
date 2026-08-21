@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SharedPreferences &amp; Data Storage — Saving User Data | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Master SharedPreferences in Android — storing key-value data, user preferences, settings, login state, and best practices for production apps." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 7 of 12: SharedPreferences &amp; Data Storage — Saving User Data</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html" class="active"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-database"></i> Data Storage</span>
+        <h1>SharedPreferences &amp; Data Storage — Saving User Data</h1>
+
+        <div class="card">
+
+            <p>Every app needs to store data. For simple data like user preferences, settings, theme choices, or login state, <strong>SharedPreferences</strong> is the perfect solution. It's a lightweight key-value storage system that persists data across app restarts.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> SharedPreferences is one of the most commonly used Android features. Almost every app uses it to store user preferences, app settings, and session data. It's simple, fast, and reliable for small amounts of data.
+            </div>
+
+            <h2>1. What is SharedPreferences?</h2>
+
+            <p><strong>SharedPreferences</strong> is an Android API that allows you to save and retrieve persistent key-value pairs of primitive data types. It's ideal for storing:</p>
+            <ul>
+                <li>User preferences (theme, language, notification settings)</li>
+                <li>App settings (first-time launch, onboarding status)</li>
+                <li>Login credentials (email, user ID, authentication token)</li>
+                <li>Game scores and levels</li>
+                <li>Any small amount of simple data</li>
+            </ul>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Feature</th><th>SharedPreferences</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Data Type</strong></td><td>Key-value pairs (primitive types only)</td></tr>
+                        <tr><td><strong>Storage</strong></td><td>XML file in app's private directory</td></tr>
+                        <tr><td><strong>Access</strong></td><td>Private to the app (not accessible by other apps)</td></tr>
+                        <tr><td><strong>Persistence</strong></td><td>Persists across app restarts and device reboots</td></tr>
+                        <tr><td><strong>Size Limit</strong></td><td>~1-2 MB (not for large data)</td></tr>
+                        <tr><td><strong>Thread Safety</strong></td><td>Thread-safe (multiple threads can read/write safely)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. SharedPreferences Modes</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Mode</th><th>Description</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>MODE_PRIVATE</code></td><td>Only your app can access the data</td><td><strong>✅ Recommended for all apps</strong></td></tr>
+                        <tr><td><code>MODE_MULTI_PROCESS</code></td><td>Accessible from multiple processes (deprecated)</td><td>⚠️ Avoid — use ContentProvider instead</td></tr>
+                        <tr><td><code>MODE_WORLD_READABLE</code></td><td>Any app can read (deprecated)</td><td>❌ Never use — security risk</td></tr>
+                        <tr><td><code>MODE_WORLD_WRITEABLE</code></td><td>Any app can write (deprecated)</td><td>❌ Never use — security risk</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Only use <code>MODE_PRIVATE</code> for SharedPreferences. The other modes are deprecated and pose security risks. Use ContentProvider for data sharing between apps.
+            </div>
+
+            <h2>3. Getting Started with SharedPreferences</h2>
+
+            <h3>Step 1: Get SharedPreferences Instance</h3>
+            <pre class="code-block"><code>// Method 1: Get default preferences (shared across app)
+val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+
+// Method 2: Get named preferences (separate file)
+val sharedPref = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)</code></pre>
+
+            <h3>Step 2: Write Data</h3>
+            <pre class="code-block"><code>// Write data to SharedPreferences
+val sharedPref = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+val editor = sharedPref.edit()
+
+editor.putString("user_name", "John Doe")
+editor.putInt("user_age", 25)
+editor.putBoolean("notifications_enabled", true)
+editor.putFloat("user_rating", 4.5f)
+editor.putLong("last_login_time", System.currentTimeMillis())
+
+editor.apply() // Asynchronous write (recommended)
+// OR editor.commit() // Synchronous write (slower, but returns result)</code></pre>
+
+            <h3>Step 3: Read Data</h3>
+            <pre class="code-block"><code>// Read data from SharedPreferences
+val sharedPref = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+
+val userName = sharedPref.getString("user_name", "Guest")
+val userAge = sharedPref.getInt("user_age", 0)
+val notificationsEnabled = sharedPref.getBoolean("notifications_enabled", false)
+val userRating = sharedPref.getFloat("user_rating", 0.0f)
+val lastLoginTime = sharedPref.getLong("last_login_time", 0L)
+
+// Check if a key exists
+val hasUserName = sharedPref.contains("user_name")
+
+// Get all keys (for debugging)
+val allEntries = sharedPref.all</code></pre>
+
+            <h3>Step 4: Remove Data</h3>
+            <pre class="code-block"><code>// Remove a specific key
+val editor = sharedPref.edit()
+editor.remove("user_age")
+editor.apply()
+
+// Clear all data
+editor.clear()
+editor.apply()</code></pre>
+
+            <h2>4. Complete Example — User Settings App</h2>
+
+            <p>Here's a complete example of a settings screen using SharedPreferences:</p>
+
+            <h3>Setting Up Preferences</h3>
+            <pre class="code-block"><code>// PreferenceKeys.kt — Centralized key management
+object PreferenceKeys {
+    const val PREF_NAME = "AppSettings"
+    const val KEY_THEME = "theme_mode"
+    const val KEY_NOTIFICATIONS = "notifications_enabled"
+    const val KEY_USER_NAME = "user_name"
+    const val KEY_USER_EMAIL = "user_email"
+    const val KEY_FIRST_LAUNCH = "first_launch"
+    const val KEY_LAST_OPENED = "last_opened"
+}
+
+// PreferenceManager.kt — Utility class for SharedPreferences
+class PreferenceManager(context: Context) {
+
+    private val sharedPref = context.getSharedPreferences(
+        PreferenceKeys.PREF_NAME,
+        Context.MODE_PRIVATE
+    )
+
+    // Theme preference
+    fun getThemeMode(): String {
+        return sharedPref.getString(PreferenceKeys.KEY_THEME, "light") ?: "light"
+    }
+
+    fun setThemeMode(theme: String) {
+        sharedPref.edit().putString(PreferenceKeys.KEY_THEME, theme).apply()
+    }
+
+    // Notifications preference
+    fun areNotificationsEnabled(): Boolean {
+        return sharedPref.getBoolean(PreferenceKeys.KEY_NOTIFICATIONS, true)
+    }
+
+    fun setNotificationsEnabled(enabled: Boolean) {
+        sharedPref.edit().putBoolean(PreferenceKeys.KEY_NOTIFICATIONS, enabled).apply()
+    }
+
+    // User name
+    fun getUserName(): String {
+        return sharedPref.getString(PreferenceKeys.KEY_USER_NAME, "") ?: ""
+    }
+
+    fun setUserName(name: String) {
+        sharedPref.edit().putString(PreferenceKeys.KEY_USER_NAME, name).apply()
+    }
+
+    // User email
+    fun getUserEmail(): String {
+        return sharedPref.getString(PreferenceKeys.KEY_USER_EMAIL, "") ?: ""
+    }
+
+    fun setUserEmail(email: String) {
+        sharedPref.edit().putString(PreferenceKeys.KEY_USER_EMAIL, email).apply()
+    }
+
+    // First launch check
+    fun isFirstLaunch(): Boolean {
+        return sharedPref.getBoolean(PreferenceKeys.KEY_FIRST_LAUNCH, true)
+    }
+
+    fun setFirstLaunch(isFirst: Boolean) {
+        sharedPref.edit().putBoolean(PreferenceKeys.KEY_FIRST_LAUNCH, isFirst).apply()
+    }
+
+    // Last opened timestamp
+    fun getLastOpened(): Long {
+        return sharedPref.getLong(PreferenceKeys.KEY_LAST_OPENED, 0L)
+    }
+
+    fun setLastOpened(timestamp: Long) {
+        sharedPref.edit().putLong(PreferenceKeys.KEY_LAST_OPENED, timestamp).apply()
+    }
+
+    // Clear all preferences (logout)
+    fun clearAll() {
+        sharedPref.edit().clear().apply()
+    }
+}</code></pre>
+
+            <h3>Settings Activity</h3>
+            <pre class="code-block"><code>// SettingsActivity.kt
+class SettingsActivity : AppCompatActivity() {
+
+    private lateinit var preferenceManager: PreferenceManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_settings)
+
+        preferenceManager = PreferenceManager(this)
+
+        // Load saved preferences
+        loadPreferences()
+
+        // Setup listeners
+        setupListeners()
+    }
+
+    private fun loadPreferences() {
+        // Load theme
+        val theme = preferenceManager.getThemeMode()
+        // Apply theme and update UI
+
+        // Load notifications setting
+        val notificationsEnabled = preferenceManager.areNotificationsEnabled()
+        // Update switch UI
+
+        // Load user name
+        val userName = preferenceManager.getUserName()
+        // Update name field
+
+        // Load user email
+        val userEmail = preferenceManager.getUserEmail()
+        // Update email field
+    }
+
+    private fun setupListeners() {
+        // Theme change listener
+        findViewById<RadioGroup>(R.id.themeGroup).setOnCheckedChangeListener { _, checkedId ->
+            val theme = when (checkedId) {
+                R.id.themeLight -> "light"
+                R.id.themeDark -> "dark"
+                R.id.themeSystem -> "system"
+                else -> "light"
+            }
+            preferenceManager.setThemeMode(theme)
+            // Apply theme
+        }
+
+        // Notifications toggle
+        findViewById<Switch>(R.id.notificationsSwitch).setOnCheckedChangeListener { _, isChecked ->
+            preferenceManager.setNotificationsEnabled(isChecked)
+        }
+
+        // Save name
+        findViewById<Button>(R.id.saveNameButton).setOnClickListener {
+            val name = findViewById<EditText>(R.id.nameInput).text.toString()
+            if (name.isNotEmpty()) {
+                preferenceManager.setUserName(name)
+                Toast.makeText(this, "Name saved!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Save email
+        findViewById<Button>(R.id.saveEmailButton).setOnClickListener {
+            val email = findViewById<EditText>(R.id.emailInput).text.toString()
+            if (email.isNotEmpty()) {
+                preferenceManager.setUserEmail(email)
+                Toast.makeText(this, "Email saved!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Clear all preferences
+        findViewById<Button>(R.id.clearAllButton).setOnClickListener {
+            preferenceManager.clearAll()
+            Toast.makeText(this, "All preferences cleared!", Toast.LENGTH_SHORT).show()
+            // Restart activity to refresh UI
+            recreate()
+        }
+    }
+}</code></pre>
+
+            <h2>5. EncryptedSharedPreferences — Secure Storage</h2>
+
+            <p>For sensitive data (passwords, tokens, personal information), use <strong>EncryptedSharedPreferences</strong> to encrypt the data.</p>
+
+            <h3>Setup</h3>
+            <p>Add dependency to your <code>build.gradle</code>:</p>
+            <pre class="code-block"><code>dependencies {
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+}</code></pre>
+
+            <h3>Implementation</h3>
+            <pre class="code-block"><code>import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKeys
+
+// Create encrypted shared preferences
+val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+
+val encryptedPref = EncryptedSharedPreferences.create(
+    "secure_prefs",
+    masterKeyAlias,
+    context,
+    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+)
+
+// Use the encrypted preferences (same methods as regular SharedPreferences)
+encryptedPref.edit().putString("auth_token", "secure_token_123").apply()
+val token = encryptedPref.getString("auth_token", null)</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Use <strong>EncryptedSharedPreferences</strong> for storing sensitive data like authentication tokens, passwords, or personal user information. Regular SharedPreferences stores data as plain text XML, which can be accessed on rooted devices.
+            </div>
+
+            <h2>6. SharedPreferences vs Other Storage Options</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Storage Type</th><th>Use Case</th><th>Size Limit</th><th>Complexity</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>SharedPreferences</strong></td><td>Simple key-value data, settings, user preferences</td><td>~1-2 MB</td><td>Low</td></tr>
+                        <tr><td><strong>SQLite / Room</strong></td><td>Structured relational data, large datasets</td><td>Unlimited</td><td>Medium</td></tr>
+                        <tr><td><strong>Internal Storage</strong></td><td>Files, images, documents</td><td>Unlimited</td><td>Medium</td></tr>
+                        <tr><td><strong>External Storage</strong></td><td>Public files, shareable content</td><td>Unlimited</td><td>Medium</td></tr>
+                        <tr><td><strong>DataStore</strong></td><td>Modern alternative to SharedPreferences</td><td>~1-2 MB</td><td>Low</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>7. DataStore — The Modern Alternative</h2>
+
+            <p><strong>DataStore</strong> is the modern replacement for SharedPreferences, offering better performance, type safety, and support for coroutines and Flow.</p>
+
+            <h3>Preferences DataStore</h3>
+            <pre class="code-block"><code>// Add dependency
+// implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+// Create DataStore
+val Context.dataStore: DataStore&lt;Preferences&gt; by preferencesDataStore(name = "user_prefs")
+
+// Define keys
+val THEME_KEY = stringPreferencesKey("theme")
+val NOTIFICATIONS_KEY = booleanPreferencesKey("notifications")
+
+// Write data (suspend function)
+suspend fun savePreferences(dataStore: DataStore&lt;Preferences&gt;) {
+    dataStore.edit { preferences ->
+        preferences[THEME_KEY] = "dark"
+        preferences[NOTIFICATIONS_KEY] = true
+    }
+}
+
+// Read data (Flow)
+val themeFlow: Flow&lt;String&gt; = dataStore.data.map { preferences ->
+    preferences[THEME_KEY] ?: "light"
+}</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> For new projects, consider using <strong>DataStore</strong> instead of SharedPreferences. It provides better performance, type safety, and coroutine support. However, SharedPreferences is still widely used and perfectly fine for simpler use cases.
+            </div>
+
+            <h2>8. Common Pitfalls &amp; Solutions</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Mistakes to Avoid:</strong>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 1: Storing large amounts of data</strong></p>
+                <p><strong>Problem:</strong> SharedPreferences is designed for small amounts of data (~1-2 MB). Storing large data can cause performance issues.</p>
+                <p><strong>Solution:</strong> Use SQLite, Room, or internal storage for large data.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 2: Not using apply() vs commit() correctly</strong></p>
+                <p><strong>Problem:</strong> <code>commit()</code> writes synchronously on the main thread, causing UI lag.</p>
+                <p><strong>Solution:</strong> Use <code>apply()</code> for asynchronous writes. Use <code>commit()</code> only when you need the result immediately.</p>
+                <pre class="code-block"><code>// ✅ Good — asynchronous
+editor.apply()
+
+// ❌ Bad — synchronous (blocks UI thread)
+editor.commit()</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 3: Storing sensitive data in plain text</strong></p>
+                <p><strong>Problem:</strong> SharedPreferences stores data in plain XML files, visible on rooted devices.</p>
+                <p><strong>Solution:</strong> Use <strong>EncryptedSharedPreferences</strong> for sensitive data.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 4: Not handling default values</strong></p>
+                <p><strong>Problem:</strong> Accessing a key that doesn't exist returns null or default.</p>
+                <p><strong>Solution:</strong> Always provide a default value when reading.</p>
+                <pre class="code-block"><code>// ✅ Always provide default values
+val name = sharedPref.getString("user_name", "Guest")
+val age = sharedPref.getInt("user_age", 0)</code></pre>
+            </div>
+
+            <h2>9. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use MODE_PRIVATE</strong> — Never use other modes (deprecated/unsafe).</li>
+                <li><strong>✅ Use apply() over commit()</strong> — For asynchronous writes.</li>
+                <li><strong>✅ Provide default values</strong> — Always when reading from SharedPreferences.</li>
+                <li><strong>✅ Use EncryptedSharedPreferences</strong> — For sensitive data.</li>
+                <li><strong>✅ Centralize keys</strong> — Use an object/class with constants for keys.</li>
+                <li><strong>✅ Consider DataStore</strong> — For new projects as a modern alternative.</li>
+                <li><strong>✅ Don't store large data</strong> — Use SQLite/Room for large datasets.</li>
+                <li><strong>✅ Test persistence</strong> — Verify data survives app restarts.</li>
+                <li><strong>✅ Handle first launch</strong> — Use a flag to detect first app launch.</li>
+                <li><strong>✅ Clear on logout</strong> — Clear preferences when user logs out.</li>
+                <li><strong>✅ Use appropriate data types</strong> — Choose the right type for your data.</li>
+                <li><strong>✅ Backup &amp; restore</strong> — Consider implementing backup for user preferences.</li>
+            </ul>
+
+            <h2>10. Quick Reference — SharedPreferences Methods</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>getString(key, defaultValue)</code></td><td>Retrieve a String value</td></tr>
+                        <tr><td><code>getInt(key, defaultValue)</code></td><td>Retrieve an Int value</td></tr>
+                        <tr><td><code>getBoolean(key, defaultValue)</code></td><td>Retrieve a Boolean value</td></tr>
+                        <tr><td><code>getFloat(key, defaultValue)</code></td><td>Retrieve a Float value</td></tr>
+                        <tr><td><code>getLong(key, defaultValue)</code></td><td>Retrieve a Long value</td></tr>
+                        <tr><td><code>putString(key, value)</code></td><td>Store a String value</td></tr>
+                        <tr><td><code>putInt(key, value)</code></td><td>Store an Int value</td></tr>
+                        <tr><td><code>putBoolean(key, value)</code></td><td>Store a Boolean value</td></tr>
+                        <tr><td><code>remove(key)</code></td><td>Remove a specific key</td></tr>
+                        <tr><td><code>clear()</code></td><td>Remove all keys</td></tr>
+                        <tr><td><code>contains(key)</code></td><td>Check if a key exists</td></tr>
+                        <tr><td><code>all</code></td><td>Get all key-value pairs</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> SharedPreferences is the go-to solution for storing simple key-value data in Android. It's fast, reliable, and easy to use. For sensitive data, use EncryptedSharedPreferences. For new projects, consider DataStore as a modern alternative. Always centralize your preference keys and provide default values when reading.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-recyclerview.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a>
+            <a href="android-sqlite.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>SQLite Database — Persistent Data Storage</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Customization — Sass &amp; Theming | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn how to customize Bootstrap using Sass variables, theming, and overriding defaults to create a unique brand identity." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 8 of 9: Bootstrap Customization — Sass &amp; Theming</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html" class="active"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-paint-brush"></i> Customization</span>
+        <h1>Bootstrap Customization — Sass &amp; Theming</h1>
+
+        <div class="card">
+
+            <p>One of Bootstrap's greatest strengths is its <strong>customizability</strong>. While the default design is clean and professional, you can easily transform it to match your brand's identity. Bootstrap is built with <strong>Sass</strong> (Syntactically Awesome Style Sheets), a CSS preprocessor that allows you to use variables, nesting, mixins, and functions. This makes customization powerful and maintainable.</p>
+
+            <h2>What is Sass?</h2>
+            <p>Sass is a CSS preprocessor that extends CSS with powerful features:</p>
+            <ul>
+                <li><strong>Variables:</strong> Store reusable values (colors, fonts, spacing).</li>
+                <li><strong>Nesting:</strong> Write cleaner, more organized CSS.</li>
+                <li><strong>Mixins:</strong> Reusable blocks of CSS.</li>
+                <li><strong>Functions:</strong> Perform operations and calculations.</li>
+                <li><strong>Partials &amp; Import:</strong> Split CSS into smaller, manageable files.</li>
+            </ul>
+
+            <h3>Why Customize with Sass?</h3>
+            <ul>
+                <li><strong>Consistent Theming:</strong> Change one variable and it updates everywhere.</li>
+                <li><strong>Maintainable Code:</strong> No need to find and replace across hundreds of files.</li>
+                <li><strong>Optimized Output:</strong> Only include the components you need (reduces file size).</li>
+                <li><strong>Professional Branding:</strong> Match your company colors, fonts, and spacing exactly.</li>
+            </ul>
+
+            <h2>Setting Up Sass with Bootstrap</h2>
+
+            <h3>Method 1: npm (Recommended)</h3>
+            <p>Install Bootstrap and its dependencies via npm:</p>
+            <pre class="code-block"><code>npm install bootstrap
+npm install sass</code></pre>
+
+            <p>Create a custom Sass file (e.g., <code>custom.scss</code>):</p>
+            <pre class="code-block"><code>// 1. Import Bootstrap's functions and variables
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 2. Override variables BEFORE importing Bootstrap
+$primary: #FF6B35;
+$secondary: #2D4059;
+$success: #2ECC71;
+$font-family-base: 'Inter', sans-serif;
+$body-bg: #F8F9FA;
+
+// 3. Import Bootstrap's full CSS
+@import "bootstrap/scss/bootstrap";
+
+// 4. Your custom styles below
+.custom-class {
+    background: $primary;
+    color: white;
+}</code></pre>
+
+            <p>Compile Sass to CSS:</p>
+            <pre class="code-block"><code>sass custom.scss custom.css</code></pre>
+
+            <h3>Method 2: CDN with Custom Overrides</h3>
+            <p>If you're using the CDN version, you can still customize by adding CSS overrides:</p>
+            <pre class="code-block"><code>&lt;!-- Bootstrap CSS (CDN) --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Your custom CSS overrides --&gt;
+&lt;style&gt;
+    :root {
+        --bs-primary: #FF6B35;
+        --bs-primary-rgb: 255, 107, 53;
+        --bs-secondary: #2D4059;
+        --bs-secondary-rgb: 45, 64, 89;
+    }
+    .btn-primary {
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+    }
+    .btn-primary:hover {
+        background-color: #E55A2B;
+        border-color: #E55A2B;
+    }
+&lt;/style&gt;</code></pre>
+
+            <h2>Key Sass Variables to Customize</h2>
+
+            <h3>1. Colors</h3>
+            <p>Bootstrap's color system is built on a base palette that you can override.</p>
+            <pre class="code-block"><code>$primary: #FF6B35;       // Brand primary color
+$secondary: #2D4059;     // Secondary color
+$success: #2ECC71;       // Success (green)
+$info: #3498DB;          // Info (blue)
+$warning: #F1C40F;       // Warning (yellow)
+$danger: #E74C3C;        // Danger (red)
+$light: #F8F9FA;         // Light (background)
+$dark: #1E2230;          // Dark (text)</code></pre>
+
+            <h3>2. Typography</h3>
+            <pre class="code-block"><code>$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 1rem;              // 16px
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+$headings-font-family: 'Poppins', sans-serif;
+$headings-font-weight: 600;
+$headings-line-height: 1.25;
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;</code></pre>
+
+            <h3>3. Spacing</h3>
+            <pre class="code-block"><code>$spacer: 1rem;              // Base spacing unit (16px)
+$spacers: (
+    0: 0,
+    1: $spacer * .25,        // 0.25rem (4px)
+    2: $spacer * .5,         // 0.5rem (8px)
+    3: $spacer * 1,          // 1rem (16px)
+    4: $spacer * 1.5,        // 1.5rem (24px)
+    5: $spacer * 3,          // 3rem (48px)
+    6: $spacer * 4.5,        // 4.5rem (72px)
+    7: $spacer * 6,          // 6rem (96px)
+);</code></pre>
+
+            <h3>4. Border Radius</h3>
+            <pre class="code-block"><code>$border-radius: .375rem;      // 6px (default)
+$border-radius-sm: .25rem;     // 4px
+$border-radius-lg: .5rem;      // 8px
+$border-radius-xl: 1rem;       // 16px
+$border-radius-pill: 50rem;    // Pill shape</code></pre>
+
+            <h3>5. Grid &amp; Breakpoints</h3>
+            <pre class="code-block"><code>$grid-columns: 12;
+$grid-gutter-width: 1.5rem;    // Gutters between columns
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);</code></pre>
+
+            <h3>6. Shadows</h3>
+            <pre class="code-block"><code>$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+$box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .175);
+$box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, .075);</code></pre>
+
+            <h2>Customizing Bootstrap Components</h2>
+
+            <h3>Custom Buttons</h3>
+            <pre class="code-block"><code>// In your custom.scss
+$btn-padding-y: .5rem;
+$btn-padding-x: 1.5rem;
+$btn-font-weight: 600;
+$btn-border-radius: 50px;  // Pill shape buttons
+
+// Or create a custom button variant
+.btn-custom {
+    @include button-variant(#6C63FF, #5A52D5);
+}</code></pre>
+
+            <h3>Custom Forms</h3>
+            <pre class="code-block"><code>$input-bg: #F8F9FA;
+$input-border-color: #DEE2E6;
+$input-border-radius: 8px;
+$input-focus-border-color: $primary;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($primary, .25);</code></pre>
+
+            <h3>Custom Navbar</h3>
+            <pre class="code-block"><code>$navbar-padding-y: 1rem;
+$navbar-padding-x: 1.5rem;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-brand-font-size: 1.5rem;</code></pre>
+
+            <h3>Custom Cards</h3>
+            <pre class="code-block"><code>$card-border-radius: 12px;
+$card-box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+$card-border-color: rgba(0, 0, 0, .05);</code></pre>
+
+            <h2>Creating a Complete Theme</h2>
+
+            <p>Here's a complete custom theme file that you can use as a starting point:</p>
+            <pre class="code-block"><code>// _custom-theme.scss
+
+// 1. Import Bootstrap functions first
+@import "bootstrap/scss/functions";
+
+// 2. Define your custom colors
+$brand-primary: #6C63FF;
+$brand-secondary: #2D4059;
+$brand-accent: #FF6B6B;
+
+// 3. Override Bootstrap variables
+$primary: $brand-primary;
+$secondary: $brand-secondary;
+$danger: $brand-accent;
+$body-bg: #F4F6F9;
+$body-color: #2D3436;
+
+// 4. Typography
+$font-family-base: 'Inter', -apple-system, system-ui, sans-serif;
+$headings-font-family: 'Poppins', $font-family-base;
+$headings-font-weight: 700;
+
+// 5. Spacing
+$spacer: 1.25rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer * 1,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4.5,
+    7: $spacer * 6,
+);
+
+// 6. Border radius
+$border-radius: .5rem;
+$border-radius-lg: 1rem;
+$border-radius-sm: .25rem;
+
+// 7. Shadows
+$box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, .08);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .12);
+
+// 8. Buttons
+$btn-padding-y: .6rem;
+$btn-padding-x: 1.5rem;
+$btn-font-weight: 600;
+$btn-border-radius: 50px;
+
+// 9. Forms
+$input-border-radius: 8px;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($primary, .25);
+
+// 10. Cards
+$card-border-radius: 16px;
+$card-box-shadow: $box-shadow;
+$card-border-color: rgba(0, 0, 0, .04);
+
+// 11. Navbar
+$navbar-padding-y: .75rem;
+$navbar-padding-x: 2rem;
+$navbar-brand-font-size: 1.5rem;
+
+// 12. Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// 13. Custom classes
+// Custom button
+.btn-brand {
+    @include button-variant($brand-primary, darken($brand-primary, 10%));
+}
+
+// Custom card with gradient
+.card-gradient {
+    background: linear-gradient(135deg, $brand-primary, $brand-secondary);
+    color: white;
+    border: none;
+}
+
+// Custom section padding
+.section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}</code></pre>
+
+            <h2>Creating a Custom Color Palette</h2>
+            <p>To create a complete brand color palette, override the theme colors map:</p>
+            <pre class="code-block"><code>$custom-colors: (
+    "brand": #6C63FF,
+    "brand-light": #A8A3FF,
+    "brand-dark": #4A42D5,
+    "accent": #FF6B6B,
+    "accent-light": #FFA8A8,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Now you can use:
+// .bg-brand, .text-brand, .btn-brand, etc.</code></pre>
+
+            <h2>Building a Custom Theme with npm</h2>
+
+            <h3>Project Structure</h3>
+            <pre class="code-block"><code>project/
+├── node_modules/
+├── src/
+│   ├── scss/
+│   │   ├── custom.scss        # Main Sass file
+│   │   ├── _variables.scss    # Custom variables
+│   │   └── _utilities.scss    # Custom utilities
+│   ├── js/
+│   └── index.html
+├── package.json
+└── package-lock.json</code></pre>
+
+            <h3>package.json</h3>
+            <pre class="code-block"><code>{
+    "name": "custom-bootstrap-theme",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "sass src/scss/custom.scss dist/css/style.css",
+        "watch": "sass --watch src/scss/custom.scss dist/css/style.css"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.0",
+        "sass": "^1.62.0"
+    }
+}</code></pre>
+
+            <h3>Build Command</h3>
+            <pre class="code-block"><code>npm run build    # Build once
+npm run watch    # Watch for changes</code></pre>
+
+            <h2>Example: Custom Brand Theme</h2>
+            <p>Here's a complete example showing a brand-themed website:</p>
+            <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Brand Theme&lt;/title&gt;
+    &lt;link rel="stylesheet" href="dist/css/style.css"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Custom Navbar --&gt;
+    &lt;nav class="navbar navbar-expand-lg bg-primary navbar-dark"&gt;
+        &lt;div class="container"&gt;
+            &lt;a class="navbar-brand fw-bold" href="#"&gt;BrandName&lt;/a&gt;
+            &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"&gt;
+                &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;div class="collapse navbar-collapse" id="navMenu"&gt;
+                &lt;ul class="navbar-nav ms-auto"&gt;
+                    &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Hero Section with custom gradient --&gt;
+    &lt;section class="section-padding text-center text-white" style="background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));"&gt;
+        &lt;div class="container"&gt;
+            &lt;h1 class="display-3 fw-bold"&gt;Welcome to BrandName&lt;/h1&gt;
+            &lt;p class="lead mb-4"&gt;A modern theme built with Bootstrap and Sass&lt;/p&gt;
+            &lt;a href="#" class="btn btn-light btn-lg rounded-pill px-5 fw-bold"&gt;Get Started&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Features with custom cards --&gt;
+    &lt;section class="section-padding"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="text-center mb-5"&gt;Our Features&lt;/h2&gt;
+            &lt;div class="row row-cols-1 row-cols-md-3 g-4"&gt;
+                &lt;div class="col"&gt;
+                    &lt;div class="card h-100 text-center p-4"&gt;
+                        &lt;div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 72px; height: 72px;"&gt;
+                            &lt;i class="fas fa-rocket text-primary fs-1"&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;h5 class="card-title"&gt;Fast Performance&lt;/h5&gt;
+                        &lt;p class="card-text text-muted"&gt;Optimized for speed and efficiency.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="col"&gt;
+                    &lt;div class="card h-100 text-center p-4"&gt;
+                        &lt;div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 72px; height: 72px;"&gt;
+                            &lt;i class="fas fa-shield-alt text-success fs-1"&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;h5 class="card-title"&gt;Secure&lt;/h5&gt;
+                        &lt;p class="card-text text-muted"&gt;Built with security in mind.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="col"&gt;
+                    &lt;div class="card h-100 text-center p-4"&gt;
+                        &lt;div class="bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 72px; height: 72px;"&gt;
+                            &lt;i class="fas fa-palette text-warning fs-1"&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;h5 class="card-title"&gt;Customizable&lt;/h5&gt;
+                        &lt;p class="card-text text-muted"&gt;Fully customizable to your needs.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> 
+                <ul>
+                    <li>Always import <code>functions</code> and <code>variables</code> before overriding them.</li>
+                    <li>Create a dedicated <code>_variables.scss</code> file for clean separation.</li>
+                    <li>Use CSS Custom Properties (<code>var(--bs-primary)</code>) for runtime theming.</li>
+                    <li>Only import the components you need to reduce file size.</li>
+                    <li>Test your custom theme on all devices and browsers.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-flexbox-display-positioning.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a>
+            <a href="bootstrap-cheat-sheet-complete.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Cheat Sheet — Complete Reference</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

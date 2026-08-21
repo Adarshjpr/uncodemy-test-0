@@ -1,0 +1,1300 @@
+/* ==========================================================================
+   UNCODEMY — LEARNING HUB
+   --------------------------------------------------------------------------
+   One interactive component that replaces three standalone sections:
+     Trainers · Projects · Classroom · Interview Prep · Tutorials · Community
+   Main tabs → panel content → horizontal carousel.
+     desktop 3 cards · tablet 2 · mobile 1 · always a single row.
+
+   Loads AFTER css/uncodemy-redesign.css. That file is not edited.
+   Selector pattern: html-tag + meaningful class, scoped to the section.
+   ========================================================================== */
+
+section.learning-hub-section {
+    --lh-orange: var(--uc-orange, #ff5421);
+    --lh-orange-600: var(--uc-orange-600, #e8410f);
+    --lh-orange-400: var(--uc-orange-400, #ff8a4c);
+    --lh-orange-100: var(--uc-orange-100, #ffe6dc);
+    --lh-orange-50: var(--uc-orange-50, #fff4ef);
+
+    --lh-ink: var(--uc-ink, #101828);
+    --lh-ink-700: var(--uc-ink-700, #344054);
+    --lh-muted: var(--uc-muted, #667085);
+    --lh-line: var(--uc-line, #e7ebf0);
+    --lh-line-soft: var(--uc-line-soft, #f1f4f8);
+
+    --lh-surface: var(--uc-surface, #ffffff);
+    --lh-surface-soft: var(--uc-surface-soft, #f8fafc);
+
+    --lh-green: var(--uc-green, #0f9d58);
+    --lh-blue: var(--uc-blue, #1d6ff2);
+
+    --lh-radius-sm: var(--uc-radius-sm, 12px);
+    --lh-radius: var(--uc-radius, 18px);
+    --lh-radius-lg: var(--uc-radius-lg, 24px);
+    --lh-radius-pill: var(--uc-radius-pill, 999px);
+
+    --lh-shadow-xs: var(--uc-shadow-xs, 0 1px 2px rgba(16, 24, 40, .05));
+    --lh-shadow-sm: var(--uc-shadow-sm, 0 4px 16px rgba(16, 24, 40, .06));
+    --lh-shadow-md: var(--uc-shadow-md, 0 12px 32px rgba(16, 24, 40, .08));
+    --lh-shadow-orange: var(--uc-shadow-orange, 0 16px 36px rgba(255, 84, 33, .18));
+
+    --lh-ease: var(--uc-ease, cubic-bezier(.22, .61, .36, 1));
+
+    --lh-per-view: 3;
+    --lh-gap: 22px;
+
+    background: var(--lh-surface-soft);
+    scroll-margin-top: 120px;
+}
+
+/* --------------------------------------------------------------------------
+   1. THE SHELL — one card that holds tabs and every panel
+   -------------------------------------------------------------------------- */
+section.learning-hub-section div.learning-hub-console {
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius-lg);
+    background: var(--lh-surface);
+    box-shadow: var(--lh-shadow-md);
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   2. TAB BAR
+   -------------------------------------------------------------------------- */
+section.learning-hub-section nav.learning-hub-nav {
+    padding: 14px 14px 0;
+    background: linear-gradient(180deg, var(--lh-surface-soft) 0%, var(--lh-surface) 100%);
+    border-bottom: 1px solid var(--lh-line);
+    scroll-margin-top: 120px;
+}
+
+section.learning-hub-section ul.learning-hub-tablist {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0 0 14px;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+section.learning-hub-section ul.learning-hub-tablist::-webkit-scrollbar {
+    display: none;
+}
+
+section.learning-hub-section li.learning-hub-tab-item {
+    flex: 1 1 auto;
+    min-width: max-content;
+}
+
+section.learning-hub-section button.learning-hub-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--lh-radius-sm);
+    background: transparent;
+    color: var(--lh-ink-700);
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .28s var(--lh-ease), color .28s var(--lh-ease),
+        border-color .28s var(--lh-ease), box-shadow .28s var(--lh-ease),
+        transform .28s var(--lh-ease);
+}
+
+section.learning-hub-section button.learning-hub-tab:hover {
+    background: var(--lh-orange-50);
+    border-color: var(--lh-orange-100);
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section button.learning-hub-tab.is-active {
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: var(--lh-shadow-orange);
+}
+
+section.learning-hub-section button.learning-hub-tab:focus-visible {
+    outline: 2px solid var(--lh-orange);
+    outline-offset: 2px;
+}
+
+section.learning-hub-section span.learning-hub-tab-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.learning-hub-section span.learning-hub-tab-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* --------------------------------------------------------------------------
+   3. PANELS
+   -------------------------------------------------------------------------- */
+section.learning-hub-section div.learning-hub-panels {
+    padding: 30px 26px 34px;
+}
+
+section.learning-hub-section div.learning-hub-panel[hidden] {
+    display: none;
+}
+
+section.learning-hub-section div.learning-hub-panel.is-active {
+    animation: learningHubFade .42s var(--lh-ease) both;
+}
+
+@keyframes learningHubFade {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+section.learning-hub-section header.learning-hub-panel-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 22px;
+}
+
+section.learning-hub-section div.learning-hub-panel-copy {
+    max-width: 640px;
+}
+
+section.learning-hub-section h3.learning-hub-panel-title {
+    margin: 0 0 7px;
+    font-size: clamp(19px, 2.1vw, 24px);
+    font-weight: 800;
+    letter-spacing: -.015em;
+    color: var(--lh-ink);
+    line-height: 1.25;
+}
+
+section.learning-hub-section p.learning-hub-panel-text {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section a.learning-hub-panel-link,
+section.learning-hub-section button.learning-hub-panel-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    border: 1px solid var(--lh-orange-100);
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-orange-50);
+    color: var(--lh-orange-600);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .28s var(--lh-ease), color .28s var(--lh-ease),
+        transform .28s var(--lh-ease);
+}
+
+section.learning-hub-section a.learning-hub-panel-link:hover,
+section.learning-hub-section button.learning-hub-panel-link:hover {
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+section.learning-hub-section a.learning-hub-panel-link svg,
+section.learning-hub-section button.learning-hub-panel-link svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   4. THE CAROUSEL — shared by every panel
+   -------------------------------------------------------------------------- */
+section.learning-hub-section div.learning-hub-carousel {
+    position: relative;
+}
+
+section.learning-hub-section div.learning-hub-carousel-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px 0 6px;
+}
+
+section.learning-hub-section div.learning-hub-carousel-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+section.learning-hub-section ul.learning-hub-track {
+    display: flex;
+    flex-wrap: nowrap;
+    /* the single-row rule: slides never wrap and never stack */
+    gap: var(--lh-gap);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: stretch;
+}
+
+section.learning-hub-section li.learning-hub-slide {
+    flex: 0 0 calc((100% - var(--lh-gap) * (var(--lh-per-view) - 1)) / var(--lh-per-view));
+    scroll-snap-align: start;
+    display: flex;
+}
+
+/* a panel can pin itself to one slide per view (the community pair) */
+section.learning-hub-section div.learning-hub-carousel[data-hub-per-view="1"] {
+    --lh-per-view: 1;
+}
+
+section.learning-hub-section div.learning-hub-carousel[data-hub-per-view="2"] {
+    --lh-per-view: 2;
+}
+
+/* ---------- controls ---------- */
+section.learning-hub-section div.learning-hub-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0 0;
+}
+
+section.learning-hub-section div.learning-hub-carousel-controls[hidden] {
+    display: none;
+}
+
+section.learning-hub-section button.learning-hub-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-surface);
+    color: var(--lh-ink-700);
+    cursor: pointer;
+    box-shadow: var(--lh-shadow-xs);
+    transition: background .28s var(--lh-ease), color .28s var(--lh-ease),
+        border-color .28s var(--lh-ease), transform .28s var(--lh-ease),
+        opacity .28s var(--lh-ease);
+}
+
+section.learning-hub-section button.learning-hub-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+section.learning-hub-section button.learning-hub-arrow:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    border-color: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+section.learning-hub-section button.learning-hub-arrow:focus-visible {
+    outline: 2px solid var(--lh-orange);
+    outline-offset: 2px;
+}
+
+section.learning-hub-section button.learning-hub-arrow:disabled {
+    opacity: .38;
+    cursor: default;
+}
+
+section.learning-hub-section div.learning-hub-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+section.learning-hub-section button.learning-hub-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-line);
+    cursor: pointer;
+    transition: width .28s var(--lh-ease), background .28s var(--lh-ease);
+}
+
+section.learning-hub-section button.learning-hub-dot.is-active {
+    width: 24px;
+    background: linear-gradient(90deg, var(--lh-orange) 0%, var(--lh-orange-400) 100%);
+}
+
+section.learning-hub-section button.learning-hub-dot:focus-visible {
+    outline: 2px solid var(--lh-orange);
+    outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   5. SHARED CARD CHROME
+   -------------------------------------------------------------------------- */
+section.learning-hub-section article.trainer-card,
+section.learning-hub-section article.hub-project-card,
+section.learning-hub-section article.hub-batch-card,
+section.learning-hub-section article.interview-prep-card,
+section.learning-hub-section article.tutorial-resource-card,
+section.learning-hub-section article.community-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius);
+    background: var(--lh-surface);
+    box-shadow: var(--lh-shadow-xs);
+    overflow: hidden;
+    transition: transform .32s var(--lh-ease), box-shadow .32s var(--lh-ease),
+        border-color .32s var(--lh-ease);
+}
+
+section.learning-hub-section article.trainer-card:hover,
+section.learning-hub-section article.hub-project-card:hover,
+section.learning-hub-section article.hub-batch-card:hover,
+section.learning-hub-section article.interview-prep-card:hover,
+section.learning-hub-section article.tutorial-resource-card:hover,
+section.learning-hub-section article.community-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--lh-orange-100);
+    box-shadow: var(--lh-shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   6. TRAINER CARD
+   -------------------------------------------------------------------------- */
+section.learning-hub-section figure.trainer-figure {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--lh-surface-soft);
+}
+
+@supports not (aspect-ratio: 4 / 3) {
+    section.learning-hub-section figure.trainer-figure {
+        height: 210px;
+    }
+}
+
+section.learning-hub-section img.trainer-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform .5s var(--lh-ease);
+}
+
+section.learning-hub-section article.trainer-card:hover img.trainer-photo {
+    transform: scale(1.05);
+}
+
+section.learning-hub-section figcaption.trainer-badge {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    padding: 6px 12px;
+    border-radius: var(--lh-radius-pill);
+    background: rgba(15, 23, 32, .78);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+}
+
+section.learning-hub-section div.trainer-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 10px;
+    padding: 20px;
+}
+
+section.learning-hub-section h4.trainer-name {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--lh-ink);
+    line-height: 1.3;
+}
+
+section.learning-hub-section span.trainer-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section span.trainer-role svg {
+    width: 14px;
+    height: 14px;
+}
+
+section.learning-hub-section p.trainer-text {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section ul.trainer-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.learning-hub-section li.trainer-stack-item {
+    padding: 4px 10px;
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-surface-soft);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--lh-ink-700);
+    line-height: 1.4;
+}
+
+section.learning-hub-section button.trainer-cta {
+    margin-top: auto;
+    padding: 11px 16px;
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-surface);
+    color: var(--lh-ink);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background .28s var(--lh-ease), color .28s var(--lh-ease),
+        border-color .28s var(--lh-ease);
+}
+
+section.learning-hub-section button.trainer-cta:hover {
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   7. PROJECT CARD
+   -------------------------------------------------------------------------- */
+section.learning-hub-section figure.hub-project-figure {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--lh-surface-soft);
+}
+
+@supports not (aspect-ratio: 16 / 10) {
+    section.learning-hub-section figure.hub-project-figure {
+        height: 190px;
+    }
+}
+
+section.learning-hub-section img.hub-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s var(--lh-ease);
+}
+
+section.learning-hub-section article.hub-project-card:hover img.hub-project-image {
+    transform: scale(1.06);
+}
+
+section.learning-hub-section figcaption.hub-project-category {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    padding: 6px 12px;
+    border-radius: var(--lh-radius-pill);
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+section.learning-hub-section div.hub-project-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 10px;
+    padding: 20px;
+}
+
+section.learning-hub-section span.hub-project-kind {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--lh-blue);
+}
+
+section.learning-hub-section h4.hub-project-name {
+    margin: 0;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--lh-ink);
+    line-height: 1.35;
+}
+
+section.learning-hub-section p.hub-project-summary {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section p.hub-project-outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0;
+    padding: 11px 13px;
+    border-radius: var(--lh-radius-sm);
+    background: var(--lh-orange-50);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--lh-ink-700);
+}
+
+section.learning-hub-section p.hub-project-outcome svg {
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section ul.hub-project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.learning-hub-section li.hub-project-stack-item {
+    padding: 4px 10px;
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-surface-soft);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--lh-ink-700);
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   8. CLASSROOM — filter pills + batch cards
+   -------------------------------------------------------------------------- */
+section.learning-hub-section div.hub-schedule-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 22px;
+    padding: 8px;
+    border: 1px solid var(--lh-line);
+    border-radius: var(--lh-radius-pill);
+    background: var(--lh-surface-soft);
+}
+
+section.learning-hub-section button.hub-schedule-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: var(--lh-radius-pill);
+    background: transparent;
+    color: var(--lh-ink-700);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .26s var(--lh-ease), color .26s var(--lh-ease),
+        box-shadow .26s var(--lh-ease);
+}
+
+section.learning-hub-section button.hub-schedule-pill svg {
+    width: 15px;
+    height: 15px;
+}
+
+section.learning-hub-section button.hub-schedule-pill:hover {
+    background: var(--lh-orange-50);
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section button.hub-schedule-pill.is-active {
+    background: var(--lh-surface);
+    color: var(--lh-orange-600);
+    box-shadow: var(--lh-shadow-sm);
+    border-color: var(--lh-orange-100);
+}
+
+section.learning-hub-section button.hub-schedule-pill:focus-visible {
+    outline: 2px solid var(--lh-orange);
+    outline-offset: 2px;
+}
+
+section.learning-hub-section div.hub-schedule-view[hidden] {
+    display: none;
+}
+
+section.learning-hub-section div.hub-schedule-view.is-active {
+    animation: learningHubFade .35s var(--lh-ease) both;
+}
+
+section.learning-hub-section article.hub-batch-card {
+    padding: 22px;
+    gap: 12px;
+}
+
+section.learning-hub-section header.hub-batch-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+section.learning-hub-section span.hub-batch-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--lh-radius-sm);
+    border: 1px solid var(--lh-orange-100);
+    background: var(--lh-orange-50);
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section span.hub-batch-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+section.learning-hub-section h4.hub-batch-title {
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 800;
+    color: var(--lh-ink);
+    line-height: 1.3;
+}
+
+section.learning-hub-section span.hub-batch-label {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section dl.hub-batch-facts {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+}
+
+section.learning-hub-section div.hub-batch-fact {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 9px;
+    border-bottom: 1px dashed var(--lh-line);
+}
+
+section.learning-hub-section div.hub-batch-fact:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+section.learning-hub-section dt.hub-batch-fact-label {
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section dd.hub-batch-fact-value {
+    margin: 0;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--lh-ink);
+    line-height: 1.45;
+}
+
+section.learning-hub-section span.hub-batch-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    padding: 6px 12px;
+    border-radius: var(--lh-radius-pill);
+    background: rgba(15, 157, 88, .1);
+    color: var(--lh-green);
+    font-size: 11.5px;
+    font-weight: 800;
+}
+
+section.learning-hub-section span.hub-batch-next svg {
+    width: 14px;
+    height: 14px;
+}
+
+section.learning-hub-section p.hub-batch-note {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section button.hub-batch-cta {
+    margin-top: auto;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: var(--lh-radius-pill);
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: box-shadow .28s var(--lh-ease), transform .28s var(--lh-ease);
+}
+
+section.learning-hub-section button.hub-batch-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--lh-shadow-orange);
+}
+
+/* --------------------------------------------------------------------------
+   9. INTERVIEW PREP CARD
+   -------------------------------------------------------------------------- */
+section.learning-hub-section article.interview-prep-card {
+    position: relative;
+    gap: 13px;
+    padding: 26px 22px;
+    background: linear-gradient(180deg, var(--lh-surface) 0%, var(--lh-surface-soft) 100%);
+}
+
+section.learning-hub-section article.interview-prep-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--lh-orange) 0%, var(--lh-orange-400) 100%);
+    opacity: 0;
+    transition: opacity .3s var(--lh-ease);
+}
+
+section.learning-hub-section article.interview-prep-card:hover::before {
+    opacity: 1;
+}
+
+section.learning-hub-section span.interview-prep-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--lh-radius-sm);
+    border: 1px solid var(--lh-orange-100);
+    background: linear-gradient(135deg, var(--lh-orange-50) 0%, var(--lh-orange-100) 100%);
+    color: var(--lh-orange-600);
+    transition: background .3s var(--lh-ease), color .3s var(--lh-ease),
+        transform .3s var(--lh-ease);
+}
+
+section.learning-hub-section span.interview-prep-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+section.learning-hub-section article.interview-prep-card:hover span.interview-prep-icon {
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    color: #ffffff;
+    transform: rotate(-6deg) scale(1.05);
+}
+
+section.learning-hub-section h4.interview-prep-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--lh-ink);
+    line-height: 1.3;
+}
+
+section.learning-hub-section p.interview-prep-text {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section span.interview-prep-tag {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 5px 12px;
+    border-radius: var(--lh-radius-pill);
+    background: rgba(29, 111, 242, .1);
+    color: var(--lh-blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   10. TUTORIAL RESOURCE CARD
+   -------------------------------------------------------------------------- */
+section.learning-hub-section article.tutorial-resource-card {
+    gap: 12px;
+    padding: 24px 22px;
+}
+
+section.learning-hub-section article.tutorial-resource-card.is-featured {
+    border-color: var(--lh-orange-100);
+    background: linear-gradient(150deg, #12202e 0%, #0f1720 100%);
+}
+
+section.learning-hub-section header.tutorial-resource-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+section.learning-hub-section span.tutorial-resource-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--lh-radius-sm);
+    border: 1px solid var(--lh-line);
+    background: var(--lh-surface-soft);
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section span.tutorial-resource-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+section.learning-hub-section span.tutorial-resource-free {
+    padding: 5px 11px;
+    border-radius: var(--lh-radius-pill);
+    background: rgba(15, 157, 88, .11);
+    color: var(--lh-green);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+section.learning-hub-section h4.tutorial-resource-title {
+    margin: 0;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--lh-ink);
+    line-height: 1.3;
+}
+
+section.learning-hub-section p.tutorial-resource-text {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section a.tutorial-resource-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    padding-top: 4px;
+    color: var(--lh-orange-600);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: gap .26s var(--lh-ease), color .26s var(--lh-ease);
+}
+
+section.learning-hub-section a.tutorial-resource-cta:hover {
+    gap: 12px;
+    color: var(--lh-orange);
+    text-decoration: none;
+}
+
+section.learning-hub-section a.tutorial-resource-cta svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* featured (dark) variant */
+section.learning-hub-section article.tutorial-resource-card.is-featured span.tutorial-resource-icon {
+    border-color: rgba(255, 138, 76, .32);
+    background: rgba(255, 84, 33, .16);
+    color: var(--lh-orange-400);
+}
+
+section.learning-hub-section article.tutorial-resource-card.is-featured h4.tutorial-resource-title {
+    color: #ffffff;
+}
+
+section.learning-hub-section article.tutorial-resource-card.is-featured p.tutorial-resource-text {
+    color: rgba(255, 255, 255, .72);
+}
+
+section.learning-hub-section article.tutorial-resource-card.is-featured span.tutorial-resource-free {
+    background: rgba(255, 255, 255, .12);
+    color: #ffffff;
+}
+
+section.learning-hub-section article.tutorial-resource-card.is-featured a.tutorial-resource-cta {
+    color: var(--lh-orange-400);
+}
+
+/* --------------------------------------------------------------------------
+   11. COMMUNITY / INTERNSHIP SLIDES
+   -------------------------------------------------------------------------- */
+section.learning-hub-section article.community-card {
+    display: grid;
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+    align-items: stretch;
+    gap: 0;
+}
+
+section.learning-hub-section aside.community-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 28px;
+    background:
+        radial-gradient(520px 240px at 20% 0%, rgba(255, 84, 33, .3) 0%, transparent 68%),
+        linear-gradient(150deg, #12202e 0%, #0f1720 100%);
+    color: #ffffff;
+}
+
+section.learning-hub-section aside.community-visual.is-whatsapp {
+    background:
+        radial-gradient(520px 240px at 20% 0%, rgba(37, 211, 102, .32) 0%, transparent 68%),
+        linear-gradient(150deg, #0f2a1e 0%, #0f1720 100%);
+}
+
+section.learning-hub-section span.community-visual-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border-radius: var(--lh-radius);
+    border: 1px solid rgba(255, 255, 255, .16);
+    background: rgba(255, 255, 255, .09);
+    color: #ffffff;
+}
+
+section.learning-hub-section span.community-visual-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+section.learning-hub-section strong.community-visual-value {
+    font-size: clamp(26px, 3.4vw, 38px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+}
+
+section.learning-hub-section span.community-visual-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, .74);
+}
+
+section.learning-hub-section div.community-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px 30px;
+}
+
+section.learning-hub-section span.community-kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--lh-orange-600);
+}
+
+section.learning-hub-section h4.community-title {
+    margin: 0;
+    font-size: clamp(19px, 2.2vw, 24px);
+    font-weight: 800;
+    letter-spacing: -.015em;
+    color: var(--lh-ink);
+    line-height: 1.28;
+}
+
+section.learning-hub-section p.community-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--lh-muted);
+}
+
+section.learning-hub-section ul.community-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.learning-hub-section li.community-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--lh-ink-700);
+}
+
+section.learning-hub-section li.community-benefit svg {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    color: var(--lh-green);
+}
+
+section.learning-hub-section a.community-cta,
+section.learning-hub-section button.community-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: var(--lh-radius-pill);
+    background: linear-gradient(135deg, var(--lh-orange) 0%, var(--lh-orange-600) 100%);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .28s var(--lh-ease), box-shadow .28s var(--lh-ease);
+}
+
+section.learning-hub-section a.community-cta.is-whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+section.learning-hub-section a.community-cta:hover,
+section.learning-hub-section button.community-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--lh-shadow-orange);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+section.learning-hub-section a.community-cta.is-whatsapp:hover {
+    box-shadow: 0 16px 36px rgba(18, 140, 126, .28);
+}
+
+section.learning-hub-section a.community-cta svg,
+section.learning-hub-section button.community-cta svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+    section.learning-hub-section {
+        --lh-per-view: 2;
+        --lh-gap: 18px;
+    }
+
+    section.learning-hub-section div.learning-hub-panels {
+        padding: 26px 20px 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    section.learning-hub-section button.learning-hub-tab {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    section.learning-hub-section article.community-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    section.learning-hub-section aside.community-visual {
+        flex-direction: row;
+        align-items: center;
+        padding: 22px 24px;
+    }
+
+    section.learning-hub-section span.community-visual-icon {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    section.learning-hub-section {
+        --lh-per-view: 1;
+        --lh-gap: 14px;
+    }
+
+    section.learning-hub-section div.learning-hub-panels {
+        padding: 22px 14px 26px;
+    }
+
+    section.learning-hub-section nav.learning-hub-nav {
+        padding: 10px 10px 0;
+    }
+
+    section.learning-hub-section li.learning-hub-tab-item {
+        flex: 0 0 auto;
+    }
+
+    section.learning-hub-section header.learning-hub-panel-head {
+        margin-bottom: 18px;
+    }
+
+    section.learning-hub-section div.hub-schedule-filters {
+        border-radius: var(--lh-radius);
+        gap: 6px;
+    }
+
+    section.learning-hub-section button.hub-schedule-pill {
+        flex: 1 1 calc(50% - 3px);
+        padding: 10px 12px;
+        font-size: 12.5px;
+    }
+
+    section.learning-hub-section ul.community-benefits {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    section.learning-hub-section div.community-body {
+        padding: 24px 20px;
+    }
+
+    section.learning-hub-section a.community-cta,
+    section.learning-hub-section button.community-cta {
+        align-self: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    section.learning-hub-section aside.community-visual {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    section.learning-hub-section div.learning-hub-carousel-controls {
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    section.learning-hub-section div.learning-hub-carousel-viewport {
+        scroll-behavior: auto;
+    }
+
+    section.learning-hub-section div.learning-hub-panel.is-active,
+    section.learning-hub-section div.hub-schedule-view.is-active {
+        animation: none;
+    }
+
+    section.learning-hub-section article.trainer-card,
+    section.learning-hub-section article.hub-project-card,
+    section.learning-hub-section article.hub-batch-card,
+    section.learning-hub-section article.interview-prep-card,
+    section.learning-hub-section article.tutorial-resource-card,
+    section.learning-hub-section article.community-card,
+    section.learning-hub-section button.learning-hub-arrow,
+    section.learning-hub-section span.interview-prep-icon {
+        transition: none;
+    }
+
+    section.learning-hub-section article.trainer-card:hover,
+    section.learning-hub-section article.hub-project-card:hover,
+    section.learning-hub-section article.hub-batch-card:hover,
+    section.learning-hub-section article.interview-prep-card:hover,
+    section.learning-hub-section article.tutorial-resource-card:hover,
+    section.learning-hub-section article.community-card:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTC Calculator — Find Your In-Hand Salary Instantly</title>
+<script src="uncodemy-navbar.js" defer></script>
+<link rel="stylesheet" href="footer-style.css" />
+<style>
+  :root{
+    --orange:#ff5a1f; --orange-dark:#e14a12; --navy:#0d1226; --navy-2:#161c38;
+    --bg:#ffffff; --bg-soft:#f6f3ee; --border:#ece8e0; --text:#1a1a1a; --sub:#6b6a66;
+    --save:#27500a; --save-bg:#eaf3de;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6;
+  }
+  .hero{
+    background:linear-gradient(135deg,#fff0e8,#f3f2fb);
+    padding:56px 20px 70px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+    color:var(--orange); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px;
+  }
+  .eyebrow::before{content:'●'; font-size:8px;}
+  h1{font-size:40px; font-weight:700; margin:0 0 16px; line-height:1.25; font-family:Georgia,'Times New Roman',serif; max-width:680px; margin-left:auto; margin-right:auto;}
+  h1 em{font-style:normal; color:var(--orange);}
+  .lede{font-size:16px; color:var(--sub); margin:0 auto; max-width:560px;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px 80px;}
+  .calc-shell{
+    max-width:1200px; margin:auto; padding:0 20px; position:relative; z-index:2;
+  }
+  .calc-card{
+    background:#fff; border-radius:20px; padding:32px; box-shadow:0 20px 50px rgba(20,15,5,0.08);
+    border:1px solid var(--border); margin: 10px;
+  }
+  .logo-chip{
+    display:inline-block; background:var(--navy); color:#fff; font-weight:700; font-size:13px;
+    padding:6px 10px; border-radius:6px; margin-bottom:14px; letter-spacing:.03em;
+  }
+  h2{font-size:21px; font-weight:700; margin:0 0 6px;}
+  .hint{font-size:13px; color:var(--sub); margin:0 0 22px;}
+  .calc-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:28px;}
+  @media (max-width:760px){ .calc-grid{grid-template-columns:1fr;} }
+  .mode-toggle{display:flex; gap:8px; margin-bottom:24px;}
+  .mode-toggle button{
+    flex:1; padding:10px; border-radius:9px; border:1px solid var(--border);
+    background:#fff; font-size:13.5px; font-weight:600; cursor:pointer; color:var(--text);
+    transition:all .15s;
+  }
+  .mode-toggle button.active{background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%); color:#fff; border-color:var(--orange);}
+  .field{margin-bottom:22px;}
+  .field-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  label{font-size:13px; color:var(--text); font-weight:600;}
+  .unit-tag{font-size:11px; color:var(--sub);}
+  input[type=number]{
+    width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
+    font-size:16px; font-weight:600; background:var(--bg-soft); color:var(--text);
+  }
+  input[type=number]:focus{outline:none; border-color:var(--orange);}
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:4px;
+    background:var(--border); margin-top:10px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+    background:var(--orange); cursor:pointer; border:3px solid #fff; box-shadow:0 0 0 1px var(--orange);
+  }
+  .range-labels{display:flex; justify-content:space-between; font-size:11px; color:var(--sub); margin-top:4px;}
+  .result-panel{
+    background:var(--bg-soft); border-radius:16px; padding:26px; text-align:center;
+  }
+  .result-panel .value{font-size:38px; font-weight:800; color:var(--orange); margin:0 0 2px;}
+  .result-panel .label{font-size:13px; color:var(--sub); margin:0 0 18px; font-weight:600;}
+  .badge{
+    display:inline-block; font-size:13px; font-weight:700; padding:6px 16px; border-radius:20px;
+    margin-bottom:20px; background:var(--save-bg); color:var(--save);
+  }
+  .stat-row{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid var(--border); font-size:13.5px; text-align:left;}
+  .stat-row span:first-child{color:var(--sub);}
+  .stat-row span:last-child{font-weight:700;}
+  .disclaimer{font-size:12px; color:var(--sub); margin-top:14px;}
+
+  .section-title{font-size:24px; font-weight:700; margin:0 0 10px;}
+  .section-lede{font-size:15px; color:var(--sub); max-width:680px; margin:0 0 26px;}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:36px;}
+  @media (max-width:700px){ .steps3{grid-template-columns:1fr;} }
+  .step-box{background:var(--bg-soft); border-radius:14px; padding:22px;}
+  .step-num{
+    width:30px; height:30px; background:var(--orange); color:#fff; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:14px;
+  }
+  .step-box strong{display:block; font-size:16px; margin-bottom:6px;}
+  .step-box p{font-size:13.5px; color:var(--sub); margin:0;}
+
+  .kicker{color:var(--orange); font-weight:700; font-size:14px; margin:0 0 14px;}
+  .formula-box{
+    background:var(--navy); color:#fff; border-radius:14px; padding:26px; font-size:15px;
+    margin-bottom:36px;
+  }
+  .formula-box .eq{font-size:17px; font-weight:600; margin:0 0 16px; font-family:'Georgia',serif;}
+  .formula-box p{margin:4px 0; color:#cfd3e6; font-size:13.5px;}
+
+  table{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:14px;}
+  table td{padding:12px 14px; border-top:1px solid var(--border);}
+  table tr:first-child td{border-top:none;}
+  table td:first-child{font-weight:600; width:45%;}
+  table td:last-child{font-weight:700; text-align:right;}
+
+  .tier-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:36px;}
+  @media (max-width:700px){ .tier-grid{grid-template-columns:1fr 1fr;} }
+  .tier-box{background:var(--bg-soft); border-radius:12px; padding:16px; text-align:center;}
+  .tier-box .pct{font-size:20px; font-weight:800; color:var(--orange); margin:0 0 4px;}
+  .tier-box .desc{font-size:12px; color:var(--sub); margin:0;}
+
+  details{border-top:1px solid var(--border); padding:16px 0;}
+  details:last-child{border-bottom:1px solid var(--border);}
+  summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; font-size:20px; color:var(--orange); font-weight:700;}
+  details[open] summary::after{content:'–';}
+  details p{font-size:14px; color:var(--sub); margin:12px 0 0;}
+
+  .cta{
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark)); border-radius:18px;
+    padding:44px 30px; text-align:center; color:#fff; margin-bottom:10px;
+  }
+  .cta h3{font-size:22px; margin:0 0 8px;}
+  .cta p{font-size:14px; opacity:.92; margin:0 0 20px;}
+  .cta button{
+    background:#fff; color:var(--orange-dark); border:none; padding:12px 26px;
+    border-radius:9px; font-weight:700; font-size:14px; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="hero">
+  <div class="eyebrow">Works for any offer letter</div>
+  <h1>Find your <em>in-hand salary</em> before you sign the offer</h1>
+  <p class="lede">Enter your CTC and a few standard deductions — this calculator instantly shows your monthly take-home pay and where the rest of your CTC goes.</p>
+</div>
+
+<div class="calc-shell">
+  <div class="calc-card">
+    <span class="logo-chip">₹</span>
+    <h2>Your salary details</h2>
+    <p class="hint">Work out a simple in-hand estimate, or add bonus and other deductions for a fuller picture.</p>
+
+    <div class="mode-toggle">
+      <button id="modeSingle" class="active">Basic estimate</button>
+      <button id="modeStacked">With bonus &amp; deductions</button>
+    </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="field">
+          <div class="field-top"><label>Annual CTC</label><span class="unit-tag">₹ / year</span></div>
+          <input type="number" id="ctcAmount" value="600000">
+          <input type="range" id="ctcAmountR" min="200000" max="3000000" step="10000" value="600000">
+          <div class="range-labels"><span>₹2L</span><span>₹30L</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label>Basic pay</label><span class="unit-tag">% of CTC</span></div>
+          <input type="number" id="basicPct" value="40">
+          <input type="range" id="basicPctR" min="20" max="60" value="40">
+          <div class="range-labels"><span>20%</span><span>60%</span></div>
+        </div>
+        <div class="field" id="secondDiscountField" style="display:none;">
+          <div class="field-top"><label>Annual bonus / variable</label><span class="unit-tag">₹</span></div>
+          <input type="number" id="bonusAmount" value="30000">
+          <input type="range" id="bonusAmountR" min="0" max="500000" step="5000" value="30000">
+          <div class="range-labels"><span>₹0</span><span>₹5L</span></div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <p class="value" id="finalPrice">--</p>
+        <p class="label">Monthly in-hand</p>
+        <span class="badge" id="savingsBadge"></span>
+
+        <div class="stat-row"><span>Annual CTC</span><span id="statOriginal">₹0</span></div>
+        <div class="stat-row"><span>Total deductions</span><span id="statDiscountPct">₹0</span></div>
+        <div class="stat-row"><span>Annual take-home</span><span id="statSaved">₹0</span></div>
+        <div class="stat-row"><span>Monthly take-home</span><span id="statFinal">₹0</span></div>
+      </div>
+    </div>
+    <p class="disclaimer">Estimate only — standard PF (12% of basic), professional tax, and a flat income-tax assumption are applied. Actual in-hand pay depends on your company's exact salary structure and your tax slab.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div style="height:36px;"></div>
+  <h2 class="section-title">How CTC becomes in-hand salary</h2>
+  <p class="section-lede">CTC (Cost to Company) is everything your employer spends on you in a year — not what lands in your bank account. Basic pay, HRA, and allowances make up the gross, and PF, professional tax, and income tax are deducted from that to arrive at your monthly in-hand pay.</p>
+
+  <div class="steps3">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <strong>Enter your CTC</strong>
+      <p>The full annual package mentioned in your offer letter.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <strong>Set basic pay %</strong>
+      <p>Usually 35–50% of CTC — check your offer's breakup if unsure.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <strong>See your take-home</strong>
+      <p>Monthly and annual in-hand pay after standard deductions.</p>
+    </div>
+  </div>
+
+  <p class="kicker">The salary formula</p>
+  <div class="formula-box">
+    <p class="eq">In-hand salary = CTC − (PF + professional tax + income tax)</p>
+    <p>PF is typically 12% of basic pay, matched by the employer separately.</p>
+    <p>With bonus included, variable pay is added to CTC before deductions, since it's paid out but not guaranteed monthly.</p>
+  </div>
+
+  <p class="kicker">A worked example</p>
+  <p class="section-lede" style="margin-bottom:14px;">A ₹6,00,000 annual CTC with 40% basic pay, no bonus:</p>
+  <table>
+    <tr><td>Annual CTC</td><td>₹6,00,000</td></tr>
+    <tr><td>Basic pay (40%)</td><td>₹2,40,000</td></tr>
+    <tr><td>Employee PF (12% of basic)</td><td>₹28,800</td></tr>
+    <tr><td>Professional tax + estimated income tax</td><td>₹14,400</td></tr>
+    <tr><td>Annual in-hand</td><td>₹5,56,800</td></tr>
+    <tr><td>Monthly in-hand</td><td>₹46,400</td></tr>
+  </table>
+  <p class="section-lede">Notice the in-hand pay is noticeably lower than CTC ÷ 12 — because PF and tax are deducted before the money reaches your account.</p>
+
+  <p class="kicker">Typical basic pay share</p>
+  <div class="tier-grid">
+    <div class="tier-box"><p class="pct">30%</p><p class="desc">Lower basic, higher allowances</p></div>
+    <div class="tier-box"><p class="pct">40%</p><p class="desc">Common mid-size company split</p></div>
+    <div class="tier-box"><p class="pct">50%</p><p class="desc">Higher basic, larger PF corpus</p></div>
+    <div class="tier-box"><p class="pct">60%+</p><p class="desc">Seen in some government/PSU roles</p></div>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <details open>
+    <summary>Why is my in-hand salary lower than CTC ÷ 12?</summary>
+    <p>Because CTC includes employer PF contribution, gratuity, and other costs that never reach your bank account, plus your own PF and tax are deducted from the gross before payout.</p>
+  </details>
+  <details>
+    <summary>Is bonus part of CTC?</summary>
+    <p>Yes — variable pay or bonus is usually included in the CTC figure quoted in an offer letter, but it's paid out periodically (quarterly or annually) rather than every month.</p>
+  </details>
+  <details>
+    <summary>Does this include income tax slabs accurately?</summary>
+    <p>No — this calculator uses a flat estimated deduction for simplicity. Actual income tax depends on your tax regime, exemptions, and total taxable income, so treat this as a ballpark figure.</p>
+  </details>
+  <details>
+    <summary>What's the difference between CTC and gross salary?</summary>
+    <p>Gross salary is your CTC minus employer-only contributions like the employer's share of PF and gratuity. Net or in-hand salary is gross minus your own deductions like PF, tax, and professional tax.</p>
+  </details>
+
+  <div style="height:20px;"></div>
+  <div class="cta">
+    <h3>Comparing multiple job offers?</h3>
+    <p>Run each CTC through this calculator to see which offer actually pays more in-hand, not just on paper.</p>
+    <button>Compare offers</button>
+  </div>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+<script src="footer-script.js"></script>
+
+<script>
+let withBonus = false;
+const btnSingle = document.getElementById('modeSingle');
+const btnStacked = document.getElementById('modeStacked');
+const secondField = document.getElementById('secondDiscountField');
+
+function setMode(isBonus){
+  withBonus = isBonus;
+  secondField.style.display = isBonus ? 'block' : 'none';
+  btnSingle.classList.toggle('active', !isBonus);
+  btnStacked.classList.toggle('active', isBonus);
+  calc();
+}
+btnSingle.onclick = () => setMode(false);
+btnStacked.onclick = () => setMode(true);
+
+function syncPair(numId, rangeId){
+  const num = document.getElementById(numId);
+  const range = document.getElementById(rangeId);
+  num.addEventListener('input', () => { range.value = num.value; calc(); });
+  range.addEventListener('input', () => { num.value = range.value; calc(); });
+}
+syncPair('ctcAmount','ctcAmountR');
+syncPair('basicPct','basicPctR');
+syncPair('bonusAmount','bonusAmountR');
+
+function formatRupees(n){
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+const PF_RATE = 0.12;          // employee PF as % of basic
+const PTAX_MONTHLY = 200;      // flat professional tax per month (common slab)
+const EST_TAX_RATE = 0.02;     // flat estimated income tax as % of CTC (simplified)
+
+function calc(){
+  const ctc = parseFloat(document.getElementById('ctcAmount').value) || 0;
+  const basicPct = parseFloat(document.getElementById('basicPct').value) || 0;
+  const bonus = withBonus ? (parseFloat(document.getElementById('bonusAmount').value) || 0) : 0;
+
+  const finalPriceEl = document.getElementById('finalPrice');
+  const badgeEl = document.getElementById('savingsBadge');
+
+  if(ctc <= 0){
+    finalPriceEl.textContent = '--';
+    badgeEl.textContent = '';
+    document.getElementById('statOriginal').textContent = '₹0';
+    document.getElementById('statDiscountPct').textContent = '₹0';
+    document.getElementById('statSaved').textContent = '₹0';
+    document.getElementById('statFinal').textContent = '₹0';
+    return;
+  }
+
+  const effectiveCTC = ctc + bonus;
+  const basic = effectiveCTC * (basicPct / 100);
+  const employeePF = basic * PF_RATE;
+  const professionalTax = PTAX_MONTHLY * 12;
+  const estIncomeTax = effectiveCTC * EST_TAX_RATE;
+
+  const totalDeductions = employeePF + professionalTax + estIncomeTax;
+  const annualInHand = effectiveCTC - totalDeductions;
+  const monthlyInHand = annualInHand / 12;
+
+  finalPriceEl.textContent = formatRupees(monthlyInHand);
+  badgeEl.textContent = 'Total deductions ' + formatRupees(totalDeductions) + '/yr';
+
+  document.getElementById('statOriginal').textContent = formatRupees(effectiveCTC);
+  document.getElementById('statDiscountPct').textContent = formatRupees(totalDeductions);
+  document.getElementById('statSaved').textContent = formatRupees(annualInHand);
+  document.getElementById('statFinal').textContent = formatRupees(monthlyInHand);
+}
+
+['ctcAmount','basicPct','bonusAmount'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calc);
+});
+setMode(false);
+</script>
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Guide to Build Real-Time Application Using Node.js | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn to build real-time applications with Node.js — WebSockets, Socket.IO, chat apps, live notifications, and production-ready architecture." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 11 of 12: A Guide to Build Real-Time Application Using Node.js</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html" class="active"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-bolt"></i> Real-Time</span>
+        <h1>A Guide to Build Real-Time Application Using Node.js</h1>
+
+        <div class="card">
+
+            <p><strong>Real-time applications</strong> are the backbone of modern interactive web experiences — chat apps, live notifications, collaborative tools, gaming, and real-time dashboards. Node.js, with its event-driven, non-blocking architecture, is <em>the</em> platform for building real-time applications. This guide will take you from concept to production-ready real-time application.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Real-time applications require a different mindset than traditional request-response applications. Managing persistent connections, handling disconnects gracefully, and scaling horizontally are critical for production success.
+            </div>
+
+            <h2>1. What Are Real-Time Applications?</h2>
+
+            <p>A <strong>real-time application</strong> delivers data to users <em>instantly</em> as it becomes available, without requiring users to refresh the page. Unlike traditional HTTP requests where the client polls the server, real-time applications maintain a persistent connection and push updates as they happen.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>Traditional HTTP</th><th>Real-Time (WebSockets)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Connection</strong></td><td>Short-lived (request/response)</td><td>Persistent (bidirectional)</td></tr>
+                        <tr><td><strong>Latency</strong></td><td>High (polling overhead)</td><td>Low (instant push)</td></tr>
+                        <tr><td><strong>Server Load</strong></td><td>High (frequent requests)</td><td>Low (single connection)</td></tr>
+                        <tr><td><strong>Scalability</strong></td><td>Easier (stateless)</td><td>Harder (stateful connections)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Common Use Cases</h3>
+            <ul>
+                <li><strong>💬 Chat Applications:</strong> Slack, WhatsApp, Discord</li>
+                <li><strong>🔔 Live Notifications:</strong> Social media alerts, order updates</li>
+                <li><strong>👥 Collaborative Tools:</strong> Google Docs, Figma, Miro</li>
+                <li><strong>🎮 Gaming:</strong> Multiplayer games, leaderboards</li>
+                <li><strong>📊 Live Dashboards:</strong> Stock prices, sports scores, analytics</li>
+                <li><strong>🚗 Real-Time Tracking:</strong> Uber, food delivery, fleet management</li>
+            </ul>
+
+            <h2>2. WebSocket Protocol — The Foundation</h2>
+
+            <p><strong>WebSocket</strong> is a full-duplex communication protocol that provides a persistent connection between the client and server. Unlike HTTP, which is half-duplex and requires a new request for each response, WebSocket allows bidirectional communication over a single connection.</p>
+
+            <h3>WebSocket Lifecycle</h3>
+            <ul>
+                <li><strong>1. Handshake:</strong> Client sends an HTTP upgrade request → Server responds with 101 Switching Protocols.</li>
+                <li><strong>2. Connection Established:</strong> Persistent connection is open.</li>
+                <li><strong>3. Message Exchange:</strong> Both parties can send messages at any time.</li>
+                <li><strong>4. Close:</strong> Either party can close the connection.</li>
+            </ul>
+
+            <h3>WebSocket vs HTTP Long Polling</h3>
+            <pre class="code-block"><code>// ❌ HTTP Long Polling (inefficient)
+function poll() {
+    fetch('/api/messages')
+        .then(res => res.json())
+        .then(data => {
+            // Process data
+            // Wait 1s before next request (adds latency)
+            setTimeout(poll, 1000);
+        });
+}
+poll();
+
+// ✅ WebSocket (efficient)
+const socket = new WebSocket('ws://localhost:3000/chat');
+socket.onmessage = (event) => {
+    // Receive messages immediately (no polling)
+    console.log(JSON.parse(event.data));
+};
+socket.send(JSON.stringify({ type: 'message', text: 'Hello!' }));</code></pre>
+
+            <h2>3. Socket.IO — The Production Choice</h2>
+
+            <p>While raw WebSockets work, <strong>Socket.IO</strong> is the industry standard for building real-time applications in production. It provides:</p>
+            <ul>
+                <li><strong>Automatic fallback:</strong> WebSocket → Long Polling → Other transports (for older browsers).</li>
+                <li><strong>Room support:</strong> Broadcast to groups of clients.</li>
+                <li><strong>Reconnection logic:</strong> Automatically reconnects when connections drop.</li>
+                <li><strong>Namespaces:</strong> Separate concerns (e.g., /chat, /notifications).</li>
+                <li><strong>Authentication:</strong> Middleware for auth before connection is established.</li>
+            </ul>
+
+            <h3>Installation</h3>
+            <pre class="code-block"><code>npm install socket.io
+npm install socket.io-client  # For client side</code></pre>
+
+            <h3>Basic Socket.IO Server</h3>
+            <pre class="code-block"><code>const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: process.env.CLIENT_URL || 'http://localhost:3000',
+        methods: ['GET', 'POST']
+    }
+});
+
+// ✅ Basic connection handling
+io.on('connection', (socket) => {
+    console.log('⚡ New client connected:', socket.id);
+
+    socket.on('disconnect', () => {
+        console.log('🔴 Client disconnected:', socket.id);
+    });
+
+    socket.on('message', (data) => {
+        console.log('📩 Message received:', data);
+        // Echo back
+        socket.emit('message', { echo: data });
+    });
+});
+
+server.listen(3000, () => {
+    console.log('🚀 Server running on port 3000');
+});</code></pre>
+
+            <h2>4. Building a Production-Ready Chat Application</h2>
+
+            <h3>Project Structure</h3>
+            <pre class="code-block"><code>project/
+├── src/
+│   ├── server.js              # Main server
+│   ├── socket/
+│   │   ├── index.js           # Socket.IO setup
+│   │   ├── handlers.js        # Event handlers
+│   │   └── middleware.js      # Auth middleware
+│   ├── models/
+│   │   ├── Message.js         # Message model
+│   │   └── User.js            # User model
+│   └── config/
+│       └── socket.js          # Socket configuration
+└── package.json</code></pre>
+
+            <h3>Full Chat Application Implementation</h3>
+            <pre class="code-block"><code>// server.js
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// ✅ Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI);
+
+// ✅ Create HTTP server + Socket.IO
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: { origin: process.env.CLIENT_URL }
+});
+
+// ✅ Socket Authentication Middleware
+io.use((socket, next) => {
+    const token = socket.handshake.auth.token;
+    if (!token) {
+        return next(new Error('Authentication required'));
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        socket.userId = decoded.userId;
+        socket.user = decoded;
+        next();
+    } catch (err) {
+        next(new Error('Invalid token'));
+    }
+});
+
+// ✅ Socket.IO Event Handlers
+io.on('connection', (socket) => {
+    const userId = socket.userId;
+    console.log(`✅ User ${userId} connected`);
+
+    // 1. Join user to their personal room
+    socket.join(`user:${userId}`);
+
+    // 2. Join shared rooms
+    socket.on('join-room', (roomId) => {
+        socket.join(roomId);
+        console.log(`User ${userId} joined room: ${roomId}`);
+        socket.to(roomId).emit('user-joined', { userId, roomId });
+    });
+
+    // 3. Leave room
+    socket.on('leave-room', (roomId) => {
+        socket.leave(roomId);
+        console.log(`User ${userId} left room: ${roomId}`);
+        socket.to(roomId).emit('user-left', { userId, roomId });
+    });
+
+    // 4. Send message
+    socket.on('send-message', async (data) => {
+        try {
+            const { roomId, text, type = 'text' } = data;
+
+            // Save message to database
+            const message = new Message({
+                roomId,
+                userId,
+                text,
+                type,
+                createdAt: new Date()
+            });
+            await message.save();
+
+            // Broadcast to everyone in the room
+            const messageData = {
+                id: message._id,
+                userId,
+                text,
+                type,
+                createdAt: message.createdAt,
+                username: socket.user?.username || 'Unknown'
+            };
+
+            io.to(roomId).emit('new-message', messageData);
+
+            // Send acknowledgment to sender
+            socket.emit('message-sent', { id: message._id, status: 'delivered' });
+
+        } catch (err) {
+            console.error('Message error:', err);
+            socket.emit('message-error', { error: err.message });
+        }
+    });
+
+    // 5. Typing indicator
+    socket.on('typing-start', ({ roomId, userId }) => {
+        socket.to(roomId).emit('user-typing', { userId, isTyping: true });
+    });
+
+    socket.on('typing-end', ({ roomId, userId }) => {
+        socket.to(roomId).emit('user-typing', { userId, isTyping: false });
+    });
+
+    // 6. Fetch message history
+    socket.on('get-history', async ({ roomId, limit = 50, before }) => {
+        try {
+            const query = { roomId };
+            if (before) {
+                query.createdAt = { $lt: new Date(before) };
+            }
+            const messages = await Message.find(query)
+                .sort({ createdAt: -1 })
+                .limit(limit)
+                .populate('userId', 'username avatar')
+                .lean();
+
+            socket.emit('message-history', messages.reverse());
+        } catch (err) {
+            socket.emit('history-error', { error: err.message });
+        }
+    });
+
+    // 7. Mark messages as read
+    socket.on('mark-read', async ({ messageIds }) => {
+        try {
+            await Message.updateMany(
+                { _id: { $in: messageIds }, userId: { $ne: socket.userId } },
+                { read: true }
+            );
+            socket.emit('messages-read', { messageIds });
+        } catch (err) {
+            console.error('Mark read error:', err);
+        }
+    });
+
+    // 8. Disconnect
+    socket.on('disconnect', () => {
+        console.log(`🔴 User ${userId} disconnected`);
+        // Broadcast user offline status
+        io.emit('user-offline', { userId });
+    });
+
+    // 9. Error handling
+    socket.on('error', (err) => {
+        console.error(`Socket error for user ${userId}:`, err);
+        socket.emit('socket-error', { error: err.message });
+    });
+});
+
+// ✅ API endpoint to get active rooms
+app.get('/api/rooms', async (req, res) => {
+    // Fetch rooms from database
+    const rooms = await Room.find().populate('users', 'username avatar');
+    res.json(rooms);
+});
+
+// ✅ Start server
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+});
+
+// ✅ Graceful shutdown
+process.on('SIGTERM', () => {
+    console.log('📦 Shutting down gracefully...');
+    io.close(() => {
+        server.close(() => {
+            console.log('✅ Server closed');
+            process.exit(0);
+        });
+    });
+});</code></pre>
+
+            <h3>Socket.IO Middleware for JWT Authentication</h3>
+            <pre class="code-block"><code>// socket/middleware.js
+const jwt = require('jsonwebtoken');
+
+const authenticateSocket = (io) => {
+    io.use((socket, next) => {
+        const token = socket.handshake.auth.token;
+
+        if (!token) {
+            return next(new Error('Authentication required'));
+        }
+
+        try {
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            socket.userId = decoded.userId;
+            socket.user = decoded;
+            next();
+        } catch (err) {
+            if (err.name === 'TokenExpiredError') {
+                return next(new Error('Token expired'));
+            }
+            return next(new Error('Invalid token'));
+        }
+    });
+};
+
+module.exports = { authenticateSocket };</code></pre>
+
+            <h3>Client-Side Implementation</h3>
+            <pre class="code-block"><code>// ✅ React Client Example
+import { useEffect, useState, useRef } from 'react';
+import { io } from 'socket.io-client';
+
+function ChatApp() {
+    const [messages, setMessages] = useState([]);
+    const [isConnected, setIsConnected] = useState(false);
+    const socketRef = useRef(null);
+    const token = localStorage.getItem('accessToken');
+
+    useEffect(() => {
+        // ✅ Connect to socket
+        socketRef.current = io('http://localhost:5000', {
+            auth: { token },
+            transports: ['websocket'],
+            reconnection: true,
+            reconnectionAttempts: 5,
+            reconnectionDelay: 1000
+        });
+
+        const socket = socketRef.current;
+
+        socket.on('connect', () => {
+            console.log('✅ Connected to server');
+            setIsConnected(true);
+        });
+
+        socket.on('disconnect', () => {
+            console.log('🔴 Disconnected from server');
+            setIsConnected(false);
+        });
+
+        socket.on('connect_error', (err) => {
+            console.error('❌ Connection error:', err.message);
+            if (err.message === 'Authentication required') {
+                // Redirect to login
+                window.location.href = '/login';
+            }
+        });
+
+        // ✅ Receive new messages
+        socket.on('new-message', (message) => {
+            setMessages(prev => [...prev, message]);
+        });
+
+        socket.on('message-sent', (data) => {
+            console.log('✅ Message sent:', data);
+        });
+
+        socket.on('message-history', (history) => {
+            setMessages(history);
+        });
+
+        socket.on('user-typing', ({ userId, isTyping }) => {
+            // Show/hide typing indicator
+            setTypingUsers(prev => {
+                if (isTyping) {
+                    return [...prev, userId];
+                }
+                return prev.filter(id => id !== userId);
+            });
+        });
+
+        // ✅ Cleanup on unmount
+        return () => {
+            socket.disconnect();
+        };
+    }, [token]);
+
+    // ✅ Send message
+    const sendMessage = (text) => {
+        if (!socketRef.current || !text.trim()) return;
+        socketRef.current.emit('send-message', {
+            roomId: 'general',
+            text: text.trim()
+        });
+        setInput('');
+    };
+
+    // ✅ Typing indicator
+    const handleTyping = (isTyping) => {
+        socketRef.current.emit(
+            isTyping ? 'typing-start' : 'typing-end',
+            { roomId: 'general' }
+        );
+    };
+
+    return (
+        &lt;div&gt;
+            &lt;div className="chat-window"&gt;
+                {messages.map(msg => (
+                    &lt;div key={msg.id} className="message"&gt;
+                        &lt;strong&gt;{msg.username}:&lt;/strong&gt; {msg.text}
+                    &lt;/div&gt;
+                ))}
+            &lt;/div&gt;
+            &lt;input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyUp={(e) => {
+                    if (e.key === 'Enter') sendMessage(input);
+                }}
+                onFocus={() => handleTyping(true)}
+                onBlur={() => handleTyping(false)}
+            /&gt;
+            &lt;button onClick={() => sendMessage(input)}&gt;Send&lt;/button&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+
+            <h2>5. Scaling Real-Time Applications for Production</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Reality:</strong> Scaling real-time applications is fundamentally different from scaling HTTP services. You need to manage persistent connections across multiple server instances.
+            </div>
+
+            <h3>5.1 Use Redis Adapter for Multi-Server Scaling</h3>
+            <pre class="code-block"><code>// ✅ Socket.IO with Redis Adapter
+const { createAdapter } = require('@socket.io/redis-adapter');
+const { createClient } = require('redis');
+
+const pubClient = createClient({ url: process.env.REDIS_URL });
+const subClient = pubClient.duplicate();
+
+Promise.all([pubClient.connect(), subClient.connect()])
+    .then(() => {
+        io.adapter(createAdapter(pubClient, subClient));
+        console.log('✅ Redis adapter connected');
+    })
+    .catch(err => {
+        console.error('❌ Redis connection failed:', err);
+    });</code></pre>
+
+            <h3>5.2 Sticky Sessions (or Enable Socket.IO Sticky Session)</h3>
+            <p>With sticky sessions, requests from the same client are always routed to the same server instance. This is critical for WebSocket connections.</p>
+            <pre class="code-block"><code>// Using nginx for sticky sessions
+// nginx.conf
+upstream socket_backend {
+    least_conn;
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+    server 127.0.0.1:3002;
+}
+
+server {
+    location /socket.io/ {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass http://socket_backend;
+        proxy_buffering off;
+        proxy_redirect off;
+        proxy_read_timeout 60s;
+        # Sticky session
+        proxy_set_header Cookie $http_cookie;
+    }
+}</code></pre>
+
+            <h3>5.3 Horizontal Scaling — PM2 Cluster Mode</h3>
+            <pre class="code-block"><code>// ✅ PM2 cluster mode
+// ecosystem.config.js
+module.exports = {
+    apps: [{
+        name: 'socket-app',
+        script: 'src/server.js',
+        instances: 'max', // Use all CPU cores
+        exec_mode: 'cluster',
+        env: {
+            NODE_ENV: 'production',
+            PORT: 3000
+        },
+        watch: false,
+        max_memory_restart: '1G'
+    }]
+};
+
+// Run: pm2 start ecosystem.config.js</code></pre>
+
+            <h3>5.4 Handling Disconnections &amp; Reconnections</h3>
+            <pre class="code-block"><code>// ✅ Client-side reconnection strategy
+const socket = io('https://api.example.com', {
+    reconnection: true,
+    reconnectionAttempts: 10,
+    reconnectionDelay: 1000,
+    reconnectionDelayMax: 5000,
+    timeout: 20000,
+    transports: ['websocket']
+});
+
+socket.on('connect_error', (error) => {
+    if (error.message === 'Authentication required') {
+        // Refresh token and reconnect
+        refreshToken().then(() => {
+            socket.auth.token = localStorage.getItem('accessToken');
+            socket.connect();
+        });
+    }
+});
+
+// ✅ Server-side cleanup on disconnect
+io.on('connection', (socket) => {
+    // Register cleanup
+    socket.on('disconnect', async (reason) => {
+        // Remove user from rooms
+        const rooms = Array.from(socket.rooms);
+        for (const room of rooms) {
+            if (room !== socket.id) {
+                socket.leave(room);
+                socket.to(room).emit('user-left', { userId: socket.userId });
+            }
+        }
+
+        // Update user status in database
+        await User.findByIdAndUpdate(socket.userId, {
+            lastSeen: new Date(),
+            isOnline: false
+        });
+
+        console.log(`User ${socket.userId} disconnected: ${reason}`);
+    });
+});</code></pre>
+
+            <h2>6. Performance Optimization</h2>
+
+            <h3>6.1 Message Batching &amp; Compression</h3>
+            <pre class="code-block"><code>// ✅ Batch messages before sending
+const messageQueue = new Map();
+
+socket.on('send-message', (data) => {
+    const { roomId, text } = data;
+    const message = { userId: socket.userId, text, timestamp: Date.now() };
+
+    if (!messageQueue.has(roomId)) {
+        messageQueue.set(roomId, []);
+        // Flush queue every 100ms
+        setTimeout(() => flushQueue(roomId), 100);
+    }
+    messageQueue.get(roomId).push(message);
+});
+
+function flushQueue(roomId) {
+    const messages = messageQueue.get(roomId) || [];
+    if (messages.length > 0) {
+        io.to(roomId).emit('batch-messages', messages);
+        messageQueue.delete(roomId);
+    }
+}</code></pre>
+
+            <h3>6.2 Throttle &amp; Debounce High-Frequency Events</h3>
+            <pre class="code-block"><code>// ✅ Debounce typing indicators
+const typingTimers = new Map();
+
+socket.on('typing-start', ({ roomId }) => {
+    // Clear existing timer
+    clearTimeout(typingTimers.get(roomId));
+    typingTimers.set(roomId, setTimeout(() => {
+        socket.to(roomId).emit('user-typing', { userId: socket.userId, isTyping: false });
+    }, 1000));
+});</code></pre>
+
+            <h2>7. Monitoring &amp; Observability</h2>
+
+            <h3>7.1 Socket.IO Metrics</h3>
+            <pre class="code-block"><code>// ✅ Monitor active connections
+setInterval(() => {
+    const connections = io.sockets.sockets.size;
+    const rooms = io.sockets.adapter.rooms.size;
+    console.log(`📊 Connections: ${connections}, Rooms: ${rooms}`);
+    // Send to monitoring system (Datadog, Prometheus, etc.)
+}, 30000);</code></pre>
+
+            <h3>7.2 Health Check Endpoint</h3>
+            <pre class="code-block"><code>// ✅ Health check for load balancers
+app.get('/health', (req, res) => {
+    const connectionCount = io.sockets.sockets.size;
+    const status = connectionCount > 0 ? 'healthy' : 'degraded';
+    res.json({
+        status,
+        timestamp: new Date().toISOString(),
+        connections: connectionCount,
+        uptime: process.uptime()
+    });
+});</code></pre>
+
+            <h2>8. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use Socket.IO</strong> — Not raw WebSockets for production.</li>
+                <li><strong>✅ Implement authentication</strong> — JWT middleware on socket connection.</li>
+                <li><strong>✅ Use Redis adapter</strong> — For horizontal scaling across multiple servers.</li>
+                <li><strong>✅ Handle disconnections</strong> — Clean up resources and update user status.</li>
+                <li><strong>✅ Implement reconnection</strong> — With exponential backoff.</li>
+                <li><strong>✅ Rate limit events</strong> — Prevent abuse.</li>
+                <li><strong>✅ Log events</strong> — For debugging and monitoring.</li>
+                <li><strong>✅ Add health checks</strong> — For load balancers and Kubernetes.</li>
+                <li><strong>✅ Monitor connections</strong> — Track active connections and rooms.</li>
+                <li><strong>✅ Use sticky sessions</strong> — For multi-server deployment.</li>
+                <li><strong>✅ Implement message persistence</strong> — Store messages in database.</li>
+                <li><strong>✅ Add error handling</strong> — Graceful degradation.</li>
+                <li><strong>✅ Use environment variables</strong> — For configuration.</li>
+                <li><strong>✅ Set up graceful shutdown</strong> — Close connections properly.</li>
+            </ul>
+
+            <h2>9. Quick Reference — Socket.IO Events</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>io.on('connection')</code></td><td>Handle new connections</td><td><code>io.on('connection', (socket) => {})</code></td></tr>
+                        <tr><td><code>socket.emit(event, data)</code></td><td>Send to a specific client</td><td><code>socket.emit('message', data)</code></td></tr>
+                        <tr><td><code>io.emit(event, data)</code></td><td>Broadcast to all clients</td><td><code>io.emit('notification', data)</code></td></tr>
+                        <tr><td><code>socket.to(room).emit()</code></td><td>Send to clients in a room</td><td><code>socket.to('general').emit('message', data)</code></td></tr>
+                        <tr><td><code>socket.broadcast.emit()</code></td><td>Send to all except sender</td><td><code>socket.broadcast.emit('user-joined', data)</code></td></tr>
+                        <tr><td><code>socket.join(room)</code></td><td>Join a room</td><td><code>socket.join('room-123')</code></td></tr>
+                        <tr><td><code>socket.leave(room)</code></td><td>Leave a room</td><td><code>socket.leave('room-123')</code></td></tr>
+                        <tr><td><code>socket.disconnect()</code></td><td>Disconnect client</td><td><code>socket.disconnect()</code></td></tr>
+                        <tr><td><code>socket.on('disconnect')</code></td><td>Handle disconnection</td><td><code>socket.on('disconnect', () => {})</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> Real-time applications are the most engaging applications on the web. They create user experiences that were impossible just a few years ago. With Node.js and Socket.IO, you can build production-ready real-time applications that scale to millions of concurrent users. The key is to start with a solid architecture, plan for growth, and monitor everything.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-authentication-authorization.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Authentication &amp; Authorization in Node.js</a>
+            <a href="nodejs-interview-questions.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

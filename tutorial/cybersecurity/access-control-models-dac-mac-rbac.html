@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Control Models (DAC, MAC, RBAC) | Uncodemy</title>
+<meta name="description" content="Compare DAC, MAC, and RBAC access control models and understand how each approach governs permissions within a system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb">
+  <strong>Cybersecurity Training Course</strong> / Page 20 of 52
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar-left">
+    <h3>Course Topics</h3>
+    <ul class="topic-nav">
+      <li class="group-header"><span class="group-title">Introduction to Cybersecurity</span></li>
+      <li><a href="cybersecurity-introduction.html"><span class="num">01</span><span>Cybersecurity Introduction</span></a></li>
+      <li><a href="importance-of-cybersecurity.html"><span class="num">02</span><span>Importance of Cybersecurity</span></a></li>
+      <li><a href="cybersecurity-terminology.html"><span class="num">03</span><span>Cybersecurity Terminology</span></a></li>
+      <li><a href="types-of-cybersecurity-threats.html"><span class="num">04</span><span>Types of Cybersecurity Threats</span></a></li>
+      <li><a href="goals-of-cybersecurity-confidentiality-integrity-availability.html"><span class="num">05</span><span>Goals of Cybersecurity (Confidentiality, Integrity, Availability)</span></a></li>
+      <li class="group-header"><span class="group-title">Cybersecurity Threats and Attacks</span></li>
+      <li><a href="malware-viruses-worms-trojans-ransomware-spyware.html"><span class="num">06</span><span>Malware (Viruses, Worms, Trojans, Ransomware, Spyware)</span></a></li>
+      <li><a href="phishing-attacks.html"><span class="num">07</span><span>Phishing Attacks</span></a></li>
+      <li><a href="social-engineering-attacks.html"><span class="num">08</span><span>Social Engineering Attacks</span></a></li>
+      <li><a href="denial-of-service-dos-and-distributed-denial-of-service-ddos-attacks.html"><span class="num">09</span><span>Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS) Attacks</span></a></li>
+      <li><a href="man-in-the-middle-mitm-attacks.html"><span class="num">10</span><span>Man-in-the-Middle (MITM) Attacks</span></a></li>
+      <li><a href="sql-injection-attacks.html"><span class="num">11</span><span>SQL Injection Attacks</span></a></li>
+      <li><a href="cross-site-scripting-xss.html"><span class="num">12</span><span>Cross-Site Scripting (XSS)</span></a></li>
+      <li><a href="brute-force-attacks.html"><span class="num">13</span><span>Brute Force Attacks</span></a></li>
+      <li><a href="zero-day-exploits.html"><span class="num">14</span><span>Zero-Day Exploits</span></a></li>
+      <li class="group-header"><span class="group-title">Cybersecurity Concepts and Techniques</span></li>
+      <li><a href="firewalls-and-intrusion-detection-prevention-systems-ids-ips.html"><span class="num">15</span><span>Firewalls and Intrusion Detection/Prevention Systems (IDS/IPS)</span></a></li>
+      <li><a href="encryption-symmetric-asymmetric-hashing.html"><span class="num">16</span><span>Encryption (Symmetric, Asymmetric, Hashing)</span></a></li>
+      <li><a href="public-key-infrastructure-pki.html"><span class="num">17</span><span>Public Key Infrastructure (PKI)</span></a></li>
+      <li><a href="authentication-and-authorization.html"><span class="num">18</span><span>Authentication and Authorization</span></a></li>
+      <li><a href="multi-factor-authentication-mfa.html"><span class="num">19</span><span>Multi-Factor Authentication (MFA)</span></a></li>
+      <li class="active"><a href="access-control-models-dac-mac-rbac.html"><span class="num">20</span><span>Access Control Models (DAC, MAC, RBAC)</span></a></li>
+      <li class="group-header"><span class="group-title">Network and Infrastructure Security</span></li>
+      <li><a href="virtual-private-networks-vpn.html"><span class="num">21</span><span>Virtual Private Networks (VPN)</span></a></li>
+      <li><a href="secure-socket-layer-ssl-and-transport-layer-security-tls.html"><span class="num">22</span><span>Secure Socket Layer (SSL) and Transport Layer Security (TLS)</span></a></li>
+      <li><a href="dns-security-dnssec.html"><span class="num">23</span><span>DNS Security (DNSSEC)</span></a></li>
+      <li><a href="network-segmentation-and-isolation.html"><span class="num">24</span><span>Network Segmentation and Isolation</span></a></li>
+      <li><a href="wireless-network-security.html"><span class="num">25</span><span>Wireless Network Security</span></a></li>
+      <li class="group-header"><span class="group-title">Data and Information Security</span></li>
+      <li><a href="data-loss-prevention-dlp.html"><span class="num">26</span><span>Data Loss Prevention (DLP)</span></a></li>
+      <li><a href="data-encryption-at-rest-and-in-transit.html"><span class="num">27</span><span>Data Encryption at Rest and in Transit</span></a></li>
+      <li><a href="secure-backup-strategies.html"><span class="num">28</span><span>Secure Backup Strategies</span></a></li>
+      <li><a href="cloud-security-principles.html"><span class="num">29</span><span>Cloud Security Principles</span></a></li>
+      <li class="group-header"><span class="group-title">Operating System Security</span></li>
+      <li><a href="linux-and-windows-security.html"><span class="num">30</span><span>Linux and Windows Security</span></a></li>
+      <li><a href="file-permissions-and-user-management.html"><span class="num">31</span><span>File Permissions and User Management</span></a></li>
+      <li><a href="security-patches-and-updates.html"><span class="num">32</span><span>Security Patches and Updates</span></a></li>
+      <li class="group-header"><span class="group-title">Identity and Access Management (IAM)</span></li>
+      <li><a href="role-based-access-control-rbac.html"><span class="num">33</span><span>Role-Based Access Control (RBAC)</span></a></li>
+      <li><a href="single-sign-on-sso.html"><span class="num">34</span><span>Single Sign-On (SSO)</span></a></li>
+      <li><a href="password-management-best-practices.html"><span class="num">35</span><span>Password Management Best Practices</span></a></li>
+      <li class="group-header"><span class="group-title">Cybersecurity Tools and Frameworks</span></li>
+      <li><a href="kali-linux-for-penetration-testing.html"><span class="num">36</span><span>Kali Linux for Penetration Testing</span></a></li>
+      <li><a href="nmap-and-wireshark-for-network-scanning.html"><span class="num">37</span><span>Nmap and Wireshark for Network Scanning</span></a></li>
+      <li><a href="metasploit-for-exploit-development.html"><span class="num">38</span><span>Metasploit for Exploit Development</span></a></li>
+      <li><a href="burp-suite-for-web-application-security.html"><span class="num">39</span><span>Burp Suite for Web Application Security</span></a></li>
+      <li><a href="nessus-and-openvas-for-vulnerability-scanning.html"><span class="num">40</span><span>Nessus and OpenVAS for Vulnerability Scanning</span></a></li>
+      <li class="group-header"><span class="group-title">Security Policies and Compliance</span></li>
+      <li><a href="information-security-policies.html"><span class="num">41</span><span>Information Security Policies</span></a></li>
+      <li><a href="security-standards-and-frameworks-iso-27001-nist-pci-dss.html"><span class="num">42</span><span>Security Standards and Frameworks (ISO 27001, NIST, PCI-DSS)</span></a></li>
+      <li><a href="gdpr-and-data-privacy-laws.html"><span class="num">43</span><span>GDPR and Data Privacy Laws</span></a></li>
+      <li><a href="incident-response-and-disaster-recovery.html"><span class="num">44</span><span>Incident Response and Disaster Recovery</span></a></li>
+      <li class="group-header"><span class="group-title">Ethical Hacking and Penetration Testing</span></li>
+      <li><a href="introduction-to-ethical-hacking.html"><span class="num">45</span><span>Introduction to Ethical Hacking</span></a></li>
+      <li><a href="phases-of-penetration-testing.html"><span class="num">46</span><span>Phases of Penetration Testing</span></a></li>
+      <li><a href="exploiting-vulnerabilities.html"><span class="num">47</span><span>Exploiting Vulnerabilities</span></a></li>
+      <li><a href="reporting-penetration-test-findings.html"><span class="num">48</span><span>Reporting Penetration Test Findings</span></a></li>
+      <li class="group-header"><span class="group-title">Emerging Trends in Cybersecurity</span></li>
+      <li><a href="artificial-intelligence-in-cybersecurity.html"><span class="num">49</span><span>Artificial Intelligence in Cybersecurity</span></a></li>
+      <li><a href="internet-of-things-iot-security.html"><span class="num">50</span><span>Internet of Things (IoT) Security</span></a></li>
+      <li><a href="blockchain-security.html"><span class="num">51</span><span>Blockchain Security</span></a></li>
+      <li><a href="quantum-cryptography.html"><span class="num">52</span><span>Quantum Cryptography</span></a></li>
+    </ul>
+  </aside>
+
+  <main class="main-card">
+    <h1>Access Control Models (DAC, MAC, RBAC)</h1>
+    <h2>What Are Access Control Models?</h2>
+    <p>Access control models are frameworks that define how permissions are assigned and enforced, determining which users or processes can access specific resources within a system.</p>
+    <h2>Discretionary Access Control (DAC)</h2>
+    <p>In DAC, the owner of a resource decides who is granted access and what level of permission they receive, offering flexibility but relying heavily on the owner's judgment.</p>
+    <h2>Mandatory Access Control (MAC)</h2>
+    <p>MAC enforces access rules centrally based on fixed security labels and classifications, and individual users cannot alter these rules - commonly used in government and military systems requiring strict confidentiality.</p>
+    <h2>Role-Based Access Control (RBAC)</h2>
+    <p>RBAC assigns permissions based on a user's role within an organization, such as "admin" or "editor," simplifying management by grouping similar access needs rather than assigning permissions individually.</p>
+    <table class="data-table">
+      <thead><tr><th>Model</th><th>Who Controls Access</th><th>Flexibility</th></tr></thead>
+      <tbody>
+        <tr><td>DAC</td><td>Resource owner</td><td>High</td></tr>
+        <tr><td>MAC</td><td>Central authority/system policy</td><td>Low</td></tr>
+        <tr><td>RBAC</td><td>Assigned roles</td><td>Moderate</td></tr>
+      </tbody>
+    </table>
+    <div class="bridge-note">Access control models define permissions within a network, but many of these controls only work when traffic itself travels securely - which is the role of a VPN.</div>
+
+    <div class="cta-box">
+      <div>
+        <h3>Ready to master Cybersecurity Training Course?</h3>
+        <p>Join Uncodemy's hands-on training and build real-world cybersecurity skills with expert mentors.</p>
+      </div>
+      <a class="cta-btn" href="https://uncodemy.com">Explore Course</a>
+    </div>
+
+    <div class="pagination">
+      <a class="prev" href="multi-factor-authentication-mfa.html"><span class="dir">&larr; Previous</span>Multi-Factor Authentication (MFA)</a>
+      <a class="next" href="virtual-private-networks-vpn.html"><span class="dir">Next &rarr;</span>Virtual Private Networks (VPN)</a>
+    </div>
+  </main>
+
+  <aside class="sidebar-right">
+    <div class="batch-card">
+      <span class="batch-badge">Enrolling Now</span>
+      <h3>Cybersecurity</h3>
+      <div class="batch-meta">
+        <div><span>Next Batch Starts</span><strong>In 7 Days</strong></div>
+        <div><span>Duration</span><strong>6 Weeks</strong></div>
+      </div>
+      <div class="countdown">
+        <div class="unit"><strong data-cd-days>00</strong><span>Days</span></div>
+        <div class="unit"><strong data-cd-hours>00</strong><span>Hrs</span></div>
+        <div class="unit"><strong data-cd-mins>00</strong><span>Min</span></div>
+        <div class="unit"><strong data-cd-secs>00</strong><span>Sec</span></div>
+      </div>
+      <ul class="perks">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+      <span class="seats-badge">Only a few seats left!</span>
+      <a class="landing-btn" data-landing-btn href="https://uncodemy.com">Go to Course Landing Page</a>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-links">
+        <a class="phone" data-phone-link href="tel:">&#128222; Call <span data-phone-text></span></a>
+        <a class="whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener">&#128172; Chat on WhatsApp</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

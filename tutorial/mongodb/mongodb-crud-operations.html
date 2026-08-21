@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operations | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Insert, Find, Update, and Delete Documents (Basic and Advanced)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 6 of 20: CRUD Operations</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html" class="active"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-edit"></i> Insert, Find, Update, and Delete Documents (Basic and Advanced)</span>
+        <h1>CRUD Operations</h1>
+
+        <div class="card">
+
+            <p><strong>CRUD</strong> — Create, Read, Update, Delete — forms the backbone of every database interaction. This lesson walks through MongoDB's CRUD methods, from basic single-document operations to advanced bulk writes.</p>
+
+            <h2>1. Create — Inserting Documents</h2>
+            <pre class="code-block"><code>// Insert a single document
+db.students.insertOne({
+  name: "Neha Gupta",
+  age: 21,
+  course: "Computer Science"
+})
+
+// Insert multiple documents
+db.students.insertMany([
+  { name: "Aman Singh", age: 22, course: "Mechanical" },
+  { name: "Divya Rao", age: 20, course: "Electronics" }
+])</code></pre>
+
+            <h2>2. Read — Querying Documents</h2>
+            <pre class="code-block"><code>// Find all documents
+db.students.find()
+
+// Find with a filter
+db.students.find({ course: "Computer Science" })
+
+// Find one document
+db.students.findOne({ name: "Neha Gupta" })
+
+// Projection: return only specific fields
+db.students.find({ course: "Computer Science" }, { name: 1, age: 1, _id: 0 })</code></pre>
+
+            <h2>3. Update — Modifying Documents</h2>
+            <pre class="code-block"><code>// Update a single document
+db.students.updateOne(
+  { name: "Neha Gupta" },
+  { $set: { age: 22 } }
+)
+
+// Update multiple documents
+db.students.updateMany(
+  { course: "Mechanical" },
+  { $set: { department: "Engineering" } }
+)
+
+// Replace an entire document
+db.students.replaceOne(
+  { name: "Aman Singh" },
+  { name: "Aman Singh", age: 23, course: "Mechanical Engineering" }
+)</code></pre>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Update Operator</th><th>Purpose</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>$set</code></td><td>Set the value of a field</td></tr>
+                        <tr><td><code>$unset</code></td><td>Remove a field</td></tr>
+                        <tr><td><code>$inc</code></td><td>Increment a numeric field</td></tr>
+                        <tr><td><code>$push</code></td><td>Add an item to an array</td></tr>
+                        <tr><td><code>$pull</code></td><td>Remove an item from an array</td></tr>
+                        <tr><td><code>$rename</code></td><td>Rename a field</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Delete — Removing Documents</h2>
+            <pre class="code-block"><code>// Delete a single document
+db.students.deleteOne({ name: "Divya Rao" })
+
+// Delete multiple documents
+db.students.deleteMany({ course: "Mechanical" })
+
+// Delete all documents (keeps the collection)
+db.students.deleteMany({})</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issue:</strong> <code>updateOne()</code> without <code>$set</code> replaces the entire document rather than merging fields. Always wrap updates in the correct operator.
+            </div>
+
+            <h2>5. Advanced: upsert and Bulk Writes</h2>
+            <pre class="code-block"><code>// Upsert: insert if no match is found
+db.students.updateOne(
+  { name: "Ritika Jain" },
+  { $set: { age: 21, course: "Data Science" } },
+  { upsert: true }
+)
+
+// Bulk write for efficiency
+db.students.bulkWrite([
+  { insertOne: { document: { name: "Kabir", age: 24 } } },
+  { updateOne: { filter: { name: "Kabir" }, update: { $set: { age: 25 } } } },
+  { deleteOne: { filter: { name: "Kabir" } } }
+])</code></pre>
+
+            <h2>6. CRUD Checklist</h2>
+            <ul>
+                <li><strong>✅ Comfortable with insertOne/insertMany</strong></li>
+                <li><strong>✅ Know find(), findOne(), and projections</strong></li>
+                <li><strong>✅ Master $set, $inc, $push, $pull operators</strong></li>
+                <li><strong>✅ Understand upsert behavior</strong></li>
+                <li><strong>✅ Use bulkWrite() for batching operations efficiently</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> CRUD operations are the daily bread of database work. Get fluent with update operators especially — they prevent accidental data loss and enable efficient partial updates.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-databases-collections.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Creating Databases and Collections</a>
+            <a href="mongodb-query-operators.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Query Operators</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

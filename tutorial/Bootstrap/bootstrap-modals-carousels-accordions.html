@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Bootstrap's interactive components — Modals (popups, dialog boxes), Carousels (image sliders, slideshows), and Accordions (expandable content)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 6 of 9: Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html" class="active"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cubes"></i> Components</span>
+        <h1>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</h1>
+
+        <div class="card">
+
+            <p>Bootstrap's <strong>JavaScript-powered components</strong> add interactivity and engagement to your websites. <strong>Modals</strong> create popup dialogs, <strong>Carousels</strong> build image sliders, and <strong>Accordions</strong> organize content into expandable sections. These components require Bootstrap's JavaScript bundle to function.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-exclamation-triangle" style="color: var(--primary);"></i> Prerequisite:</strong> Make sure you've included Bootstrap's JavaScript bundle in your project. All interactive components require it.
+            </div>
+
+            <h2>1. Bootstrap Modals</h2>
+            <p>Modals are lightweight dialog boxes that appear on top of the page. They're perfect for confirmations, forms, alerts, or any content you want to show without navigating away.</p>
+
+            <h3>Basic Modal Structure</h3>
+            <pre class="code-block"><code>&lt;!-- Button to trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+    Launch Modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal Title&lt;/h5&gt;
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                This is the modal body content.
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+                &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Modal Sizes</h3>
+            <p>Use <code>.modal-sm</code>, <code>.modal-lg</code>, or <code>.modal-xl</code> on <code>.modal-dialog</code> to control modal width.</p>
+            <pre class="code-block"><code>&lt;!-- Small modal --&gt;
+&lt;div class="modal-dialog modal-sm"&gt;...&lt;/div&gt;
+
+&lt;!-- Large modal --&gt;
+&lt;div class="modal-dialog modal-lg"&gt;...&lt;/div&gt;
+
+&lt;!-- Extra large modal --&gt;
+&lt;div class="modal-dialog modal-xl"&gt;...&lt;/div&gt;
+
+&lt;!-- Full screen modal --&gt;
+&lt;div class="modal-dialog modal-fullscreen"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Modal with Scrollable Content</h3>
+            <pre class="code-block"><code>&lt;div class="modal-dialog modal-dialog-scrollable"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Vertically Centered Modal</h3>
+            <pre class="code-block"><code>&lt;div class="modal-dialog modal-dialog-centered"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Static Backdrop (Click outside doesn't close)</h3>
+            <pre class="code-block"><code>&lt;div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" ...&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Modal with Form</h3>
+            <pre class="code-block"><code>&lt;div class="modal fade" id="formModal"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Contact Us&lt;/h5&gt;
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                &lt;form&gt;
+                    &lt;div class="mb-3"&gt;
+                        &lt;label for="name" class="form-label"&gt;Name&lt;/label&gt;
+                        &lt;input type="text" class="form-control" id="name"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="mb-3"&gt;
+                        &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+                        &lt;input type="email" class="form-control" id="email"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="mb-3"&gt;
+                        &lt;label for="message" class="form-label"&gt;Message&lt;/label&gt;
+                        &lt;textarea class="form-control" id="message" rows="3"&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Cancel&lt;/button&gt;
+                &lt;button type="button" class="btn btn-primary"&gt;Send Message&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Multiple Modals</h3>
+            <p>You can stack modals, but only one can be open at a time. Avoid nesting modals for better UX.</p>
+
+            <h2>2. Bootstrap Carousel</h2>
+            <p>The Carousel is a slideshow component for cycling through images, text, or custom content. It supports indicators, controls, and autoplay.</p>
+
+            <h3>Basic Carousel Structure</h3>
+            <pre class="code-block"><code>&lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;!-- Indicators --&gt;
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Slides --&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="slide1.jpg" class="d-block w-100" alt="Slide 1"&gt;
+            &lt;div class="carousel-caption d-none d-md-block"&gt;
+                &lt;h5&gt;First Slide&lt;/h5&gt;
+                &lt;p&gt;Some description for the first slide.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="slide2.jpg" class="d-block w-100" alt="Slide 2"&gt;
+            &lt;div class="carousel-caption d-none d-md-block"&gt;
+                &lt;h5&gt;Second Slide&lt;/h5&gt;
+                &lt;p&gt;Some description for the second slide.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="slide3.jpg" class="d-block w-100" alt="Slide 3"&gt;
+            &lt;div class="carousel-caption d-none d-md-block"&gt;
+                &lt;h5&gt;Third Slide&lt;/h5&gt;
+                &lt;p&gt;Some description for the third slide.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Controls --&gt;
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+        &lt;span class="visually-hidden"&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Carousel with Text Captions</h3>
+            <p>Add captions using <code>.carousel-caption</code> inside any slide. Captions can be positioned with utility classes.</p>
+            <pre class="code-block"><code>&lt;div class="carousel-item"&gt;
+    &lt;img src="image.jpg" class="d-block w-100" alt="..."&gt;
+    &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Slide Title&lt;/h5&gt;
+        &lt;p&gt;Slide description text.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Carousel with Dark Controls &amp; Indicators</h3>
+            <p>Use <code>.carousel-dark</code> for white backgrounds and dark controls.</p>
+            <pre class="code-block"><code>&lt;div id="carouselDark" class="carousel carousel-dark slide"&gt;
+    &lt;!-- Slides with dark captions --&gt;
+    &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5 class="text-dark"&gt;Dark Theme Slide&lt;/h5&gt;
+        &lt;p class="text-dark"&gt;Content for dark theme.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Carousel with Fade Effect</h3>
+            <p>Add <code>.carousel-fade</code> to replace the slide transition with a fade effect.</p>
+            <pre class="code-block"><code>&lt;div id="carouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Autoplay &amp; Interval Settings</h3>
+            <p>Use <code>data-bs-interval</code> to control slide timing (in milliseconds).</p>
+            <pre class="code-block"><code>&lt;!-- Slides change every 2 seconds --&gt;
+&lt;div id="carouselFast" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000"&gt;...&lt;/div&gt;
+
+&lt;!-- Disable autoplay --&gt;
+&lt;div id="carouselManual" class="carousel slide" data-bs-ride="false"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Carousel with Multiple Items</h3>
+            <p>Use grid classes inside carousel items to show multiple items per slide.</p>
+            <pre class="code-block"><code>&lt;div class="carousel-item active"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-4"&gt;Item 1&lt;/div&gt;
+        &lt;div class="col-4"&gt;Item 2&lt;/div&gt;
+        &lt;div class="col-4"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>3. Bootstrap Accordion</h2>
+            <p>The Accordion is a vertically collapsing list of items that can show/hide content. It's perfect for FAQs, documentation, and organizing large amounts of information.</p>
+
+            <h3>Basic Accordion Structure</h3>
+            <pre class="code-block"><code>&lt;div class="accordion" id="accordionExample"&gt;
+    &lt;!-- Item 1 --&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header"&gt;
+            &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"&gt;
+                Accordion Item #1
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"&gt;
+            &lt;div class="accordion-body"&gt;
+                This is the first item's content. It's shown by default.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Item 2 --&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header"&gt;
+            &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"&gt;
+                Accordion Item #2
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+            &lt;div class="accordion-body"&gt;
+                This is the second item's content. It's collapsed by default.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Item 3 --&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header"&gt;
+            &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"&gt;
+                Accordion Item #3
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+            &lt;div class="accordion-body"&gt;
+                This is the third item's content.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Accordion with Flush (Borderless)</h3>
+            <p>Add <code>.accordion-flush</code> to remove borders and background.</p>
+            <pre class="code-block"><code>&lt;div class="accordion accordion-flush" id="accordionFlush"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Accordion with Custom Icons</h3>
+            <p>You can customize the toggle icon using CSS or by replacing it with your own.</p>
+            <pre class="code-block"><code>&lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCustom"&gt;
+    &lt;span class="me-2"&gt;✅&lt;/span&gt; FAQ Item
+&lt;/button&gt;</code></pre>
+
+            <h3>Accordion with Multiple Targets</h3>
+            <p>If you remove <code>data-bs-parent</code>, accordion items can be opened independently.</p>
+            <pre class="code-block"><code>&lt;!-- Remove data-bs-parent to allow multiple open items --&gt;
+&lt;div id="collapseOne" class="accordion-collapse collapse show"&gt;
+    &lt;!-- no data-bs-parent --&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Putting It All Together</h2>
+            <p>Here's a complete example combining Modals, Carousels, and Accordions in a single page:</p>
+            <pre class="code-block"><code>&lt;!-- Navbar --&gt;
+&lt;nav class="navbar navbar-dark bg-dark"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Interactive Demo&lt;/a&gt;
+        &lt;button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#demoModal"&gt;
+            &lt;i class="fas fa-envelope"&gt;&lt;/i&gt; Contact
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Carousel --&gt;
+&lt;div id="demoCarousel" class="carousel slide mb-4" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-indicators"&gt;
+        &lt;button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="1"&gt;&lt;/button&gt;
+        &lt;button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="2"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;div class="bg-primary text-white text-center p-5" style="height: 300px;"&gt;
+                &lt;h2&gt;Welcome to Our Site&lt;/h2&gt;
+                &lt;p&gt;Discover amazing content with Bootstrap.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;div class="bg-success text-white text-center p-5" style="height: 300px;"&gt;
+                &lt;h2&gt;Featured Products&lt;/h2&gt;
+                &lt;p&gt;Browse our latest collection.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;div class="bg-info text-white text-center p-5" style="height: 300px;"&gt;
+                &lt;h2&gt;Special Offers&lt;/h2&gt;
+                &lt;p&gt;Limited time deals available.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Content with Accordion --&gt;
+&lt;div class="container"&gt;
+    &lt;h3&gt;Frequently Asked Questions&lt;/h3&gt;
+    &lt;div class="accordion" id="faqAccordion"&gt;
+        &lt;div class="accordion-item"&gt;
+            &lt;h2 class="accordion-header"&gt;
+                &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"&gt;
+                    What is Bootstrap?
+                &lt;/button&gt;
+            &lt;/h2&gt;
+            &lt;div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"&gt;
+                &lt;div class="accordion-body"&gt;
+                    Bootstrap is a frontend framework for building responsive, mobile-first websites.
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="accordion-item"&gt;
+            &lt;h2 class="accordion-header"&gt;
+                &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"&gt;
+                    How do I use Modals?
+                &lt;/button&gt;
+            &lt;/h2&gt;
+            &lt;div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"&gt;
+                &lt;div class="accordion-body"&gt;
+                    Modals are triggered by buttons using data attributes: data-bs-toggle="modal".
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="accordion-item"&gt;
+            &lt;h2 class="accordion-header"&gt;
+                &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"&gt;
+                    Are Carousels responsive?
+                &lt;/button&gt;
+            &lt;/h2&gt;
+            &lt;div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"&gt;
+                &lt;div class="accordion-body"&gt;
+                    Yes! Carousels are fully responsive and work on all screen sizes.
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="demoModal" tabindex="-1"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header bg-primary text-white"&gt;
+                &lt;h5 class="modal-title"&gt;Contact Us&lt;/h5&gt;
+                &lt;button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                &lt;form&gt;
+                    &lt;div class="mb-3"&gt;
+                        &lt;label class="form-label"&gt;Name&lt;/label&gt;
+                        &lt;input type="text" class="form-control" placeholder="Your name"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="mb-3"&gt;
+                        &lt;label class="form-label"&gt;Email&lt;/label&gt;
+                        &lt;input type="email" class="form-control" placeholder="Your email"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="mb-3"&gt;
+                        &lt;label class="form-label"&gt;Message&lt;/label&gt;
+                        &lt;textarea class="form-control" rows="3" placeholder="Your message"&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Cancel&lt;/button&gt;
+                &lt;button type="button" class="btn btn-primary"&gt;Send&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> 
+                <ul>
+                    <li><strong>Modals</strong> should be used sparingly — don't overwhelm users with popups.</li>
+                    <li><strong>Carousels</strong> work best with high-quality images and minimal text.</li>
+                    <li><strong>Accordions</strong> are perfect for FAQs, documentation, and mobile-friendly content organization.</li>
+                    <li>All these components require Bootstrap's JavaScript — always include it!</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-navbar-cards.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a>
+            <a href="bootstrap-flexbox-display-positioning.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

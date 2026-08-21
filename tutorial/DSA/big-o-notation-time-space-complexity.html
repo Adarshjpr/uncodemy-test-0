@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big O Notation in Data Structures: Time and Space Complexity | DSA Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Big O Notation — the standard for analyzing time and space complexity in algorithms. Understand common complexity classes with examples." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Data Structures & Algorithms (DSA) Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 69 of 81: Big O Notation in Data Structures: Time and Space Complexity</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="radix-sort-for-strings.html"><span class="num">01</span>Radix Sort for Strings</a></li>
+            <li><a href="most-asked-dsa-interview-practice-questions.html"><span class="num">02</span>Most Asked DSA Interview Practice Questions</a></li>
+            <li><a href="maximum-subarray-sum-problem.html"><span class="num">03</span>Maximum Subarray Sum Problem</a></li>
+            <li><a href="merge-sorted-arrays.html"><span class="num">04</span>Merge Sorted Arrays</a></li>
+            <li><a href="linear-search-with-duplicates.html"><span class="num">05</span>Linear Search with Duplicates</a></li>
+            <li><a href="quick-sort-with-pivot-selection.html"><span class="num">06</span>Quick Sort with Pivot Selection</a></li>
+            <li><a href="insertion-sort-for-nearly-sorted-array.html"><span class="num">07</span>Insertion Sort for Nearly Sorted Array</a></li>
+            <li><a href="two-sum-problem.html"><span class="num">08</span>Two Sum Problem</a></li>
+            <li><a href="selection-sort-algorithm.html"><span class="num">09</span>Selection Sort Algorithm</a></li>
+            <li><a href="bubble-sort-algorithm.html"><span class="num">10</span>Bubble Sort Algorithm</a></li>
+            <li><a href="0-1-knapsack-problem.html"><span class="num">11</span>0/1 Knapsack Problem</a></li>
+            <li><a href="bellman-ford-algorithm-working-example-applications.html"><span class="num">12</span>Bellman-Ford Algorithm — Working, Example and Applications</a></li>
+            <li><a href="introduction-to-non-linear-data-structures.html"><span class="num">13</span>Introduction to Non-Linear Data Structures</a></li>
+            <li><a href="difference-between-stack-and-queue-data-structure.html"><span class="num">14</span>Difference Between Stack and Queue Data Structure</a></li>
+            <li><a href="breadth-first-search-vs-depth-first-search.html"><span class="num">15</span>Breadth First Search vs Depth First Search</a></li>
+            <li><a href="abstract-data-type-in-data-structure-with-example.html"><span class="num">16</span>Abstract Data Type in Data Structure with Example</a></li>
+            <li><a href="binary-tree-traversal-in-data-structure.html"><span class="num">17</span>Binary Tree Traversal in Data Structure</a></li>
+            <li><a href="binary-tree-array-implementation.html"><span class="num">18</span>Binary Tree Array Implementation</a></li>
+            <li><a href="binary-tree-in-data-structure-types-and-implementation.html"><span class="num">19</span>Binary Tree in Data Structure — Types and Implementation</a></li>
+            <li><a href="dsa-examples-a-to-z-guide.html"><span class="num">20</span>DSA Examples: A-Z Guide</a></li>
+            <li><a href="deque-in-data-structure.html"><span class="num">21</span>Deque in Data Structure</a></li>
+            <li><a href="priority-queue-in-data-structure-implementation-types.html"><span class="num">22</span>Priority Queue in Data Structure — Implementation, Types & More</a></li>
+            <li><a href="implementing-circular-queue-in-data-structure.html"><span class="num">23</span>Implementing Circular Queue in Data Structure</a></li>
+            <li><a href="queue-in-data-structure-types-and-algorithms.html"><span class="num">24</span>Queue in Data Structure — Types & Algorithms (with Examples)</a></li>
+            <li><a href="understanding-trie-data-structure.html"><span class="num">25</span>Understanding Trie Data Structure</a></li>
+            <li><a href="spanning-tree-and-minimum-spanning-tree-kruskal-prim.html"><span class="num">26</span>Spanning Tree and Minimum Spanning Tree — Kruskal's and Prim's Algorithm</a></li>
+            <li><a href="avl-tree-in-data-structure-with-example.html"><span class="num">27</span>AVL Tree in Data Structure with Example</a></li>
+            <li><a href="trees-in-data-structure-structure-operations-applications.html"><span class="num">28</span>Trees in Data Structure — Structure, Operations & Applications</a></li>
+            <li><a href="segment-tree-in-data-structure-operations-advantages-disadvantages.html"><span class="num">29</span>Segment Tree in Data Structure — Operations, Advantages and Disadvantages</a></li>
+            <li><a href="k-dimensional-tree-in-data-structure.html"><span class="num">30</span>K-Dimensional Tree in Data Structure</a></li>
+            <li><a href="singly-linked-list.html"><span class="num">31</span>Singly Linked List</a></li>
+            <li><a href="reverse-linked-list.html"><span class="num">32</span>Reverse Linked List</a></li>
+            <li><a href="linked-list-in-data-structure-types-and-applications.html"><span class="num">33</span>Linked List in Data Structure — Types and Applications</a></li>
+            <li><a href="doubly-linked-list-in-data-structure-with-example.html"><span class="num">34</span>Doubly Linked List in Data Structure with Example</a></li>
+            <li><a href="circular-linked-list-in-data-structure.html"><span class="num">35</span>Circular Linked List in Data Structure</a></li>
+            <li><a href="dijkstras-algorithm-in-data-structure.html"><span class="num">36</span>Dijkstra's Algorithm in Data Structure</a></li>
+            <li><a href="binary-search-in-data-structure.html"><span class="num">37</span>Binary Search in Data Structure</a></li>
+            <li><a href="data-structure-sorting-types-and-examples-explained.html"><span class="num">38</span>Data Structure Sorting: Types and Examples Explained in Detail</a></li>
+            <li><a href="bubble-sort-in-data-structure.html"><span class="num">39</span>Bubble Sort in Data Structure</a></li>
+            <li><a href="selection-sort-in-data-structure.html"><span class="num">40</span>Selection Sort in Data Structure</a></li>
+            <li><a href="insertion-sort-in-data-structure-algorithm-working-advantages.html"><span class="num">41</span>Insertion Sort in Data Structure — Algorithm, Working and Advantages</a></li>
+            <li><a href="merge-sort-in-data-structure-implementation-cpp-java-python.html"><span class="num">42</span>Merge Sort in Data Structure and Algorithm — with Implementation in C++, Java and Python</a></li>
+            <li><a href="counting-sort-in-data-structure.html"><span class="num">43</span>Counting Sort in Data Structure</a></li>
+            <li><a href="radix-sort-in-data-structure-algorithm-working-complexity.html"><span class="num">44</span>Radix Sort in Data Structure — Algorithm, Working and Complexity</a></li>
+            <li><a href="bucket-sort-in-data-structure.html"><span class="num">45</span>Bucket Sort in Data Structure</a></li>
+            <li><a href="shell-sort-in-data-structure-algorithm-visualization-complexity.html"><span class="num">46</span>Shell Sort in Data Structure — Algorithm, Visualization and Complexity</a></li>
+            <li><a href="heap-sort-algorithm-in-data-structure-working-implementation-applications.html"><span class="num">47</span>Heap Sort Algorithm in Data Structure — Working, Implementation and Applications</a></li>
+            <li><a href="tower-of-hanoi-in-data-structure.html"><span class="num">48</span>Tower of Hanoi in Data Structure</a></li>
+            <li><a href="counting-sort-limited-range.html"><span class="num">49</span>Counting Sort for Limited Range</a></li>
+            <li><a href="binary-search-rotated-sorted-array.html"><span class="num">50</span>Binary Search in Rotated Sorted Array</a></li>
+            <li><a href="inorder-traversal-binary-search-tree.html"><span class="num">51</span>In-order Traversal of Binary Search Tree</a></li>
+            <li><a href="binary-search-tree-data-structure.html"><span class="num">52</span>Binary Search Tree in Data Structures</a></li>
+            <li><a href="merge-sort-linked-list.html"><span class="num">53</span>Merge Sort for Linked List</a></li>
+            <li><a href="quick-sort-algorithm-types-examples.html"><span class="num">54</span>Quick Sort Algorithm in Data Structures — Its Types ( With Examples )</a></li>
+            <li><a href="greedy-algorithm-data-structures.html"><span class="num">55</span>Greedy Algorithm in Data Structures</a></li>
+            <li><a href="array-vs-linked-list-differences.html"><span class="num">56</span>Differences Between Array and Linked List</a></li>
+            <li><a href="multi-dimensional-array.html"><span class="num">57</span>Multi dimensional array in Data Structures</a></li>
+            <li><a href="one-dimensional-array-example.html"><span class="num">58</span>One dimensional Array in Data Structures with Example</a></li>
+            <li><a href="suffix-array-suffix-tree-applications.html"><span class="num">59</span>Suffix Array and Suffix Tree in Data Structures &amp; Applications</a></li>
+            <li><a href="two-dimensional-array.html"><span class="num">60</span>Two dimensional Array In Data Structure</a></li>
+            <li><a href="types-of-arrays-2d-3d-jagged.html"><span class="num">61</span>Types of Arrays in Data Structures: 2D, 3D, Jagged Arrays</a></li>
+            <li><a href="arrays-data-structures-types-representation.html"><span class="num">62</span>Arrays in Data Structures — Types, Representation &amp; Algorithm (With Examples)</a></li>
+            <li><a href="b-tree-data-structure.html"><span class="num">63</span>B Tree: An Efficient Data Structure</a></li>
+            <li><a href="what-are-data-structures-guide.html"><span class="num">64</span>What are Data Structures — Types of Data Structures (Complete Guide)</a></li>
+            <li><a href="recursion-data-structures-recursive-function.html"><span class="num">65</span>Recursion in Data Structures: Recursive Function</a></li>
+            <li><a href="complexity-analysis-of-algorithms.html"><span class="num">66</span>Complexity Analysis of Data Structures and Algorithms</a></li>
+            <li><a href="searching-data-structures-types-methods.html"><span class="num">67</span>Searching in Data Structures — Its Types, Methods &amp; Techniques</a></li>
+            <li><a href="brute-force-algorithm-types-advantages.html"><span class="num">68</span>Brute Force Algorithm in Data Structures: Types, Advantages, Disadvantages</a></li>
+            <li><a href="big-o-notation-time-space-complexity.html" class="active"><span class="num">69</span>Big O Notation in Data Structures: Time and Space Complexity</a></li>
+            <li><a href="stack-data-structure-implementations.html"><span class="num">70</span>Stack in Data Structures: Implementations in Java, Python, &amp; C++</a></li>
+            <li><a href="linear-search-algorithm-working-complexity.html"><span class="num">71</span>What is Linear Search in Data Structures — Its Algorithm, Working, &amp; Complexity</a></li>
+            <li><a href="divide-and-conquer-algorithm-working-advantages.html"><span class="num">72</span>Divide and Conquer Algorithm in Data Structures — Its Working, Advantages &amp; Disadvantages</a></li>
+            <li><a href="heap-data-structure.html"><span class="num">73</span>Heap in Data Structures</a></li>
+            <li><a href="hashing-types-functions-examples.html"><span class="num">74</span>Hashing in Data Structures: Types and Functions [With Examples]</a></li>
+            <li><a href="hash-table-data-structure.html"><span class="num">75</span>Hash Table in Data Structures</a></li>
+            <li><a href="graph-data-structure-types.html"><span class="num">76</span>What is a Graph in Data Structures and its Types?</a></li>
+            <li><a href="bfs-dfs-traversal-data-structure.html"><span class="num">77</span>Breadth First Traversal and Depth First Traversal in Data Structure</a></li>
+            <li><a href="dsa-mcq-questions-answers.html"><span class="num">78</span>Top 45+ DSA MCQ Questions with Answers {Updated}</a></li>
+            <li><a href="dsa-interview-questions-answers.html"><span class="num">79</span>DSA Interview Questions and Answers (Freshers to Experienced)</a></li>
+            <li><a href="dsa-roadmap-step-by-step-guide.html"><span class="num">80</span>DSA Roadmap for Beginners: Step-by-Step Guide to Master in DSA</a></li>
+            <li><a href="data-structure-cheat-sheet-complete.html"><span class="num">81</span>Data Structure Cheat Sheet: Complete Guide</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-code"></i> Fundamentals</span>
+        <h1>Big O Notation in Data Structures: Time and Space Complexity</h1>
+
+        <div class="card">
+
+            <p><strong>Big O Notation</strong> is the mathematical notation used to describe the limiting behavior of a function when the argument tends toward infinity. In computer science, it is the standard tool for analyzing the <strong>time complexity</strong> and <strong>space complexity</strong> of algorithms. Big O describes the <strong>worst-case</strong> scenario, providing an upper bound on the growth rate of an algorithm.</p>
+
+            <h2>What is Big O Notation?</h2>
+            <p>Big O Notation expresses how the runtime or memory usage of an algorithm scales with the size of the input. It focuses on the <strong>dominant term</strong> and ignores constants and lower-order terms.</p>
+            <pre class="code-block"><code>If f(n) = 3n² + 2n + 1, then f(n) = O(n²)
+
+Because as n grows, the n² term dominates.
+</code></pre>
+
+            <h2>Why Big O Matters</h2>
+            <ul>
+                <li><strong>Predicts Scalability:</strong> Tells us how an algorithm performs as input size increases.</li>
+                <li><strong>Enables Comparison:</strong> Allows objective comparison between different algorithms.</li>
+                <li><strong>Identifies Bottlenecks:</strong> Helps locate performance issues in code.</li>
+                <li><strong>Industry Standard:</strong> Used in interviews, system design, and performance analysis.</li>
+            </ul>
+
+            <h2>Common Big O Complexity Classes</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Notation</th><th>Name</th><th>Example</th><th>Growth (n=10)</th><th>Growth (n=100)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>O(1)</strong></td><td>Constant</td><td>Array access</td><td>1</td><td>1</td></tr>
+                        <tr><td><strong>O(log n)</strong></td><td>Logarithmic</td><td>Binary search</td><td>~3</td><td>~7</td></tr>
+                        <tr><td><strong>O(n)</strong></td><td>Linear</td><td>Linear search</td><td>10</td><td>100</td></tr>
+                        <tr><td><strong>O(n log n)</strong></td><td>Linearithmic</td><td>Merge sort</td><td>~33</td><td>~664</td></tr>
+                        <tr><td><strong>O(n²)</strong></td><td>Quadratic</td><td>Bubble sort</td><td>100</td><td>10,000</td></tr>
+                        <tr><td><strong>O(n³)</strong></td><td>Cubic</td><td>Matrix multiplication</td><td>1,000</td><td>1,000,000</td></tr>
+                        <tr><td><strong>O(2ⁿ)</strong></td><td>Exponential</td><td>Subset sum (naive)</td><td>1,024</td><td>1.27e+30</td></tr>
+                        <tr><td><strong>O(n!)</strong></td><td>Factorial</td><td>TSP (naive)</td><td>3,628,800</td><td>9.33e+157</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Visualizing Growth</h2>
+            <p>When n = 100:</p>
+            <ul>
+                <li><strong>O(1):</strong> 1 operation (blazing fast)</li>
+                <li><strong>O(log n):</strong> ~7 operations</li>
+                <li><strong>O(n):</strong> 100 operations</li>
+                <li><strong>O(n log n):</strong> ~664 operations</li>
+                <li><strong>O(n²):</strong> 10,000 operations</li>
+                <li><strong>O(2ⁿ):</strong> ~1.27 × 10³⁰ operations (practically impossible)</li>
+            </ul>
+
+            <h2>Time Complexity Examples</h2>
+
+            <h3>O(1) — Constant Time</h3>
+            <p>Independent of input size.</p>
+            <pre class="code-block"><code>def constant_time(arr):
+    return arr[0]  # Always one operation
+</code></pre>
+
+            <h3>O(log n) — Logarithmic Time</h3>
+            <p>Each step reduces the input size by a factor.</p>
+            <pre class="code-block"><code>def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+</code></pre>
+
+            <h3>O(n) — Linear Time</h3>
+            <p>Single loop over the input.</p>
+            <pre class="code-block"><code>def linear_time(arr):
+    total = 0
+    for x in arr:
+        total += x
+    return total
+</code></pre>
+
+            <h3>O(n log n) — Linearithmic Time</h3>
+            <p>Common in efficient sorting algorithms.</p>
+            <pre class="code-block"><code>def merge_sort(arr):  # O(n log n)
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+</code></pre>
+
+            <h3>O(n²) — Quadratic Time</h3>
+            <p>Nested loops over the input.</p>
+            <pre class="code-block"><code>def quadratic_time(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            print(arr[i], arr[j])
+</code></pre>
+
+            <h3>O(2ⁿ) — Exponential Time</h3>
+            <p>Recursive solutions that branch exponentially.</p>
+            <pre class="code-block"><code>def fibonacci(n):  # Naive recursive
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+# Each call branches into two more calls
+</code></pre>
+
+            <h2>Space Complexity</h2>
+            <p>Space complexity measures the amount of memory an algorithm uses relative to the input size. It includes:</p>
+            <ul>
+                <li><strong>Fixed part:</strong> Memory for constants, program code, and simple variables.</li>
+                <li><strong>Variable part:</strong> Memory for data structures, recursion stack, and dynamically allocated memory.</li>
+            </ul>
+
+            <h3>Space Complexity Examples</h3>
+            <pre class="code-block"><code>def sum_array(arr):  # O(1) space
+    total = 0
+    for x in arr:
+        total += x
+    return total
+
+def copy_array(arr):  # O(n) space
+    return arr[:]  # Creates a new array of size n
+
+def recursive_sum(arr):  # O(n) space (call stack)
+    if not arr:
+        return 0
+    return arr[0] + recursive_sum(arr[1:])
+</code></pre>
+
+            <h2>Comparing Complexities</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>n</th><th>O(1)</th><th>O(log n)</th><th>O(n)</th><th>O(n log n)</th><th>O(n²)</th><th>O(2ⁿ)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
+                        <tr><td>10</td><td>1</td><td>3</td><td>10</td><td>33</td><td>100</td><td>1,024</td></tr>
+                        <tr><td>100</td><td>1</td><td>7</td><td>100</td><td>664</td><td>10,000</td><td>1.27e+30</td></tr>
+                        <tr><td>1,000</td><td>1</td><td>10</td><td>1,000</td><td>9,966</td><td>1,000,000</td><td>~10³⁰¹</td></tr>
+                        <tr><td>10,000</td><td>1</td><td>13</td><td>10,000</td><td>132,877</td><td>100,000,000</td><td>~10³⁰¹⁰</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>How to Analyze Complexity</h2>
+            <h3>Step-by-Step Guide</h3>
+            <ol>
+                <li><strong>Identify the input size (n):</strong> Usually the number of elements.</li>
+                <li><strong>Count the operations:</strong> Loops, recursive calls, etc.</li>
+                <li><strong>Focus on the dominant term:</strong> Ignore constants and lower-order terms.</li>
+                <li><strong>Consider worst-case:</strong> Big O describes the upper bound.</li>
+            </ol>
+
+            <h3>Common Patterns</h3>
+            <ul>
+                <li><strong>Single loop:</strong> O(n)</li>
+                <li><strong>Nested loops:</strong> O(n²), O(n³), etc.</li>
+                <li><strong>Divide and conquer:</strong> Often O(n log n) or O(log n)</li>
+                <li><strong>Recursive branching:</strong> Often O(2ⁿ) or O(n!)</li>
+                <li><strong>Hash operations:</strong> Usually O(1) average</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Big O Notation</strong> is the standard for analyzing algorithm efficiency.</li>
+                <li>It describes the <strong>worst-case</strong> scenario and ignores constants and lower-order terms.</li>
+                <li><strong>Time complexity</strong> measures runtime; <strong>space complexity</strong> measures memory usage.</li>
+                <li>Common classes: <strong>O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ), O(n!)</strong>.</li>
+                <li>Understanding Big O is <strong>essential</strong> for writing efficient, scalable code.</li>
+            </ul>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="brute-force-algorithm-types-advantages.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Brute Force Algorithm in Data Structures: Types, Advantages, Disadvantages</a>
+            <a href="stack-data-structure-implementations.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Stack in Data Structures: Implementations in Java, Python, &amp; C++</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Data Structures &amp; Algorithms?</h3>
+                <p>Learn DSA hands-on with mentor-led sessions, real interview practice, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>DSA Training Course</h4>
+            <p class="batch-sub">Kickstart your problem-solving journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Can an Arts Graduate Really Become a Data Analytics in 2026? | Uncodemy</title>
+    <meta name="description" content="Complete guide for arts graduates to become data analytics professionals in 2026. Learn skills, career paths, salary, roadmap, and how your arts background gives you an edge." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/arts-graduate-to-data-analytics-2026" />
+    <meta property="og:title" content="Can an Arts Graduate Really Become a Data Analytics in 2026? | Uncodemy" />
+    <meta property="og:description" content="A step-by-step guide for arts graduates to transition into data analytics. Leverage your storytelling, critical thinking, and communication skills." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+    <style>
+        .path-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .path-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .path-box .p-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .path-box .p-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .path-box .p-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .path-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .path-box .p-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .path-box .p-v {
+                font-size: 14px;
+            }
+            .path-box .p-l {
+                font-size: 8px;
+            }
+            .path-box .p-d {
+                font-size: 9px;
+            }
+        }
+        .role-tag {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .arts-tip {
+            border-left: 3px solid #8B5CF6;
+            background: #f5f0ff;
+            padding: 14px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        .flow-row .icon-row {
+            display: inline-flex;
+            gap: 4px;
+        }
+        .flow-row .icon-row svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+        .demo-bar .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .s-card h4 .icon-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .s-card h4 .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .rating-stars {
+            display: inline-flex;
+            gap: 1px;
+            vertical-align: -2px;
+        }
+        .rating-stars svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--primary);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <i data-lucide="menu" style="width:24px;height:24px;stroke:currentColor;stroke-width:2;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Can an Arts Graduate Really Become a Data Analytics in 2026? <mark>Yes — Here's How</mark></h1>
+                <p class="lede">If you're an arts graduate wondering if you can break into data analytics, the answer is a resounding YES. Your skills — communication, storytelling, critical thinking, and empathy — are exactly what the data industry needs. This guide shows you how to turn your humanities background into a thriving data analytics career.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search 'arts graduate data analytics career guide'" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Arts to Data</button>
+                    <button class="chip" aria-pressed="false">Data Analyst</button>
+                    <button class="chip" aria-pressed="true">Business Intelligence</button>
+                    <button class="chip" aria-pressed="false">Data Visualization</button>
+                    <button class="chip" aria-pressed="false">SQL</button>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="false">Interview Prep</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <i data-lucide="bar-chart-3" style="width:16px;height:16px;color:var(--primary);"></i>
+                        <b>Data Analytics Career · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different data analytics career paths">
+                        <button aria-pressed="true" data-r="analyst">Data Analyst</button>
+                        <button aria-pressed="false" data-r="bi">BI Analyst</button>
+                        <button aria-pressed="false" data-r="viz">Data Visualization</button>
+                        <button aria-pressed="false" data-r="manager">Analytics Manager</button>
+                    </div>
+                    <div class="path-grid" id="pathTiers">
+                        <div class="path-box"><div class="p-l">Role</div><div class="p-v" id="roleName">—</div><div class="p-d">Job title</div></div>
+                        <div class="path-box"><div class="p-l">Fresher Salary</div><div class="p-v" id="salaryVal">—</div><div class="p-d">Avg. package (India)</div></div>
+                        <div class="path-box"><div class="p-l">Arts Advantage</div><div class="p-v" id="artsVal">—</div><div class="p-d">How your skills help</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Arts Graduate</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Learn Data Skills</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Build Portfolio</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Land Analytics Job</span>
+                    </div>
+                    <div class="demo-cap">Click a path to see the role, salary, and how your arts background gives you a unique advantage. Storytelling and critical thinking are superpowers in data analytics.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs">
+            <a href="#top">Home</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Career Guides</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Arts to Data</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <span>Arts to Data Analytics Guide</span>
+        </p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Transition · Arts to Data Analytics</p>
+                <h1>Can an Arts Graduate Really Become a Data Analytics in 2026? — Complete Guide</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 18 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 980 300" role="img" aria-label="Arts graduate to data analytics career transition diagram">
+                        <defs>
+                            <marker id="ar28" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g28" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="980" height="300" fill="url(#g28)" />
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="35">ARTS GRADUATE</text>
+                            <text x="360" y="35">SKILLS TO BUILD</text>
+                            <text x="670" y="35">CAREER OUTCOMES</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="50" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Your background</text>
+                        <text x="50" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Communication</text>
+                        <text x="50" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Critical thinking</text>
+                        <text x="50" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Storytelling</text>
+                        <text x="50" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Empathy</text>
+                        <rect x="35" y="215" width="210" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="70" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Human‑centric</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="340" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Skills to learn</text>
+                        <text x="340" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• SQL &amp; databases</text>
+                        <text x="340" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Python &amp; data</text>
+                        <text x="340" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Visualization</text>
+                        <text x="340" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Statistics</text>
+                        <rect x="325" y="215" width="210" height="28" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">Job-ready</text>
+
+                        <!-- Column 3 -->
+                        <rect x="630" y="55" width="320" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="660" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Career outcomes</text>
+                        <text x="660" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data Analyst</text>
+                        <text x="660" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• BI Analyst</text>
+                        <text x="660" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data Visualization Specialist</text>
+                        <text x="660" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Analytics Manager</text>
+                        <rect x="655" y="215" width="270" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="695" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">High demand</text>
+
+                        <path d="M260 160 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar28)" />
+                        <path d="M550 160 H616" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar28)" />
+                    </svg>
+                    <figcaption>Arts graduates bring communication, critical thinking, and storytelling — the exact skills that make a great data analytics professional.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — Arts to Data Analytics</h2>
+                    <p><b>Yes, you can absolutely become a data analytics professional with an arts degree.</b> In fact, your background in communication, critical thinking, and storytelling is a massive advantage. Data analytics is not just about numbers — it's about understanding human behaviour and telling stories with data. That's exactly what arts graduates excel at.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>Why arts graduates are in demand in data analytics</b> — the skills you already have.</li>
+                        <li><b>Best data analytics career paths</b> — Data Analyst, BI Analyst, Data Visualization Specialist, Analytics Manager.</li>
+                        <li><b>Skills &amp; tools to learn</b> — SQL, Python, Tableau, Excel, statistics.</li>
+                        <li><b>Step‑by‑step roadmap</b> — from zero to job‑ready in 6–12 months.</li>
+                        <li><b>Projects to build your portfolio</b> — practical, hands‑on ideas.</li>
+                        <li><b>Interview Q&amp;A</b> — how to ace interviews as an arts graduate.</li>
+                        <li><b>Test yourself</b> — a quick quiz to check your readiness.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Why arts graduates are great for data analytics</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Best data analytics career paths</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Data Analyst — the most accessible path</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Business Intelligence Analyst</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Data Visualization Specialist</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Analytics Manager</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Skills &amp; tools to learn</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Step‑by‑step roadmap</a></li>
+                        <li><a href="#s9"><span class="n">09</span>Projects to build your portfolio</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Salary expectations</a></li>
+                        <li><a href="#s11"><span class="n">11</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">12</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">13</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">14</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Why arts graduates are great for data analytics</h2>
+                <p>If you think your arts degree is irrelevant in tech, think again. Here's why you're a hidden gem:</p>
+                <ul>
+                    <li><b>Communication &amp; storytelling</b> — you can translate complex data insights into simple, compelling narratives that drive business decisions.</li>
+                    <li><b>Critical thinking</b> — you're trained to question assumptions, analyse arguments, and see multiple perspectives — essential for data analysis.</li>
+                    <li><b>Empathy &amp; human‑centred thinking</b> — you understand people, which is the foundation of great user experience and customer analytics.</li>
+                    <li><b>Research skills</b> — you know how to gather, synthesise, and interpret information, a core skill for data analytics.</li>
+                    <li><b>Curiosity</b> — the drive to ask "why" and "how" is at the heart of data analysis.</li>
+                </ul>
+                <div class="arts-tip"><b>Key insight:</b> Data is meaningless without context and interpretation. Arts graduates excel at providing that context and telling the human story behind the numbers. This is exactly why companies are actively hiring humanities graduates for data roles.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Best data analytics career paths</h2>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Career Path</th><th>Why it fits an arts background</th><th>Technical Level</th><th>Fresher Salary (India)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Data Analyst</b></td><td>Curiosity, research, storytelling</td><td>Low–Medium</td><td>₹4–8 LPA</td></tr>
+                            <tr><td><b>BI Analyst</b></td><td>Communication, dashboarding, business</td><td>Medium</td><td>₹5–10 LPA</td></tr>
+                            <tr><td><b>Data Visualization Specialist</b></td><td>Design, creativity, storytelling</td><td>Low–Medium</td><td>₹5–9 LPA</td></tr>
+                            <tr><td><b>Analytics Manager</b></td><td>Leadership, strategy, communication</td><td>Medium–High</td><td>₹8–15 LPA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Data Analyst — the most accessible path</h2>
+                <p>Data Analysts collect, clean, and interpret data to help businesses make decisions. Your curiosity and research skills are perfect for this role.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>SQL for data extraction</li>
+                    <li>Excel and data cleaning</li>
+                    <li>Python (pandas, matplotlib) or R</li>
+                    <li>Data visualisation (Tableau, Power BI)</li>
+                    <li>Statistical analysis and A/B testing</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Data Analyst</span> <span class="role-tag">Junior Data Analyst</span> <span class="role-tag">Marketing Analyst</span> <span class="role-tag">Operations Analyst</span></p>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Business Intelligence Analyst — bridge data and business</h2>
+                <p>BI Analysts create dashboards and reports that help businesses track performance. Your communication and business understanding are key.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>SQL and data warehousing</li>
+                    <li>BI tools (Tableau, Power BI, Looker)</li>
+                    <li>Data modeling and ETL</li>
+                    <li>Dashboard design and storytelling</li>
+                    <li>Business metrics and KPIs</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">BI Analyst</span> <span class="role-tag">BI Developer</span> <span class="role-tag">Reporting Analyst</span> <span class="role-tag">Analytics Consultant</span></p>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Data Visualization Specialist — create beautiful insights</h2>
+                <p>Data Visualization Specialists focus on presenting data in visually appealing and easy‑to‑understand formats. Your design and storytelling skills are a perfect fit.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Design principles for data</li>
+                    <li>Tableau, Power BI, or D3.js</li>
+                    <li>Storytelling with data</li>
+                    <li>Interactive dashboards and reports</li>
+                    <li>Data preparation and cleaning</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Data Visualization Specialist</span> <span class="role-tag">Visualization Analyst</span> <span class="role-tag">BI Developer</span> <span class="role-tag">Infographic Designer</span></p>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Analytics Manager — lead teams and strategy</h2>
+                <p>Analytics Managers lead data teams, define analytics strategy, and communicate insights to leadership. Your leadership and communication skills are essential.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Data strategy and governance</li>
+                    <li>Team leadership and project management</li>
+                    <li>Advanced analytics and data science</li>
+                    <li>Stakeholder management</li>
+                    <li>Translating data to business value</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Analytics Manager</span> <span class="role-tag">Data Manager</span> <span class="role-tag">Head of Analytics</span> <span class="role-tag">Senior BI Manager</span></p>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Skills &amp; tools to learn</h2>
+
+                <h3>Core skills (all paths)</h3>
+                <ul>
+                    <li><b>SQL</b> — the most important skill for data analytics</li>
+                    <li><b>Excel / Google Sheets</b> — data cleaning and analysis</li>
+                    <li><b>Data visualisation</b> — telling stories with charts</li>
+                    <li><b>Statistics</b> — descriptive and inferential statistics</li>
+                    <li><b>Python or R</b> — for more advanced analysis</li>
+                </ul>
+
+                <h3>Path‑specific skills</h3>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Path</th><th>Key skills</th><th>Tools / Technologies</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Data Analyst</b></td><td>SQL, Excel, Python, statistics, visualization</td><td>SQL, pandas, matplotlib, Tableau</td></tr>
+                            <tr><td><b>BI Analyst</b></td><td>SQL, BI tools, data modeling, dashboards</td><td>Tableau, Power BI, Looker, SQL</td></tr>
+                            <tr><td><b>Data Visualization</b></td><td>Design, storytelling, Tableau, D3.js</td><td>Tableau, Power BI, Figma, D3.js</td></tr>
+                            <tr><td><b>Analytics Manager</b></td><td>Leadership, strategy, communication, analytics</td><td>SQL, Tableau, Python, project management</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Step‑by‑step roadmap</h2>
+                <p>Here's a realistic 6–12 month plan for an arts graduate starting from zero:</p>
+                <ol class="steps">
+                    <li><b>Month 1–2: SQL &amp; Excel Fundamentals</b> — Learn SQL (queries, joins, aggregations) and Excel (pivot tables, formulas). These are the most important tools for data analytics.</li>
+                    <li><b>Month 3–4: Data Visualization &amp; Storytelling</b> — Learn Tableau or Power BI. Focus on building dashboards and telling stories with data.</li>
+                    <li><b>Month 5–7: Python &amp; Statistics</b> — Learn Python (pandas, matplotlib) and basic statistics (mean, median, distributions, hypothesis testing).</li>
+                    <li><b>Month 8–9: Portfolio Projects</b> — Build 2–3 real‑world portfolio projects (e.g., sales analysis, customer segmentation, marketing campaign analysis).</li>
+                    <li><b>Month 10–11: Interview Preparation</b> — Practise SQL and case‑based interview questions. Tailor your resume to highlight your arts skills (communication, storytelling, critical thinking).</li>
+                    <li><b>Month 12: Apply &amp; Network</b> — Start applying for junior data roles, internships, and traineeships. Leverage LinkedIn and your college network.</li>
+                </ol>
+                <p>Consistency is key — even 5–10 hours per week is enough to achieve this.</p>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>Projects to build your portfolio</h2>
+                <p>Here are three data analytics projects that will impress interviewers:</p>
+                <ul>
+                    <li><b>Project 1: Sales Dashboard</b> — Create a Tableau/Power BI dashboard showing sales trends, top products, and regional performance. Tell a story about what drives sales.</li>
+                    <li><b>Project 2: Customer Segmentation</b> — Use SQL and Python to segment customers based on purchase behaviour. Visualize the segments and recommend marketing strategies.</li>
+                    <li><b>Project 3: A/B Test Analysis</b> — Analyze a mock A/B test using Python (pandas, scipy). Determine if the test results are statistically significant and present your findings.</li>
+                </ul>
+                <p>Document your projects clearly on GitHub and write a blog post explaining your approach. This demonstrates communication skills — a huge plus for arts graduates.</p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">SQL — Sales Analysis</button>
+                        <button role="tab" aria-selected="false" data-t="1">Python — Data Analysis</button>
+                        <button role="tab" aria-selected="false" data-t="2">Tableau — Dashboard Design</button>
+                    </div>
+                    <pre data-p="0"><code>-- SQL — Sales Analysis for an E‑commerce Company
+SELECT 
+    DATE_TRUNC('month', order_date) AS month,
+    COUNT(DISTINCT customer_id) AS active_customers,
+    SUM(order_amount) AS total_revenue,
+    AVG(order_amount) AS avg_order_value
+FROM orders
+WHERE order_status = 'completed'
+GROUP BY month
+ORDER BY month;
+
+-- This query gives insights into monthly performance — perfect for a dashboard.</code></pre>
+                    <pre data-p="1" hidden><code># Python — Customer Segmentation with pandas
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load customer data
+df = pd.read_csv('customer_data.csv')
+
+# Calculate metrics
+df['total_spend'] = df.groupby('customer_id')['purchase_amount'].transform('sum')
+df['avg_order'] = df.groupby('customer_id')['purchase_amount'].transform('mean')
+
+# Segment customers by spending
+def segment(spend):
+    if spend > 10000: return 'High'
+    elif spend > 5000: return 'Medium'
+    else: return 'Low'
+
+df['segment'] = df['total_spend'].apply(segment)
+
+# Visualize segments
+df['segment'].value_counts().plot(kind='bar')
+plt.title('Customer Segments by Spending')
+plt.show()
+
+# This is a great portfolio project!</code></pre>
+                    <pre data-p="2" hidden><code>// Tableau — Dashboard Design (conceptual)
+{
+  "dashboard_name": "Sales Performance Dashboard",
+  "sheets": [
+    "Monthly Revenue Trend (line chart)",
+    "Sales by Region (map)",
+    "Top 10 Products (bar chart)",
+    "Order Status Breakdown (donut chart)"
+  ],
+  "filters": ["Region", "Product Category", "Date Range"],
+  "storytelling": "The dashboard highlights a 15% increase in revenue driven by the West region, suggesting a targeted marketing opportunity."
+}</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">analytics_projects.txt</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Salary expectations</h2>
+                <p>Data analytics offers excellent career progression and salaries for arts graduates:</p>
+                <ul>
+                    <li><b>Data Analyst (0–2 years):</b> ₹4–8 LPA</li>
+                    <li><b>BI Analyst (0–2 years):</b> ₹5–10 LPA</li>
+                    <li><b>Data Visualization Specialist (0–2 years):</b> ₹5–9 LPA</li>
+                    <li><b>Analytics Manager (0–2 years):</b> ₹8–15 LPA</li>
+                </ul>
+                <p>With 3–5 years of experience, salaries can double or triple, especially with leadership roles.</p>
+
+                <!-- ===== S11 ===== -->
+                <h2 id="s11"><span class="num">SECTION 11</span>Interview Q&amp;A — for arts graduates</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Why are you switching to data analytics from an arts background?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've always been fascinated by how data can tell stories and drive decisions. My arts background taught me how to analyze texts and contexts, understand human behaviour, and communicate effectively. I realised that data analytics is the perfect field to combine my storytelling skills with a growing demand for data‑driven insights."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>How does your arts background help you in data analytics?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "My arts background gave me strong communication, critical thinking, and research skills. In data analytics, these skills are essential — I can interpret data in context, ask the right questions, and communicate insights to non‑technical stakeholders. I also bring empathy, which helps me understand user behaviour and customer needs."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>What technical skills have you learned?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've learned SQL for data extraction, Python (pandas) for analysis, and Tableau for visualisation. I've also completed courses in statistics and A/B testing. I've built projects like customer segmentation and sales dashboards."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>Tell me about a data analytics project you've built.</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I built a sales dashboard using Tableau for a mock retail company. I analyzed monthly revenue, top products, and regional performance. I also wrote a narrative explaining the key insights — like a 15% revenue increase driven by the West region — and recommended marketing actions."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>Do you have any certifications?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've completed the Google Data Analytics Professional Certificate and the Tableau Desktop Specialist certification. I'm currently working on the Data Science with Python course."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>How do you handle the lack of a technical degree?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I view it as a strength. I bring a human‑centric perspective that technical teams often lack. I've also built a strong foundation through courses, certifications, and projects. My portfolio demonstrates my practical skills and my ability to learn quickly."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>What salary are you expecting?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "Based on market research, I'm looking at a range of ₹4–8 LPA for an entry‑level data role. I'm primarily focused on learning and growth, so I'm flexible."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you see yourself in 5 years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I see myself as a senior data analyst or analytics manager, leading projects and mentoring others. I want to combine my arts background with data skills to help organisations make better decisions and tell more impactful stories with data."</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 12</span>Test yourself — data analytics readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 13</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Can an arts graduate become a data analyst?</summary><div class="body"><p>Absolutely. Data analytics is one of the most welcoming fields for non‑tech graduates. Your communication, critical thinking, and storytelling skills are highly valued.</p></div></details>
+                <details class="acc"><summary>Which data role is easiest for an arts graduate?</summary><div class="body"><p>Data Analyst and Data Visualization Specialist are the most accessible. They require less programming and more storytelling and business understanding.</p></div></details>
+                <details class="acc"><summary>How long does it take to become a data analyst from zero?</summary><div class="body"><p>With 5–10 hours of study per week, most people become job‑ready in 6–12 months.</p></div></details>
+                <details class="acc"><summary>Do I need to learn advanced math for data analytics?</summary><div class="body"><p>Basic statistics is essential, but you don't need calculus or advanced linear algebra. Data analytics is more about interpretation and communication than complex math.</p></div></details>
+                <details class="acc"><summary>What is the most important tool for a data analyst?</summary><div class="body"><p>SQL is the most important tool — it's used to extract and manipulate data from databases. Tableau/Power BI and Excel are also essential.</p></div></details>
+                <details class="acc"><summary>What companies hire arts graduates in data analytics?</summary><div class="body"><p>Most companies — from startups to large corporations — hire data analysts based on skills. Roles in marketing analytics, product analytics, and business intelligence are especially accessible.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 14</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">SQL for data analytics — complete guide</span><span class="m">SQL · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Tableau tutorial — build your first dashboard</span><span class="m">Visualization · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Python for data analysis — step‑by‑step</span><span class="m">Python · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Data analytics interview questions — 50 real Qs</span><span class="m">Interview · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">How to build a data analytics portfolio</span><span class="m">Career · 10 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Statistics for data analysts — beginner guide</span><span class="m">Statistics · 16 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>From arts to data analytics — with our job‑ready programme</h3>
+                    <p>Our Data Analytics programme is designed for arts graduates and non‑tech professionals. Learn SQL, Python, Tableau, and storytelling — with live projects, mock interviews, and placement support.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                        <li>Placement support</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4><i data-lucide="graduation-cap" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Free demo class</h4>
+                    <div class="big">Start your data analytics journey</div>
+                    <p>Attend a live data analytics session designed for arts graduates. Learn what data analytics is, see a real project, and decide if it's right for you.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <i data-lucide="file-text" style="width:26px;height:26px;stroke:#FF5421;stroke-width:1.8;flex:none;"></i>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes roadmap &amp; skills list</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4><i data-lucide="book-open" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Arts to data analytics — complete roadmap</a></li>
+                        <li><a href="#"><span class="rank">02</span>SQL for beginners — step‑by‑step</a></li>
+                        <li><a href="#"><span class="rank">03</span>Tableau — build your first dashboard</a></li>
+                        <li><a href="#"><span class="rank">04</span>Data storytelling — the complete guide</a></li>
+                        <li><a href="#"><span class="rank">05</span>Data analytics interview questions and answers</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="help-circle" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Data Analyst · 60 questions</a></li>
+                        <li><a href="#">BI Analyst · 50 questions</a></li>
+                        <li><a href="#">SQL · 70 questions</a></li>
+                        <li><a href="#">Tableau · 40 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Arts to Data Analytics</div>
+                    <p>SQL, Python, Tableau, and storytelling — designed for arts graduates. Weekend batches and placement support.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="briefcase" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going — data analytics guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">SQL for data analytics — complete guide <small>Master queries</small></a></li>
+                    <li><a href="#">Tableau tutorial — build your first dashboard <small>Visualize data</small></a></li>
+                    <li><a href="#">Python for data analysis <small>pandas and matplotlib</small></a></li>
+                    <li><a href="#">Data storytelling — complete guide <small>Tell stories with data</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your data career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data Analyst roadmap <small>SQL → Python → BI</small></a></li>
+                    <li><a href="#">BI Analyst roadmap <small>SQL → Tableau → Strategy</small></a></li>
+                    <li><a href="#">Data Visualization roadmap <small>Design → Tableau → Storytelling</small></a></li>
+                    <li><a href="#">Arts to Data roadmap <small>Complete transition guide</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Arts to data checklist <small>Track your progress</small></a></li>
+                    <li><a href="#">SQL cheat sheet <small>Essential commands</small></a></li>
+                    <li><a href="#">Tableau cheat sheet <small>Key features</small></a></li>
+                    <li><a href="#">Data analytics interview question bank <small>50 real questions</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Arts to data analytics — success stories <small>18 August 2026</small></a></li>
+                    <li><a href="#">Top data analytics tools 2026 <small>16 August 2026</small></a></li>
+                    <li><a href="#">Data storytelling — why it matters <small>14 August 2026</small></a></li>
+                    <li><a href="#">How to explain arts to data transition <small>12 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We offer career‑switcher programmes in Data Analytics, Business Intelligence, and Data Visualization — designed for arts graduates and non‑tech professionals.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#">Business Intelligence</a></li>
+                        <li><a href="#">Data Visualization</a></li>
+                        <li><a href="#">SQL for Data</a></li>
+                        <li><a href="#">Python for Data</a></li>
+                        <li><a href="#">Tableau &amp; Power BI</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        UncodemyPage.init({
+            SCENARIOS: {
+                analyst: { role: "Data Analyst", salary: "₹4–8 LPA", arts: "High" },
+                bi: { role: "BI Analyst", salary: "₹5–10 LPA", arts: "High" },
+                viz: { role: "Data Visualization", salary: "₹5–9 LPA", arts: "Very High" },
+                manager: { role: "Analytics Manager", salary: "₹8–15 LPA", arts: "High" }
+            },
+            stateOrder: ["analyst", "bi", "viz", "manager"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("artsVal").textContent = s.arts;
+            },
+            defaultTrack: "Arts to Data",
+            emptyMsg: 'Nothing matches that yet. Try “Data Analyst”, “SQL” or “Tableau”.',
+            LIB: [
+                { t: "Can an arts graduate become a data analytics professional? — complete guide", g: "Arts to Data" },
+                { t: "SQL for data analytics — complete guide", g: "SQL" },
+                { t: "Tableau tutorial — build your first dashboard", g: "Data Visualization" },
+                { t: "Python for data analysis — step‑by‑step", g: "Python" },
+                { t: "Data storytelling — complete guide", g: "Business Intelligence" },
+                { t: "Data analytics interview questions and answers", g: "Interview Prep" },
+                { t: "Best data analytics certifications for beginners", g: "Career Change" },
+                { t: "Arts to data — success stories", g: "Career Change" },
+                { t: "How to build a data analytics portfolio", g: "Career Change" },
+                { t: "Statistics for data analysts — beginner guide", g: "Career Change" }
+            ],
+            QUIZ: [{
+                q: "Can an arts graduate become a data analyst?",
+                o: ["No, it's impossible", "Yes, data analytics values storytelling and communication",
+                    "Only with a CS degree", "Only for math graduates"
+                ],
+                a: 1,
+                e: "Yes. Data analytics values communication, critical thinking, and storytelling — skills that arts graduates excel at."
+            }, {
+                q: "Which skill is most important for a data analyst?",
+                o: ["JavaScript", "SQL", "C++", "HTML"],
+                a: 1,
+                e: "SQL is the most important skill for a data analyst — it's used to extract and manipulate data from databases."
+            }, {
+                q: "What is the best tool for data visualization?",
+                o: ["Excel", "Tableau", "WordPress", "Photoshop"],
+                a: 1,
+                e: "Tableau is the industry standard for data visualization, allowing you to create interactive dashboards and tell stories with data."
+            }, {
+                q: "How long does it take for an arts graduate to become job‑ready in data analytics?",
+                o: ["1–2 months", "6–12 months", "3–4 years", "It's not possible"],
+                a: 1,
+                e: "With 5–10 hours of study per week, most arts graduates become job‑ready in 6–12 months."
+            }, {
+                q: "What is a typical salary range for a fresher Data Analyst in India?",
+                o: ["₹2–3 LPA", "₹4–8 LPA", "₹15–20 LPA", "₹25–30 LPA"],
+                a: 1,
+                e: "A fresher Data Analyst in India typically earns ₹4–8 LPA, with experienced professionals earning significantly more."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You're ready to start your data analytics journey! Your arts background is a superpower — choose a path and begin building your skills.",
+                fail: "Revisit sections 02 to 08 — understanding the different career paths and skills is the first step to a successful transition."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

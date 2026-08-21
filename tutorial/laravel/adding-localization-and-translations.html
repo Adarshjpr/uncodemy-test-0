@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adding Localization and Translations | Uncodemy</title>
+<meta name="description" content="Learn how Laravel's localization system lets an application support multiple languages.">
+<link rel="canonical" href="https://uncodemy.com/adding-localization-and-translations.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-bar">
+  Laravel Training Course / <strong>Page 71 of 81</strong>
+</div>
+
+<div class="layout">
+
+  <aside class="sidebar-left">
+    <h2>Course Topics</h2>
+    <div class="progress-track"><div class="progress-fill" style="width:88%;"></div></div>
+    <ul class="topic-nav">
+      <li class="nav-section-title">Introduction to Laravel</li>
+      <li><a href="what-is-laravel-overview-and-features.html" class=""><span class="num">1</span><span>What is Laravel? Overview and Features</span></a></li>
+      <li><a href="benefits-of-using-laravel-for-web-development.html" class=""><span class="num">2</span><span>Benefits of Using Laravel for Web Development</span></a></li>
+      <li><a href="installing-and-setting-up-laravel-local-and-cloud-environments.html" class=""><span class="num">3</span><span>Installing and Setting Up Laravel (Local and Cloud Environments)</span></a></li>
+      <li><a href="understanding-mvc-architecture-in-laravel.html" class=""><span class="num">4</span><span>Understanding MVC Architecture in Laravel</span></a></li>
+      <li class="nav-section-title">Getting Started with Laravel</li>
+      <li><a href="directory-structure-and-key-files.html" class=""><span class="num">5</span><span>Directory Structure and Key Files</span></a></li>
+      <li><a href="creating-a-new-laravel-project.html" class=""><span class="num">6</span><span>Creating a New Laravel Project</span></a></li>
+      <li><a href="laravel-artisan-console-common-commands.html" class=""><span class="num">7</span><span>Laravel Artisan Console: Common Commands</span></a></li>
+      <li><a href="environment-configuration-env-file.html" class=""><span class="num">8</span><span>Environment Configuration (.env file)</span></a></li>
+      <li class="nav-section-title">Routing and Controllers</li>
+      <li><a href="defining-routes-in-web-php-and-api-php.html" class=""><span class="num">9</span><span>Defining Routes in web.php and api.php</span></a></li>
+      <li><a href="route-parameters-and-named-routes.html" class=""><span class="num">10</span><span>Route Parameters and Named Routes</span></a></li>
+      <li><a href="using-controllers-for-logic-separation.html" class=""><span class="num">11</span><span>Using Controllers for Logic Separation</span></a></li>
+      <li><a href="resource-controllers-and-route-model-binding.html" class=""><span class="num">12</span><span>Resource Controllers and Route Model Binding</span></a></li>
+      <li class="nav-section-title">Blade Templating Engine</li>
+      <li><a href="introduction-to-blade-template-syntax.html" class=""><span class="num">13</span><span>Introduction to Blade Template Syntax</span></a></li>
+      <li><a href="blade-directives-if-foreach-include.html" class=""><span class="num">14</span><span>Blade Directives (@if, @foreach, @include)</span></a></li>
+      <li><a href="layouts-and-sections-yield-extends.html" class=""><span class="num">15</span><span>Layouts and Sections (@yield, @extends)</span></a></li>
+      <li><a href="working-with-components-and-slots.html" class=""><span class="num">16</span><span>Working with Components and Slots</span></a></li>
+      <li class="nav-section-title">Request Handling and Validation</li>
+      <li><a href="handling-form-requests.html" class=""><span class="num">17</span><span>Handling Form Requests</span></a></li>
+      <li><a href="validating-input-data.html" class=""><span class="num">18</span><span>Validating Input Data</span></a></li>
+      <li><a href="custom-validation-rules-and-messages.html" class=""><span class="num">19</span><span>Custom Validation Rules and Messages</span></a></li>
+      <li><a href="using-request-classes-for-form-validation.html" class=""><span class="num">20</span><span>Using Request Classes for Form Validation</span></a></li>
+      <li class="nav-section-title">Database and Eloquent ORM</li>
+      <li><a href="connecting-laravel-to-databases-mysql-sqlite-postgresql.html" class=""><span class="num">21</span><span>Connecting Laravel to Databases (MySQL, SQLite, PostgreSQL)</span></a></li>
+      <li><a href="introduction-to-eloquent-orm.html" class=""><span class="num">22</span><span>Introduction to Eloquent ORM</span></a></li>
+      <li><a href="defining-models-and-migrations.html" class=""><span class="num">23</span><span>Defining Models and Migrations</span></a></li>
+      <li><a href="creating-reading-updating-and-deleting-records-crud.html" class=""><span class="num">24</span><span>Creating, Reading, Updating, and Deleting Records (CRUD)</span></a></li>
+      <li class="nav-section-title">Migrations and Seeders</li>
+      <li><a href="creating-and-running-migrations.html" class=""><span class="num">25</span><span>Creating and Running Migrations</span></a></li>
+      <li><a href="adding-columns-and-modifying-tables.html" class=""><span class="num">26</span><span>Adding Columns and Modifying Tables</span></a></li>
+      <li><a href="using-seeders-and-factories-for-test-data.html" class=""><span class="num">27</span><span>Using Seeders and Factories for Test Data</span></a></li>
+      <li><a href="database-transactions-in-laravel.html" class=""><span class="num">28</span><span>Database Transactions in Laravel</span></a></li>
+      <li class="nav-section-title">Relationships in Eloquent</li>
+      <li><a href="one-to-one-one-to-many-and-many-to-many-relationships.html" class=""><span class="num">29</span><span>One-to-One, One-to-Many, and Many-to-Many Relationships</span></a></li>
+      <li><a href="hasonethrough-and-hasmanythrough.html" class=""><span class="num">30</span><span>HasOneThrough and HasManyThrough</span></a></li>
+      <li><a href="eager-loading-and-lazy-loading.html" class=""><span class="num">31</span><span>Eager Loading and Lazy Loading</span></a></li>
+      <li><a href="using-pivot-tables-for-many-to-many-relationships.html" class=""><span class="num">32</span><span>Using Pivot Tables for Many-to-Many Relationships</span></a></li>
+      <li class="nav-section-title">Authentication and Authorization</li>
+      <li><a href="setting-up-authentication-with-php-artisan-make-auth.html" class=""><span class="num">33</span><span>Setting Up Authentication with php artisan make:auth</span></a></li>
+      <li><a href="manual-authentication-login-registration.html" class=""><span class="num">34</span><span>Manual Authentication (Login, Registration)</span></a></li>
+      <li><a href="role-based-access-control-rbac.html" class=""><span class="num">35</span><span>Role-Based Access Control (RBAC)</span></a></li>
+      <li><a href="policies-and-gates-for-authorization.html" class=""><span class="num">36</span><span>Policies and Gates for Authorization</span></a></li>
+      <li class="nav-section-title">Laravel Middleware</li>
+      <li><a href="creating-and-using-middleware.html" class=""><span class="num">37</span><span>Creating and Using Middleware</span></a></li>
+      <li><a href="applying-middleware-to-routes.html" class=""><span class="num">38</span><span>Applying Middleware to Routes</span></a></li>
+      <li><a href="global-vs-route-specific-middleware.html" class=""><span class="num">39</span><span>Global vs. Route-Specific Middleware</span></a></li>
+      <li><a href="using-middleware-for-authentication.html" class=""><span class="num">40</span><span>Using Middleware for Authentication</span></a></li>
+      <li class="nav-section-title">Laravel Services and Dependency Injection</li>
+      <li><a href="creating-and-using-service-classes.html" class=""><span class="num">41</span><span>Creating and Using Service Classes</span></a></li>
+      <li><a href="service-providers-in-laravel.html" class=""><span class="num">42</span><span>Service Providers in Laravel</span></a></li>
+      <li><a href="binding-interfaces-to-implementations.html" class=""><span class="num">43</span><span>Binding Interfaces to Implementations</span></a></li>
+      <li><a href="dependency-injection-and-inversion-of-control.html" class=""><span class="num">44</span><span>Dependency Injection and Inversion of Control</span></a></li>
+      <li class="nav-section-title">File Storage and Uploads</li>
+      <li><a href="uploading-files-and-validating-uploads.html" class=""><span class="num">45</span><span>Uploading Files and Validating Uploads</span></a></li>
+      <li><a href="storing-files-in-the-public-and-storage-folders.html" class=""><span class="num">46</span><span>Storing Files in the Public and Storage Folders</span></a></li>
+      <li><a href="using-the-storage-facade.html" class=""><span class="num">47</span><span>Using the Storage Facade</span></a></li>
+      <li><a href="managing-file-downloads.html" class=""><span class="num">48</span><span>Managing File Downloads</span></a></li>
+      <li class="nav-section-title">API Development with Laravel</li>
+      <li><a href="building-restful-apis.html" class=""><span class="num">49</span><span>Building RESTful APIs</span></a></li>
+      <li><a href="using-api-resources-and-resource-collections.html" class=""><span class="num">50</span><span>Using API Resources and Resource Collections</span></a></li>
+      <li><a href="handling-api-authentication-with-passport-or-sanctum.html" class=""><span class="num">51</span><span>Handling API Authentication with Passport or Sanctum</span></a></li>
+      <li><a href="rate-limiting-for-api-requests.html" class=""><span class="num">52</span><span>Rate Limiting for API Requests</span></a></li>
+      <li class="nav-section-title">Event Handling and Queues</li>
+      <li><a href="working-with-events-and-listeners.html" class=""><span class="num">53</span><span>Working with Events and Listeners</span></a></li>
+      <li><a href="creating-and-dispatching-events.html" class=""><span class="num">54</span><span>Creating and Dispatching Events</span></a></li>
+      <li><a href="queueing-jobs-and-managing-queues.html" class=""><span class="num">55</span><span>Queueing Jobs and Managing Queues</span></a></li>
+      <li><a href="using-redis-for-queue-management.html" class=""><span class="num">56</span><span>Using Redis for Queue Management</span></a></li>
+      <li class="nav-section-title">Task Scheduling</li>
+      <li><a href="setting-up-task-scheduling-with-schedulerun.html" class=""><span class="num">57</span><span>Setting Up Task Scheduling with schedule:run</span></a></li>
+      <li><a href="defining-and-running-cron-jobs.html" class=""><span class="num">58</span><span>Defining and Running Cron Jobs</span></a></li>
+      <li><a href="using-closures-and-artisan-commands-for-scheduled-tasks.html" class=""><span class="num">59</span><span>Using Closures and Artisan Commands for Scheduled Tasks</span></a></li>
+      <li class="nav-section-title">Testing in Laravel</li>
+      <li><a href="unit-testing-with-phpunit.html" class=""><span class="num">60</span><span>Unit Testing with PHPUnit</span></a></li>
+      <li><a href="feature-testing-with-http-requests.html" class=""><span class="num">61</span><span>Feature Testing with HTTP Requests</span></a></li>
+      <li><a href="mocking-and-stubbing-in-tests.html" class=""><span class="num">62</span><span>Mocking and Stubbing in Tests</span></a></li>
+      <li><a href="using-factories-for-test-data.html" class=""><span class="num">63</span><span>Using Factories for Test Data</span></a></li>
+      <li class="nav-section-title">Laravel Packages and Composer</li>
+      <li><a href="installing-and-managing-composer-packages.html" class=""><span class="num">64</span><span>Installing and Managing Composer Packages</span></a></li>
+      <li><a href="popular-laravel-packages-spatie-laravel-debugbar-etc.html" class=""><span class="num">65</span><span>Popular Laravel Packages (Spatie, Laravel Debugbar, etc.)</span></a></li>
+      <li><a href="creating-custom-laravel-packages.html" class=""><span class="num">66</span><span>Creating Custom Laravel Packages</span></a></li>
+      <li class="nav-section-title">Security in Laravel</li>
+      <li><a href="protecting-against-csrf-attacks.html" class=""><span class="num">67</span><span>Protecting Against CSRF Attacks</span></a></li>
+      <li><a href="hashing-passwords-with-bcrypt-or-argon2.html" class=""><span class="num">68</span><span>Hashing Passwords with bcrypt or argon2</span></a></li>
+      <li><a href="preventing-xss-and-sql-injection.html" class=""><span class="num">69</span><span>Preventing XSS and SQL Injection</span></a></li>
+      <li><a href="using-rate-limiting-for-brute-force-protection.html" class=""><span class="num">70</span><span>Using Rate Limiting for Brute Force Protection</span></a></li>
+      <li class="nav-section-title">Localization</li>
+      <li><a href="adding-localization-and-translations.html" class="active"><span class="num">71</span><span>Adding Localization and Translations</span></a></li>
+      <li><a href="using-the-trans-and-langget-methods.html" class=""><span class="num">72</span><span>Using the trans() and Lang::get() Methods</span></a></li>
+      <li><a href="managing-language-files-in-laravel.html" class=""><span class="num">73</span><span>Managing Language Files in Laravel</span></a></li>
+      <li class="nav-section-title">Advanced Topics</li>
+      <li><a href="using-laravel-mix-for-asset-compilation.html" class=""><span class="num">74</span><span>Using Laravel Mix for Asset Compilation</span></a></li>
+      <li><a href="event-broadcasting-with-pusher-and-laravel-echo.html" class=""><span class="num">75</span><span>Event Broadcasting with Pusher and Laravel Echo</span></a></li>
+      <li><a href="using-traits-for-reusable-code.html" class=""><span class="num">76</span><span>Using Traits for Reusable Code</span></a></li>
+      <li><a href="repository-pattern-and-service-layer-architecture.html" class=""><span class="num">77</span><span>Repository Pattern and Service Layer Architecture</span></a></li>
+      <li class="nav-section-title">Deployment and Optimization</li>
+      <li><a href="preparing-a-laravel-project-for-production.html" class=""><span class="num">78</span><span>Preparing a Laravel Project for Production</span></a></li>
+      <li><a href="using-env-for-environment-configuration.html" class=""><span class="num">79</span><span>Using .env for Environment Configuration</span></a></li>
+      <li><a href="caching-routes-config-and-views.html" class=""><span class="num">80</span><span>Caching Routes, Config, and Views</span></a></li>
+      <li><a href="optimizing-laravel-for-speed-and-performance.html" class=""><span class="num">81</span><span>Optimizing Laravel for Speed and Performance</span></a></li>
+    </ul>
+  </aside>
+
+  <main class="article-card">
+    <h1>Adding Localization and Translations</h1>
+<p>Localization lets a single Laravel application serve content in multiple languages, rather than maintaining separate codebases per language.</p>
+<h2>How Laravel Organizes Translations</h2>
+<p>Translation strings live in language files under the lang directory (or resources/lang in older versions), organized by locale.</p>
+<pre><code>lang/
+├── en/
+│   └── messages.php
+├── es/
+│   └── messages.php</code></pre>
+<h2>Setting the Application Locale</h2>
+<pre><code>App::setLocale('es');</code></pre>
+<p>The default locale is set in config/app.php, and can be changed per-request based on user preference, URL segment, or browser headers.</p>
+<h2>A Simple Translation File</h2>
+<pre><code>// lang/en/messages.php
+return [
+    'welcome' =&gt; 'Welcome back!',
+];</code></pre>
+<p>With the structure in place, the next step is actually pulling these translated strings into views and application logic.</p>
+    <div class="cta-box">
+      <div>
+        <h3>Ready to master Laravel Training Course?</h3>
+        <p>Join Uncodemy's hands-on Laravel program and build real, production-ready applications.</p>
+      </div>
+      <a href="https://uncodemy.com" class="cta-btn" data-landing-btn>Explore Course</a>
+    </div>
+
+    <div class="pagination">
+      <a href="using-rate-limiting-for-brute-force-protection.html" class="page-link prev"><span class="label">&larr; Previous</span><span class="title">Using Rate Limiting for Brute Force Protection</span></a>
+      <a href="using-the-trans-and-langget-methods.html" class="page-link next"><span class="label">Next &rarr;</span><span class="title">Using the trans() and Lang::get() Methods</span></a>
+    </div>
+  </main>
+
+  <aside class="sidebar-right">
+    <div class="batch-card">
+      <span class="batch-badge">Enrolling Now</span>
+      <h3>Laravel Training</h3>
+      <div class="batch-meta">
+        <div>Next Batch Starts<strong>Every Monday</strong></div>
+        <div>Duration<strong>6 Weeks</strong></div>
+      </div>
+      <div class="countdown">
+        <div class="unit"><span class="val" data-cd-days>00</span><span class="lbl">Days</span></div>
+        <div class="unit"><span class="val" data-cd-hours>00</span><span class="lbl">Hrs</span></div>
+        <div class="unit"><span class="val" data-cd-mins>00</span><span class="lbl">Min</span></div>
+        <div class="unit"><span class="val" data-cd-secs>00</span><span class="lbl">Sec</span></div>
+      </div>
+      <ul class="perks">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+      <div class="seats-badge">Only a few seats left in this batch</div>
+      <a href="https://uncodemy.com" class="batch-btn" data-landing-btn>Go to Course Landing Page</a>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <p>Talk to a course counselor directly.</p>
+      <div class="help-links">
+        <a href="tel:" class="help-link" data-phone-link>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-phone-text>+91-9876543210</span>
+        </a>
+        <a href="#" class="help-link" data-whatsapp-link target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

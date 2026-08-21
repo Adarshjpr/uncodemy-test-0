@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exploring Node.js Core Modules | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Master Node.js core modules — fs, path, http, os, events, crypto, util, and more. Production-ready examples and best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 8 of 12: Exploring Node.js Core Modules</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html" class="active"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cubes"></i> Modules</span>
+        <h1>Exploring Node.js Core Modules</h1>
+
+        <div class="card">
+
+            <p><strong>Node.js core modules</strong> are built-in modules that come with Node.js installation. They provide essential functionality for file system operations, networking, path manipulation, operating system interactions, and much more. Mastering these modules is the foundation of every Node.js application.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Core modules are the building blocks of every Node.js application. Understanding them thoroughly will make you a more effective developer and help you avoid unnecessary third-party dependencies.
+            </div>
+
+            <h2>1. fs (File System) Module — Working with Files</h2>
+            <p>The <code>fs</code> module provides an API for interacting with the file system. It has both synchronous and asynchronous methods.</p>
+
+            <h3>Common fs Methods</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th><th>Async Version</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>readFile</code></td><td>Read a file</td><td><code>fs.promises.readFile</code></td></tr>
+                        <tr><td><code>writeFile</code></td><td>Write to a file</td><td><code>fs.promises.writeFile</code></td></tr>
+                        <tr><td><code>appendFile</code></td><td>Append to a file</td><td><code>fs.promises.appendFile</code></td></tr>
+                        <tr><td><code>mkdir</code></td><td>Create a directory</td><td><code>fs.promises.mkdir</code></td></tr>
+                        <tr><td><code>readdir</code></td><td>Read directory contents</td><td><code>fs.promises.readdir</code></td></tr>
+                        <tr><td><code>stat</code></td><td>Get file/directory stats</td><td><code>fs.promises.stat</code></td></tr>
+                        <tr><td><code>unlink</code></td><td>Delete a file</td><td><code>fs.promises.unlink</code></td></tr>
+                        <tr><td><code>rmdir</code></td><td>Delete a directory</td><td><code>fs.promises.rmdir</code></td></tr>
+                        <tr><td><code>exists</code></td><td>Check if file exists</td><td><code>fs.promises.access</code></td></tr>
+                        <tr><td><code>rename</code></td><td>Rename a file</td><td><code>fs.promises.rename</code></td></tr>
+                        <tr><td><code>copyFile</code></td><td>Copy a file</td><td><code>fs.promises.copyFile</code></td></tr>
+                        <tr><td><code>createReadStream</code></td><td>Stream file content</td><td>—</td></tr>
+                        <tr><td><code>createWriteStream</code></td><td>Stream write to file</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Production Example — Read/Write Files</h3>
+            <pre class="code-block"><code>const fs = require('fs').promises;
+const path = require('path');
+
+// ✅ Production-ready: Async/await with error handling
+async function readUserData(filePath) {
+    try {
+        const data = await fs.readFile(filePath, 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            console.error('File not found:', filePath);
+            return null;
+        }
+        console.error('Error reading file:', err.message);
+        throw err;
+    }
+}
+
+async function writeUserData(filePath, data) {
+    try {
+        // Ensure directory exists
+        const dir = path.dirname(filePath);
+        await fs.mkdir(dir, { recursive: true });
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+        console.log('Data written successfully');
+    } catch (err) {
+        console.error('Error writing file:', err.message);
+        throw err;
+    }
+}
+
+// Usage
+const userData = await readUserData('./data/users.json');
+await writeUserData('./data/users.json', { name: 'John', age: 30 });</code></pre>
+
+            <h3>Streaming Large Files</h3>
+            <pre class="code-block"><code>const fs = require('fs');
+const { pipeline } = require('stream');
+const { promisify } = require('util');
+
+const pipelineAsync = promisify(pipeline);
+
+// ✅ Production: Stream large files without memory issues
+async function copyLargeFile(source, destination) {
+    const readStream = fs.createReadStream(source, { highWaterMark: 64 * 1024 });
+    const writeStream = fs.createWriteStream(destination);
+
+    // Handle errors
+    readStream.on('error', (err) => console.error('Read error:', err));
+    writeStream.on('error', (err) => console.error('Write error:', err));
+
+    // Using pipeline for proper backpressure handling
+    await pipelineAsync(readStream, writeStream);
+    console.log('File copied successfully');
+}</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Never use synchronous methods (<code>readFileSync</code>, <code>writeFileSync</code>) in request handlers. They block the event loop. Always use the <code>fs.promises</code> API or callback-based async methods.
+            </div>
+
+            <h2>2. path Module — Cross-Platform Path Handling</h2>
+            <p>The <code>path</code> module provides utilities for working with file and directory paths, automatically handling platform differences (Windows vs. Unix).</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>join</code></td><td>Join path segments</td><td><code>path.join('/usr', 'local', 'bin')</code></td></tr>
+                        <tr><td><code>resolve</code></td><td>Resolve an absolute path</td><td><code>path.resolve('src', 'app.js')</code></td></tr>
+                        <tr><td><code>dirname</code></td><td>Get directory name</td><td><code>path.dirname('/usr/local/bin')</code></td></tr>
+                        <tr><td><code>basename</code></td><td>Get filename</td><td><code>path.basename('/usr/local/bin')</code></td></tr>
+                        <tr><td><code>extname</code></td><td>Get file extension</td><td><code>path.extname('file.txt')</code></td></tr>
+                        <tr><td><code>parse</code></td><td>Parse path into object</td><td><code>path.parse('/usr/local/bin')</code></td></tr>
+                        <tr><td><code>relative</code></td><td>Get relative path</td><td><code>path.relative('/usr', '/usr/local/bin')</code></td></tr>
+                        <tr><td><code>isAbsolute</code></td><td>Check if path is absolute</td><td><code>path.isAbsolute('/usr/local/bin')</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Production Examples</h3>
+            <pre class="code-block"><code>const path = require('path');
+
+// ✅ Always use path.join for cross-platform compatibility
+const configPath = path.join(__dirname, 'config', 'app.json');
+
+// ✅ Use path.resolve for absolute paths
+const absolutePath = path.resolve('node_modules', 'express');
+
+// ✅ Parse a path
+const parsed = path.parse('/home/user/project/src/index.js');
+// {
+//   root: '/',
+//   dir: '/home/user/project/src',
+//   base: 'index.js',
+//   ext: '.js',
+//   name: 'index'
+// }
+
+// ✅ Get file info
+const dir = path.dirname(__filename);
+const base = path.basename(__filename);
+const ext = path.extname(__filename);
+
+console.log('File:', base); // 'app.js'
+console.log('Directory:', dir); // '/home/user/project'
+console.log('Extension:', ext); // '.js'</code></pre>
+
+            <h2>3. http/https Module — Building Web Servers</h2>
+            <p>The <code>http</code> and <code>https</code> modules provide the foundation for building web servers and making HTTP requests.</p>
+
+            <h3>Production HTTP Server</h3>
+            <pre class="code-block"><code>const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
+
+const server = http.createServer((req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+
+    // Route handling
+    if (pathname === '/') {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end('&lt;h1&gt;Hello, World!&lt;/h1&gt;');
+    } else if (pathname === '/api/users') {
+        const users = [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }];
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(users));
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found');
+    }
+});
+
+// ✅ Production: Handle errors gracefully
+server.on('error', (err) => {
+    console.error('Server error:', err);
+});
+
+server.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});</code></pre>
+
+            <h3>Making HTTP Requests</h3>
+            <pre class="code-block"><code>const http = require('http');
+const https = require('https');
+
+// ✅ Production: Fetch data from external API
+function fetchData(url) {
+    return new Promise((resolve, reject) => {
+        const client = url.startsWith('https') ? https : http;
+        client.get(url, (res) => {
+            let data = '';
+            res.on('data', (chunk) => data += chunk);
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(data));
+                } catch (err) {
+                    reject(new Error('Invalid JSON response'));
+                }
+            });
+        }).on('error', (err) => {
+            reject(err);
+        });
+    });
+}
+
+// Usage
+try {
+    const data = await fetchData('https://api.example.com/users');
+    console.log(data);
+} catch (err) {
+    console.error('Failed to fetch data:', err.message);
+}</code></pre>
+
+            <h2>4. os Module — Operating System Information</h2>
+            <p>The <code>os</code> module provides information about the operating system, which is useful for monitoring, diagnostics, and system-specific behavior.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th><th>Example Output</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>cpus</code></td><td>CPU core information</td><td>Array of CPU objects</td></tr>
+                        <tr><td><code>totalmem</code></td><td>Total system memory</td><td>16777216 (16GB)</td></tr>
+                        <tr><td><code>freemem</code></td><td>Free system memory</td><td>4294967296 (4GB)</td></tr>
+                        <tr><td><code>platform</code></td><td>OS platform</td><td>'linux', 'darwin', 'win32'</td></tr>
+                        <tr><td><code>release</code></td><td>OS release version</td><td>'5.15.0-67-generic'</td></tr>
+                        <tr><td><code>hostname</code></td><td>System hostname</td><td>'production-server'</td></tr>
+                        <tr><td><code>type</code></td><td>OS type</td><td>'Linux', 'Windows_NT'</td></tr>
+                        <tr><td><code>uptime</code></td><td>System uptime (seconds)</td><td>86400 (1 day)</td></tr>
+                        <tr><td><code>loadavg</code></td><td>System load average</td><td>[1.5, 0.8, 0.5]</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Production Monitoring Example</h3>
+            <pre class="code-block"><code>const os = require('os');
+
+// ✅ Production: System health monitoring
+function getSystemInfo() {
+    const totalMemGB = (os.totalmem() / 1024 / 1024 / 1024).toFixed(2);
+    const freeMemGB = (os.freemem() / 1024 / 1024 / 1024).toFixed(2);
+    const usedMemGB = (totalMemGB - freeMemGB).toFixed(2);
+    const memUsagePercent = ((1 - os.freemem() / os.totalmem()) * 100).toFixed(2);
+
+    return {
+        platform: os.platform(),
+        release: os.release(),
+        hostname: os.hostname(),
+        uptime: `${Math.floor(os.uptime() / 3600)} hours, ${Math.floor((os.uptime() % 3600) / 60)} minutes`,
+        cpuCores: os.cpus().length,
+        cpuModel: os.cpus()[0]?.model || 'Unknown',
+        totalMemory: `${totalMemGB} GB`,
+        freeMemory: `${freeMemGB} GB`,
+        usedMemory: `${usedMemGB} GB`,
+        memoryUsage: `${memUsagePercent}%`,
+        loadAverage: os.loadavg().join(', '),
+    };
+}
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    const info = getSystemInfo();
+    res.json({
+        status: 'healthy',
+        timestamp: new Date().toISOString(),
+        system: info
+    });
+});</code></pre>
+
+            <h2>5. events Module — Event Emitter</h2>
+            <p>The <code>events</code> module implements the Node.js event-driven architecture. It's used by many core modules and is essential for building loosely coupled systems.</p>
+
+            <h3>Event Emitter Examples</h3>
+            <pre class="code-block"><code>const EventEmitter = require('events');
+
+// ✅ Production: Create a custom event emitter
+class OrderService extends EventEmitter {
+    createOrder(orderData) {
+        // Validate order
+        if (!orderData.items || orderData.items.length === 0) {
+            this.emit('error', new Error('Order must have at least one item'));
+            return;
+        }
+
+        // Process order
+        this.emit('order.created', orderData);
+
+        // Simulate async processing
+        setTimeout(() => {
+            this.emit('order.processed', {
+                ...orderData,
+                status: 'processed',
+                processedAt: new Date().toISOString()
+            });
+        }, 2000);
+
+        return { id: Date.now(), ...orderData };
+    }
+}
+
+// Usage
+const orderService = new OrderService();
+
+// Listen to events
+orderService.on('order.created', (order) => {
+    console.log('📦 Order created:', order.id);
+    // Send confirmation email
+});
+
+orderService.on('order.processed', (order) => {
+    console.log('✅ Order processed:', order.id);
+    // Update inventory
+});
+
+orderService.on('error', (err) => {
+    console.error('❌ Order error:', err.message);
+});
+
+// Create an order
+orderService.createOrder({
+    items: [{ id: 1, name: 'Item 1' }, { id: 2, name: 'Item 2' }]
+});</code></pre>
+
+            <h3>Best Practices for Event Emitters</h3>
+            <ul>
+                <li><strong>Always handle 'error' events</strong> — unhandled errors crash the process.</li>
+                <li><strong>Limit listeners</strong> — use <code>setMaxListeners()</code> to avoid memory leaks.</li>
+                <li><strong>Remove listeners</strong> when no longer needed.</li>
+                <li><strong>Use <code>once()</code></strong> for one-time events to avoid memory leaks.</li>
+            </ul>
+            <pre class="code-block"><code>// ✅ Proper event listener management
+class Service extends EventEmitter {
+    constructor() {
+        super();
+        this.setMaxListeners(20); // Increase limit
+
+        // Use once for one-time events
+        this.once('ready', () => {
+            console.log('Service ready');
+        });
+
+        // Use off to remove listeners
+        this.on('data', (data) => { /* process data */ });
+        this.off('data', this._dataHandler);
+    }
+}</code></pre>
+
+            <h2>6. crypto Module — Cryptographic Functions</h2>
+            <p>The <code>crypto</code> module provides cryptographic functionality including hashing, encryption, signing, and random number generation.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Description</th><th>Use Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>createHash</code></td><td>Create a hash</td><td>Password hashing, checksums</td></tr>
+                        <tr><td><code>createHmac</code></td><td>HMAC generation</td><td>API authentication</td></tr>
+                        <tr><td><code>randomBytes</code></td><td>Generate random bytes</td><td>API keys, tokens</td></tr>
+                        <tr><td><code>createCipheriv</code></td><td>Encrypt data</td><td>Data encryption</td></tr>
+                        <tr><td><code>createDecipheriv</code></td><td>Decrypt data</td><td>Data decryption</td></tr>
+                        <tr><td><code>pbkdf2</code></td><td>Password-based key derivation</td><td>Secure password storage</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Production Examples</h3>
+            <pre class="code-block"><code>const crypto = require('crypto');
+
+// ✅ 1. Password hashing (PBKDF2)
+async function hashPassword(password) {
+    const salt = crypto.randomBytes(32).toString('hex');
+    const iterations = 100000;
+    const keylen = 64;
+    const digest = 'sha512';
+
+    return new Promise((resolve, reject) => {
+        crypto.pbkdf2(password, salt, iterations, keylen, digest, (err, derivedKey) => {
+            if (err) reject(err);
+            resolve({
+                hash: derivedKey.toString('hex'),
+                salt: salt,
+                iterations: iterations
+            });
+        });
+    });
+}
+
+async function verifyPassword(password, storedHash, salt) {
+    const iterations = 100000;
+    const keylen = 64;
+    const digest = 'sha512';
+
+    return new Promise((resolve, reject) => {
+        crypto.pbkdf2(password, salt, iterations, keylen, digest, (err, derivedKey) => {
+            if (err) reject(err);
+            resolve(derivedKey.toString('hex') === storedHash);
+        });
+    });
+}
+
+// ✅ 2. Generate secure API key
+function generateApiKey() {
+    return crypto.randomBytes(32).toString('hex');
+}
+
+// ✅ 3. HMAC for API authentication
+function generateHmacSignature(payload, secret) {
+    const hmac = crypto.createHmac('sha256', secret);
+    hmac.update(JSON.stringify(payload));
+    return hmac.digest('hex');
+}
+
+// ✅ 4. Hash a file for checksum
+function hashFile(data) {
+    const hash = crypto.createHash('sha256');
+    hash.update(data);
+    return hash.digest('hex');
+}
+
+// Usage
+const apiKey = generateApiKey();
+console.log('API Key:', apiKey);
+
+const hashed = await hashPassword('securePassword123');
+const isValid = await verifyPassword('securePassword123', hashed.hash, hashed.salt);
+console.log('Password valid:', isValid);</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Never use MD5 or SHA1 for security-critical applications. Use SHA256, SHA512, or bcrypt. Always use PBKDF2 with a high iteration count (100,000+) for password hashing.
+            </div>
+
+            <h2>7. util Module — Utility Functions</h2>
+            <p>The <code>util</code> module provides various utility functions for debugging, type checking, and promise handling.</p>
+
+            <h3>Production Examples</h3>
+            <pre class="code-block"><code>const util = require('util');
+const fs = require('fs');
+
+// ✅ 1. promisify — Convert callback-based functions to promises
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+
+async function readConfig() {
+    try {
+        const data = await readFileAsync('./config.json', 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        console.error('Failed to read config:', err.message);
+        return null;
+    }
+}
+
+// ✅ 2. types — Type checking
+const types = require('util/types');
+console.log(types.isDate(new Date())); // true
+console.log(types.isRegExp(/test/)); // true
+
+// ✅ 3. inspect — Better object inspection
+const obj = {
+    name: 'John',
+    nested: {
+        deep: {
+            values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+    }
+};
+console.log(util.inspect(obj, { 
+    depth: null, 
+    colors: true,
+    showHidden: true 
+}));
+
+// ✅ 4. deprecate — Mark functions as deprecated
+const oldApi = util.deprecate(
+    () => { console.log('Old API called'); },
+    'oldApi() is deprecated. Use newApi() instead.'
+);
+
+oldApi(); // Shows deprecation warning</code></pre>
+
+            <h2>8. url &amp; querystring Modules — URL Handling</h2>
+            <p>The <code>url</code> and <code>querystring</code> modules provide utilities for parsing and manipulating URLs and query strings.</p>
+
+            <pre class="code-block"><code>const url = require('url');
+const querystring = require('querystring');
+
+// ✅ Parse URLs
+const urlString = 'https://api.example.com/users?page=2&limit=10&sort=asc';
+const parsedUrl = new URL(urlString);
+
+console.log(parsedUrl.hostname); // 'api.example.com'
+console.log(parsedUrl.pathname); // '/users'
+console.log(parsedUrl.searchParams.get('page')); // '2'
+console.log(parsedUrl.searchParams.get('limit')); // '10'
+
+// ✅ Build URLs
+const params = new URLSearchParams({
+    page: 3,
+    limit: 20,
+    sort: 'desc'
+});
+
+const newUrl = new URL('https://api.example.com/products');
+newUrl.search = params.toString();
+console.log(newUrl.toString()); // https://api.example.com/products?page=3&limit=20&sort=desc
+
+// ✅ Parse query string (legacy)
+const qs = 'page=2&limit=10&sort=asc';
+const parsedQs = querystring.parse(qs);
+console.log(parsedQs); // { page: '2', limit: '10', sort: 'asc' }
+
+// ✅ Stringify query string
+const stringified = querystring.stringify({ page: 2, limit: 10 });
+console.log(stringified); // 'page=2&limit=10'</code></pre>
+
+            <h2>9. Core Modules Quick Reference</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Module</th><th>Common Use Cases</th><th>Production Importance</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>fs</strong></td><td>File reading/writing, logging, config storage</td><td>🔴 Critical</td></tr>
+                        <tr><td><strong>path</strong></td><td>File path handling, cross-platform compatibility</td><td>🔴 Critical</td></tr>
+                        <tr><td><strong>http/https</strong></td><td>Web servers, API clients, external requests</td><td>🔴 Critical</td></tr>
+                        <tr><td><strong>os</strong></td><td>System monitoring, health checks</td><td>🟡 Important</td></tr>
+                        <tr><td><strong>events</strong></td><td>Event-driven architecture, loose coupling</td><td>🟡 Important</td></tr>
+                        <tr><td><strong>crypto</strong></td><td>Security, hashing, encryption, authentication</td><td>🔴 Critical</td></tr>
+                        <tr><td><strong>util</strong></td><td>Debugging, promisification, type checking</td><td>🟢 Nice to have</td></tr>
+                        <tr><td><strong>url</strong></td><td>URL parsing, query string handling</td><td>🟡 Important</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>10. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Always use fs.promises</strong> — Avoid callback-based methods; use async/await.</li>
+                <li><strong>✅ Never use synchronous methods</strong> — <code>readFileSync</code>, <code>writeFileSync</code> block the event loop.</li>
+                <li><strong>✅ Use path.join</strong> — For cross-platform compatibility.</li>
+                <li><strong>✅ Implement streaming</strong> — Use streams for large files to avoid memory issues.</li>
+                <li><strong>✅ Handle errors</strong> — Always handle errors in file operations and network requests.</li>
+                <li><strong>✅ Set max listeners</strong> — Use <code>setMaxListeners()</code> for event emitters.</li>
+                <li><strong>✅ Use crypto.randomBytes</strong> — For generating secure tokens and API keys.</li>
+                <li><strong>✅ Use PBKDF2</strong> — For password hashing with high iteration count.</li>
+                <li><strong>✅ Monitor system resources</strong> — Use os module for health checks.</li>
+                <li><strong>✅ Promisify callbacks</strong> — Use <code>util.promisify</code> for consistent async patterns.</li>
+                <li><strong>✅ Validate URLs</strong> — Always validate and sanitize URLs and query strings.</li>
+                <li><strong>✅ Remove event listeners</strong> — Prevent memory leaks by removing unused listeners.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> Core modules are the foundation of every Node.js application. Master them thoroughly and you'll be able to build almost anything without heavy third-party dependencies. When choosing between a core module and a third-party package, start with the core module — it's often enough and eliminates unnecessary dependencies.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-code-execution.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Exploring Node.js Code Execution Process</a>
+            <a href="nodejs-express-routing.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Exploring ExpressJS Routing</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

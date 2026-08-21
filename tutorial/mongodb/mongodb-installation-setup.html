@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation and Setup | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Installing MongoDB, MongoDB Atlas, and MongoDB Compass" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 2 of 20: Installation and Setup</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html" class="active"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-download"></i> Installing MongoDB, MongoDB Atlas, and MongoDB Compass</span>
+        <h1>Installation and Setup</h1>
+
+        <div class="card">
+
+            <p>Before writing a single query, you need a working MongoDB environment. This lesson covers three ways to get started: installing MongoDB locally, using the fully-managed <strong>MongoDB Atlas</strong> cloud service, and installing <strong>MongoDB Compass</strong>, the official GUI.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Recommendation:</strong> For beginners, MongoDB Atlas is the fastest way to start — no installation required, and it includes a free forever tier (M0 cluster).
+            </div>
+
+            <h2>1. Installing MongoDB Locally</h2>
+
+            <h3>Windows</h3>
+            <ol>
+                <li>Download the MSI installer from <a href="https://www.mongodb.com/try/download/community" target="_blank">mongodb.com/try/download/community</a>.</li>
+                <li>Run the installer and choose <strong>Complete</strong> setup type.</li>
+                <li>Optionally install <strong>MongoDB Compass</strong> when prompted.</li>
+                <li>MongoDB installs as a Windows Service and starts automatically.</li>
+            </ol>
+
+            <h3>macOS (via Homebrew)</h3>
+            <pre class="code-block"><code>brew tap mongodb/brew
+brew install mongodb-community@7.0
+brew services start mongodb-community@7.0</code></pre>
+
+            <h3>Linux (Ubuntu)</h3>
+            <pre class="code-block"><code>wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl enable mongod</code></pre>
+
+            <h2>2. Setting Up MongoDB Atlas (Cloud)</h2>
+            <ol>
+                <li>Sign up at <a href="https://www.mongodb.com/cloud/atlas/register" target="_blank">mongodb.com/cloud/atlas</a>.</li>
+                <li>Create a new <strong>Project</strong>, then click <strong>Build a Database</strong>.</li>
+                <li>Select the <strong>M0 Free</strong> tier and choose a cloud provider/region.</li>
+                <li>Create a database user (username + password).</li>
+                <li>Under <strong>Network Access</strong>, add your IP address (or <code>0.0.0.0/0</code> for development).</li>
+                <li>Click <strong>Connect</strong> to get your connection string.</li>
+            </ol>
+
+            <pre class="code-block"><code>mongodb+srv://username:password@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Never expose <code>0.0.0.0/0</code> network access in production. Restrict IP access to known servers or use VPC peering for secure connections.
+            </div>
+
+            <h2>3. Installing MongoDB Compass</h2>
+            <p><strong>MongoDB Compass</strong> is the official GUI for exploring and manipulating data visually.</p>
+            <ol>
+                <li>Download from <a href="https://www.mongodb.com/try/download/compass" target="_blank">mongodb.com/try/download/compass</a>.</li>
+                <li>Install and launch the application.</li>
+                <li>Paste your connection string (local: <code>mongodb://localhost:27017</code> or your Atlas SRV string).</li>
+                <li>Click <strong>Connect</strong> to browse databases, collections, and documents visually.</li>
+            </ol>
+
+            <h2>4. Verifying Your Installation</h2>
+            <pre class="code-block"><code>mongosh
+# Should open the MongoDB Shell and show the connection prompt
+test> db.version()</code></pre>
+
+            <h2>5. Setup Checklist</h2>
+            <ul>
+                <li><strong>✅ Install MongoDB locally or create an Atlas cluster</strong></li>
+                <li><strong>✅ Install mongosh (MongoDB Shell)</strong></li>
+                <li><strong>✅ Install MongoDB Compass</strong> for GUI-based management</li>
+                <li><strong>✅ Whitelist your IP address</strong> if using Atlas</li>
+                <li><strong>✅ Test the connection</strong> using mongosh or Compass</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Whether you install locally or use Atlas, get comfortable with both mongosh and Compass early — you'll use them constantly throughout this course.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-introduction.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Introduction to MongoDB</a>
+            <a href="mongodb-shell-gui-tools.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>MongoDB Shell and GUI Tools</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

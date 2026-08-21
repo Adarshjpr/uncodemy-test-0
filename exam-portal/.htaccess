@@ -1,0 +1,11 @@
+# Apache/cPanel: /exam-portal folder ke andar SPA routing
+# /exam-portal/java-full-stack-using-reactjs jaise URL refresh par bhi kaam karega
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /exam-portal/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule . - [L]
+  RewriteRule . /exam-portal/index.html [L]
+</IfModule>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discount Calculator — Find Your Sale Price Instantly</title>
+<script src="uncodemy-navbar.js" defer></script>
+<link rel="stylesheet" href="footer-style.css" />
+<style>
+  :root{
+    --orange:#ff5a1f; --orange-dark:#e14a12; --navy:#0d1226; --navy-2:#161c38;
+    --bg:#ffffff; --bg-soft:#f6f3ee; --border:#ece8e0; --text:#1a1a1a; --sub:#6b6a66;
+    --save:#27500a; --save-bg:#eaf3de;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6;
+  }
+  .hero{
+    background:linear-gradient(135deg,#fff0e8,#f3f2fb);
+    padding:56px 20px 70px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+    color:var(--orange); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px;
+  }
+  .eyebrow::before{content:'●'; font-size:8px;}
+  h1{font-size:40px; font-weight:700; margin:0 0 16px; line-height:1.25; font-family:Georgia,'Times New Roman',serif; max-width:680px; margin-left:auto; margin-right:auto;}
+  h1 em{font-style:normal; color:var(--orange);}
+  .lede{font-size:16px; color:var(--sub); margin:0 auto; max-width:560px;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px 80px;}
+  .calc-shell{
+    max-width:1200px; margin:auto; padding:0 20px; position:relative; z-index:2;
+  }
+  .calc-card{
+    background:#fff; border-radius:20px; padding:32px; box-shadow:0 20px 50px rgba(20,15,5,0.08);
+    border:1px solid var(--border); margin: 10px;
+  }
+  .logo-chip{
+    display:inline-block; background:var(--navy); color:#fff; font-weight:700; font-size:13px;
+    padding:6px 10px; border-radius:6px; margin-bottom:14px; letter-spacing:.03em;
+  }
+  h2{font-size:21px; font-weight:700; margin:0 0 6px;}
+  .hint{font-size:13px; color:var(--sub); margin:0 0 22px;}
+  .calc-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:28px;}
+  @media (max-width:760px){ .calc-grid{grid-template-columns:1fr;} }
+  .mode-toggle{display:flex; gap:8px; margin-bottom:24px;}
+  .mode-toggle button{
+    flex:1; padding:10px; border-radius:9px; border:1px solid var(--border);
+    background:#fff; font-size:13.5px; font-weight:600; cursor:pointer; color:var(--text);
+    transition:all .15s;
+  }
+  .mode-toggle button.active{background: linear-gradient(90deg, var(--abhasu-accent) 0%, var(--abhasu-accent-2) 100%); color:#fff; border-color:white;}
+  .field{margin-bottom:22px;}
+  .field-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  label{font-size:13px; color:var(--text); font-weight:600;}
+  .unit-tag{font-size:11px; color:var(--sub);}
+  input[type=number]{
+    width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
+    font-size:16px; font-weight:600; background:var(--bg-soft); color:var(--text);
+  }
+  input[type=number]:focus{outline:none; border-color:var(--orange);}
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:4px;
+    background:var(--border); margin-top:10px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+    background:var(--orange); cursor:pointer; border:3px solid #fff; box-shadow:0 0 0 1px var(--orange);
+  }
+  .range-labels{display:flex; justify-content:space-between; font-size:11px; color:var(--sub); margin-top:4px;}
+  .result-panel{
+    background:var(--bg-soft); border-radius:16px; padding:26px; text-align:center;
+  }
+  .result-panel .value{font-size:38px; font-weight:800; color:var(--orange); margin:0 0 2px;}
+  .result-panel .label{font-size:13px; color:var(--sub); margin:0 0 18px; font-weight:600;}
+  .badge{
+    display:inline-block; font-size:13px; font-weight:700; padding:6px 16px; border-radius:20px;
+    margin-bottom:20px; background:var(--save-bg); color:var(--save);
+  }
+  .stat-row{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid var(--border); font-size:13.5px; text-align:left;}
+  .stat-row span:first-child{color:var(--sub);}
+  .stat-row span:last-child{font-weight:700;}
+  .disclaimer{font-size:12px; color:var(--sub); margin-top:14px;}
+
+  .section-title{font-size:24px; font-weight:700; margin:0 0 10px;}
+  .section-lede{font-size:15px; color:var(--sub); max-width:680px; margin:0 0 26px;}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:36px;}
+  @media (max-width:700px){ .steps3{grid-template-columns:1fr;} }
+  .step-box{background:var(--bg-soft); border-radius:14px; padding:22px;}
+  .step-num{
+    width:30px; height:30px; background:var(--orange); color:#fff; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:14px;
+  }
+  .step-box strong{display:block; font-size:16px; margin-bottom:6px;}
+  .step-box p{font-size:13.5px; color:var(--sub); margin:0;}
+
+  .kicker{color:var(--orange); font-weight:700; font-size:14px; margin:0 0 14px;}
+  .formula-box{
+    background:var(--navy); color:#fff; border-radius:14px; padding:26px; font-size:15px;
+    margin-bottom:36px;
+  }
+  .formula-box .eq{font-size:17px; font-weight:600; margin:0 0 16px; font-family:'Georgia',serif;}
+  .formula-box p{margin:4px 0; color:#cfd3e6; font-size:13.5px;}
+
+  table{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:14px;}
+  table td{padding:12px 14px; border-top:1px solid var(--border);}
+  table tr:first-child td{border-top:none;}
+  table td:first-child{font-weight:600; width:45%;}
+  table td:last-child{font-weight:700; text-align:right;}
+
+  .tier-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:36px;}
+  @media (max-width:700px){ .tier-grid{grid-template-columns:1fr 1fr;} }
+  .tier-box{background:var(--bg-soft); border-radius:12px; padding:16px; text-align:center;}
+  .tier-box .pct{font-size:20px; font-weight:800; color:var(--orange); margin:0 0 4px;}
+  .tier-box .desc{font-size:12px; color:var(--sub); margin:0;}
+
+  details{border-top:1px solid var(--border); padding:16px 0;}
+  details:last-child{border-bottom:1px solid var(--border);}
+  summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; font-size:20px; color:var(--orange); font-weight:700;}
+  details[open] summary::after{content:'–';}
+  details p{font-size:14px; color:var(--sub); margin:12px 0 0;}
+
+  .cta{
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark)); border-radius:18px;
+    padding:44px 30px; text-align:center; color:#fff; margin-bottom:10px;
+  }
+  .cta h3{font-size:22px; margin:0 0 8px;}
+  .cta p{font-size:14px; opacity:.92; margin:0 0 20px;}
+  .cta button{
+    background:#fff; color:var(--orange-dark); border:none; padding:12px 26px;
+    border-radius:9px; font-weight:700; font-size:14px; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="hero">
+  <div class="eyebrow">Works for any sale or coupon</div>
+  <h1>Find your <em>sale price</em> before you check out</h1>
+  <p class="lede">Enter the original price and the discount — this calculator instantly shows the final price and exactly how much you save.</p>
+</div>
+
+<div class="calc-shell">
+  <div class="calc-card">
+    <span class="logo-chip">%</span>
+    <h2>Your price details</h2>
+    <p class="hint">Work out a single discount, or stack a second coupon on top.</p>
+
+    <div class="mode-toggle">
+      <button id="modeSingle" class="active">Single discount</button>
+      <button id="modeStacked">Stacked discount</button>
+    </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="field">
+          <div class="field-top"><label>Original price</label><span class="unit-tag">₹</span></div>
+          <input type="number" id="origPrice" value="2000">
+          <input type="range" id="origPriceR" min="100" max="20000" step="50" value="2000">
+          <div class="range-labels"><span>₹100</span><span>₹20,000</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label>Discount</label><span class="unit-tag">%</span></div>
+          <input type="number" id="discountPct" value="25">
+          <input type="range" id="discountPctR" min="0" max="90" value="25">
+          <div class="range-labels"><span>0%</span><span>90%</span></div>
+        </div>
+        <div class="field" id="secondDiscountField" style="display:none;">
+          <div class="field-top"><label>Extra coupon</label><span class="unit-tag">%</span></div>
+          <input type="number" id="discountPct2" value="10">
+          <input type="range" id="discountPct2R" min="0" max="90" value="10">
+          <div class="range-labels"><span>0%</span><span>90%</span></div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <p class="value" id="finalPrice">--</p>
+        <p class="label">You pay</p>
+        <span class="badge" id="savingsBadge"></span>
+
+        <div class="stat-row"><span>Original price</span><span id="statOriginal">₹0</span></div>
+        <div class="stat-row"><span>Total discount</span><span id="statDiscountPct">0%</span></div>
+        <div class="stat-row"><span>You save</span><span id="statSaved">₹0</span></div>
+        <div class="stat-row"><span>Final price</span><span id="statFinal">₹0</span></div>
+      </div>
+    </div>
+    <p class="disclaimer">Stacked discounts apply one after another on the reduced price, not both on the original — the same way most coupon codes work.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div style="height:36px;"></div>
+  <h2 class="section-title">How a discount is calculated</h2>
+  <p class="section-lede">A percentage discount reduces the original price by that share of itself. Stack a second coupon and it applies to the already-discounted price, not the original — which is why two 20% coupons never add up to 40% off.</p>
+
+  <div class="steps3">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <strong>Enter the price</strong>
+      <p>The original, pre-discount price of the item.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <strong>Enter the discount</strong>
+      <p>One percentage, or two if you're stacking a coupon.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <strong>See what you pay</strong>
+      <p>Final price plus exactly how much you saved.</p>
+    </div>
+  </div>
+
+  <p class="kicker">The discount formula</p>
+  <div class="formula-box">
+    <p class="eq">Final price = original price × (1 − discount ÷ 100)</p>
+    <p>Savings = original price − final price</p>
+    <p>For a stacked discount, run the formula twice — once per coupon, each time on the new price.</p>
+  </div>
+
+  <p class="kicker">A worked example</p>
+  <p class="section-lede" style="margin-bottom:14px;">A ₹2,000 item with a 25% discount, then a 10% coupon stacked on top:</p>
+  <table>
+    <tr><td>Original price</td><td>₹2,000</td></tr>
+    <tr><td>After 25% off</td><td>₹1,500</td></tr>
+    <tr><td>After extra 10% coupon</td><td>₹1,350</td></tr>
+    <tr><td>Total saved</td><td>₹650</td></tr>
+    <tr><td>Effective discount</td><td>32.5%</td></tr>
+  </table>
+  <p class="section-lede">Notice the two coupons together only save 32.5%, not 35% — because the second coupon works on the already-reduced ₹1,500, not the original ₹2,000.</p>
+
+  <p class="kicker">Common discount tiers</p>
+  <div class="tier-grid">
+    <div class="tier-box"><p class="pct">10%</p><p class="desc">Newsletter sign-up offers</p></div>
+    <div class="tier-box"><p class="pct">25%</p><p class="desc">Typical seasonal sale</p></div>
+    <div class="tier-box"><p class="pct">50%</p><p class="desc">Clearance / end-of-season</p></div>
+    <div class="tier-box"><p class="pct">70%+</p><p class="desc">Flash sales, liquidation</p></div>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <details open>
+    <summary>Do two discounts add up?</summary>
+    <p>No. Stacked discounts multiply, not add. A 20% discount followed by a 10% coupon gives 28% off overall, not 30%, because the second discount is applied to the already-reduced price.</p>
+  </details>
+  <details>
+    <summary>How do I work out the discount percentage myself?</summary>
+    <p>Subtract the sale price from the original price, divide that by the original price, then multiply by 100. For example, ₹2,000 down to ₹1,500 is a ₹500 saving, which is 25% of ₹2,000.</p>
+  </details>
+  <details>
+    <summary>Does this include tax?</summary>
+    <p>No — this calculator works on the listed price only. If tax is added after the discount, apply it separately to the final price shown here.</p>
+  </details>
+  <details>
+    <summary>What's the difference between markdown and discount?</summary>
+    <p>They're usually the same thing — a percentage cut from the listed price. "Markdown" is more common in retail pricing, "discount" in coupons and promotions, but the maths is identical.</p>
+  </details>
+
+  <div style="height:20px;"></div>
+  <div class="cta">
+    <h3>Shopping for something bigger?</h3>
+    <p>Compare the sale price against a few stores before you commit — a bigger discount elsewhere can beat this one.</p>
+    <button>Compare prices</button>
+  </div>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+<script src="footer-script.js"></script>
+
+<script>
+let stacked = false;
+const btnSingle = document.getElementById('modeSingle');
+const btnStacked = document.getElementById('modeStacked');
+const secondField = document.getElementById('secondDiscountField');
+
+function setMode(isStacked){
+  stacked = isStacked;
+  secondField.style.display = isStacked ? 'block' : 'none';
+  btnSingle.classList.toggle('active', !isStacked);
+  btnStacked.classList.toggle('active', isStacked);
+  calc();
+}
+btnSingle.onclick = () => setMode(false);
+btnStacked.onclick = () => setMode(true);
+
+function syncPair(numId, rangeId){
+  const num = document.getElementById(numId);
+  const range = document.getElementById(rangeId);
+  num.addEventListener('input', () => { range.value = num.value; calc(); });
+  range.addEventListener('input', () => { num.value = range.value; calc(); });
+}
+syncPair('origPrice','origPriceR');
+syncPair('discountPct','discountPctR');
+syncPair('discountPct2','discountPct2R');
+
+function formatRupees(n){
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+function calc(){
+  const orig = parseFloat(document.getElementById('origPrice').value) || 0;
+  const pct1 = parseFloat(document.getElementById('discountPct').value) || 0;
+  const pct2 = stacked ? (parseFloat(document.getElementById('discountPct2').value) || 0) : 0;
+
+  const finalPriceEl = document.getElementById('finalPrice');
+  const badgeEl = document.getElementById('savingsBadge');
+
+  if(orig <= 0){
+    finalPriceEl.textContent = '--';
+    badgeEl.textContent = '';
+    document.getElementById('statOriginal').textContent = '₹0';
+    document.getElementById('statDiscountPct').textContent = '0%';
+    document.getElementById('statSaved').textContent = '₹0';
+    document.getElementById('statFinal').textContent = '₹0';
+    return;
+  }
+
+  const afterFirst = orig * (1 - pct1 / 100);
+  const afterSecond = afterFirst * (1 - pct2 / 100);
+  const saved = orig - afterSecond;
+  const effectivePct = (saved / orig) * 100;
+
+  finalPriceEl.textContent = formatRupees(afterSecond);
+  badgeEl.textContent = 'You save ' + formatRupees(saved);
+
+  document.getElementById('statOriginal').textContent = formatRupees(orig);
+  document.getElementById('statDiscountPct').textContent = effectivePct.toFixed(1) + '%';
+  document.getElementById('statSaved').textContent = formatRupees(saved);
+  document.getElementById('statFinal').textContent = formatRupees(afterSecond);
+}
+
+['origPrice','discountPct','discountPct2'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calc);
+});
+setMode(false);
+</script>
+</body>
+</html>

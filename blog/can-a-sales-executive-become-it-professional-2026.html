@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Can a Sales Executive Really Become an IT Professional in 2026? | Uncodemy</title>
+    <meta name="description" content="Working as a sales executive and thinking about switching to IT? Here is an honest, step-by-step look at whether the switch is realistic in 2026 and how to do it.">
+    <link rel="canonical" href="https://uncodemy.com/tutorials/can-a-sales-executive-become-it-professional-2026">
+    <meta property="og:title" content="Can a Sales Executive Really Become an IT Professional in 2026? | Uncodemy">
+    <meta property="og:description" content="A practical roadmap for sales executives who want to switch into IT in 2026 — skills, tools, timeline and a realistic transition plan.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img">
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput">
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials">
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Career guides · 480+ tutorials</p>
+                <h1>Can a Sales Executive Really Become an <mark>IT Professional in 2026?</mark></h1>
+                <p class="lede">Working in sales and wondering if IT is even realistic without a technical degree? Here is an honest, step-by-step look at what it actually takes for a sales executive to switch into IT in 2026.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;sales executive to IT&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox">
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="true">Career Switch</button>
+                    <button class="chip" aria-pressed="false">Software Testing</button>
+                    <button class="chip" aria-pressed="false">Business Analysis</button>
+                    <button class="chip" aria-pressed="false">Full Stack Development</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>IT Track vs Effort · Live comparison</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="Compare IT switch tracks for a sales executive">
+                        <button aria-pressed="true" data-r="testing">Software Testing</button>
+                        <button aria-pressed="false" data-r="ba">Business Analysis</button>
+                        <button aria-pressed="false" data-r="fullstack">Full Stack Dev</button>
+                    </div>
+                    <div class="api-flow" id="apiFlow">
+                        <div class="flow-step"><div class="s-l">Time to learn</div><div class="s-v" id="reqVal">—</div><div class="s-d">Studying alongside a full-time sales job</div></div>
+                        <div class="flow-step"><div class="s-l">Entry difficulty</div><div class="s-v" id="resVal">—</div><div class="s-d">For a non-technical sales background</div></div>
+                        <div class="flow-step"><div class="s-l">Starting salary band</div><div class="s-v" id="assertVal">—</div><div class="s-d">Entry-level IT role, India</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Sales executive</span>
+                        <span class="arrow">→</span>
+                        <span>IT fundamentals</span>
+                        <span class="arrow">→</span>
+                        <span>Live project</span>
+                        <span class="arrow">→</span>
+                        <span>First IT job</span>
+                    </div>
+                    <div class="demo-cap">Click a track to see how the numbers shift. Your sales background decides which one gives you the fastest head start.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Tutorials</a> / <a href="#top">Career Guides</a> / <span>Sales Executive to IT</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Switch · Sales executive to IT-ready</p>
+                <h1>Can a Sales Executive Really Become an IT Professional in 2026?</h1>
+
+                <div class="byline">
+                    <span class="avatar">AK</span>
+                    <span><b>Ankit Kaushik</b> · Lead Trainer, Data Engineering &amp; Full Stack</span>
+                    <span class="sep">|</span>
+                    <span>Updated 11 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>14 min read</span>
+                    <span class="badge">Free · with examples</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="Sales executive to IT path: sales executive, IT fundamentals, live project, first IT job">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g4)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">TODAY</text>
+                            <text x="280" y="40">FOUNDATION</text>
+                            <text x="510" y="40">PROJECT</text>
+                            <text x="720" y="40">FIRST JOB</text>
+                        </g>
+                        <rect x="20" y="58" width="200" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Sales Executive</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Strong client &amp; process sense</text>
+                        <text x="50" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">No technical background yet</text>
+                        <rect x="40" y="164" width="150" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="65" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Deciding</text>
+
+                        <rect x="250" y="58" width="210" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="280" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">IT Fundamentals</text>
+                        <text x="280" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Testing, BA or dev basics</text>
+                        <text x="280" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Guided by a trainer</text>
+                        <rect x="280" y="164" width="150" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="310" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">8–12 wks</text>
+
+                        <rect x="490" y="58" width="190" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="520" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Live Project</text>
+                        <text x="520" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Portfolio-ready proof of skill</text>
+                        <text x="520" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Something to show recruiters</text>
+                        <rect x="520" y="164" width="130" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="545" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">3–4 wks</text>
+
+                        <rect x="710" y="58" width="170" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="740" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">First IT Role</text>
+                        <text x="740" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Entry-level, on-job growth</text>
+                        <text x="740" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Real experience begins</text>
+                        <rect x="740" y="164" width="110" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="760" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Offer</text>
+
+                        <path d="M220 148 H236" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                        <path d="M460 148 H476" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                        <path d="M680 148 H696" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                    </svg>
+                    <figcaption>Most sales executives follow the same shape to switch into IT: fundamentals in a chosen track, one real project, then an entry-level role.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — can a sales executive really become an IT professional?</h2>
+                    <p>Yes, and it happens more often than people expect. A <b>sales background</b> is not wasted in IT — client handling, process discipline, and clear communication transfer directly into roles like <b>software testing</b> and <b>business analysis</b>, which sit closer to the business side of technology. In 2026, companies hire non-technical career switchers into entry-level IT roles regularly, as long as the candidate can show real fundamentals, working tools, and at least one project that proves they can do the job.</p>
+                    <p>In this tutorial you will learn:</p>
+                    <ol>
+                        <li><b>What "becoming an IT professional" actually means</b> — and which roles fit a sales background.</li>
+                        <li><b>Why sales skills are an underrated advantage</b>, not a disadvantage.</li>
+                        <li><b>The skills a sales executive needs</b> to become job-ready in IT.</li>
+                        <li><b>A side-by-side comparison</b> of the tracks that suit a sales background.</li>
+                        <li><b>A realistic 4-month transition plan</b> from zero technical skill to first application.</li>
+                        <li><b>Mistakes that waste the most time</b> for sales executives switching to IT.</li>
+                        <li><b>Test your knowledge</b> — a quick quiz to check your understanding.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What "becoming an IT professional" actually means</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why a sales background is an underrated advantage</a></li>
+                        <li><a href="#s3"><span class="n">03</span>The core skills you need to build</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Track comparison table</a></li>
+                        <li><a href="#s5"><span class="n">05</span>How to start — a simple step-by-step guide</a></li>
+                        <li><a href="#s6"><span class="n">06</span>A realistic 4-month transition plan</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Mistakes that waste the most time</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>What "becoming an IT professional" actually means</h2>
+                <p>"IT" covers far more than writing code all day. Roles like <strong>software testing</strong>, <strong>business analysis</strong>, and <strong>full stack development</strong> all sit inside IT, and each demands a different mix of technical depth and people skills. A software tester checks that a product works the way it should before users see it. A business analyst sits between clients and developers, turning requirements into something a technical team can build. A full stack developer builds the product itself. For a sales executive, the first two are usually the fastest and most natural entry points.</p>
+                <p>In simple terms: you do not need to become a hardcore programmer to be "in IT" — you need one solid, in-demand IT skill set and proof that you can apply it.</p>
+                <div class="note"><b>Key point:</b> Most sales executives become interview-ready for an entry-level IT role in 12 to 16 weeks of focused learning, not years, because their existing client-facing and process skills already cover half of what roles like business analysis and testing actually need.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why a sales background is an underrated advantage</h2>
+                <ul>
+                    <li><b>You already understand client requirements</b> — translating what a client wants into something concrete is core to business analysis work.</li>
+                    <li><b>You know how to follow a process under pressure</b> — sales targets and pipelines build the same discipline testers need for structured test cycles.</li>
+                    <li><b>Communication is already your strength</b> — IT roles that bridge business and technical teams value this more than raw coding speed.</li>
+                    <li><b>You are comfortable with rejection and iteration</b> — bug reports getting pushed back, or requirements changing, feel familiar rather than discouraging.</li>
+                    <li><b>Entry-level hiring volume is growing</b> — as more companies build software, demand for testers, BAs, and junior developers keeps rising.</li>
+                </ul>
+                <p>Sales executives who focus on demonstrable skills — a documented test cycle, a requirement document, one working project — are the ones who convert interviews into offers, not the ones who try to hide their sales background.</p>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>The core skills you need to build</h2>
+
+                <h3>1. Software Testing Fundamentals</h3>
+                <p>Covers manual testing, writing test cases, and basic automation — turning your process discipline into a structured, repeatable skill.</p>
+                <ul>
+                    <li><b>Example:</b> Writing a test plan for a checkout flow and logging bugs with clear repro steps.</li>
+                    <li><b>Best for:</b> Sales executives who are detail-oriented and comfortable following a checklist under pressure.</li>
+                </ul>
+
+                <h3>2. Business Analysis Basics</h3>
+                <p>Covers requirement gathering, writing user stories, and basic tools like Jira and wireframing — a near-direct extension of client-facing sales work.</p>
+                <ul>
+                    <li><b>Example:</b> Turning a client's vague feature request into a clear, developer-ready user story.</li>
+                    <li><b>Best for:</b> Sales executives who enjoy talking to clients and want to stay closer to the business side of IT.</li>
+                </ul>
+
+                <h3>3. SQL and Basic Scripting</h3>
+                <p>Covers writing queries and simple scripts — a small technical layer that makes both testing and business analysis roles far stronger.</p>
+                <ul>
+                    <li><b>Example:</b> Writing a SQL query to verify that a form submission actually saved correctly in the database.</li>
+                    <li><b>Best for:</b> Building just enough technical credibility to stand out in interviews.</li>
+                </ul>
+
+                <h3>4. Full Stack Development Introduction</h3>
+                <p>Covers HTML, CSS, JavaScript and a back-end basics — a bigger jump, usually chosen by sales executives who actively enjoy building things.</p>
+                <ul>
+                    <li><b>Example:</b> Building a simple product landing page with a working contact form.</li>
+                    <li><b>Best for:</b> Sales executives with strong self-motivation and more time to invest, aiming for a developer role.</li>
+                </ul>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Track comparison table</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Track</th><th>Time to job-ready</th><th>Best for</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Software Testing</b></td><td>8–12 weeks</td><td>Detail-oriented sales executives wanting the fastest entry</td></tr>
+                            <tr><td><b>Business Analysis</b></td><td>10–14 weeks</td><td>Sales executives who want to keep using client-facing skills</td></tr>
+                            <tr><td><b>SQL & Basic Scripting</b></td><td>4–6 weeks</td><td>A quick add-on that strengthens either track above</td></tr>
+                            <tr><td><b>Full Stack Development</b></td><td>16–20 weeks</td><td>Sales executives ready for a bigger, longer technical jump</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>Pro tip:</b> Do not aim for full stack development first if you are short on time. Interviewers for entry-level testing and BA roles almost always value clear communication and process discipline over deep coding skill.</div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>How to start — a simple step-by-step guide</h2>
+
+                <ol class="steps">
+                    <li><b>Pick a track that matches your strengths.</b> Detail-oriented and methodical → testing. Client-facing and requirement-driven → business analysis.</li>
+                    <li><b>Learn the core tools of that track.</b> Test case writing and a tool like Selenium for testing; Jira and user stories for business analysis.</li>
+                    <li><b>Add basic SQL.</b> Even simple queries make you noticeably stronger in interviews for both tracks.</li>
+                    <li><b>Build one real project.</b> A documented test cycle for a sample app, or a full requirement document for a mock product.</li>
+                    <li><b>Rewrite your resume around IT skills.</b> Reframe your sales achievements as evidence of communication, process discipline, and client handling.</li>
+                    <li><b>Start applying while finishing your project.</b> Entry-level interviews test fundamentals plus your ability to explain your project clearly.</li>
+                </ol>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Sample sales-to-IT self-check output">
+                        <button role="tab" aria-selected="true" data-t="0">Self-check</button>
+                        <button role="tab" aria-selected="false" data-t="1">Sample recommendation</button>
+                    </div>
+                    <pre data-p="0"><code>Question                          Answer
+Comfortable talking to clients?    Yes
+Enjoy detail-checking work?        Somewhat
+Written any SQL or code before?    No
+Hours available per week           8-10
+City has entry-level IT roles      Yes
+
+Recommendation: Start with Business Analysis,
+add SQL next, consider testing as a backup.</code></pre>
+                    <pre data-p="1" hidden><code>4-month plan for this profile:
+Month 1: Business analysis basics + Jira
+Month 2: User stories + basic SQL
+Month 3: One full requirement-to-delivery project
+Month 4: Resume, portfolio, interview prep,
+start applying to entry-level BA roles</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">self-check · Sales to IT path</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>A realistic 4-month transition plan</h2>
+                <ul>
+                    <li><b>Month 1:</b> Learn the fundamentals of your chosen track in weekend or evening batches while keeping your sales job.</li>
+                    <li><b>Month 2:</b> Go hands-on with the core tools — test cases and a testing tool, or user stories and Jira — plus basic SQL.</li>
+                    <li><b>Month 3:</b> Build one real, end-to-end project that shows the full process from requirement or test plan to delivery.</li>
+                    <li><b>Month 4:</b> Finish the project, rewrite your resume around IT-relevant skills, prepare for role-specific interview questions, and start applying.</li>
+                    <li><b>Throughout:</b> Document everything you build — a visible portfolio of test cases or requirement documents matters more than certificates alone.</li>
+                </ul>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Mistakes that waste the most time</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Mistake</th><th>Why it costs time</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Jumping straight to full stack development</b></td><td>The longest, most technical route, hardest for a first switch</td><td>Start with testing or business analysis, add dev skills later if wanted</td></tr>
+                            <tr><td><b>Hiding your sales background on the resume</b></td><td>Wastes a genuine advantage recruiters actually value</td><td>Frame sales achievements as communication and process proof</td></tr>
+                            <tr><td><b>Skipping a real project</b></td><td>Certificates alone rarely convince interviewers</td><td>Build one complete, documented test cycle or requirement set</td></tr>
+                            <tr><td><b>Ignoring basic SQL</b></td><td>Even non-technical IT roles increasingly expect it</td><td>Spend 4–6 weeks on SQL fundamentals alongside your main track</td></tr>
+                            <tr><td><b>No interview practice</b></td><td>Domain knowledge without interview readiness stalls offers</td><td>Do mock interviews in month 4, not the week before</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — switching to IT from sales</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Can a sales executive really become an IT professional?</summary>
+                    <div class="body"><p>Yes — sales executives already bring communication, process discipline, and client-handling skills, and companies regularly hire them into entry-level testing and business analysis roles once they show real fundamentals and one working project.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>Do I need to learn to code to move into IT?</summary>
+                    <div class="body"><p>Not necessarily. Roles like software testing and business analysis need far less coding than full stack development, and both value the communication skills a sales background already builds.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>Which track should I start with?</summary>
+                    <div class="body"><p>Start with business analysis if you enjoy client conversations, or software testing if you prefer structured, detail-focused work. Add basic SQL to either track for a stronger interview profile.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>How long does it take to become job-ready?</summary>
+                    <div class="body"><p>Most sales executives become interview-ready in 12 to 16 weeks with focused, consistent study and one completed project, since existing client-facing skills cover a real part of the job already.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>Will my sales experience count against me in IT interviews?</summary>
+                    <div class="body"><p>No — if framed well, sales experience signals communication, resilience, and process discipline, all of which interviewers for testing and BA roles actively look for.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>Should I aim for full stack development right away?</summary>
+                    <div class="body"><p>Usually not as a first move. Build fundamentals and one project in testing or business analysis first — full stack development is a longer path better suited once you are comfortable with basic technical concepts.</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — sales executive to IT quiz</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign-up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is IT a realistic career switch for a sales executive in 2026?</summary><div class="body"><p>Yes — roles like software testing and business analysis draw directly on communication and process skills a sales background already builds, making the switch more realistic than it looks.</p></div></details>
+                <details class="acc"><summary>How many hours a week do I need to study?</summary><div class="body"><p>Most working sales executives manage with 8–10 hours a week across evenings and weekends, spread over 12 to 16 weeks for a chosen track plus basic SQL.</p></div></details>
+                <details class="acc"><summary>Is business analysis easier than software testing for a sales background?</summary><div class="body"><p>Generally yes, since it builds more directly on client conversations and requirement gathering. Testing adds a bit more structured, technical detail on top.</p></div></details>
+                <details class="acc"><summary>Will I have to take a pay cut when I switch?</summary><div class="body"><p>Often a short-term dip is likely at entry level, but IT roles typically offer faster long-term salary growth than a plateaued sales role, especially once you cross the first 1–2 years.</p></div></details>
+                <details class="acc"><summary>What if I do not have any project to show?</summary><div class="body"><p>Build one using a sample app or mock client brief. A single, well-documented test cycle or requirement set is often enough for an entry-level interview.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Software testing tutorial for absolute beginners</span><span class="m">Testing · 13 min</span></a>
+                    <a class="rel-card" href="what-is-an-api-in-programming.html"><span class="t">What is an API in programming?</span><span class="m">API · 11 min</span></a>
+                    <a class="rel-card" href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="t">Best IT career path to start from zero</span><span class="m">Career · 15 min</span></a>
+                    <a class="rel-card" href="which-course-is-future-proof-for-college-dropout-2026.html"><span class="t">Which course is future proof for a college dropout in 2026</span><span class="m">Career · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Business analyst roadmap for non-technical switchers</span><span class="m">Career · 13 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">How to build a portfolio with no work experience</span><span class="m">Career · 10 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Switch from sales to IT with a job-ready programme built for non-technical professionals</h3>
+                    <p>Our Software Testing and Business Analysis programmes cover fundamentals, tools like Jira and Selenium, basic SQL, and one full live project — designed for career switchers moving from client-facing roles into IT.</p>
+                    <span class="price">₹13,500 · full programme <s>₹20,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>5 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live beginner testing or BA session</div>
+                    <p>Two hours, no payment, no commitment. Try a real task and get hands-on feedback from industry trainers.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 11:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes the 4-month plan</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Software testing tutorial for beginners</a></li>
+                        <li><a href="#"><span class="rank">02</span>Entry-level business analyst interview questions</a></li>
+                        <li><a href="what-is-an-api-in-programming.html"><span class="rank">03</span>What is an API in programming?</a></li>
+                        <li><a href="#"><span class="rank">04</span>Building your first requirement document</a></li>
+                        <li><a href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="rank">05</span>Best IT career path to start from zero</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Software Testing · 50 questions</a></li>
+                        <li><a href="#">Business Analysis · 35 questions</a></li>
+                        <li><a href="#">SQL Basics · 30 questions</a></li>
+                        <li><a href="#">Career Switch · General · 25 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Business Analysis</div>
+                    <p>Requirement gathering, user stories, Jira, wireframing and basic SQL, plus one live project — built for sales and client-facing professionals switching into IT. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">5</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in Career Switch</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Software testing tutorial for absolute beginners <small>Manual → Automation</small></a></li>
+                    <li><a href="#">Business analyst roadmap for non-technical switchers <small>Requirements → Jira</small></a></li>
+                    <li><a href="what-is-an-api-in-programming.html">What is an API in programming? <small>Core concepts</small></a></li>
+                    <li><a href="#">Resume tips for career switchers <small>Framing sales achievements</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Software Tester roadmap <small>Manual → Selenium → API testing</small></a></li>
+                    <li><a href="working-professional-best-it-career-path-to-start-from-zero.html">Best IT career path from zero <small>Compare all paths</small></a></li>
+                    <li><a href="#">Business Analyst roadmap <small>Requirements → Jira → Delivery</small></a></li>
+                    <li><a href="#">Full Stack Developer roadmap <small>HTML → JS → Backend</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">IT switch self-check worksheet <small>Decide if IT fits you</small></a></li>
+                    <li><a href="#">4-month transition plan template <small>Ready-to-use planner</small></a></li>
+                    <li><a href="#">Testing vs BA cheat sheet <small>What to learn, in order</small></a></li>
+                    <li><a href="#">Entry-level business analyst interview question bank <small>50 real questions</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Can a sales executive really become an IT professional in 2026 <small>11 August 2026</small></a></li>
+                    <li><a href="which-course-is-future-proof-for-college-dropout-2026.html">Which course is future proof for a college dropout in 2026 <small>10 August 2026</small></a></li>
+                    <li><a href="bca-student-switch-to-data-engineer-2026.html">How a BCA student can switch to data engineer in 2026 <small>10 August 2026</small></a></li>
+                    <li><a href="#">Is business analysis a good career in 2026? <small>7 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img">
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and testing in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Software Testing</a></li>
+                        <li><a href="#">Business Analysis</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Analytics with Gen AI</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Career roadmaps</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                testing: { req: "8–12 wks", res: "Low", assert: "₹3–4.5 LPA" },
+                ba: { req: "10–14 wks", res: "Low–Medium", assert: "₹3.5–5.5 LPA" },
+                fullstack: { req: "16–20 wks", res: "Medium–High", assert: "₹4–6 LPA" }
+            },
+            stateOrder: ["testing", "ba", "fullstack"],
+            renderScene: function(s) {
+                document.getElementById("reqVal").textContent = s.req;
+                document.getElementById("resVal").textContent = s.res;
+                document.getElementById("assertVal").textContent = s.assert;
+            },
+            defaultTrack: "Career Switch",
+            emptyMsg: 'Nothing matches that yet. Try “testing”, “business analysis” or “SQL”.',
+            LIB: [
+                { t: "Can a sales executive really become an IT professional in 2026", g: "Career Switch" },
+                { t: "Software testing tutorial for absolute beginners", g: "Software Testing" },
+                { t: "Business analyst roadmap for non-technical switchers", g: "Business Analysis" },
+                { t: "What is an API in programming?", g: "Full Stack Development" },
+                { t: "Entry-level business analyst interview questions", g: "Career Switch" },
+                { t: "How to write your first user story", g: "Business Analysis" },
+                { t: "Manual testing vs automation testing — what's the difference?", g: "Software Testing" },
+                { t: "Resume tips for career switchers", g: "Career Switch" },
+                { t: "Is business analysis a good career in 2026?", g: "Business Analysis" },
+                { t: "Best IT career path to start from zero", g: "Career Switch" }
+            ],
+            QUIZ: [{
+                q: "For a sales executive with no technical background, which skill set transfers most directly into IT?",
+                o: ["Deep programming knowledge", "Communication, client handling and process discipline", "Advanced mathematics", "Graphic design"],
+                a: 1,
+                e: "Communication, client handling and process discipline map directly onto roles like business analysis and software testing, giving a sales background a real head start."
+            }, {
+                q: "Why is business analysis often a natural first track for a sales executive?",
+                o: ["It requires no learning at all", "It builds directly on client conversations and requirement gathering, skills sales already uses daily", "It pays the least in IT", "It has no interviews"],
+                a: 1,
+                e: "Business analysis centers on turning client needs into clear requirements — work that closely mirrors what a sales executive already does with clients."
+            }, {
+                q: "What matters most when applying for a first IT role after a sales career?",
+                o: ["Hiding the sales background completely", "A completed project plus clearly framed sales-derived skills", "Only technical certificates", "Avoiding any mention of client work"],
+                a: 1,
+                e: "A finished project combined with sales achievements reframed as communication and process proof gives interviewers concrete evidence of fit."
+            }, {
+                q: "Why is adding basic SQL recommended even for non-coding IT tracks?",
+                o: ["It has no real use in testing or BA roles", "Even testing and business analysis roles increasingly expect basic query skills", "It replaces the need for any other skill", "It is only useful for full stack developers"],
+                a: 1,
+                e: "Basic SQL strengthens both testing and business analysis profiles, since verifying data or writing precise requirements often benefits from query skills."
+            }, {
+                q: "What's the biggest risk of jumping straight into full stack development as a first switch?",
+                o: ["Learning too fast", "It is the longest, most technical route and hardest for a first-time non-technical switcher", "It pays too little", "It has no job demand"],
+                a: 1,
+                e: "Full stack development requires the most technical depth among the tracks, making it a harder first step than testing or business analysis for most sales executives."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You've got a clear read on this — lean on your sales strengths, pick testing or BA first, and back it with one real project.",
+                fail: "Revisit sections 02 and 05 — recognising which sales skills transfer directly is the key decision here."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

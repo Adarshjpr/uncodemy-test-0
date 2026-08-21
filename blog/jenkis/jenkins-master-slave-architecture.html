@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master & Slave (Agent) Architecture | Jenkins CI/CD Notes | Uncodemy</title>
+<meta name="description" content="Master & Slave (Agent) Architecture — Jenkins CI/CD course notes by Uncodemy. Learn DevOps with Jenkins step by step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --orange: #FF5421;
+      --orange-dark: #E64411;
+      --orange-light: #FFF1EC;
+      --dark: #1B1B1F;
+      --gray: #5B5B66;
+      --border: #ECECEF;
+      --bg: #FAFAFB;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+    a { color: inherit; }
+
+    /* Top bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .topbar img {
+      height: 36px;
+      display: block;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: background .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .btn-back:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--gray); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb .sep { color: #C9C9CF; }
+    .breadcrumb .current { color: var(--orange); font-weight: 600; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1.page-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 28px;
+      line-height: 1.25;
+      color: var(--dark);
+    }
+
+    .note-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--orange);
+      border-radius: 14px;
+      padding: 32px clamp(18px, 4vw, 40px);
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .note-card h2 {
+      font-size: 21px;
+      color: var(--dark);
+      margin: 34px 0 12px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+    .note-card h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .note-card h3 {
+      font-size: 16.5px;
+      color: var(--orange-dark);
+      margin: 20px 0 8px;
+    }
+    .note-card p { margin: 10px 0; color: #33333B; font-size: 15.5px; }
+    .note-card ul, .note-card ol { margin: 10px 0; padding-left: 22px; color: #33333B; font-size: 15.5px; }
+    .note-card li { margin: 6px 0; }
+    .note-card strong { color: var(--dark); }
+    .note-card code {
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+    }
+    .note-card pre {
+      background: #14141A;
+      color: #F1F1F4;
+      padding: 16px 18px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 13.5px;
+      margin: 12px 0;
+    }
+    .note-card pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .note-card table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14.5px;
+    }
+    .note-card th, .note-card td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .note-card th { background: var(--orange-light); color: var(--orange-dark); font-family: 'Poppins', sans-serif; font-size: 13.5px; }
+    .note-card .formula {
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+    }
+
+    /* Prev/Next nav */
+    .pagenav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .pagenav a {
+      flex: 1;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      display: block;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .pagenav a:hover { border-color: var(--orange); transform: translateY(-2px); }
+    .pagenav .dir {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--gray);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pagenav .label { font-size: 14.5px; font-weight: 600; color: var(--dark); }
+    .pagenav .next { text-align: right; }
+    .pagenav .disabled { opacity: .35; pointer-events: none; }
+
+    /* CTA */
+    .cta-box {
+      margin-top: 44px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 16px;
+      padding: 34px clamp(20px, 5vw, 44px);
+      color: #fff;
+      text-align: center;
+    }
+    .cta-box h3 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    .cta-box p {
+      margin: 0 0 20px;
+      color: #FFE4DA;
+      font-size: 15px;
+    }
+    .cta-box a {
+      display: inline-block;
+      background: #fff;
+      color: var(--orange-dark);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 9px;
+      font-size: 15px;
+      transition: transform .2s ease;
+    }
+    .cta-box a:hover { transform: translateY(-2px); }
+
+    footer {
+      text-align: center;
+      padding: 26px 20px 40px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+    footer a { color: var(--orange); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .topbar { padding: 12px 16px; }
+      .topbar img { height: 28px; }
+      .btn-back { padding: 8px 14px; font-size: 13px; }
+      h1.page-title { font-size: 25px; }
+      .note-card { padding: 22px 16px; }
+      .pagenav .next { text-align: left; }
+    }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <img src="https://uncodemy.com/img/Logo%20(1).png" alt="Uncodemy Logo">
+    <a class="btn-back" href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">&larr; Back to Course</a>
+  </div>
+
+  <div class="wrap">
+
+    <div class="breadcrumb">
+      <a href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">DevOps Course</a>
+      <span class="sep">&rsaquo;</span>
+      <span>Jenkins CI/CD</span>
+      <span class="sep">&rsaquo;</span>
+      <span class="current">Topic 9 &middot; Distributed Builds</span>
+    </div>
+
+    <span class="eyebrow">Jenkins &middot; Topic 9 of 15</span>
+    <h1 class="page-title">Master & Slave (Agent) Architecture</h1>
+
+    <div class="note-card">
+      
+        <h2>Why Master-Slave?</h2>
+        <p>Jenkins uses a Master-Slave (Master-Agent) architecture to manage distributed builds. The Master is the main Jenkins server; Slaves are additional servers/agents that share the workload. Master and Slave nodes communicate over the <strong>TCP/IP</strong> protocol.</p>
+        <ul>
+            <li>Using slaves, jobs get distributed and the load on the master reduces &mdash; Jenkins can run more builds concurrently.</li>
+            <li>Allows different environments to be set up on different slaves (Java, .NET, Terraform, etc.).</li>
+            <li>Supported slave types: Linux, Windows, Docker, Kubernetes, ECS (AWS).</li>
+            <li>If no slaves exist, the master does all the work by default.</li>
+        </ul>
+
+        <h2>Setting Up Master &amp; Slave</h2>
+        <ol>
+            <li>Launch 3 EC2 instances with the <em>same</em> key-pair (name them master, slave-1, slave-2 for clarity).</li>
+            <li>Install Jenkins on the master server, and only Java on the slave servers &mdash; using the <em>same Java version</em> as the master.</li>
+            <li>On the master: <strong>Manage Jenkins &rarr; Nodes &amp; Clouds &rarr; New Node</strong>.</li>
+            <li>Give the node a name and select <strong>Permanent Agent &rarr; Create</strong>.</li>
+        </ol>
+
+        <h2>New Node Configuration Fields</h2>
+        <ul>
+            <li><strong>Number of executors</strong> &mdash; default is 2, maximum 5. More executors = faster/parallel builds.</li>
+            <li><strong>Remote root directory</strong> &mdash; the slave server path where Jenkins info is stored (e.g. <code>/home/ec2-user</code>).</li>
+            <li><strong>Labels</strong> &mdash; a way to tag/name one or more slaves (e.g. "dev", "prod", "linux", "docker").</li>
+            <li><strong>Usage</strong> &mdash; select "Only build jobs with label expressions matching this node" so the label is respected.</li>
+            <li><strong>Launch method</strong> &mdash; "Launch agents via SSH".</li>
+            <li><strong>Host</strong> &mdash; the slave server's public IP address.</li>
+            <li><strong>Credentials</strong> &mdash; Kind: SSH Username with private key; add the slave's key-pair PEM content directly.</li>
+            <li><strong>Host Key Verification Strategy</strong> &mdash; select "Non verifying Verification Strategy".</li>
+            <li><strong>Availability</strong> &mdash; "Keep this agent online as much as possible".</li>
+        </ol>
+        <p><strong>Note:</strong> If Build Executor status shows an error, it is usually a Java version mismatch &mdash; install the same Java version on the slave that's on the master.</p>
+
+        <h2>Running a Job on a Slave</h2>
+        <p>Create a job &rarr; Configure &rarr; check <strong>"Restrict where this project can be run"</strong> &rarr; enter the Label (e.g. <code>Linux</code>) &rarr; add an Execute Shell build step &rarr; Save &amp; Build. The job output will be found on the <em>slave</em> server, not the master &mdash; because the slave is working on behalf of the master.</p>
+        <p><strong>Important:</strong> If the Label option is left blank inside a job, it always runs on the master.</p>
+        
+    </div>
+
+    <div class="pagenav">
+      <a class="prev " href="jenkins-build-pipeline-view.html">
+        <div class="dir">&larr; Previous</div>
+        <div class="label">Build Pipeline View (Freestyle)</div>
+      </a>
+      <a class="next " href="jenkins-user-management.html">
+        <div class="dir">Next &rarr;</div>
+        <div class="label">User Management in Jenkins</div>
+      </a>
+    </div>
+
+    <div class="cta-box">
+      <h3>Master Jenkins & DevOps with Uncodemy</h3>
+      <p>Hands-on live training, real projects, and placement support — become job-ready in DevOps.</p>
+      <a href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">Enroll in DevOps Training &rarr;</a>
+    </div>
+
+  </div>
+
+  <div class="footer-fixed-section">
+        <div class="ask-for-demo fixed-section-child" onclick="showPopUpForm()"><span class="below-btn">Ask For
+                Demo</span></div><a class="contact-thumb" href="https://pages.razorpay.com/fees-uncodemy"
+            target="_blank">
+            <div class="fee-payment fixed-section-child"><span class="below-btn">Fee Payment</span></div>
+        </a><a href="https://api.whatsapp.com/send?phone=918800023723" target="_blank">
+            <div class="whatsapp fixed-section-child"><span class="below-btn">WhatsApp</span></div>
+        </a><a class="ail ail1" href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">
+            <div class="email-section fixed-section-child"><span class="below-btn">Email</span></div>
+        </a><a class="ail" href="tel:+9198183 66550">
+            <div class="phone fixed-section-child"><span class="below-btn">Call Us Now</span></div>
+        </a>
+    </div>
+<footer>
+    &copy; 2026 Uncodemy. All rights reserved. &middot;
+    <a href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">View Full DevOps Course</a>
+  </footer>
+
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

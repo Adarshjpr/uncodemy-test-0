@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production in Machine Learning | Machine Learning Tutorial | Uncodemy</title>
+    <meta name="description" content="How machine learning models are deployed, monitored, and maintained in production systems." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/machine-learning-training-course-in-noida">Machine Learning Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 14 of 17: Production in Machine Learning</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="ml-introduction.html"><span class="num">01</span>What is Machine Learning? An Introduction to Machine Learning</a></li>
+            <li><a href="ml-deep-learning-introduction.html"><span class="num">02</span>What is Deep Learning?: An Introduction to Deep Learning</a></li>
+            <li><a href="ml-cheat-sheet.html"><span class="num">03</span>Machine Learning Cheat Sheet : A Step-by-Step Guide</a></li>
+            <li><a href="ml-data-ingestion.html"><span class="num">04</span>Data Ingestion in Machine Learning</a></li>
+            <li><a href="ml-data-processing.html"><span class="num">05</span>Data Processing in Machine Learning - Data Processing Cycle & Methods</a></li>
+            <li><a href="ml-feature-selection.html"><span class="num">06</span>Feature Selection Techniques in Machine Learning</a></li>
+            <li><a href="ml-supervised-learning.html"><span class="num">07</span>Supervised Learning</a></li>
+            <li><a href="ml-unsupervised-learning.html"><span class="num">08</span>Unsupervised Learning</a></li>
+            <li><a href="ml-reinforcement-learning.html"><span class="num">09</span>Reinforcement Learning</a></li>
+            <li><a href="ml-model-selection.html"><span class="num">10</span>Model Selection for Machine Learning</a></li>
+            <li><a href="ml-model-evaluation.html"><span class="num">11</span>Model Evaluation in Machine Learning</a></li>
+            <li><a href="ml-recommendation-systems.html"><span class="num">12</span>Recommendation Systems in Machine Learning</a></li>
+            <li><a href="ml-ab-testing.html"><span class="num">13</span>A/B Testing for Machine Learning</a></li>
+            <li><a href="ml-production.html" class="active"><span class="num">14</span>Production in Machine Learning</a></li>
+            <li><a href="ml-dotnet.html"><span class="num">15</span>ML.Net – A Machine Learning Framework for .Net Developers</a></li>
+            <li><a href="ml-scope-salary-trends.html"><span class="num">16</span>Machine Learning Scope, Salary, and Future Trends</a></li>
+            <li><a href="ml-engineer-roadmap-2026.html"><span class="num">17</span>Machine Learning Engineer Roadmap 2026</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-server"></i> MLOps</span>
+        <h1>Production in Machine Learning</h1>
+
+        <div class="card">
+
+<p>Getting a machine learning model into <strong>production</strong> — where it actively serves real predictions to real users — introduces a whole new set of engineering challenges beyond model accuracy.</p>
+
+<h2>Deployment Approaches</h2>
+<div class="table-wrap">
+    <table class="data-table">
+        <thead><tr><th>Approach</th><th>Description</th></tr></thead>
+        <tbody>
+            <tr><td>Batch Inference</td><td>Predictions generated periodically for a set of records</td></tr>
+            <tr><td>Real-Time (Online) Inference</td><td>Predictions generated on-demand via an API</td></tr>
+            <tr><td>Edge Deployment</td><td>Model runs directly on a device (phone, IoT sensor)</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Key Production Concerns</h2>
+<ul>
+    <li><strong>Latency:</strong> How quickly the model must respond to a request.</li>
+    <li><strong>Scalability:</strong> Handling variable and growing request volume.</li>
+    <li><strong>Model Versioning:</strong> Tracking which model version is live and enabling rollback.</li>
+    <li><strong>Monitoring:</strong> Watching for performance degradation or data drift over time.</li>
+    <li><strong>Data/Concept Drift:</strong> Real-world data changes over time, which can silently reduce model accuracy.</li>
+</ul>
+
+<h2>MLOps Practices</h2>
+<ul>
+    <li><strong>CI/CD for ML:</strong> Automated testing and deployment pipelines for models.</li>
+    <li><strong>Feature Stores:</strong> Centralized, consistent feature computation for training and serving.</li>
+    <li><strong>Model Registries:</strong> Centralized tracking of model versions and metadata.</li>
+    <li><strong>Automated Retraining:</strong> Scheduled or trigger-based retraining as new data arrives.</li>
+</ul>
+
+<h2>Common Production Tools</h2>
+<ul>
+    <li><strong>Docker &amp; Kubernetes:</strong> Containerizing and orchestrating model services.</li>
+    <li><strong>MLflow:</strong> Experiment tracking and model registry.</li>
+    <li><strong>TensorFlow Serving / TorchServe:</strong> Serving frameworks for deep learning models.</li>
+</ul>
+
+<div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+    <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> A model that never reaches production delivers zero business value — the engineering discipline of shipping and maintaining models is as important as building them.
+</div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="ml-ab-testing.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>A/B Testing for Machine Learning</a>
+            <a href="ml-dotnet.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>ML.Net – A Machine Learning Framework for .Net Developers</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Machine Learning?</h3>
+                <p>Build real-world machine learning skills with hands-on projects, mentor-led sessions, and industry-relevant tools.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/machine-learning-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Machine Learning Training Course</h4>
+            <p class="batch-sub">Kickstart your machine learning journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

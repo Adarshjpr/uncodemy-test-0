@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation Policy - Uncodemy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF5A1F;
+            --secondary-color: #2563EB;
+            --accent-color: #22C55E;
+            --bg-color: #F9FAFB;
+            --text-dark: #1F2937;
+            --border-color: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: white;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 90, 31, 0.1), rgba(37, 99, 235, 0.1));
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background-color: #E64A15;
+            box-shadow: 0 4px 12px rgba(255, 90, 31, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            background-color: #1D4ED8;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .content h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content p {
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        .content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .content strong {
+            color: var(--secondary-color);
+        }
+
+        .contact-section {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .contact-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                max-height: 400px;
+            }
+
+            .nav-menu li {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .content {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .content h2 {
+                font-size: 1.4rem;
+            }
+
+            .content {
+                margin: 1.5rem 0.5rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Uncodemy</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#placement">Placement</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Our Cancellation & Refund Policy</h1>
+        <p>Transparent, fair, and customer-focused policies for your peace of mind</p>
+        <div class="button-group">
+         
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Cancellation Policy</h2>
+        <ul>
+            <li>Once a payment is successfully completed, cancellation of the order is not permitted.</li>
+            <li>Enrolment in any Uncodemy course, program, service, or subscription is considered final and non-cancellable.</li>
+            <li>Access to learning resources, mentorship, software tools, and support services is granted immediately after payment; therefore, cancellations cannot be accommodated.</li>
+        </ul>
+
+        <h2>Refund Policy</h2>
+        <p><strong>No refunds shall be provided for:</strong></p>
+        <ul>
+            <li>Online or offline training programs</li>
+            <li>Digital courses, workshops, or bootcamps</li>
+            <li>Subscription-based services</li>
+            <li>Mentorship, placement assistance, or consulting services</li>
+        </ul>
+
+        <p><strong>Refund requests will only be considered in exceptional cases, such as:</strong></p>
+        <ul>
+            <li>Duplicate payment</li>
+            <li>Technical error resulting in failed service access</li>
+        </ul>
+        <p>Such requests must be raised within 48 hours of the transaction.</p>
+
+        <h2>Refund Processing Timeline</h2>
+        <ul>
+            <li>If a refund is approved after internal verification, it will be processed within 7–10 business working days.</li>
+            <li>The refunded amount will be credited back to the original payment method.</li>
+            <li>Uncodemy is not responsible for delays caused by banks or payment gateways.</li>
+        </ul>
+
+        <h2>EMI Transactions</h2>
+        <p>For payments made using Credit Card EMI (including HDFC Bank EMI):</p>
+        <ul>
+            <li>Once the EMI transaction is completed, cancellation or refund is strictly not allowed.</li>
+            <li>EMI conversion, interest charges, tenure, and billing are governed by the issuing bank's policies.</li>
+            <li>Any disputes related to EMI schedules or charges must be addressed directly with the respective bank.</li>
+        </ul>
+
+        <h2>Payment Gateway Disclaimer</h2>
+        <ul>
+            <li>Uncodemy uses trusted third-party payment gateways such as Razorpay.</li>
+            <li>Uncodemy shall not be held liable for transaction failures, technical errors, or delays caused by payment gateway providers or banking institutions.</li>
+        </ul>
+
+        <h2>Contact Information</h2>
+        <div class="contact-section">
+            <p><strong>Business Name:</strong> Uncodemy Edutech Pvt Ltd.</p>
+            <p><strong>Email:</strong> <a href="mailto:support@uncodemy.com">support@uncodemy.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+917701928515">+91 7701928515</a></p>
+            <p><strong>Website:</strong> <a href="https://www.uncodemy.com" target="_blank">https://www.uncodemy.com</a></p>
+            <p><strong>Registered Address:</strong> B 14-15, Udhyog Marg, Sector 1, Noida, Uttar Pradesh - 201301</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Uncodemy Edutech Pvt Ltd. All rights reserved.</p>
+        <p>For more information, visit <a href="https://www.uncodemy.com">www.uncodemy.com</a></p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

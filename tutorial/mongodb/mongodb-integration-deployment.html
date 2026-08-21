@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integration and Deployment | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Connecting MongoDB with Node.js, Python, and Deploying to Production" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 20 of 20: Integration and Deployment</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html" class="active"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-rocket"></i> Connecting MongoDB with Node.js, Python, and Deploying to Production</span>
+        <h1>Integration and Deployment</h1>
+
+        <div class="card">
+
+            <p>The final step in mastering MongoDB is connecting it to real applications and deploying it reliably to production. This lesson covers driver integration with Node.js and Python, plus production deployment best practices.</p>
+
+            <h2>1. Connecting with Node.js</h2>
+            <pre class="code-block"><code>npm install mongodb</code></pre>
+            <pre class="code-block"><code>const { MongoClient } = require("mongodb");
+
+const uri = "mongodb+srv://user:pass@cluster0.abcde.mongodb.net/myApp";
+const client = new MongoClient(uri);
+
+async function run() {
+  await client.connect();
+  const db = client.db("myApp");
+  const users = db.collection("users");
+
+  const result = await users.insertOne({ name: "Sanya Kapoor", email: "sanya@example.com" });
+  console.log("Inserted document ID:", result.insertedId);
+
+  const found = await users.find({ name: "Sanya Kapoor" }).toArray();
+  console.log(found);
+
+  await client.close();
+}
+
+run().catch(console.error);</code></pre>
+
+            <h2>2. Connecting with Python (PyMongo)</h2>
+            <pre class="code-block"><code>pip install pymongo</code></pre>
+            <pre class="code-block"><code>from pymongo import MongoClient
+
+client = MongoClient("mongodb+srv://user:pass@cluster0.abcde.mongodb.net/myApp")
+db = client["myApp"]
+users = db["users"]
+
+user_id = users.insert_one({"name": "Arjun Nair", "email": "arjun@example.com"}).inserted_id
+print("Inserted document ID:", user_id)
+
+for user in users.find({"name": "Arjun Nair"}):
+    print(user)</code></pre>
+
+            <h2>3. Using an ODM (Mongoose for Node.js)</h2>
+            <pre class="code-block"><code>const mongoose = require("mongoose");
+await mongoose.connect("mongodb+srv://user:pass@cluster0.abcde.mongodb.net/myApp");
+
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true }
+});
+
+const User = mongoose.model("User", userSchema);
+const newUser = await User.create({ name: "Meera Iyer", email: "meera@example.com" });</code></pre>
+
+            <h2>4. Connection Pooling Best Practices</h2>
+            <ul>
+                <li>Create the client <strong>once</strong> and reuse it across requests — never open a new connection per query.</li>
+                <li>Configure <code>maxPoolSize</code> based on expected concurrent load.</li>
+                <li>Always close connections gracefully on application shutdown.</li>
+            </ul>
+
+            <h2>5. Deploying to Production</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Deployment Option</th><th>Best For</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>MongoDB Atlas</strong></td><td>Fully managed, auto-scaling, built-in backups and monitoring</td></tr>
+                        <tr><td><strong>Self-managed on VMs</strong></td><td>Full control, on-premises or hybrid requirements</td></tr>
+                        <tr><td><strong>Kubernetes (MongoDB Operator)</strong></td><td>Containerized environments needing automated orchestration</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Store connection strings and credentials in environment variables or a secrets manager — never hardcode them in source code, especially in version control.
+            </div>
+
+            <h2>6. Production Readiness Checklist</h2>
+            <ul>
+                <li><strong>✅ Use official drivers or well-supported ODMs (Mongoose, Motor)</strong></li>
+                <li><strong>✅ Reuse a single connection pool across your application</strong></li>
+                <li><strong>✅ Store secrets outside of source code</strong></li>
+                <li><strong>✅ Deploy as a replica set with monitoring and alerting enabled</strong></li>
+                <li><strong>✅ Configure automated backups before going live</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Congratulations — you've covered the full MongoDB journey from documents to production deployment. The best next step is to build a real project, applying data modeling, indexing, and aggregation together.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-backup-restore.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Backup and Restore Strategies</a>
+            <span class="disabled"><span class="label">Next <i class="fas fa-arrow-right"></i></span>You've reached the end!</span>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

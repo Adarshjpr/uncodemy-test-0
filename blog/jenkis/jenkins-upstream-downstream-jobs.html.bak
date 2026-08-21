@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linked Jobs: Upstream & Downstream | Jenkins CI/CD Notes | Uncodemy</title>
+<meta name="description" content="Linked Jobs: Upstream & Downstream — Jenkins CI/CD course notes by Uncodemy. Learn DevOps with Jenkins step by step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --orange: #FF5421;
+      --orange-dark: #E64411;
+      --orange-light: #FFF1EC;
+      --dark: #1B1B1F;
+      --gray: #5B5B66;
+      --border: #ECECEF;
+      --bg: #FAFAFB;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+    a { color: inherit; }
+
+    /* Top bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .topbar img {
+      height: 36px;
+      display: block;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: background .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .btn-back:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--gray); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb .sep { color: #C9C9CF; }
+    .breadcrumb .current { color: var(--orange); font-weight: 600; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1.page-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 28px;
+      line-height: 1.25;
+      color: var(--dark);
+    }
+
+    .note-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--orange);
+      border-radius: 14px;
+      padding: 32px clamp(18px, 4vw, 40px);
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .note-card h2 {
+      font-size: 21px;
+      color: var(--dark);
+      margin: 34px 0 12px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+    .note-card h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .note-card h3 {
+      font-size: 16.5px;
+      color: var(--orange-dark);
+      margin: 20px 0 8px;
+    }
+    .note-card p { margin: 10px 0; color: #33333B; font-size: 15.5px; }
+    .note-card ul, .note-card ol { margin: 10px 0; padding-left: 22px; color: #33333B; font-size: 15.5px; }
+    .note-card li { margin: 6px 0; }
+    .note-card strong { color: var(--dark); }
+    .note-card code {
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+    }
+    .note-card pre {
+      background: #14141A;
+      color: #F1F1F4;
+      padding: 16px 18px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 13.5px;
+      margin: 12px 0;
+    }
+    .note-card pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .note-card table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14.5px;
+    }
+    .note-card th, .note-card td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .note-card th { background: var(--orange-light); color: var(--orange-dark); font-family: 'Poppins', sans-serif; font-size: 13.5px; }
+    .note-card .formula {
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+    }
+
+    /* Prev/Next nav */
+    .pagenav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .pagenav a {
+      flex: 1;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      display: block;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .pagenav a:hover { border-color: var(--orange); transform: translateY(-2px); }
+    .pagenav .dir {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--gray);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pagenav .label { font-size: 14.5px; font-weight: 600; color: var(--dark); }
+    .pagenav .next { text-align: right; }
+    .pagenav .disabled { opacity: .35; pointer-events: none; }
+
+    /* CTA */
+    .cta-box {
+      margin-top: 44px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 16px;
+      padding: 34px clamp(20px, 5vw, 44px);
+      color: #fff;
+      text-align: center;
+    }
+    .cta-box h3 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    .cta-box p {
+      margin: 0 0 20px;
+      color: #FFE4DA;
+      font-size: 15px;
+    }
+    .cta-box a {
+      display: inline-block;
+      background: #fff;
+      color: var(--orange-dark);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 9px;
+      font-size: 15px;
+      transition: transform .2s ease;
+    }
+    .cta-box a:hover { transform: translateY(-2px); }
+
+    footer {
+      text-align: center;
+      padding: 26px 20px 40px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+    footer a { color: var(--orange); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .topbar { padding: 12px 16px; }
+      .topbar img { height: 28px; }
+      .btn-back { padding: 8px 14px; font-size: 13px; }
+      h1.page-title { font-size: 25px; }
+      .note-card { padding: 22px 16px; }
+      .pagenav .next { text-align: left; }
+    }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <img src="https://uncodemy.com/img/Logo%20(1).png" alt="Uncodemy Logo">
+    <a class="btn-back" href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">&larr; Back to Course</a>
+  </div>
+
+  <div class="wrap">
+
+    <div class="breadcrumb">
+      <a href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">DevOps Course</a>
+      <span class="sep">&rsaquo;</span>
+      <span>Jenkins CI/CD</span>
+      <span class="sep">&rsaquo;</span>
+      <span class="current">Topic 7 &middot; Job Chaining</span>
+    </div>
+
+    <span class="eyebrow">Jenkins &middot; Topic 7 of 15</span>
+    <h1 class="page-title">Linked Jobs: Upstream & Downstream</h1>
+
+    <div class="note-card">
+      
+        <h2>Accessing a Private Repo</h2>
+        <p>Before chaining jobs, note how to connect a private GitHub repo:</p>
+        <ol>
+            <li>Install Git on the AWS terminal: <code>yum install git -y</code></li>
+            <li>On GitHub: Profile Settings &rarr; Developer settings &rarr; Personal access tokens &rarr; Tokens (classic) &rarr; Generate new token, and select the <code>repo</code> scope.</li>
+            <li>In Jenkins: Credentials &rarr; Add credentials &rarr; select Username &amp; Password &rarr; Username = GitHub username, Password = the generated token &rarr; Description = <code>github-credentials</code> &rarr; Save.</li>
+        </ol>
+
+        <h2>What Are Linked Jobs?</h2>
+        <p>Linked jobs are used when one job needs to trigger another job as part of a larger execution sequence.</p>
+        <ul>
+            <li>An <strong>upstream</strong> job is a configured project that triggers another project as part of its execution.</li>
+            <li>A <strong>downstream</strong> job is a configured project that gets triggered as part of another job's execution.</li>
+        </ul>
+
+        <h2>Example Chain</h2>
+        <p>JOB-1 &rarr; JOB-2 &rarr; JOB-3 &rarr; JOB-4</p>
+        <ul>
+            <li>For Job-1, Job-2 is downstream.</li>
+            <li>For Job-2, upstream is Job-1; downstream is Job-3 &amp; Job-4.</li>
+            <li>For Job-3, upstream is Job-1 &amp; Job-2; downstream is Job-4.</li>
+            <li>For Job-4, all of Job-1, Job-2 &amp; Job-3 are upstream.</li>
+        </ul>
+        <p>Upstream/downstream chaining lets you orchestrate the exact order of execution for different operations.</p>
+
+        <h2>How to Configure</h2>
+        <ol>
+            <li>Create Job-1 and save.</li>
+            <li>Create Job-2 &rarr; Configure &rarr; Build Triggers &rarr; check <strong>"Build after other projects are built"</strong> &rarr; type <code>task-1</code> under "Projects to watch" &rarr; choose the trigger condition (only if stable, even if unstable, even if fails, or always).</li>
+            <li>Repeat similarly for Job-3 and Job-4, watching the correct previous jobs.</li>
+        </ol>
+        <p>Once Job-1 is built successfully, all the linked downstream jobs build automatically in sequence. Opening any job shows its <strong>Upstream Projects</strong> and <strong>Downstream Projects</strong> sections.</p>
+        
+    </div>
+
+    <div class="pagenav">
+      <a class="prev " href="jenkins-build-parameters.html">
+        <div class="dir">&larr; Previous</div>
+        <div class="label">Jenkins Build Parameters</div>
+      </a>
+      <a class="next " href="jenkins-build-pipeline-view.html">
+        <div class="dir">Next &rarr;</div>
+        <div class="label">Build Pipeline View (Freestyle)</div>
+      </a>
+    </div>
+
+    <div class="cta-box">
+      <h3>Master Jenkins & DevOps with Uncodemy</h3>
+      <p>Hands-on live training, real projects, and placement support — become job-ready in DevOps.</p>
+      <a href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">Enroll in DevOps Training &rarr;</a>
+    </div>
+
+  </div>
+
+  <div class="footer-fixed-section">
+        <div class="ask-for-demo fixed-section-child" onclick="showPopUpForm()"><span class="below-btn">Ask For
+                Demo</span></div><a class="contact-thumb" href="https://pages.razorpay.com/fees-uncodemy"
+            target="_blank">
+            <div class="fee-payment fixed-section-child"><span class="below-btn">Fee Payment</span></div>
+        </a><a href="https://api.whatsapp.com/send?phone=918800023723" target="_blank">
+            <div class="whatsapp fixed-section-child"><span class="below-btn">WhatsApp</span></div>
+        </a><a class="ail ail1" href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">
+            <div class="email-section fixed-section-child"><span class="below-btn">Email</span></div>
+        </a><a class="ail" href="tel:+9198183 66550">
+            <div class="phone fixed-section-child"><span class="below-btn">Call Us Now</span></div>
+        </a>
+    </div>
+<footer>
+    &copy; 2026 Uncodemy. All rights reserved. &middot;
+    <a href="https://uncodemy.com/course/devops-training-course-in-noida" target="_blank" rel="noopener">View Full DevOps Course</a>
+  </footer>
+
+</body>
+</html>

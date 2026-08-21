@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication &amp; Authorization in Node.js | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Master authentication and authorization in Node.js — JWT, session-based auth, OAuth 2.0, role-based access control, and production security best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 10 of 12: Authentication &amp; Authorization in Node.js</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html" class="active"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-shield-alt"></i> Security</span>
+        <h1>Authentication &amp; Authorization in Node.js</h1>
+
+        <div class="card">
+
+            <p><strong>Authentication</strong> and <strong>Authorization</strong> are the cornerstones of application security. Authentication verifies <em>who</em> a user is, while authorization determines <em>what</em> they can do. In Node.js applications, implementing these correctly is critical — a single vulnerability can expose your entire system.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Reality:</strong> Authentication and authorization are the most common attack vectors in web applications. Implementing them correctly is not optional — it's a requirement for any production application that handles user data.
+            </div>
+
+            <h2>1. Authentication vs Authorization — The Difference</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>Authentication</th><th>Authorization</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Question</strong></td><td>"Who are you?"</td><td>"What can you do?"</td></tr>
+                        <tr><td><strong>Purpose</strong></td><td>Verify user identity</td><td>Grant or deny access</td></tr>
+                        <tr><td><strong>When</strong></td><td>During login</td><td>After authentication</td></tr>
+                        <tr><td><strong>Methods</strong></td><td>Password, JWT, OAuth, Biometrics</td><td>Roles, Permissions, Policies</td></tr>
+                        <tr><td><strong>Analogy</strong></td><td>Showing your ID at the door</td><td>Getting access to different rooms</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>// Authentication checks who you are
+// Authorization checks what you can do
+
+// ❌ Without authentication — anyone can access
+app.get('/api/admin/users', (req, res) => {
+    // No auth check — UNSAFE!
+});
+
+// ✅ With authentication and authorization
+app.get('/api/admin/users', authenticateUser, authorizeRole('admin'), (req, res) => {
+    // User is authenticated AND has admin role
+});</code></pre>
+
+            <h2>2. Authentication Strategies</h2>
+
+            <h3>2.1 Session-Based Authentication (Traditional)</h3>
+            <p>Uses cookies and server-side sessions. Simple and works well for traditional web applications.</p>
+
+            <h4>Installation</h4>
+            <pre class="code-block"><code>npm install express-session
+npm install connect-mongo  # For MongoDB session store
+npm install bcrypt         # For password hashing
+npm install cookie-parser</code></pre>
+
+            <h4>Session-Based Auth Implementation</h4>
+            <pre class="code-block"><code>const express = require('express');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+app.use(express.json());
+app.use(cookieParser());
+
+// ✅ Session configuration
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'your-secret-key',
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI,
+        ttl: 14 * 24 * 60 * 60 // 14 days
+    }),
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,      // ✅ Can't be accessed by JavaScript
+        secure: process.env.NODE_ENV === 'production', // ✅ HTTPS only
+        sameSite: 'lax',      // ✅ CSRF protection
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    }
+}));
+
+// ✅ Register user
+app.post('/api/auth/register', async (req, res) => {
+    try {
+        const { email, password, name } = req.body;
+
+        // Check if user exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ error: 'Email already registered' });
+        }
+
+        // Hash password
+        const saltRounds = 12;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        // Create user
+        const user = new User({
+            email,
+            password: hashedPassword,
+            name,
+            role: 'user'
+        });
+        await user.save();
+
+        // Create session
+        req.session.userId = user._id;
+        req.session.user = {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+            role: user.role
+        };
+
+        res.status(201).json({
+            message: 'Registration successful',
+            user: req.session.user
+        });
+    } catch (err) {
+        console.error('Registration error:', err);
+        res.status(500).json({ error: 'Registration failed' });
+    }
+});
+
+// ✅ Login
+app.post('/api/auth/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        // Find user
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        // Verify password
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        // Create session
+        req.session.userId = user._id;
+        req.session.user = {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+            role: user.role
+        };
+
+        res.json({
+            message: 'Login successful',
+            user: req.session.user
+        });
+    } catch (err) {
+        console.error('Login error:', err);
+        res.status(500).json({ error: 'Login failed' });
+    }
+});
+
+// ✅ Logout
+app.post('/api/auth/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).json({ error: 'Logout failed' });
+        }
+        res.clearCookie('connect.sid');
+        res.json({ message: 'Logged out successfully' });
+    });
+});
+
+// ✅ Authentication middleware
+const authenticateUser = (req, res, next) => {
+    if (!req.session || !req.session.userId) {
+        return res.status(401).json({ error: 'Authentication required' });
+    }
+    next();
+};
+
+// ✅ Protected route
+app.get('/api/profile', authenticateUser, (req, res) => {
+    res.json({ user: req.session.user });
+});</code></pre>
+
+            <h3>2.2 JWT (JSON Web Token) Authentication — Modern API Standard</h3>
+            <p>Stateless authentication suitable for APIs, mobile apps, and microservices.</p>
+
+            <h4>Installation</h4>
+            <pre class="code-block"><code>npm install jsonwebtoken
+npm install bcrypt
+npm install dotenv</code></pre>
+
+            <h4>JWT Implementation</h4>
+            <pre class="code-block"><code>const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const { v4: uuidv4 } = require('uuid');
+
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+const JWT_EXPIRY = process.env.JWT_EXPIRY || '7d';
+const REFRESH_TOKEN_EXPIRY = process.env.REFRESH_TOKEN_EXPIRY || '30d';
+
+// ✅ Generate JWT tokens
+function generateTokens(user) {
+    const accessToken = jwt.sign(
+        { userId: user._id, email: user.email, role: user.role },
+        JWT_SECRET,
+        { expiresIn: JWT_EXPIRY }
+    );
+
+    const refreshToken = jwt.sign(
+        { userId: user._id },
+        JWT_SECRET,
+        { expiresIn: REFRESH_TOKEN_EXPIRY }
+    );
+
+    return { accessToken, refreshToken };
+}
+
+// ✅ Register
+app.post('/api/auth/register', async (req, res) => {
+    try {
+        const { email, password, name } = req.body;
+
+        // Validate input
+        if (!email || !password || !name) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
+
+        // Check if user exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(409).json({ error: 'Email already registered' });
+        }
+
+        // Hash password
+        const saltRounds = 12;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        // Create user
+        const user = new User({
+            email,
+            password: hashedPassword,
+            name,
+            role: 'user'
+        });
+        await user.save();
+
+        // Generate tokens
+        const { accessToken, refreshToken } = generateTokens(user);
+
+        // Save refresh token (optional)
+        user.refreshToken = refreshToken;
+        await user.save();
+
+        res.status(201).json({
+            message: 'Registration successful',
+            user: { id: user._id, email: user.email, name: user.name, role: user.role },
+            accessToken,
+            refreshToken
+        });
+    } catch (err) {
+        console.error('Registration error:', err);
+        res.status(500).json({ error: 'Registration failed' });
+    }
+});
+
+// ✅ Login — JWT
+app.post('/api/auth/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        // Find user
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        // Verify password
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        // Generate tokens
+        const { accessToken, refreshToken } = generateTokens(user);
+
+        // Save refresh token
+        user.refreshToken = refreshToken;
+        await user.save();
+
+        res.json({
+            message: 'Login successful',
+            user: { id: user._id, email: user.email, name: user.name, role: user.role },
+            accessToken,
+            refreshToken
+        });
+    } catch (err) {
+        console.error('Login error:', err);
+        res.status(500).json({ error: 'Login failed' });
+    }
+});
+
+// ✅ Refresh token
+app.post('/api/auth/refresh', async (req, res) => {
+    try {
+        const { refreshToken } = req.body;
+
+        if (!refreshToken) {
+            return res.status(400).json({ error: 'Refresh token required' });
+        }
+
+        // Verify refresh token
+        const decoded = jwt.verify(refreshToken, JWT_SECRET);
+        const user = await User.findById(decoded.userId);
+
+        if (!user || user.refreshToken !== refreshToken) {
+            return res.status(401).json({ error: 'Invalid refresh token' });
+        }
+
+        // Generate new tokens
+        const tokens = generateTokens(user);
+
+        // Update refresh token
+        user.refreshToken = tokens.refreshToken;
+        await user.save();
+
+        res.json(tokens);
+    } catch (err) {
+        console.error('Refresh error:', err);
+        res.status(401).json({ error: 'Invalid refresh token' });
+    }
+});
+
+// ✅ Logout
+app.post('/api/auth/logout', async (req, res) => {
+    try {
+        const token = req.headers.authorization?.split(' ')[1];
+        if (token) {
+            // Invalidate refresh token
+            const decoded = jwt.verify(token, JWT_SECRET);
+            const user = await User.findById(decoded.userId);
+            if (user) {
+                user.refreshToken = null;
+                await user.save();
+            }
+        }
+        res.json({ message: 'Logged out successfully' });
+    } catch (err) {
+        res.json({ message: 'Logged out successfully' });
+    }
+});
+
+// ✅ JWT Authentication Middleware
+const authenticateJWT = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ error: 'Authentication required' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, JWT_SECRET);
+        req.user = decoded;
+        next();
+    } catch (err) {
+        if (err.name === 'TokenExpiredError') {
+            return res.status(401).json({ error: 'Token expired' });
+        }
+        return res.status(401).json({ error: 'Invalid token' });
+    }
+};
+
+// ✅ Protected route with JWT
+app.get('/api/profile', authenticateJWT, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.userId).select('-password -refreshToken');
+        res.json({ user });
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch profile' });
+    }
+});</code></pre>
+
+            <h3>2.3 OAuth 2.0 / Social Login (Google, GitHub, Facebook)</h3>
+            <p>Allows users to authenticate using their existing accounts from third-party providers.</p>
+
+            <h4>Installation (Passport.js)</h4>
+            <pre class="code-block"><code>npm install passport
+npm install passport-google-oauth20
+npm install passport-github
+npm install express-session</code></pre>
+
+            <h4>OAuth Implementation with Passport.js</h4>
+            <pre class="code-block"><code>const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const GitHubStrategy = require('passport-github').Strategy;
+
+// ✅ Google OAuth Strategy
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: '/api/auth/google/callback'
+}, async (accessToken, refreshToken, profile, done) => {
+    try {
+        // Find or create user
+        let user = await User.findOne({ googleId: profile.id });
+        if (!user) {
+            user = await User.findOne({ email: profile.emails[0].value });
+            if (user) {
+                user.googleId = profile.id;
+                await user.save();
+            } else {
+                user = new User({
+                    googleId: profile.id,
+                    email: profile.emails[0].value,
+                    name: profile.displayName,
+                    avatar: profile.photos[0]?.value,
+                    role: 'user',
+                    isVerified: true
+                });
+                await user.save();
+            }
+        }
+        return done(null, user);
+    } catch (err) {
+        return done(err, null);
+    }
+}));
+
+// ✅ Routes for Google OAuth
+app.get('/api/auth/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+app.get('/api/auth/google/callback',
+    passport.authenticate('google', { session: true, failureRedirect: '/login' }),
+    (req, res) => {
+        // Generate JWT or start session
+        const token = jwt.sign(
+            { userId: req.user._id, email: req.user.email, role: req.user.role },
+            JWT_SECRET,
+            { expiresIn: '7d' }
+        );
+        res.redirect(`${process.env.FRONTEND_URL}/auth/callback?token=${token}`);
+    }
+);</code></pre>
+
+            <h2>3. Authorization — Role-Based Access Control (RBAC)</h2>
+
+            <p>RBAC restricts system access based on user roles and permissions.</p>
+
+            <h3>Role & Permission Models</h3>
+            <pre class="code-block"><code>// models/Role.js
+const mongoose = require('mongoose');
+
+const roleSchema = new mongoose.Schema({
+    name: { type: String, required: true, unique: true },
+    permissions: [{ type: String }],
+    createdAt: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('Role', roleSchema);
+
+// models/User.js — Add role field
+const userSchema = new mongoose.Schema({
+    // ... other fields
+    role: {
+        type: String,
+        enum: ['user', 'moderator', 'admin', 'superadmin'],
+        default: 'user'
+    },
+    permissions: [{ type: String }] // For granular permissions
+});</code></pre>
+
+            <h3>Authorization Middleware</h3>
+            <pre class="code-block"><code>// middleware/authorization.js
+
+// ✅ Check if user has a specific role
+const authorizeRole = (...allowedRoles) => {
+    return (req, res, next) => {
+        if (!req.user) {
+            return res.status(401).json({ error: 'Authentication required' });
+        }
+
+        // For JWT: req.user is from token
+        // For Session: req.user from session
+        const userRole = req.user.role || req.session?.user?.role;
+
+        if (!userRole || !allowedRoles.includes(userRole)) {
+            return res.status(403).json({ error: 'Insufficient permissions' });
+        }
+        next();
+    };
+};
+
+// ✅ Check if user has specific permissions (granular)
+const authorizePermission = (requiredPermission) => {
+    return (req, res, next) => {
+        if (!req.user) {
+            return res.status(401).json({ error: 'Authentication required' });
+        }
+
+        const userPermissions = req.user.permissions || req.session?.user?.permissions || [];
+
+        if (!userPermissions.includes(requiredPermission)) {
+            return res.status(403).json({ error: 'Insufficient permissions' });
+        }
+        next();
+    };
+};
+
+// ✅ Check if user owns a resource (resource-based authorization)
+const authorizeResourceOwner = (getResourceId, getUserId) => {
+    return async (req, res, next) => {
+        try {
+            const resourceId = getResourceId(req);
+            const userId = getUserId(req);
+
+            // This example uses JWT, adapt for session
+            const resource = await Resource.findById(resourceId);
+            if (!resource) {
+                return res.status(404).json({ error: 'Resource not found' });
+            }
+
+            if (resource.userId.toString() !== userId.toString()) {
+                return res.status(403).json({ error: 'You can only access your own resources' });
+            }
+            next();
+        } catch (err) {
+            next(err);
+        }
+    };
+};
+
+// ✅ Combine authentication + role authorization
+const authAndRole = (allowedRoles) => {
+    return [authenticateJWT, authorizeRole(...allowedRoles)];
+};
+
+module.exports = {
+    authorizeRole,
+    authorizePermission,
+    authorizeResourceOwner,
+    authAndRole
+};</code></pre>
+
+            <h3>Protected Routes with Authorization</h3>
+            <pre class="code-block"><code>const { authenticateJWT } = require('../middleware/auth');
+const { authorizeRole, authorizePermission } = require('../middleware/authorization');
+
+// ✅ Only admins can access
+app.get('/api/admin/users',
+    authenticateJWT,
+    authorizeRole('admin', 'superadmin'),
+    async (req, res) => {
+        const users = await User.find().select('-password -refreshToken');
+        res.json(users);
+    }
+);
+
+// ✅ Only superadmins can delete users
+app.delete('/api/admin/users/:id',
+    authenticateJWT,
+    authorizeRole('superadmin'),
+    async (req, res) => {
+        const user = await User.findByIdAndDelete(req.params.id);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.status(204).send();
+    }
+);
+
+// ✅ Granular permission check
+app.post('/api/posts',
+    authenticateJWT,
+    authorizePermission('create:posts'),
+    async (req, res) => {
+        // Create post
+    }
+);
+
+// ✅ Resource ownership check
+app.put('/api/posts/:id',
+    authenticateJWT,
+    authorizeResourceOwner(
+        (req) => req.params.id,
+        (req) => req.user.userId
+    ),
+    async (req, res) => {
+        // Update post (user owns it)
+    }
+);</code></pre>
+
+            <h2>4. Security Best Practices — Production Checklist</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> These security practices are critical for production.</strong>
+            </div>
+
+            <h3>Password Security</h3>
+            <ul>
+                <li><strong>✅ Use bcrypt with salt rounds ≥ 12</strong> — <code>bcrypt.hash(password, 12)</code></li>
+                <li><strong>✅ Never store plaintext passwords</strong> — Always hash before saving.</li>
+                <li><strong>✅ Require strong passwords</strong> — Minimum 8 characters, mix of cases, numbers, symbols.</li>
+                <li><strong>✅ Implement rate limiting</strong> — Prevent brute force attacks.</li>
+                <li><strong>✅ Use account lockout</strong> — Lock account after multiple failed attempts.</li>
+            </ul>
+
+            <h3>JWT Security</h3>
+            <ul>
+                <li><strong>✅ Use strong secrets</strong> — 256-bit+ secrets from environment variables.</li>
+                <li><strong>✅ Set short expiration times</strong> — 15 minutes for access tokens, 7 days for refresh tokens.</li>
+                <li><strong>✅ Store tokens securely</strong> — Use HTTP-only cookies or secure storage.</li>
+                <li><strong>✅ Implement token rotation</strong> — Issue new refresh tokens on each refresh.</li>
+                <li><strong>✅ Blacklist tokens</strong> — Maintain a token blacklist for logout/revocation.</li>
+            </ul>
+
+            <h3>Session Security</h3>
+            <ul>
+                <li><strong>✅ Use secure cookies</strong> — <code>{ httpOnly: true, secure: true, sameSite: 'lax' }</code></li>
+                <li><strong>✅ Use a session store</strong> — Redis or MongoDB for persistent sessions.</li>
+                <li><strong>✅ Set session expiration</strong> — Automatically expire inactive sessions.</li>
+                <li><strong>✅ Regenerate session ID on login</strong> — Prevent session fixation attacks.</li>
+            </ul>
+
+            <h3>General Security</h3>
+            <ul>
+                <li><strong>✅ Use Helmet.js</strong> — <code>app.use(helmet())</code> for security headers.</li>
+                <li><strong>✅ Enable CORS properly</strong> — Only allow trusted origins.</li>
+                <li><strong>✅ Use HTTPS in production</strong> — Always use TLS/SSL.</li>
+                <li><strong>✅ Validate all input</strong> — Use express-validator or Joi.</li>
+                <li><strong>✅ Sanitize output</strong> — Prevent XSS attacks.</li>
+                <li><strong>✅ Implement rate limiting</strong> — <code>express-rate-limit</code>.</li>
+                <li><strong>✅ Keep dependencies updated</strong> — Run <code>npm audit</code> regularly.</li>
+                <li><strong>✅ Use environment variables</strong> — Never hardcode secrets.</li>
+            </ul>
+
+            <h2>5. Common Security Pitfalls &amp; Solutions</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 1: Storing JWT in localStorage</strong></p>
+                <p><strong>Problem:</strong> Vulnerable to XSS attacks.</p>
+                <p><strong>Solution:</strong> Use HTTP-only cookies instead.</p>
+                <pre class="code-block"><code>// ✅ HTTP-only cookie for JWT
+res.cookie('accessToken', token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'lax',
+    maxAge: 15 * 60 * 1000 // 15 minutes
+});</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 2: Not implementing rate limiting</strong></p>
+                <p><strong>Problem:</strong> Brute force attacks on login endpoints.</p>
+                <p><strong>Solution:</strong> Use express-rate-limit.</p>
+                <pre class="code-block"><code>const rateLimit = require('express-rate-limit');
+
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // 5 attempts per window
+    message: 'Too many login attempts. Please try again later.'
+});
+
+app.post('/api/auth/login', loginLimiter, handleLogin);</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 3: Returning too much information in errors</strong></p>
+                <p><strong>Problem:</strong> Exposes internal details to attackers.</p>
+                <p><strong>Solution:</strong> Only return generic error messages.</p>
+                <pre class="code-block"><code>// ❌ Bad — exposes internal info
+res.status(401).json({ error: 'User with email john@example.com not found' });
+
+// ✅ Good — generic message
+res.status(401).json({ error: 'Invalid credentials' });</code></pre>
+            </div>
+
+            <h2>6. Authentication Comparison — Choosing the Right Method</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Factor</th><th>Session-Based</th><th>JWT</th><th>OAuth 2.0</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>State</strong></td><td>Stateful (server stores session)</td><td>Stateless</td><td>Stateful</td></tr>
+                        <tr><td><strong>Scalability</strong></td><td>Requires shared session store</td><td>Highly scalable</td><td>Requires token management</td></tr>
+                        <tr><td><strong>Mobile Apps</strong></td><td>Works with cookies</td><td>✅ Best for mobile</td><td>✅ Excellent</td></tr>
+                        <tr><td><strong>Microservices</strong></td><td>❌ Complex</td><td>✅ Ideal</td><td>✅ Good</td></tr>
+                        <tr><td><strong>Logout</strong></td><td>✅ Immediate</td><td>❌ Requires blacklist</td><td>✅ With revocation</td></tr>
+                        <tr><td><strong>Implementation</strong></td><td>Simple</td><td>Moderate</td><td>Complex</td></tr>
+                        <tr><td><strong>Use Case</strong></td><td>Traditional web apps</td><td>APIs, SPAs, mobile</td><td>Social login, SSO</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>7. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use bcrypt</strong> — For password hashing with salt rounds ≥ 12.</li>
+                <li><strong>✅ Implement JWT</strong> — With short-lived access tokens and refresh tokens.</li>
+                <li><strong>✅ Use HTTP-only cookies</strong> — For JWT storage (instead of localStorage).</li>
+                <li><strong>✅ Implement RBAC</strong> — Role-based access control.</li>
+                <li><strong>✅ Add rate limiting</strong> — Protect login and registration endpoints.</li>
+                <li><strong>✅ Use Helmet.js</strong> — Security headers.</li>
+                <li><strong>✅ Validate input</strong> — Use express-validator.</li>
+                <li><strong>✅ Sanitize output</strong> — Prevent XSS.</li>
+                <li><strong>✅ Enable HTTPS</strong> — Always in production.</li>
+                <li><strong>✅ Use environment variables</strong> — For all secrets.</li>
+                <li><strong>✅ Implement token rotation</strong> — For refresh tokens.</li>
+                <li><strong>✅ Add session expiration</strong> — Auto-logout inactive users.</li>
+                <li><strong>✅ Log security events</strong> — Failed logins, permission denials.</li>
+                <li><strong>✅ Run security audits</strong> — <code>npm audit</code> regularly.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> Security is not a feature — it's a mindset. Implement authentication and authorization from day one, not as an afterthought. A security breach can destroy trust, reputation, and your business. The time invested in proper security practices is the best investment you can make in your application.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-express-routing.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Exploring ExpressJS Routing</a>
+            <a href="nodejs-real-time-application.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>A Guide to Build Real-Time Application Using Node.js</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

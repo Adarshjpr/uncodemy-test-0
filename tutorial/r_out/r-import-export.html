@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Importing and Exporting Data | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="CSV, Excel, Databases, and APIs" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 7 of 20: Importing and Exporting Data</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html" class="active"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-file-import"></i> Data I/O</span>
+        <h1>Importing and Exporting Data</h1>
+
+        <div class="card">
+
+            <p>Analysis starts with getting data <em>into</em> R and ends with getting results <em>out</em>. This lesson covers the most common formats: CSV, Excel, databases, and web APIs.</p>
+
+            <h2>1. Reading and Writing CSV Files</h2>
+            <p>Base R provides <code>read.csv()</code>, but the <code>readr</code> package (part of tidyverse) is faster and more consistent:</p>
+                        <pre class="code-block"><code># Base R
+df &lt;- read.csv(&quot;data/sales.csv&quot;)
+write.csv(df, &quot;data/output.csv&quot;, row.names = FALSE)
+
+# readr (tidyverse) — recommended
+library(readr)
+df &lt;- read_csv(&quot;data/sales.csv&quot;)
+write_csv(df, &quot;data/output.csv&quot;)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> read_csv() from readr is faster, guesses column types more reliably, and never silently converts strings to factors — prefer it over base R's read.csv().
+            </div>
+
+            <h2>2. Working with Excel Files</h2>
+            <p>Use the <code>readxl</code> package to import <code>.xlsx</code>/<code>.xls</code> files, and <code>writexl</code> or <code>openxlsx</code> to export:</p>
+                        <pre class="code-block"><code>install.packages(c(&quot;readxl&quot;, &quot;writexl&quot;))
+library(readxl)
+library(writexl)
+
+df &lt;- read_excel(&quot;data/report.xlsx&quot;, sheet = &quot;Sheet1&quot;)
+excel_sheets(&quot;data/report.xlsx&quot;)   # list all sheet names
+
+write_xlsx(df, &quot;data/output.xlsx&quot;)</code></pre>
+
+            <h2>3. Connecting to Databases</h2>
+            <p>R connects to relational databases using the <code>DBI</code> package with a database-specific driver (e.g., <code>RSQLite</code>, <code>RPostgres</code>, <code>RMySQL</code>).</p>
+                        <pre class="code-block"><code>install.packages(c(&quot;DBI&quot;, &quot;RSQLite&quot;))
+library(DBI)
+
+con &lt;- dbConnect(RSQLite::SQLite(), &quot;data/mydb.sqlite&quot;)
+dbListTables(con)
+
+result &lt;- dbGetQuery(con, &quot;SELECT * FROM customers WHERE age &gt; 30&quot;)
+
+dbDisconnect(con)</code></pre>
+            <p>For PostgreSQL or MySQL, the pattern is nearly identical — swap the driver:</p>
+                        <pre class="code-block"><code>con &lt;- dbConnect(RPostgres::Postgres(),
+                  dbname = &quot;mydb&quot;, host = &quot;localhost&quot;,
+                  port = 5432, user = &quot;admin&quot;, password = &quot;secret&quot;)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issues:</strong> Never hardcode database passwords in scripts. Use environment variables or the keyring package, especially in shared or version-controlled projects.
+            </div>
+
+            <h2>4. Pulling Data from APIs</h2>
+            <p>The <code>httr2</code> (or older <code>httr</code>) package handles HTTP requests, and <code>jsonlite</code> parses JSON responses.</p>
+                        <pre class="code-block"><code>install.packages(c(&quot;httr2&quot;, &quot;jsonlite&quot;))
+library(httr2)
+library(jsonlite)
+
+resp &lt;- request(&quot;https://api.example.com/users&quot;) |&gt;
+  req_headers(Authorization = &quot;Bearer YOUR_TOKEN&quot;) |&gt;
+  req_perform()
+
+data &lt;- resp |&gt; resp_body_json(simplifyVector = TRUE)
+head(data)</code></pre>
+
+            <h2>5. Comparing Import Methods</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Source</th><th>Package</th><th>Key Function</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CSV</td><td>readr</td><td>read_csv() / write_csv()</td></tr>
+                        <tr><td>Excel</td><td>readxl / writexl</td><td>read_excel() / write_xlsx()</td></tr>
+                        <tr><td>SQL Database</td><td>DBI + driver</td><td>dbConnect() / dbGetQuery()</td></tr>
+                        <tr><td>Web API (JSON)</td><td>httr2 + jsonlite</td><td>req_perform() / resp_body_json()</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Use readr for CSVs</strong> — faster and more predictable than base R.</li>
+                <li><strong>✅ Use readxl/writexl for Excel</strong> — no need for Excel to be installed.</li>
+                <li><strong>✅ Use DBI + driver packages for databases</strong> — always close connections with dbDisconnect().</li>
+                <li><strong>✅ Secure API credentials</strong> — never commit tokens or passwords to source control.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Always inspect imported data immediately with str(), head(), and summary() — catching type or encoding issues early saves hours of debugging downstream.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-dataframes-lists.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Advanced Structures — Data Frames and Lists</a>
+            <a href="r-dplyr.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Data Transformation with dplyr</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

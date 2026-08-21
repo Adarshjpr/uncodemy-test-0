@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQLite Database — Persistent Data Storage | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Master SQLite database in Android — Room ORM, CRUD operations, migrations, entity relationships, and production best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 8 of 12: SQLite Database — Persistent Data Storage</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html" class="active"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-database"></i> Data Storage</span>
+        <h1>SQLite Database — Persistent Data Storage</h1>
+
+        <div class="card">
+
+            <p>For storing structured, relational data in your Android app, <strong>SQLite</strong> is the built-in, lightweight relational database engine. It's perfect for offline apps, caching, and managing complex data relationships. While you can work with SQLite directly, modern Android development uses <strong>Room</strong> — an abstraction layer that simplifies database operations and provides compile-time verification of SQL queries.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> SQLite/Room is the most common way to persist structured data in Android. It's used in apps like messaging (storing messages), note-taking, and any offline-first application. Mastering Room is essential for building feature-rich, offline-capable apps.
+            </div>
+
+            <h2>1. What is SQLite?</h2>
+
+            <p><strong>SQLite</strong> is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured SQL database engine. It's embedded into Android and requires no setup or administration.</p>
+
+            <ul>
+                <li><strong>Serverless:</strong> No separate server process — everything runs in the app process.</li>
+                <li><strong>Zero-configuration:</strong> No installation or configuration needed.</li>
+                <li><strong>Transactional:</strong> Supports ACID transactions.</li>
+                <li><strong>Lightweight:</strong> The entire database engine is ~600KB.</li>
+                <li><strong>Reliable:</strong> Used in millions of apps worldwide.</li>
+            </ul>
+
+            <h2>2. Why Room over Raw SQLite?</h2>
+
+            <p><strong>Room</strong> is a persistence library that provides an abstraction layer over SQLite. Google recommends Room for all new projects because it offers:</p>
+
+            <ul>
+                <li><strong>Compile-time SQL validation</strong> — Catches SQL errors at compile time.</li>
+                <li><strong>Automatic type conversion</strong> — Maps SQL types to Java/Kotlin objects.</li>
+                <li><strong>LiveData &amp; Flow support</strong> — Observes database changes automatically.</li>
+                <li><strong>Migration support</strong> — Handles database schema changes.</li>
+                <li><strong>No boilerplate</strong> — Less code compared to raw SQLite.</li>
+            </ul>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>🔥 Raw SQLite vs Room:</strong></p>
+                <ul style="margin-top: 8px;">
+                    <li><strong>Raw SQLite:</strong> Write raw SQL, manage cursors, close connections, handle errors manually — more code, error-prone.</li>
+                    <li><strong>Room:</strong> Annotate your entities and DAOs, and Room generates the implementation — less code, compile-time safety.</li>
+                </ul>
+            </div>
+
+            <h2>3. Setting Up Room</h2>
+
+            <h3>Step 1: Add Dependencies</h3>
+            <p>Add the following to your <code>build.gradle</code> (Module) file:</p>
+            <pre class="code-block"><code>dependencies {
+    // Room components
+    implementation 'androidx.room:room-runtime:2.6.1'
+    kapt 'androidx.room:room-compiler:2.6.1'
+    
+    // Kotlin Extensions and Coroutines support for Room
+    implementation 'androidx.room:room-ktx:2.6.1'
+    
+    // Optional — Test helpers
+    testImplementation 'androidx.room:room-testing:2.6.1'
+}
+
+// Apply Kotlin kapt plugin
+plugins {
+    id 'kotlin-kapt'
+}</code></pre>
+
+            <h2>4. Room Components — The Three Main Parts</h2>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Room Architecture</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │                      Database                             │<br />
+                    │           (Main access point — holds the DB)              │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                    ┌────────────────┴────────────────┐<br />
+                    │                                 │<br />
+                    ▼                                 ▼<br />
+            ┌──────────────────────┐          ┌──────────────────────┐<br />
+            │      Entity          │          │      DAO             │<br />
+            │  (Data model /       │          │ (Data Access Object) │<br />
+            │   Table definition)  │          │  — SQL queries       │<br />
+            └──────────────────────┘          └──────────────────────┘
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Responsibility</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Entity</strong></td><td>Defines a table and its columns (data class with @Entity)</td></tr>
+                        <tr><td><strong>DAO (Data Access Object)</strong></td><td>Defines methods for accessing the database (CRUD operations)</td></tr>
+                        <tr><td><strong>Database</strong></td><td>Holds the database and serves as the main access point</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. Step-by-Step Room Implementation</h2>
+
+            <h3>Step 1: Create the Entity</h3>
+            <pre class="code-block"><code>// User.kt — Entity class
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "users")
+data class User(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val name: String,
+    val email: String,
+    val age: Int,
+    val isActive: Boolean = true,
+    val createdAt: Long = System.currentTimeMillis()
+)</code></pre>
+
+            <h3>Step 2: Create the DAO</h3>
+            <pre class="code-block"><code>// UserDao.kt — Data Access Object
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface UserDao {
+    
+    // Insert
+    @Insert
+    suspend fun insertUser(user: User): Long
+    
+    @Insert
+    suspend fun insertUsers(users: List&lt;User&gt;)
+    
+    // Update
+    @Update
+    suspend fun updateUser(user: User)
+    
+    // Delete
+    @Delete
+    suspend fun deleteUser(user: User)
+    
+    // Query — Get all users
+    @Query("SELECT * FROM users ORDER BY name ASC")
+    fun getAllUsers(): Flow&lt;List&lt;User&gt;&gt;  // Flow for observing changes
+    
+    // Query — Get user by ID
+    @Query("SELECT * FROM users WHERE id = :userId")
+    suspend fun getUserById(userId: Long): User?
+    
+    // Query — Get users by name (search)
+    @Query("SELECT * FROM users WHERE name LIKE '%' || :query || '%'")
+    suspend fun searchUsers(query: String): List&lt;User&gt;
+    
+    // Query — Count users
+    @Query("SELECT COUNT(*) FROM users")
+    suspend fun getUserCount(): Int
+    
+    // Query — Delete all
+    @Query("DELETE FROM users")
+    suspend fun deleteAllUsers()
+}</code></pre>
+
+            <h3>Step 3: Create the Database</h3>
+            <pre class="code-block"><code>// AppDatabase.kt
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import android.content.Context
+
+@Database(entities = [User::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    
+    abstract fun userDao(): UserDao
+    
+    companion object {
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
+        
+        fun getInstance(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "app_database"
+                )
+                .fallbackToDestructiveMigration() // For development only!
+                .build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}</code></pre>
+
+            <h3>Step 4: Using Room in Your Activity/ViewModel</h3>
+            <pre class="code-block"><code>// MainActivity.kt — Using Room
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var userDao: UserDao
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Get database instance
+        val database = AppDatabase.getInstance(this)
+        userDao = database.userDao()
+
+        // Perform operations in background thread
+        CoroutineScope(Dispatchers.IO).launch {
+            // Insert a user
+            val user = User(name = "John Doe", email = "john@example.com", age = 30)
+            val userId = userDao.insertUser(user)
+            Log.d("MainActivity", "User inserted with ID: $userId")
+
+            // Get all users
+            val users = userDao.getAllUsers()
+            users.collect { userList ->
+                // Update UI with user list (on main thread)
+                withContext(Dispatchers.Main) {
+                    // Update RecyclerView adapter
+                    adapter.submitList(userList)
+                }
+            }
+
+            // Search users
+            val searchResults = userDao.searchUsers("John")
+            withContext(Dispatchers.Main) {
+                // Update UI with search results
+            }
+
+            // Update a user
+            user.name = "Johnathan Doe"
+            userDao.updateUser(user)
+
+            // Delete a user
+            userDao.deleteUser(user)
+
+            // Delete all
+            userDao.deleteAllUsers()
+        }
+    }
+}</code></pre>
+
+            <h2>6. Entity Relationships — One-to-Many, Many-to-Many</h2>
+
+            <h3>One-to-Many Relationship</h3>
+            <pre class="code-block"><code>// Post.kt — Many posts belong to one user
+@Entity(tableName = "posts")
+data class Post(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val userId: Long,  // Foreign key to User
+    val title: String,
+    val content: String,
+    val createdAt: Long = System.currentTimeMillis()
+)
+
+// UserWithPosts.kt — POJO for relationship
+data class UserWithPosts(
+    @Embedded val user: User,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "userId"
+    )
+    val posts: List&lt;Post&gt;
+)
+
+// DAO method for one-to-many
+@Transaction
+@Query("SELECT * FROM users WHERE id = :userId")
+suspend fun getUserWithPosts(userId: Long): UserWithPosts?</code></pre>
+
+            <h3>Many-to-Many Relationship</h3>
+            <pre class="code-block"><code>// Student.kt
+@Entity(tableName = "students")
+data class Student(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val name: String
+)
+
+// Course.kt
+@Entity(tableName = "courses")
+data class Course(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val title: String
+)
+
+// StudentCourseCrossRef.kt — Junction table
+@Entity(tableName = "student_course_cross_ref")
+data class StudentCourseCrossRef(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val studentId: Long,
+    val courseId: Long
+)
+
+// StudentWithCourses.kt
+data class StudentWithCourses(
+    @Embedded val student: Student,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "id",
+        associateBy = Junction(
+            value = StudentCourseCrossRef::class,
+            parentColumn = "studentId",
+            entityColumn = "courseId"
+        )
+    )
+    val courses: List&lt;Course&gt;
+)</code></pre>
+
+            <h2>7. Database Migrations</h2>
+
+            <p>When you change the database schema (add a column, rename a table, etc.), you need to migrate the existing database to the new version.</p>
+
+            <pre class="code-block"><code>// Migration from version 1 to 2 (add column)
+val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("ALTER TABLE users ADD COLUMN phone TEXT")
+    }
+}
+
+// Migration from version 2 to 3 (rename column)
+val MIGRATION_2_3 = object : Migration(2, 3) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("ALTER TABLE users RENAME COLUMN phone TO phone_number")
+    }
+}
+
+// Update database builder
+Room.databaseBuilder(context, AppDatabase::class.java, "app_database")
+    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+    .build()</code></pre>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Never use <code>fallbackToDestructiveMigration()</code> in production — it deletes all data. Always write proper migrations for production apps. Test migrations thoroughly before deploying.
+            </div>
+
+            <h2>8. Type Converters</h2>
+
+            <p>Room doesn't support complex data types by default. Use <strong>TypeConverters</strong> to store objects like Date, List, or custom classes.</p>
+
+            <pre class="code-block"><code>// Converters.kt
+import androidx.room.TypeConverter
+import java.util.Date
+
+class Converters {
+    @TypeConverter
+    fun fromTimestamp(value: Long?): Date? {
+        return value?.let { Date(it) }
+    }
+
+    @TypeConverter
+    fun dateToTimestamp(date: Date?): Long? {
+        return date?.time
+    }
+
+    // Convert List&lt;String&gt; to JSON string
+    @TypeConverter
+    fun fromStringList(value: List&lt;String&gt;): String {
+        return value.joinToString(",")
+    }
+
+    @TypeConverter
+    fun toStringList(value: String): List&lt;String&gt; {
+        return if (value.isEmpty()) emptyList() else value.split(",").map { it.trim() }
+    }
+}
+
+// Add to Database
+@Database(
+    entities = [User::class],
+    version = 2,
+    autoMigrations = false
+)
+@TypeConverters(Converters::class)
+abstract class AppDatabase : RoomDatabase() {
+    // ...
+}</code></pre>
+
+            <h2>9. Testing Room</h2>
+
+            <pre class="code-block"><code>// UserDaoTest.kt
+@RunWith(AndroidJUnit4::class)
+class UserDaoTest {
+    private lateinit var database: AppDatabase
+    private lateinit var userDao: UserDao
+
+    @Before
+    fun setup() {
+        val context = ApplicationProvider.getApplicationContext&lt;Context&gt;()
+        database = Room.inMemoryDatabaseBuilder(
+            context,
+            AppDatabase::class.java
+        ).build()
+        userDao = database.userDao()
+    }
+
+    @Test
+    fun testInsertAndGetUser() = runBlocking {
+        val user = User(name = "Test User", email = "test@example.com", age = 25)
+        val id = userDao.insertUser(user)
+        
+        val retrieved = userDao.getUserById(id)
+        assertNotNull(retrieved)
+        assertEquals("Test User", retrieved?.name)
+    }
+
+    @After
+    fun tearDown() {
+        database.close()
+    }
+}</code></pre>
+
+            <h2>10. Common Pitfalls &amp; Solutions</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Mistakes to Avoid:</strong>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 1: Running database operations on the main thread</strong></p>
+                <p><strong>Problem:</strong> Database operations are I/O-bound. Running them on the main thread causes ANRs (Application Not Responding).</p>
+                <p><strong>Solution:</strong> Always use coroutines (with <code>Dispatchers.IO</code>) or background threads. Room with <code>suspend</code> functions or <code>Flow</code> handles this automatically.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 2: Not using indexes for frequently queried columns</strong></p>
+                <p><strong>Problem:</strong> Without indexes, queries on large tables are slow.</p>
+                <p><strong>Solution:</strong> Add indexes using the <code>@Entity</code> annotation:</p>
+                <pre class="code-block"><code>@Entity(
+    tableName = "users",
+    indices = [Index(value = ["email"]), Index(value = ["name", "age"])]
+)
+data class User(...)</code></pre>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 3: Not handling database schema changes</strong></p>
+                <p><strong>Problem:</strong> Upgrading your app can break if the database schema changes without migrations.</p>
+                <p><strong>Solution:</strong> Always write migrations. Test them thoroughly. Export the schema for version control.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 4: Not using transactions for multiple operations</strong></p>
+                <p><strong>Problem:</strong> Performing multiple database operations without a transaction can leave the database in an inconsistent state.</p>
+                <p><strong>Solution:</strong> Use <code>@Transaction</code> annotation in Room DAO methods or wrap operations in <code>runInTransaction</code>.</p>
+            </div>
+
+            <h2>11. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use Room</strong> — Over raw SQLite for compile-time safety.</li>
+                <li><strong>✅ Run operations on background threads</strong> — Use coroutines (<code>Dispatchers.IO</code>).</li>
+                <li><strong>✅ Write migrations</strong> — Never use destructive migrations in production.</li>
+                <li><strong>✅ Add indexes</strong> — For frequently queried columns.</li>
+                <li><strong>✅ Use transactions</strong> — For multiple related operations.</li>
+                <li><strong>✅ Use TypeConverters</strong> — For complex data types.</li>
+                <li><strong>✅ Test database operations</strong> — Use <code>inMemoryDatabaseBuilder</code> for unit tests.</li>
+                <li><strong>✅ Export schema</strong> — Version control your database schema (<code>room.schemaLocation</code>).</li>
+                <li><strong>✅ Use LiveData or Flow</strong> — For observable data.</li>
+                <li><strong>✅ Handle database errors</strong> — Use try-catch and proper error logging.</li>
+                <li><strong>✅ Use relationships</strong> — Properly model one-to-many and many-to-many relationships.</li>
+                <li><strong>✅ Optimize queries</strong> — Use indexes and avoid <code>SELECT *</code> when only specific columns are needed.</li>
+            </ul>
+
+            <h2>12. Quick Reference — Room Annotations</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Annotation</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>@Entity</code></td><td>Marks a class as a table</td></tr>
+                        <tr><td><code>@PrimaryKey</code></td><td>Marks a field as the primary key</td></tr>
+                        <tr><td><code>@ColumnInfo</code></td><td>Specifies column details (name, type, etc.)</td></tr>
+                        <tr><td><code>@Ignore</code></td><td>Excludes a field from the table</td></tr>
+                        <tr><td><code>@Embedded</code></td><td>Flattens a nested object into the table</td></tr>
+                        <tr><td><code>@Relation</code></td><td>Defines a relationship between entities</td></tr>
+                        <tr><td><code>@Dao</code></td><td>Marks a class as a Data Access Object</td></tr>
+                        <tr><td><code>@Query</code></td><td>Defines a SQL query</td></tr>
+                        <tr><td><code>@Insert</code></td><td>Inserts data</td></tr>
+                        <tr><td><code>@Update</code></td><td>Updates data</td></tr>
+                        <tr><td><code>@Delete</code></td><td>Deletes data</td></tr>
+                        <tr><td><code>@Transaction</code></td><td>Runs a method in a database transaction</td></tr>
+                        <tr><td><code>@Database</code></td><td>Marks a class as the database</td></tr>
+                        <tr><td><code>@TypeConverters</code></td><td>Specifies converters for complex types</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Room is the recommended way to work with SQLite in Android. It provides compile-time SQL validation, less boilerplate, and better performance. Always use background threads for database operations, write proper migrations, and test your database logic thoroughly. With Room, you can build robust, offline-capable apps that handle complex data relationships efficiently.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-sharedpreferences.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>SharedPreferences &amp; Data Storage — Saving User Data</a>
+            <a href="android-networking.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Networking in Android — Making API Calls</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

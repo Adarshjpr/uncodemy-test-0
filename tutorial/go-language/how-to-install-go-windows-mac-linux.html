@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Install Go on Windows, Mac, and Linux – Step-by-Step Setup | Go Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn How to Install Go on Windows, Mac, and Linux – Step-by-Step Setup with clear explanations, examples, and best practices as part of the complete Go tutorial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+            <a href="https://uncodemy.com">Go</a>
+            <span class="sep">/</span>
+            <span class="current">Page 2 of 20: How to Install Go on Windows, Mac, and Linux – Step-by-Step Setup</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>Go Tutorial</h4>
+            <ul class="topic-list">
+                <li><a href="what-is-go-language-introduction.html"><span class="num">01</span>What is Go Language? – Complete Introduction & Features for Beginners</a></li>
+                <li><a href="how-to-install-go-windows-mac-linux.html" class="active"><span class="num">02</span>How to Install Go on Windows, Mac, and Linux – Step-by-Step Setup</a></li>
+                <li><a href="go-variables-and-data-types.html"><span class="num">03</span>Go Variables and Data Types Explained with Practical Examples</a></li>
+                <li><a href="control-flow-if-else-switch-loops-in-go.html"><span class="num">04</span>Understanding Control Flow: If-Else, Switch, and Loops in Go</a></li>
+                <li><a href="functions-in-go-multiple-returns-variadic-defer.html"><span class="num">05</span>Functions in Go – Multiple Returns, Variadic, and Defer Tutorial</a></li>
+                <li><a href="pointers-in-go-memory-management.html"><span class="num">06</span>Pointers in Go – When and Why to Use Them (Memory Management)</a></li>
+                <li><a href="go-arrays-vs-slices.html"><span class="num">07</span>Go Arrays vs Slices – Key Differences and Performance Tips</a></li>
+                <li><a href="how-to-use-maps-in-go.html"><span class="num">08</span>How to Use Maps in Go – Best Practices for Key-Value Data</a></li>
+                <li><a href="structs-and-methods-in-go.html"><span class="num">09</span>Structs and Methods in Go – Composition over Inheritance</a></li>
+                <li><a href="mastering-interfaces-in-go.html"><span class="num">10</span>Mastering Interfaces in Go – Polymorphism with Real Examples</a></li>
+                <li><a href="error-handling-in-go.html"><span class="num">11</span>Error Handling in Go – Custom Errors, Panic, and Recover Guide</a></li>
+                <li><a href="concurrency-in-go-goroutines-waitgroup.html"><span class="num">12</span>Concurrency in Go – Goroutines and Sync.WaitGroup Tutorial</a></li>
+                <li><a href="channels-in-go-buffered-unbuffered-select.html"><span class="num">13</span>Channels in Go – Buffered, Unbuffered, and Select Statement</a></li>
+                <li><a href="build-rest-api-in-go-net-http.html"><span class="num">14</span>How to Build a REST API in Go using net/http – Complete CRUD</a></li>
+                <li><a href="go-modules-tutorial.html"><span class="num">15</span>Go Modules Tutorial – Managing Dependencies like a Pro</a></li>
+                <li><a href="file-handling-in-go-json-csv.html"><span class="num">16</span>File Handling in Go – Read, Write, and Parse JSON/CSV Files</a></li>
+                <li><a href="testing-in-go-unit-tests-benchmarks.html"><span class="num">17</span>Testing in Go – Writing Unit Tests and Benchmarks (Table-Driven)</a></li>
+                <li><a href="working-with-databases-in-go-gorm-sql.html"><span class="num">18</span>Working with Databases in Go – GORM and SQL Connections</a></li>
+                <li><a href="context-package-in-go.html"><span class="num">19</span>Context Package in Go – Timeouts, Cancellation, and Best Practices</a></li>
+                <li><a href="deploying-go-applications-docker-aws-gcp.html"><span class="num">20</span>Deploying Go Applications – Dockerize and Host on AWS/GCP</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow">Getting Started</span>
+            <h1>How to Install Go on Windows, Mac, and Linux – Step-by-Step Setup</h1>
+
+            <div class="card">
+<h2>Installing Go on Windows</h2>
+<ol>
+<li>Download the Windows installer (.msi) from the official Go website.</li>
+<li>Run the installer and follow the setup wizard — it automatically sets the <code>PATH</code> environment variable.</li>
+<li>Open Command Prompt and run <code>go version</code> to confirm installation.</li>
+</ol>
+<h2>Installing Go on macOS</h2>
+<pre><code># Using Homebrew
+brew install go
+
+# Verify installation
+go version</code></pre>
+<h2>Installing Go on Linux</h2>
+<pre><code>wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go version</code></pre>
+<h2>Setting Up Your Workspace</h2>
+<p>Modern Go uses <b>Go Modules</b> for dependency management, so you no longer need a strict <code>GOPATH</code> directory structure — simply run <code>go mod init myproject</code> inside any folder to start a new project.</p>
+            </div>
+
+            <div class="prev-next">
+<a href="what-is-go-language-introduction.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>What is Go Language? – Complete Introduction & Features for Beginners</a>
+<a href="go-variables-and-data-types.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Go Variables and Data Types Explained with Practical Examples</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world Go skills?</h3>
+                    <p>Learn Go hands-on with mentor-led, live sessions.</p>
+                </div>
+                <a class="btn-cta" href="https://uncodemy.com">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>Go Training</h4>
+                <p class="batch-sub">Kickstart your cloud journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

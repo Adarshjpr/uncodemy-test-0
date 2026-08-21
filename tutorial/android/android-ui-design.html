@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android UI Design — Layouts, Views &amp; ViewGroups | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Master Android UI design — layouts (LinearLayout, RelativeLayout, ConstraintLayout), views (TextView, EditText, Button, ImageView), and ViewGroups with practical examples." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 4 of 12: Android UI Design — Layouts, Views &amp; ViewGroups</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html" class="active"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-palette"></i> UI Design</span>
+        <h1>Android UI Design — Layouts, Views &amp; ViewGroups</h1>
+
+        <div class="card">
+
+            <p>The user interface (UI) is what your users see and interact with. In Android, UI components are built using a hierarchy of <strong>Views</strong> and <strong>ViewGroups</strong> defined in XML layouts. Mastering UI design is essential for creating beautiful, responsive, and user-friendly apps.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Your app's UI is the first thing users notice. A well-designed, responsive UI can make the difference between a successful app and one that users uninstall after the first use. Follow Material Design guidelines for the best results.
+            </div>
+
+            <h2>1. The Android UI Hierarchy</h2>
+
+            <p>Every Android UI is built using a tree structure of <strong>Views</strong> (the leaves) and <strong>ViewGroups</strong> (the branches).</p>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">View Hierarchy (Tree Structure)</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │                  Root ViewGroup                           │<br />
+                    │           (e.g., ConstraintLayout)                        │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                    ┌────────────────┴────────────────┐<br />
+                    │                                 │<br />
+                    ▼                                 ▼<br />
+            ┌──────────────────────┐          ┌──────────────────────┐<br />
+            │    ViewGroup         │          │      View            │<br />
+            │ (LinearLayout)       │          │   (TextView)         │<br />
+            └──────────────────────┘          └──────────────────────┘<br />
+                    │<br />
+            ┌───────┴───────┐<br />
+            │               │<br />
+            ▼               ▼<br />
+        ┌─────────┐    ┌─────────┐<br />
+        │  View   │    │  View   │<br />
+        │(Button) │    │(EditText)│<br />
+        └─────────┘    └─────────┘
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Description</th><th>Examples</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>View</strong></td><td>A single UI element</td><td>TextView, Button, EditText, ImageView</td></tr>
+                        <tr><td><strong>ViewGroup</strong></td><td>A container that holds Views and other ViewGroups</td><td>LinearLayout, RelativeLayout, ConstraintLayout</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Layouts — The Containers</h2>
+
+            <h3>2.1 LinearLayout</h3>
+            <p><strong>LinearLayout</strong> arranges its children in a single row (horizontal) or column (vertical). It's simple and widely used.</p>
+
+            <pre class="code-block"><code>&lt;!-- Vertical LinearLayout --&gt;
+&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"&gt;
+
+    &lt;TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, World!"
+        android:textSize="24sp"
+        android:textStyle="bold" /&gt;
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me" /&gt;
+
+&lt;/LinearLayout&gt;</code></pre>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Attribute</th><th>Description</th><th>Values</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>android:orientation</code></td><td>Direction of arrangement</td><td><code>vertical</code> or <code>horizontal</code></td></tr>
+                        <tr><td><code>android:gravity</code></td><td>Alignment of children</td><td><code>center</code>, <code>start</code>, <code>end</code>, <code>top</code>, <code>bottom</code></td></tr>
+                        <tr><td><code>android:weightSum</code></td><td>Total weight for distribution</td><td><code>1</code>, <code>2</code>, <code>3</code>, etc.</td></tr>
+                        <tr><td><code>android:layout_weight</code></td><td>Proportion of space to occupy</td><td><code>1</code>, <code>2</code>, <code>3</code>, etc.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>&lt;!-- LinearLayout with weight distribution (50/50) --&gt;
+&lt;LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"&gt;
+
+    &lt;View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="#FF5722" /&gt;
+
+    &lt;View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="#4CAF50" /&gt;
+
+&lt;/LinearLayout&gt;</code></pre>
+
+            <h3>2.2 RelativeLayout</h3>
+            <p><strong>RelativeLayout</strong> positions children relative to the parent or to other children. It's flexible but can become complex.</p>
+
+            <pre class="code-block"><code>&lt;!-- RelativeLayout with positioning --&gt;
+&lt;RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"&gt;
+
+    &lt;TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" /&gt;
+
+    &lt;EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="16dp"
+        android:hint="Enter text" /&gt;
+
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/input"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp" /&gt;
+
+&lt;/RelativeLayout&gt;</code></pre>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Attribute</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>android:layout_alignParentTop</code></td><td>Align to the top of parent</td></tr>
+                        <tr><td><code>android:layout_alignParentBottom</code></td><td>Align to the bottom of parent</td></tr>
+                        <tr><td><code>android:layout_alignParentStart</code></td><td>Align to the start of parent</td></tr>
+                        <tr><td><code>android:layout_alignParentEnd</code></td><td>Align to the end of parent</td></tr>
+                        <tr><td><code>android:layout_centerHorizontal</code></td><td>Center horizontally</td></tr>
+                        <tr><td><code>android:layout_centerVertical</code></td><td>Center vertically</td></tr>
+                        <tr><td><code>android:layout_centerInParent</code></td><td>Center in parent</td></tr>
+                        <tr><td><code>android:layout_below</code></td><td>Position below another view</td></tr>
+                        <tr><td><code>android:layout_above</code></td><td>Position above another view</td></tr>
+                        <tr><td><code>android:layout_toStartOf</code></td><td>Position to the start of another view</td></tr>
+                        <tr><td><code>android:layout_toEndOf</code></td><td>Position to the end of another view</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.3 ConstraintLayout — The Modern Standard</h3>
+            <p><strong>ConstraintLayout</strong> is the most powerful and flexible layout. It's the recommended layout for modern Android development because it's more efficient than nested layouts.</p>
+
+            <pre class="code-block"><code>&lt;!-- ConstraintLayout with constraints --&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"&gt;
+
+    &lt;TextView
+        android:id="@+id/helloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, World!"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" /&gt;
+
+    &lt;Button
+        android:id="@+id/clickButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"
+        app:layout_constraintTop_toBottomOf="@id/helloText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" /&gt;
+
+    &lt;EditText
+        android:id="@+id/nameInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        app:layout_constraintTop_toBottomOf="@id/clickButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Constraint Type</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Relative Constraint</strong></td><td>Constrain to another view</td><td><code>app:layout_constraintTop_toBottomOf="@id/otherView"</code></td></tr>
+                        <tr><td><strong>Parent Constraint</strong></td><td>Constrain to parent</td><td><code>app:layout_constraintTop_toTopOf="parent"</code></td></tr>
+                        <tr><td><strong>Bias</strong></td><td>Adjust positioning between constraints</td><td><code>app:layout_constraintHorizontal_bias="0.3"</code></td></tr>
+                        <tr><td><strong>Ratio</strong></td><td>Maintain aspect ratio</td><td><code>app:layout_constraintDimensionRatio="16:9"</code></td></tr>
+                        <tr><td><strong>Guideline</strong></td><td>Invisible line for positioning</td><td><code>app:layout_constraintGuide_percent="0.5"</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> ConstraintLayout is the recommended layout for all new projects. It reduces nesting, improves performance, and provides a visual editor in Android Studio. Avoid deep nesting of layouts (more than 3 levels) as it hurts performance.
+            </div>
+
+            <h2>3. Common Views (Widgets)</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>View</th><th>Purpose</th><th>Key Attributes</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>TextView</strong></td><td>Display text</td><td><code>android:text</code>, <code>android:textSize</code>, <code>android:textColor</code></td></tr>
+                        <tr><td><strong>EditText</strong></td><td>Text input field</td><td><code>android:hint</code>, <code>android:inputType</code></td></tr>
+                        <tr><td><strong>Button</strong></td><td>Clickable button</td><td><code>android:text</code>, <code>android:onClick</code></td></tr>
+                        <tr><td><strong>ImageView</strong></td><td>Display images</td><td><code>android:src</code>, <code>android:scaleType</code></td></tr>
+                        <tr><td><strong>CheckBox</strong></td><td>Boolean selection</td><td><code>android:checked</code></td></tr>
+                        <tr><td><strong>RadioButton</strong></td><td>Single selection from group</td><td><code>android:checked</code></td></tr>
+                        <tr><td><strong>Switch</strong></td><td>Toggle switch</td><td><code>android:checked</code></td></tr>
+                        <tr><td><strong>ProgressBar</strong></td><td>Loading indicator</td><td><code>android:indeterminate</code></td></tr>
+                        <tr><td><strong>RecyclerView</strong></td><td>Display lists</td><td>Covered in detail in a later chapter</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>TextView — The Text Display</h3>
+            <pre class="code-block"><code>&lt;TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello, World!"
+    android:textSize="18sp"
+    android:textColor="#333333"
+    android:textStyle="bold"
+    android:fontFamily="sans-serif-medium"
+    android:gravity="center"
+    android:padding="8dp" /&gt;</code></pre>
+
+            <h3>EditText — Text Input</h3>
+            <pre class="code-block"><code>&lt;EditText
+    android:id="@+id/emailInput"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter your email"
+    android:inputType="textEmailAddress"
+    android:maxLines="1"
+    android:padding="12dp"
+    android:background="@drawable/edittext_bg" /&gt;</code></pre>
+
+            <h3>Button — Clickable Action</h3>
+            <pre class="code-block"><code>&lt;Button
+    android:id="@+id/submitButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Submit"
+    android:textSize="16sp"
+    android:backgroundTint="#4CAF50"
+    android:textColor="#FFFFFF"
+    android:padding="12dp"
+    android:elevation="2dp" /&gt;</code></pre>
+
+            <h3>ImageView — Display Images</h3>
+            <pre class="code-block"><code>&lt;ImageView
+    android:id="@+id/profileImage"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/profile_photo"
+    android:scaleType="centerCrop"
+    android:contentDescription="Profile photo" /&gt;</code></pre>
+
+            <h2>4. Common XML Attributes</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Attribute</th><th>Purpose</th><th>Example Values</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>android:layout_width</code></td><td>Width of the view</td><td><code>match_parent</code>, <code>wrap_content</code>, <code>100dp</code></td></tr>
+                        <tr><td><code>android:layout_height</code></td><td>Height of the view</td><td><code>match_parent</code>, <code>wrap_content</code>, <code>200dp</code></td></tr>
+                        <tr><td><code>android:padding</code></td><td>Space inside the view</td><td><code>16dp</code>, <code>8dp</code></td></tr>
+                        <tr><td><code>android:layout_margin</code></td><td>Space outside the view</td><td><code>16dp</code>, <code>8dp</code></td></tr>
+                        <tr><td><code>android:gravity</code></td><td>Content alignment inside the view</td><td><code>center</code>, <code>start</code>, <code>end</code>, <code>top</code></td></tr>
+                        <tr><td><code>android:layout_gravity</code></td><td>View alignment in its parent</td><td><code>center</code>, <code>start</code>, <code>end</code></td></tr>
+                        <tr><td><code>android:visibility</code></td><td>Visibility of the view</td><td><code>visible</code>, <code>invisible</code>, <code>gone</code></td></tr>
+                        <tr><td><code>android:background</code></td><td>Background of the view</td><td><code>#FFFFFF</code>, <code>@color/primary</code>, <code>@drawable/bg</code></td></tr>
+                        <tr><td><code>android:elevation</code></td><td>Shadow height</td><td><code>2dp</code>, <code>8dp</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. Practical Example — Login Screen</h2>
+
+            <p>Here's a complete login screen combining multiple views:</p>
+
+            <pre class="code-block"><code>&lt;!-- login_activity.xml --&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"&gt;
+
+    &lt;!-- App Logo --&gt;
+    &lt;ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/welcomeText"
+        android:layout_marginTop="40dp" /&gt;
+
+    &lt;!-- Welcome Text --&gt;
+    &lt;TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" /&gt;
+
+    &lt;!-- Email Input --&gt;
+    &lt;EditText
+        android:id="@+id/emailInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" /&gt;
+
+    &lt;!-- Password Input --&gt;
+    &lt;EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" /&gt;
+
+    &lt;!-- Forgot Password --&gt;
+    &lt;TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="#4CAF50"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/passwordInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" /&gt;
+
+    &lt;!-- Login Button --&gt;
+    &lt;Button
+        android:id="@+id/loginButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="16sp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/forgotPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" /&gt;
+
+    &lt;!-- Register Link --&gt;
+    &lt;TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Register"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" /&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre>
+
+            <h2>6. Best Practices for UI Design</h2>
+
+            <ul>
+                <li><strong>✅ Use ConstraintLayout</strong> — It's the most efficient and flexible layout.</li>
+                <li><strong>✅ Avoid deep nesting</strong> — More than 3 levels of nesting hurts performance.</li>
+                <li><strong>✅ Use dimension resources</strong> — Define dimensions in <code>dimens.xml</code> for consistency.</li>
+                <li><strong>✅ Use color resources</strong> — Define colors in <code>colors.xml</code> for theming.</li>
+                <li><strong>✅ Use string resources</strong> — Define text in <code>strings.xml</code> for localization.</li>
+                <li><strong>✅ Follow Material Design</strong> — Use Material Design components and guidelines.</li>
+                <li><strong>✅ Test on multiple screen sizes</strong> — Ensure your UI works on all devices.</li>
+                <li><strong>✅ Use vector drawables</strong> — Use SVG-based icons for all screen densities.</li>
+                <li><strong>✅ Add content descriptions</strong> — For accessibility (screen readers).</li>
+                <li><strong>✅ Use themes and styles</strong> — Avoid repeating attributes across views.</li>
+            </ul>
+
+            <h2>7. Common UI Pitfalls</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Mistakes to Avoid:</strong>
+                <ul style="margin-top: 8px;">
+                    <li><strong>Hardcoding strings:</strong> Always use <code>strings.xml</code> for text.</li>
+                    <li><strong>Hardcoding colors:</strong> Always use <code>colors.xml</code> for colors.</li>
+                    <li><strong>Using absolute pixel values:</strong> Always use <code>dp</code> and <code>sp</code> for dimensions.</li>
+                    <li><strong>Nested layouts:</strong> Avoid nesting LinearLayouts inside other LinearLayouts.</li>
+                    <li><strong>Not handling configuration changes:</strong> Test screen rotation and different screen sizes.</li>
+                </ul>
+            </div>
+
+            <h2>8. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use ConstraintLayout</strong> — For all new layouts.</li>
+                <li><strong>✅ Use material components</strong> — From <code>com.google.android.material</code>.</li>
+                <li><strong>✅ Use themes</strong> — Define a theme in <code>themes.xml</code> for consistent styling.</li>
+                <li><strong>✅ Use styles</strong> — Define reusable styles for common views.</li>
+                <li><strong>✅ Use dimens.xml</strong> — For all dimension values.</li>
+                <li><strong>✅ Use colors.xml</strong> — For all color values.</li>
+                <li><strong>✅ Use strings.xml</strong> — For all text values.</li>
+                <li><strong>✅ Test on multiple devices</strong> — Use AVDs with different screen sizes.</li>
+                <li><strong>✅ Enable RTL support</strong> — For right-to-left languages.</li>
+                <li><strong>✅ Use VectorDrawable</strong> — For all icons.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Android UI design is about more than just making things look good — it's about creating a responsive, accessible, and performant user experience. The Layout Editor in Android Studio is a powerful tool — use it to preview your designs in real-time on different screen sizes.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-app-components.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a>
+            <a href="android-intents.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Intents &amp; Intent Filters — Navigating Between Screens</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

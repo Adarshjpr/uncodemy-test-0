@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bank Employee Guide: Getting Into IT Without a Degree | Uncodemy</title>
+    <meta name="description" content="A working bank employee wondering how to move into IT without a technical degree? Here is an honest, step-by-step 2026 plan to make the switch.">
+    <link rel="canonical" href="https://uncodemy.com/tutorials/bank-employee-guide-getting-into-it-without-a-degree">
+    <meta property="og:title" content="Bank Employee Guide: Getting Into IT Without a Degree | Uncodemy">
+    <meta property="og:description" content="A practical roadmap for bank employees who want to move into IT in 2026 without a technical degree — skills, tools, timeline and a step-by-step switch plan.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img">
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput">
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials">
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Career guides · 480+ tutorials</p>
+                <h1>Bank Employee Guide: Getting Into <mark>IT Without a Degree</mark></h1>
+                <p class="lede">Working full-time at a bank and wondering if IT is even reachable without a computer science degree? Here is an honest, step-by-step look at what it actually takes for a bank employee to switch into IT in 2026.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder='Search &ldquo;bank employee IT without degree&rdquo;' aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox">
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="true">Career Switch</button>
+                    <button class="chip" aria-pressed="false">Python & SQL</button>
+                    <button class="chip" aria-pressed="false">Software Testing</button>
+                    <button class="chip" aria-pressed="false">Cloud Basics</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>IT Switch Stage vs Effort · Live comparison</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="Compare learning stages for a bank employee">
+                        <button aria-pressed="true" data-r="r1">Python & SQL</button>
+                        <button aria-pressed="false" data-r="r2">Software Testing</button>
+                        <button aria-pressed="false" data-r="r3">Cloud Basics</button>
+                    </div>
+                    <div class="api-flow" id="apiFlow">
+                        <div class="flow-step"><div class="s-l">Time to learn</div><div class="s-v" id="reqVal">—</div><div class="s-d">Studying alongside a full-time bank job</div></div>
+                        <div class="flow-step"><div class="s-l">Entry difficulty</div><div class="s-v" id="resVal">—</div><div class="s-d">For a beginner switching without a CS degree</div></div>
+                        <div class="flow-step"><div class="s-l">Starting salary band</div><div class="s-v" id="assertVal">—</div><div class="s-d">Entry-level IT role, India</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Bank job today</span>
+                        <span class="arrow">→</span>
+                        <span>Python & SQL basics</span>
+                        <span class="arrow">→</span>
+                        <span>Live project</span>
+                        <span class="arrow">→</span>
+                        <span>First IT job</span>
+                    </div>
+                    <div class="demo-cap">Click a stage to see how the numbers shift. Python and SQL are where almost every non-CS switch should begin.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Tutorials</a> / <a href="#top">Career Guides</a> / <span>Bank Employee to IT</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Switch · Bank Employee to IT-ready</p>
+                <h1>Bank Employee Guide: Getting Into IT Without a Degree</h1>
+
+                <div class="byline">
+                    <span class="avatar">AK</span>
+                    <span><b>Ankit Kaushik</b> · Lead Trainer, Full Stack &amp; Career Transitions</span>
+                    <span class="sep">|</span>
+                    <span>Updated 11 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>15 min read</span>
+                    <span class="badge">Free · with examples</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="Bank employee to IT path: bank job today, Python and SQL basics, live project, first IT job">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g4)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">TODAY</text>
+                            <text x="280" y="40">FOUNDATION</text>
+                            <text x="510" y="40">PROJECT</text>
+                            <text x="720" y="40">FIRST JOB</text>
+                        </g>
+                        <rect x="20" y="58" width="200" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Bank Job Today</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Strong process discipline</text>
+                        <text x="50" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">No coding experience yet</text>
+                        <rect x="40" y="164" width="150" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="65" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Starting fresh</text>
+
+                        <rect x="250" y="58" width="210" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="280" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Python &amp; SQL</text>
+                        <text x="280" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Scripting, queries, logic</text>
+                        <text x="280" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Guided by a trainer</text>
+                        <rect x="280" y="164" width="150" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="310" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">10–12 wks</text>
+
+                        <rect x="490" y="58" width="190" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="520" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Live Project</text>
+                        <text x="520" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Real application, portfolio-ready</text>
+                        <text x="520" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Something to show recruiters</text>
+                        <rect x="520" y="164" width="130" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="545" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">4–5 wks</text>
+
+                        <rect x="710" y="58" width="170" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="740" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">First IT Role</text>
+                        <text x="740" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Entry-level, on-job growth</text>
+                        <text x="740" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Real experience begins</text>
+                        <rect x="740" y="164" width="110" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="760" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Offer</text>
+
+                        <path d="M220 148 H236" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                        <path d="M460 148 H476" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                        <path d="M680 148 H696" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                    </svg>
+                    <figcaption>Most successful switches follow the same shape: Python and SQL foundation, one real project, then an entry-level role.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — can a bank employee get into IT without a degree?</h2>
+                    <p>Yes. In 2026, most entry-level IT hiring — especially in <b>software testing, support engineering, and junior development</b> — is based on demonstrated skill, not a computer science degree. What matters is building genuine fundamentals in <b>Python, SQL, and one specialised track</b> such as testing or basic cloud, then proving them with at least one real, documented project. Bank employees who treat the switch like a focused evening course rather than an open-ended exploration are the ones who land interviews fastest.</p>
+                    <p>In this tutorial you will learn:</p>
+                    <ol>
+                        <li><b>What entry-level IT roles actually involve</b> — and why a non-CS background is not a disadvantage.</li>
+                        <li><b>Why a banking background isn't the obstacle it feels like</b>, if you plan the switch right.</li>
+                        <li><b>The skills a bank employee needs</b> to become job-ready in IT.</li>
+                        <li><b>The tools and concepts to learn</b>, in the right order.</li>
+                        <li><b>A realistic 5-month switch plan</b> from zero code to first application.</li>
+                        <li><b>Mistakes that waste the most time</b> for working-professional switchers.</li>
+                        <li><b>Test your knowledge</b> — a quick quiz to check your understanding.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What entry-level IT roles actually involve</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why a banking background isn't the obstacle it feels like</a></li>
+                        <li><a href="#s3"><span class="n">03</span>The core skills you need to build</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Skill and timeline comparison</a></li>
+                        <li><a href="#s5"><span class="n">05</span>How to start — a simple step-by-step guide</a></li>
+                        <li><a href="#s6"><span class="n">06</span>A realistic 5-month switch plan</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Mistakes that waste the most time</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>What entry-level IT roles actually involve</h2>
+                <p>Entry-level <strong>IT roles</strong> — software testing, support engineering, junior development, and business systems work — mostly involve writing and testing structured logic, querying data, and following defined processes to ship reliable software. This includes writing test cases, basic scripts, SQL queries, and following release checklists. Most of this work is <b>Python and SQL-heavy</b> at the start, not advanced computer science theory.</p>
+                <p>In simple terms: entry-level IT work is closer to <b>careful, rule-based process execution</b> than to abstract theory — the same disciplined, compliance-driven thinking a bank job already runs on every day, just applied to software instead of transactions. That overlap is exactly why many bank employees take to it well.</p>
+                <div class="note"><b>Key point:</b> Most working professionals become interview-ready for entry-level IT roles in 14 to 18 weeks of focused evening and weekend learning, not years, because a clear plan and consistent hours matter far more than having a CS degree.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why a banking background isn't the obstacle it feels like</h2>
+                <ul>
+                    <li><b>Skills-first hiring is now common</b> — many companies evaluate entry-level IT candidates on tests and projects, not on a computer science degree.</li>
+                    <li><b>Banking discipline builds real transferable skills</b> — accuracy, compliance, and process-following map closely onto writing test cases and following release procedures.</li>
+                    <li><b>Focus and follow-through matter more than a fresh degree</b> — completing a structured course alongside a full-time job proves discipline employers value.</li>
+                    <li><b>Entry-level hiring volume is growing</b> — as more companies digitise operations, demand for junior testers and support engineers is rising steadily.</li>
+                    <li><b>It is a genuine long-term career</b> — junior IT hires can grow into senior testers, developers, and technical leads over time.</li>
+                </ul>
+                <p>Bank employees who focus on demonstrable skills — working Python scripts, solid SQL, one real project — are the ones who convert interviews into offers, regardless of their original degree.</p>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>The core skills you need to build</h2>
+                <h3>1. Python Fundamentals</h3>
+                <p>Covers variables, loops, functions, and writing small scripts — the foundation almost every entry-level IT role builds on.</p>
+                <ul>
+                    <li><b>Example:</b> Writing a Python script that reads a CSV of transactions and flags duplicates.</li>
+                    <li><b>Best for:</b> Every switcher — this is the mandatory starting point, and it builds fast with consistent daily practice.</li>
+                </ul>
+                <h3>2. SQL and Databases</h3>
+                <p>Covers writing queries, joins, and understanding how relational databases store structured records.</p>
+                <ul>
+                    <li><b>Example:</b> Writing a query that joins two tables to find accounts with pending KYC updates.</li>
+                    <li><b>Best for:</b> Building the query skills tested in almost every entry-level IT interview.</li>
+                </ul>
+                <h3>3. Software Testing Fundamentals</h3>
+                <p>Covers writing test cases, manual testing, and basic automation testing tools, one of the most accessible entry points into IT.</p>
+                <ul>
+                    <li><b>Example:</b> Writing test cases for a login page and running them against a sample application.</li>
+                    <li><b>Best for:</b> Switchers who want the fastest realistic entry into a full-time IT role.</li>
+                </ul>
+                <h3>4. Cloud Basics Introduction</h3>
+                <p>Covers the fundamentals of a cloud platform like AWS or Azure, usually added after Python, SQL, and testing basics are solid.</p>
+                <ul>
+                    <li><b>Example:</b> Deploying a simple web page on a free-tier cloud server.</li>
+                    <li><b>Best for:</b> Switchers aiming for a stronger resume, added after — not instead of — Python and SQL fundamentals.</li>
+                </ul>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Skill and timeline comparison</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Skill area</th><th>Time to learn basics</th><th>Best for</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Python &amp; SQL</b></td><td>10–12 weeks</td><td>Mandatory first step for every non-CS switcher</td></tr>
+                            <tr><td><b>Software Testing</b></td><td>8–10 weeks</td><td>Fastest realistic entry point into full-time IT</td></tr>
+                            <tr><td><b>Cloud Basics (AWS/Azure)</b></td><td>6–8 weeks</td><td>Adds a strong, in-demand skill on top</td></tr>
+                            <tr><td><b>Version Control (Git)</b></td><td>1–2 weeks</td><td>Learned alongside the first project</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>Pro tip:</b> Do not try to learn cloud or automation frameworks before Python and SQL are solid. Interviewers for entry-level IT roles almost always test basic scripting and query logic first.</div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>How to start — a simple step-by-step guide</h2>
+
+                <ol class="steps">
+                    <li><b>Get comfortable with Python beyond the basics.</b> Move past print statements into functions, file handling, and simple logic problems.</li>
+                    <li><b>Practise SQL for real data.</b> Write joins and aggregations against sample banking-style tables, not just toy examples.</li>
+                    <li><b>Learn manual and basic automation testing.</b> Get hands-on with writing test cases and one automation tool.</li>
+                    <li><b>Build a small application or test suite.</b> Apply Python and SQL together in one connected mini-project.</li>
+                    <li><b>Add Git and basic cloud exposure.</b> Learn version control and deploy something small on a free-tier cloud account.</li>
+                    <li><b>Build one complete project.</b> Take an entire testing or scripting project end to end and document everything.</li>
+                </ol>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Sample output">
+                        <button role="tab" aria-selected="true" data-t="0">Self-check</button>
+                        <button role="tab" aria-selected="false" data-t="1">Sample recommendation</button>
+                    </div>
+                    <pre data-p="0"><code>Question                          Answer
+Comfortable with structured tasks? Yes
+Written any code before?           No
+Enjoy process and accuracy work?   Yes
+Hours available per week           8-10
+City has entry-level IT roles      Yes
+
+Recommendation: Strengthen Python & SQL,
+add software testing next, cloud later.</code></pre>
+                    <pre data-p="1" hidden><code>5-month plan for this profile:
+Month 1: Python fundamentals
+Month 2: SQL for structured data
+Month 3: Software testing fundamentals
+Month 4: One full mini-project + Git basics
+Month 5: Resume, portfolio, interview prep,
+start applying to entry-level IT roles</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">self-check · Bank employee IT switch path</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>A realistic 5-month switch plan</h2>
+                <ul>
+                    <li><b>Month 1:</b> Learn Python fundamentals in short, consistent evening sessions around bank working hours.</li>
+                    <li><b>Month 2:</b> Build SQL skills for structured data, applying them to realistic tables.</li>
+                    <li><b>Month 3:</b> Learn software testing fundamentals and write your first set of real test cases.</li>
+                    <li><b>Month 4:</b> Build one real, end-to-end mini-project and add basic Git version control.</li>
+                    <li><b>Month 5:</b> Finish the project, rewrite your resume around demonstrated skills, and start applying to entry-level roles.</li>
+                    <li><b>Throughout:</b> Keep documenting everything you build — a visible GitHub trail of scripts and test cases matters more than certificates alone.</li>
+                </ul>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Mistakes that waste the most time</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Mistake</th><th>Why it costs time</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Jumping straight to cloud or automation frameworks</b></td><td>Interviewers still expect solid Python and SQL basics</td><td>Finish Python and SQL fundamentals first</td></tr>
+                            <tr><td><b>Skipping a real project</b></td><td>Certificates alone rarely convince interviewers without a CS degree</td><td>Build one complete, documented mini-project</td></tr>
+                            <tr><td><b>Studying in long, irregular bursts</b></td><td>Inconsistent study is easily disrupted by bank shift timings</td><td>Set a fixed, shorter daily slot instead of occasional long sessions</td></tr>
+                            <tr><td><b>Hiding the banking background in interviews</b></td><td>Draws attention away from genuinely useful transferable skills</td><td>State the background plainly and connect it to process discipline</td></tr>
+                            <tr><td><b>No interview practice</b></td><td>Technical skill without interview readiness stalls offers</td><td>Do mock interviews in month 5, not the week before</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — switching from bank employee to IT without a degree</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>Can a bank employee really get into IT without a technical degree?</summary>
+                    <div class="body"><p>Yes — companies increasingly hire on skills and project work rather than a specific degree, and switchers who build strong Python, SQL, and one real project are hired into entry-level IT roles regularly.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q2</span>Do I need to quit my bank job to make this switch?</summary>
+                    <div class="body"><p>No. Most switchers study in the evenings and weekends alongside their current job and only move once they have a completed project and are interview-ready.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q3</span>Which skill should I learn first?</summary>
+                    <div class="body"><p>Start with Python and SQL. Add software testing next, and cloud basics only after those fundamentals are solid.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q4</span>How long does it take to become job-ready?</summary>
+                    <div class="body"><p>Most working professionals become interview-ready in 14 to 18 weeks with focused, consistent study and one completed project.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q5</span>Will interviewers ask why I am leaving banking?</summary>
+                    <div class="body"><p>Often yes, briefly — but most entry-level IT interviews spend the majority of time on your project, your Python and SQL knowledge, and basic problem-solving.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q6</span>Should I target software testing or development first?</summary>
+                    <div class="body"><p>Software testing is usually the faster, more accessible entry point for non-CS switchers, with development as a natural next step once you are inside the industry.</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — bank employee to IT quiz</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign-up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is it realistic for a bank employee to switch to IT without a degree in 2026?</summary><div class="body"><p>Yes — skills-first hiring means entry-level IT roles are increasingly judged on Python, SQL, and project work rather than a specific degree.</p></div></details>
+                <details class="acc"><summary>How many hours a week do I need to study while working full-time?</summary><div class="body"><p>Most switchers manage with 8–10 hours a week across evenings and weekends, spread over 14 to 18 weeks for Python, SQL, and testing basics.</p></div></details>
+                <details class="acc"><summary>Is software testing a good starting role for a non-CS background?</summary><div class="body"><p>Yes — it is one of the most accessible entry points into IT and does not require deep programming knowledge to begin.</p></div></details>
+                <details class="acc"><summary>Will my bank experience be seen as a disadvantage?</summary><div class="body"><p>Not usually — process discipline, accuracy, and compliance experience are viewed as genuine transferable strengths by many hiring managers.</p></div></details>
+                <details class="acc"><summary>What if I do not have a project to show?</summary><div class="body"><p>Build one using any sample dataset or small application. A single well-documented project with clear test cases or scripts is often enough for an entry-level interview.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="future-proof-courses-for-bank-employees-2026.html"><span class="t">Which courses are future-proof for bank employees in 2026</span><span class="m">Career · 14 min</span></a>
+                    <a class="rel-card" href="non-it-to-qa-tester-2026.html"><span class="t">How a non-IT professional becomes a QA tester</span><span class="m">QA · 13 min</span></a>
+                    <a class="rel-card" href="govt-job-holder-to-it-without-degree-guide-2026.html"><span class="t">Govt job holder guide: getting into IT without a degree</span><span class="m">Career · 15 min</span></a>
+                    <a class="rel-card" href="what-is-an-api-in-programming.html"><span class="t">What is an API in programming?</span><span class="m">API · 11 min</span></a>
+                    <a class="rel-card" href="api-in-software-testing.html"><span class="t">API in software testing, explained</span><span class="m">QA · 12 min</span></a>
+                    <a class="rel-card" href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="t">Best IT career path to start from zero</span><span class="m">Career · 15 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Switch into IT with a job-ready programme built for working professionals</h3>
+                    <p>Our IT Foundations programme covers Python, SQL, software testing, and cloud basics, plus one full live mini-project — designed for bank employees and working professionals moving from finance operations into technology roles.</p>
+                    <span class="price">₹14,000 · full programme <s>₹21,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>5 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekday & weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live beginner Python & testing session</div>
+                    <p>Two hours, no payment, no commitment. Build your first mini-project and get hands-on feedback from industry trainers.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 11:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes the full plan</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Python tutorial for beginners</a></li>
+                        <li><a href="#"><span class="rank">02</span>Entry-level software tester interview questions</a></li>
+                        <li><a href="api-in-software-testing.html"><span class="rank">03</span>API in software testing, explained</a></li>
+                        <li><a href="#"><span class="rank">04</span>Building your first Python project</a></li>
+                        <li><a href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="rank">05</span>Best IT career path to start from zero</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Python · 50 questions</a></li>
+                        <li><a href="#">SQL · 30 questions</a></li>
+                        <li><a href="#">Software Testing · 40 questions</a></li>
+                        <li><a href="#">Career Switch · General · 25 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">IT Foundations</div>
+                    <p>Python, SQL, software testing, and cloud fundamentals, real tools, one live mini-project — built for bank employees and working professionals moving from finance operations to technology roles. Weekday evening and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">5</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in Career Switch</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Python tutorial for absolute beginners <small>Loops → Functions → Files</small></a></li>
+                    <li><a href="#">SQL for beginners, explained <small>Joins basics</small></a></li>
+                    <li><a href="api-in-software-testing.html">API in software testing, explained <small>Core concepts</small></a></li>
+                    <li><a href="#">Resume tips for working-professional switchers <small>Framing the switch</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Software Tester roadmap <small>Python → SQL → Testing</small></a></li>
+                    <li><a href="working-professional-best-it-career-path-to-start-from-zero.html">Best IT career path from zero <small>Compare all paths</small></a></li>
+                    <li><a href="future-proof-courses-for-bank-employees-2026.html">Future-proof courses for bank employees <small>2026 guide</small></a></li>
+                    <li><a href="govt-job-holder-to-it-without-degree-guide-2026.html">Govt job holder to IT roadmap <small>No-degree path</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Career switch self-check worksheet <small>Decide if IT fits you</small></a></li>
+                    <li><a href="#">5-month switch plan template <small>Ready-to-use planner</small></a></li>
+                    <li><a href="#">Python vs SQL cheat sheet <small>What to learn, in order</small></a></li>
+                    <li><a href="#">Entry-level IT interview question bank <small>50 real questions</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Bank employee guide: getting into IT without a degree <small>11 August 2026</small></a></li>
+                    <li><a href="housewife-to-business-analytics-guide-2026.html">Is it too late for a housewife to learn business analytics <small>11 August 2026</small></a></li>
+                    <li><a href="college-dropout-to-ml-engineer-guide-2026.html">Is it too late for a college dropout to learn ML engineering <small>11 August 2026</small></a></li>
+                    <li><a href="mba-graduate-to-cybersecurity-guide-2026.html">Can an MBA graduate really become a cybersecurity professional <small>11 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img">
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and testing in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Data Analytics with Gen AI</a></li>
+                        <li><a href="#">Software Testing</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Career roadmaps</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                r1: { req: "10–12 wks", res: "Low", assert: "₹3–4.5 LPA" },
+                r2: { req: "8–10 wks", res: "Low–Medium", assert: "₹3.5–5 LPA" },
+                r3: { req: "6–8 wks", res: "Medium", assert: "₹4–6 LPA" }
+            },
+            stateOrder: ["r1", "r2", "r3"],
+            renderScene: function(s) {
+                document.getElementById("reqVal").textContent = s.req;
+                document.getElementById("resVal").textContent = s.res;
+                document.getElementById("assertVal").textContent = s.assert;
+            },
+            defaultTrack: "Career Switch",
+            emptyMsg: 'Nothing matches that yet. Try Python, SQL or Testing.',
+            LIB: [
+                { t: "Bank employee guide: getting into IT without a degree", g: "Career Switch" },
+                { t: "Python tutorial for absolute beginners", g: "Python & SQL" },
+                { t: "SQL for beginners, explained", g: "Python & SQL" },
+                { t: "API in software testing, explained", g: "Software Testing" },
+                { t: "Entry-level software tester interview questions", g: "Career Switch" },
+                { t: "How to build a mini-project in a month", g: "Career Switch" },
+                { t: "Manual testing vs automation testing", g: "Software Testing" },
+                { t: "Resume tips for working-professional switchers", g: "Career Switch" },
+                { t: "Is software testing a good career in 2026", g: "Cloud Basics" },
+                { t: "Best IT career path to start from zero", g: "Career Switch" }
+            ],
+            QUIZ: [
+                {
+                q: "For a bank employee switching to IT with no coding background, which skill should be learned first?",
+                o: ["Kubernetes", "Python and SQL fundamentals", "Machine learning models", "Cloud architecture"],
+                a: 1,
+                e: "Python and SQL fundamentals are the base every other entry-level IT skill builds on, making them the right starting point."
+            },
+            {
+                q: "Why is a non-CS background not necessarily a disadvantage in entry-level IT hiring?",
+                o: ["It guarantees a higher salary", "Skills-first hiring means projects and demonstrated ability matter more than a specific degree", "Companies never ask about background", "It removes the need to learn anything new"],
+                a: 1,
+                e: "Many companies now hire entry-level IT candidates based on demonstrated skill and project work rather than a computer science degree."
+            },
+            {
+                q: "What matters most when applying for a first IT role from a non-technical background?",
+                o: ["Only certificates", "A completed project with real scripts, queries, or test cases", "Knowing every cloud provider", "A computer science degree"],
+                a: 1,
+                e: "A documented, completed project demonstrates practical skill far better than certificates alone, especially without a CS degree."
+            },
+            {
+                q: "Which entry point is generally the most accessible for a non-CS switcher?",
+                o: ["Software testing", "Distributed systems architecture", "Compiler design", "Game engine development"],
+                a: 0,
+                e: "Software testing is widely considered one of the most accessible entry points into IT for non-CS switchers."
+            },
+            {
+                q: "What is the biggest risk of treating basic Python knowledge as interview-ready?",
+                o: ["Learning too fast", "Struggling in interviews that expect logic problems, SQL joins, and test-case writing", "Becoming overqualified", "Running out of course material"],
+                a: 1,
+                e: "Most entry-level IT interviews test well beyond basic syntax, so treating basic knowledge as sufficient weakens interview performance."
+            }
+            ],
+            passScore: 4,
+            resultText: {
+                pass: "You have got a clear read on this — build Python and SQL fundamentals first, then add software testing and cloud basics.",
+                fail: "Revisit sections 03 and 05 — starting with Python and SQL fundamentals is the key decision here."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

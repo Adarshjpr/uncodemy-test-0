@@ -1,0 +1,75 @@
+{
+  "name": "Uncodemy - IT Training Platform",
+  "short_name": "Uncodemy",
+  "start_url": "/",
+  "display": "fullscreen",
+  "description": "Uncodemy is an IT training platform offering courses in various technologies, designed for students, professionals, and anyone looking to enhance their tech skills.",
+  "lang": "en",
+  "dir": "auto",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+    "icons": [
+        {
+            "src": "https://uncodemy.com/img/Logo%20(1).png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://uncodemy.com/img/Logo%20(1).png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "https://uncodemy.com/image/data-analytics.jpg",
+            "sizes": "2880x1800",
+            "type": "image/png",
+            "description": "A screenshot of the Uncodemy homepage showing courses and features"
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "windows",
+            "url": "https://uncodemy.com"
+        }
+    ],
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "Browse Courses",
+            "url": "/course",
+            "description": "Quick access to all courses offered by Uncodemy"
+        },
+        {
+            "name": "About Us",
+            "url": "/about-us",
+            "description": "Quick access to About us"
+        },
+        {
+            "name": "Placements",
+            "url": "/placement",
+            "description": "Quick access to Placements"
+        }
+    ],
+    "scope": "/",
+    "display_override": [
+      "standalone",
+      "window-controls-overlay"
+    ],
+    "categories": ["education", "technology", "training"],
+    "app_id": "com.uncodemy.app",
+    "launch_handler": {
+        "client_mode": "navigate-new"
+    },
+    "iarc_rating_id": "e10e0847-0f24-44a2-b787-d151621f8b8c",  
+    "scope_extensions": [
+        {
+            "origin": "https://uncodemy.com",
+            "path": "/"
+        }
+    ]
+}

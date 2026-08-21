@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BCA Student in 2026: Should You Learn QA Tester or Skip It? | Uncodemy</title>
+    <meta name="description" content="BCA student confused about QA testing? 2026 guide covers roles, skills, automation vs manual, and whether QA is worth it for BCA grads.">
+    <link rel="canonical" href="https://uncodemy.com/tutorials/bca-student-qa-tester-2026">
+    <meta property="og:title" content="BCA Student in 2026: Should You Learn QA Tester or Skip It? | Uncodemy">
+    <meta property="og:description" content="A practical guide for BCA students evaluating QA testing careers in 2026 — manual vs automation, skills, growth, and if it's worth the effort.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img">
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput">
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials">
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Career guides · 500+ tutorials</p>
+                <h1>BCA Student in 2026: Should You Learn <mark>QA Tester</mark> or Skip It?</h1>
+                <p class="lede">If you are a BCA student wondering whether QA testing is a smart career move in 2026 — or a dead end — this guide breaks down the role, automation vs manual, salary, growth, and how to decide based on your strengths.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder='Search &ldquo;BCA QA tester 2026&rdquo;' aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox">
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="true">Career Decision</button>
+                    <button class="chip" aria-pressed="false">Manual Testing</button>
+                    <button class="chip" aria-pressed="false">Automation</button>
+                    <button class="chip" aria-pressed="false">DevOps & QA</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>QA Career Stage vs Effort · Live comparison</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="Compare QA learning stages for a BCA student">
+                        <button aria-pressed="true" data-r="r1">Manual Testing</button>
+                        <button aria-pressed="false" data-r="r2">Automation (Selenium)</button>
+                        <button aria-pressed="false" data-r="r3">SDET / DevOps</button>
+                    </div>
+                    <div class="api-flow" id="apiFlow">
+                        <div class="flow-step"><div class="s-l">Time to learn</div><div class="s-v" id="reqVal">—</div><div class="s-d">Self-paced, online or classroom</div></div>
+                        <div class="flow-step"><div class="s-l">Entry difficulty</div><div class="s-v" id="resVal">—</div><div class="s-d">For a BCA student with basic programming</div></div>
+                        <div class="flow-step"><div class="s-l">Starting salary band</div><div class="s-v" id="assertVal">—</div><div class="s-d">Entry-level QA, India</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>BCA student</span>
+                        <span class="arrow">→</span>
+                        <span>Manual testing</span>
+                        <span class="arrow">→</span>
+                        <span>Automation + API</span>
+                        <span class="arrow">→</span>
+                        <span>SDET / Lead</span>
+                    </div>
+                    <div class="demo-cap">Click a stage to see how the numbers shift. Automation and scripting are where QA becomes a long-term career, not just a job.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Tutorials</a> / <a href="#top">Career Guides</a> / <span>BCA Student QA Tester</span></p>
+
+        <div class="cols">
+            <!-- ARTICLE -->
+            <article class="tut">
+                <p class="eyebrow">Career Decision · BCA Student · QA Testing</p>
+                <h1>BCA Student in 2026: Should You Learn QA Tester or Skip It?</h1>
+
+                <div class="byline">
+                    <span class="avatar">NK</span>
+                    <span><b>Nisha Kapoor</b> · Senior QA &amp; Test Automation Lead</span>
+                    <span class="sep">|</span>
+                    <span>Updated 11 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>12 min read</span>
+                    <span class="badge">Free · with examples</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="BCA student to QA career path: manual testing, automation, SDET">
+                        <defs>
+                            <marker id="ar5" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g5)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">BCA GRAD</text>
+                            <text x="280" y="40">MANUAL QA</text>
+                            <text x="510" y="40">AUTOMATION</text>
+                            <text x="720" y="40">SDET / LEAD</text>
+                        </g>
+                        <rect x="20" y="58" width="200" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">BCA Student</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Basic coding, no QA experience</text>
+                        <text x="50" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Exploring testing as a career</text>
+                        <rect x="40" y="164" width="150" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="65" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Start here</text>
+
+                        <rect x="250" y="58" width="210" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="280" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Manual QA</text>
+                        <text x="280" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Test cases, bug tracking</text>
+                        <text x="280" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">SDLC, agile basics</text>
+                        <rect x="280" y="164" width="150" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="310" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">6–8 wks</text>
+
+                        <rect x="490" y="58" width="190" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="520" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Automation</text>
+                        <text x="520" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Selenium, API testing, scripting</text>
+                        <text x="520" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">CI/CD basics</text>
+                        <rect x="520" y="164" width="130" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="545" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">10–12 wks</text>
+
+                        <rect x="710" y="58" width="170" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="740" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">SDET / Lead</text>
+                        <text x="740" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Automation architect</text>
+                        <text x="740" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">DevOps + cloud testing</text>
+                        <rect x="740" y="164" width="110" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="760" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">3–5 yrs</text>
+
+                        <path d="M220 148 H236" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar5)"/>
+                        <path d="M460 148 H476" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar5)"/>
+                        <path d="M680 148 H696" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar5)"/>
+                    </svg>
+                    <figcaption>Most successful QA careers for BCA students start with manual testing, then add automation, and eventually move into SDET or DevOps roles.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — should a BCA student learn QA testing in 2026?</h2>
+                    <p><b>Yes, but with a condition:</b> QA testing is a great entry point for BCA students, especially if you treat it as a stepping stone to <b>automation and SDET</b> roles. Manual testing alone has limited growth, but QA + scripting + CI/CD opens doors to well-paying roles in every product company. If you enjoy breaking things, attention to detail, and writing scripts, QA can be a rewarding career.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>What QA testing actually involves</b> — manual, automation, and beyond.</li>
+                        <li><b>Why BCA is a great fit</b> for QA (and where it falls short).</li>
+                        <li><b>The skills you need</b> to be hired as a junior QA engineer.</li>
+                        <li><b>Tools and concepts</b> in the right order.</li>
+                        <li><b>A 3-month kickstart plan</b> from zero to first QA job.</li>
+                        <li><b>Mistakes that waste time</b> for BCA students.</li>
+                        <li><b>Test your knowledge</b> — quick quiz to check your readiness.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What QA testing really means in 2026</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why BCA is (and isn't) a natural fit</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Core skills for a junior QA engineer</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Skill and timeline comparison</a></li>
+                        <li><a href="#s5"><span class="n">05</span>How to start — step-by-step guide</a></li>
+                        <li><a href="#s6"><span class="n">06</span>3-month kickstart plan for BCA students</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Mistakes that waste the most time</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <!-- S1 -->
+                <h2 id="s1"><span class="num">SECTION 01</span>What QA testing really means in 2026</h2>
+                <p>A <strong>QA engineer</strong> ensures software quality by designing tests, finding bugs, and validating that features work as expected. In 2026, QA is no longer just manual clicking — it includes <b>test automation, API testing, performance testing, and CI/CD integration</b>. Entry-level QA roles often start with manual testing, but the best career growth comes from adding scripting and automation skills.</p>
+                <p>For a BCA student, QA offers a clear path: manual testing → automation (Selenium, Playwright) → SDET (Software Development Engineer in Test) or QA lead. The key is to <b>not stop at manual testing</b> — automation is where the salary and respect grow.</p>
+                <div class="note"><b>Key point:</b> QA is a valid, well-paying career for BCA students who are willing to learn scripting and automation. Manual-only testers have limited growth, but automation engineers are in high demand.</div>
+
+                <!-- S2 -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why BCA is (and isn't) a natural fit</h2>
+                <ul>
+                    <li><b>BCA covers programming basics</b> — you already know some Java/Python, which is a head start for automation.</li>
+                    <li><b>Attention to detail is a strength</b> — QA requires a meticulous mindset, which many BCA students develop through coding.</li>
+                    <li><b>Missing advanced CS topics</b> — you may need to learn databases, networking, and OS concepts on your own for deeper QA roles.</li>
+                    <li><b>Manual testing is easy to learn</b> — it does not require advanced math or algorithms, making it accessible.</li>
+                    <li><b>Automation bridges the gap</b> — with a little extra effort, BCA grads can move into automation and SDET roles.</li>
+                </ul>
+                <p>In short: BCA + QA is a solid combination, but <b>only if you treat automation as the next step</b>, not the final destination.</p>
+
+                <!-- S3 -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Core skills for a junior QA engineer</h2>
+                <h3>1. Manual Testing Fundamentals</h3>
+                <p>Test case design, bug tracking, SDLC, agile methodologies, and exploratory testing.</p>
+                <ul>
+                    <li><b>Example:</b> Writing a test case for a login feature and reporting a bug in JIRA.</li>
+                    <li><b>Best for:</b> Every QA beginner — this is the mandatory starting point.</li>
+                </ul>
+                <h3>2. Automation with Selenium / Playwright</h3>
+                <p>Scripting automated tests using Java/Python, WebDriver, and test frameworks like TestNG or PyTest.</p>
+                <ul>
+                    <li><b>Example:</b> Automating a login flow and checking for successful navigation.</li>
+                    <li><b>Best for:</b> BCA students with some coding experience — this is where the career takes off.</li>
+                </ul>
+                <h3>3. API Testing</h3>
+                <p>Testing REST APIs using Postman, REST Assured, or Python requests library.</p>
+                <ul>
+                    <li><b>Example:</b> Sending a POST request and validating the response body.</li>
+                    <li><b>Best for:</b> Adding a second skill that increases salary potential.</li>
+                </ul>
+                <h3>4. CI/CD & DevOps Basics</h3>
+                <p>Integrating tests into CI pipelines (Jenkins, GitHub Actions) and basic container concepts.</p>
+                <ul>
+                    <li><b>Example:</b> Running automated tests on every code push using GitHub Actions.</li>
+                    <li><b>Best for:</b> Moving toward SDET or QA lead roles.</li>
+                </ul>
+
+                <!-- S4 -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Skill and timeline comparison</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Skill area</th><th>Time to learn basics</th><th>Best for</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Manual Testing</b></td><td>6–8 weeks</td><td>Mandatory first step for every QA beginner</td></tr>
+                            <tr><td><b>Automation (Selenium)</b></td><td>10–12 weeks</td><td>Adds high-demand skill after manual basics</td></tr>
+                            <tr><td><b>API Testing</b></td><td>4–6 weeks</td><td>Learned alongside or after automation</td></tr>
+                            <tr><td><b>CI/CD & DevOps</b></td><td>4–6 weeks</td><td>For SDET-level roles, added later</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>Pro tip:</b> Do not spend more than 8 weeks on manual testing alone. Start automation early, even if you are still learning test case design — automation is the differentiator.</div>
+
+                <!-- S5 -->
+                <h2 id="s5"><span class="num">SECTION 05</span>How to start — step-by-step guide</h2>
+                <ol class="steps">
+                    <li><b>Learn manual testing fundamentals.</b> Understand test cases, bug life cycle, and agile testing.</li>
+                    <li><b>Get comfortable with a bug tracking tool</b> — JIRA or Trello.</li>
+                    <li><b>Learn basic SQL</b> — you will need it for database testing.</li>
+                    <li><b>Start automation with Selenium WebDriver</b> — use Java or Python.</li>
+                    <li><b>Learn API testing</b> — Postman and REST Assured.</li>
+                    <li><b>Integrate tests into CI/CD</b> — Jenkins or GitHub Actions.</li>
+                </ol>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Sample output">
+                        <button role="tab" aria-selected="true" data-t="0">Self-check</button>
+                        <button role="tab" aria-selected="false" data-t="1">Sample recommendation</button>
+                    </div>
+                    <pre data-p="0"><code>Question                          Answer
+Any programming experience?       Yes, Java/Python in BCA
+Comfortable with manual tests?    Learning
+Enjoy finding bugs?               Yes
+Hours available per week          8-10
+City has QA job openings          Yes
+
+Recommendation: Start with manual testing,
+add Selenium automation, then API testing,
+and finally CI/CD integration.</code></pre>
+                    <pre data-p="1" hidden><code>3-month plan for this profile:
+Month 1: Manual testing fundamentals + JIRA
+Month 2: Selenium with Java/Python + basic automation
+Month 3: API testing + one full project (automate a web app)
+Start applying to junior QA roles with automation skills.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">self-check · BCA to QA path</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- S6 -->
+                <h2 id="s6"><span class="num">SECTION 06</span>3-month kickstart plan for BCA students</h2>
+                <ul>
+                    <li><b>Month 1:</b> Manual testing, test case design, bug tracking, SDLC basics.</li>
+                    <li><b>Month 2:</b> Selenium automation (Java/Python), writing basic test scripts.</li>
+                    <li><b>Month 3:</b> API testing, a full automation project, and interview prep.</li>
+                    <li><b>Throughout:</b> Keep a GitHub repo with your test scripts and projects.</li>
+                </ul>
+
+                <!-- S7 -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Mistakes that waste the most time</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Mistake</th><th>Why it costs time</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Staying in manual testing too long</b></td><td>Manual-only roles have limited growth and lower pay</td><td>Start automation within 2 months</td></tr>
+                            <tr><td><b>Skipping API testing</b></td><td>Most modern apps are API-driven, so API testing is a must</td><td>Learn Postman and REST Assured</td></tr>
+                            <tr><td><b>Not learning SQL</b></td><td>Database validation is a core QA task</td><td>Learn basic SELECT, INSERT, UPDATE</td></tr>
+                            <tr><td><b>No CI/CD exposure</b></td><td>Automation without CI is less impressive</td><td>Integrate tests with GitHub Actions</td></tr>
+                            <tr><td><b>Not building a portfolio</b></td><td>Without a GitHub, it is hard to show your skills</td><td>Push all test scripts to GitHub</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- S8 -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — BCA student to QA engineer</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>Can a BCA student become a QA engineer?</summary>
+                    <div class="body"><p>Yes — BCA graduates are hired for QA roles regularly, especially if they have basic programming skills and some automation knowledge.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q2</span>Is manual testing a dead end?</summary>
+                    <div class="body"><p>Not a dead end, but limited. Manual testing is the entry point — career growth comes from adding automation, API testing, and CI/CD skills.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q3</span>Which tool should I learn first for automation?</summary>
+                    <div class="body"><p>Selenium WebDriver with Java or Python is the most widely used. Playwright is also growing fast, but Selenium is still the industry standard.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q4</span>Do I need to learn coding for QA?</summary>
+                    <div class="body"><p>For manual QA, no. For automation and SDET roles, yes — you need scripting skills (Java, Python, or JavaScript).</p></div></details>
+                <details class="acc"><summary><span class="qn">Q5</span>How long does it take to get a QA job after BCA?</summary>
+                    <div class="body"><p>With focused study (manual + automation), most BCA grads get entry-level QA roles in 3–6 months.</p></div></details>
+                <details class="acc"><summary><span class="qn">Q6</span>Should I learn QA or development?</summary>
+                    <div class="body"><p>If you enjoy breaking things and systematic testing, QA is a great fit. If you love building new features, development may be better. Both are valid careers.</p></div></details>
+
+                <!-- QUIZ -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — BCA to QA quiz</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign-up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- FAQ -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is QA testing a good career for BCA students in 2026?</summary><div class="body"><p>Yes — QA offers a clear entry path, especially if you add automation and API testing. The demand for QA engineers is steady across all industries.</p></div></details>
+                <details class="acc"><summary>Do I need ISTQB certification to get a QA job?</summary><div class="body"><p>Not always. Many companies hire based on practical skills and project work rather than certification. However, ISTQB can help freshers stand out.</p></div></details>
+                <details class="acc"><summary>Which pays more: manual QA or automation QA?</summary><div class="body"><p>Automation QA and SDET roles pay significantly more than manual testing — often 30–50% higher at entry level.</p></div></details>
+                <details class="acc"><summary>Can I switch from QA to development later?</summary><div class="body"><p>Yes — many QA engineers transition to development, especially if they build strong coding skills through automation work.</p></div></details>
+                <details class="acc"><summary>What is the salary range for entry-level QA in India?</summary><div class="body"><p>Manual QA: ₹3–4 LPA; Automation QA: ₹4.5–7 LPA; SDET: ₹7–12 LPA (with 2–3 years experience).</p></div></details>
+
+                <!-- RELATED -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="software-testing-roadmap-2026.html"><span class="t">Complete QA roadmap for freshers in 2026</span><span class="m">QA · 14 min</span></a>
+                    <a class="rel-card" href="selenium-automation-beginners-guide.html"><span class="t">Selenium automation — beginner's guide</span><span class="m">Automation · 12 min</span></a>
+                    <a class="rel-card" href="api-testing-postman-guide.html"><span class="t">API testing with Postman — step by step</span><span class="m">API · 11 min</span></a>
+                    <a class="rel-card" href="bca-student-career-options-2026.html"><span class="t">Career options after BCA — the full list</span><span class="m">Career · 15 min</span></a>
+                    <a class="rel-card" href="what-is-ci-cd-in-software-testing.html"><span class="t">What is CI/CD in software testing?</span><span class="m">DevOps · 10 min</span></a>
+                    <a class="rel-card" href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="t">Best IT career path to start from zero</span><span class="m">Career · 15 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>QA Automation programme — built for BCA students and freshers</h3>
+                    <p>Our QA Automation programme covers manual testing, Selenium with Java, API testing, and CI/CD integration. Includes one full live project and interview preparation — designed for BCA students moving from theory to job-ready skills.</p>
+                    <span class="price">₹14,500 · full programme <s>₹22,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>5 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekday & weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live QA automation session</div>
+                    <p>Two hours, no payment, no commitment. Write your first Selenium test and get feedback from industry QA leads.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 10:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes the full plan</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Manual testing explained for beginners</a></li>
+                        <li><a href="#"><span class="rank">02</span>Selenium interview questions and answers</a></li>
+                        <li><a href="#"><span class="rank">03</span>API testing with Postman — guide</a></li>
+                        <li><a href="#"><span class="rank">04</span>Building your first automation framework</a></li>
+                        <li><a href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="rank">05</span>Best IT career path to start from zero</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Manual testing · 30 questions</a></li>
+                        <li><a href="#">Selenium automation · 40 questions</a></li>
+                        <li><a href="#">API testing · 25 questions</a></li>
+                        <li><a href="#">QA career switch · 20 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">QA Automation</div>
+                    <p>Manual testing, Selenium, API testing, CI/CD — built for BCA students and freshers moving into QA roles. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">12+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">5</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- BOTTOM BAND -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in QA & Testing</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Manual testing, explained simply <small>Test cases → bug tracking</small></a></li>
+                    <li><a href="#">Selenium automation guide <small>Java/Python</small></a></li>
+                    <li><a href="#">API testing with Postman <small>REST APIs</small></a></li>
+                    <li><a href="#">Resume tips for QA freshers <small>Framing without experience</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">QA engineer roadmap <small>Manual → Automation → SDET</small></a></li>
+                    <li><a href="working-professional-best-it-career-path-to-start-from-zero.html">Best IT career path from zero <small>Compare all paths</small></a></li>
+                    <li><a href="#">BCA to data analyst roadmap <small>Alternate path</small></a></li>
+                    <li><a href="#">BCA to DevOps engineer roadmap <small>2026 guide</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">QA career self-check worksheet <small>Decide if QA fits you</small></a></li>
+                    <li><a href="#">3-month QA kickstart plan <small>Ready-to-use planner</small></a></li>
+                    <li><a href="#">Selenium cheat sheet <small>Commands and locators</small></a></li>
+                    <li><a href="#">Entry-level QA interview question bank <small>50 real questions</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">BCA Student in 2026: Should You Learn QA Tester or Skip It? <small>11 August 2026</small></a></li>
+                    <li><a href="#">Housewife to business analytics guide <small>11 August 2026</small></a></li>
+                    <li><a href="#">Diploma holder to QA tester guide <small>11 August 2026</small></a></li>
+                    <li><a href="#">MBA graduate to cybersecurity guide <small>11 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img">
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and testing in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Data Analytics with Gen AI</a></li>
+                        <li><a href="#">Software Testing</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Career roadmaps</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                r1: { req: "6–8 wks", res: "Low", assert: "₹3–4 LPA" },
+                r2: { req: "10–12 wks", res: "Medium", assert: "₹4.5–7 LPA" },
+                r3: { req: "12–14 wks", res: "Medium–High", assert: "₹7–12 LPA" }
+            },
+            stateOrder: ["r1", "r2", "r3"],
+            renderScene: function(s) {
+                document.getElementById("reqVal").textContent = s.req;
+                document.getElementById("resVal").textContent = s.res;
+                document.getElementById("assertVal").textContent = s.assert;
+            },
+            defaultTrack: "Career Decision",
+            emptyMsg: 'Nothing matches that yet. Try QA, Selenium, or Automation.',
+            LIB: [
+                { t: "BCA Student in 2026: Should You Learn QA Tester or Skip It?", g: "Career Decision" },
+                { t: "Manual testing explained for beginners", g: "Manual Testing" },
+                { t: "Selenium automation — beginner's guide", g: "Automation" },
+                { t: "API testing with Postman", g: "Automation" },
+                { t: "Entry-level QA interview questions", g: "Career Decision" },
+                { t: "How to build an automation framework in 6 weeks", g: "Automation" },
+                { t: "What is CI/CD in software testing?", g: "DevOps & QA" },
+                { t: "Resume tips for QA freshers", g: "Career Decision" },
+                { t: "BCA career options in 2026", g: "Career Decision" },
+                { t: "Best IT career path to start from zero", g: "Career Decision" }
+            ],
+            QUIZ: [
+                {
+                q: "For a BCA student with basic Java, what should be the first skill to learn in QA?",
+                o: ["Advanced automation frameworks", "Manual testing fundamentals", "CI/CD pipelines", "Kubernetes"],
+                a: 1,
+                e: "Manual testing fundamentals are the base for every QA engineer — automation builds on top of that."
+            },
+            {
+                q: "Why is automation important for long-term QA growth?",
+                o: ["It makes testing slower", "It increases salary and opens SDET roles", "It is only for developers", "It reduces the need for testing"],
+                a: 1,
+                e: "Automation is the key differentiator for QA career growth — manual-only roles have limited progression."
+            },
+            {
+                q: "Which tool is most widely used for web automation?",
+                o: ["Postman", "Selenium WebDriver", "Jenkins", "JIRA"],
+                a: 1,
+                e: "Selenium WebDriver is the industry standard for web automation, especially with Java or Python."
+            },
+            {
+                q: "What is the main purpose of API testing?",
+                o: ["Test the user interface", "Validate backend logic and data flow", "Check database schema", "Test network speed"],
+                a: 1,
+                e: "API testing validates the backend logic, data flow, and integration between services."
+            },
+            {
+                q: "What is the biggest mistake BCA students make in QA?",
+                o: ["Learning too many tools", "Staying in manual testing too long without automation", "Writing too many test cases", "Focusing only on performance testing"],
+                a: 1,
+                e: "Staying in manual testing without adding automation skills limits salary and career growth."
+            }
+            ],
+            passScore: 4,
+            resultText: {
+                pass: "You have a solid understanding — focus on manual testing first, then add automation and API testing.",
+                fail: "Revisit sections 03 and 05 — manual testing is the entry point, but automation is where the career grows."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

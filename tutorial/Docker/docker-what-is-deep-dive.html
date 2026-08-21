@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is Docker? Docker Container: A Deep Dive into Docker | Docker Tutorial | Uncodemy</title>
+    <meta name="description" content="A deep dive into Docker and Docker containers — what they are, how they work, and why they have changed the way applications are built, shipped, and run." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-are-containers-in-devops-explained">Docker &amp; Kubernetes Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 2 of 6: What is Docker? Docker Container: A Deep Dive into Docker</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="docker-why-use-2026.html"><span class="num">01</span>Why Use Docker in 2026</a></li>
+            <li><a href="docker-what-is-deep-dive.html" class="active"><span class="num">02</span>What is Docker? Docker Container: A Deep Dive into Docker</a></li>
+            <li><a href="docker-top-commands.html"><span class="num">03</span>Top Docker Commands You Should Know</a></li>
+            <li><a href="docker-vs-kubernetes.html"><span class="num">04</span>Kubernetes vs Docker: Analyzing The Differences</a></li>
+            <li><a href="docker-interview-questions.html"><span class="num">05</span>Top 50+ Docker Interview Questions {Freshers + Experienced}</a></li>
+            <li><a href="docker-azure-devops-interview-questions.html"><span class="num">06</span>Top 50 Azure DevOps Interview Questions and Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cube"></i> Introduction</span>
+        <h1>What is Docker? Docker Container: A Deep Dive into Docker</h1>
+
+        <div class="card">
+
+            <p><strong>Docker</strong> is an open-source platform that automates the deployment of applications inside lightweight, portable units called <strong>containers</strong>. A container packages an application's code together with everything it needs to run — libraries, dependencies, environment variables, and configuration files — so it behaves the same way regardless of where it's deployed.</p>
+
+            <h2>Images vs Containers</h2>
+            <p>Two terms are central to understanding Docker:</p>
+            <ul>
+                <li><strong>Docker Image:</strong> A read-only template that defines what goes into a container — the base operating system layer, application code, dependencies, and startup instructions. Images are built from a <code>Dockerfile</code>.</li>
+                <li><strong>Docker Container:</strong> A running instance of an image. You can start, stop, move, or delete a container, and you can create many containers from the same image.</li>
+            </ul>
+
+            <h2>How Docker Containers Work</h2>
+            <p>Docker containers rely on operating system-level virtualization features built into the Linux kernel:</p>
+            <ul>
+                <li><strong>Namespaces:</strong> Isolate a container's view of the system — process IDs, network interfaces, mount points, and hostnames — so it appears to have its own environment.</li>
+                <li><strong>Control Groups (cgroups):</strong> Limit and account for a container's use of CPU, memory, disk I/O, and network resources.</li>
+                <li><strong>Union File Systems:</strong> Allow images to be built in layers, where each instruction in a Dockerfile creates a new layer. Layers are cached and reused, making builds and image transfers efficient.</li>
+            </ul>
+
+            <h2>The Docker Architecture</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Component</th><th>Role</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Docker Client</strong></td><td>The CLI (<code>docker</code>) or GUI tool used to issue commands.</td></tr>
+                        <tr><td><strong>Docker Daemon (dockerd)</strong></td><td>Background service that builds, runs, and manages containers and images.</td></tr>
+                        <tr><td><strong>Docker Images</strong></td><td>Read-only templates used to create containers.</td></tr>
+                        <tr><td><strong>Docker Containers</strong></td><td>Running instances of images.</td></tr>
+                        <tr><td><strong>Docker Registry</strong></td><td>Storage for images, such as Docker Hub or a private registry.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>A Simple Dockerfile Example</h2>
+            <p>Here's a minimal Dockerfile for a Node.js application, showing how an image is defined layer by layer:</p>
+            <pre style="background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 15px 20px; overflow-x:auto;"><code>FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "server.js"]</code></pre>
+
+            <h2>Container vs Virtual Machine</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>Virtual Machine</th><th>Docker Container</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>OS</strong></td><td>Full guest OS per VM</td><td>Shares host OS kernel</td></tr>
+                        <tr><td><strong>Size</strong></td><td>Gigabytes</td><td>Megabytes</td></tr>
+                        <tr><td><strong>Boot Time</strong></td><td>Minutes</td><td>Milliseconds to seconds</td></tr>
+                        <tr><td><strong>Isolation</strong></td><td>Strong (hardware-level)</td><td>Process-level (namespaces/cgroups)</td></tr>
+                        <tr><td><strong>Density</strong></td><td>Fewer per host</td><td>Many more per host</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Docker containers give you the isolation benefits of virtual machines with a fraction of the overhead, by relying on kernel-level features rather than full hardware virtualization. This is what makes Docker fast, portable, and ideal for modern application delivery.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="docker-why-use-2026.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Why Use Docker in 2026</a>
+            <a href="docker-top-commands.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Top Docker Commands You Should Know</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Docker?</h3>
+                <p>Build, ship, and run containerized applications with confidence. Learn Docker and Kubernetes from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/blog/what-are-containers-in-devops-explained">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Docker & Kubernetes Training Course</h4>
+            <p class="batch-sub">Kickstart your DevOps and containerization journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

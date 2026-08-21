@@ -1,0 +1,19 @@
+# Logs
+*.log
+php/debug.log
+webhook/log.txt
+
+# Environment
+.env
+.env.*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Runtime/cache
+tmp/
+cache/

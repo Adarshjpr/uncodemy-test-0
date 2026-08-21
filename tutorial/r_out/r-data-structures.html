@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Structures in R | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Vectors, Matrices, Arrays, and Factors" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 5 of 20: Data Structures in R</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html" class="active"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cubes"></i> Data Structures</span>
+        <h1>Data Structures in R</h1>
+
+        <div class="card">
+
+            <p>R's true power comes from its rich set of built-in data structures. Understanding <strong>vectors, matrices, arrays, and factors</strong> is essential before moving on to data frames.</p>
+
+            <h2>1. Vectors — The Building Block of R</h2>
+            <p>A <strong>vector</strong> is an ordered collection of elements of the <em>same</em> data type. It's the most fundamental structure in R — even a single number is technically a vector of length 1.</p>
+                        <pre class="code-block"><code>numbers &lt;- c(10, 20, 30, 40)
+names &lt;- c(&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;)
+flags &lt;- c(TRUE, FALSE, TRUE)
+
+length(numbers)   # 4
+numbers[2]        # 20 (1-indexed!)
+numbers[c(1, 3)]  # 10 30
+numbers[numbers &gt; 15]  # 20 30 40 (logical subsetting)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> R indexing starts at 1, not 0. This trips up programmers coming from Python, JavaScript, or C.
+            </div>
+
+            <h2>2. Vector Operations Are Vectorized</h2>
+            <p>Arithmetic on vectors is applied element-wise automatically — no loops needed:</p>
+                        <pre class="code-block"><code>a &lt;- c(1, 2, 3)
+b &lt;- c(10, 20, 30)
+a + b        # 11 22 33
+a * 2        # 2 4 6
+sum(a)       # 6
+mean(b)      # 20</code></pre>
+
+            <h2>3. Matrices — Two-Dimensional Data</h2>
+            <p>A <strong>matrix</strong> is a 2D structure where all elements share the same type.</p>
+                        <pre class="code-block"><code>m &lt;- matrix(1:6, nrow = 2, ncol = 3)
+print(m)
+#      [,1] [,2] [,3]
+# [1,]    1    3    5
+# [2,]    2    4    6
+
+m[1, 2]     # 3 (row 1, col 2)
+m[, 2]      # entire column 2: 3 4
+m[1, ]      # entire row 1: 1 3 5
+t(m)        # transpose
+dim(m)      # 2 3</code></pre>
+
+            <h2>4. Arrays — Multi-Dimensional Extensions</h2>
+            <p>An <strong>array</strong> generalizes a matrix to more than two dimensions:</p>
+                        <pre class="code-block"><code>arr &lt;- array(1:24, dim = c(2, 3, 4))
+dim(arr)      # 2 3 4
+arr[1, 2, 3]  # single element at that position</code></pre>
+
+            <h2>5. Factors — Categorical Data</h2>
+            <p>A <strong>factor</strong> stores categorical variables with fixed, known levels — ideal for things like survey responses, grades, or groups in statistical models.</p>
+                        <pre class="code-block"><code>grades &lt;- factor(c(&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;C&quot;, &quot;B&quot;),
+                  levels = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))
+levels(grades)   # &quot;A&quot; &quot;B&quot; &quot;C&quot;
+table(grades)    # frequency count per level
+
+# Ordered factor (has a meaningful order)
+size &lt;- factor(c(&quot;Small&quot;, &quot;Large&quot;, &quot;Medium&quot;),
+               levels = c(&quot;Small&quot;, &quot;Medium&quot;, &quot;Large&quot;),
+               ordered = TRUE)
+size[1] &lt; size[2]  # TRUE (Small &lt; Large)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Use factors for categorical/grouping variables in statistical models like lm() and glm() — R treats them correctly as groups rather than as raw text or numbers.
+            </div>
+
+            <h2>6. Comparing the Four Structures</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Structure</th><th>Dimensions</th><th>Data Type Rule</th><th>Typical Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Vector</td><td>1D</td><td>Single type</td><td>A single column of values</td></tr>
+                        <tr><td>Matrix</td><td>2D</td><td>Single type</td><td>Numeric computations, linear algebra</td></tr>
+                        <tr><td>Array</td><td>N-D</td><td>Single type</td><td>Multi-dimensional numeric data</td></tr>
+                        <tr><td>Factor</td><td>1D</td><td>Categorical labels</td><td>Grouping variables in models</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>7. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Master vector creation and indexing</strong> — the foundation of everything else in R.</li>
+                <li><strong>✅ Understand vectorized operations</strong> — avoid unnecessary loops.</li>
+                <li><strong>✅ Use matrices for 2D single-type data</strong> — and arrays for higher dimensions.</li>
+                <li><strong>✅ Use factors for categorical variables</strong> — especially before statistical modeling.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Remember: vectors, matrices, and arrays all require a single data type. The moment you need to mix types (numbers + text), you need a data frame or list — covered next.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-variables-datatypes.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Variables, Data Types, and Basic Operations</a>
+            <a href="r-dataframes-lists.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Advanced Structures — Data Frames and Lists</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

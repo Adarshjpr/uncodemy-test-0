@@ -1,0 +1,4404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Master Full Stack Development with Uncodemy's comprehensive MERN Stack training in Noida. Learn MongoDB, Express, React, Node.js with 100% placement assistance and real-world projects.">
+    <meta name="keywords"
+        content="Full Stack Development Course, MERN Stack Training, React Course, Node.js Training, Full Stack Developer Noida, Web Development Course, JavaScript Training">
+    <meta name="author" content="Uncodemy">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Full Stack Development Course in Noida | MERN Stack | Uncodemy">
+    <meta property="og:description"
+        content="Become a Full Stack Developer with hands-on MERN Stack training. Master React, Node.js, MongoDB, and modern web technologies with guaranteed placement.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://uncodemy.com/full-stack-development-course">
+    <title>Full Stack Development Course in Noida | MERN Stack Training | 100% Placement</title>
+<meta name="robots" content="index, follow">
+    <style>
+        /* CSS Variables - Modern Color Palette */
+        :root {
+            --primary-color: #6366F1;
+            --primary-dark: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary-color: #10B981;
+            --secondary-dark: #059669;
+            --accent-color: #F59E0B;
+            --accent-dark: #D97706;
+            --danger-color: #EF4444;
+            --dark-bg: #0F172A;
+            --dark-text: #1E293B;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --success: #22C55E;
+            --info: #3B82F6;
+            --warning: #F59E0B;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        h4 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-700);
+            font-size: 1rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section - Modern Gradient */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--dark-bg) 100%);
+            color: var(--white);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            color: var(--white);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero-text .highlight {
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stats-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-100);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* What is Full Stack Section */
+        .what-is-section {
+            background: var(--light-bg);
+        }
+
+        .what-is-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .what-is-content h3 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .what-is-content ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .what-is-content li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .what-is-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .hidden-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease-out;
+        }
+
+        .hidden-content.show {
+            max-height: 5000px;
+            transition: max-height 1s ease-in;
+        }
+
+        .read-more-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-read-more {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-read-more:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Tech Stack Section */
+        .tech-stack {
+            background: var(--white);
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 24px;
+        }
+
+        .tech-item {
+            background: var(--light-bg);
+            padding: 28px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .tech-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+        }
+
+        .tech-icon {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+        }
+
+        .tech-name {
+            font-weight: 600;
+            color: var(--dark-text);
+            font-size: 1rem;
+        }
+
+        /* Course Highlights */
+        .highlights {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .highlights .section-title,
+        .highlights .section-description {
+            color: var(--white);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 36px 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .highlight-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-color);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .highlight-card h3 {
+            color: var(--white);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .highlight-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            background: var(--light-bg);
+        }
+
+        .curriculum-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 28px;
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
+        }
+
+        .module-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .module-card.hidden-card {
+            display: none;
+        }
+
+        .module-card.show-card {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .module-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 28px;
+            position: relative;
+        }
+
+        .module-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .module-number {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .module-title {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .module-duration {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .module-content {
+            padding: 28px;
+        }
+
+        .module-content ul {
+            list-style: none;
+        }
+
+        .module-content li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-700);
+            position: relative;
+            padding-left: 28px;
+            font-size: 0.95rem;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+
+
+
+
+     
+        /* Learning Path */
+        .learning-path {
+            background: var(--white);
+        }
+
+        .path-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .path-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .path-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .path-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .path-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .path-content {
+            flex: 1;
+            padding: 30px;
+            background: var(--gray-50);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .path-item:nth-child(odd) .path-content {
+            margin-right: 30px;
+        }
+
+        .path-item:nth-child(even) .path-content {
+            margin-left: 30px;
+        }
+
+        .path-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .path-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .path-content p {
+            color: var(--gray-700);
+            margin: 0;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--light-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-card.hidden-card {
+            display: none;
+        }
+
+        .project-card.show-card {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+        }
+
+        .project-body {
+            padding: 28px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .project-tag {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .project-features {
+            list-style: none;
+        }
+
+        .project-features li {
+            padding: 8px 0;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .project-features li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Career Section */
+        .career {
+            background: var(--white);
+        }
+
+        .career-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .career-stat-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .career-stat-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-8px);
+        }
+
+        .career-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .career-stat-label {
+            color: var(--gray-700);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .career-roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .career-role-card {
+            background: var(--light-bg);
+            padding: 28px;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary-color);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .career-role-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateX(8px);
+        }
+
+        .role-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .role-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .role-info h4 {
+            color: var(--dark-text);
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .role-salary {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .role-description {
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Tools & Technologies */
+        .tools {
+            background: var(--light-bg);
+        }
+
+        .tools-category {
+            margin-bottom: 50px;
+        }
+
+        .tools-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .tool-card {
+            background: var(--white);
+            padding: 28px 24px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .tool-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tool-logo {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+
+        .tool-card h4 {
+            color: var(--dark-text);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .tool-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Instructor Section */
+        .instructors {
+            background: var(--white);
+        }
+
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .instructor-card {
+            background: var(--light-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .instructor-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--white);
+        }
+
+        .instructor-info {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .instructor-info h4 {
+            color: var(--dark-text);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .instructor-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .instructor-experience {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .instructor-skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Certification Section */
+        .certification {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+        }
+
+        .certification-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cert-visual {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .cert-icon {
+            font-size: 7rem;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-features {
+            list-style: none;
+        }
+
+        .cert-features li {
+            padding: 18px 0 18px 50px;
+            position: relative;
+            border-bottom: 1px solid var(--gray-200);
+            line-height: 1.7;
+        }
+
+        .cert-features li:last-child {
+            border-bottom: none;
+        }
+
+        .cert-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--success);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Placement Section */
+        .placement {
+            background: var(--white);
+        }
+
+        .placement-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 32px 24px;
+            background: var(--light-bg);
+            border-radius: 16px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-step h4 {
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: var(--gray-600);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .companies-hired {
+            background: var(--light-bg);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .companies-hired h3 {
+            text-align: center;
+            color: var(--dark-text);
+            margin-bottom: 40px;
+        }
+
+        .company-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .company-logo {
+            background: var(--white);
+            padding: 28px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .company-logo:hover {
+            transform: scale(1.08);
+            box-shadow: var(--shadow-md);
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gray-700);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--light-bg);
+        }
+
+        .testimonial-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 36px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--primary-light);
+            opacity: 0.2;
+            position: absolute;
+            top: 24px;
+            right: 32px;
+        }
+
+        .rating {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            color: var(--gray-700);
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .author-details h5 {
+            color: var(--dark-text);
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+
+        .author-details p {
+            color: var(--gray-600);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-light);
+        }
+
+        .faq-question {
+            padding: 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--white);
+        }
+
+        .faq-question h4 {
+            color: var(--dark-text);
+            font-size: 1.15rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 28px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-out;
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 28px 28px;
+            max-height: 600px;
+            transition: all 0.5s ease-in;
+        }
+
+        /* Batch Schedule */
+        .batch-schedule {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .batch-schedule .section-title,
+        .batch-schedule .section-description {
+            color: var(--white);
+        }
+
+        .batch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .batch-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 36px;
+            transition: var(--transition);
+        }
+
+        .batch-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .batch-type {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .batch-card h3 {
+            color: var(--white);
+            margin-bottom: 24px;
+            font-size: 1.6rem;
+        }
+
+        .batch-details {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .batch-details li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+        }
+
+        .batch-details li:last-child {
+            border-bottom: none;
+        }
+
+        .batch-details strong {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            padding: 80px 60px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-box h2 {
+            color: var(--white);
+            margin-bottom: 24px;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box .cta-buttons {
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+
+            .hero-content,
+            .certification-showcase,
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .path-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-number {
+                grid-column: 1;
+            }
+
+            .timeline-number {
+                justify-content: flex-start;
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .companies-hired{
+                padding: 2px;
+
+            }
+
+            .company-logos{
+                grid-template-columns: auto auto ;
+            }
+            .career-stat-card{
+                padding: 15px;
+            }
+            .career-stats{
+                grid-template-columns: auto auto;
+                gap: 10px;
+            }
+            .hero-stats-box{
+                padding: 5px;
+            }
+            .hero-badges{
+                display: grid;
+                grid-template-columns: auto auto auto ;
+            }
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 70px 0 50px;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+
+            .curriculum-grid,
+            .projects-grid
+             {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: auto auto ;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .what-is-content,
+            .cta-box {
+                padding: 30px 24px;
+            }
+        }
+
+/* navbar footer */
+
+
+/* Nabbar */
+
+
+
+      
+
+        /* Navigation */
+        .nav-main {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-color), #ee5a52);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0.5rem;
+            left: 1.25rem;
+            right: 1.25rem;
+            height: 2px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            background: rgba(255, 255, 255, 0.15);
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* CTA Button */
+        .crs-btn{
+            background-color: dodgerblue;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-color), #ee5a52);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-md);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            outline: 2px solid var(--white);
+        }
+
+        .cta-button::after {
+            display: none;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle::before {
+            content: '▼';
+            font-size: 0.7rem;
+            margin-left: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .dropdown.active .dropdown-toggle::before {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            width: 900px;
+            max-width: 95vw;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1100;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: darkturquoise;
+            border-bottom: 1px solid var(--gray-border);
+            border-radius: 12px 12px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .dropdown-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .dropdown-subtitle {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+
+        .dropdown-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .dropdown-close:hover,
+        .dropdown-close:focus-visible {
+            color: var(--accent-color);
+            background: rgba(0, 0, 0, 0.05);
+            outline: none;
+        }
+
+        .dropdown-content {
+            padding: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Category Cards */
+        .category {
+            background: aquamarine;
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            border: 1px solid var(--gray-border);
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .category:hover .category-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-courses {
+            list-style: none;
+        }
+
+        .category-courses li {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .category-courses li:last-child {
+            border-bottom: none;
+        }
+
+        .category-courses a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .category:hover .category-courses a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .category-courses a:hover {
+            padding-left: 0.5rem;
+        }
+
+        .category:hover .category-courses a:hover {
+            color: var(--white);
+        }
+
+        .course-emoji {
+            font-size: 1rem;
+        }
+
+        /* Dropdown Footer */
+        .dropdown-footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--gray-light);
+            border-top: 1px solid var(--gray-border);
+            position: sticky;
+            bottom: 0;
+        }
+
+        .view-all-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 0.625rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .view-all-btn:hover,
+        .view-all-btn:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            outline: 2px solid var(--primary-color);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-toggle:hover,
+        .mobile-toggle:focus-visible {
+            background: rgba(255, 255, 255, 0.2);
+            outline: 2px solid var(--white);
+        }
+
+        .hamburger {
+            width: 22px;
+            height: 16px;
+            position: relative;
+        }
+
+        .hamburger span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--white);
+            border-radius: 1px;
+            transition: var(--transition);
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 7px;
+        }
+
+        .hamburger span:nth-child(3) {
+            bottom: 0;
+        }
+
+        .mobile-toggle.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 7px;
+        }
+
+        .mobile-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg);
+            bottom: 7px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-main {
+                padding: 0.75rem 1rem;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--white);
+                border-radius: 0 0 12px 12px;
+                box-shadow: var(--shadow-lg);
+                padding: 1rem;
+                gap: 0;
+                max-height: 80vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-item {
+                width: 100%;
+            }
+
+            .nav-link {
+                color: var(--text);
+                padding: 0.875rem;
+                display: block;
+                border-radius: 8px;
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            .nav-link:hover,
+            .nav-link:focus-visible {
+                background: var(--gray-light);
+                color: var(--primary-color);
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+
+            /* FIXED: Mobile dropdown scrolling */
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin: 0.5rem 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active .dropdown-menu {
+                max-height: 65vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .dropdown-content {
+                padding: 1rem;
+                overflow: visible;
+            }
+
+            .dropdown-header {
+                position: static;
+            }
+
+            .dropdown-footer {
+                position: static;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Smooth scrolling for dropdown */
+        .dropdown-menu {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--gray-light);
+        }
+
+        .dropdown-menu::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar-track {
+            background: var(--gray-light);
+        }
+
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+   
+
+
+
+
+               
+    /* Universal Footer */
+.uc-footer {
+    background: linear-gradient(135deg, #1a1f24, #2d3740);
+    color: #fff;
+    padding: 3rem 0 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.uc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: grid;
+    gap: 2.5rem;
+}
+
+/* Brand */
+.uc-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.uc-logo img {
+    max-width: 160px;
+    height: auto;
+    transition: transform .3s;
+}
+
+.uc-logo:hover img {
+    transform: scale(1.05);
+}
+
+.uc-desc {
+    color: #b8c5d0;
+    font-size: .9375rem;
+    line-height: 1.65;
+    max-width: 450px;
+}
+
+/* Stats */
+.uc-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .75rem;
+    max-width: 450px;
+}
+
+.uc-stat {
+    background: rgba(255, 255, 255, .06);
+    padding: .875rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: all .3s;
+}
+
+.uc-stat:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, .09);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, .2);
+}
+
+.uc-stat strong {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FF6B35;
+    margin-bottom: .25rem;
+}
+
+.uc-stat span {
+    font-size: .75rem;
+    color: #b8c5d0;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+/* Social */
+.uc-social {
+    display: flex;
+    gap: .625rem;
+    flex-wrap: wrap;
+}
+
+.uc-social a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b8c5d0;
+    transition: all .3s;
+}
+
+.uc-social a:hover {
+    background: #FF6B35;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, .3);
+}
+
+/* Navigation */
+.uc-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.uc-section summary {
+    list-style: none;
+    cursor: default;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: 1.125rem;
+    padding-bottom: .625rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uc-section summary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B35, #F7931E);
+    border-radius: 2px;
+}
+
+.uc-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.uc-section summary svg {
+    display: none;
+    color: #FF6B35;
+    transition: transform .3s;
+}
+
+.uc-section[open] summary svg {
+    transform: rotate(180deg);
+}
+
+.uc-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+}
+
+.uc-section a {
+    color: #b8c5d0;
+    text-decoration: none;
+    font-size: .875rem;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+}
+
+.uc-section a:hover {
+    color: #fff;
+    padding-left: 4px;
+}
+
+.uc-office {
+    margin-bottom: .5rem;
+}
+
+.uc-office strong {
+    color: #FF6B35;
+    font-size: .875rem;
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.uc-office span {
+    color: #b8c5d0;
+    font-size: .8125rem;
+    display: block;
+    line-height: 1.5;
+}
+
+.uc-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, .1);
+    margin: .75rem 0;
+}
+
+/* Copyright */
+.uc-copy {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.uc-copy p {
+    color: #8a9aa8;
+    font-size: .8125rem;
+    margin: 0;
+}
+
+.uc-copy a {
+    color: #FF6B35;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.uc-copy a:hover {
+    color: #F7931E;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .uc-container {
+        grid-template-columns: 1.5fr 2.5fr;
+    }
+    
+    .uc-section:not([open]) ul {
+        display: flex;
+    }
+}
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+    .uc-footer {
+        padding: 2.5rem 0 0;
+    }
+    
+    .uc-container {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    
+    .uc-nav {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+    }
+    
+    .uc-section {
+        background: rgba(255, 255, 255, .04);
+        border: 1px solid rgba(255, 255, 255, .12);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .uc-section summary {
+        cursor: pointer;
+        padding: 1rem 1.125rem;
+        margin-bottom: 0;
+        transition: background .2s;
+    }
+    
+    .uc-section summary:hover {
+        background: rgba(255, 255, 255, .06);
+    }
+    
+    .uc-section summary::after {
+        display: none;
+    }
+    
+    .uc-section summary svg {
+        display: block;
+    }
+    
+    .uc-section ul {
+        padding: 0 1.125rem 1.125rem;
+    }
+    
+    .uc-section:not([open]) ul {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .uc-container {
+        padding: 0 .875rem;
+        gap: 1.5rem;
+    }
+    
+    .uc-logo img {
+        max-width: 140px;
+    }
+    
+    .uc-stat {
+        padding: .75rem .5rem;
+    }
+    
+    .uc-stat strong {
+        font-size: 1.125rem;
+    }
+    
+    .uc-stat span {
+        font-size: .6875rem;
+    }
+    
+    .uc-social a {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .uc-copy {
+        padding: 1.125rem .875rem;
+    }
+    
+    .uc-copy p {
+        font-size: .75rem;
+        line-height: 1.5;
+    }
+}
+
+    </style>
+
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xmqak04f7r");
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-main" aria-label="Main Navigation">
+            <div class="nav-container">
+                <a href="/" class="logo" aria-label="Uncodemy Home">
+                    <div class="logo-icon" aria-hidden="true">U</div>
+                </a>
+
+                <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+
+                <ul class="nav-links" id="nav-links">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle crs-btn" aria-expanded="false" aria-haspopup="true">Courses</button>
+                        <div class="dropdown-menu" role="region" aria-label="Courses menu">
+                            <div class="dropdown-header">
+                                <div>
+                                    <h3 class="dropdown-title">Explore Tech Career Paths</h3>
+                                    <p class="dropdown-subtitle">Expert-led courses with guaranteed placements</p>
+                                </div>
+                                <button class="dropdown-close" aria-label="Close menu">&times;</button>
+                            </div>
+                            <div class="dropdown-content">
+                                <div class="grid">
+                                    <!-- Full Stack Development -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">🚀</div>
+                                        <h4 class="category-title">Full Stack Development</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/full-stack-with-nodejs-training-course-in-noida"><span class="course-emoji" aria-hidden="true">💻</span>Full Stack With NodeJs</a></li>
+                                            <li><a href="/course/python-full-stack-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🐍</span>Python Full Stack</a></li>
+                                            <li><a href="/course/java-full-stack-using-react-training-course-in-noida"><span class="course-emoji" aria-hidden="true">☕</span>Java Full Stack Using React</a></li>
+                                            <li><a href="/course/web-designing-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🎨</span>Web Designing</a></li>
+                                            <li><a href="/course/web-development-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🌐</span>Web Development</a></li>
+                                            <li><a href="/course/frontend-development-training-course-in-noida"><span class="course-emoji" aria-hidden="true">⚡</span>Frontend</a></li>
+                                            <li><a href="/course/angular-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🅰️</span>Angular</a></li>
+                                            <li><a href="/course/react-js-training-course-in-noida"><span class="course-emoji" aria-hidden="true">⚛️</span>ReactJs</a></li>
+                                            <li><a href="/course/data-structure-and-algorithm-training-course-in-noida"><span class="course-emoji" aria-hidden="true">📊</span>Data Structure and Algorithm</a></li>
+                                            <li><a href="/course/mean-stack-development-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔗</span>Mean</a></li>
+                                            <li><a href="/course/mern-stack-development-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔗</span>Mern</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Data Science -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">📈</div>
+                                        <h4 class="category-title">Data Science</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/business-analyst-training-course-in-noida"><span class="course-emoji" aria-hidden="true">📊</span>Business Analytics</a></li>
+                                            <li><a href="/course/python-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🐍</span>Python</a></li>
+                                            <li><a href="/course/data-analytics-using-python-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔍</span>Data Analytics using Python</a></li>
+                                            <li><a href="/course/data-science-machine-learning-using-python-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🤖</span>Data Science & Machine Learning using Python</a></li>
+                                            <li><a href="/course/machine-learning-using-python-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🧠</span>Machine Learning using Python</a></li>
+                                            <li><a href="/course/ai-using-python-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🤖</span>AI Using Python</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Software Testing -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">🧪</div>
+                                        <h4 class="category-title">Software Testing</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/software-testing-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔍</span>Software Testing</a></li>
+                                            <li><a href="/course/manual-testing-course-in-noida"><span class="course-emoji" aria-hidden="true">👨‍💻</span>Manual Testing</a></li>
+                                            <li><a href="/course/automation-testing-course-in-noida"><span class="course-emoji" aria-hidden="true">🤖</span>Automation Testing</a></li>
+                                            <li><a href="/course/istqb-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🏆</span>ISTQB Training</a></li>
+                                            <li><a href="/course/manual-selenium-training-course-in-noida"><span class="course-emoji" aria-hidden="true">⚡</span>Manual + Selenium</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Cloud Tools -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">☁️</div>
+                                        <h4 class="category-title">Cloud Tools</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/microsoft-azure-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔷</span>Microsoft Azure</a></li>
+                                            <li><a href="/course/devops-training-course-in-noida"><span class="course-emoji" aria-hidden="true">⚙️</span>DevOps</a></li>
+                                            <li><a href="/course/aws-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🌩️</span>Amazon Web Services (AWS)</a></li>
+                                            <li><a href="/course/cloud-computing-training-course-in-noida"><span class="course-emoji" aria-hidden="true">☁️</span>Cloud Computing</a></li>
+                                            <li><a href="/course/salesforce-training-course-in-noida"><span class="course-emoji" aria-hidden="true">💼</span>Salesforce</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Digital Marketing -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">📱</div>
+                                        <h4 class="category-title">Digital Marketing</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/digital-marketing-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🎯</span>Digital Marketing</a></li>
+                                            <li><a href="/course/advance-digital-marketing-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🚀</span>Advance Digital Marketing</a></li>
+                                            <li><a href="/course/seo-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔍</span>SEO (Search Engine Optimization)</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Java Technology -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">☕</div>
+                                        <h4 class="category-title">Java Technology</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/java-training-course-in-noida"><span class="course-emoji" aria-hidden="true">☕</span>Java</a></li>
+                                            <li><a href="/course/java-for-beginners-training-course-in-noida"><span class="course-emoji" aria-hidden="true">👶</span>Java For Beginners</a></li>
+                                            <li><a href="/course/java-expert-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🎓</span>Java Expert</a></li>
+                                            <li><a href="/course/spring-boot-microservices-security-with-hibernate-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🌱</span>Spring Boot Microservices Security With Hibernate</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Network & Security -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">🔒</div>
+                                        <h4 class="category-title">Network & Security</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/ethical-hacking-course-in-noida"><span class="course-emoji" aria-hidden="true">👨‍💻</span>Ethical Hacking</a></li>
+                                            <li><a href="/course/cyber-security-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🛡️</span>Cyber Security</a></li>
+                                            <li><a href="/course/ccnp-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔧</span>CCNP</a></li>
+                                            <li><a href="/course/mcsa-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🖥️</span>MCSA</a></li>
+                                            <li><a href="/course/vmware-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🖥️</span>Vmware</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Programming Language -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">💻</div>
+                                        <h4 class="category-title">Programming Language</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/c-with-data-structure-and-algorithm-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔤</span>C With Data Structure And Algorithms</a></li>
+                                            <li><a href="/course/cpptraining-training-course-in-noida"><span class="course-emoji" aria-hidden="true">📚</span>Object Oriented DataStructure & Algorithms Training</a></li>
+                                            <li><a href="/course/net-4-months-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔵</span>.NET 4 Months</a></li>
+                                            <li><a href="/course/dotnet-full-stack-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🔵</span>.NET Full Stack</a></li>
+                                            <li><a href="/course/r-programming-training-course-in-noida"><span class="course-emoji" aria-hidden="true">📊</span>R Programming</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- CAD Training -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">📐</div>
+                                        <h4 class="category-title">CAD Training</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/autocad-training-course-in-noida"><span class="course-emoji" aria-hidden="true">✏️</span>AUTOCAD</a></li>
+                                            <li><a href="/course/cnc-programming-training-course-in-noida"><span class="course-emoji" aria-hidden="true">⚙️</span>CNC Programming</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Graphic Designing -->
+                                    <div class="category">
+                                        <div class="category-icon" aria-hidden="true">🎨</div>
+                                        <h4 class="category-title">Graphic Designing</h4>
+                                        <ul class="category-courses">
+                                            <li><a href="/course/graphic-designing-training-course-in-noida"><span class="course-emoji" aria-hidden="true">🎨</span>Graphic Designing</a></li>
+                                            <li><a href="/course/uiux-training-course-in-noida"><span class="course-emoji" aria-hidden="true">📱</span>UI/UX Designing</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="/all-courses" class="view-all-btn">View All Courses</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="/placement" class="nav-link">Placement</a></li>
+                    <li class="nav-item"><a href="/about-us" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="https://pages.razorpay.com/fees-uncodemy" target="_blank" rel="noopener" class="nav-link">Fees Payment</a></li>
+                    <li class="nav-item"><a href="/register-now" class="nav-link cta-button">Enroll Now</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Become a <span class="highlight">Full Stack Developer</span> in 6 Months</h1>
+                    <p>Master the MERN Stack (MongoDB, Express.js, React.js, Node.js) and build production-ready web
+                        applications. Join India's #1 Full Stack Development training with guaranteed placement
+                        assistance.</p>
+
+                    <div class="hero-badges">
+                        <span class="badge">🎓 Industry Certified</span>
+                        <span class="badge">💼 100% Job Assistance</span>
+                        <span class="badge">🚀 20+ Live Projects</span>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#enroll" class="btn btn-primary">Start Learning Today</a>
+                        <a href="#curriculum" class="btn btn-outline">View Curriculum</a>
+                    </div>
+                </div>
+                <div class="hero-stats-box">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-label">Training Hours</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Real Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Placement Support</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Alumni Placed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Full Stack Development -->
+    <section class="what-is-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Introduction</span>
+                <h2 class="section-title">What is Full Stack Development?</h2>
+            </div>
+            <div class="what-is-content">
+                <p><strong>Full Stack Development</strong> refers to the comprehensive skill of working on both the
+                    frontend (client-side) and backend (server-side) portions of web applications. A Full Stack
+                    Developer is a versatile professional who can handle databases, servers, systems engineering, and
+                    client-facing interfaces - essentially building complete web applications from start to finish.</p>
+
+                <p>In today's digital-first world, Full Stack Developers are the most sought-after professionals in the
+                    tech industry. They possess the unique ability to understand and work across all layers of web
+                    application development, making them invaluable assets to startups and established companies alike.
+                </p>
+
+                <h3>🎯 Why Choose Full Stack Development as Your Career?</h3>
+                <ul>
+                    <li><strong>High Demand:</strong> Over 60,000 Full Stack Developer positions available in India
+                        annually with demand growing 35% year-over-year</li>
+                    <li><strong>Lucrative Salaries:</strong> Average starting salary of ₹6-10 LPA for freshers, reaching
+                        ₹15-30 LPA for experienced professionals</li>
+                    <li><strong>Versatility:</strong> Work on diverse projects from e-commerce platforms to social media
+                        applications and enterprise software</li>
+                    <li><strong>Entrepreneurial Freedom:</strong> Build your own startups and MVP products with complete
+                        technical independence</li>
+                    <li><strong>Remote Work Opportunities:</strong> 80% of Full Stack positions offer flexible remote or
+                        hybrid work arrangements</li>
+                    <li><strong>Future-Proof Career:</strong> Skills remain relevant across evolving technologies and
+                        industry trends</li>
+                </ul>
+
+                <div class="hidden-content" id="whatIsHiddenContent">
+                    <h3>🌐 The Full Stack Technology Ecosystem</h3>
+                    <p>Full Stack Development encompasses multiple technologies working together harmoniously:</p>
+                    <ul>
+                        <li><strong>Frontend Technologies:</strong> HTML5, CSS3, JavaScript, React.js, Vue.js, Angular,
+                            TypeScript, Redux, Tailwind CSS, Bootstrap</li>
+                        <li><strong>Backend Technologies:</strong> Node.js, Express.js, Python (Django/Flask), Java
+                            (Spring Boot), PHP (Laravel), Ruby on Rails</li>
+                        <li><strong>Databases:</strong> MongoDB, PostgreSQL, MySQL, Redis, Firebase, Cassandra, Neo4j
+                        </li>
+                        <li><strong>DevOps & Deployment:</strong> Docker, Kubernetes, AWS, Azure, Google Cloud, Heroku,
+                            Vercel, Netlify</li>
+                        <li><strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket</li>
+                        <li><strong>API Development:</strong> REST APIs, GraphQL, WebSockets, gRPC</li>
+                    </ul>
+
+                    <h3>💡 Why MERN Stack is Industry Standard</h3>
+                    <p>The MERN Stack (MongoDB, Express.js, React.js, Node.js) has become the gold standard for modern
+                        web development:</p>
+                    <ul>
+                        <li><strong>JavaScript Everywhere:</strong> Use one language (JavaScript) for both frontend and
+                            backend development, reducing context switching and learning curve</li>
+                        <li><strong>React.js Dominance:</strong> Used by 40% of developers worldwide, powering Facebook,
+                            Instagram, Netflix, Airbnb, and thousands of enterprise applications</li>
+                        <li><strong>Performance & Scalability:</strong> Node.js handles concurrent requests efficiently,
+                            making it perfect for real-time applications and microservices</li>
+                        <li><strong>MongoDB Flexibility:</strong> NoSQL database that scales horizontally, perfect for
+                            modern cloud-native applications with flexible data structures</li>
+                        <li><strong>Rich Ecosystem:</strong> Over 1.3 million NPM packages available, accelerating
+                            development with pre-built solutions</li>
+                        <li><strong>Industry Adoption:</strong> 70% of startups and 50% of enterprises use MERN Stack or
+                            similar JavaScript-based architectures</li>
+                    </ul>
+
+                    <h3>📈 Market Trends & Industry Insights</h3>
+                    <ul>
+                        <li><strong>Job Market Growth:</strong> Full Stack Developer positions increased by 135% in the
+                            last 3 years across India</li>
+                        <li><strong>Startup Preference:</strong> 85% of tech startups prefer hiring Full Stack
+                            Developers over specialized developers for early-stage development</li>
+                        <li><strong>Salary Progression:</strong> Developers with 3-5 years experience earn 150-200% more
+                            than their starting salaries</li>
+                        <li><strong>Freelancing Potential:</strong> Full Stack Developers charge ₹2000-₹5000 per hour
+                            for freelance projects internationally</li>
+                        <li><strong>Remote Opportunities:</strong> Access global job markets with companies from US,
+                            Europe, and Australia actively hiring Indian developers</li>
+                    </ul>
+
+                    <h3>🚀 Career Progression Path</h3>
+                    <ul>
+                        <li><strong>Year 0-1:</strong> Junior Full Stack Developer (₹4-8 LPA) - Learning and
+                            implementing under guidance</li>
+                        <li><strong>Year 1-3:</strong> Full Stack Developer (₹8-15 LPA) - Independent project
+                            development and feature implementation</li>
+                        <li><strong>Year 3-5:</strong> Senior Full Stack Developer (₹15-25 LPA) - Architecture decisions
+                            and team mentoring</li>
+                        <li><strong>Year 5-8:</strong> Lead Developer/Tech Lead (₹25-40 LPA) - Leading teams and
+                            defining technical roadmaps</li>
+                        <li><strong>Year 8+:</strong> Engineering Manager/Architect (₹40-80 LPA) - Strategic technical
+                            leadership</li>
+                        <li><strong>Alternative Path:</strong> Freelancing/Consulting (₹1-5 Lakhs per project) or
+                            Startup Founder (Unlimited potential)</li>
+                    </ul>
+
+                    <h3>🏢 Industries Hiring Full Stack Developers</h3>
+                    <ul>
+                        <li><strong>E-Commerce:</strong> Amazon, Flipkart, Myntra - Building shopping platforms and
+                            recommendation engines</li>
+                        <li><strong>Fintech:</strong> Paytm, PhonePe, Razorpay - Developing payment gateways and
+                            financial applications</li>
+                        <li><strong>EdTech:</strong> BYJU'S, Unacademy, Coursera - Creating learning management systems
+                            and interactive platforms</li>
+                        <li><strong>HealthTech:</strong> Practo, 1mg, Pharmeasy - Building telemedicine and health
+                            record management systems</li>
+                        <li><strong>Social Media:</strong> Facebook, Twitter, LinkedIn - Developing social networking
+                            features and content delivery</li>
+                        <li><strong>Enterprise Software:</strong> Salesforce, Zoho, Freshworks - Building SaaS platforms
+                            and business tools</li>
+                        <li><strong>Travel & Hospitality:</strong> Ola, Uber, Airbnb - Creating booking engines and
+                            real-time tracking systems</li>
+                    </ul>
+
+                    <h3>🎓 Skills You'll Master</h3>
+                    <ul>
+                        <li><strong>Frontend Development:</strong> Create responsive, interactive user interfaces with
+                            modern JavaScript frameworks</li>
+                        <li><strong>Backend Development:</strong> Build scalable RESTful APIs and handle business logic
+                            efficiently</li>
+                        <li><strong>Database Management:</strong> Design schemas, optimize queries, and manage data
+                            persistence</li>
+                        <li><strong>Authentication & Security:</strong> Implement JWT, OAuth, encryption, and secure
+                            coding practices</li>
+                        <li><strong>Cloud Deployment:</strong> Deploy applications on AWS, Azure, or Google Cloud with
+                            CI/CD pipelines</li>
+                        <li><strong>Performance Optimization:</strong> Improve load times, reduce bandwidth, and enhance
+                            user experience</li>
+                        <li><strong>Testing & Debugging:</strong> Write unit tests, integration tests, and debug complex
+                            applications</li>
+                        <li><strong>Agile Methodologies:</strong> Work in sprints, collaborate with teams, and deliver
+                            iterative improvements</li>
+                    </ul>
+                </div>
+
+                <div class="read-more-container">
+                    <button class="btn-read-more" id="readMoreWhat"
+                        onclick="toggleContent('whatIsHiddenContent', 'readMoreWhat')">
+                        Read More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technologies</span>
+                <h2 class="section-title">Master the Modern Tech Stack</h2>
+                <p class="section-description">Learn industry-standard technologies used by top tech companies worldwide
+                </p>
+            </div>
+            <div class="tech-stack-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">⚛️</div>
+                    <div class="tech-name">React.js</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🟢</div>
+                    <div class="tech-name">Node.js</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🍃</div>
+                    <div class="tech-name">MongoDB</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🚂</div>
+                    <div class="tech-name">Express.js</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">📘</div>
+                    <div class="tech-name">TypeScript</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🎨</div>
+                    <div class="tech-name">Tailwind CSS</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔥</div>
+                    <div class="tech-name">Firebase</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">☁️</div>
+                    <div class="tech-name">AWS</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🐙</div>
+                    <div class="tech-name">GitHub</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🐳</div>
+                    <div class="tech-name">Docker</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: var(--accent-color);">Why Choose Us</span>
+                <h2 class="section-title">Course Highlights & Benefits</h2>
+                <p class="section-description">World-class training designed to make you industry-ready in 6 months</p>
+            </div>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🎯</div>
+                    <h3>Project-Based Learning</h3>
+                    <p>Build 20+ real-world projects including e-commerce platforms, social media apps, and enterprise
+                        dashboards with complete source code and deployment.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">👨‍💼</div>
+                    <h3>Industry Expert Mentors</h3>
+                    <p>Learn from senior developers with 10-15 years of experience at FAANG and unicorn startups,
+                        providing one-on-one mentorship and career guidance.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">💻</div>
+                    <h3>Live Coding Sessions</h3>
+                    <p>Daily live coding sessions where instructors build applications from scratch, explaining every
+                        line of code and best practices in real-time.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🏆</div>
+                    <h3>Industry Certification</h3>
+                    <p>Receive globally recognized certification endorsed by leading tech companies, enhancing your
+                        resume and LinkedIn profile significantly.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🚀</div>
+                    <h3>Guaranteed Placement</h3>
+                    <p>100% placement assistance with guaranteed interview calls from 300+ hiring partners including
+                        startups, MNCs, and product companies.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">⏰</div>
+                    <h3>Flexible Learning</h3>
+                    <p>Choose weekday, weekend, or self-paced batches with lifetime access to recordings, resources, and
+                        future course updates at no extra cost.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🎓</div>
+                    <h3>Career Support</h3>
+                    <p>Resume building, LinkedIn optimization, mock interviews, salary negotiation tips, and lifetime
+                        career counseling from industry experts.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌐</div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Learn to deploy applications on AWS, configure CI/CD pipelines, containerize with Docker, and
+                        manage production environments professionally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Curriculum -->
+    <section id="curriculum" class="curriculum">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Curriculum</span>
+                <h2 class="section-title">Complete Full Stack Curriculum</h2>
+                <p class="section-description">From fundamentals to advanced concepts - everything you need to become
+                    job-ready</p>
+            </div>
+
+            <div class="curriculum-grid" id="curriculumGrid">
+                <div class="module-card">
+                    <div class="module-header">
+                        <span class="module-badge">25 Hours</span>
+                        <div class="module-number">Module 1</div>
+                        <h3 class="module-title">Web Development Fundamentals</h3>
+                        <div class="module-duration">📅 Duration: 3 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>HTML5 Semantic Elements and Best Practices</li>
+                            <li>CSS3 Advanced Styling and Animations</li>
+                            <li>Flexbox and CSS Grid Layouts</li>
+                            <li>Responsive Web Design and Mobile-First Approach</li>
+                            <li>JavaScript ES6+ Fundamentals</li>
+                            <li>DOM Manipulation and Event Handling</li>
+                            <li>Asynchronous JavaScript: Promises and Async/Await</li>
+                            <li>Building Your First Interactive Website</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <span class="module-badge">30 Hours</span>
+                        <div class="module-number">Module 2</div>
+                        <h3 class="module-title">Advanced JavaScript & TypeScript</h3>
+                        <div class="module-duration">📅 Duration: 4 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Object-Oriented Programming in JavaScript</li>
+                            <li>Functional Programming Concepts</li>
+                            <li>ES6+ Features: Destructuring, Spread, Rest</li>
+                            <li>Array and Object Methods Mastery</li>
+                            <li>TypeScript Basics and Type System</li>
+                            <li>Interfaces, Generics, and Advanced Types</li>
+                            <li>Module Systems: CommonJS and ES Modules</li>
+                            <li>Error Handling and Debugging Techniques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <span class="module-badge">40 Hours</span>
+                        <div class="module-number">Module 3</div>
+                        <h3 class="module-title">React.js Complete Mastery</h3>
+                        <div class="module-duration">📅 Duration: 5 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>React Fundamentals: Components, Props, State</li>
+                            <li>React Hooks: useState, useEffect, useContext</li>
+                            <li>Custom Hooks Development</li>
+                            <li>React Router for Single Page Applications</li>
+                            <li>State Management with Redux and Redux Toolkit</li>
+                            <li>API Integration and Data Fetching</li>
+                            <li>Form Handling and Validation</li>
+                            <li>Performance Optimization and Code Splitting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">35 Hours</span>
+                        <div class="module-number">Module 4</div>
+                        <h3 class="module-title">Node.js & Express.js Backend</h3>
+                        <div class="module-duration">📅 Duration: 4 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Node.js Runtime and Event Loop</li>
+                            <li>NPM Package Management</li>
+                            <li>Building RESTful APIs with Express.js</li>
+                            <li>Middleware and Request Processing</li>
+                            <li>Authentication: JWT and Session Management</li>
+                            <li>File Upload and Processing</li>
+                            <li>Error Handling and Logging</li>
+                            <li>API Security Best Practices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">30 Hours</span>
+                        <div class="module-number">Module 5</div>
+                        <h3 class="module-title">MongoDB & Database Design</h3>
+                        <div class="module-duration">📅 Duration: 3 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>MongoDB Fundamentals and Architecture</li>
+                            <li>CRUD Operations and Query Optimization</li>
+                            <li>Mongoose ODM and Schema Design</li>
+                            <li>Data Modeling and Relationships</li>
+                            <li>Indexing and Performance Tuning</li>
+                            <li>Aggregation Pipeline</li>
+                            <li>Database Security and Backup</li>
+                            <li>Working with MongoDB Atlas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">25 Hours</span>
+                        <div class="module-number">Module 6</div>
+                        <h3 class="module-title">Advanced Backend Concepts</h3>
+                        <div class="module-duration">📅 Duration: 3 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>GraphQL API Development</li>
+                            <li>Real-time Communication with Socket.io</li>
+                            <li>Microservices Architecture Basics</li>
+                            <li>Message Queues and Background Jobs</li>
+                            <li>Caching Strategies with Redis</li>
+                            <li>Rate Limiting and Throttling</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>Third-Party API Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">30 Hours</span>
+                        <div class="module-number">Module 7</div>
+                        <h3 class="module-title">Testing & Quality Assurance</h3>
+                        <div class="module-duration">📅 Duration: 3 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Unit Testing with Jest</li>
+                            <li>Component Testing with React Testing Library</li>
+                            <li>Integration Testing Strategies</li>
+                            <li>End-to-End Testing with Cypress</li>
+                            <li>Test-Driven Development (TDD)</li>
+                            <li>Code Coverage and Quality Metrics</li>
+                            <li>Continuous Integration Setup</li>
+                            <li>Debugging Tools and Techniques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">35 Hours</span>
+                        <div class="module-number">Module 8</div>
+                        <h3 class="module-title">DevOps & Cloud Deployment</h3>
+                        <div class="module-duration">📅 Duration: 4 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Git Advanced: Branching and Merging Strategies</li>
+                            <li>Docker Containerization</li>
+                            <li>AWS Services: EC2, S3, RDS, Lambda</li>
+                            <li>Deploying MERN Applications</li>
+                            <li>CI/CD Pipeline with GitHub Actions</li>
+                            <li>Environment Configuration Management</li>
+                            <li>Monitoring and Logging Solutions</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">40 Hours</span>
+                        <div class="module-number">Module 9</div>
+                        <h3 class="module-title">Advanced Full Stack Projects</h3>
+                        <div class="module-duration">📅 Duration: 5 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>E-Commerce Platform Development</li>
+                            <li>Social Media Application</li>
+                            <li>Real-time Chat Application</li>
+                            <li>Project Management Tool</li>
+                            <li>Video Streaming Platform</li>
+                            <li>Job Portal Website</li>
+                            <li>Food Delivery Application</li>
+                            <li>Portfolio & Blog Platform</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card hidden-card">
+                    <div class="module-header">
+                        <span class="module-badge">20 Hours</span>
+                        <div class="module-number">Module 10</div>
+                        <h3 class="module-title">Interview Preparation & Career</h3>
+                        <div class="module-duration">📅 Duration: 2 Weeks</div>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Data Structures and Algorithms for Interviews</li>
+                            <li>System Design Fundamentals</li>
+                            <li>Common Interview Questions and Answers</li>
+                            <li>Resume Building for Developers</li>
+                            <li>LinkedIn Profile Optimization</li>
+                            <li>Mock Technical Interviews</li>
+                            <li>Salary Negotiation Strategies</li>
+                            <li>Freelancing and Remote Work Opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="read-more-container">
+                <button class="btn-read-more" id="readMoreCurriculum"
+                    onclick="toggleModules('curriculumGrid', 'readMoreCurriculum')">
+                    View All Modules
+                </button>
+            </div>
+        </div>
+    </section>
+
+   <!-- Learning Path -->
+    <section class="learning-path">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Learning Journey</h2>
+                <p class="section-description">Structured path from beginner to Full Stack Testing professional</p>
+            </div>
+            <div class="path-container">
+                <div class="path-item">
+                    <div class="path-content">
+                        <h3>Foundation Building</h3>
+                        <p>Master the fundamentals of software testing, test planning, and basic automation concepts.
+                            Learn version control with Git and set up your development environment.</p>
+                    </div>
+                    <div class="path-marker">1</div>
+                </div>
+                <div class="path-item">
+                    <div class="path-content">
+                        <h3>Frontend Testing</h3>
+                        <p>Learn to test modern web applications with tools like Cypress, Jest, and Selenium. Master UI
+                            testing, cross-browser testing, and responsive design validation.</p>
+                    </div>
+                    <div class="path-marker">2</div>
+                </div>
+                <div class="path-item">
+                    <div class="path-content">
+                        <h3>Backend & API Testing</h3>
+                        <p>Dive into API testing with Postman and REST Assured. Learn to test microservices, web
+                            services, and ensure data integrity across backend systems.</p>
+                    </div>
+                    <div class="path-marker">3</div>
+                </div>
+                <div class="path-item">
+                    <div class="path-content">
+                        <h3>Database Testing</h3>
+                        <p>Master SQL for testers, data validation, performance testing of queries, and testing of both
+                            SQL and NoSQL databases.</p>
+                    </div>
+                    <div class="path-marker">4</div>
+                </div>
+                <div class="path-item">
+                    <div class="path-content">
+                        <h3>DevOps & CI/CD Testing</h3>
+                        <p>Learn to integrate testing into CI/CD pipelines, test infrastructure as code, and work with
+                            Docker and Kubernetes environments.</p>
+                    </div>
+                    <div class="path-marker">5</div>
+                </div>
+                <div class="path-item">
+                    <div class="path-content">
+                        <h3>Advanced Topics & Projects</h3>
+                        <p>Apply your skills to real-world projects, learn performance testing, security testing, and
+                            prepare for job interviews with mock sessions.</p>
+                    </div>
+                    <div class="path-marker">6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Projects -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Build & Deploy</span>
+                <h2 class="section-title">Industry-Grade Projects</h2>
+                <p class="section-description">Build 20+ production-ready applications to showcase in your portfolio</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">MERN</span>
+                            <span class="project-tag">Redux</span>
+                            <span class="project-tag">AWS</span>
+                        </div>
+                        <h3 class="project-title">Full-Featured E-Commerce Platform</h3>
+                        <p class="project-description">Complete online shopping application with product catalog, cart,
+                            checkout, payment integration, order tracking, and admin dashboard.</p>
+                        <ul class="project-features">
+                            <li>User authentication and authorization</li>
+                            <li>Product search, filters, and sorting</li>
+                            <li>Shopping cart and wishlist</li>
+                            <li>Payment gateway integration (Razorpay/Stripe)</li>
+                            <li>Order management and tracking</li>
+                            <li>Admin panel for inventory management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">💬</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">Socket.io</span>
+                            <span class="project-tag">Real-time</span>
+                            <span class="project-tag">WebRTC</span>
+                        </div>
+                        <h3 class="project-title">Real-Time Chat & Video Application</h3>
+                        <p class="project-description">Social messaging platform with real-time chat, group
+                            conversations, video calling, file sharing, and notification system.</p>
+                        <ul class="project-features">
+                            <li>One-on-one and group messaging</li>
+                            <li>Real-time typing indicators</li>
+                            <li>Video and audio calling</li>
+                            <li>File and media sharing</li>
+                            <li>Push notifications</li>
+                            <li>Message read receipts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">GraphQL</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <h3 class="project-title">Social Media Platform</h3>
+                        <p class="project-description">Facebook-like social networking application with posts, comments,
+                            likes, friend requests, news feed, and profile management.</p>
+                        <ul class="project-features">
+                            <li>User profiles and authentication</li>
+                            <li>Post creation with images and videos</li>
+                            <li>Comments, likes, and shares</li>
+                            <li>Friend system and followers</li>
+                            <li>Real-time news feed algorithm</li>
+                            <li>Notifications and messaging</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card hidden-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Charts</span>
+                        </div>
+                        <h3 class="project-title">Project Management Tool</h3>
+                        <p class="project-description">Trello/Jira-like project management system with kanban boards,
+                            task assignments, time tracking, and team collaboration features.</p>
+                        <ul class="project-features">
+                            <li>Kanban board with drag-and-drop</li>
+                            <li>Task creation and assignment</li>
+                            <li>Sprint planning and tracking</li>
+                            <li>Team collaboration tools</li>
+                            <li>Time tracking and reporting</li>
+                            <li>File attachments and comments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card hidden-card">
+                    <div class="project-image">🎬</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">Video</span>
+                            <span class="project-tag">AWS S3</span>
+                            <span class="project-tag">HLS</span>
+                        </div>
+                        <h3 class="project-title">Video Streaming Platform</h3>
+                        <p class="project-description">YouTube-like video streaming service with video upload,
+                            processing, streaming, comments, likes, subscriptions, and recommendations.</p>
+                        <ul class="project-features">
+                            <li>Video upload and processing</li>
+                            <li>Adaptive bitrate streaming</li>
+                            <li>Video player with controls</li>
+                            <li>Comments and engagement features</li>
+                            <li>Channel subscriptions</li>
+                            <li>Recommendation algorithm</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card hidden-card">
+                    <div class="project-image">💼</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">Full Stack</span>
+                            <span class="project-tag">Email</span>
+                            <span class="project-tag">PDF</span>
+                        </div>
+                        <h3 class="project-title">Job Portal Application</h3>
+                        <p class="project-description">LinkedIn-style job portal with job posting, applications, resume
+                            builder, company profiles, and applicant tracking system.</p>
+                        <ul class="project-features">
+                            <li>Job search with filters</li>
+                            <li>Resume builder and parser</li>
+                            <li>Application tracking system</li>
+                            <li>Company profiles and reviews</li>
+                            <li>Email notifications</li>
+                            <li>Interview scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card hidden-card">
+                    <div class="project-image">🍕</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">Maps API</span>
+                            <span class="project-tag">Geolocation</span>
+                            <span class="project-tag">Payment</span>
+                        </div>
+                        <h3 class="project-title">Food Delivery Application</h3>
+                        <p class="project-description">Zomato/Swiggy-like food ordering platform with restaurant
+                            listings, real-time order tracking, payment integration, and delivery management.</p>
+                        <ul class="project-features">
+                            <li>Restaurant search and filters</li>
+                            <li>Menu browsing and ordering</li>
+                            <li>Real-time order tracking</li>
+                            <li>Multiple payment options</li>
+                            <li>Rating and review system</li>
+                            <li>Delivery partner dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card hidden-card">
+                    <div class="project-image">✍️</div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">CMS</span>
+                            <span class="project-tag">SEO</span>
+                            <span class="project-tag">Markdown</span>
+                        </div>
+                        <h3 class="project-title">Blogging Platform with CMS</h3>
+                        <p class="project-description">Medium-style blogging platform with rich text editor, SEO
+                            optimization, analytics, newsletter integration, and content management system.</p>
+                        <ul class="project-features">
+                            <li>Rich text editor (Markdown support)</li>
+                            <li>Category and tag management</li>
+                            <li>SEO optimization tools</li>
+                            <li>Analytics dashboard</li>
+                            <li>Newsletter integration</li>
+                            <li>Multi-author support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="read-more-container">
+                <button class="btn-read-more" id="readMoreProjects"
+                    onclick="toggleProjects('projectsGrid', 'readMoreProjects')">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="career">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Career Growth</span>
+                <h2 class="section-title">Lucrative Career Opportunities</h2>
+                <p class="section-description">Explore high-paying roles in the Full Stack Development domain</p>
+            </div>
+
+            <div class="career-stats">
+                <div class="career-stat-card">
+                    <div class="career-stat-number">65%</div>
+                    <div class="career-stat-label">Job Market Growth in 3 Years</div>
+                </div>
+                <div class="career-stat-card">
+                    <div class="career-stat-number">₹6-30L</div>
+                    <div class="career-stat-label">Average Salary Range</div>
+                </div>
+                <div class="career-stat-card">
+                    <div class="career-stat-number">60K+</div>
+                    <div class="career-stat-label">Job Openings Annually</div>
+                </div>
+                <div class="career-stat-card">
+                    <div class="career-stat-number">80%</div>
+                    <div class="career-stat-label">Remote Work Opportunities</div>
+                </div>
+            </div>
+
+            <div class="career-roles-grid">
+                <div class="career-role-card">
+                    <div class="role-header">
+                        <div class="role-icon">💻</div>
+                        <div class="role-info">
+                            <h4>Junior Full Stack Developer</h4>
+                            <span class="role-salary">₹4-8 LPA</span>
+                        </div>
+                    </div>
+                    <p class="role-description">Entry-level position focusing on building features, learning codebases,
+                        and working with senior developers on MERN stack projects.</p>
+                </div>
+
+                <div class="career-role-card">
+                    <div class="role-header">
+                        <div class="role-icon">🚀</div>
+                        <div class="role-info">
+                            <h4>Full Stack Developer</h4>
+                            <span class="role-salary">₹8-15 LPA</span>
+                        </div>
+                    </div>
+                    <p class="role-description">Mid-level role involving independent feature development, API design,
+                        database optimization, and contributing to technical decisions.</p>
+                </div>
+
+                <div class="career-role-card">
+                    <div class="role-header">
+                        <div class="role-icon">⭐</div>
+                        <div class="role-info">
+                            <h4>Senior Full Stack Developer</h4>
+                            <span class="role-salary">₹15-25 LPA</span>
+                        </div>
+                    </div>
+                    <p class="role-description">Senior position leading feature development, architecting solutions,
+                        mentoring juniors, and making critical technical architecture decisions.</p>
+                </div>
+
+                <div class="career-role-card">
+                    <div class="role-header">
+                        <div class="role-icon">👨‍💼</div>
+                        <div class="role-info">
+                            <h4>Tech Lead / Engineering Manager</h4>
+                            <span class="role-salary">₹25-40 LPA</span>
+                        </div>
+                    </div>
+                    <p class="role-description">Leadership role managing teams, defining technical roadmap, conducting
+                        code reviews, and collaborating with product management.</p>
+                </div>
+
+                <div class="career-role-card">
+                    <div class="role-header">
+                        <div class="role-icon">🎯</div>
+                        <div class="role-info">
+                            <h4>Solutions Architect</h4>
+                            <span class="role-salary">₹30-50 LPA</span>
+                        </div>
+                    </div>
+                    <p class="role-description">Strategic role designing scalable system architectures, evaluating
+                        technologies, and ensuring best practices across organization.</p>
+                </div>
+
+                <div class="career-role-card">
+                    <div class="role-header">
+                        <div class="role-icon">💼</div>
+                        <div class="role-info">
+                            <h4>Freelance Developer</h4>
+                            <span class="role-salary">₹2K-5K/hour</span>
+                        </div>
+                    </div>
+                    <p class="role-description">Independent contractor working on international projects, building
+                        custom solutions for clients worldwide with flexible working hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies Detailed -->
+    <section class="tools">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tech Stack</span>
+                <h2 class="section-title">Complete Technology Ecosystem</h2>
+                <p class="section-description">Master 30+ industry-standard tools and frameworks</p>
+            </div>
+
+            <div class="tools-category">
+                <h3>Frontend Technologies</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">⚛️</div>
+                        <h4>React.js</h4>
+                        <p>Component-based UI library for building interactive interfaces</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🔷</div>
+                        <h4>Redux Toolkit</h4>
+                        <p>State management for complex React applications</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">📘</div>
+                        <h4>TypeScript</h4>
+                        <p>Typed superset of JavaScript for safer code</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🎨</div>
+                        <h4>Tailwind CSS</h4>
+                        <p>Utility-first CSS framework for rapid UI development</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🅱️</div>
+                        <h4>Bootstrap 5</h4>
+                        <p>Popular CSS framework for responsive design</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-category">
+                <h3>Backend Technologies</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">🟢</div>
+                        <h4>Node.js</h4>
+                        <p>JavaScript runtime for server-side programming</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🚂</div>
+                        <h4>Express.js</h4>
+                        <p>Fast, minimalist web framework for Node.js</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🍃</div>
+                        <h4>MongoDB</h4>
+                        <p>NoSQL database for modern applications</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🐘</div>
+                        <h4>PostgreSQL</h4>
+                        <p>Powerful open-source relational database</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">⚡</div>
+                        <h4>GraphQL</h4>
+                        <p>Query language for efficient API development</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-category">
+                <h3>DevOps & Cloud</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-logo">☁️</div>
+                        <h4>AWS</h4>
+                        <p>Cloud platform for deployment and scaling</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🐳</div>
+                        <h4>Docker</h4>
+                        <p>Containerization platform for consistent environments</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🐙</div>
+                        <h4>GitHub Actions</h4>
+                        <p>CI/CD automation for seamless deployment</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">🔥</div>
+                        <h4>Firebase</h4>
+                        <p>Backend-as-a-Service for rapid development</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-logo">📡</div>
+                        <h4>Nginx</h4>
+                        <p>High-performance web server and reverse proxy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Instructors -->
+    <section class="instructors">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Learn from the Best</span>
+                <h2 class="section-title">Expert Instructors</h2>
+                <p class="section-description">Learn from industry veterans with extensive experience at top tech
+                    companies</p>
+            </div>
+            <div class="instructor-grid">
+                <div class="instructor-card">
+                    <div class="instructor-image">👨‍💻</div>
+                    <div class="instructor-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p class="instructor-role">Senior Full Stack Architect</p>
+                        <p class="instructor-experience">12+ years at Amazon, Microsoft</p>
+                        <div class="instructor-skills">
+                            <span class="skill-badge">MERN Stack</span>
+                            <span class="skill-badge">AWS</span>
+                            <span class="skill-badge">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <div class="instructor-image">👨‍💼</div>
+                    <div class="instructor-info">
+                        <h4>Priya Sharma</h4>
+                        <p class="instructor-role">Lead Frontend Developer</p>
+                        <p class="instructor-experience">10+ years at Google, Flipkart</p>
+                        <div class="instructor-skills">
+                            <span class="skill-badge">React.js</span>
+                            <span class="skill-badge">TypeScript</span>
+                            <span class="skill-badge">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <div class="instructor-image">👩‍💻</div>
+                    <div class="instructor-info">
+                        <h4>Amit Verma</h4>
+                        <p class="instructor-role">Backend Engineering Lead</p>
+                        <p class="instructor-experience">15+ years at Uber, PayPal</p>
+                        <div class="instructor-skills">
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">MongoDB</span>
+                            <span class="skill-badge">DevOps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification -->
+    <section class="certification">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get Certified</span>
+                <h2 class="section-title">Industry-Recognized Certification</h2>
+                <p class="section-description">Boost your career with our globally accepted professional certificate</p>
+            </div>
+            <div class="certification-showcase">
+                <div class="cert-visual">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-title">Certified Full Stack Developer</div>
+                    <div class="cert-subtitle">MERN Stack Specialization</div>
+                </div>
+                <div class="cert-details">
+                    <h3>Certificate Features</h3>
+                    <ul class="cert-features">
+                        <li><strong>Global Recognition:</strong> Accepted by 500+ companies worldwide including
+                            startups, MNCs, and tech giants.</li>
+                        <li><strong>Skill Validation:</strong> Proves expertise in MERN Stack, cloud deployment, and
+                            full stack development practices.</li>
+                        <li><strong>Digital & Physical:</strong> Receive shareable digital certificate for LinkedIn and
+                            printed certificate by courier.</li>
+                        <li><strong>Lifetime Validity:</strong> Certificate never expires and serves as permanent proof
+                            of your skills and knowledge.</li>
+                        <li><strong>Verification System:</strong> Unique certificate ID for instant online verification
+                            by employers and recruiters.</li>
+                        <li><strong>Career Boost:</strong> Certified candidates receive 40% more interview calls and
+                            higher salary offers than non-certified peers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Assistance -->
+    <section class="placement">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Career Support</span>
+                <h2 class="section-title">100% Placement Assistance</h2>
+                <p class="section-description">Comprehensive support to land your dream job in top tech companies</p>
+            </div>
+
+            <div class="placement-process">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Profile Building</h4>
+                    <p>Create professional resume, optimize LinkedIn profile, and build impressive GitHub portfolio with
+                        projects.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Mock Interviews</h4>
+                    <p>Practice with industry experts through multiple mock technical and HR interviews with detailed
+                        feedback.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Interview Preparation</h4>
+                    <p>Master DSA, system design, behavioral questions, and problem-solving techniques for top
+                        companies.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Company Referrals</h4>
+                    <p>Get direct referrals and interview calls from 300+ partner companies actively hiring developers.
+                    </p>
+                </div>
+            </div>
+
+            <div class="companies-hired">
+                <h3>Our Students Work At</h3>
+                <div class="company-logos">
+                    <div class="company-logo">
+                        <div class="company-name">Google</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Amazon</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Microsoft</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Flipkart</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Paytm</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Zomato</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Swiggy</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">OLA</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Accenture</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">TCS</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Infosys</div>
+                    </div>
+                    <div class="company-logo">
+                        <div class="company-name">Wipro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Success Stories</span>
+                <h2 class="section-title">What Our Students Say</h2>
+                <p class="section-description">Join 1000+ successful developers who transformed their careers</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">This Full Stack course completely transformed my career! I was a mechanical
+                        engineer earning ₹4 LPA, and after completing this course, I landed a Full Stack Developer role at
+                        Flipkart with ₹14 LPA package. The hands-on projects and mentor support were exceptional. Highly
+                        recommend for career switchers!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AN</div>
+                        <div class="author-details">
+                            <h5>Aman Negi</h5>
+                            <p>Full Stack Developer at Flipkart</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">As a fresher, I was worried about getting a job without experience. But this
+                        course prepared me so well! The real-world projects helped me build an amazing portfolio. I received
+                        8 interview calls and got placed at Paytm with ₹7.5 LPA. The instructors are industry experts who
+                        genuinely care about students' success.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-details">
+                            <h5>Sneha Kapoor</h5>
+                            <p>Software Engineer at Paytm</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">Best investment I made in my career! The curriculum covers everything from
+                        basics to advanced deployment. Live coding sessions helped me understand complex concepts easily.
+                        Within 3 months of completion, I started freelancing and now earning $50/hour on international
+                        projects. The skills I learned here are truly world-class!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-details">
+                            <h5>Rahul Khanna</h5>
+                            <p>Freelance Full Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">I was working as a manual tester earning ₹3.5 LPA. After this course, I
+                        transitioned to Full Stack Development and got a 200% salary hike at Zomato (₹10.5 LPA). The
+                        placement team was incredibly supportive, helping me with resume, mock interviews, and negotiation.
+                        Thank you Uncodemy for changing my life!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-details">
+                            <h5>Pooja Mehta</h5>
+                            <p>Full Stack Developer at Zomato</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">The project-based learning approach is what makes this course stand out. I
+                        built 15+ production-ready applications that impressed every interviewer. Got multiple offers and
+                        chose to join a startup with ₹12 LPA + equity. The DevOps and AWS training gave me an edge over
+                        other candidates. Absolutely worth it!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VG</div>
+                        <div class="author-details">
+                            <h5>Vikram Gupta</h5>
+                            <p>Senior Developer at Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">Being from a non-technical background (BBA graduate), I was skeptical about
+                        learning coding. But the instructors made everything so easy to understand! Started from zero and
+                        now I'm building complex web applications. Got placed at Accenture with ₹6 LPA. This course proved
+                        that anyone can learn coding with the right guidance!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NT</div>
+                        <div class="author-details">
+                            <h5>Neha Tripathi</h5>
+                            <p>Associate Software Engineer at Accenture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Everything you need to know about our Full Stack Development course</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Do I need prior programming experience to join this course?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        No prior programming experience is required! This course is designed for complete beginners. We
+                        start with fundamental concepts of HTML, CSS, and JavaScript, gradually building up to advanced
+                        topics like React.js, Node.js, and cloud deployment. Our instructors explain everything from scratch
+                        with real-world examples. However, basic computer knowledge and strong willingness to learn are
+                        essential. We've successfully trained students from non-technical backgrounds including commerce,
+                        arts, and even mechanical engineering.
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What is the duration of the Full Stack Development course?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        The complete course duration is 6 months (24 weeks) with 300+ hours of instructor-led training.
+                        <strong>Weekday batches:</strong> Monday to Friday, 2 hours daily (6-8 PM). <strong>Weekend
+                            batches:</strong> Saturday and Sunday, 5 hours per day (10 AM - 3 PM). <strong>Fast-track
+                            batches:</strong> 4 months intensive program with 4 hours daily classes. All batches include
+                        live projects, assignments, doubt-solving sessions, and placement preparation. You'll also get
+                        lifetime access to recorded lectures and course materials.
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Will I get placement assistance after completing the course?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we provide 100% placement assistance! Our dedicated placement cell works with each student
+                        individually. <strong>Services include:</strong> Professional resume building, LinkedIn profile
+                        optimization, GitHub portfolio setup, 10+ mock technical interviews, HR interview preparation,
+                        salary negotiation guidance, and guaranteed interview calls from 300+ partner companies. We have
+                        tie-ups with startups, product companies, service-based MNCs, and tech giants. Our placement success
+                        rate is 95% with students getting placed within 3 months of course completion. We continue
+                        supporting you until you land your desired job.
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What kind of projects will I build during the course?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        You'll build 20+ production-ready projects covering diverse domains: <strong>1.</strong>
+                        Full-featured e-commerce platform with payment integration, <strong>2.</strong> Real-time chat and
+                        video calling application, <strong>3.</strong> Social media platform with news feed and
+                        notifications, <strong>4.</strong> Project management tool (Trello clone), <strong>5.</strong> Video
+                        streaming platform (YouTube clone), <strong>6.</strong> Job portal website, <strong>7.</strong> Food
+                        delivery application with live tracking, <strong>8.</strong> Blogging platform with CMS. Each
+                        project includes complete source code, deployment on AWS/Heroku, and detailed documentation. These
+                        projects will form an impressive portfolio that you'll showcase to recruiters.
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What is the fee structure and payment options?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Course fee: ₹75,000 for complete 6-month program (all-inclusive). <strong>Payment options:</strong>
+                        <strong>Option 1:</strong> Full payment upfront - Get 15% discount (Pay ₹63,750), <strong>Option
+                            2:</strong> 3 interest-free installments (₹25,000 each), <strong>Option 3:</strong> 6 monthly
+                        installments (₹13,500 each with small processing fee), <strong>Option 4:</strong> EMI through
+                        partner banks (6-12 months tenure). We also offer scholarships for meritorious students and special
+                        discounts for college students. The fee includes lifetime access to course content, live sessions,
+                        recorded lectures, project source codes, certification, and placement assistance. No hidden charges!
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What if I miss a live class? Can I access recordings?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! All live sessions are recorded in HD quality and uploaded to our Learning Management
+                        System (LMS) within 24 hours. You get lifetime access to these recordings, so you can watch them
+                        anytime, anywhere, as many times as you want. Additionally: <strong>Makeup classes:</strong> You can
+                        attend the same topic in another batch at no extra cost, <strong>Doubt sessions:</strong> Daily
+                        1-hour doubt-solving sessions where you can clarify any concepts, <strong>One-on-one
+                            mentoring:</strong> Schedule personal sessions with instructors if needed, <strong>Batch
+                            switching:</strong> Transfer to a different batch (subject to availability) if your schedule
+                        changes. We ensure no student falls behind in their learning journey!
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Is online training as effective as classroom training?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, our online training is equally effective, and in many ways even better! <strong>Benefits of
+                            online mode:</strong> Live interactive sessions with real-time doubt solving, Screen sharing for
+                        live coding demonstrations, Breakout rooms for group projects and peer learning, Cloud-based coding
+                        labs (no local setup required), Record and replay lectures unlimited times, Access course from
+                        anywhere in the world, Save commute time and study comfortably. We use advanced tools like VS Code
+                        Live Share, CodePen, and collaborative platforms. 70% of our students prefer online mode due to
+                        flexibility. We also offer hybrid mode where you can switch between online and classroom as per your
+                        convenience.
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What is the average salary I can expect after this course?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Salary depends on multiple factors like your background, interview performance, company type, and
+                        location. <strong>Freshers (0 experience):</strong> ₹4-8 LPA in service companies, ₹6-12 LPA in
+                        product companies/startups, <strong>Career switchers (1-3 years non-tech experience):</strong> ₹6-12
+                        LPA, <strong>With relevant experience (1-3 years tech):</strong> ₹8-18 LPA. Our students have
+                        received offers ranging from ₹4.5 LPA (Cognizant) to ₹24 LPA (Amazon). Average placement salary is
+                        ₹7.5 LPA. Additionally, freelancing opportunities can fetch ₹2000-5000 per hour for international
+                        projects. Location matters too - Metro cities offer 30-40% higher packages than tier-2 cities.
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Will I receive a certificate? Is it recognized by companies?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You'll receive the <strong>"Certified Full Stack Developer - MERN Stack
+                            Specialization"</strong> certificate from Uncodemy upon successful completion of the course and
+                        final project. <strong>Certificate features:</strong> Globally recognized and accepted by 500+
+                        companies, Both digital (shareable on LinkedIn) and physical certificate, Unique verification ID for
+                        employer verification, Lifetime validity with no expiration, Endorsed by industry experts and
+                        partner companies, Includes detailed skill breakdown and project portfolio. The certificate
+                        significantly boosts your resume and LinkedIn profile. Certified candidates get 40% more interview
+                        calls compared to non-certified candidates. Many of our hiring partners specifically ask for
+                        Uncodemy certified developers!
+                    </div>
+                </div>
+    
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Can I learn Full Stack Development while doing a full-time job?</h4>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! We have specifically designed batches for working professionals. <strong>Weekend
+                            batch:</strong> Saturday and Sunday only (10 AM - 3 PM or 4 PM - 9 PM), perfect for 9-to-5 job
+                        holders. <strong>Evening weekday batch:</strong> 7 PM - 9 PM on weekdays, allowing you to attend
+                        after office hours. <strong>Self-paced learning:</strong> Access recorded lectures and learn at your
+                        own schedule. 60% of our students are working professionals who successfully completed the course
+                        while managing their jobs. The key is consistency - dedicating 10-15 hours per week. We provide
+                        flexible assignment deadlines and personalized study plans. Many students also take 1-2 months leave
+                        after 4 months of learning to focus on final projects and placement preparation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Batch Schedule -->
+    <section id="enroll" class="batch-schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: var(--accent-color);">Enroll Now</span>
+                <h2 class="section-title">Upcoming Batch Schedule</h2>
+                <p class="section-description">Limited seats available! Secure your spot in the next batch</p>
+            </div>
+            <div class="batch-grid">
+                <div class="batch-card">
+                    <span class="batch-type">⚡ Fast Track Batch</span>
+                    <h3>Intensive 4-Month Program</h3>
+                    <ul class="batch-details">
+                        <li><strong>Schedule:</strong> Mon-Fri, 10 AM - 2 PM</li>
+                        <li><strong>Duration:</strong> 4 Months (Intensive)</li>
+                        <li><strong>Mode:</strong> Classroom + Online Hybrid</li>
+                        <li><strong>Starts:</strong> October 15, 2026</li>
+                        <li><strong>Seats Available:</strong> 8/25</li>
+                        <li><strong>Best For:</strong> Quick Career Switch</li>
+                    </ul>
+                    <a href="tel:+919876543210" class="btn btn-primary" style="width: 100%;">Enroll Now - ₹63,750</a>
+                </div>
+    
+                <div class="batch-card">
+                    <span class="batch-type">🎓 Weekday Batch</span>
+                    <h3>Evening Classes</h3>
+                    <ul class="batch-details">
+                        <li><strong>Schedule:</strong> Mon-Fri, 7 PM - 9 PM</li>
+                        <li><strong>Duration:</strong> 6 Months</li>
+                        <li><strong>Mode:</strong> Online Live Classes</li>
+                        <li><strong>Starts:</strong> October 20, 2026</li>
+                        <li><strong>Seats Available:</strong> 15/35</li>
+                        <li><strong>Best For:</strong> Working Professionals</li>
+                    </ul>
+                    <a href="tel:+919876543210" class="btn btn-primary" style="width: 100%;">Enroll Now - ₹75,000</a>
+                </div>
+    
+                <div class="batch-card">
+                    <span class="batch-type">🌟 Weekend Batch</span>
+                    <h3>Saturday & Sunday</h3>
+                    <ul class="batch-details">
+                        <li><strong>Schedule:</strong> Sat-Sun, 10 AM - 3 PM</li>
+                        <li><strong>Duration:</strong> 6 Months</li>
+                        <li><strong>Mode:</strong> Classroom + Online Hybrid</li>
+                        <li><strong>Starts:</strong> October 26, 2026</li>
+                        <li><strong>Seats Available:</strong> 12/30</li>
+                        <li><strong>Best For:</strong> Students & Job Holders</li>
+                    </ul>
+                    <a href="tel:+919876543210" class="btn btn-primary" style="width: 100%;">Enroll Now - ₹75,000</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Start Your Full Stack Developer Journey?</h2>
+                <p>Join 1000+ successful developers. Transform your career in just 6 months with industry-expert training,
+                    real-world projects, and guaranteed placement assistance!</p>
+                <div class="cta-buttons">
+                    <a href="#enroll" class="btn btn-primary">Enroll Now - Limited Seats!</a>
+                    <a href="tel:+919876543210" class="btn btn-secondary">📞 Call: +91-98765-43210</a>
+                    <a href="https://wa.me/919876543210" class="btn btn-outline">💬 WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+<footer class="uc-footer">
+    <div class="uc-container">
+        
+        <!-- Brand Section -->
+        <div class="uc-brand">
+            <a href="/" class="uc-logo">
+                <img src="/image/Uncodemy logo-10.png" alt="Uncodemy" width="160" height="45" loading="lazy">
+            </a>
+            <p class="uc-desc">Uncodemy is a team of high-class professionals on a mission to employ millions. We teach you to work with the latest technology and provide 100% placement assistance for career transformation.</p>
+            
+            <!-- Stats -->
+            <div class="uc-stats">
+                <div class="uc-stat">
+                    <strong>4.8/5</strong>
+                    <span>⭐ Rating</span>
+                </div>
+                <div class="uc-stat">
+                    <strong>3800+</strong>
+                    <span>👨‍🎓 Students</span>
+                </div>
+                <div class="uc-stat">
+                    <strong>97%</strong>
+                    <span>🎯 Placement</span>
+                </div>
+                <div class="uc-stat">
+                    <strong>160+</strong>
+                    <span>🏢 Companies</span>
+                </div>
+            </div>
+            
+            <!-- Social -->
+            <div class="uc-social">
+                <a href="https://facebook.com/uncodemyofficial/" aria-label="Facebook" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </a>
+                <a href="https://twitter.com/uncodemy" aria-label="Twitter" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="https://linkedin.com/company/uncodemy" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="https://instagram.com/uncodemyofficial" aria-label="Instagram" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="uc-nav">
+            
+            <!-- Popular Courses -->
+            <details class="uc-section">
+                <summary>
+                    <span>📚 Popular Courses</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 11L3 6h10z"/>
+                    </svg>
+                </summary>
+                <ul>
+                    <li><a href="/course/data-analytics-training-course-in-noida"> Data Analytics Course</a></li>
+                    <li><a href="/course/data-science-training-course-in-noida"> Data Science Course</a></li>
+                    <li><a href="/course/software-testing-training-course-in-noida"> Software Testing Course</a></li>
+                    <li><a href="/course/full-stack-development-training-course-in-noida"> Full Stack Development</a></li>
+                    <li><a href="/course/digital-marketing-training-course-in-noida"> Digital Marketing</a></li>
+                    <li><a href="/course/python-training-course-in-noida"> Python Programming</a></li>
+                </ul>
+            </details>
+            
+            <!-- Student Zone -->
+            <details class="uc-section">
+                <summary>
+                    <span>🎓 Student Zone</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 11L3 6h10z"/>
+                    </svg>
+                </summary>
+                <ul>
+                    <li><a href="/blog">📝 Blog</a></li>
+                    <li><a href="/placement">🎯 Placements</a></li>
+                    <li><a href="/summer-training-in-noida">☀️ Summer Training</a></li>
+                    <li><a href="/winter-training-in-noida">❄️ Winter Training</a></li>
+                    <li><a href="/industrial-training">🏭 Industrial Training</a></li>
+                    <li><a href="/corporate-training">🏢 Corporate Training</a></li>
+                </ul>
+            </details>
+            
+            <!-- Quick Links -->
+            <details class="uc-section">
+                <summary>
+                    <span>⚡ Quick Links</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 11L3 6h10z"/>
+                    </svg>
+                </summary>
+                <ul>
+                    <li><a href="/register-now">📝 Register Now</a></li>
+                    <li><a href="/contact-us">📧 Contact Us</a></li>
+                    <li><a href="/privacy-policy">🔒 Privacy Policy</a></li>
+                    <li><a href="/terms-and-conditions">📋 Terms & Conditions</a></li>
+                    <li><a href="/refund-policy">💰 Refund Policy</a></li>
+                </ul>
+            </details>
+            
+            <!-- Contact -->
+            <details class="uc-section">
+                <summary>
+                    <span>📞 Contact Us</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 11L3 6h10z"/>
+                    </svg>
+                </summary>
+                <ul>
+                    <li class="uc-office">
+                        <strong> India Office</strong>
+                        <span>B 14-15, Sector 1, Noida, UP 201301</span>
+                    </li>
+                    <li><a href="tel:+919818366550">📱 +91 98183 66550</a></li>
+                    <li><a href="tel:+918766313646">📱 +91 87663 13646</a></li>
+                    <li><a href="mailto:info@uncodemy.com">✉️ info@uncodemy.com</a></li>
+                    <li class="uc-divider"></li>
+                   
+                </ul>
+            </details>
+            
+        </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="uc-copy">
+        <p>&copy; <span id="uc-year">2026</span> Uncodemy Edutech Pvt. Ltd. All Rights Reserved. | Designed by <a href="/">Uncodemy</a></p>
+    </div>
+</footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle "What is Full Stack" content
+        function toggleContent(contentId, buttonId) {
+            const content = document.getElementById(contentId);
+            const button = document.getElementById(buttonId);
+
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                button.textContent = 'Read More';
+            } else {
+                content.classList.add('show');
+                button.textContent = 'Read Less';
+            }
+        }
+
+        // Toggle Curriculum Modules
+        function toggleModules(gridId, buttonId) {
+            const grid = document.getElementById(gridId);
+            const button = document.getElementById(buttonId);
+            const allCards = grid.querySelectorAll('.module-card');
+
+            let isExpanded = false;
+            allCards.forEach((card, index) => {
+                if (index >= 3 && !card.classList.contains('hidden-card')) {
+                    isExpanded = true;
+                }
+            });
+
+            if (!isExpanded) {
+                allCards.forEach(card => {
+                    card.classList.remove('hidden-card');
+                    card.classList.add('show-card');
+                });
+                button.textContent = 'Show Less';
+            } else {
+                allCards.forEach((card, index) => {
+                    if (index >= 3) {
+                        card.classList.add('hidden-card');
+                        card.classList.remove('show-card');
+                    }
+                });
+                button.textContent = 'View All Modules';
+                document.getElementById('curriculum').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Toggle Projects
+        function toggleProjects(gridId, buttonId) {
+            const grid = document.getElementById(gridId);
+            const button = document.getElementById(buttonId);
+            const allCards = grid.querySelectorAll('.project-card');
+
+            let isExpanded = false;
+            allCards.forEach((card, index) => {
+                if (index >= 3 && !card.classList.contains('hidden-card')) {
+                    isExpanded = true;
+                }
+            });
+
+            if (!isExpanded) {
+                allCards.forEach(card => {
+                    card.classList.remove('hidden-card');
+                    card.classList.add('show-card');
+                });
+                button.textContent = 'Show Less';
+            } else {
+                allCards.forEach((card, index) => {
+                    if (index >= 3) {
+                        card.classList.add('hidden-card');
+                        card.classList.remove('show-card');
+                    }
+                });
+                button.textContent = 'View All Projects';
+                grid.parentElement.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Toggle FAQ items
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+
+<!-- navbar js below -->
+<script>(function(){ 'use strict'; const toggle=document.querySelector('.mobile-toggle'); const navLinks=document.getElementById('nav-links'); const dropdown=document.querySelector('.dropdown'); const dropdownToggle=dropdown.querySelector('.dropdown-toggle'); const dropdownMenu=dropdown.querySelector('.dropdown-menu'); const dropdownClose=dropdown.querySelector('.dropdown-close'); let isDropdownOpen=false; let isMobileMenuOpen=false; function closeDropdown(){ isDropdownOpen=false; dropdown.classList.remove('active'); dropdownToggle.setAttribute('aria-expanded', 'false');} function openDropdown(){ isDropdownOpen=true; dropdown.classList.add('active'); dropdownToggle.setAttribute('aria-expanded', 'true');} function toggleMobileMenu(){ isMobileMenuOpen=!isMobileMenuOpen; toggle.classList.toggle('active'); navLinks.classList.toggle('active'); toggle.setAttribute('aria-expanded', String(isMobileMenuOpen)); if (!isMobileMenuOpen && isDropdownOpen){ closeDropdown();}} function closeMobileMenu(){ if (isMobileMenuOpen){ isMobileMenuOpen=false; toggle.classList.remove('active'); navLinks.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false'); if (isDropdownOpen) closeDropdown();}} toggle.addEventListener('click', toggleMobileMenu); dropdownToggle.addEventListener('click', (e)=>{ e.preventDefault(); e.stopPropagation(); isDropdownOpen ? closeDropdown() : openDropdown();}); dropdownClose.addEventListener('click', (e)=>{ e.stopPropagation(); closeDropdown();}); document.addEventListener('click', (e)=>{ const isClickInside=dropdown.contains(e.target) || navLinks.contains(e.target) || toggle.contains(e.target); if (!isClickInside){ if (isDropdownOpen) closeDropdown(); if (isMobileMenuOpen && window.innerWidth <=768) closeMobileMenu();}}); document.addEventListener('keydown', (e)=>{ if (e.key==='Escape'){ if (isDropdownOpen){ closeDropdown(); dropdownToggle.focus();} if (isMobileMenuOpen) closeMobileMenu();}}); let resizeTimer; window.addEventListener('resize', ()=>{ clearTimeout(resizeTimer); resizeTimer=setTimeout(()=>{ if (window.innerWidth >768 && isMobileMenuOpen){ closeMobileMenu();}}, 250);}); dropdownMenu.addEventListener('keydown', (e)=>{ if (e.key==='Tab' && isDropdownOpen){ const focusableElements=dropdownMenu.querySelectorAll('a, button'); const firstElement=focusableElements[0]; const lastElement=focusableElements[focusableElements.length - 1]; if (e.shiftKey && document.activeElement===firstElement){ e.preventDefault(); lastElement.focus();} else if (!e.shiftKey && document.activeElement===lastElement){ e.preventDefault(); firstElement.focus();}}});})();
+</script>
+<!-- footer script below -->
+<script>(function(){ const year=document.getElementById('uc-year'); if (year) year.textContent=new Date().getFullYear(); function toggleSections(){ const sections=document.querySelectorAll('.uc-section'); const isDesktop=window.innerWidth >768; sections.forEach(s=>isDesktop ? s.setAttribute('open', '') : s.removeAttribute('open'));} toggleSections(); let timer; window.addEventListener('resize', ()=>{ clearTimeout(timer); timer=setTimeout(toggleSections, 250);});})(); </script>
+
+
+    </body>
+    
+    </html>

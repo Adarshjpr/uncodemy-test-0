@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Engineering for Arts Graduates — Complete Career Guide (2026) | Uncodemy</title>
+    <meta name="description" content="Is it too late for an arts graduate to learn data engineering? No. This guide covers skills, roadmap, projects, and interview tips to help you transition into data engineering from a non-technical background." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/data-engineering-for-arts-graduates" />
+    <meta property="og:title" content="Data Engineering for Arts Graduates — Complete Career Guide (2026) | Uncodemy" />
+    <meta property="og:description" content="A step-by-step guide for arts graduates transitioning to data engineering. Learn SQL, Python, Cloud, and Big Data — start from zero with confidence." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <style>
+        /* page-specific: data engineering metric grid */
+        .de-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .de-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .de-box .d-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .de-box .d-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .de-box .d-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .de-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .de-box .d-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .de-box .d-v {
+                font-size: 14px;
+            }
+            .de-box .d-l {
+                font-size: 8px;
+            }
+            .de-box .d-d {
+                font-size: 9px;
+            }
+        }
+        .skill-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Data Engineering for Arts Graduates <mark>Is It Too Late? No — Here's How</mark></h1>
+                <p class="lede">If you're an arts graduate wondering if you can become a data engineer, the answer is a resounding YES. This guide shows you exactly how to start from zero, build the right skills, and land your first data engineering job — even without a technical degree.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search 'data engineering for arts graduates'" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="false">SQL</button>
+                    <button class="chip" aria-pressed="false">Python</button>
+                    <button class="chip" aria-pressed="true">Data Engineering</button>
+                    <button class="chip" aria-pressed="false">Big Data</button>
+                    <button class="chip" aria-pressed="false">Cloud</button>
+                    <button class="chip" aria-pressed="false">Non-CS Jobs</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Data Engineering · Live metrics</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different data engineering scenarios">
+                        <button aria-pressed="true" data-r="etl">ETL Pipeline</button>
+                        <button aria-pressed="false" data-r="stream">Streaming</button>
+                        <button aria-pressed="false" data-r="warehouse">Warehouse</button>
+                    </div>
+                    <div class="de-grid" id="deTiers">
+                        <div class="de-box"><div class="d-l">Data Processed</div><div class="d-v" id="procVal">—</div><div class="d-d">Records / min</div></div>
+                        <div class="de-box"><div class="d-l">Query Latency</div><div class="d-v" id="latencyVal">—</div><div class="d-d">Avg. response time</div></div>
+                        <div class="de-box"><div class="d-l">Storage</div><div class="d-v" id="storageVal">—</div><div class="d-d">Optimized size</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Source (Files/DBs)</span>
+                        <span class="arrow">→</span>
+                        <span>Ingest (Python/Spark)</span>
+                        <span class="arrow">→</span>
+                        <span>Transform</span>
+                        <span class="arrow">→</span>
+                        <span>Store (Data Lake/Warehouse)</span>
+                    </div>
+                    <div class="demo-cap">Click a scenario to see how data pipelines scale. Data engineering is about building robust, scalable systems — and arts graduates bring unique problem-solving perspectives to this field.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Career Guides</a> / <a href="#top">Data Engineering</a> / <span>Data Engineering for Arts Graduates</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Transition · Arts to Data Engineering</p>
+                <h1>Is It Too Late for an Arts Graduate to Learn Data Engineering? No — Here's Your Complete Guide</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 14 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>15 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                               <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="Data engineering pipeline diagram showing source, ingestion, transformation, storage, and analysis">
+                        <defs>
+                            <marker id="ar5" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g5)" />
+                        
+                        <!-- Titles -->
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">DATA SOURCES</text>
+                            <text x="240" y="40">INGESTION</text>
+                            <text x="460" y="40">TRANSFORMATION</text>
+                            <text x="680" y="40">STORAGE &amp; ANALYTICS</text>
+                        </g>
+
+                        <!-- Column 1: Data Sources -->
+                        <rect x="20" y="58" width="200" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">APIs</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">CSV / JSON</text>
+                        <text x="50" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Streams</text>
+                        <text x="50" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Databases</text>
+                        <rect x="35" y="190" width="170" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="50" y="209" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">S3, Kinesis, Kafka</text>
+
+                        <!-- Column 2: Ingestion -->
+                        <rect x="240" y="58" width="200" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="270" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Extract</text>
+                        <text x="270" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Python</text>
+                        <text x="270" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Spark</text>
+                        <text x="270" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Airflow</text>
+                        <rect x="270" y="190" width="140" height="28" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="285" y="209" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8a6100">Batch / Stream</text>
+
+                        <!-- Column 3: Transformation -->
+                        <rect x="460" y="58" width="200" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="490" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Transform</text>
+                        <text x="490" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Clean</text>
+                        <text x="490" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Join</text>
+                        <text x="490" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">Aggregate</text>
+                        <rect x="500" y="190" width="120" height="28" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="515" y="209" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8a6100">dbt, SQL</text>
+
+                        <!-- Column 4: Storage & Analytics (fixed: smaller font & wider bottom box) -->
+                        <rect x="680" y="58" width="200" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="700" y="90" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#0B6E75" font-weight="700">Data Lake / Warehouse</text>
+                        <text x="700" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Parquet / Delta</text>
+                        <text x="700" y="138" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#1E2A36">Redshift / BigQuery</text>
+                        <text x="700" y="162" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Dashboards / ML</text>
+                        <rect x="700" y="190" width="170" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="715" y="209" font-family="IBM Plex Mono, monospace" font-size="9" fill="#0B6E75">Analytics &amp; Insights</text>
+
+                        <!-- Arrows -->
+                        <path d="M220 148 H226" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar5)" />
+                        <path d="M440 148 H446" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar5)" />
+                        <path d="M660 148 H666" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar5)" />
+                    </svg>
+                    <figcaption>The data engineering pipeline: source → ingest → transform → store. Arts graduates excel at understanding the 'story' behind the data, making them great at building intuitive, business-focused pipelines.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — Arts Graduate to Data Engineer</h2>
+                    <p>Yes, you can absolutely become a data engineer as an arts graduate. Data engineering is less about advanced mathematics and more about <b>problem-solving, logic, and building robust systems</b>. Your arts background gives you strong communication, critical thinking, and storytelling skills — all highly valued in data teams.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>Why arts graduates make great data engineers</b> — the skills you already have.</li>
+                        <li><b>Myths about data engineering</b> — you don't need a CS degree or advanced math.</li>
+                        <li><b>The complete roadmap</b> — SQL, Python, Cloud, Big Data — from zero to job-ready.</li>
+                        <li><b>Projects to build your portfolio</b> — practical, hands-on ideas.</li>
+                        <li><b>Interview tips &amp; salary expectations</b> — what to expect and how to prepare.</li>
+                        <li><b>Test yourself</b> — a quick quiz to assess your readiness.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Is it too late? — The short answer</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why arts graduates are great for data engineering</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Myths vs reality</a></li>
+                        <li><a href="#s4"><span class="n">04</span>What does a data engineer do?</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Skills roadmap</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Step‑by‑step learning path</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Portfolio projects</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A for arts graduates</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Is it too late? — The short answer</h2>
+                <p><strong>No. It is not too late.</strong> Data engineering is one of the most welcoming fields for career switchers. Unlike machine learning (which often requires advanced math), data engineering focuses on <b>building data infrastructure</b> — moving, transforming, and storing data efficiently. This is a skill that can be learned through practice, not a CS degree.</p>
+                <p>In fact, many companies actively hire arts graduates for data roles because they bring <b>diverse perspectives</b> and <b>strong communication skills</b> — which are essential for translating business requirements into technical pipelines.</p>
+                <div class="note"><b>Key insight:</b> Data engineering is about 20% coding and 80% problem-solving. If you can think logically, pay attention to detail, and enjoy learning new tools, you already have the core ingredients for success.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why arts graduates are great for data engineering</h2>
+                <p>Your arts background is not a disadvantage — it's a unique advantage. Here's why:</p>
+                <ul>
+                    <li><b>Communication &amp; storytelling</b> — you can explain complex data concepts to non-technical stakeholders, a skill many engineers lack.</li>
+                    <li><b>Critical thinking</b> — arts graduates are trained to analyse information from multiple angles, which is essential for debugging data pipelines.</li>
+                    <li><b>Attention to detail</b> — data engineering requires precision; a single misconfigured join can break a pipeline. Your attention to detail is a superpower.</li>
+                    <li><b>Curiosity</b> — the drive to ask "why" and "how" is at the heart of building great data systems.</li>
+                    <li><b>Adaptability</b> — arts graduates are used to learning new concepts quickly, which is exactly what's needed in the fast-evolving tech landscape.</li>
+                </ul>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Myths vs reality</h2>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Myth</th><th>Reality</th></tr></thead>
+                        <tbody>
+                            <tr><td>You need a CS degree to become a data engineer.</td><td><b>False.</b> Most data engineers I know have degrees in physics, economics, engineering, or even humanities. Skills matter more than degrees.</td></tr>
+                            <tr><td>You need to be a math genius.</td><td><b>False.</b> Basic arithmetic and logic are enough. Most complex math is handled by libraries and tools.</td></tr>
+                            <tr><td>Data engineering is just coding.</td><td><b>False.</b> It's about designing systems, understanding data flow, and ensuring data quality. Coding is a tool, not the end goal.</td></tr>
+                            <tr><td>You need years of experience to get a job.</td><td><b>False.</b> Many companies hire junior data engineers with strong portfolios and good problem-solving skills — even without formal IT experience.</td></tr>
+                            <tr><td>You need to know advanced statistics.</td><td><b>False.</b> That's more for data scientists. Data engineers focus on infrastructure, not statistical modeling.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>What does a data engineer do?</h2>
+                <p>A data engineer builds and maintains the infrastructure that allows data to flow from various sources to end-users (like analysts, data scientists, and business teams). Their day-to-day work includes:</p>
+                <ul>
+                    <li><b>Building data pipelines</b> — extracting data from APIs, databases, and files, transforming it, and loading it into data warehouses or lakes.</li>
+                    <li><b>Optimising queries</b> — ensuring that SQL queries run quickly and efficiently.</li>
+                    <li><b>Managing cloud infrastructure</b> — using AWS, Azure, or GCP to store and process data.</li>
+                    <li><b>Ensuring data quality</b> — writing tests to catch issues before they affect downstream systems.</li>
+                    <li><b>Collaborating with teams</b> — working with data scientists, analysts, and product managers to understand data needs.</li>
+                </ul>
+                <p>Notice that most of this is about <b>organisation, logic, and communication</b> — not advanced calculus.</p>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Skills roadmap — from zero to data engineer</h2>
+
+                <h3>1. SQL (3–4 weeks)</h3>
+                <p>SQL is the single most important skill for data engineering. You'll use it every single day. Learn to write complex queries, joins, subqueries, and window functions.</p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">SQL — Basic Query</button>
+                        <button role="tab" aria-selected="false" data-t="1">SQL — Window Function</button>
+                    </div>
+                    <pre data-p="0"><code>-- Basic SQL query every data engineer writes
+SELECT 
+    order_date,
+    customer_id,
+    SUM(order_amount) AS total_revenue
+FROM orders
+WHERE order_status = 'COMPLETED'
+GROUP BY order_date, customer_id
+HAVING SUM(order_amount) > 1000
+ORDER BY total_revenue DESC;</code></pre>
+                    <pre data-p="1" hidden><code>-- Window function for trend analysis
+SELECT 
+    order_date,
+    revenue,
+    SUM(revenue) OVER (ORDER BY order_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_7_day_total
+FROM daily_revenue
+ORDER BY order_date;</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">SQL · daily_revenue.sql</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <h3>2. Python (6–8 weeks)</h3>
+                <p>Python is the language of data engineering. Focus on data manipulation (pandas, Polars), API interaction (requests), and automation (scripts).</p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Python — ETL Script</button>
+                        <button role="tab" aria-selected="false" data-t="1">Python — Data Validation</button>
+                    </div>
+                    <pre data-p="0"><code># Simple Python ETL script
+import pandas as pd
+import requests
+
+def extract_data_from_api():
+    response = requests.get('https://api.example.com/sales')
+    return pd.DataFrame(response.json())
+
+def transform_data(df):
+    df['date'] = pd.to_datetime(df['date'])
+    df['total'] = df['quantity'] * df['unit_price']
+    return df.groupby('date')['total'].sum().reset_index()
+
+def load_to_csv(df):
+    df.to_csv('daily_sales.csv', index=False)
+
+if __name__ == '__main__':
+    raw = extract_data_from_api()
+    transformed = transform_data(raw)
+    load_to_csv(transformed)
+    print('Pipeline complete!')</code></pre>
+                    <pre data-p="1" hidden><code># Data quality checks
+def validate_sales_data(df):
+    errors = []
+    if df['quantity'].isnull().any():
+        errors.append('Null quantities found')
+    if (df['quantity'] <= 0).any():
+        errors.append('Negative or zero quantity found')
+    if df['unit_price'].isnull().any():
+        errors.append('Null unit prices found')
+    return errors
+
+# Run validation as part of your pipeline
+issues = validate_sales_data(sales_df)
+if issues:
+    print('Data quality issues:', issues)
+    # Send alert or stop pipeline</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Python · etl_pipeline.py</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <h3>3. Cloud Platforms (AWS / Azure / GCP) (4–6 weeks)</h3>
+                <p>Learn one cloud provider well. Focus on storage (S3), compute (EC2/Lambda), and managed databases (Redshift, RDS).</p>
+
+                <h3>4. Big Data Tools (8–10 weeks)</h3>
+                <p>Learn Apache Spark for processing large datasets, and workflow orchestrators like Apache Airflow or Prefect.</p>
+
+                <h3>5. Data Warehousing &amp; Modeling (4–6 weeks)</h3>
+                <p>Understand star schemas, snowflake schemas, and tools like dbt (data build tool).</p>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Step‑by‑step learning path</h2>
+                <p>Here's a realistic 9‑12 month plan for an arts graduate starting from zero.</p>
+
+                <ol class="steps">
+                    <li><b>Month 1–2: Foundations</b> — Learn SQL deeply. Practice on platforms like LeetCode, HackerRank, and StrataScratch. Build a portfolio of SQL queries.</li>
+                    <li><b>Month 3–4: Python for Data</b> — Learn Python basics (functions, loops, data structures) and then move to pandas and requests. Build simple ETL scripts.</li>
+                    <li><b>Month 5–6: Cloud &amp; Databases</b> — Get AWS Cloud Practitioner certified (or Azure/Azure Data Fundamentals). Learn about S3, RDS, and Redshift.</li>
+                    <li><b>Month 7–8: Big Data &amp; Orchestration</b> — Learn Apache Spark (PySpark) and Apache Airflow. Build a pipeline that processes a large public dataset.</li>
+                    <li><b>Month 9–10: Advanced Topics</b> — Learn dbt, data modelling, and data governance. Build a complete end‑to‑end project.</li>
+                    <li><b>Month 11–12: Interview Prep &amp; Applications</b> — Practice LeetCode (easy/medium SQL and Python). Prepare for system design and behavioural interviews. Start applying for junior data engineering roles.</li>
+                </ol>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Portfolio projects</h2>
+                <p>Here are three projects that will impress interviewers and demonstrate your skills.</p>
+
+                <h3>1. ETL Pipeline for E‑commerce Data</h3>
+                <p>Extract data from a public API (e.g., FakeStore API), transform it using pandas, and load it into a PostgreSQL database. Schedule it to run daily using a cron job or Airflow.</p>
+
+                <h3>2. Real‑Time Streaming with Spark Streaming</h3>
+                <p>Use PySpark to process a stream of data (simulate with a producer that writes to Kafka) and output aggregates to a database or dashboard.</p>
+
+                <h3>3. Data Lake to Data Warehouse Transformation</h3>
+                <p>Load large CSV files into an S3 bucket, use AWS Glue or PySpark to transform them (clean, join, aggregate), and load the results into Redshift or BigQuery. Use dbt to model the transformed data.</p>
+
+                <div class="note"><b>Tip:</b> Document your projects clearly on GitHub and write a blog post or LinkedIn article explaining your approach. This demonstrates communication skills — a huge plus for arts graduates.</div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — for arts graduates</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Why are you switching from an arts background to data engineering?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've always been fascinated by how data can tell stories and drive decisions. In my arts background, I analysed texts and contexts; now I want to build the infrastructure that enables that analysis at scale. I'm drawn to the logic, problem‑solving, and impact that data engineering offers."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>What skills have you learned to prepare for this role?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've built a strong foundation in SQL and Python. I've completed courses on AWS and built two ETL projects — one processing data from a public API and another using PySpark on a large dataset. I'm currently learning Apache Airflow for orchestration."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>How does your arts background help you in data engineering?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "My arts background taught me to ask the right questions and communicate complex ideas clearly. In data engineering, understanding the 'why' behind the data is just as important as the 'how'. I'm also trained to pay close attention to detail, which is crucial for data quality."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>Do you have any certifications?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I'm AWS Cloud Practitioner certified and currently preparing for the AWS Data Analytics – Specialty exam. I've also completed Google's Python for Data Engineering course."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>What is your salary expectation?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "Based on market research, I'm expecting a range of ₹8–12 LPA for a junior data engineer role in India. I'm flexible because my primary focus is on learning and growing within the company."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>What is your approach to debugging a data pipeline failure?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I start by checking logs — both application and system logs. Then I validate the data at each stage of the pipeline: is the source data correct? Did the transformation run without errors? Is the destination writable? I also use automated tests to catch issues early."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>What tools are you most comfortable with?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I'm comfortable with SQL (PostgreSQL, MySQL), Python (pandas, requests, PySpark), and AWS (S3, EC2, Redshift). I'm also learning Airflow and dbt."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you see yourself in 5 years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "In 5 years, I see myself as a senior data engineer or data architect, leading projects and mentoring junior engineers. I'm interested in how data engineering intersects with AI and machine learning — particularly in building reliable data foundations for ML models."</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — data engineering readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Can an arts graduate become a data engineer?</summary><div class="body"><p>Absolutely. Many data engineers come from non‑CS backgrounds. Focus on building practical skills (SQL, Python, Cloud) and a strong portfolio. Your unique perspective is highly valued.</p></div></details>
+                <details class="acc"><summary>Is data engineering harder than software development?</summary><div class="body"><p>It's different, not necessarily harder. Data engineering focuses on data flow, warehousing, and orchestration. Software development focuses more on application logic. Both require problem‑solving skills.</p></div></details>
+                <details class="acc"><summary>Do I need to know machine learning to become a data engineer?</summary><div class="body"><p>No. Machine learning is a separate field (data science). Data engineers build the infrastructure that supports ML, but they don't need to know the math behind the models.</p></div></details>
+                <details class="acc"><summary>What is the salary for a junior data engineer in India?</summary><div class="body"><p>A junior data engineer in India typically earns between ₹8–12 LPA. With 3–5 years of experience, this can go up to ₹20–30 LPA.</p></div></details>
+                <details class="acc"><summary>How long does it take to become a data engineer from scratch?</summary><div class="body"><p>With dedicated learning (10–15 hours per week), most people can reach a junior level in 9–12 months. Some accelerate this with bootcamps or full‑time study.</p></div></details>
+                <details class="acc"><summary>What are the most important tools for data engineering?</summary><div class="body"><p>SQL, Python, and one cloud platform (AWS/Azure/GCP) are essential. Beyond that, tools like Spark, Airflow, and dbt are highly valued.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">SQL for data engineers — complete guide</span><span class="m">SQL · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Python for data engineering — pandas &amp; beyond</span><span class="m">Python · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">AWS data engineering — hands‑on projects</span><span class="m">Cloud · 22 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Apache Spark tutorial for beginners</span><span class="m">Big Data · 16 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Data warehouse design — star schema explained</span><span class="m">Modelling · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Data engineering interview questions</span><span class="m">Interview · 20 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>From arts to data engineering — with our Full‑Stack + Data programme</h3>
+                    <p>Our programme covers SQL, Python, Cloud (AWS), Big Data (Spark), and data warehousing — with live projects, mock interviews, and placement support. No prior coding experience required.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                        <li>Placement support</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live data engineering session</div>
+                    <p>Two hours, no payment, no commitment. Write your first SQL query, see an ETL pipeline in action, and get feedback from industry trainers.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes roadmap &amp; skills list</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Arts to data engineering — complete roadmap</a></li>
+                        <li><a href="#"><span class="rank">02</span>SQL for non‑technical beginners</a></li>
+                        <li><a href="#"><span class="rank">03</span>Python — the complete beginner guide</a></li>
+                        <li><a href="#"><span class="rank">04</span>AWS data engineering — projects</a></li>
+                        <li><a href="#"><span class="rank">05</span>Data engineering interview questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Career transition · 50 questions</a></li>
+                        <li><a href="#">Data Engineering · 70 questions</a></li>
+                        <li><a href="#">SQL · 85 questions</a></li>
+                        <li><a href="#">Cloud · 45 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Full Stack + Data Engineering</div>
+                    <p>SQL, Python, Cloud, Spark, and more. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going — data engineering guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">SQL for data engineers <small>Master joins, window functions</small></a></li>
+                    <li><a href="#">Python for data engineering <small>Pandas, Spark, APIs</small></a></li>
+                    <li><a href="#">AWS data engineering projects <small>Hands‑on with S3, Redshift</small></a></li>
+                    <li><a href="#">Apache Airflow tutorial <small>Orchestrate your pipelines</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your data career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data Engineer roadmap <small>SQL → Python → Cloud</small></a></li>
+                    <li><a href="#">Data Analyst roadmap <small>SQL → Visualization → BI</small></a></li>
+                    <li><a href="#">Data Scientist roadmap <small>Math → ML → Deployment</small></a></li>
+                    <li><a href="#">Cloud Engineer roadmap <small>AWS, Azure, GCP</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data engineering career checklist <small>From zero to job</small></a></li>
+                    <li><a href="#">SQL cheat sheet <small>All key commands</small></a></li>
+                    <li><a href="#">Python ETL template <small>Starter script</small></a></li>
+                    <li><a href="#">Data engineering project ideas <small>Build your portfolio</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Arts to data engineering — success story <small>14 August 2026</small></a></li>
+                    <li><a href="#">Top data engineering tools for 2026 <small>12 August 2026</small></a></li>
+                    <li><a href="#">Remote data engineering jobs <small>10 August 2026</small></a></li>
+                    <li><a href="#">Data engineering vs data science <small>8 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, data engineering, cloud, and analytics in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Engineering &amp; Analytics</a></li>
+                        <li><a href="#">Cloud &amp; DevOps</a></li>
+                        <li><a href="#">Backend with Python</a></li>
+                        <li><a href="#">AWS &amp; Big Data</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Business Intelligence</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                etl: { proc: "10,500", latency: "240 ms", storage: "1.2 TB" },
+                stream: { proc: "250,000", latency: "85 ms", storage: "320 GB" },
+                warehouse: { proc: "45,000", latency: "120 ms", storage: "4.8 TB" }
+            },
+            stateOrder: ["etl", "stream", "warehouse"],
+            renderScene: function(s) {
+                document.getElementById("procVal").textContent = s.proc;
+                document.getElementById("latencyVal").textContent = s.latency;
+                document.getElementById("storageVal").textContent = s.storage;
+            },
+            defaultTrack: "Data Engineering",
+            emptyMsg: 'Nothing matches that yet. Try “Data engineering”, “SQL” or “Career change”.',
+            LIB: [
+                { t: "Data engineering for arts graduates — complete guide", g: "Career Change" },
+                { t: "Is it too late to become a data engineer?", g: "Career Change" },
+                { t: "SQL for data engineers — full tutorial", g: "SQL" },
+                { t: "Python for data engineering — pandas &amp; Spark", g: "Python" },
+                { t: "AWS data engineering — hands‑on projects", g: "Cloud" },
+                { t: "Apache Spark tutorial for beginners", g: "Big Data" },
+                { t: "Data warehouse design — star schema", g: "Data Engineering" },
+                { t: "Data engineering interview questions", g: "Interview" },
+                { t: "Apache Airflow — orchestration guide", g: "Big Data" },
+                { t: "dbt — data build tool tutorial", g: "Data Engineering" }
+            ],
+            QUIZ: [{
+                q: "Which skill is most essential for a data engineer?",
+                o: ["Machine Learning", "SQL", "UI/UX Design", "DevOps"],
+                a: 1,
+                e: "SQL is the single most important skill for data engineers. You'll use it every day to query, transform, and manage data."
+            }, {
+                q: "What is the primary responsibility of a data engineer?",
+                o: ["Building data pipelines", "Building mobile apps", "Designing user interfaces", "Managing HR"],
+                a: 0,
+                e: "Data engineers build and maintain data pipelines that move data from sources to storage and analytics systems."
+            }, {
+                q: "Which of these is a common data engineering tool for orchestration?",
+                o: ["Tableau", "Apache Airflow", "Figma", "Photoshop"],
+                a: 1,
+                e: "Apache Airflow is a popular workflow orchestration tool used to schedule and monitor data pipelines."
+            }, {
+                q: "Which cloud platform is most commonly used for data engineering?",
+                o: ["AWS", "Heroku", "Netlify", "Vercel"],
+                a: 0,
+                e: "AWS (Amazon Web Services) is the most widely used cloud platform for data engineering, offering services like S3, Redshift, and Glue."
+            }, {
+                q: "What is the purpose of a data warehouse?",
+                o: ["To store raw, unstructured data", "To store structured, analysed data for reporting",
+                    "To run machine learning models", "To build mobile apps"
+                ],
+                a: 1,
+                e: "A data warehouse stores structured, transformed data optimised for querying and reporting. It's a central repository for business intelligence."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You've got the foundations! Start with the roadmap in section 06 — focus on SQL and Python first, and you'll be on your way.",
+                fail: "Revisit sections 05 and 06 — understanding the skills and having a clear learning path is crucial for a successful transition."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

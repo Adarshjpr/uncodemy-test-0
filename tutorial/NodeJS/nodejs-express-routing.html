@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exploring ExpressJS Routing | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Master ExpressJS routing — HTTP methods, route parameters, query strings, middleware, route organization, and production-ready routing patterns." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 9 of 12: Exploring ExpressJS Routing</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html" class="active"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-route"></i> Routing</span>
+        <h1>Exploring ExpressJS Routing</h1>
+
+        <div class="card">
+
+            <p><strong>Routing</strong> is the mechanism by which an application responds to client requests for specific endpoints. Express.js provides a powerful, flexible routing system that forms the backbone of every web application. Mastering Express routing is essential for building well-structured, maintainable APIs.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Poorly organized routes lead to unmaintainable code, security vulnerabilities, and difficult debugging. A well-structured routing system is the foundation of a production-ready application.
+            </div>
+
+            <h2>1. Getting Started with Express</h2>
+
+            <h3>Installation</h3>
+            <pre class="code-block"><code>npm install express</code></pre>
+
+            <h3>Basic Express Server</h3>
+            <pre class="code-block"><code>const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Basic route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Start server
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});</code></pre>
+
+            <h2>2. HTTP Methods</h2>
+            <p>Express supports all standard HTTP methods for RESTful API design.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Method</th><th>Use Case</th><th>Express Method</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>GET</strong></td><td>Retrieve data</td><td><code>app.get()</code></td></tr>
+                        <tr><td><strong>POST</strong></td><td>Create new data</td><td><code>app.post()</code></td></tr>
+                        <tr><td><strong>PUT</strong></td><td>Replace data (full update)</td><td><code>app.put()</code></td></tr>
+                        <tr><td><strong>PATCH</strong></td><td>Partial update</td><td><code>app.patch()</code></td></tr>
+                        <tr><td><strong>DELETE</strong></td><td>Delete data</td><td><code>app.delete()</code></td></tr>
+                        <tr><td><strong>OPTIONS</strong></td><td>Get allowed methods</td><td><code>app.options()</code></td></tr>
+                        <tr><td><strong>HEAD</strong></td><td>Get headers only</td><td><code>app.head()</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>CRUD Operations Example</h3>
+            <pre class="code-block"><code>const express = require('express');
+const app = express();
+app.use(express.json()); // ✅ Parse JSON bodies
+
+// In-memory data store (use database in production)
+let users = [
+    { id: 1, name: 'John Doe', email: 'john@example.com' },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com' }
+];
+
+// ✅ GET all users
+app.get('/api/users', (req, res) => {
+    res.json(users);
+});
+
+// ✅ GET single user by ID
+app.get('/api/users/:id', (req, res) => {
+    const user = users.find(u => u.id === parseInt(req.params.id));
+    if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(user);
+});
+
+// ✅ POST — Create new user
+app.post('/api/users', (req, res) => {
+    const { name, email } = req.body;
+    if (!name || !email) {
+        return res.status(400).json({ error: 'Name and email are required' });
+    }
+    const newUser = {
+        id: users.length + 1,
+        name,
+        email
+    };
+    users.push(newUser);
+    res.status(201).json(newUser);
+});
+
+// ✅ PUT — Replace user (full update)
+app.put('/api/users/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const { name, email } = req.body;
+    const user = users.find(u => u.id === id);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    if (!name || !email) {
+        return res.status(400).json({ error: 'Name and email are required' });
+    }
+    user.name = name;
+    user.email = email;
+    res.json(user);
+});
+
+// ✅ PATCH — Partial update
+app.patch('/api/users/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const user = users.find(u => u.id === id);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    if (req.body.name) user.name = req.body.name;
+    if (req.body.email) user.email = req.body.email;
+    res.json(user);
+});
+
+// ✅ DELETE — Delete user
+app.delete('/api/users/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = users.findIndex(u => u.id === id);
+    if (index === -1) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+    users.splice(index, 1);
+    res.status(204).send();
+});</code></pre>
+
+            <h2>3. Route Parameters &amp; Query Strings</h2>
+
+            <h3>Route Parameters</h3>
+            <p>Route parameters are named segments in the URL path, denoted by <code>:</code>.</p>
+            <pre class="code-block"><code>// Route parameter :id
+app.get('/api/users/:id', (req, res) => {
+    const id = req.params.id;
+    res.json({ userId: id });
+});
+
+// Multiple parameters
+app.get('/api/users/:userId/posts/:postId', (req, res) => {
+    const { userId, postId } = req.params;
+    res.json({ userId, postId });
+});
+
+// Optional parameter (with ?)
+app.get('/api/users/:id?', (req, res) => {
+    if (req.params.id) {
+        // Fetch specific user
+    } else {
+        // Fetch all users
+    }
+});</code></pre>
+
+            <h3>Query Strings</h3>
+            <p>Query strings are key-value pairs after the <code>?</code> in the URL, accessible via <code>req.query</code>.</p>
+            <pre class="code-block"><code>// URL: /api/users?page=2&limit=10&sort=asc
+app.get('/api/users', (req, res) => {
+    const { page = 1, limit = 10, sort = 'asc' } = req.query;
+    res.json({
+        page: parseInt(page),
+        limit: parseInt(limit),
+        sort,
+        users: [] // Your data
+    });
+});
+
+// ✅ Production: Parse and validate query parameters
+app.get('/api/products', (req, res) => {
+    const { 
+        category, 
+        minPrice, 
+        maxPrice, 
+        inStock = true,
+        page = 1,
+        limit = 20
+    } = req.query;
+
+    // Validate numeric parameters
+    const parsedPage = parseInt(page);
+    const parsedLimit = parseInt(limit);
+    const parsedMinPrice = parseFloat(minPrice);
+    const parsedMaxPrice = parseFloat(maxPrice);
+
+    if (isNaN(parsedPage) || parsedPage < 1) {
+        return res.status(400).json({ error: 'Invalid page parameter' });
+    }
+    if (isNaN(parsedLimit) || parsedLimit < 1 || parsedLimit > 100) {
+        return res.status(400).json({ error: 'Limit must be between 1 and 100' });
+    }
+
+    // Build filter object
+    const filter = {};
+    if (category) filter.category = category;
+    if (parsedMinPrice) filter.minPrice = parsedMinPrice;
+    if (parsedMaxPrice) filter.maxPrice = parsedMaxPrice;
+    filter.inStock = inStock === 'true';
+
+    // Fetch products with filter
+    // ...
+
+    res.json({
+        filters: filter,
+        pagination: { page: parsedPage, limit: parsedLimit }
+    });
+});</code></pre>
+
+            <h2>4. Middleware — The Express Superpower</h2>
+
+            <p><strong>Middleware</strong> is a function that has access to the request, response, and the next middleware function in the application's request-response cycle.</p>
+
+            <h3>What Middleware Can Do</h3>
+            <ul>
+                <li>Execute any code</li>
+                <li>Modify the request or response</li>
+                <li>End the request-response cycle</li>
+                <li>Call the next middleware in the stack</li>
+            </ul>
+
+            <h3>Types of Middleware</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Application-level</strong></td><td>Applied to the entire app</td><td><code>app.use(express.json())</code></td></tr>
+                        <tr><td><strong>Router-level</strong></td><td>Applied to a specific router</td><td><code>router.use(authMiddleware)</code></td></tr>
+                        <tr><td><strong>Error-handling</strong></td><td>Handles errors (4 parameters)</td><td><code>app.use((err, req, res, next) => {})</code></td></tr>
+                        <tr><td><strong>Built-in</strong></td><td>Provided by Express</td><td><code>express.json()</code>, <code>express.static()</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Custom Middleware Examples</h3>
+            <pre class="code-block"><code>// ✅ 1. Logging middleware
+const loggerMiddleware = (req, res, next) => {
+    const start = Date.now();
+    res.on('finish', () => {
+        const duration = Date.now() - start;
+        console.log(`[${new Date().toISOString()}] ${req.method} ${req.url} - ${res.statusCode} (${duration}ms)`);
+    });
+    next();
+};
+app.use(loggerMiddleware);
+
+// ✅ 2. Authentication middleware
+const authMiddleware = (req, res, next) => {
+    const token = req.headers.authorization;
+    if (!token) {
+        return res.status(401).json({ error: 'Authentication required' });
+    }
+    try {
+        // Verify token (JWT)
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded; // Attach user to request
+        next();
+    } catch (err) {
+        return res.status(401).json({ error: 'Invalid token' });
+    }
+};
+app.use('/api/admin', authMiddleware);
+
+// ✅ 3. Rate limiting middleware
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+const MAX_REQUESTS = 100;
+
+const rateLimitMiddleware = (req, res, next) => {
+    const ip = req.ip || req.connection.remoteAddress;
+    const now = Date.now();
+    const windowStart = now - RATE_LIMIT_WINDOW;
+
+    if (!rateLimitMap.has(ip)) {
+        rateLimitMap.set(ip, []);
+    }
+
+    const requests = rateLimitMap.get(ip).filter(time => time > windowStart);
+    if (requests.length >= MAX_REQUESTS) {
+        return res.status(429).json({ 
+            error: 'Too many requests. Please try again later.' 
+        });
+    }
+
+    requests.push(now);
+    rateLimitMap.set(ip, requests);
+    next();
+};
+app.use(rateLimitMiddleware);
+
+// ✅ 4. Error handling middleware (must be LAST)
+const errorHandlerMiddleware = (err, req, res, next) => {
+    console.error('❌ Error:', err.stack);
+    const status = err.status || 500;
+    const message = err.message || 'Internal server error';
+    res.status(status).json({
+        error: message,
+        timestamp: new Date().toISOString(),
+        ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+    });
+};
+app.use(errorHandlerMiddleware);</code></pre>
+
+            <h2>5. Route Organization — Using Express.Router</h2>
+
+            <p>For production applications, routes should be organized into separate modules using <code>express.Router()</code>.</p>
+
+            <h3>Project Structure</h3>
+            <pre class="code-block"><code>project/
+├── src/
+│   ├── routes/
+│   │   ├── index.js          # Main router
+│   │   ├── users.js          # User routes
+│   │   ├── products.js       # Product routes
+│   │   └── auth.js           # Auth routes
+│   ├── controllers/
+│   │   ├── userController.js
+│   │   └── authController.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   └── validation.js
+│   └── app.js                # Main app
+├── server.js                 # Entry point
+└── package.json</code></pre>
+
+            <h3>Router Module Example</h3>
+            <pre class="code-block"><code>// routes/users.js
+const express = require('express');
+const router = express.Router();
+const { 
+    getUsers, 
+    getUserById, 
+    createUser, 
+    updateUser, 
+    deleteUser 
+} = require('../controllers/userController');
+const { authMiddleware } = require('../middleware/auth');
+const { validateUser } = require('../middleware/validation');
+
+// Routes
+router.get('/', getUsers);
+router.get('/:id', getUserById);
+router.post('/', validateUser, createUser);
+router.put('/:id', authMiddleware, validateUser, updateUser);
+router.delete('/:id', authMiddleware, deleteUser);
+
+module.exports = router;</code></pre>
+
+            <h3>Controller Example</h3>
+            <pre class="code-block"><code>// controllers/userController.js
+const User = require('../models/User');
+
+const getUsers = async (req, res, next) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (err) {
+        next(err);
+    }
+};
+
+const getUserById = async (req, res, next) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.json(user);
+    } catch (err) {
+        next(err);
+    }
+};
+
+const createUser = async (req, res, next) => {
+    try {
+        const user = new User(req.body);
+        await user.save();
+        res.status(201).json(user);
+    } catch (err) {
+        next(err);
+    }
+};
+
+const updateUser = async (req, res, next) => {
+    try {
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true }
+        );
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.json(user);
+    } catch (err) {
+        next(err);
+    }
+};
+
+const deleteUser = async (req, res, next) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.status(204).send();
+    } catch (err) {
+        next(err);
+    }
+};
+
+module.exports = {
+    getUsers,
+    getUserById,
+    createUser,
+    updateUser,
+    deleteUser
+};</code></pre>
+
+            <h3>Main App — Using Routers</h3>
+            <pre class="code-block"><code>// app.js
+const express = require('express');
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+const userRoutes = require('./routes/users');
+const productRoutes = require('./routes/products');
+const authRoutes = require('./routes/auth');
+
+app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
+
+// Health check
+app.get('/health', (req, res) => {
+    res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+    res.status(404).json({ error: 'Route not found' });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(err.status || 500).json({
+        error: err.message || 'Internal server error'
+    });
+});
+
+module.exports = app;</code></pre>
+
+            <h2>6. Advanced Routing Patterns</h2>
+
+            <h3>Chainable Route Handlers</h3>
+            <pre class="code-block"><code>app.route('/api/users')
+    .get((req, res) => { /* GET users */ })
+    .post((req, res) => { /* POST user */ });
+
+app.route('/api/users/:id')
+    .get((req, res) => { /* GET user */ })
+    .put((req, res) => { /* PUT user */ })
+    .delete((req, res) => { /* DELETE user */ });</code></pre>
+
+            <h3>Route Groups with Middleware</h3>
+            <pre class="code-block"><code>// Apply middleware to a group of routes
+app.use('/api/admin', authMiddleware, (req, res, next) => {
+    // Check if user is admin
+    if (!req.user.isAdmin) {
+        return res.status(403).json({ error: 'Admin access required' });
+    }
+    next();
+});
+
+// These routes all require authentication + admin access
+app.get('/api/admin/users', adminController.getUsers);
+app.delete('/api/admin/users/:id', adminController.deleteUser);</code></pre>
+
+            <h3>Parameter Validation Middleware</h3>
+            <pre class="code-block"><code>// middleware/validation.js
+const { body, param, validationResult } = require('express-validator');
+
+const validateUser = [
+    body('name').notEmpty().withMessage('Name is required'),
+    body('email').isEmail().withMessage('Valid email is required'),
+    (req, res, next) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        next();
+    }
+];
+
+const validateUserId = [
+    param('id').isInt().withMessage('ID must be an integer'),
+    (req, res, next) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        next();
+    }
+];
+
+module.exports = { validateUser, validateUserId };</code></pre>
+
+            <h2>7. Common Production Issues &amp; Solutions</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> These are real production issues in Express routing.</strong>
+            </div>
+
+            <h3>Issue 1: Routes Order Matters</h3>
+            <pre class="code-block"><code>// ❌ Wrong order — this catches everything!
+app.get('/api/users/:id', (req, res) => { /* ... */ });
+app.get('/api/users/profile', (req, res) => { /* ... */ });
+// Request to /api/users/profile will match the :id route!
+
+// ✅ Correct order — specific routes first
+app.get('/api/users/profile', (req, res) => { /* ... */ });
+app.get('/api/users/:id', (req, res) => { /* ... */ });
+// Request to /api/users/profile matches the specific route first</code></pre>
+
+            <h3>Issue 2: Async Error Handling</h3>
+            <pre class="code-block"><code>// ❌ Unhandled promise rejection
+app.get('/api/users', async (req, res) => {
+    const users = await User.find(); // If this fails, the app crashes
+    res.json(users);
+});
+
+// ✅ Wrap async handlers with error handler
+const asyncHandler = (fn) => (req, res, next) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+};
+
+app.get('/api/users', asyncHandler(async (req, res) => {
+    const users = await User.find();
+    res.json(users);
+}));
+
+// ✅ Or use express-async-errors
+require('express-async-errors');
+app.get('/api/users', async (req, res) => {
+    const users = await User.find();
+    res.json(users);
+});</code></pre>
+
+            <h3>Issue 3: CORS Configuration</h3>
+            <pre class="code-block"><code>// ✅ Production CORS setup
+const cors = require('cors');
+const allowedOrigins = ['https://myapp.com', 'https://api.myapp.com'];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+    maxAge: 86400 // 24 hours
+}));</code></pre>
+
+            <h2>8. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use express.Router()</strong> — Organize routes into separate modules.</li>
+                <li><strong>✅ Use controllers</strong> — Separate route definitions from business logic.</li>
+                <li><strong>✅ Implement validation</strong> — Validate request data before processing.</li>
+                <li><strong>✅ Handle errors</strong> — Use error-handling middleware.</li>
+                <li><strong>✅ Use async/await</strong> — With proper error handling.</li>
+                <li><strong>✅ Order routes correctly</strong> — Place specific routes before parameter routes.</li>
+                <li><strong>✅ Add security middleware</strong> — Helmet.js, CORS, rate limiting.</li>
+                <li><strong>✅ Log requests</strong> — Implement request logging middleware.</li>
+                <li><strong>✅ Use environment variables</strong> — For configuration.</li>
+                <li><strong>✅ Add health checks</strong> — Expose /health endpoint.</li>
+                <li><strong>✅ Implement CORS</strong> — Properly configure for production.</li>
+                <li><strong>✅ Add request validation</strong> — Use express-validator or Joi.</li>
+            </ul>
+
+            <h2>9. Quick Reference — Express Routing</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Concept</th><th>Syntax</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>GET Route</strong></td><td><code>app.get(path, handler)</code></td><td><code>app.get('/users', getUsers)</code></td></tr>
+                        <tr><td><strong>POST Route</strong></td><td><code>app.post(path, handler)</code></td><td><code>app.post('/users', createUser)</code></td></tr>
+                        <tr><td><strong>Route Parameter</strong></td><td><code>:param</code></td><td><code>app.get('/users/:id', getUser)</code></td></tr>
+                        <tr><td><strong>Query String</strong></td><td><code>req.query</code></td><td><code>const { page } = req.query</code></td></tr>
+                        <tr><td><strong>Request Body</strong></td><td><code>req.body</code></td><td><code>const { name } = req.body</code></td></tr>
+                        <tr><td><strong>Router</strong></td><td><code>express.Router()</code></td><td><code>const router = express.Router()</code></td></tr>
+                        <tr><td><strong>Middleware</strong></td><td><code>app.use(fn)</code></td><td><code>app.use(express.json())</code></td></tr>
+                        <tr><td><strong>Error Handler</strong></td><td><code>app.use((err, req, res, next) => {})</code></td><td>4 parameters required</td></tr>
+                        <tr><td><strong>Chained Routes</strong></td><td><code>app.route(path).get().post()</code></td><td><code>app.route('/users').get(getUsers).post(createUser)</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> Well-organized routes are the foundation of a maintainable Express application. Use the Router pattern early, even in small projects — it scales naturally and makes your codebase cleaner and more testable. The time invested in structuring your routes properly will pay off in reduced debugging time and easier onboarding of new team members.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-core-modules.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Exploring Node.js Core Modules</a>
+            <a href="nodejs-authentication-authorization.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Authentication &amp; Authorization in Node.js</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

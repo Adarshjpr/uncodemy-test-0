@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networking in Android — Making API Calls | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Master networking in Android — Retrofit, API calls, JSON parsing, error handling, interceptors, and production best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 9 of 12: Networking in Android — Making API Calls</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html" class="active"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-globe"></i> Networking</span>
+        <h1>Networking in Android — Making API Calls</h1>
+
+        <div class="card">
+
+            <p>In the modern mobile landscape, almost every app communicates with a backend server. Whether you're fetching user data, uploading images, or syncing content, understanding <strong>networking in Android</strong> is essential. This guide covers everything from making HTTP requests to parsing JSON responses using Retrofit — the industry-standard networking library for Android.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Networking is one of the most critical parts of any modern app. Poorly implemented networking leads to app crashes, slow performance, and frustrated users. Mastering Retrofit and handling errors gracefully is essential for building professional Android apps.
+            </div>
+
+            <h2>1. Networking Libraries — Why Retrofit?</h2>
+
+            <p>There are several networking libraries available for Android:</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Library</th><th>Description</th><th>Pros</th><th>Cons</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Retrofit</strong></td><td>Type-safe HTTP client for Android</td><td>✅ Type-safe, ✅ Coroutine support, ✅ Interceptors, ✅ Industry standard</td><td>Requires setup</td></tr>
+                        <tr><td><strong>Volley</strong></td><td>Google's networking library</td><td>✅ Simple, ✅ Built-in caching</td><td>❌ Older, ❌ Less flexible</td></tr>
+                        <tr><td><strong>OkHttp</strong></td><td>Low-level HTTP client</td><td>✅ High performance, ✅ WebSocket support</td><td>❌ More manual work</td></tr>
+                        <tr><td><strong>Ktor</strong></td><td>Kotlin-based networking</td><td>✅ Kotlin-first, ✅ Cross-platform</td><td>❌ Newer, ❌ Smaller community</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> <strong>Retrofit</strong> is the most widely used networking library in Android development. It's type-safe, works seamlessly with Kotlin coroutines, and is used by Google in many of their apps. Master Retrofit, and you'll be able to build any networking feature in Android.
+            </div>
+
+            <h2>2. Setting Up Retrofit</h2>
+
+            <h3>Step 1: Add Dependencies</h3>
+            <p>Add the following to your <code>build.gradle</code> (Module) file:</p>
+            <pre class="code-block"><code>dependencies {
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    
+    // Converter (Gson for JSON parsing)
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    
+    // Logging Interceptor (for debugging)
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+    
+    // OkHttp (already included with Retrofit)
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+}</code></pre>
+
+            <h3>Step 2: Add Internet Permission</h3>
+            <p>Add this to your <code>AndroidManifest.xml</code>:</p>
+            <pre class="code-block"><code>&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;</code></pre>
+
+            <h2>3. Creating the Data Models</h2>
+
+            <p>Create Kotlin data classes that match the JSON response structure from your API.</p>
+
+            <h3>Example API Response</h3>
+            <pre class="code-block"><code>// Sample JSON response from a user API
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "username": "johndoe",
+    "phone": "+1-555-123-4567",
+    "website": "johndoe.com",
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zipcode": "10001"
+    }
+}</code></pre>
+
+            <h3>Kotlin Data Classes</h3>
+            <pre class="code-block"><code>// User.kt
+data class User(
+    val id: Int,
+    val name: String,
+    val email: String,
+    val username: String,
+    val phone: String,
+    val website: String,
+    val address: Address
+)
+
+// Address.kt (nested object)
+data class Address(
+    val street: String,
+    val city: String,
+    val zipcode: String
+)
+
+// ApiResponse.kt (for responses with metadata)
+data class ApiResponse&lt;T&gt;(
+    val status: String,
+    val message: String?,
+    val data: T?
+)
+
+// ErrorResponse.kt (for error handling)
+data class ErrorResponse(
+    val statusCode: Int,
+    val message: String,
+    val timestamp: String
+)</code></pre>
+
+            <h2>4. Creating the API Interface</h2>
+
+            <p>The API interface defines all endpoints using Retrofit annotations.</p>
+
+            <pre class="code-block"><code>// ApiService.kt
+import retrofit2.Call
+import retrofit2.http.*
+import retrofit2.Response
+import kotlinx.coroutines.flow.Flow
+
+interface ApiService {
+    
+    // GET — Fetch all users
+    @GET("users")
+    suspend fun getUsers(): Response&lt;List&lt;User&gt;&gt;
+    
+    // GET — Fetch user by ID
+    @GET("users/{id}")
+    suspend fun getUserById(@Path("id") userId: Int): Response&lt;User&gt;
+    
+    // GET — With query parameters
+    @GET("users")
+    suspend fun searchUsers(
+        @Query("name") name: String,
+        @Query("limit") limit: Int = 10
+    ): Response&lt;List&lt;User&gt;&gt;
+    
+    // POST — Create a new user
+    @POST("users")
+    suspend fun createUser(@Body user: User): Response&lt;User&gt;
+    
+    // PUT — Update an existing user
+    @PUT("users/{id}")
+    suspend fun updateUser(
+        @Path("id") userId: Int,
+        @Body user: User
+    ): Response&lt;User&gt;
+    
+    // PATCH — Partial update
+    @PATCH("users/{id}")
+    suspend fun patchUser(
+        @Path("id") userId: Int,
+        @Body user: User
+    ): Response&lt;User&gt;
+    
+    // DELETE — Delete a user
+    @DELETE("users/{id}")
+    suspend fun deleteUser(@Path("id") userId: Int): Response&lt;Unit&gt;
+    
+    // Upload a file (multipart)
+    @Multipart
+    @POST("upload")
+    suspend fun uploadFile(
+        @Part file: MultipartBody.Part
+    ): Response&lt;User&gt;
+    
+    // Download a file
+    @Streaming
+    @GET("download/{fileName}")
+    suspend fun downloadFile(
+        @Path("fileName") fileName: String
+    ): Response&lt;ResponseBody&gt;
+}</code></pre>
+
+            <h2>5. Building the Retrofit Client</h2>
+
+            <pre class="code-block"><code>// ApiClient.kt
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+
+object ApiClient {
+    
+    private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    
+    // Logging interceptor (for development)
+    private val loggingInterceptor = HttpLoggingInterceptor().apply {
+        level = HttpLoggingInterceptor.Level.BODY // Shows request/response body
+    }
+    
+    // OkHttp Client with interceptors
+    private val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor(loggingInterceptor)
+        .addInterceptor { chain ->
+            val original = chain.request()
+            val request = original.newBuilder()
+                .header("Authorization", "Bearer YOUR_TOKEN_HERE")
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .method(original.method, original.body)
+                .build()
+            chain.proceed(request)
+        }
+        .connectTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
+        .build()
+    
+    // Retrofit instance
+    private val retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    
+    // API service instance
+    val apiService: ApiService = retrofit.create(ApiService::class.java)
+}</code></pre>
+
+            <h2>6. Making API Calls in ViewModel</h2>
+
+            <pre class="code-block"><code>// UserViewModel.kt
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+sealed class UserState {
+    object Loading : UserState()
+    data class Success(val users: List&lt;User&gt;) : UserState()
+    data class Error(val message: String) : UserState()
+}
+
+class UserViewModel : ViewModel() {
+    
+    private val _uiState = MutableLiveData&lt;UserState&gt;(UserState.Loading)
+    val uiState: LiveData&lt;UserState&gt; = _uiState
+    
+    private val _users = MutableLiveData&lt;List&lt;User&gt;&gt;()
+    val users: LiveData&lt;List&lt;User&gt;&gt; = _users
+    
+    private val _isLoading = MutableLiveData&lt;Boolean&gt;(false)
+    val isLoading: LiveData&lt;Boolean&gt; = _isLoading
+    
+    private val _error = MutableLiveData&lt;String?&gt;(null)
+    val error: LiveData&lt;String?&gt; = _error
+    
+    // Fetch all users
+    fun fetchUsers() {
+        _isLoading.value = true
+        _error.value = null
+        
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = ApiClient.apiService.getUsers()
+                withContext(Dispatchers.Main) {
+                    _isLoading.value = false
+                    if (response.isSuccessful) {
+                        val userList = response.body()
+                        if (userList != null) {
+                            _users.value = userList
+                            _uiState.value = UserState.Success(userList)
+                        } else {
+                            _error.value = "No data received"
+                            _uiState.value = UserState.Error("No data received")
+                        }
+                    } else {
+                        val errorMessage = "Error: ${response.code()} - ${response.message()}"
+                        _error.value = errorMessage
+                        _uiState.value = UserState.Error(errorMessage)
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    _isLoading.value = false
+                    val errorMessage = "Network error: ${e.message}"
+                    _error.value = errorMessage
+                    _uiState.value = UserState.Error(errorMessage)
+                }
+            }
+        }
+    }
+    
+    // Create a new user
+    fun createUser(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = ApiClient.apiService.createUser(user)
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful) {
+                        val newUser = response.body()
+                        // Add to existing list or refresh
+                        _users.value = _users.value?.plus(newUser) ?: listOf(newUser)
+                    } else {
+                        _error.value = "Failed to create user: ${response.code()}"
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    _error.value = "Network error: ${e.message}"
+                }
+            }
+        }
+    }
+    
+    // Delete a user
+    fun deleteUser(userId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = ApiClient.apiService.deleteUser(userId)
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful) {
+                        _users.value = _users.value?.filter { it.id != userId }
+                    } else {
+                        _error.value = "Failed to delete user: ${response.code()}"
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    _error.value = "Network error: ${e.message}"
+                }
+            }
+        }
+    }
+}</code></pre>
+
+            <h2>7. Using in Activity/Fragment</h2>
+
+            <pre class="code-block"><code>// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+    
+    private lateinit var viewModel: UserViewModel
+    private lateinit var adapter: UserAdapter
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        // Initialize ViewModel
+        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        
+        // Setup RecyclerView
+        setupRecyclerView()
+        
+        // Observe users
+        viewModel.users.observe(this) { users ->
+            adapter.submitList(users)
+        }
+        
+        // Observe loading state
+        viewModel.isLoading.observe(this) { isLoading ->
+            // Show/hide progress bar
+            findViewById&lt;ProgressBar&gt;(R.id.progressBar).visibility = 
+                if (isLoading) View.VISIBLE else View.GONE
+        }
+        
+        // Observe errors
+        viewModel.error.observe(this) { error ->
+            error?.let {
+                Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            }
+        }
+        
+        // Observe UI state
+        viewModel.uiState.observe(this) { state ->
+            when (state) {
+                is UserState.Loading -> {
+                    // Show loading
+                }
+                is UserState.Success -> {
+                    // Show data
+                }
+                is UserState.Error -> {
+                    // Show error
+                }
+            }
+        }
+        
+        // Fetch users on launch
+        viewModel.fetchUsers()
+    }
+    
+    private fun setupRecyclerView() {
+        val recyclerView = findViewById&lt;RecyclerView&gt;(R.id.recyclerView)
+        adapter = UserAdapter { user ->
+            // Handle item click
+            viewModel.deleteUser(user.id)
+        }
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+    }
+}</code></pre>
+
+            <h2>8. Error Handling — Best Practices</h2>
+
+            <h3>Sealed Class for Network State</h3>
+            <pre class="code-block"><code>// NetworkState.kt
+sealed class NetworkState&lt;out T&gt; {
+    object Loading : NetworkState&lt;Nothing&gt;()
+    data class Success&lt;T&gt;(val data: T) : NetworkState&lt;T&gt;()
+    data class Error(val message: String, val code: Int = -1) : NetworkState&lt;Nothing&gt;()
+}
+
+// Usage in ViewModel
+fun fetchUsers(): Flow&lt;NetworkState&lt;List&lt;User&gt;&gt;&gt; = flow {
+    emit(NetworkState.Loading)
+    try {
+        val response = ApiClient.apiService.getUsers()
+        if (response.isSuccessful) {
+            val users = response.body()
+            if (users != null) {
+                emit(NetworkState.Success(users))
+            } else {
+                emit(NetworkState.Error("Empty response"))
+            }
+        } else {
+            emit(NetworkState.Error(
+                message = response.message(),
+                code = response.code()
+            ))
+        }
+    } catch (e: Exception) {
+        emit(NetworkState.Error(e.message ?: "Unknown error"))
+    }
+}</code></pre>
+
+            <h2>9. Interceptors — Advanced Use Cases</h2>
+
+            <h3>Authentication Interceptor</h3>
+            <pre class="code-block"><code>// AuthInterceptor.kt
+class AuthInterceptor(private val tokenProvider: () -> String?) : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val originalRequest = chain.request()
+        val token = tokenProvider()
+        
+        if (token.isNullOrEmpty()) {
+            return chain.proceed(originalRequest)
+        }
+        
+        val request = originalRequest.newBuilder()
+            .header("Authorization", "Bearer $token")
+            .build()
+        
+        return chain.proceed(request)
+    }
+}</code></pre>
+
+            <h3>Retry Interceptor</h3>
+            <pre class="code-block"><code>// RetryInterceptor.kt
+class RetryInterceptor(private val maxRetries: Int = 3) : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        var retryCount = 0
+        var response: Response
+        
+        do {
+            response = chain.proceed(chain.request())
+            retryCount++
+        } while (!response.isSuccessful && retryCount < maxRetries)
+        
+        return response
+    }
+}</code></pre>
+
+            <h3>Adding Interceptors to OkHttp Client</h3>
+            <pre class="code-block"><code>val okHttpClient = OkHttpClient.Builder()
+    .addInterceptor(AuthInterceptor { getAuthToken() })
+    .addInterceptor(RetryInterceptor())
+    .addInterceptor(loggingInterceptor)
+    .build()</code></pre>
+
+            <h2>10. Handling Offline Scenarios</h2>
+
+            <pre class="code-block"><code>// ConnectivityManager.kt
+class ConnectivityManager(private val context: Context) {
+    fun isConnected(): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkCapabilities = connectivityManager.activeNetwork ?: return false
+        val activeNetwork = connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+        return activeNetwork.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+}
+
+// Usage in ViewModel
+fun fetchUsers() {
+    viewModelScope.launch(Dispatchers.IO) {
+        if (!connectivityManager.isConnected()) {
+            _error.postValue("No internet connection")
+            _isLoading.postValue(false)
+            return@launch
+        }
+        // Proceed with network call
+    }
+}</code></pre>
+
+            <h2>11. Common Pitfalls &amp; Solutions</h2>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Mistakes to Avoid:</strong>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 1: Not handling network errors</strong></p>
+                <p><strong>Problem:</strong> Network calls can fail for many reasons — no internet, server errors, timeouts.</p>
+                <p><strong>Solution:</strong> Always wrap network calls in try-catch blocks and handle all error cases gracefully.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 2: Blocking the main thread</strong></p>
+                <p><strong>Problem:</strong> Running network calls on the main thread causes the app to freeze (ANR).</p>
+                <p><strong>Solution:</strong> Use coroutines with <code>Dispatchers.IO</code> or <code>viewModelScope</code>.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 3: Not using the correct JSON converter</strong></p>
+                <p><strong>Problem:</strong> Retrofit needs a converter to parse JSON. Without it, calls will fail.</p>
+                <p><strong>Solution:</strong> Add <code>addConverterFactory(GsonConverterFactory.create())</code> when building Retrofit.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Pitfall 4: Not handling token expiration</strong></p>
+                <p><strong>Problem:</strong> If your auth token expires, API calls will fail with 401 Unauthorized.</p>
+                <p><strong>Solution:</strong> Use an interceptor to check for 401 responses and refresh the token automatically.</p>
+            </div>
+
+            <h2>12. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Use Retrofit</strong> — Industry-standard networking library.</li>
+                <li><strong>✅ Use coroutines</strong> — With <code>Dispatchers.IO</code> for network calls.</li>
+                <li><strong>✅ Handle errors</strong> — Try-catch, HTTP status codes, network errors.</li>
+                <li><strong>✅ Add interceptors</strong> — For auth, logging, retries.</li>
+                <li><strong>✅ Check connectivity</strong> — Before making network calls.</li>
+                <li><strong>✅ Use sealed classes</strong> — For network state (Loading, Success, Error).</li>
+                <li><strong>✅ Configure timeouts</strong> — Connect, read, and write timeouts.</li>
+                <li><strong>✅ Use HTTPS</strong> — Always use secure connections in production.</li>
+                <li><strong>✅ Cache responses</strong> — Use OkHttp cache for offline support.</li>
+                <li><strong>✅ Log requests</strong> — Only in debug builds (not in production).</li>
+                <li><strong>✅ Use live data / flow</strong> — For observable data in ViewModel.</li>
+                <li><strong>✅ Test API calls</strong> — Use MockWebServer for unit tests.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Networking is essential for any modern Android app. Retrofit is the industry-standard library that makes API calls simple, type-safe, and reliable. Always use coroutines for background threads, handle errors properly, and use interceptors for authentication and logging. With proper error handling and connectivity checks, you can build apps that work seamlessly even in challenging network conditions.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-sqlite.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>SQLite Database — Persistent Data Storage</a>
+            <a href="android-permissions.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Android Permissions — Security Best Practices</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

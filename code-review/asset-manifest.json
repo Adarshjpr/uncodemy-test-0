@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/code-review/static/css/main.1014cea5.css",
+    "main.js": "/code-review/static/js/main.d3d3dee2.js",
+    "static/media/2.png": "/code-review/static/media/2.772bc6310836dda4ec8a.png",
+    "index.html": "/code-review/index.html",
+    "main.1014cea5.css.map": "/code-review/static/css/main.1014cea5.css.map",
+    "main.d3d3dee2.js.map": "/code-review/static/js/main.d3d3dee2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1014cea5.css",
+    "static/js/main.d3d3dee2.js"
+  ]
+}

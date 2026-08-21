@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indexing Fundamentals | MongoDB Tutorial | Uncodemy</title>
+    <meta name="description" content="Single Field, Compound, and Multikey Indexes" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">MongoDB Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 11 of 20: Indexing Fundamentals</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="mongodb-introduction.html"><span class="num">01</span>Introduction to MongoDB</a></li>
+            <li><a href="mongodb-installation-setup.html"><span class="num">02</span>Installation and Setup</a></li>
+            <li><a href="mongodb-shell-gui-tools.html"><span class="num">03</span>MongoDB Shell and GUI Tools</a></li>
+            <li><a href="mongodb-document-model.html"><span class="num">04</span>The Document Model</a></li>
+            <li><a href="mongodb-databases-collections.html"><span class="num">05</span>Creating Databases and Collections</a></li>
+            <li><a href="mongodb-crud-operations.html"><span class="num">06</span>CRUD Operations</a></li>
+            <li><a href="mongodb-query-operators.html"><span class="num">07</span>Query Operators</a></li>
+            <li><a href="mongodb-sorting-pagination.html"><span class="num">08</span>Sorting, Limiting, and Pagination</a></li>
+            <li><a href="mongodb-data-modeling.html"><span class="num">09</span>Data Modeling and Schema Design</a></li>
+            <li><a href="mongodb-schema-validation.html"><span class="num">10</span>Schema Validation</a></li>
+            <li><a href="mongodb-indexing-fundamentals.html" class="active"><span class="num">11</span>Indexing Fundamentals</a></li>
+            <li><a href="mongodb-advanced-indexing.html"><span class="num">12</span>Advanced Indexing</a></li>
+            <li><a href="mongodb-aggregation-pipeline.html"><span class="num">13</span>Aggregation Pipeline</a></li>
+            <li><a href="mongodb-advanced-aggregation.html"><span class="num">14</span>Advanced Aggregation</a></li>
+            <li><a href="mongodb-replication.html"><span class="num">15</span>MongoDB Replication</a></li>
+            <li><a href="mongodb-sharding.html"><span class="num">16</span>MongoDB Sharding</a></li>
+            <li><a href="mongodb-transactions-acid.html"><span class="num">17</span>Transactions and ACID Compliance</a></li>
+            <li><a href="mongodb-security-authentication.html"><span class="num">18</span>Security and Authentication</a></li>
+            <li><a href="mongodb-backup-restore.html"><span class="num">19</span>Backup and Restore Strategies</a></li>
+            <li><a href="mongodb-integration-deployment.html"><span class="num">20</span>Integration and Deployment</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-list-ol"></i> Single Field, Compound, and Multikey Indexes</span>
+        <h1>Indexing Fundamentals</h1>
+
+        <div class="card">
+
+            <p>Without indexes, MongoDB must scan every document in a collection to satisfy a query — a <strong>collection scan</strong>. Indexes dramatically speed up queries by letting MongoDB jump directly to matching documents, much like a book's index.</p>
+
+            <h2>1. The Default _id Index</h2>
+            <p>Every collection automatically gets a unique index on <code>_id</code> — you never need to create this one manually.</p>
+
+            <h2>2. Single Field Indexes</h2>
+            <pre class="code-block"><code>// Create an ascending index on "email"
+db.users.createIndex({ email: 1 })
+
+// Create a unique index (prevents duplicate emails)
+db.users.createIndex({ email: 1 }, { unique: true })
+
+// View all indexes on a collection
+db.users.getIndexes()</code></pre>
+
+            <h2>3. Compound Indexes</h2>
+            <p>Compound indexes cover queries filtering or sorting on multiple fields — but field <strong>order matters</strong>.</p>
+            <pre class="code-block"><code>db.orders.createIndex({ customerId: 1, orderDate: -1 })
+
+// Efficient — uses the compound index
+db.orders.find({ customerId: ObjectId("...") }).sort({ orderDate: -1 })
+
+// Less efficient — can't use the index for orderDate alone
+db.orders.find({ orderDate: { $gt: ISODate("2026-01-01") } })</code></pre>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> ESR Rule:</strong> When designing compound indexes, order fields as <strong>Equality</strong> → <strong>Sort</strong> → <strong>Range</strong> for optimal performance.
+            </div>
+
+            <h2>4. Multikey Indexes</h2>
+            <p>When you index a field that holds an array, MongoDB automatically creates a <strong>multikey index</strong> — indexing each array element individually.</p>
+            <pre class="code-block"><code>db.products.createIndex({ tags: 1 })
+
+// Matches any product whose tags array contains "electronics"
+db.products.find({ tags: "electronics" })</code></pre>
+
+            <h2>5. Analyzing Query Performance</h2>
+            <pre class="code-block"><code>db.orders.find({ customerId: ObjectId("...") }).explain("executionStats")</code></pre>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Explain Field</th><th>Meaning</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>COLLSCAN</code></td><td>Full collection scan — no index used (bad for large collections)</td></tr>
+                        <tr><td><code>IXSCAN</code></td><td>Index scan used — efficient</td></tr>
+                        <tr><td><code>nReturned</code></td><td>Number of documents returned</td></tr>
+                        <tr><td><code>totalDocsExamined</code></td><td>Documents scanned — should be close to nReturned</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. Indexing Fundamentals Checklist</h2>
+            <ul>
+                <li><strong>✅ Understand the default _id index</strong></li>
+                <li><strong>✅ Create single field and unique indexes</strong></li>
+                <li><strong>✅ Apply the ESR rule for compound indexes</strong></li>
+                <li><strong>✅ Recognize multikey indexes on array fields</strong></li>
+                <li><strong>✅ Use explain() to verify index usage</strong></li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Indexes are the single biggest lever for query performance in MongoDB. Always index fields used in filters, sorts, and joins — but avoid over-indexing, since every index adds write overhead.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="mongodb-schema-validation.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Schema Validation</a>
+            <a href="mongodb-advanced-indexing.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Advanced Indexing</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master MongoDB?</h3>
+                <p>Build real-world MongoDB-powered applications with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>MongoDB Course</h4>
+            <p class="batch-sub">Kickstart your database development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

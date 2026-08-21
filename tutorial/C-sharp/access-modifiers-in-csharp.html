@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Modifiers in C# with Program Examples | C# Programming Course | Uncodemy</title>
+<meta name="description" content="Learn about access modifiers in C# such as public, private, protected and internal, with practical examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb-bar">
+  <a href="https://uncodemy.com/">C# Programming Course</a>
+  <span class="sep">&gt;</span>
+  <span>Page 50 of 70: Access Modifiers in C# with Program Examples</span>
+</nav>
+
+<div class="page-container fade-in">
+
+  <!-- Left Sidebar -->
+  <aside class="left-sidebar">
+        <div class="sidebar-title">Introduction</div>
+        <ul class="topic-list">
+          <li><a href="introduction-to-csharp.html">Introduction to C Sharp</a></li>
+          <li><a href="csharp-14-new-features.html">C# 14 New Features: The Most Powerful Update Yet for .NET Developers</a></li>
+          <li><a href="what-is-csharp-for-beginners.html">What is C#: C# for Beginners</a></li>
+        </ul>
+        <div class="sidebar-title">C# Basics</div>
+        <ul class="topic-list">
+          <li><a href="identifiers-in-csharp.html">Identifiers in C# - A Beginner's Guide ( With Examples )</a></li>
+        </ul>
+        <div class="sidebar-title">Basics</div>
+        <ul class="topic-list">
+          <li><a href="introduction-to-reflection-in-csharp.html">Introduction to Reflection in C#</a></li>
+          <li><a href="new-features-in-csharp-5.html">New features added to C# 5.0</a></li>
+          <li><a href="fibonacci-series-in-csharp.html">How to Implement Fibonacci Series in C#</a></li>
+          <li><a href="async-await-in-csharp.html">Async and Await in C#: Make Your Code Run Smoothly</a></li>
+          <li><a href="types-of-classes-in-csharp.html">Types of Classes in C#</a></li>
+          <li><a href="factorial-program-in-csharp.html">Understanding Factorial Program in C#: With Code Examples</a></li>
+          <li><a href="garbage-collection-in-csharp.html">Introduction to Garbage Collection in C#</a></li>
+          <li><a href="reverse-string-in-csharp.html">How to Use Reverse String in C#: Using Array, For Loop & Reverse</a></li>
+          <li><a href="csharp-best-practices.html">C# Best Practices for Writing Clean and Efficient Code</a></li>
+          <li><a href="csharp-destructor.html">C# Destructor</a></li>
+          <li><a href="boxing-and-unboxing-in-csharp.html">Understanding Boxing and Unboxing in C#</a></li>
+          <li><a href="partial-class-interface-struct-in-csharp.html">Partial Class, Interface or Struct in C Sharp with example</a></li>
+          <li><a href="int-int16-int32-int64-difference.html">Difference between int, Int16, Int32 and Int64</a></li>
+          <li><a href="lambda-expression-in-csharp.html">Lambda Expression in C# (With Examples)</a></li>
+          <li><a href="top-20-csharp-features.html">Top 20 C# Features Every .NET Developer Must Know</a></li>
+        </ul>
+        <div class="sidebar-title">Roadmaps</div>
+        <ul class="topic-list">
+          <li><a href="csharp-developer-roadmap.html">C# Developer Roadmap</a></li>
+        </ul>
+        <div class="sidebar-title">Keywords</div>
+        <ul class="topic-list">
+          <li><a href="keywords-in-csharp.html">Keywords in C#: Types of Keywords with Examples</a></li>
+          <li><a href="virtual-override-new-keyword-in-csharp.html">Understanding virtual, override and new keyword in C#</a></li>
+        </ul>
+        <div class="sidebar-title">Variable</div>
+        <ul class="topic-list">
+          <li><a href="variables-in-csharp.html">Variables in C#: Types of Variables with Examples</a></li>
+          <li><a href="scope-of-variables-in-csharp.html">Scope of Variables in C# : Class Level, Method Level and Block Level Scope</a></li>
+          <li><a href="csharp-collections.html">C# Collections: Understanding and Using Data Structures</a></li>
+        </ul>
+        <div class="sidebar-title">Data Types</div>
+        <ul class="topic-list">
+          <li><a href="data-types-in-csharp.html">Data Types in C# with Examples: Value and Reference Data Type</a></li>
+          <li><a href="csharp-var-and-anonymous-type.html">C Sharp Var data type and Anonymous Type: An Overview</a></li>
+        </ul>
+        <div class="sidebar-title">Type Casting</div>
+        <ul class="topic-list">
+          <li><a href="safe-type-casting-is-as-operator.html">Safe Type Casting with IS and AS Operator</a></li>
+          <li><a href="type-casting-type-conversion-in-csharp.html">Understanding Type Casting or Type Conversion in C#</a></li>
+        </ul>
+        <div class="sidebar-title">Operators</div>
+        <ul class="topic-list">
+          <li><a href="operators-in-csharp.html">Operators in C#: Arithmetic, Comparison, Logical and More...</a></li>
+        </ul>
+        <div class="sidebar-title">Conditional Statements</div>
+        <ul class="topic-list">
+          <li><a href="conditional-statements-in-csharp.html">Conditional Statements in C#: if , if..else, Nested if, if-else-if</a></li>
+          <li><a href="switch-statement-in-csharp.html">Switch Statement in C#: A Complete Guide</a></li>
+        </ul>
+        <div class="sidebar-title">Loops</div>
+        <ul class="topic-list">
+          <li><a href="loops-in-csharp.html">Loops in C#: For, While, Do..While Loops</a></li>
+        </ul>
+        <div class="sidebar-title">Jump Statement</div>
+        <ul class="topic-list">
+          <li><a href="jump-statements-in-csharp.html">Jump Statement in C#: Break, Continue, Goto, Return and Throw</a></li>
+        </ul>
+        <div class="sidebar-title">Methods</div>
+        <ul class="topic-list">
+          <li><a href="methods-in-csharp.html">Method in C#: Learn How to Use Methods in C#</a></li>
+          <li><a href="method-parameters-in-csharp.html">Method Parameters in C#: Types Explained with Examples</a></li>
+          <li><a href="extension-methods-in-csharp.html">Extension Methods in C#: Types, Real-Time Examples</a></li>
+          <li><a href="partial-methods-in-csharp.html">Partial Methods in C Sharp</a></li>
+          <li><a href="call-by-value-and-call-by-reference-in-csharp.html">Call By Value and Call by Reference in C#</a></li>
+        </ul>
+        <div class="sidebar-title">Arrays</div>
+        <ul class="topic-list">
+          <li><a href="arrays-in-csharp.html">Arrays in C#: Create, Declare and Initialize the Arrays</a></li>
+          <li><a href="types-of-arrays-in-csharp.html">Types of Arrays in C#: Single-dimensional, Multi-dimensional and Jagged Array</a></li>
+        </ul>
+        <div class="sidebar-title">String</div>
+        <ul class="topic-list">
+          <li><a href="csharp-string.html">C# String</a></li>
+        </ul>
+        <div class="sidebar-title">OOPs</div>
+        <ul class="topic-list">
+          <li><a href="understanding-multiple-inheritance-in-csharp.html">Understanding Multiple Inheritance in C#</a></li>
+          <li><a href="inheritance-in-csharp.html">Inheritance in C#</a></li>
+          <li><a href="mastering-oops-concepts-in-csharp.html">Mastering OOPs Concepts in C#: A Comprehensive Guide</a></li>
+          <li><a href="interfaces-in-csharp.html">Interfaces in C#: An Easy Learning</a></li>
+          <li><a href="method-overloading-and-method-overriding-in-csharp.html">Method Overloading and Method Overriding in C#</a></li>
+          <li><a href="objects-and-classes-in-csharp.html">Objects and Classes in C#: Examples and Differences</a></li>
+        </ul>
+        <div class="sidebar-title">Constructors</div>
+        <ul class="topic-list">
+          <li><a href="understanding-constructors-in-csharp.html">Understanding Constructors in C#: A Complete Guide</a></li>
+        </ul>
+        <div class="sidebar-title">Access Modifiers</div>
+        <ul class="topic-list">
+          <li><a href="access-modifiers-in-csharp.html" class="active">Access Modifiers in C# with Program Examples</a></li>
+        </ul>
+        <div class="sidebar-title">Property</div>
+        <ul class="topic-list">
+          <li><a href="csharp-properties.html">C# Properties</a></li>
+          <li><a href="properties-in-csharp-a-complete-guide.html">Properties in C#: A Complete Guide</a></li>
+        </ul>
+        <div class="sidebar-title">Abstract Class</div>
+        <ul class="topic-list">
+          <li><a href="abstract-class-in-csharp.html">Abstract Class in C#</a></li>
+        </ul>
+        <div class="sidebar-title">Delegates</div>
+        <ul class="topic-list">
+          <li><a href="delegates-in-csharp-types-of-delegates.html">Delegates in c sharp | Types of Delegates</a></li>
+          <li><a href="understanding-delegates-in-csharp.html">Understanding Delegates in C#</a></li>
+          <li><a href="csharp-delegates-and-plugin-methods-with-delegates.html">C Sharp Delegates and Plug-in Methods with Delegates</a></li>
+          <li><a href="csharp-generic-delegates-func-action-predicate.html">C Sharp Generic delegates Func, Action and Predicate with anonymous method</a></li>
+        </ul>
+        <div class="sidebar-title">Anonymous Method & Lambda Expression</div>
+        <ul class="topic-list">
+          <li><a href="csharp-anonymous-method.html">C Sharp Anonymous Method</a></li>
+        </ul>
+        <div class="sidebar-title">Exception Handling</div>
+        <ul class="topic-list">
+          <li><a href="exception-handling-in-csharp.html">Exception Handling in C#</a></li>
+          <li><a href="exception-handling-in-csharp-types-examples-practical-guide.html">Exception Handling in C# - Types, Examples, and Practical Guide</a></li>
+        </ul>
+        <div class="sidebar-title">Attributes</div>
+        <ul class="topic-list">
+          <li><a href="csharp-attributes.html">C# Attributes</a></li>
+        </ul>
+        <div class="sidebar-title">Collections & Generics</div>
+        <ul class="topic-list">
+          <li><a href="generics-in-csharp-a-beginners-guide.html">Generics in C#: A Beginner's Guide</a></li>
+        </ul>
+        <div class="sidebar-title">LINQ</div>
+        <ul class="topic-list">
+          <li><a href="linq-in-csharp-types-with-example.html">LINQ in C#: Types of LINQ in C# with Example</a></li>
+        </ul>
+        <div class="sidebar-title">File Handling</div>
+        <ul class="topic-list">
+          <li><a href="efficient-file-handling-in-csharp.html">Efficient File Handling in C#: Techniques and Tips</a></li>
+        </ul>
+        <div class="sidebar-title">Comparisons</div>
+        <ul class="topic-list">
+          <li><a href="difference-between-csharp-generics-and-collections.html">Difference between c sharp generics and Collections with example</a></li>
+          <li><a href="difference-between-csharp-const-readonly-static.html">Difference Between C# Const and ReadOnly and Static</a></li>
+          <li><a href="difference-between-ref-and-out-parameters.html">Difference between ref and out parameters</a></li>
+          <li><a href="differences-between-object-var-and-dynamic-type.html">Differences between Object, Var and Dynamic type</a></li>
+        </ul>
+        <div class="sidebar-title">Interview</div>
+        <ul class="topic-list">
+          <li><a href="oops-interview-questions-and-answers-in-csharp.html">OOPs Interview Questions and Answers in C#</a></li>
+          <li><a href="top-50-csharp-interview-questions-and-answers.html">Top 50 C# Interview Questions and Answers To Get Hired</a></li>
+        </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <article class="content-card">
+      <h1>Access Modifiers in C# with Program Examples</h1>
+      <p class="subtitle">Learn about access modifiers in C# such as public, private, protected and internal, with practical examples.</p>
+      <h2>What are Access Modifiers?</h2>
+      <p>Access modifiers are keywords that control the visibility and accessibility of classes, methods, and other members from other parts of a program.</p>
+      <h2>public and private</h2>
+      <p>The public modifier makes a member accessible from anywhere, while private restricts access to only within the same class, which is the most restrictive option.</p>
+      <h2>protected and internal</h2>
+      <p>The protected modifier allows access within the class and its derived classes, while internal restricts access to code within the same assembly.</p>
+      <h2>Combining Modifiers</h2>
+      <p>C# also allows combined modifiers like protected internal and private protected, giving finer control over how a member can be accessed across classes and assemblies.</p>
+
+      <div class="highlight-note">
+        <strong>Conclusion:</strong> Choosing the right access modifier for each class member is key to good encapsulation, helping you expose only what other code truly needs while keeping the rest safely hidden.
+      </div>
+    </article>
+
+    <div class="prev-next-nav">
+      <a href="understanding-constructors-in-csharp.html" class="nav-btn prev"><span class="nav-label">&larr; Previous</span><span class="nav-topic">Understanding Constructors in C#: A Complete Guide</span></a>
+      <a href="csharp-properties.html" class="nav-btn next"><span class="nav-label">Next &rarr;</span><span class="nav-topic">C# Properties</span></a>
+    </div>
+
+    <div class="course-cta-box">
+      <div>
+        <h3>Ready to Master C# Programming Course?</h3>
+        <p>Join Uncodemy's hands-on training program with expert mentors and real-world projects.</p>
+      </div>
+      <button class="cta-btn-white" data-landing-cta>Explore C# Programming Course</button>
+    </div>
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="right-sidebar">
+    <div class="batch-card">
+      <span class="batch-badge">&#128293; Upcoming Batch</span>
+      <h4 data-batch-name>C# Programming Course</h4>
+      <div class="batch-meta"><div>Next Batch Starts: <b data-batch-start>Editable</b></div>
+      <div>Duration: <b data-batch-duration>Editable</b></div></div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">Batch Starts In</div>
+        <div class="countdown-timer">
+          <div class="countdown-unit"><span class="num" data-cd-days>00</span><span class="lbl">Days</span></div>
+          <div class="countdown-unit"><span class="num" data-cd-hours>00</span><span class="lbl">Hrs</span></div>
+          <div class="countdown-unit"><span class="num" data-cd-minutes>00</span><span class="lbl">Min</span></div>
+          <div class="countdown-unit"><span class="num" data-cd-seconds>00</span><span class="lbl">Sec</span></div>
+        </div>
+      </div>
+
+      <ul class="batch-features">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+    </div>
+
+    <div class="batch-card">
+      <span class="limited-seats-badge">&#9889; Limited Seats Available</span>
+      <button class="cta-full-btn" data-landing-cta>Go to Course Landing Page</button>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-row"><span class="help-icon">&#128222;</span><span>Talk to our Counselor</span></div>
+      <div class="help-row"><a href="tel:" data-phone-link data-phone-display>+91 9818366550</a></div>
+      <a href="#" class="whatsapp-btn" data-whatsapp-link target="_blank" rel="noopener">&#128172; Chat on WhatsApp</a>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/main.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

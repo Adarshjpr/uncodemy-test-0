@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is Bootstrap? — Introduction & Setup | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn what Bootstrap is, why frontend frameworks matter, and how to set up Bootstrap in your project." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 1 of 9: What is Bootstrap? — Introduction & Setup</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html" class="active"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-code"></i> Introduction</span>
+        <h1>What is Bootstrap? — Introduction &amp; Setup</h1>
+
+        <div class="card">
+
+            <p><strong>Bootstrap</strong> is the world's most popular frontend framework for building responsive, mobile-first websites. Created by Twitter developers, it's now used by millions of developers worldwide to build professional, consistent UIs quickly.</p>
+
+            <h2>Why Bootstrap?</h2>
+            <ul>
+                <li><strong>Speed:</strong> Pre-built components (buttons, forms, navigation, cards, modals).</li>
+                <li><strong>Responsive:</strong> Built-in grid system that adapts to any screen size.</li>
+                <li><strong>Consistent:</strong> A unified design language across your entire project.</li>
+                <li><strong>Cross-browser:</strong> Handles browser quirks automatically.</li>
+                <li><strong>Customizable:</strong> Full customization with Sass variables.</li>
+            </ul>
+
+            <h2>Setting Up Bootstrap</h2>
+            <h3>Method 1: CDN (Recommended for Beginners)</h3>
+            <p>Add these links to the <code>&lt;head&gt;</code> section of your HTML:</p>
+            <pre class="code-block"><code>&lt;!-- Bootstrap CSS --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Bootstrap JavaScript Bundle (includes Popper) --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+            <h3>Method 2: npm</h3>
+            <pre class="code-block"><code>npm install bootstrap</code></pre>
+
+            <h3>Method 3: Download</h3>
+            <p>Download the compiled CSS and JS from <a href="https://getbootstrap.com" target="_blank">getbootstrap.com</a>.</p>
+
+            <h2>Minimal Starter Template</h2>
+            <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap Starter&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="text-center mt-5"&gt;Hello, Bootstrap!&lt;/h1&gt;
+        &lt;p class="text-center"&gt;Your first Bootstrap page.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <h2>Key Concepts to Remember</h2>
+            <ul>
+                <li><strong>Container:</strong> The outermost wrapper that centers and pads your content.</li>
+                <li><strong>Grid:</strong> 12-column system with rows and columns.</li>
+                <li><strong>Components:</strong> Pre-built UI elements you can use directly.</li>
+                <li><strong>Utilities:</strong> Single-purpose classes for spacing, colors, flexbox, etc.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Bootstrap is a complete frontend toolkit. Once you understand its core concepts, you can build professional websites faster than ever.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <span class="disabled"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>You're at the beginning!</span>
+            <a href="bootstrap-grid-system-foundation.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Grid System — The Foundation of Layouts</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

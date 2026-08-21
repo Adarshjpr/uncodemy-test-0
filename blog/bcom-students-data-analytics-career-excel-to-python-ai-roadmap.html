@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Analytics Career for B.Com Students: Complete Roadmap from Excel to Python &amp; AI | Uncodemy</title>
+    <meta name="description" content="A complete data analytics roadmap for B.Com students: start with Excel, add SQL, Power BI, Python and AI tools. Skills, projects, salary and a month-by-month plan." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/bcom-students-data-analytics-career-excel-to-python-ai-roadmap" />
+    <meta property="og:title" content="Data Analytics Career for B.Com Students: Complete Roadmap from Excel to Python &amp; AI | Uncodemy" />
+    <meta property="og:description" content="B.Com to data analytics, step by step. Excel first, then SQL, Power BI, Python and AI tools, with projects that use your commerce knowledge." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <style>
+        /* page-specific: career path diagram */
+        .career-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .career-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .career-box .c-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .career-box .c-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .career-box .c-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .career-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .career-box .c-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .career-box .c-v {
+                font-size: 14px;
+            }
+            .career-box .c-l {
+                font-size: 8px;
+            }
+            .career-box .c-d {
+                font-size: 9px;
+            }
+        }
+        /* role badges */
+        .role-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Data Analytics Career for B.Com Students <mark>Complete Roadmap from Excel to Python &amp; AI</mark></h1>
+                <p class="lede">Commerce students start closer to analytics than they realise. You already read financial statements, work in Excel, and understand what a business is trying to do. This roadmap adds the four technical layers on top &mdash; SQL, Power BI, Python and AI tools.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;bcom data analytics roadmap excel to python&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="true">B.Com / Commerce</button>
+                    <button class="chip" aria-pressed="false">Excel</button>
+                    <button class="chip" aria-pressed="false">SQL</button>
+                    <button class="chip" aria-pressed="false">Power BI</button>
+                    <button class="chip" aria-pressed="false">Python</button>
+                    <button class="chip" aria-pressed="false">Finance Analytics</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Career Path Explorer · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different career paths">
+                        <button aria-pressed="true" data-r="mis">MIS / Excel</button>
+                        <button aria-pressed="false" data-r="analyst">Data Analyst</button>
+                        <button aria-pressed="false" data-r="finance">Finance Analyst</button>
+                        <button aria-pressed="false" data-r="bi">BI Analyst</button>
+                    </div>
+                    <div class="career-grid" id="careerTiers">
+                        <div class="career-box"><div class="c-l">Role</div><div class="c-v" id="roleName">&mdash;</div><div class="c-d">Job title</div></div>
+                        <div class="career-box"><div class="c-l">Avg. Salary (India)</div><div class="c-v" id="salaryVal">&mdash;</div><div class="c-d">Fresher to mid-level</div></div>
+                        <div class="career-box"><div class="c-l">Learning Time</div><div class="c-v" id="timeVal">&mdash;</div><div class="c-d">From zero to job-ready</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>B.Com Student</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Excel &rarr; SQL &rarr; Power BI</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Python + AI Tools</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Analytics Job</span>
+                    </div>
+                    <div class="demo-cap">Tap a role to compare entry points. Commerce graduates have an unusual advantage in finance analytics, where domain knowledge is worth as much as the tooling.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Career Guides</a> / <a href="#top">Commerce to Data</a> / <span>B.Com to Data Analytics</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Guide · Commerce to Analytics</p>
+                <h1>Data Analytics Career for B.Com Students: The Complete Roadmap from Excel to Python and AI</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 12 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                               <figure>
+                    <svg viewBox="0 0 950 280" role="img" aria-label="Diagram showing B.Com commerce knowledge combining with analytics tools to reach analyst roles">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="950" height="280" fill="url(#g4)" />
+                        
+                        <!-- Titles -->
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">B.COM FOUNDATION</text>
+                            <text x="350" y="40">TOOLS TO ADD</text>
+                            <text x="660" y="40">ROLES THAT FIT YOU</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="45" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">What commerce gave you</text>
+                        <text x="45" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Accounting &amp; finance</text>
+                        <text x="45" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Business vocabulary</text>
+                        <text x="45" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Excel familiarity</text>
+                        <text x="45" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Cost &amp; margin logic</text>
+                        <rect x="40" y="210" width="190" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="65" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Real domain advantage</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="335" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Add in this order</text>
+                        <text x="335" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Advanced Excel</text>
+                        <text x="335" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• SQL</text>
+                        <text x="335" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Power BI</text>
+                        <text x="335" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Python + AI tools</text>
+                        <rect x="335" y="210" width="180" height="20" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8a6100">6&ndash;8 months part time</text>
+
+                        <!-- Column 3 -->
+                        <rect x="620" y="58" width="300" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="645" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Where you fit best</text>
+                        <text x="645" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data Analyst</text>
+                        <text x="645" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• MIS / Reporting Analyst</text>
+                        <text x="645" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Financial / FP&amp;A Analyst</text>
+                        <text x="645" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Business Intelligence Analyst</text>
+                        <rect x="645" y="210" width="250" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="670" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Finance analytics pays more</text>
+
+                        <!-- Arrows -->
+                        <path d="M250 148 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                        <path d="M540 148 H606" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                    </svg>
+                    <figcaption>Commerce knowledge is the part most analysts lack. Adding SQL and Power BI on top of accounting literacy puts you ahead in any finance-facing analytics team.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary &mdash; B.Com students in data analytics</h2>
+                    <p>B.Com is one of the best non&#8209;technical starting points for analytics, for a simple reason: <b>you already understand the numbers a business cares about</b>. Revenue, margin, cost centres, receivables and working capital are the exact subjects most dashboards report on. Analysts from other backgrounds have to learn that vocabulary; you have it. Add advanced Excel, SQL, Power BI, then Python and AI tools, and you can reach interview standard in six to eight months part time.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>Why commerce is an advantage</b>, not something to apologise for.</li>
+                        <li><b>The exact tool order</b> &mdash; Excel, SQL, Power BI, Python, AI.</li>
+                        <li><b>Finance analytics roles</b> that pay a premium for your degree.</li>
+                        <li><b>Four projects using commerce data</b> &mdash; P&amp;L, receivables, GST, sales.</li>
+                        <li><b>An 8&#8209;month plan</b> for students and working professionals.</li>
+                        <li><b>Interview answers</b> that turn your degree into a selling point.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Why B.Com is a strong starting point</a></li>
+                        <li><a href="#s2"><span class="n">02</span>The tool order &mdash; and why it matters</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Stage 1 &mdash; Advanced Excel, done properly</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Stage 2 &mdash; SQL, the independence skill</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Stage 3 &mdash; Power BI for management reporting</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Stage 4 &mdash; Python and AI tools</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Roles where a commerce degree is an advantage</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Four projects that use your commerce knowledge</a></li>
+                        <li><a href="#s9"><span class="n">09</span>Step&#8209;by&#8209;step roadmap &mdash; eight months</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Interview Q&amp;A &mdash; for commerce graduates</a></li>
+                        <li><a href="#quiz"><span class="n">11</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">12</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">13</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Why B.Com is a strong starting point</h2>
+                <p>Analytics teams are full of people who can write a query but cannot tell you whether the resulting number makes business sense. That is the gap a commerce graduate fills.</p>
+
+                <ul>
+                    <li><b>You read financial statements.</b> Balance sheet, P&amp;L and cash flow are the source of most corporate reporting requirements.</li>
+                    <li><b>You know the vocabulary.</b> Gross margin, contribution, accrual, provision, working capital &mdash; these appear in dashboard specifications, not in engineering courses.</li>
+                    <li><b>You already use Excel.</b> Most commerce students have done more spreadsheet work than a typical engineering fresher.</li>
+                    <li><b>You understand controls.</b> Reconciliation and audit habits translate directly into data validation.</li>
+                    <li><b>You can talk to finance teams.</b> A large share of analytics demand comes from finance, and communication there is easier when you speak the language.</li>
+                </ul>
+
+                <div class="note"><b>Key insight:</b> the highest&#8209;paid analyst roles are usually the ones closest to money &mdash; pricing, revenue, risk, FP&amp;A. Your degree is a direct qualification for exactly those teams.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>The tool order &mdash; and why it matters</h2>
+                <p>Learning tools in the wrong order wastes months. This sequence keeps you employable at every stage.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Stage</th><th>Tool</th><th>Why here</th><th>Time</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td><b>Advanced Excel</b></td><td>Fastest to job&#8209;ready; MIS roles hire on this alone</td><td>3&ndash;5 weeks</td></tr>
+                            <tr><td>2</td><td><b>SQL</b></td><td>Removes your dependence on someone exporting data for you</td><td>6&ndash;8 weeks</td></tr>
+                            <tr><td>3</td><td><b>Power BI</b></td><td>Turns your analysis into something management sees</td><td>3&ndash;4 weeks</td></tr>
+                            <tr><td>4</td><td><b>Python</b></td><td>Handles volumes and automation Excel cannot</td><td>8&ndash;10 weeks</td></tr>
+                            <tr><td>5</td><td><b>AI tools</b></td><td>Speeds up everything above once the fundamentals are solid</td><td>2&ndash;3 weeks</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>Pro tip:</b> do not start with Python. Commerce students who begin with Excel and SQL get interview calls in month three; those who begin with Python often spend four months and still cannot answer a business question.</div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Stage 1 &mdash; Advanced Excel, done properly</h2>
+                <p>&ldquo;I know Excel&rdquo; means very little in an interview. What counts is whether you can restructure a badly built workbook and produce a reconciled report without manual copy&#8209;paste.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Lookups &mdash; XLOOKUP, INDEX&#8209;MATCH, multi&#8209;criteria matching</li>
+                    <li>Conditional aggregation &mdash; SUMIFS, COUNTIFS, AVERAGEIFS</li>
+                    <li>Pivot tables, slicers, grouped date analysis</li>
+                    <li>Power Query &mdash; repeatable cleaning without formulas</li>
+                    <li>Financial functions &mdash; NPV, IRR, PMT, XIRR</li>
+                    <li>Dashboard building and simple macro automation</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">MIS Executive</span> <span class="role-badge">Accounts &amp; MIS Analyst</span> <span class="role-badge">Reporting Analyst</span> <span class="role-badge">Operations Analyst</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Excel &mdash; interview formulas</button>
+                    </div>
+                    <pre data-p="0"><code>' Excel / Google Sheets - the formulas that get asked about in interviews
+
+' 1. Lookup a value from another sheet (modern, safe version)
+=XLOOKUP(A2, Customers!$A:$A, Customers!$D:$D, "Not found")
+
+' 2. Conditional total with two criteria
+=SUMIFS(Sales[Amount], Sales[Region], $A2, Sales[Month], B$1)
+
+' 3. Count unique customers
+=SUMPRODUCT(1/COUNTIF(Sales[Customer], Sales[Customer]))
+
+' 4. Month-on-month growth %
+=IFERROR((C2-B2)/B2, "")
+
+' 5. Clean text before analysis
+=TRIM(PROPER(CLEAN(A2)))
+
+' Master these five and pivot tables, and Excel stops being a blocker.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Excel &middot; formulas that get asked</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Stage 2 &mdash; SQL, the independence skill</h2>
+                <p>SQL is what separates a report preparer from an analyst. Once you can query the source system yourself, you stop waiting for extracts and start answering questions the same day.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>SELECT, WHERE, ORDER BY on real tables</li>
+                    <li>JOINs across customers, invoices, payments and products</li>
+                    <li>GROUP BY, HAVING &mdash; the shape of every management report</li>
+                    <li>CTEs &mdash; building a receivables ageing query step by step</li>
+                    <li>Window functions &mdash; running totals, ranks, month&#8209;on&#8209;month change</li>
+                    <li>Data quality checks &mdash; duplicates, orphan rows, date gaps</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">Data Analyst</span> <span class="role-badge">SQL Analyst</span> <span class="role-badge">Finance Analyst</span> <span class="role-badge">BI Analyst</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">SQL &mdash; revenue by category</button>
+                        <button role="tab" aria-selected="false" data-t="1">Python &mdash; the same in pandas</button>
+                    </div>
+                    <pre data-p="0"><code>-- SQL: the single most important skill for an analyst
+-- Question: which product category earned the most last quarter?
+
+SELECT
+    p.category,
+    COUNT(DISTINCT o.order_id)      AS orders,
+    ROUND(SUM(o.amount), 2)         AS revenue,
+    ROUND(AVG(o.amount), 2)         AS avg_order_value
+FROM orders o
+JOIN products p ON p.product_id = o.product_id
+WHERE o.order_date &gt;= '2026-04-01'
+  AND o.order_date &lt;  '2026-07-01'
+  AND o.status = 'completed'
+GROUP BY p.category
+HAVING SUM(o.amount) &gt; 100000
+ORDER BY revenue DESC
+LIMIT 10;
+
+-- If you can read this query, you can already do 40% of an analyst's daily work.</code></pre>
+                    <pre data-p="1" hidden><code># Python + pandas: clean a messy sales file and answer a business question
+import pandas as pd
+
+df = pd.read_csv("sales_2026.csv")
+
+# 1. Clean
+df.columns = df.columns.str.strip().str.lower()
+df["order_date"] = pd.to_datetime(df["order_date"], errors="coerce")
+df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
+df = df.dropna(subset=["order_date", "amount"])
+
+# 2. Answer: monthly revenue per region
+monthly = (
+    df.groupby([df["order_date"].dt.to_period("M"), "region"])["amount"]
+      .sum()
+      .unstack(fill_value=0)
+      .round(0)
+)
+print(monthly.tail(6))
+
+# 3. Flag the drop that a manager will actually ask about
+change = monthly.pct_change().iloc[-1] * 100
+print(change[change &lt; -10].sort_values())</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">SQL &middot; quarterly revenue by category</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Stage 3 &mdash; Power BI for management reporting</h2>
+                <p>Finance reporting is the most common Power BI use case in Indian companies, which makes this an unusually good fit for a commerce graduate.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Connecting to Excel, CSV, SQL and folder sources</li>
+                    <li>Power Query transformations and refresh scheduling</li>
+                    <li>Data modelling &mdash; fact and dimension tables, relationships</li>
+                    <li>DAX &mdash; measures, CALCULATE, YTD and prior&#8209;year comparisons</li>
+                    <li>Building a P&amp;L or MIS dashboard that ties to the accounts</li>
+                    <li>Row&#8209;level security for department&#8209;wise access</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">BI Analyst</span> <span class="role-badge">Power BI Developer</span> <span class="role-badge">MIS Manager</span> <span class="role-badge">FP&amp;A Analyst</span></p>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Stage 4 &mdash; Python and AI tools</h2>
+                <p>Python is where commerce graduates often stop, and it is worth pushing through: it is the difference between a &#8377;6 LPA and a &#8377;10 LPA analyst profile.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Python basics &mdash; variables, loops, functions, files</li>
+                    <li>pandas &mdash; reading dozens of files, cleaning, merging, exporting</li>
+                    <li>Automating a monthly report end to end</li>
+                    <li>Basic statistics &mdash; variance analysis, trend, correlation</li>
+                    <li>Using LLM APIs to classify invoice descriptions or customer feedback</li>
+                    <li>Verifying AI output before it reaches a report</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">Data Analyst</span> <span class="role-badge">Automation Analyst</span> <span class="role-badge">Finance Data Analyst</span> <span class="role-badge">Junior Data Scientist</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Python &mdash; LLM for messy text</button>
+                    </div>
+                    <pre data-p="0"><code># Working with an LLM API - the everyday skill in AI-era analytics
+import os, json, requests
+
+def classify_feedback(text):
+    """Turn free-text customer feedback into structured data."""
+    prompt = (
+        "Classify the customer feedback below.\n"
+        "Return ONLY JSON with keys: sentiment (positive/neutral/negative), "
+        "topic (delivery/pricing/quality/support/other), urgent (true/false).\n\n"
+        f"Feedback: {text}"
+    )
+    r = requests.post(
+        "https://api.example-llm.com/v1/messages",
+        headers={"x-api-key": os.environ["API_KEY"]},
+        json={"model": "small-fast", "max_tokens": 200,
+              "messages": [{"role": "user", "content": prompt}]},
+        timeout=30,
+    )
+    return json.loads(r.json()["content"][0]["text"])
+
+rows = [classify_feedback(t) for t in open("feedback.txt")]
+print(rows[:3])
+# 2,000 rows of text become a table you can chart. That is the new analyst workflow.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Python &middot; classify feedback with an LLM</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Roles where a commerce degree is an advantage</h2>
+                <p>These are the teams that specifically prefer a candidate who understands accounts.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Role</th><th>What you do</th><th>Why B.Com helps</th><th>Salary (fresher)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>MIS Analyst</b></td><td>Monthly reporting packs, variance analysis</td><td>Reconciliation habits, Excel depth</td><td>&#8377;3&ndash;6 LPA</td></tr>
+                            <tr><td><b>Financial / FP&amp;A Analyst</b></td><td>Budgets, forecasts, cost analysis</td><td>Direct use of your accounting subjects</td><td>&#8377;5&ndash;10 LPA</td></tr>
+                            <tr><td><b>Revenue / Pricing Analyst</b></td><td>Margin, discount and pricing analysis</td><td>Contribution and cost logic</td><td>&#8377;6&ndash;11 LPA</td></tr>
+                            <tr><td><b>Data Analyst</b></td><td>Company&#8209;wide reporting and analysis</td><td>Business context plus tooling</td><td>&#8377;4&ndash;8 LPA</td></tr>
+                            <tr><td><b>Credit / Risk Analyst</b></td><td>Assessing borrower and portfolio risk</td><td>Financial statement reading</td><td>&#8377;5&ndash;9 LPA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Four projects that use your commerce knowledge</h2>
+                <p>Choose projects an interviewer in a finance team will recognise. That is your edge over a generic portfolio.</p>
+
+                <ul>
+                    <li><b>Project 1 &mdash; P&amp;L dashboard.</b> Take twelve months of transaction data, build a Power BI report with revenue, gross margin, expense heads and variance against budget. Reconcile the totals and say so in the README.</li>
+                    <li><b>Project 2 &mdash; Receivables ageing and collection risk.</b> Write SQL that buckets invoices by days outstanding, identifies the customers carrying most of the risk, and estimates the cash impact of a 15&#8209;day improvement.</li>
+                    <li><b>Project 3 &mdash; Sales and discount analysis.</b> Quantify how much margin discounting cost last year, by product and salesperson, and recommend a discount ceiling with the numbers behind it.</li>
+                    <li><b>Project 4 &mdash; Automated monthly close report.</b> A Python script that reads several raw exports, cleans and merges them, and outputs a formatted Excel pack. Include the before&#8209;and&#8209;after time saving.</li>
+                </ul>
+
+                <div class="note"><b>Pro tip:</b> quantify the outcome in every README &mdash; hours saved, cash freed, margin recovered. Commerce projects lend themselves to rupee figures, and rupee figures are what get remembered.</div>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>Step&#8209;by&#8209;step roadmap &mdash; eight months</h2>
+                <p>Written for a B.Com student giving 10 hours a week alongside college or articleship.</p>
+
+                <ol class="steps">
+                    <li><b>Month 1: Advanced Excel</b> &mdash; lookups, SUMIFS, pivots, Power Query. Deliverable: rebuild a messy workbook into a clean reporting sheet.</li>
+                    <li><b>Month 2&ndash;3: SQL</b> &mdash; joins through window functions on an invoices and payments schema. Deliverable: Project 2, the receivables ageing analysis. <i>Start applying for MIS roles now.</i></li>
+                    <li><b>Month 4: Power BI</b> &mdash; modelling and DAX. Deliverable: Project 1, the P&amp;L dashboard.</li>
+                    <li><b>Month 5: statistics and analysis thinking</b> &mdash; variance, trend, correlation, distribution. Deliverable: Project 3, the discount and margin study.</li>
+                    <li><b>Month 6&ndash;7: Python</b> &mdash; pandas and automation. Deliverable: Project 4, the automated monthly pack.</li>
+                    <li><b>Month 8: AI tools, portfolio and interviews</b> &mdash; LLM&#8209;assisted classification, GitHub tidy&#8209;up, timed SQL practice, and ten applications a week.</li>
+                </ol>
+
+                <div class="note"><b>Pro tip:</b> if you are doing CA or CMA articleship, use your firm&rsquo;s real reporting problems as project material. Anonymise the data, keep the method &mdash; interviewers rate that far above tutorial datasets.</div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Interview Q&amp;A &mdash; for commerce graduates</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>You are from a commerce background. Why analytics?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Because in my accounting work I kept hitting the same wall: the numbers were correct but nobody could see the pattern in them. I learned SQL and Power BI to fix that, and my first dashboard showed that 60% of our overdue receivables came from eleven customers. That is when I knew this was the work I wanted.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>How is your Excel beyond the basics?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I use XLOOKUP and INDEX&#8209;MATCH, multi&#8209;criteria SUMIFS, pivot tables with grouped dates, and Power Query for repeatable cleaning rather than re&#8209;doing formulas each month. I have also automated one monthly pack so the refresh is a single click.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>Write me a query for receivables over 90 days.</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I would join invoices to payments, compute outstanding as invoiced minus received, use DATEDIFF between invoice date and today for the ageing, then CASE the result into buckets and GROUP BY customer with a HAVING filter on the 90&#8209;plus bucket. I would also check for duplicate invoice numbers first, because that is the most common source of a wrong total.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>What is the difference between profit and cash flow, and why does it matter in a dashboard?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Profit is recognised when a sale is made; cash arrives later or not at all. A dashboard showing a profitable month while receivables balloon is telling a misleading story, so I always pair revenue with collection and ageing metrics.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>How do you make sure your report is correct?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I reconcile to a trusted source &mdash; usually the trial balance or the finance team&rsquo;s closing figures. I also check row counts before and after joins, look for duplicates, and confirm the date range. If a difference remains, I disclose it in the report rather than adjusting quietly.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>Do you know Python?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Yes, at working level. I use pandas to read several raw exports, clean and merge them, and write out a formatted Excel pack &mdash; a job that used to take me three hours manually and now runs in about two minutes. I am comfortable with groupby, merge and date handling.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>How do you use AI tools in your reporting work?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;For drafting queries and scripts, and for classifying free&#8209;text fields such as expense descriptions. I check output on a labelled sample before applying it to the full data, because a mis&#8209;classified expense head becomes a wrong number in a management report.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you want to be in three years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;In an FP&amp;A or revenue analytics role, owning the reporting and forecasting for a business unit. My degree gives me the finance side; I want the data side to be equally strong.&rdquo;</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 11</span>Test yourself &mdash; B.Com to analytics readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign&#8209;up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 12</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Can a B.Com graduate get a data analyst job?</summary><div class="body"><p>Yes, and commerce is one of the more common non-technical backgrounds in Indian analytics teams. The usual route is Excel and SQL first, an MIS or finance reporting role, then a move into a data analyst or FP&amp;A analyst title within 12 to 24 months.</p></div></details>
+                <details class="acc"><summary>Should I do an MBA or learn analytics tools?</summary><div class="body"><p>They serve different purposes. An MBA buys network and management track; analytics tools buy an immediate, testable skill. If your goal is an analyst job in the next year, the tools are the faster and cheaper route.</p></div></details>
+                <details class="acc"><summary>Is Tally or accounting experience useful here?</summary><div class="body"><p>Yes. Experience with an accounting system means you understand transaction-level data, chart of accounts structure and reconciliation, which shortens your learning curve on any company database.</p></div></details>
+                <details class="acc"><summary>Do I need to be good at mathematics?</summary><div class="body"><p>Commerce-level mathematics is enough for analyst work: percentages, ratios, growth rates, averages and variance. Heavy statistics is only needed if you move towards data science.</p></div></details>
+                <details class="acc"><summary>Can I do this alongside CA or CMA studies?</summary><div class="body"><p>Many people do, at a slower pace. Six to eight hours a week extends the plan to about twelve months, and the combination of a professional finance qualification with SQL and Power BI is unusually strong in the job market.</p></div></details>
+                <details class="acc"><summary>Which is better for me &mdash; Power BI or Tableau?</summary><div class="body"><p>Power BI, in most Indian finance teams. It integrates with Excel and Microsoft systems, and it appears in more job postings. The concepts transfer if you later need Tableau.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 13</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Excel to Power BI &mdash; a 30&#8209;day plan</span><span class="m">Excel · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">SQL for finance and MIS reporting</span><span class="m">SQL · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Financial dashboard projects in Power BI</span><span class="m">BI · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Python automation for monthly reports</span><span class="m">Python · 15 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">FP&amp;A analyst career guide</span><span class="m">Finance · 13 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Data Analyst interview questions</span><span class="m">Interview · 20 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Data Analytics programme for commerce students</h3>
+                    <p>Built around finance and MIS use cases. Advanced Excel, SQL, Power BI, Python automation and AI tools, with six projects using P&amp;L, receivables and sales data.</p>
+                    <span class="price">&#8377;15,500 · full programme <s>&#8377;24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>Finance&#8209;focused projects</li>
+                        <li>Advanced Excel</li>
+                        <li>SQL labs</li>
+                        <li>Power BI dashboards</li>
+                        <li>Python automation</li>
+                        <li>Mock interviews</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live Excel and SQL class</div>
+                    <p>Two hours, no payment, no commitment. See how a P&amp;L dashboard gets built and decide if the pace suits you.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes 8&#8209;month plan &amp; project briefs</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>B.Com to data analytics roadmap</a></li>
+                        <li><a href="#"><span class="rank">02</span>Excel to Power BI in 30 days</a></li>
+                        <li><a href="#"><span class="rank">03</span>SQL for MIS reporting</a></li>
+                        <li><a href="#"><span class="rank">04</span>Financial dashboard projects</a></li>
+                        <li><a href="#"><span class="rank">05</span>Data Analyst interview questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Data Analyst · 80 questions</a></li>
+                        <li><a href="#">Excel &amp; SQL · 60 questions</a></li>
+                        <li><a href="#">Power BI · 45 questions</a></li>
+                        <li><a href="#">Finance analytics · 40 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Data Analytics with Excel, SQL &amp; Power BI</div>
+                    <p>Built for commerce students. Advanced Excel, SQL, Power BI, Python and AI tools. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">&infin;</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee &mdash; outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going &mdash; career guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Excel to Power BI in 30 days <small>Beginner friendly</small></a></li>
+                    <li><a href="#">SQL for finance reporting <small>Query by query</small></a></li>
+                    <li><a href="#">Python automation for reports <small>Save hours monthly</small></a></li>
+                    <li><a href="#">Financial dashboard projects <small>Four briefs</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your data &amp; AI career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data Analyst roadmap <small>Excel &rarr; SQL &rarr; BI</small></a></li>
+                    <li><a href="#">FP&amp;A Analyst roadmap <small>Accounts &rarr; Forecasting &rarr; BI</small></a></li>
+                    <li><a href="#">BI Analyst roadmap <small>Power BI &rarr; DAX &rarr; Modelling</small></a></li>
+                    <li><a href="#">Data Scientist roadmap <small>Stats &rarr; ML &rarr; Deployment</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">8&#8209;month study plan <small>B.Com &rarr; Analytics</small></a></li>
+                    <li><a href="#">Excel formula cheat sheet <small>One page</small></a></li>
+                    <li><a href="#">SQL practice pack <small>100 queries</small></a></li>
+                    <li><a href="#">Finance project briefs <small>P&amp;L, ageing, pricing</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Commerce graduates in analytics <small>12 August 2026</small></a></li>
+                    <li><a href="#">Top finance analytics skills 2026 <small>10 August 2026</small></a></li>
+                    <li><a href="#">MIS to Data Analyst switch <small>8 August 2026</small></a></li>
+                    <li><a href="#">Automating the monthly close <small>5 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and data in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Science &amp; Analytics</a></li>
+                        <li><a href="#">DevOps &amp; Cloud</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact &ndash; Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                "mis": {
+                                "role": "MIS Analyst",
+                                "salary": "₹3–6 LPA",
+                                "time": "2–3 months"
+                },
+                "analyst": {
+                                "role": "Data Analyst",
+                                "salary": "₹4–8 LPA",
+                                "time": "5–6 months"
+                },
+                "finance": {
+                                "role": "Financial Analyst",
+                                "salary": "₹5–10 LPA",
+                                "time": "6–8 months"
+                },
+                "bi": {
+                                "role": "BI Analyst",
+                                "salary": "₹5–9 LPA",
+                                "time": "6–8 months"
+                }
+            },
+            stateOrder: ["mis", "analyst", "finance", "bi"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("timeVal").textContent = s.time;
+            },
+            defaultTrack: "B.Com / Commerce",
+            emptyMsg: "Nothing matches that yet. Try “Excel”, “SQL” or “Power BI”.",
+            LIB: [
+                {
+                                "t": "B.Com to data analytics — full roadmap",
+                                "g": "B.Com / Commerce"
+                },
+                {
+                                "t": "Excel to Power BI in 30 days",
+                                "g": "Excel"
+                },
+                {
+                                "t": "SQL for finance and MIS",
+                                "g": "SQL"
+                },
+                {
+                                "t": "Power BI financial dashboards",
+                                "g": "Power BI"
+                },
+                {
+                                "t": "Python automation for reports",
+                                "g": "Python"
+                },
+                {
+                                "t": "FP&A analyst career guide",
+                                "g": "Finance Analytics"
+                },
+                {
+                                "t": "Receivables ageing analysis project",
+                                "g": "Finance Analytics"
+                },
+                {
+                                "t": "Data Analyst interview questions",
+                                "g": "Career Change"
+                },
+                {
+                                "t": "MIS Analyst job guide",
+                                "g": "Excel"
+                },
+                {
+                                "t": "Statistics for business analysis",
+                                "g": "SQL"
+                }
+],
+            QUIZ: [
+                {
+                                "q": "Which tool should a B.Com student learn first?",
+                                "o": [
+                                                "Python",
+                                                "Advanced Excel",
+                                                "TensorFlow",
+                                                "Tableau"
+                                ],
+                                "a": 1,
+                                "e": "Advanced Excel. It takes a few weeks, MIS and reporting roles hire on it directly, and it builds on what commerce students already use."
+                },
+                {
+                                "q": "What advantage does a commerce degree give in analytics?",
+                                "o": [
+                                                "Faster coding",
+                                                "Understanding the business numbers behind the data",
+                                                "Better mathematics than engineers",
+                                                "Access to more tools"
+                                ],
+                                "a": 1,
+                                "e": "Domain knowledge. Knowing what margin, accrual and working capital mean lets you judge whether a result makes business sense, which many analysts cannot do."
+                },
+                {
+                                "q": "Which analytics roles pay a premium for a commerce background?",
+                                "o": [
+                                                "Game development",
+                                                "FP&A, pricing and credit risk analytics",
+                                                "Frontend development",
+                                                "Network operations"
+                                ],
+                                "a": 1,
+                                "e": "Finance-facing roles such as FP&A, pricing, revenue and credit risk analytics value accounting literacy directly, and they usually pay above generic reporting roles."
+                },
+                {
+                                "q": "Why should you learn SQL before Python?",
+                                "o": [
+                                                "Python is being discontinued",
+                                                "SQL makes you independent of data extracts and is tested in most interviews",
+                                                "SQL is harder so get it over with",
+                                                "Python cannot read databases"
+                                ],
+                                "a": 1,
+                                "e": "SQL lets you query source systems yourself and appears in nearly every analyst interview. Python adds automation power once the fundamentals are in place."
+                },
+                {
+                                "q": "What makes a commerce analytics project stand out?",
+                                "o": [
+                                                "A large dataset",
+                                                "A quantified business outcome such as cash freed or margin recovered",
+                                                "Using five different chart types",
+                                                "A long notebook"
+                                ],
+                                "a": 1,
+                                "e": "Rupee outcomes. Stating that a 15-day collection improvement frees a specific amount of cash is far more memorable than describing the technique."
+                }
+],
+            passScore: 4,
+            resultText: {
+                "pass": "You have the sequence right. Open Excel and start month 1 of the roadmap in section 09.",
+                "fail": "Re-read sections 02 and 09 — the tool order is what makes eight months enough instead of two years."
+}
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

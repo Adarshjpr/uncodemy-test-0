@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Uncodemy — IT Courses & Tutorials</title>
+
+        <!-- ===== EXTERNAL FONTS & ICONS ===== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+        <!-- Font Awesome for navbar / footer icons (matches Android page) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- Lucide for page content icons -->
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js">
+        </script>
+
+        <!-- ===== PAGE STYLES ===== -->
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/theme.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <!-- ===== COMPONENT STYLES (navbar + footer) ===== -->
+        <link rel="stylesheet" href="components/footer-style.css" />
+
+        <link rel="icon" type="image/png" href="assets/img/logo.png" />
+
+        <!-- ===== COMPONENT SCRIPTS ===== -->
+        <script src="components/uncodemy-navbar.js" defer></script>
+        <script src="components/footer-script.js" defer></script>
+     
+    </head>
+    <body>
+
+        <!-- ============================================================
+        NAVBAR  (loaded from components/uncodemy-navbar.js)
+        ============================================================ -->
+        <uncodemy-navbar></uncodemy-navbar>
+
+        <!-- ============================================================
+        MAIN CONTENT
+        ============================================================ -->
+        <main>
+
+            <!-- ============================================
+               PROMO BAR
+          ============================================ -->
+            <!-- <section class="promo-bar">
+                <div class="promo-bar__text">
+                    <i data-lucide="sparkles" class="promo-bar__icon"></i>
+                    <span>
+                        <strong>Unlock Your Potential!</strong>
+                        Let us know your interests
+                        and embark on a personalized learning journey. Fill out the form
+                        now!
+                    </span>
+                </div>
+                <a href="#enroll" class="promo-bar__cta">Enroll for class</a>
+            </section> -->
+
+            <!-- ============================================
+               HERO
+          ============================================ -->
+            <section class="hero">
+                <div class="hero__quick-actions">
+                    <a href="tel:" class="hero__quick-action hero__quick-action--call" aria-label="Call us">
+                        <i data-lucide="phone"></i>
+                    </a>
+                    <a href="#" class="hero__quick-action hero__quick-action--whatsapp" aria-label="Chat on WhatsApp">
+                        <i data-lucide="message-circle"></i>
+                    </a>
+                    <a href="mailto:" class="hero__quick-action hero__quick-action--mail" aria-label="Email us">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+
+                <div class="hero__inner">
+                    <div class="hero__content">
+                        <span class="hero__badge">Future-Ready Skills</span>
+
+                        <h1 class="hero__title">Kickstart Your IT Career With Us</h1>
+                        <p class="hero__subtitle">
+                            Explore in-demand technologies, learn from industry experts and
+                            build skills that get you hired.
+                        </p>
+
+                        <form class="hero__search" role="search">
+                            <label for="course-search" class="sr-only">Search courses</label>
+                            <input
+                            type="search"
+                            id="course-search"
+                            name="search"
+                            placeholder="Search technology, course or tutorial..."
+                            />
+                            <button type="submit" aria-label="Search">
+                                <i data-lucide="search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="hero__visual">
+                        <img
+                        src="assets/img/heroBanner.png"
+                        alt="Laptop displaying code, surrounded by icons for Code, Cloud, Database, Security and Web Dev"
+                        class="hero__image"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================
+               COURSE CATEGORIES
+          ============================================ -->
+            <div class="categories" id="courses">
+                <!-- Languages -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="code-2"></i></span>
+                        <h2 class="category-card__title">Languages Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="go-language/what-is-go-language-introduction.html">
+                                <img src="assets/icons/tech/go.png" alt="Go Language" />
+                                <span>Go Language</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="java/what-is-data-structure-in-java-classification-tutorial.html">
+                                <img src="assets/icons/tech/java.png" alt="Java" />
+                                <span>Java</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="python/standard-libraries.html">
+                                <img src="assets/icons/tech/python.png" alt="Python" />
+                                <span>Python</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="c/identifiers-in-c-types-of-identifiers.html">
+                                <img src="assets/icons/tech/c.png" alt="C Language" />
+                                <span>C Language</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="r_out/r-introduction.html">
+                                <img src="assets/icons/tech/R.png" alt="R Programming" />
+                                <span>R Programming</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="javascript/introduction-to-javascript.html">
+                                <img src="assets/icons/tech/js.png" alt="JavaScript" />
+                                <span>JavaScript</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="C-sharp/introduction-to-csharp.html">
+                                <img src="assets/icons/tech/CSharp.png" alt="C sharp" />
+                                <span>C Sharp</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Web Development -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="globe"></i></span>
+                        <h2 class="category-card__title">Web Development Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="NodeJS/nodejs-introduction-history.html">
+                                <img src="assets/icons/tech/Node.png" alt="Node.js" />
+                                <span>Node.js</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="Bootstrap/bootstrap-introduction-setup.html">
+                                <img src="assets/icons/tech/bootstrap.png" alt="MEAN" />
+                                <span>Bootstrap</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="xml/standard-libraries.html">
+                                <img src="assets/icons/tech/xml.png" alt="XML" />
+                                <span>XML</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="fullstack/introduction-to-react.html">
+                                <img src="assets/icons/tech/react.png" alt="React" />
+                                <span>React</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="fullstack/introduction-html.html">
+                                <img src="assets/icons/tech/Html.png" alt="HTML" />
+                                <span>HTML</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="mern/mern-stack.html">
+                                <img src="assets/icons/tech/mern.png" alt="MERN" />
+                                <span>MERN</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="css/introduction-to-css.html">
+                                <img src="assets/icons/tech/CSS3.png" alt="CSS" />
+                                <span>CSS</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="angular/standard-libraries.html">
+                                <img src="assets/icons/tech/Angular.png" alt="Angular" />
+                                <span>Angular</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="javascript/introduction-to-javascript.html">
+                                <img src="assets/icons/tech/js.png" alt="JavaScript" />
+                                <span>JavaScript</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="android/android-getting-started.html">
+                                <img src="assets/icons/tech/android.png" alt="Android" />
+                                <span>Android</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="laravel/what-is-laravel-overview-and-features.html">
+                                <img src="assets/icons/tech/laravel.png" alt="Laravel" />
+                                <span>Laravel</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Databases -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="database"></i></span>
+                        <h2 class="category-card__title">Databases Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="dbms/what-are-the-8-types-of-dbms.html">
+                                <img src="assets/icons/tech/dbms.png" alt="DBMS" />
+                                <span>DBMS</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="mysql/standard-libraries.html">
+                                <img src="assets/icons/tech/mysql.png" alt="MySql" />
+                                <span>MySql</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="mongodb/mongodb-introduction.html">
+                                <img src="assets/icons/tech/Mongodb.png" alt="MongoDB" />
+                                <span>MongoDB</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Cloud -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="cloud"></i></span>
+                        <h2 class="category-card__title">Cloud Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="cloud-computing/what-is-cloud-computing.html">
+                                <img src="assets/icons/tech/cloudcomp.png" alt="Cloud Computing" />
+                                <span>Cloud Computing</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="aws/how-to-prepare-for-aws-certifications.html">
+                                <img src="assets/icons/tech/AWS.png" alt="AWS" />
+                                <span>AWS</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="azure/top-azure-development-tools.html">
+                                <img src="assets/icons/tech/Azure.png" alt="Azure" />
+                                <span>Azure</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Digital Marketing -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="megaphone"></i></span>
+                        <h2 class="category-card__title">Digital Marketing Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="digital-marketing/introduction-to-digital-marketing.html">
+                                <img src="assets/icons/tech/digitalmarketing.png" alt="Digital Marketing" />
+                                <span>Digital Marketing</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="wordpress/what-is-wordpress-org-vs-com-features.html">
+                                <img src="assets/icons/tech/wordpress.png" alt="WordPress" />
+                                <span>WordPress</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Network Security -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="shield-check"></i></span>
+                        <h2 class="category-card__title">Network Security Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="cybersecurity/cybersecurity-introduction.html">
+                                <img src="assets/icons/tech/cyberSecurity.png" alt="Cyber Security" />
+                                <span>Cyber Security</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="ethical-hacking/what-is-ethical-hacking.html">
+                                <img src="assets/icons/tech/ethicalHacker.png" alt="Ethical Hacking" />
+                                <span>Ethical Hacking</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Software Testing -->
+                <section class="category-card">
+                    <header class="category-card__header">
+                        <span class="category-card__icon"><i data-lucide="clipboard-check"></i></span>
+                        <h2 class="category-card__title">Software Testing Tutorials</h2>
+                    </header>
+                    <ul class="course-grid">
+                        <li class="course-chip">
+                            <a href="selenium/what-is-selenium-components-of-selenium-suite.html">
+                                <img src="assets/icons/tech/selenium.png" alt="Selenium" />
+                                <span>Selenium</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="jira/what-is-jira.html">
+                                <img src="assets/icons/tech/jira.png" alt="Jira" />
+                                <span>Jira</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="https://uncodemy.com/tutorial/software-testing/overview-of-software-application-testing">
+                                <img src="assets/icons/tech/software.png" alt="Software Testing" />
+                                <span>Software Testing</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="postman/what-is-postman-features-and-benefits.html">
+                                <img src="assets/icons/tech/Postman.png" alt="Postman" />
+                                <span>Postman</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- All Courses -->
+                <section class="category-card category-card--all">
+                    <header class="all-courses__header">
+                        <div class="all-courses_title-container">
+                            <h2 class="all-courses__title">Explore All Courses</h2>
+                        </div>
+                        <p class="all-courses__description">
+                            Browse our wide range of IT courses and find the perfect path for your career growth.
+                        </p>
+                    </header>
+                    <ul class="course-grid course-grid--dense">
+                        <li class="course-chip">
+                            <a href="c/identifiers-in-c-types-of-identifiers.html">
+                                <img src="assets/icons/tech/c.png" alt="C Language" />
+                                <span>C Language</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="r_out/r-introduction.html">
+                                <img src="assets/icons/tech/R.png" alt="R Programming" />
+                                <span>R Programming</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="ML/ml-introduction.html">
+                                <img src="assets/icons/tech/ml.png" alt="Machine Learning" />
+                                <span>ML</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="DSA/radix-sort-for-strings.html">
+                                <img src="assets/icons/tech/dsa.png" alt="Node.js" />
+                                <span>DSA</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="software-testing/overview-of-software-application-testing.html">
+                                <img src="assets/icons/tech/software.png" alt="Software Testing" />
+                                <span>Software Testing</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="NodeJS/nodejs-introduction-history.html">
+                                <img src="assets/icons/tech/Node.png" alt="Node.js" />
+                                <span>Node.js</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="Bootstrap/bootstrap-introduction-setup.html">
+                                <img src="assets/icons/tech/bootstrap.png" alt="MEAN" />
+                                <span>Bootstrap</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="AI/ai-agentic-roadmap.html">
+                                <img src="assets/icons/tech/ai.png" alt="Artificial Intelligence" />
+                                <span>Artificial Intelligence</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="Docker/docker-why-use-2026.html">
+                                <img src="assets/icons/tech/docker.png" alt="Docker" />
+                                <span>Docker</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="fullstack/introduction-to-react.html">
+                                <img src="assets/icons/tech/react.png" alt="React" />
+                                <span>React</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="fullstack/introduction-html.html">
+                                <img src="assets/icons/tech/Html.png" alt="HTML" />
+                                <span>HTML</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="css/introduction-to-css.html">
+                                <img src="assets/icons/tech/CSS3.png" alt="CSS" />
+                                <span>CSS</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="angular/standard-libraries.html">
+                                <img src="assets/icons/tech/Angular.png" alt="Angular" />
+                                <span>Angular</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="javascript/introduction-to-javascript.html">
+                                <img src="assets/icons/tech/js.png" alt="JavaScript" />
+                                <span>JavaScript</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="android/android-getting-started.html">
+                                <img src="assets/icons/tech/android.png" alt="Android" />
+                                <span>Android</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="mern/mern-stack.html">
+                                <img src="assets/icons/tech/mern.png" alt="MERN" />
+                                <span>MERN</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="laravel/what-is-laravel-overview-and-features.html">
+                                <img src="assets/icons/tech/laravel.png" alt="Laravel" />
+                                <span>Laravel</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="go-language/what-is-go-language-introduction.html">
+                                <img src="assets/icons/tech/go.png" alt="Go Language" />
+                                <span>Go Language</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="wordpress/what-is-wordpress-org-vs-com-features.html">
+                                <img src="assets/icons/tech/wordpress.png" alt="WordPress" />
+                                <span>WordPress</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="cloud-computing/what-is-cloud-computing.html">
+                                <img src="assets/icons/tech/cloudcomp.png" alt="Cloud Computing" />
+                                <span>Cloud Computing</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="selenium/what-is-selenium-components-of-selenium-suite.html">
+                                <img src="assets/icons/tech/selenium.png" alt="Selenium" />
+                                <span>Selenium</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="jira/what-is-jira.html">
+                                <img src="assets/icons/tech/jira.png" alt="Jira" />
+                                <span>Jira</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="ethical-hacking/what-is-ethical-hacking.html">
+                                <img src="assets/icons/tech/ethicalHacker.png" alt="Ethical Hacking" />
+                                <span>Ethical Hacking</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="postman/what-is-postman-features-and-benefits.html">
+                                <img src="assets/icons/tech/Postman.png" alt="Postman" />
+                                <span>Postman</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="xml/standard-libraries.html">
+                                <img src="assets/icons/tech/xml.png" alt="XML" />
+                                <span>XML</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="java/what-is-data-structure-in-java-classification-tutorial.html">
+                                <img src="assets/icons/tech/java.png" alt="Java" />
+                                <span>Java</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="python/standard-libraries.html">
+                                <img src="assets/icons/tech/python.png" alt="Python" />
+                                <span>Python</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="cybersecurity/cybersecurity-introduction.html">
+                                <img src="assets/icons/tech/cyberSecurity.png" alt="Cyber Security" />
+                                <span>Cyber Security</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="digital-marketing/introduction-to-digital-marketing.html">
+                                <img src="assets/icons/tech/digitalmarketing.png" alt="Digital Marketing" />
+                                <span>Digital Marketing</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="dbms/what-are-the-8-types-of-dbms.html">
+                                <img src="assets/icons/tech/dbms.png" alt="DBMS" />
+                                <span>DBMS</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="mysql/standard-libraries.html">
+                                <img src="assets/icons/tech/mysql.png" alt="MySql" />
+                                <span>MySql</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="mongodb/mongodb-introduction.html">
+                                <img src="assets/icons/tech/Mongodb.png" alt="MongoDB" />
+                                <span>MongoDB</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="data-science/need-for-programming.html">
+                                <img src="assets/icons/tech/brain.png" alt="Data Science" />
+                                <span>Data Science</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="C-sharp/introduction-to-csharp.html">
+                                <img src="assets/icons/tech/CSharp.png" alt="C sharp" />
+                                <span>C Sharp</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="azure/top-azure-development-tools.html">
+                                <img src="assets/icons/tech/Azure.png" alt="Azure" />
+                                <span>Azure</span>
+                            </a>
+                        </li>
+                        <li class="course-chip">
+                            <a href="aws/how-to-prepare-for-aws-certifications.html">
+                                <img src="assets/icons/tech/AWS.png" alt="AWS" />
+                                <span>AWS</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <!-- ============================================================
+        FOOTER  (loaded from components/footer-script.js)
+        ============================================================ -->
+        <div id="UnCodeMy-Footer"></div>
+
+        <!-- ============================================================
+        SCRIPTS
+        ============================================================ -->
+        <script>
+            lucide.createIcons();
+
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggle = document.querySelector('.navbar__toggle');
+                const mobile = document.querySelector('.navbar__mobile');
+                if (toggle && mobile) {
+                    toggle.addEventListener('click', function() {
+                        const expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' :
+                        'true';
+                        this.setAttribute('aria-expanded', expanded);
+                        mobile.classList.toggle('navbar__mobile--open');
+                        mobile.setAttribute('aria-hidden', expanded === 'false' ? 'false' :
+                        'true');
+                    });
+                }
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables, Data Types, and Basic Operations | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Numeric, Character, and Logical Data in R" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 4 of 20: Variables, Data Types, and Basic Operations</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html" class="active"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-code"></i> Basics</span>
+        <h1>Variables, Data Types, and Basic Operations</h1>
+
+        <div class="card">
+
+            <p>Before working with real datasets, you need a solid grasp of how R stores and manipulates individual pieces of data. This starts with variables and R's core atomic data types.</p>
+
+            <h2>1. Creating Variables — The Assignment Operator</h2>
+            <p>R conventionally uses <code>&lt;-</code> for assignment (though <code>=</code> also works in most contexts):</p>
+                        <pre class="code-block"><code>age &lt;- 25
+name &lt;- &quot;Alice&quot;
+is_active &lt;- TRUE
+
+print(age)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Use <- for assignment, not =. It's the R community standard and avoids ambiguity inside function calls like mean(x = 1:10).
+            </div>
+
+            <h2>2. Basic Data Types</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Type</th><th>Example</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>numeric</td><td>3.14, 100</td><td>Decimal (double) or whole numbers</td></tr>
+                        <tr><td>integer</td><td>5L</td><td>Whole numbers (suffix L forces integer type)</td></tr>
+                        <tr><td>character</td><td>"hello"</td><td>Text / strings</td></tr>
+                        <tr><td>logical</td><td>TRUE, FALSE</td><td>Boolean values</td></tr>
+                        <tr><td>complex</td><td>2+3i</td><td>Complex numbers (rarely used)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                        <pre class="code-block"><code>num_val &lt;- 42.5        # numeric
+int_val &lt;- 42L         # integer
+char_val &lt;- &quot;R lang&quot;   # character
+log_val &lt;- TRUE        # logical
+
+class(num_val)   # &quot;numeric&quot;
+class(int_val)   # &quot;integer&quot;
+typeof(char_val) # &quot;character&quot;</code></pre>
+
+            <h2>3. Checking and Converting Types</h2>
+            <p>Use <code>class()</code> or <code>typeof()</code> to inspect, and <code>as.*()</code> functions to convert:</p>
+                        <pre class="code-block"><code>x &lt;- &quot;10&quot;
+class(x)            # &quot;character&quot;
+
+y &lt;- as.numeric(x)  # convert to numeric
+class(y)            # &quot;numeric&quot;
+
+z &lt;- as.character(25)
+class(z)            # &quot;character&quot;</code></pre>
+
+            <h2>4. Naming Rules for Variables</h2>
+            <ul>
+                <li>Must start with a letter or a dot (not followed by a number).</li>
+                <li>Can contain letters, numbers, dots, and underscores.</li>
+                <li>Case-sensitive — <code>Age</code> and <code>age</code> are different variables.</li>
+                <li>Cannot use reserved words like <code>TRUE</code>, <code>if</code>, or <code>function</code>.</li>
+            </ul>
+                        <pre class="code-block"><code># Valid names
+my_var &lt;- 1
+.hidden_var &lt;- 2
+total2 &lt;- 3
+
+# Invalid names
+# 2total &lt;- 1     # cannot start with a number
+# my-var &lt;- 1     # hyphens not allowed</code></pre>
+
+            <h2>5. Basic Arithmetic Operations</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>+</td><td>Addition</td><td>5 + 3</td><td>8</td></tr>
+                        <tr><td>-</td><td>Subtraction</td><td>5 - 3</td><td>2</td></tr>
+                        <tr><td>*</td><td>Multiplication</td><td>5 * 3</td><td>15</td></tr>
+                        <tr><td>/</td><td>Division</td><td>5 / 2</td><td>2.5</td></tr>
+                        <tr><td>^ or **</td><td>Exponent</td><td>2 ^ 3</td><td>8</td></tr>
+                        <tr><td>%%</td><td>Modulus (remainder)</td><td>5 %% 2</td><td>1</td></tr>
+                        <tr><td>%/%</td><td>Integer division</td><td>5 %/% 2</td><td>2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. Logical and Comparison Operators</h2>
+                        <pre class="code-block"><code>5 &gt; 3        # TRUE
+5 == 5       # TRUE
+5 != 3       # TRUE
+TRUE &amp; FALSE # FALSE  (AND)
+TRUE | FALSE # TRUE   (OR)
+!TRUE        # FALSE  (NOT)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issues:</strong> Use == for comparison, not =. A single = inside an expression is a common beginner mistake that causes confusing errors.
+            </div>
+
+            <h2>7. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Use &lt;- for assignment</strong> — the R idiomatic style.</li>
+                <li><strong>✅ Know the five atomic types</strong> — numeric, integer, character, logical, complex.</li>
+                <li><strong>✅ Convert types explicitly</strong> — with as.numeric(), as.character(), etc.</li>
+                <li><strong>✅ Follow variable naming rules</strong> — descriptive, snake_case names are conventional.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Getting comfortable with types now prevents confusing bugs later — e.g., trying to do math on a variable that's secretly stored as text.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-rstudio-ide.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>RStudio IDE Mastery</a>
+            <a href="r-data-structures.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Data Structures in R</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

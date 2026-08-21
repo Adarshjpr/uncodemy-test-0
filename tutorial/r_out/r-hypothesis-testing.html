@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hypothesis Testing | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="T-tests, ANOVA, Chi-Square, and P-values" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 14 of 20: Hypothesis Testing</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html" class="active"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-vial"></i> Statistics</span>
+        <h1>Hypothesis Testing</h1>
+
+        <div class="card">
+
+            <p>Hypothesis testing lets you make statistically grounded decisions from sample data — is a difference real, or just noise? R has built-in functions for every classic test.</p>
+
+            <h2>1. The Core Idea — Null and Alternative Hypotheses</h2>
+            <p>Every test compares a <strong>null hypothesis (H₀)</strong> — "no effect / no difference" — against an <strong>alternative hypothesis (H₁)</strong>. The <strong>p-value</strong> tells you how surprising your observed data would be if H₀ were actually true.</p>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> A p-value below your significance threshold (commonly 0.05) suggests rejecting H0 — but it's not proof, and it says nothing about effect size or practical importance.
+            </div>
+
+            <h2>2. T-Tests — Comparing Means</h2>
+            <h3>One-Sample T-Test</h3>
+                        <pre class="code-block"><code>scores &lt;- c(72, 85, 90, 68, 75, 88, 95, 70)
+t.test(scores, mu = 80)   # is the mean significantly different from 80?</code></pre>
+            <h3>Two-Sample T-Test (Independent Groups)</h3>
+                        <pre class="code-block"><code>group_a &lt;- c(85, 90, 78, 92, 88)
+group_b &lt;- c(70, 75, 68, 80, 72)
+
+t.test(group_a, group_b)
+# or with a data frame:
+t.test(salary ~ gender, data = df)</code></pre>
+            <h3>Paired T-Test</h3>
+                        <pre class="code-block"><code>before &lt;- c(80, 85, 78, 90, 82)
+after  &lt;- c(88, 91, 85, 94, 89)
+t.test(before, after, paired = TRUE)</code></pre>
+
+            <h2>3. Reading t.test() Output</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Field</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>t</td><td>Test statistic</td></tr>
+                        <tr><td>df</td><td>Degrees of freedom</td></tr>
+                        <tr><td>p-value</td><td>Probability of observing this result under H0</td></tr>
+                        <tr><td>95 percent confidence interval</td><td>Plausible range for the true difference</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. ANOVA — Comparing 3+ Group Means</h2>
+                        <pre class="code-block"><code>anova_model &lt;- aov(salary ~ department, data = df)
+summary(anova_model)
+
+# Post-hoc test if ANOVA is significant
+TukeyHSD(anova_model)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Run ANOVA when comparing 3+ groups instead of multiple t-tests — running many t-tests inflates your false-positive rate (the multiple comparisons problem).
+            </div>
+
+            <h2>5. Chi-Square Test — Categorical Relationships</h2>
+                        <pre class="code-block"><code># Test of independence between two categorical variables
+contingency_table &lt;- table(df$department, df$gender)
+chisq.test(contingency_table)
+
+# Goodness-of-fit test
+observed &lt;- c(50, 30, 20)
+expected_probs &lt;- c(0.5, 0.3, 0.2)
+chisq.test(observed, p = expected_probs)</code></pre>
+
+            <h2>6. Choosing the Right Test</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Question</th><th>Test</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Is one group's mean different from a fixed value?</td><td>One-sample t-test</td></tr>
+                        <tr><td>Do two independent groups differ in mean?</td><td>Two-sample t-test</td></tr>
+                        <tr><td>Does the same group differ before/after?</td><td>Paired t-test</td></tr>
+                        <tr><td>Do 3+ groups differ in mean?</td><td>ANOVA</td></tr>
+                        <tr><td>Are two categorical variables related?</td><td>Chi-square test</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>7. Checking Test Assumptions</h2>
+                        <pre class="code-block"><code>shapiro.test(scores)          # test for normality
+var.test(group_a, group_b)   # test for equal variances (before t.test)</code></pre>
+
+            <h2>8. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Know your hypotheses before testing</strong> — H0 and H1, clearly stated.</li>
+                <li><strong>✅ Choose the correct test</strong> — based on data type and number of groups.</li>
+                <li><strong>✅ Check assumptions</strong> — normality, equal variance — before trusting results.</li>
+                <li><strong>✅ Interpret p-values carefully</strong> — statistical significance ≠ practical importance.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Always pair a p-value with an effect size and confidence interval — a tiny, statistically significant difference may be practically meaningless.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-descriptive-stats.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Descriptive Statistics and Probability Distributions</a>
+            <a href="r-regression.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Predictive Modeling</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

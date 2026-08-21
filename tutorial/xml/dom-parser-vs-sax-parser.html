@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Parser vs SAX Parser | Uncodemy</title>
+<meta name="description" content="Compare DOM and SAX parsing approaches for XML — memory usage, speed, ease of use, and when to choose each.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb">
+  <a href="https://uncodemy.com/">XML Course</a><span class="sep">/</span><span class="current">Page 25 of 58</span>
+</nav>
+
+<div class="page-container">
+
+  <aside class="left-sidebar">
+    <button class="mobile-sidebar-toggle">Browse Topics &#9660;</button>
+    <h4>Topics</h4>
+                <div class="topic-links">
+        <a class="topic-link" href="standard-libraries.html">Standard Libraries</a>
+        <a class="topic-link" href="packages-and-import-statements.html">Packages and Import Statements</a>
+        <a class="topic-link" href="working-with-modules-and-handling-exceptions.html">Working with Modules and Handling Exceptions</a>
+        <a class="topic-link" href="what-is-xml.html">What is XML?</a>
+        <a class="topic-link" href="who-should-learn-xml.html">Who Should Learn XML?</a>
+        <a class="topic-link" href="why-should-you-learn-xml.html">Why Should You Learn XML?</a>
+        <a class="topic-link" href="getting-started-with-xml.html">Getting Started with XML</a>
+        <a class="topic-link" href="xml-syntax-and-rules.html">XML Syntax and Rules</a>
+        <a class="topic-link" href="xml-elements-and-attributes.html">XML Elements and Attributes</a>
+        <a class="topic-link" href="xml-prolog-and-declaration.html">XML Prolog and Declaration</a>
+        <a class="topic-link" href="xml-comments-and-processing-instructions.html">XML Comments and Processing Instructions</a>
+        <a class="topic-link" href="xml-tree-structure.html">XML Tree Structure</a>
+        <a class="topic-link" href="xml-parent-child-relationships.html">XML Parent-Child Relationships</a>
+        <a class="topic-link" href="xml-root-element.html">XML Root Element</a>
+        <a class="topic-link" href="xml-namespaces.html">XML Namespaces</a>
+        <a class="topic-link" href="what-is-dtd-in-xml.html">What is DTD in XML?</a>
+        <a class="topic-link" href="internal-dtd-vs-external-dtd.html">Internal DTD vs External DTD</a>
+        <a class="topic-link" href="dtd-elements-and-attributes.html">DTD Elements and Attributes</a>
+        <a class="topic-link" href="dtd-entities.html">DTD Entities</a>
+        <a class="topic-link" href="what-is-xml-schema-xsd.html">What is XML Schema (XSD)?</a>
+        <a class="topic-link" href="xsd-elements-and-attributes.html">XSD Elements and Attributes</a>
+        <a class="topic-link" href="xsd-simple-types-vs-complex-types.html">XSD Simple Types vs Complex Types</a>
+        <a class="topic-link" href="xsd-validation.html">XSD Validation</a>
+        <a class="topic-link" href="what-is-xml-parsing.html">What is XML Parsing?</a>
+        <a class="topic-link active" href="dom-parser-vs-sax-parser.html">DOM Parser vs SAX Parser</a>
+        <a class="topic-link" href="stax-parser.html">StAX Parser</a>
+        <a class="topic-link" href="xml-parsing-in-java.html">XML Parsing in Java</a>
+        <a class="topic-link" href="xml-parsing-in-python.html">XML Parsing in Python</a>
+        <a class="topic-link" href="what-is-xpath-in-xml.html">What is XPath in XML?</a>
+        <a class="topic-link" href="xpath-syntax-and-expressions.html">XPath Syntax and Expressions</a>
+        <a class="topic-link" href="xpath-axes.html">XPath Axes</a>
+        <a class="topic-link" href="xpath-functions.html">XPath Functions</a>
+        <a class="topic-link" href="what-is-xslt.html">What is XSLT?</a>
+        <a class="topic-link" href="xslt-templates.html">XSLT Templates</a>
+        <a class="topic-link" href="xslt-functions-and-elements.html">XSLT Functions and Elements</a>
+        <a class="topic-link" href="xslt-transformation-examples.html">XSLT Transformation Examples</a>
+        <a class="topic-link" href="what-is-xquery.html">What is XQuery?</a>
+        <a class="topic-link" href="xquery-syntax-and-expressions.html">XQuery Syntax and Expressions</a>
+        <a class="topic-link" href="xquery-vs-xpath.html">XQuery vs XPath</a>
+        <a class="topic-link" href="xquery-examples.html">XQuery Examples</a>
+        <a class="topic-link" href="what-is-xml-dom.html">What is XML DOM?</a>
+        <a class="topic-link" href="dom-nodes-and-node-types.html">DOM Nodes and Node Types</a>
+        <a class="topic-link" href="dom-methods-and-properties.html">DOM Methods and Properties</a>
+        <a class="topic-link" href="dom-traversal-and-manipulation.html">DOM Traversal and Manipulation</a>
+        <a class="topic-link" href="what-is-ajax-with-xml.html">What is AJAX with XML?</a>
+        <a class="topic-link" href="xmlhttprequest-object.html">XMLHttpRequest Object</a>
+        <a class="topic-link" href="ajax-xml-response-handling.html">AJAX XML Response Handling</a>
+        <a class="topic-link" href="ajax-xml-example.html">AJAX XML Example</a>
+        <a class="topic-link" href="what-are-xml-web-services.html">What are XML Web Services?</a>
+        <a class="topic-link" href="soap-and-xml.html">SOAP and XML</a>
+        <a class="topic-link" href="rest-and-xml.html">REST and XML</a>
+        <a class="topic-link" href="wsdl-and-xml.html">WSDL and XML</a>
+        <a class="topic-link" href="xml-developer-roadmap.html">XML Developer Roadmap</a>
+        <a class="topic-link" href="how-to-become-an-xml-developer.html">How to Become an XML Developer</a>
+        <a class="topic-link" href="xml-developer-skills.html">XML Developer Skills</a>
+        <a class="topic-link" href="xml-developer-salary.html">XML Developer Salary</a>
+        <a class="topic-link" href="is-xml-worth-learning-in-2026.html">Is XML Worth Learning in 2026?</a>
+        <a class="topic-link" href="xml-cheat-sheet-quick-reference-guide.html">XML Cheat Sheet – Quick Reference Guide</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <article class="content-card">
+      <h1>DOM Parser vs SAX Parser</h1>
+      <p class="subtitle">Estimated study time: 20 minutes.</p>
+
+<p>The two classic approaches to XML parsing — <strong>DOM</strong> and <strong>SAX</strong> — take fundamentally different strategies, each with real trade-offs.</p>
+
+<h2>DOM (Document Object Model) Parser</h2>
+<p>Loads the entire XML document into memory as a tree structure, which you can then freely navigate, search, and modify in any order.</p>
+<pre><code>import xml.dom.minidom as minidom
+
+doc = minidom.parse('course.xml')
+titles = doc.getElementsByTagName('title')
+print(titles[0].firstChild.data)</code></pre>
+
+<h2>SAX (Simple API for XML) Parser</h2>
+<p>Reads the document sequentially from start to end, firing events (start tag, end tag, text) as it goes — without ever holding the whole document in memory.</p>
+<pre><code>import xml.sax
+
+class CourseHandler(xml.sax.ContentHandler):
+    def startElement(self, name, attrs):
+        print("Start:", name)
+    def endElement(self, name):
+        print("End:", name)
+
+xml.sax.parse('course.xml', CourseHandler())</code></pre>
+
+<h2>Key Differences</h2>
+<ul>
+<li><strong>Memory usage</strong> — DOM loads everything at once (higher memory); SAX processes a stream (very low memory).</li>
+<li><strong>Navigation</strong> — DOM allows random, repeated access to any part of the tree; SAX is forward-only, one pass.</li>
+<li><strong>Modification</strong> — DOM lets you edit and rewrite the document; SAX is read-only by nature.</li>
+<li><strong>Speed on large files</strong> — SAX is typically faster and more scalable for very large documents.</li>
+</ul>
+
+<h2>When to Use Which</h2>
+<ul>
+<li>Use <strong>DOM</strong> for small-to-medium files where you need to navigate back and forth or edit the document.</li>
+<li>Use <strong>SAX</strong> for large files where memory efficiency matters more than convenience.</li>
+</ul>
+
+<div class="highlight-box">💡 <strong>Tip:</strong> If you find yourself needing SAX's memory efficiency but also want easier, cursor-style code, look at StAX as a middle ground between the two.</div>
+
+    </article>
+
+    <nav class="prev-next-nav">
+      <a class="prev-link" href="what-is-xml-parsing.html"><span class="label">&laquo; Previous</span><span class="title">What is XML Parsing?</span></a>
+      <a class="next-link" href="stax-parser.html"><span class="label">Next &raquo;</span><span class="title">StAX Parser</span></a>
+    </nav>
+
+    <div class="cta-box">
+      <h3>Ready to go beyond the basics?</h3>
+      <p>Get hands-on training, live mentorship, and placement support with the Data Analytics Course at Uncodemy.</p>
+      <a class="cta-btn" href="https://uncodemy.com/">Explore XML Course &rarr;</a>
+    </div>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="batch-card">
+      <span class="badge">&#128293; Upcoming Batch</span>
+      <h4 data-editable="batchCourseName">XML</h4>
+      <div class="course-name">Next Batch</div>
+      <div class="batch-meta">Starts: <b data-editable="batchStartDate">Coming Soon</b></div>
+      <div class="batch-meta">Duration: <b data-editable="batchDuration">4 Months</b></div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">Batch Starts In</div>
+        <div class="countdown-timer">
+          <div class="unit"><div class="num" data-countdown="days">05</div><div class="lbl">Days</div></div>
+          <div class="unit"><div class="num" data-countdown="hours">00</div><div class="lbl">Hrs</div></div>
+          <div class="unit"><div class="num" data-countdown="minutes">00</div><div class="lbl">Min</div></div>
+          <div class="unit"><div class="num" data-countdown="seconds">00</div><div class="lbl">Sec</div></div>
+        </div>
+      </div>
+
+      <ul class="feature-list">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+
+      <div class="limited-seats">&#9889; Limited Seats Available</div>
+      <button class="landing-cta-btn" onclick="goToLandingPage()">Go to Course Landing Page</button>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <div class="help-row">&#128222; <a data-config="phoneNumber" href="#">+91 9818366550</a></div>
+      <div class="help-row">&#128172; <a data-config="whatsappLink" href="#" target="_blank" rel="noopener">Talk to our Counselor on WhatsApp</a></div>
+    </div>
+  </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

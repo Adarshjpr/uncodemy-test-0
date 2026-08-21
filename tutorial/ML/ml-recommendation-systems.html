@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommendation Systems in Machine Learning | Machine Learning Tutorial | Uncodemy</title>
+    <meta name="description" content="How recommendation systems work — collaborative filtering, content-based filtering, and hybrid approaches." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/machine-learning-training-course-in-noida">Machine Learning Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 12 of 17: Recommendation Systems in Machine Learning</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="ml-introduction.html"><span class="num">01</span>What is Machine Learning? An Introduction to Machine Learning</a></li>
+            <li><a href="ml-deep-learning-introduction.html"><span class="num">02</span>What is Deep Learning?: An Introduction to Deep Learning</a></li>
+            <li><a href="ml-cheat-sheet.html"><span class="num">03</span>Machine Learning Cheat Sheet : A Step-by-Step Guide</a></li>
+            <li><a href="ml-data-ingestion.html"><span class="num">04</span>Data Ingestion in Machine Learning</a></li>
+            <li><a href="ml-data-processing.html"><span class="num">05</span>Data Processing in Machine Learning - Data Processing Cycle & Methods</a></li>
+            <li><a href="ml-feature-selection.html"><span class="num">06</span>Feature Selection Techniques in Machine Learning</a></li>
+            <li><a href="ml-supervised-learning.html"><span class="num">07</span>Supervised Learning</a></li>
+            <li><a href="ml-unsupervised-learning.html"><span class="num">08</span>Unsupervised Learning</a></li>
+            <li><a href="ml-reinforcement-learning.html"><span class="num">09</span>Reinforcement Learning</a></li>
+            <li><a href="ml-model-selection.html"><span class="num">10</span>Model Selection for Machine Learning</a></li>
+            <li><a href="ml-model-evaluation.html"><span class="num">11</span>Model Evaluation in Machine Learning</a></li>
+            <li><a href="ml-recommendation-systems.html" class="active"><span class="num">12</span>Recommendation Systems in Machine Learning</a></li>
+            <li><a href="ml-ab-testing.html"><span class="num">13</span>A/B Testing for Machine Learning</a></li>
+            <li><a href="ml-production.html"><span class="num">14</span>Production in Machine Learning</a></li>
+            <li><a href="ml-dotnet.html"><span class="num">15</span>ML.Net – A Machine Learning Framework for .Net Developers</a></li>
+            <li><a href="ml-scope-salary-trends.html"><span class="num">16</span>Machine Learning Scope, Salary, and Future Trends</a></li>
+            <li><a href="ml-engineer-roadmap-2026.html"><span class="num">17</span>Machine Learning Engineer Roadmap 2026</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-thumbs-up"></i> Applications</span>
+        <h1>Recommendation Systems in Machine Learning</h1>
+
+        <div class="card">
+
+<p><strong>Recommendation systems</strong> are machine learning systems that predict what a user might like — products, movies, articles — based on their past behavior and the behavior of similar users.</p>
+
+<h2>Main Approaches</h2>
+<div class="table-wrap">
+    <table class="data-table">
+        <thead><tr><th>Approach</th><th>How It Works</th></tr></thead>
+        <tbody>
+            <tr><td>Collaborative Filtering</td><td>Recommends based on the behavior of similar users</td></tr>
+            <tr><td>Content-Based Filtering</td><td>Recommends items similar to what a user already likes</td></tr>
+            <tr><td>Hybrid Systems</td><td>Combines collaborative and content-based methods</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Collaborative Filtering Explained</h2>
+<ul>
+    <li><strong>User-Based:</strong> Finds users with similar tastes and recommends what they liked.</li>
+    <li><strong>Item-Based:</strong> Finds items similar to ones a user has already rated highly.</li>
+    <li><strong>Matrix Factorization:</strong> Decomposes the user-item interaction matrix to uncover latent preferences.</li>
+</ul>
+
+<h2>Content-Based Filtering Explained</h2>
+<p>This approach uses item attributes (genre, description, tags) to recommend similar items to what a user has previously engaged with, without needing data from other users.</p>
+
+<h2>The Cold Start Problem</h2>
+<p>New users or new items have no interaction history, making it hard for collaborative filtering to generate recommendations. Content-based or hybrid approaches, along with onboarding preference surveys, help mitigate this.</p>
+
+<h2>Real-World Examples</h2>
+<ul>
+    <li>Video streaming platforms recommending shows.</li>
+    <li>E-commerce "customers also bought" suggestions.</li>
+    <li>Music platforms building personalized playlists.</li>
+</ul>
+
+<div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+    <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> The best recommendation systems in production typically blend collaborative and content-based signals to handle both established and new users effectively.
+</div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="ml-model-evaluation.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Model Evaluation in Machine Learning</a>
+            <a href="ml-ab-testing.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>A/B Testing for Machine Learning</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Machine Learning?</h3>
+                <p>Build real-world machine learning skills with hands-on projects, mentor-led sessions, and industry-relevant tools.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/machine-learning-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Machine Learning Training Course</h4>
+            <p class="batch-sub">Kickstart your machine learning journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

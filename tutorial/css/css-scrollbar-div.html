@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS to show only horizontal and vertical scroll bar in div | Web Development Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn CSS to show only horizontal and vertical scroll bar in div with clear explanations, examples, and best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+                        <a href="https://uncodemy.com/">CSS</a>
+            <span class="sep">/</span>
+            <span class="current">Page 5 of 5: CSS to show only horizontal and vertical scroll bar in div</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>CSS Topics</h4>
+            <ul class="topic-list">
+                <li><a href="introduction-to-css.html"><span class="num">01</span>Introduction to CSS</a></li>
+                <li><a href="css-force-wrap.html"><span class="num">02</span>CSS to force long text and urls to wrap on all browser</a></li>
+                <li><a href="html-color-codes.html"><span class="num">03</span>Html Color Codes</a></li>
+                <li><a href="css-inline-block-none.html"><span class="num">04</span>CSS Inline, block and none display style</a></li>
+                <li><a href="css-scrollbar-div.html" class="active"><span class="num">05</span>CSS to show only horizontal and vertical scroll bar in div</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow"><i class="fas fa-scroll"></i> CSS Overflow</span>
+            <h1>CSS to show only horizontal and vertical scroll bar in div</h1>
+
+            <div class="card">
+
+                <h2>Overview</h2>
+                <p>When content inside a <code>div</code> exceeds its dimensions, you often need scrollbars to allow users to see the full content. CSS provides the <code>overflow</code> property to control this behavior. Using <code>overflow-x</code> and <code>overflow-y</code>, you can independently control horizontal and vertical scrolling, enabling you to show only the scrollbar you need (horizontal, vertical, both, or none).</p>
+
+                <h2>1. The <code>overflow</code> Property</h2>
+                <p>The <code>overflow</code> property specifies what happens when content overflows the element box. It can take several values:</p>
+
+                <ul>
+                    <li><b>visible:</b> Content is not clipped and may render outside the box (default).</li>
+                    <li><b>hidden:</b> Content is clipped, and no scrollbar is provided.</li>
+                    <li><b>scroll:</b> Content is clipped, but a scrollbar is always shown (even if not needed).</li>
+                    <li><b>auto:</b> Scrollbar is shown only when necessary.</li>
+                </ul>
+
+                <p>For granular control, use <code>overflow-x</code> and <code>overflow-y</code> to set horizontal and vertical behavior independently.</p>
+
+                <h2>2. Showing Only Horizontal Scrollbar</h2>
+                <p>To show only a horizontal scrollbar (and hide the vertical one), set <code>overflow-x: auto</code> (or <code>scroll</code>) and <code>overflow-y: hidden</code>. This forces horizontal scrolling while preventing vertical scrolling.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.horizontal-scroll</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">width</span>: <span style="color:#032f62;">300px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">height</span>: <span style="color:#032f62;">100px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">overflow-x</span>: <span style="color:#032f62;">auto</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">overflow-y</span>: <span style="color:#032f62;">hidden</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">border</span>: <span style="color:#032f62;">1px solid #ccc</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">white-space</span>: <span style="color:#032f62;">nowrap</span>;<br />
+                    }
+                </div>
+
+                <div style="background:#f5f7fa;padding:0.5rem;border-radius:8px;margin:1rem 0;">
+                    <div style="width:300px;height:100px;overflow-x:auto;overflow-y:hidden;border:1px solid #ccc;white-space:nowrap;padding:5px;">
+                        <div style="display:inline-block;background:lightblue;width:200px;height:80px;margin-right:10px;"></div>
+                        <div style="display:inline-block;background:lightgreen;width:200px;height:80px;margin-right:10px;"></div>
+                        <div style="display:inline-block;background:lightcoral;width:200px;height:80px;margin-right:10px;"></div>
+                        <div style="display:inline-block;background:lightyellow;width:200px;height:80px;margin-right:10px;"></div>
+                    </div>
+                    <p style="font-size:0.85rem;color:#666;margin-top:5px;">Only horizontal scrollbar appears (vertical is hidden).</p>
+                </div>
+
+                <h2>3. Showing Only Vertical Scrollbar</h2>
+                <p>To show only a vertical scrollbar, set <code>overflow-y: auto</code> and <code>overflow-x: hidden</code>. This is common for text-heavy containers where width should be fixed.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.vertical-scroll</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">width</span>: <span style="color:#032f62;">250px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">height</span>: <span style="color:#032f62;">150px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">overflow-y</span>: <span style="color:#032f62;">auto</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">overflow-x</span>: <span style="color:#032f62;">hidden</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">border</span>: <span style="color:#032f62;">1px solid #ccc</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">padding</span>: <span style="color:#032f62;">8px</span>;<br />
+                    }
+                </div>
+
+                <div style="background:#f5f7fa;padding:0.5rem;border-radius:8px;margin:1rem 0;">
+                    <div style="width:250px;height:150px;overflow-y:auto;overflow-x:hidden;border:1px solid #ccc;padding:8px;">
+                        <p style="margin:0 0 10px;">Line 1: This container has a vertical scrollbar.</p>
+                        <p style="margin:0 0 10px;">Line 2: Only vertical scrolling is allowed.</p>
+                        <p style="margin:0 0 10px;">Line 3: Horizontal overflow is hidden.</p>
+                        <p style="margin:0 0 10px;">Line 4: Content keeps going to show the scrollbar.</p>
+                        <p style="margin:0 0 10px;">Line 5: More text to fill the space.</p>
+                        <p style="margin:0 0 10px;">Line 6: The scrollbar appears only when needed.</p>
+                    </div>
+                    <p style="font-size:0.85rem;color:#666;margin-top:5px;">Only vertical scrollbar appears.</p>
+                </div>
+
+                <h2>4. Showing Both Scrollbars</h2>
+                <p>To show both horizontal and vertical scrollbars when needed, use <code>overflow: auto</code> (or set both x and y to <code>auto</code>). The browser will display scrollbars only when content overflows in the respective direction.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.both-scroll</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">width</span>: <span style="color:#032f62;">300px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">height</span>: <span style="color:#032f62;">150px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">overflow</span>: <span style="color:#032f62;">auto</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">border</span>: <span style="color:#032f62;">1px solid #ccc</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">padding</span>: <span style="color:#032f62;">8px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">white-space</span>: <span style="color:#032f62;">pre-wrap</span>;<br />
+                    }
+                </div>
+
+                <div style="background:#f5f7fa;padding:0.5rem;border-radius:8px;margin:1rem 0;">
+                    <div style="width:300px;height:150px;overflow:auto;border:1px solid #ccc;padding:8px;white-space:pre-wrap;">
+                        This container has both scrollbars if needed. For example, this long line of text might overflow horizontally, and many lines will overflow vertically. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <p style="font-size:0.85rem;color:#666;margin-top:5px;">Both scrollbars appear as needed.</p>
+                </div>
+
+                <h2>5. Forcing Scrollbars Always Visible</h2>
+                <p>If you want scrollbars to always be visible (even when not needed), use <code>overflow: scroll</code> or set <code>overflow-x: scroll</code> and/or <code>overflow-y: scroll</code>. This is useful for UI consistency but may show scrollbars that are disabled.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.always-scroll</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">overflow</span>: <span style="color:#032f62;">scroll</span>;<br />
+                    }
+                </div>
+
+                <h2>6. Practical Use Cases</h2>
+                <ul>
+                    <li><b>Horizontal scroll:</b> Image galleries, tables with many columns, code blocks.</li>
+                    <li><b>Vertical scroll:</b> Long text content, comment sections, dropdown menus.</li>
+                    <li><b>Both scroll:</b> Data grids, large spreadsheets, interactive dashboards.</li>
+                    <li><b>No scroll:</b> When you want to clip content (e.g., modal backgrounds).</li>
+                </ul>
+
+                <h2>7. Scrollbar Styling (Optional)</h2>
+                <p>You can also style the appearance of scrollbars using <code>::-webkit-scrollbar</code> pseudo-elements (for WebKit-based browsers). This is not standard CSS, but it's widely used for custom design.</p>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.custom-scroll</span> <span style="color:#d73a49;">::-webkit-scrollbar</span> { <span style="color:#005cc5;">width</span>: <span style="color:#032f62;">10px</span>; }<br />
+                    <span style="color:#d73a49;">.custom-scroll</span> <span style="color:#d73a49;">::-webkit-scrollbar-track</span> { <span style="color:#005cc5;">background</span>: <span style="color:#032f62;">#f1f1f1</span>; }<br />
+                    <span style="color:#d73a49;">.custom-scroll</span> <span style="color:#d73a49;">::-webkit-scrollbar-thumb</span> { <span style="color:#005cc5;">background</span>: <span style="color:#032f62;">#888</span>; }<br />
+                    <span style="color:#d73a49;">.custom-scroll</span> <span style="color:#d73a49;">::-webkit-scrollbar-thumb:hover</span> { <span style="color:#005cc5;">background</span>: <span style="color:#032f62;">#555</span>; }
+                </div>
+
+                <h2>8. Browser Support</h2>
+                <p>The <code>overflow-x</code> and <code>overflow-y</code> properties are fully supported in all modern browsers, including Internet Explorer 9 and above. The custom scrollbar styling is mainly for WebKit browsers (Chrome, Safari, Edge) and has limited support in Firefox.</p>
+
+                <h2>9. Common Mistakes</h2>
+                <ul>
+                    <li><b>Using <code>overflow: hidden</code> when you want scroll:</b> Hidden clips content completely without scrollbars.</li>
+                    <li><b>Forgetting to set a fixed height/width:</b> Overflow only works when the container has a defined dimension; otherwise, it expands to fit content.</li>
+                    <li><b>Mixing <code>overflow-x</code> and <code>overflow-y</code> incorrectly:</b> Some combinations (like <code>visible</code> with <code>hidden</code>) can have unexpected results; it's safer to use <code>auto</code>, <code>scroll</code>, or <code>hidden</code> consistently.</li>
+                    <li><b>Not testing on different devices:</b> Mobile browsers may handle scrollbars differently; always test.</li>
+                </ul>
+
+                <h2>Summary</h2>
+                <p>Controlling scrollbars in a <code>div</code> is straightforward with the <code>overflow</code> properties. By using <code>overflow-x</code> and <code>overflow-y</code>, you can independently show horizontal or vertical scrollbars as needed. Whether you want only horizontal, only vertical, both, or none, CSS gives you the flexibility to design clean, user-friendly containers for any type of content.</p>
+
+            </div>
+
+            <div class="prev-next">
+                <a href="css-inline-block-none.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>CSS Inline, block and none display style</a>
+                <a href="https://uncodemy.com/course/full-stack-development-training-course-in-noida" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Back to Course</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world web development?</h3>
+                    <p>Learn HTML, CSS3, Bootstrap and JavaScript hands-on with mentor-led sessions.</p>
+                </div>
+                 <a <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>Full Stack Development</h4>
+                <p class="batch-sub">Kickstart your web dev journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

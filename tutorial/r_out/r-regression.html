@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predictive Modeling | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Linear and Logistic Regression (lm, glm)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 15 of 20: Predictive Modeling</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html" class="active"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-chart-line"></i> Predictive Modeling</span>
+        <h1>Predictive Modeling</h1>
+
+        <div class="card">
+
+            <p>Regression models are the foundation of predictive analytics in R. This lesson covers <strong>linear regression</strong> for continuous outcomes and <strong>logistic regression</strong> for binary classification, using R's <code>lm()</code> and <code>glm()</code> functions.</p>
+
+            <h2>1. Simple Linear Regression with lm()</h2>
+                        <pre class="code-block"><code>model &lt;- lm(salary ~ experience, data = df)
+summary(model)</code></pre>
+            <p>The formula <code>salary ~ experience</code> reads as "salary predicted by experience." <code>summary()</code> reveals coefficients, p-values, and model fit.</p>
+
+            <h2>2. Reading lm() Output</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Field</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Estimate</td><td>The coefficient — change in Y per unit change in X</td></tr>
+                        <tr><td>Std. Error</td><td>Uncertainty around the estimate</td></tr>
+                        <tr><td>t value / Pr(&gt;|t|)</td><td>Test statistic and p-value for that coefficient</td></tr>
+                        <tr><td>Multiple R-squared</td><td>Proportion of variance explained by the model</td></tr>
+                        <tr><td>Adjusted R-squared</td><td>R-squared penalized for number of predictors</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Multiple Linear Regression</h2>
+                        <pre class="code-block"><code>model &lt;- lm(salary ~ experience + age + education_years, data = df)
+summary(model)
+
+# Coefficients with confidence intervals
+confint(model)</code></pre>
+
+            <h2>4. Making Predictions</h2>
+                        <pre class="code-block"><code>new_employee &lt;- data.frame(experience = 5, age = 30, education_years = 16)
+predict(model, newdata = new_employee)
+predict(model, newdata = new_employee, interval = &quot;confidence&quot;)</code></pre>
+
+            <h2>5. Checking Model Assumptions</h2>
+                        <pre class="code-block"><code>par(mfrow = c(2, 2))
+plot(model)   # residuals vs fitted, Q-Q plot, scale-location, leverage
+par(mfrow = c(1, 1))</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Never trust a linear model's coefficients without checking the diagnostic plots — non-random residual patterns signal a poor model fit.
+            </div>
+
+            <h2>6. Logistic Regression with glm()</h2>
+            <p>For binary outcomes (yes/no, churn/retain, pass/fail), use <code>glm()</code> with a binomial family:</p>
+                        <pre class="code-block"><code>model_logit &lt;- glm(churned ~ tenure + monthly_charges + support_calls,
+                   data = df, family = binomial)
+summary(model_logit)</code></pre>
+
+            <h2>7. Interpreting Logistic Coefficients — Odds Ratios</h2>
+                        <pre class="code-block"><code>exp(coef(model_logit))   # convert log-odds coefficients to odds ratios
+exp(confint(model_logit)) # confidence intervals for odds ratios</code></pre>
+            <p>An odds ratio above 1 means the predictor increases the probability of the outcome; below 1 means it decreases it.</p>
+
+            <h2>8. Making Classification Predictions</h2>
+                        <pre class="code-block"><code>predicted_probs &lt;- predict(model_logit, type = &quot;response&quot;)
+predicted_class &lt;- ifelse(predicted_probs &gt; 0.5, &quot;Yes&quot;, &quot;No&quot;)
+
+table(Predicted = predicted_class, Actual = df$churned)  # confusion matrix</code></pre>
+
+            <h2>9. Linear vs. Logistic — When to Use Which</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Scenario</th><th>Model</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Predicting a continuous number (price, salary)</td><td>lm() — linear regression</td></tr>
+                        <tr><td>Predicting a binary outcome (yes/no)</td><td>glm(family = binomial) — logistic regression</td></tr>
+                        <tr><td>Predicting counts (e.g., number of visits)</td><td>glm(family = poisson) — Poisson regression</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>10. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Use lm() for continuous outcomes</strong> — always inspect summary() and diagnostic plots.</li>
+                <li><strong>✅ Use glm(family = binomial) for classification</strong> — interpret via odds ratios.</li>
+                <li><strong>✅ Check assumptions</strong> — linearity, normal residuals, no severe multicollinearity.</li>
+                <li><strong>✅ Validate on new data</strong> — training accuracy alone can be misleading.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Regression is as much about interpretation as prediction. A model with a lower R-squared but interpretable, statistically sound coefficients is often more valuable than a black-box alternative.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-hypothesis-testing.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Hypothesis Testing</a>
+            <a href="r-machine-learning.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Machine Learning Workflows</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

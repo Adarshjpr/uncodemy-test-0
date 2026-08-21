@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Govt Job Holder Guide: Getting Into IT Without a Degree (2026) | Uncodemy</title>
+    <meta name="description" content="Complete guide for government employees to get into IT without a degree. Learn skills, certifications, career paths, and a step-by-step roadmap to land your first IT job." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/govt-job-holder-to-it-without-degree-2026" />
+    <meta property="og:title" content="Govt Job Holder Guide: Getting Into IT Without a Degree (2026) | Uncodemy" />
+    <meta property="og:description" content="A step-by-step guide for government employees to transition into IT without a formal degree. Discover the best paths, certifications, and skills." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+    <style>
+        .path-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .path-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .path-box .p-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .path-box .p-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .path-box .p-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .path-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .path-box .p-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .path-box .p-v {
+                font-size: 14px;
+            }
+            .path-box .p-l {
+                font-size: 8px;
+            }
+            .path-box .p-d {
+                font-size: 9px;
+            }
+        }
+        .role-tag {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .govt-tip {
+            border-left: 3px solid #f59e0b;
+            background: #fffcf0;
+            padding: 14px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        .flow-row .icon-row {
+            display: inline-flex;
+            gap: 4px;
+        }
+        .flow-row .icon-row svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+        .demo-bar .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .s-card h4 .icon-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .s-card h4 .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .rating-stars {
+            display: inline-flex;
+            gap: 1px;
+            vertical-align: -2px;
+        }
+        .rating-stars svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--primary);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <i data-lucide="menu" style="width:24px;height:24px;stroke:currentColor;stroke-width:2;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Govt Job Holder Guide: Getting Into IT <mark>Without a Degree — Complete 2026 Guide</mark></h1>
+                <p class="lede">If you're a government employee without a formal degree — diploma holder, 10+2, or any other qualification — wondering if you can break into IT, the answer is a resounding YES. Your practical skills, discipline, and work ethic are highly valued. This guide shows you exactly how to build a successful IT career without a degree.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search 'govt job holder it without degree guide'" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Govt to IT</button>
+                    <button class="chip" aria-pressed="false">No Degree IT</button>
+                    <button class="chip" aria-pressed="true">Certifications</button>
+                    <button class="chip" aria-pressed="false">QA Testing</button>
+                    <button class="chip" aria-pressed="false">Networking</button>
+                    <button class="chip" aria-pressed="false">Cloud</button>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <i data-lucide="bar-chart-3" style="width:16px;height:16px;color:var(--primary);"></i>
+                        <b>IT Career · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different IT career paths">
+                        <button aria-pressed="true" data-r="qa">QA Testing</button>
+                        <button aria-pressed="false" data-r="networking">Networking</button>
+                        <button aria-pressed="false" data-r="support">IT Support</button>
+                        <button aria-pressed="false" data-r="cloud">Cloud</button>
+                    </div>
+                    <div class="path-grid" id="pathTiers">
+                        <div class="path-box"><div class="p-l">Role</div><div class="p-v" id="roleName">—</div><div class="p-d">Job title</div></div>
+                        <div class="path-box"><div class="p-l">Fresher Salary</div><div class="p-v" id="salaryVal">—</div><div class="p-d">Avg. package (India)</div></div>
+                        <div class="path-box"><div class="p-l">Degree Required</div><div class="p-v" id="degreeVal">—</div><div class="p-d">Certification based</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Govt Job Holder</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Learn IT Skills</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Get Certified</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Land IT Job</span>
+                    </div>
+                    <div class="demo-cap">Click a path to see the role, salary, and degree requirements. IT values skills and certifications over degrees — your government experience is a huge advantage.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs">
+            <a href="#top">Home</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Career Guides</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Govt to IT</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <span>Govt to IT Without Degree</span>
+        </p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Transition · Govt Job to IT Without Degree</p>
+                <h1>Govt Job Holder Guide: Getting Into IT Without a Degree — Complete Guide for 2026</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 18 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 980 300" role="img" aria-label="Govt job holder to IT without degree career transition diagram">
+                        <defs>
+                            <marker id="ar29" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g29" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="980" height="300" fill="url(#g29)" />
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="35">GOVT JOB HOLDER</text>
+                            <text x="360" y="35">SKILLS TO BUILD</text>
+                            <text x="670" y="35">CAREER OUTCOMES</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="50" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Your background</text>
+                        <text x="50" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Govt experience</text>
+                        <text x="50" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Discipline</text>
+                        <text x="50" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Process orientation</text>
+                        <text x="50" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Problem-solving</text>
+                        <rect x="35" y="215" width="210" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="70" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Valuable foundation</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="340" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Skills to learn</text>
+                        <text x="340" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• IT fundamentals</text>
+                        <text x="340" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Networking &amp; support</text>
+                        <text x="340" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Testing &amp; QA</text>
+                        <text x="340" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Cloud &amp; security</text>
+                        <rect x="325" y="215" width="210" height="28" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">Certification‑ready</text>
+
+                        <!-- Column 3 -->
+                        <rect x="630" y="55" width="320" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="660" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Career outcomes</text>
+                        <text x="660" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• QA Tester</text>
+                        <text x="660" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Network Engineer</text>
+                        <text x="660" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• IT Support Specialist</text>
+                        <text x="660" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Cloud Technician</text>
+                        <rect x="655" y="215" width="270" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="695" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">No degree needed</text>
+
+                        <path d="M260 160 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar29)" />
+                        <path d="M550 160 H616" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar29)" />
+                    </svg>
+                    <figcaption>Government employees bring discipline, process orientation, and problem-solving — the exact qualities that make a great IT professional. No degree required.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — Govt job to IT without a degree</h2>
+                    <p><b>Yes, you can absolutely get into IT without a degree.</b> The IT industry values skills, certifications, and practical experience over formal degrees. Your government background — discipline, process orientation, and problem-solving — is a massive advantage.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>Why IT doesn't require a degree</b> — the skills-first approach.</li>
+                        <li><b>Best IT career paths</b> — QA Testing, Networking, IT Support, Cloud.</li>
+                        <li><b>Certifications to pursue</b> — CompTIA, Cisco, ISTQB, AWS.</li>
+                        <li><b>Step‑by‑step roadmap</b> — from zero to job‑ready in 6–12 months.</li>
+                        <li><b>How to leverage your govt experience</b> — the hidden advantage.</li>
+                        <li><b>Interview Q&amp;A</b> — how to ace interviews without a degree.</li>
+                        <li><b>Test yourself</b> — a quick quiz to check your readiness.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Why IT doesn't require a degree</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Best IT career paths for govt employees</a></li>
+                        <li><a href="#s3"><span class="n">03</span>QA Testing — the easiest entry point</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Networking — build and maintain networks</a></li>
+                        <li><a href="#s5"><span class="n">05</span>IT Support — help people with technology</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Cloud Computing — the future of IT</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Certifications — your ticket to IT</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Step‑by‑step roadmap</a></li>
+                        <li><a href="#s9"><span class="n">09</span>How to leverage your govt experience</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Salary expectations</a></li>
+                        <li><a href="#s11"><span class="n">11</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">12</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">13</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">14</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Why IT doesn't require a degree</h2>
+                <p>Unlike traditional careers like medicine or law, IT is a skills-first industry. Here's why your degree doesn't matter:</p>
+                <ul>
+                    <li><b>Skills over degrees</b> — employers care about what you can do, not what degree you have.</li>
+                    <li><b>Certifications matter</b> — industry certifications (CompTIA, Cisco, ISTQB, AWS) are often valued more than degrees.</li>
+                    <li><b>Practical experience</b> — hands-on experience and portfolio projects demonstrate your abilities better than a degree.</li>
+                    <li><b>High demand</b> — there are more IT jobs than qualified candidates. Companies are willing to hire based on skills alone.</li>
+                    <li><b>Alternative paths</b> — many successful IT professionals started without degrees and built careers through certifications and experience.</li>
+                </ul>
+                <div class="govt-tip"><b>Key insight:</b> Companies like Google, IBM, and Accenture have removed degree requirements for many IT roles. They're looking for skills, not certificates on paper.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Best IT career paths for govt employees</h2>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Career Path</th><th>Why it fits a govt background</th><th>Degree Required</th><th>Fresher Salary (India)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>QA Testing</b></td><td>Attention to detail, systematic</td><td>No</td><td>₹3–6 LPA</td></tr>
+                            <tr><td><b>Networking</b></td><td>Hands‑on, practical skills</td><td>No</td><td>₹3–5 LPA</td></tr>
+                            <tr><td><b>IT Support</b></td><td>Problem‑solving, customer service</td><td>No</td><td>₹3–5 LPA</td></tr>
+                            <tr><td><b>Cloud Computing</b></td><td>Systems thinking, scalability</td><td>No</td><td>₹5–10 LPA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>QA Testing — the easiest entry point</h2>
+                <p>Quality Assurance (QA) testing is the most accessible IT role for govt employees. It requires minimal coding and leverages your attention to detail.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Manual testing fundamentals</li>
+                    <li>Test case design and execution</li>
+                    <li>Bug reporting and tracking (JIRA)</li>
+                    <li>Basic SQL for data validation</li>
+                    <li>Introduction to automation (optional)</li>
+                </ul>
+                <h3>Certifications to pursue</h3>
+                <p><span class="role-tag">ISTQB Foundation</span> <span class="role-tag">Software Testing Fundamentals</span></p>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Manual Tester</span> <span class="role-tag">QA Analyst</span> <span class="role-tag">Quality Assurance Engineer</span></p>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Networking — build and maintain networks</h2>
+                <p>Networking professionals design, build, and maintain computer networks. Your practical skills and hands‑on experience are a perfect fit.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Network fundamentals (OSI model, TCP/IP)</li>
+                    <li>Routing and switching (Cisco)</li>
+                    <li>Network security and firewalls</li>
+                    <li>Wireless networking</li>
+                    <li>Troubleshooting and diagnostics</li>
+                </ul>
+                <h3>Certifications to pursue</h3>
+                <p><span class="role-tag">CCNA</span> <span class="role-tag">CompTIA Network+</span> <span class="role-tag">CCNP</span></p>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Network Engineer</span> <span class="role-tag">Network Administrator</span> <span class="role-tag">Network Technician</span></p>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>IT Support — help people with technology</h2>
+                <p>IT Support professionals help users with technical issues. Your customer service and problem‑solving skills are directly transferable.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>Hardware and software troubleshooting</li>
+                    <li>Operating systems (Windows, Linux)</li>
+                    <li>Remote support tools</li>
+                    <li>Ticketing systems</li>
+                    <li>Customer service and communication</li>
+                </ul>
+                <h3>Certifications to pursue</h3>
+                <p><span class="role-tag">CompTIA A+</span> <span class="role-tag">CompTIA IT Fundamentals</span> <span class="role-tag">Microsoft Certified: Modern Desktop Admin</span></p>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">IT Support Specialist</span> <span class="role-tag">Help Desk Technician</span> <span class="role-tag">Desktop Support Engineer</span></p>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Cloud Computing — the future of IT</h2>
+                <p>Cloud is the backbone of modern IT. Your systems thinking and infrastructure knowledge translate well to cloud roles.</p>
+                <h3>What you'll learn</h3>
+                <ul>
+                    <li>AWS / Azure / GCP fundamentals</li>
+                    <li>Compute, storage, and networking in the cloud</li>
+                    <li>Cloud security and compliance</li>
+                    <li>Infrastructure as Code (Terraform)</li>
+                </ul>
+                <h3>Certifications to pursue</h3>
+                <p><span class="role-tag">AWS Cloud Practitioner</span> <span class="role-tag">Azure Fundamentals</span> <span class="role-tag">Google Cloud Digital Leader</span></p>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Cloud Support Associate</span> <span class="role-tag">Cloud Engineer</span> <span class="role-tag">Cloud Technician</span></p>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Certifications — your ticket to IT</h2>
+                <p>Certifications are the most important credentials for government employees without a degree. Here's a certification roadmap:</p>
+
+                <h3>Entry‑level certifications (0–6 months)</h3>
+                <ul>
+                    <li><b>CompTIA IT Fundamentals</b> — IT basics</li>
+                    <li><b>CompTIA A+</b> — hardware and software</li>
+                    <li><b>ISTQB Foundation</b> — software testing</li>
+                </ul>
+
+                <h3>Intermediate certifications (6–12 months)</h3>
+                <ul>
+                    <li><b>CompTIA Network+</b> — networking basics</li>
+                    <li><b>CCNA</b> — Cisco networking</li>
+                    <li><b>CompTIA Security+</b> — security basics</li>
+                    <li><b>AWS Cloud Practitioner</b> — cloud fundamentals</li>
+                </ul>
+
+                <h3>Advanced certifications (12–24 months)</h3>
+                <ul>
+                    <li><b>CCNP</b> — advanced networking</li>
+                    <li><b>CISSP</b> — advanced security</li>
+                    <li><b>AWS Solutions Architect</b> — cloud architecture</li>
+                    <li><b>ISTQB Advanced</b> — advanced testing</li>
+                </ul>
+
+                <div class="govt-tip"><b>Pro tip:</b> Start with CompTIA A+ or ISTQB Foundation — these are beginner‑friendly and don't require prior IT experience. They will open doors to entry‑level roles.</div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Step‑by‑step roadmap</h2>
+                <p>Here's a realistic 6–12 month plan for a govt employee without a degree:</p>
+                <ol class="steps">
+                    <li><b>Month 1–2: Choose your path &amp; learn IT fundamentals</b> — Pick one area (e.g., QA Testing or Networking). Learn basic IT concepts, hardware, and software.</li>
+                    <li><b>Month 3–4: Get an entry‑level certification</b> — Earn CompTIA A+ (IT Support), ISTQB (QA), or CompTIA Network+ (Networking).</li>
+                    <li><b>Month 5–7: Build practical skills</b> — Set up a home lab, practice with tools, build a portfolio. Apply your government experience (process orientation, discipline) to your learning.</li>
+                    <li><b>Month 8–9: Intermediate certification</b> — Earn your second certification (CCNA, AWS Cloud Practitioner, or CompTIA Security+).</li>
+                    <li><b>Month 10–11: Interview preparation</b> — Practise behavioural and technical questions. Tailor your resume to highlight govt experience and certifications.</li>
+                    <li><b>Month 12: Apply &amp; network</b> — Start applying for entry‑level roles. Leverage LinkedIn and your government network.</li>
+                </ol>
+                <p>Consistency is key — even 5–10 hours per week is enough to achieve this.</p>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>How to leverage your govt experience</h2>
+                <p>Your government experience is a unique advantage. Here's how to position it:</p>
+                <ul>
+                    <li><b>Discipline &amp; work ethic</b> — government employees are known for reliability and commitment.</li>
+                    <li><b>Process orientation</b> — you understand how to follow and improve processes and procedures.</li>
+                    <li><b>Problem‑solving</b> — you've solved real‑world problems in your government role.</li>
+                    <li><b>Communication</b> — you know how to communicate with diverse stakeholders.</li>
+                    <li><b>Public service mindset</b> — you're committed to helping people, which is essential in IT support and customer‑facing roles.</li>
+                </ul>
+                <div class="govt-tip"><b>Key insight:</b> Many IT companies value the discipline and reliability of government employees. Your experience is not a gap — it's a strength.</div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Salary expectations</h2>
+                <p>IT offers excellent career progression and salaries, even for professionals without degrees:</p>
+                <ul>
+                    <li><b>QA Tester (0–2 years):</b> ₹3–6 LPA</li>
+                    <li><b>Network Engineer (0–2 years):</b> ₹3–5 LPA</li>
+                    <li><b>IT Support Specialist (0–2 years):</b> ₹3–5 LPA</li>
+                    <li><b>Cloud Technician (0–2 years):</b> ₹5–10 LPA</li>
+                </ul>
+                <p>With 3–5 years of experience and advanced certifications, salaries can reach ₹8–15 LPA and beyond.</p>
+
+                <!-- ===== S11 ===== -->
+                <h2 id="s11"><span class="num">SECTION 11</span>Interview Q&amp;A — for govt employees without a degree</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Why are you switching to IT without a degree?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've been working in government for [X] years, where I developed discipline, process orientation, and problem-solving skills. I realised that IT values practical skills and certifications over degrees. I've been upskilling through certifications and hands-on practice, and I'm confident I can contribute to an IT team."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>How does your government experience help you in IT?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "My government experience gave me discipline, attention to detail, and process orientation — qualities that are essential in IT. I'm reliable, I follow procedures, and I'm committed to delivering results. In roles like QA testing and IT support, these qualities are invaluable."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>What certifications have you completed?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've completed CompTIA A+ and CompTIA Network+. I'm currently working on CCNA and AWS Cloud Practitioner. These certifications demonstrate my commitment and practical skills."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>What practical experience do you have?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've set up a home lab to practice networking and troubleshooting. I've also worked on virtual labs through Cisco NetAcad. I've built projects like a small network setup and a QA test plan for a mock application."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>How do you handle the lack of a degree?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I focus on what I bring — practical skills, certifications, and experience. My government background demonstrates my reliability, work ethic, and ability to learn. I've also built a portfolio of projects that showcase my practical abilities."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>What salary are you expecting?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "Based on market research, I'm looking at a range of ₹3–6 LPA for an entry‑level role. I'm primarily focused on learning and growth, so I'm flexible."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>What if you don't have any IT experience?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've been actively learning through certifications and hands-on practice. I've built practical skills that are directly applicable to the role. I'm also a quick learner and I'm committed to continuous improvement."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you see yourself in 5 years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I see myself as a senior network engineer or IT manager, leading projects and mentoring others. I want to combine my government experience with IT expertise to build systems that serve people effectively."</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 12</span>Test yourself — IT readiness check</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 13</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Can I get into IT without a degree?</summary><div class="body"><p>Absolutely. The IT industry values skills, certifications, and practical experience over formal degrees. Many successful IT professionals started without degrees.</p></div></details>
+                <details class="acc"><summary>Which IT role is easiest for a govt employee without a degree?</summary><div class="body"><p>QA Testing and IT Support are the easiest entry points. They require minimal coding and leverage your attention to detail and problem-solving skills.</p></div></details>
+                <details class="acc"><summary>How long does it take to get into IT from govt job?</summary><div class="body"><p>With 5–10 hours of study per week, most people become job‑ready in 6–12 months, starting with entry‑level certifications.</p></div></details>
+                <details class="acc"><summary>What is the best first certification for a govt employee?</summary><div class="body"><p>CompTIA A+ for IT Support, ISTQB Foundation for QA, or CompTIA Network+ for Networking. All are beginner‑friendly and don't require prior IT experience.</p></div></details>
+                <details class="acc"><summary>Can I work in IT while keeping my govt job?</summary><div class="body"><p>Yes. You can learn and get certified while working. Many govt employees transition to IT by upskilling in their free time and then making the switch.</p></div></details>
+                <details class="acc"><summary>What companies hire govt employees in IT?</summary><div class="body"><p>IT services companies (TCS, Infosys, Wipro, Accenture), startups, and product companies hire based on skills and certifications. Your government background is a plus.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 14</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">CompTIA A+ — complete certification guide</span><span class="m">Certification · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">QA testing for beginners — complete guide</span><span class="m">Testing · 16 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">CCNA certification — step‑by‑step plan</span><span class="m">Networking · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">AWS Cloud Practitioner — complete guide</span><span class="m">Cloud · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">IT interview questions — 50 real questions</span><span class="m">Interview · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">How to build an IT portfolio without experience</span><span class="m">Career · 10 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>From govt job to IT — with our certification‑first programmes</h3>
+                    <p>Our QA Testing, Networking, IT Support, and Cloud programmes are designed for government employees without degrees. Get certifications, hands‑on projects, and placement support.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Certification prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                        <li>Placement support</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4><i data-lucide="graduation-cap" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Free demo class</h4>
+                    <div class="big">Start your IT journey</div>
+                    <p>Attend a live IT session designed for government employees without degrees. Learn what IT offers, see a real project, and decide if it's right for you.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 10:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <i data-lucide="file-text" style="width:26px;height:26px;stroke:#FF5421;stroke-width:1.8;flex:none;"></i>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes certification roadmap</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4><i data-lucide="book-open" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Govt to IT — complete roadmap</a></li>
+                        <li><a href="#"><span class="rank">02</span>CompTIA A+ — step‑by‑step</a></li>
+                        <li><a href="#"><span class="rank">03</span>QA testing for beginners</a></li>
+                        <li><a href="#"><span class="rank">04</span>Networking — certification guide</a></li>
+                        <li><a href="#"><span class="rank">05</span>IT interview questions and answers</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="help-circle" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">IT Support · 50 questions</a></li>
+                        <li><a href="#">QA Testing · 60 questions</a></li>
+                        <li><a href="#">Networking · 55 questions</a></li>
+                        <li><a href="#">Certification · 45 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Govt to IT — No Degree Required</div>
+                    <p>QA Testing, Networking, IT Support, and Cloud — with certification‑focused training and placement support.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="briefcase" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going — IT career guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">CompTIA A+ — complete guide <small>Start your IT journey</small></a></li>
+                    <li><a href="#">QA testing for beginners <small>Entry‑level testing</small></a></li>
+                    <li><a href="#">Networking — certification roadmap <small>CCNA, Network+</small></a></li>
+                    <li><a href="#">AWS Cloud Practitioner <small>Cloud fundamentals</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your IT career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">QA Tester roadmap <small>Manual → Automation → SDET</small></a></li>
+                    <li><a href="#">Network Engineer roadmap <small>Network+ → CCNA → CCNP</small></a></li>
+                    <li><a href="#">IT Support roadmap <small>A+ → Support → Administrator</small></a></li>
+                    <li><a href="#">Cloud Engineer roadmap <small>Cloud Practitioner → Architect</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Govt to IT checklist <small>Track your progress</small></a></li>
+                    <li><a href="#">Certification roadmap <small>Complete guide</small></a></li>
+                    <li><a href="#">IT interview question bank <small>50 real questions</small></a></li>
+                    <li><a href="#">Home lab setup guide <small>Practice IT skills</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Govt to IT — success stories <small>18 August 2026</small></a></li>
+                    <li><a href="#">Top IT certifications without degree <small>16 August 2026</small></a></li>
+                    <li><a href="#">IT support vs networking — which to choose? <small>14 August 2026</small></a></li>
+                    <li><a href="#">How to explain govt to IT transition <small>12 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We offer career‑switcher programmes in QA Testing, Networking, IT Support, and Cloud — designed for government employees without degrees.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">QA Testing</a></li>
+                        <li><a href="#">Networking (CCNA)</a></li>
+                        <li><a href="#">IT Support (CompTIA A+)</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">Python Programming</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        UncodemyPage.init({
+            SCENARIOS: {
+                qa: { role: "QA Testing", salary: "₹3–6 LPA", degree: "No" },
+                networking: { role: "Networking", salary: "₹3–5 LPA", degree: "No" },
+                support: { role: "IT Support", salary: "₹3–5 LPA", degree: "No" },
+                cloud: { role: "Cloud", salary: "₹5–10 LPA", degree: "No" }
+            },
+            stateOrder: ["qa", "networking", "support", "cloud"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("degreeVal").textContent = s.degree;
+            },
+            defaultTrack: "Govt to IT",
+            emptyMsg: 'Nothing matches that yet. Try “QA”, “Networking” or “Certification”.',
+            LIB: [
+                { t: "Govt job holder guide: getting into IT without a degree — complete guide", g: "Govt to IT" },
+                { t: "CompTIA A+ — complete certification guide", g: "Certifications" },
+                { t: "QA testing for beginners — complete guide", g: "QA Testing" },
+                { t: "CCNA certification — step‑by‑step plan", g: "Networking" },
+                { t: "IT support — complete career guide", g: "IT Support" },
+                { t: "AWS Cloud Practitioner — complete guide", g: "Cloud" },
+                { t: "Best IT certifications without a degree", g: "Certifications" },
+                { t: "Govt to IT — success stories", g: "Career Change" },
+                { t: "IT interview questions and answers", g: "Interview Prep" },
+                { t: "How to build an IT portfolio without experience", g: "Career Change" }
+            ],
+            QUIZ: [{
+                q: "Can a government employee get into IT without a degree?",
+                o: ["No, it's impossible", "Yes, IT values skills and certifications", "Only with a diploma", "Only for coding roles"],
+                a: 1,
+                e: "Yes. The IT industry values skills, certifications, and practical experience over formal degrees. Many successful IT professionals started without degrees."
+            }, {
+                q: "Which IT role is easiest for a govt employee without a degree?",
+                o: ["Software Developer", "QA Testing", "Data Scientist", "ML Engineer"],
+                a: 1,
+                e: "QA Testing is the easiest entry point — it requires minimal coding and leverages your attention to detail and systematic approach."
+            }, {
+                q: "What is the best first certification for a govt employee without IT experience?",
+                o: ["CISSP", "CompTIA A+", "AWS Solutions Architect", "CCNP"],
+                a: 1,
+                e: "CompTIA A+ is the best first certification — it's beginner-friendly, covers hardware and software basics, and doesn't require prior IT experience."
+            }, {
+                q: "How long does it typically take to become job-ready in IT from zero?",
+                o: ["1–2 months", "6–12 months", "3–4 years", "It's not possible"],
+                a: 1,
+                e: "With 5–10 hours of study per week, most people become job-ready in 6–12 months with entry-level certifications."
+            }, {
+                q: "What is a typical salary range for an entry-level QA Tester in India?",
+                o: ["₹1–2 LPA", "₹3–6 LPA", "₹10–15 LPA", "₹20–30 LPA"],
+                a: 1,
+                e: "An entry-level QA Tester in India typically earns ₹3–6 LPA, with experienced professionals earning significantly more."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You're ready to start your IT journey! Your government experience is a strength — choose a path, get certified, and begin building your skills.",
+                fail: "Revisit sections 02 to 08 — understanding the different career paths and certifications is the first step to a successful transition."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

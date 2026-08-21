@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Transformation with dplyr | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="select(), filter(), mutate(), and summarise()" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 8 of 20: Data Transformation with dplyr</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html" class="active"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-filter"></i> Data Wrangling</span>
+        <h1>Data Transformation with dplyr</h1>
+
+        <div class="card">
+
+            <p><strong>dplyr</strong> is the cornerstone of the tidyverse and the standard toolkit for data transformation in modern R. Its consistent "verb" functions and the pipe operator make wrangling data readable and fast.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> dplyr is part of the tidyverse — load it with library(tidyverse) or individually with library(dplyr).
+            </div>
+
+            <h2>1. The Pipe Operator</h2>
+            <p>The pipe (<code>|&gt;</code> native, or <code>%&gt;%</code> from magrittr) chains operations left-to-right, avoiding deeply nested function calls:</p>
+                        <pre class="code-block"><code># Without pipe (hard to read)
+summarise(filter(df, age &gt; 25), avg = mean(salary))
+
+# With pipe (reads top to bottom)
+df |&gt;
+  filter(age &gt; 25) |&gt;
+  summarise(avg = mean(salary))</code></pre>
+
+            <h2>2. select() — Choose Columns</h2>
+                        <pre class="code-block"><code>library(dplyr)
+
+df |&gt; select(name, age)          # keep specific columns
+df |&gt; select(-age)               # drop a column
+df |&gt; select(starts_with(&quot;sale&quot;)) # pattern-based selection</code></pre>
+
+            <h2>3. filter() — Choose Rows</h2>
+                        <pre class="code-block"><code>df |&gt; filter(age &gt; 30)
+df |&gt; filter(age &gt; 30 &amp; department == &quot;Sales&quot;)
+df |&gt; filter(department %in% c(&quot;Sales&quot;, &quot;Marketing&quot;))</code></pre>
+
+            <h2>4. mutate() — Create or Modify Columns</h2>
+                        <pre class="code-block"><code>df |&gt; mutate(bonus = salary * 0.10)
+df |&gt; mutate(
+  seniority = ifelse(age &gt; 40, &quot;Senior&quot;, &quot;Junior&quot;)
+)</code></pre>
+
+            <h2>5. summarise() — Aggregate Data</h2>
+                        <pre class="code-block"><code>df |&gt;
+  summarise(
+    avg_salary = mean(salary),
+    max_age = max(age),
+    total = n()
+  )</code></pre>
+
+            <h2>6. group_by() — Combine with summarise() for Grouped Stats</h2>
+            <p>This is where dplyr becomes truly powerful — the split-apply-combine pattern:</p>
+                        <pre class="code-block"><code>df |&gt;
+  group_by(department) |&gt;
+  summarise(
+    avg_salary = mean(salary),
+    headcount = n()
+  ) |&gt;
+  arrange(desc(avg_salary))</code></pre>
+
+            <h2>7. Other Essential Verbs</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Function</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>arrange()</td><td>Sort rows by one or more columns</td></tr>
+                        <tr><td>rename()</td><td>Rename columns</td></tr>
+                        <tr><td>distinct()</td><td>Remove duplicate rows</td></tr>
+                        <tr><td>slice()</td><td>Select rows by position</td></tr>
+                        <tr><td>left_join() / inner_join()</td><td>Combine two data frames by a key column</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                        <pre class="code-block"><code>df |&gt; arrange(desc(salary))
+df |&gt; rename(full_name = name)
+df |&gt; distinct(department)
+
+employees |&gt; left_join(departments, by = &quot;dept_id&quot;)</code></pre>
+
+            <h2>8. A Full Pipeline Example</h2>
+                        <pre class="code-block"><code>df |&gt;
+  filter(age &gt;= 25) |&gt;
+  mutate(bonus = salary * 0.10) |&gt;
+  group_by(department) |&gt;
+  summarise(avg_total_pay = mean(salary + bonus)) |&gt;
+  arrange(desc(avg_total_pay))</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Chain dplyr verbs into a single pipeline rather than creating intermediate variables at every step — it's more readable and avoids cluttering your environment.
+            </div>
+
+            <h2>9. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Learn the core verbs</strong> — select, filter, mutate, summarise, arrange.</li>
+                <li><strong>✅ Master group_by() + summarise()</strong> — the split-apply-combine workhorse.</li>
+                <li><strong>✅ Use the pipe operator</strong> — for clean, readable multi-step transformations.</li>
+                <li><strong>✅ Know your join functions</strong> — for combining multiple tables.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Once dplyr clicks, you'll rarely write a for-loop for data wrangling again — nearly everything becomes a clean, chainable pipeline.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-import-export.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Importing and Exporting Data</a>
+            <a href="r-tidyr-cleaning.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Data Reshaping and Cleaning</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

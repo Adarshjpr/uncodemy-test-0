@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Deep dive into Node.js architecture — event loop, non-blocking I/O, libuv, call stack, callback queue, and how Node.js handles concurrency." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 4 of 12: Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html" class="active"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-architecture"></i> Architecture</span>
+        <h1>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</h1>
+
+        <div class="card">
+
+            <p><strong>Understanding Node.js architecture is the single most important step</strong> to becoming a production-ready Node.js developer. The event loop, non-blocking I/O, and the underlying libuv library are what make Node.js unique. Without understanding these concepts, you'll struggle to optimize performance, debug issues, and design scalable systems.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> The event loop is the heart of every Node.js application. If you block it, your entire application becomes unresponsive. This is not a theoretical concern — it's a production issue that has taken down real applications.
+            </div>
+
+            <h2>1. The Node.js Architecture Overview</h2>
+
+            <p>Node.js is not just JavaScript — it's a combination of multiple components working together:</p>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.9rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Node.js Architecture Stack</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────┐<br />
+                    │   JavaScript Code       │  ← Your application code<br />
+                    ├─────────────────────────┤<br />
+                    │   Node.js Core APIs     │  ← fs, http, crypto, path, etc.<br />
+                    ├─────────────────────────┤<br />
+                    │   V8 Engine             │  ← Executes JavaScript (Google)<br />
+                    ├─────────────────────────┤<br />
+                    │   libuv                 │  ← Event loop, threading, async I/O<br />
+                    ├─────────────────────────┤<br />
+                    │   Operating System      │  ← Kernel, file system, networking<br />
+                    └─────────────────────────┘
+                </div>
+            </div>
+
+            <h3>The Core Components</h3>
+            <ul>
+                <li><strong>V8 Engine:</strong> Google's high-performance JavaScript engine. Compiles JavaScript to machine code. Handles memory management and garbage collection.</li>
+                <li><strong>libuv:</strong> The magic behind Node.js. Handles asynchronous I/O, the event loop, and thread pooling. Written in C++.</li>
+                <li><strong>Node.js Core APIs:</strong> Built-in modules like <code>fs</code>, <code>http</code>, <code>crypto</code>, <code>path</code>, <code>os</code>, and <code>events</code>.</li>
+                <li><strong>Bindings:</strong> Bridge between JavaScript and C++ code.</li>
+            </ul>
+
+            <h2>2. The Node.js Event Loop — Explained</h2>
+
+            <p>The event loop is what allows Node.js to handle thousands of concurrent connections on a single thread. It's the mechanism that enables non-blocking I/O.</p>
+
+            <h3>How the Event Loop Works</h3>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 1.8; overflow-x: auto;">
+
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">The Event Loop — Step by Step</div>
+
+                <div style="text-align: left; padding: 10px;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │                  EVENT LOOP (libuv)                       │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │  1. Timers Phase      →  setTimeout(), setInterval()       │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │  2. Pending Callbacks →  I/O callbacks (errors)            │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │  3. Idle/Prepare     →  Internal use only                  │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │  4. Poll Phase       →  Retrieve new I/O events             │<br />
+                    │                       →  Execute I/O callbacks              │<br />
+                    │                       →  Block for new events               │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │  5. Check Phase      →  setImmediate() callbacks           │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │  6. Close Callbacks  →  Close events (socket.on('close'))  │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │              process.nextTick() queue                      │<br />
+                    │         (Executes between each phase)                     │<br />
+                    └─────────────────────────────────────────────────────────────┘<br />
+                                     │<br />
+                                     ▼<br />
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │              Microtask Queue (Promise callbacks)          │<br />
+                    └─────────────────────────────────────────────────────────────┘
+                </div>
+            </div>
+
+            <h3>Detailed Phase Breakdown</h3>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Phase</th><th>Description</th><th>What Runs Here</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>1. Timers</strong></td><td>Executes callbacks scheduled by <code>setTimeout()</code> and <code>setInterval()</code></td><td>Time-based operations</td></tr>
+                        <tr><td><strong>2. Pending Callbacks</strong></td><td>Executes I/O callbacks that were deferred from the previous cycle</td><td>System errors, TCP errors</td></tr>
+                        <tr><td><strong>3. Idle/Prepare</strong></td><td>Internal use only (not for application code)</td><td>libuv internal operations</td></tr>
+                        <tr><td><strong>4. Poll</strong></td><td>Retrieves new I/O events and executes their callbacks. If no callbacks, blocks here.</td><td>File I/O, network I/O, database queries</td></tr>
+                        <tr><td><strong>5. Check</strong></td><td>Executes <code>setImmediate()</code> callbacks</td><td>Immediate execution after poll</td></tr>
+                        <tr><td><strong>6. Close Callbacks</strong></td><td>Executes close/cleanup callbacks</td><td><code>socket.on('close')</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>process.nextTick() &amp; Microtasks</h3>
+            <p><code>process.nextTick()</code> and Promise callbacks are executed <strong>between each event loop phase</strong>, not as part of a specific phase. This means they can interrupt the event loop and cause starvation if used excessively.</p>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> <code>process.nextTick()</code> can starve the event loop if you call it recursively. Use it sparingly. For microtasks, Promise callbacks are executed in the same way. Always prefer <code>setImmediate()</code> for scheduling work in the next event loop iteration.
+            </div>
+
+            <h2>3. Non-Blocking I/O — The Superpower</h2>
+
+            <p>Non-blocking I/O is the reason Node.js can handle thousands of concurrent connections. When an I/O operation is requested, Node.js delegates it to the operating system (via libuv) and continues executing other code. When the I/O operation completes, the callback is added to the event loop.</p>
+
+            <h3>Blocking vs Non-Blocking Code</h3>
+
+            <pre class="code-block"><code>// ❌ BLOCKING — This stops the entire event loop
+const fs = require('fs');
+const data = fs.readFileSync('/path/to/file.txt', 'utf8');
+// Nothing else can happen while this file is being read
+console.log(data);
+
+// ✅ NON-BLOCKING — The event loop continues
+fs.readFile('/path/to/file.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+});
+console.log('This runs immediately, even before the file is read!');</code></pre>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Insight:</strong> In production, <strong>never use synchronous I/O methods</strong> (like <code>readFileSync</code>, <code>writeFileSync</code>, <code>execSync</code>) in the request-response cycle. They block the event loop and make your application unresponsive to other requests.
+            </div>
+
+            <h2>4. The Call Stack &amp; Callback Queue</h2>
+
+            <p>Understanding how the call stack and callback queue work together is essential:</p>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 1.8; overflow-x: auto;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Call Stack + Callback Queue Flow</div>
+
+                <div style="text-align: left; padding: 10px;">
+                    ┌─────────────────────────────────────────────────────────────────┐<br />
+                    │                    CALL STACK                                  │<br />
+                    │  ┌─────────────────────────────────────────────────────────┐   │<br />
+                    │  │  console.log('End')                                    │   │<br />
+                    │  │  fs.readFile callback (when file is ready)             │   │<br />
+                    │  │  main()                                               │   │<br />
+                    │  └─────────────────────────────────────────────────────────┘   │<br />
+                    └─────────────────────────────────────────────────────────────────┘<br />
+                                              │<br />
+                                              ▼<br />
+                    ┌─────────────────────────────────────────────────────────────────┐<br />
+                    │                    CALLBACK QUEUE                              │<br />
+                    │  ┌─────────────────────────────────────────────────────────┐   │<br />
+                    │  │  [Timer callback] [I/O callback] [setImmediate]        │   │<br />
+                    │  └─────────────────────────────────────────────────────────┘   │<br />
+                    └─────────────────────────────────────────────────────────────────┘<br />
+                                              │<br />
+                                              ▼<br />
+                    ┌─────────────────────────────────────────────────────────────────┐<br />
+                    │                    EVENT LOOP (libuv)                          │<br />
+                    │            Moves callbacks from queue to stack                 │<br />
+                    └─────────────────────────────────────────────────────────────────┘
+                </div>
+            </div>
+
+            <pre class="code-block"><code>// Example showing call stack and callback queue
+console.log('1. Start');
+
+setTimeout(() => {
+    console.log('2. Timeout callback');
+}, 0);
+
+fs.readFile('/file.txt', (err, data) => {
+    console.log('3. File read callback');
+});
+
+console.log('4. End');
+
+// Output:
+// 1. Start
+// 4. End
+// 2. Timeout callback
+// 3. File read callback
+
+// Even though setTimeout has 0ms delay, it doesn't execute
+// until the call stack is empty!</code></pre>
+
+            <h2>5. libuv — The Engine Behind the Event Loop</h2>
+
+            <p><strong>libuv</strong> is the C++ library that implements the event loop and asynchronous I/O in Node.js. It's what makes Node.js truly non-blocking.</p>
+
+            <h3>What libuv Does</h3>
+            <ul>
+                <li><strong>Event Loop:</strong> Manages the event loop and its phases.</li>
+                <li><strong>Thread Pool:</strong> Handles I/O operations that can't be done asynchronously by the OS (e.g., file system operations, DNS lookup).</li>
+                <li><strong>Async Handles:</strong> Manages timers, signals, and idle handles.</li>
+                <li><strong>Cross-Platform Abstraction:</strong> Works the same on Windows, Linux, and macOS.</li>
+            </ul>
+
+            <h3>The Thread Pool</h3>
+            <p>libuv uses a thread pool (default size = 4) for operations that don't have native async support:</p>
+            <ul>
+                <li>File system operations (<code>fs</code> module)</li>
+                <li>DNS lookup (<code>dns.lookup()</code>)</li>
+                <li>Compression (zlib)</li>
+                <li>Crypto (crypto module)</li>
+            </ul>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> The thread pool size is 4 by default. If you perform many heavy I/O operations simultaneously, your application may become bottlenecked. Increase the thread pool size with the <code>UV_THREADPOOL_SIZE</code> environment variable.
+            </div>
+
+            <pre class="code-block"><code>// Increase thread pool size to 8
+// Set this BEFORE starting your Node.js app
+// process.env.UV_THREADPOOL_SIZE = 8;
+// Run: UV_THREADPOOL_SIZE=8 node app.js
+
+const fs = require('fs');
+// Multiple file reads will now use up to 8 threads
+for (let i = 0; i < 10; i++) {
+    fs.readFile('/large-file.txt', (err, data) => {
+        console.log(`File ${i} read`);
+    });
+}</code></pre>
+
+            <h2>6. Common Event Loop Pitfalls — Production Issues</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> These are real production issues that have affected major companies.</strong>
+            </div>
+
+            <h3>Pitfall 1: Blocking the Event Loop</h3>
+            <pre class="code-block"><code>// ❌ This will block the event loop for 10 seconds
+app.get('/heavy', (req, res) => {
+    const start = Date.now();
+    while (Date.now() - start < 10000) {
+        // Simulating heavy CPU work
+    }
+    res.send('Done!');
+});
+// During these 10 seconds, NO other requests can be processed!</code></pre>
+
+            <h4>Solution: Offload CPU-intensive work</h4>
+            <pre class="code-block"><code>// ✅ Use Worker Threads for CPU-intensive work
+const { Worker } = require('worker_threads');
+
+app.get('/heavy', (req, res) => {
+    const worker = new Worker(`
+        const { parentPort } = require('worker_threads');
+        // Heavy computation here
+        let result = 0;
+        for (let i = 0; i < 1000000000; i++) {
+            result += i;
+        }
+        parentPort.postMessage(result);
+    `, { eval: true });
+
+    worker.on('message', (result) => {
+        res.send(`Result: ${result}`);
+    });
+});</code></pre>
+
+            <h3>Pitfall 2: Recursive process.nextTick()</h3>
+            <pre class="code-block"><code>// ❌ This will starve the event loop
+function recursive() {
+    process.nextTick(recursive);
+}
+recursive();
+// The event loop never progresses to the next phase!</code></pre>
+
+            <h3>Pitfall 3: Large JSON Parsing</h3>
+            <pre class="code-block"><code>// ❌ Parsing a 50MB JSON file on the main thread
+app.post('/upload', (req, res) => {
+    const data = JSON.parse(req.body); // Blocks the event loop!
+    // Process data...
+});</code></pre>
+
+            <h4>Solution: Stream the data</h4>
+            <pre class="code-block"><code>// ✅ Use JSON streaming
+const { Transform } = require('stream');
+
+app.post('/upload', (req, res) => {
+    let data = '';
+    req.on('data', chunk => { data += chunk; });
+    req.on('end', () => {
+        // Parse after the stream completes (still may block)
+        // Better: Use a streaming JSON parser
+        const obj = JSON.parse(data);
+        res.send('Done');
+    });
+});</code></pre>
+
+            <h2>7. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Never use sync methods</strong> (<code>readFileSync</code>, <code>writeFileSync</code>, <code>execSync</code>) in request handlers.</li>
+                <li><strong>✅ Use Worker Threads</strong> for CPU-intensive operations.</li>
+                <li><strong>✅ Use streaming</strong> for large data processing.</li>
+                <li><strong>✅ Avoid recursive process.nextTick()</strong> — use <code>setImmediate()</code> instead.</li>
+                <li><strong>✅ Monitor event loop lag</strong> using tools like <code>process.hrtime()</code> or APM tools.</li>
+                <li><strong>✅ Tune thread pool size</strong> for heavy I/O loads using <code>UV_THREADPOOL_SIZE</code>.</li>
+                <li><strong>✅ Use <code>setImmediate()</code></strong> instead of <code>setTimeout(fn, 0)</code> for event loop scheduling.</li>
+                <li><strong>✅ Implement health checks</strong> that report event loop lag to your monitoring system.</li>
+            </ul>
+
+            <h2>8. Visualizing the Event Loop in Practice</h2>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 1.8; overflow-x: auto;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Event Loop Timeline — Real Request Handling</div>
+
+                <div style="text-align: left; padding: 10px;">
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ Time │  Event Loop Phase  │  What's Happening                    │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 0ms  │  Poll             │  Request arrives                      │<br />
+                    │      │  └─ I/O Callback  │  └─ Callback queued                  │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 1ms  │  Check           │  setImmediate() runs                  │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 2ms  │  Poll            │  fs.readFile() starts                 │<br />
+                    │      │                  │  └─ Delegated to thread pool          │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 3ms  │  Poll            │  No more I/O → blocks                 │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 50ms │  Poll            │  File read completes                  │<br />
+                    │      │  └─ I/O Callback │  └─ Callback queued                  │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 51ms │  Poll            │  Executes callback                    │<br />
+                    │      │                  │  └─ Sends response                    │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 52ms │  Close           │  Clean up request                     │<br />
+                    ─────────────────────────────────────────────────────────────────────<br />
+                    │ 53ms │  Idle            │  Wait for next request                │<br />
+                    ─────────────────────────────────────────────────────────────────────
+                </div>
+            </div>
+
+            <h2>9. Key Takeaways</h2>
+            <ul>
+                <li><strong>The event loop</strong> is the mechanism that enables Node.js's non-blocking I/O.</li>
+                <li><strong>libuv</strong> is the C++ library that implements the event loop and thread pool.</li>
+                <li><strong>Never block the event loop</strong> — use async/await, promises, or Worker Threads for CPU-heavy work.</li>
+                <li><strong>Understand the phases</strong> — timers, poll, check, and close phases determine execution order.</li>
+                <li><strong>process.nextTick()</strong> executes between phases and can starve the event loop.</li>
+                <li><strong>setImmediate()</strong> is safer for scheduling work in the next iteration.</li>
+                <li><strong>Monitor event loop lag</strong> in production to detect performance issues before they affect users.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> Understanding the event loop is what separates junior Node.js developers from senior engineers. When you truly understand how the event loop works, you can write code that is performant, scalable, and robust. Take the time to internalize these concepts — they will serve you throughout your career.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-vs-express-vs-other.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Node.js vs Express.js vs Other Server-Side Frameworks</a>
+            <a href="nodejs-installation-cli.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Node.js Installation Guide &amp; CLI Basics</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

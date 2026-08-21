@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/image/logo.png" type="image/x-icon">
+    <meta property="og:image" content="https://uncodemy.com/image/logo.png">
+    <meta name="og:description"
+        content="Find out how to swap numbers in C using two approaches: with a temporary variable or without. Step-by-step guide with code examples and full explanations.">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Getting Started with Playwright Testing: A Beginner’s Guide That Actually Makes Sense</title>
+    <meta name="description"
+        content="Find out how to swap numbers in C using two approaches: with a temporary variable or without. Step-by-step guide with code examples and full explanations.">
+    <meta name="keywords"
+        content="C program swap numbers, swap using temp, swap without temp, C programming basics, swapping variables in C, C code examples, beginner C tutorial">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/course/css/stylee.css">
+    <link rel="stylesheet" href="/course/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/course/css/styles.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="preload" href="/css/responsive2.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="icon" href="/image/logo.png" type="image/x-icon">
+    <script defer src="/js/form.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BS5ER3EFNH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BS5ER3EFNH');
+    </script>
+    <script>
+
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+
+            n.queue = []; t = b.createElement(e); t.async = !0;
+
+            t.src = v; s = b.getElementsByTagName(e)[0];
+
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+
+            'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '831040531192164');
+
+        fbq('track', 'PageView');
+
+    </script>
+
+
+
+    <!-- ✅ META PIXEL END -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16792742286"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-16792742286');</script>
+    <link rel="canonical"
+        href="https://uncodemy.com/blog/getting-started-with-playwright-testing-a-beginner’s-guide-that-actually-makes-sense">
+</head>
+
+<body>
+    <div class="toast-container" id="toastContainer"></div>
+    <nav id="main-nav">
+        <div class="nav-top-head" id="nAv"><span
+                style="width: 3px; height: 17px; background-color:#ff5421;"></span><span><b>For Counseling :</b><span
+                    style="color:#ff5421"><a href="tel:+918448807675" aria-label="Call Uncodemy Counseling"
+                        title="Call Uncodemy Counseling">+91 8448807675</a> <b class="cnsbld">/</b><a
+                        href="tel:+9198183 66550" style="text-decoration: none; color: #ff5421;">+91
+                        9818366550</a></span> <b class="cnsbld">/</b> <span style="color: #ff5421;"><a
+                        href="tel:+91 8766313646" style="text-decoration: none; color: #ff5421;">+91
+                        8766313646</a></span></span><span
+                style="width: 3px; height: 17px; background-color:#ff5421;"></span> <span><b>For Support :</b><span
+                    style="color: #ff5421;"><a href="tel:+918800023723"
+                        style="text-decoration: none; color: #ff5421;">+91 8800023723</a></span></span> <span
+                style="width: 3px; height: 17px; background-color:#ff5421;"></span> <span><a
+                    href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">info@uncodemy.com</a></span> <span
+                style="width: 3px; height: 17px; background-color:#ff5421;"></span> <a
+                href="https://api.whatsapp.com/send?phone=918800023723" aria-label="Read more about Seminole tax hike"
+                style="text-decoration: none; color: black;"><span><img loading="lazy" class="whats lazy-load"
+                        data-src="/image/whatsapp.png"></span></a> <span
+                style="width: 3px; height: 17px; background-color:#ff5421;"></span></div>
+        <div class="nav-container"><i class="fa-solid fa-bars hamburger" onclick="showNavigation()"></i><a href="/"
+                aria-label="Read more about Seminole tax hike">
+                <div class="logoimages">
+                    <div class="logo-container"><img loading="lazy" class="loG" src="/img/Logo (1).png" alt="gp"><img
+                            loading="lazy" class="long lazy-load" data-src="/img/no1.png" alt="gp"></div>
+                </div>
+            </a>
+            <div class="categories">
+                <nav class="navr">
+                    <menu type="toolbar" id="categories-menu">
+                        <menuitem label="drop"><span class="mainc Mane" id="categoriesBtn"
+                            onclick="toggleCategory()">CATEGORIES</span>
+                        <menu class="hii">
+                            <menuitem class="SEt" label="settings"><a>Full-Stack-Development</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/full-stack-with-nodejs-training-course-in-noida"
+                                    aria-label="Read more about Seminole tax hike">Full Stack With NodeJs</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/python-full-stack-training-course-in-noida">Python Full Stack</a>
+                                </menuitem>
+                                <menuitem label="Test 2"><a class="has"
+                                    href="/course/java-full-stack-using-react-training-course-in-noida">Java Full Stack
+                                    Using React</a></menuitem>
+                                <menuitem label="Test 3"><a class="has"
+                                    href="/course/web-designing-training-course-in-noida">Web Designing</a></menuitem>
+                                <menuitem label="Test 3"><a class="has"
+                                    href="/course/web-development-training-course-in-noida">Web Development</a>
+                                </menuitem>
+                                <menuitem label="Test 3"><a class="has"
+                                    href="/course/frontend-development-training-course-in-noida">Frontend</a></menuitem>
+                                <menuitem label="Test 4"><a class="has"
+                                    href="/course/angular-training-course-in-noida">Angular</a></menuitem>
+                                <menuitem label="Test 4"><a class="has"
+                                    href="/course/react-js-training-course-in-noida">ReactJs</a></menuitem>
+                                <menuitem label="Test 4"><a class="has"
+                                    href="/course/data-structure-and-algorithm-training-course-in-noida">Data
+                                    Structureand Algorithm</a></menuitem>
+                                <menuitem label="Test 4"><a class="has"
+                                    href="/course/mean-stack-development-training-course-in-noida">Mean</a></menuitem>
+                                <menuitem label="Test 4"><a class="has"
+                                    href="/course/mern-stack-development-training-course-in-noida">Mern</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Data Science</a>
+                            <menu class="mant0">
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/business-analyst-training-course-in-noida">Business Analytics</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/python-training-course-in-noida">Python</a></menuitem>
+                                <menuitem label="Test 2"><a class="has"
+                                    href="/course/data-analytics-using-python-training-course-in-noida">Data Analytics
+                                    using Python</a></menuitem>
+                                <menuitem label="Test 2"><a class="has"
+                                    href="/course/data-science-machine-learning-using-python-training-course-in-noida">Data
+                                    Science &amp; Machine Learning using Python</a></menuitem>
+                                <menuitem label="Test 3"><a class="has"
+                                    href="/course/machine-learning-using-python-training-course-in-noida">Machine
+                                    Learning using Python</a></menuitem>
+                                <menuitem label="Test 4"><a class="has"
+                                    href="/course/ai-using-python-training-course-in-noida">AI Using Python</a>
+                                </menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Software Testing</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/software-testing-training-course-in-noida">Software Testing</a>
+                                </menuitem>
+                                <menuitem label="Test 2"><a class="has"
+                                    href="/course/manual-testing-course-in-noida">Manual Testing</a></menuitem>
+                                <menuitem label="Test 3"><a class="has"
+                                    href="/course/automation-testing-course-in-noida">Automation Testing</a></menuitem>
+                                <menuitem label="Test 2"><a class="has"
+                                    href="/course/istqb-training-course-in-noida">ISTQB Training</a></menuitem>
+                                <menuitem label="Test 2"><a class="has"
+                                    href="/course/manual-testing-course-in-noida">Manual + Selenium</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Cloud Tools</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/microsoft-azure-training-course-in-noida">Microsoft Azure</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/devops-training-course-in-noida">DevOps</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/aws-training-course-in-noida">Amazon Web Services (AWS)</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/cloud-computing-training-course-in-noida">Cloud Computing</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/salesforce-training-course-in-noida">Salesforce</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Digital Marketing</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/digital-marketing-training-course-in-noida">Digital Marketing</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/advance-digital-marketing-training-course-in-noida">AdvanceDigital
+                                    Marketing</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/seo-training-course-in-noida">SEO(SearchEngine Optimization)</a>
+                                </menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Java Technology+</a>
+                            <menu class="mant1">
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/java-training-course-in-noida">Java</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/java-for-beginners-training-course-in-noida">Java ForBeginners</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/java-expert-training-course-in-noida">Java Expert</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/spring-boot-microservices-security-with-hibernate-training-course-in-noida">SpringBoot
+                                    Microservices Security With Hibernate</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Network &amp; Security</a>
+                            <menu class="mant2">
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/ethical-hacking-course-in-noida">Ethical Hacking</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/cyber-security-training-course-in-noida">Cyber Security</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/ccnp-training-course-in-noida">CCNP</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/mcsa-training-course-in-noida">MCSA</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/vmware-training-course-in-noida">Vmware</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Programming Language</a>
+                            <menu class="mant3">
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/c-with-data-structure-and-algorithm-training-course-in-noida">CWith
+                                    Data Structure And Algorithms</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/cpptraining-training-course-in-noida">Object Oriented DataStructure
+                                    &amp; Algorithms Training</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/net-4-months-training-course-in-noida">.NET 4 Months</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/dotnet-full-stack-training-course-in-noida">.NET Full Stack</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/r-programming-training-course-in-noida">R Programming</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>CAD Training</a>
+                            <menu class="mant4">
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/autocad-training-course-in-noida">AUTOCAD</a></menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/cnc-programming-training-course-in-noida">CNC Programming</a>
+                                </menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Graphic Designing</a>
+                            <menu class="mant5">
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/graphic-designing-training-course-in-noida">Graphic Designing</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has"
+                                    href="/course/uiux-training-course-in-noida">UI/UX Designing</a></menuitem>
+                            </menu>
+                            </menuitem>
+                        </menu>
+                        </menuitem>
+                    </menu>
+                </nav>
+            </div>
+            <div class="navigation-container">
+                <div class="navigation-section se SER">
+                    <ul>
+                        <li><a class="cls" href="/">Home</a></li>
+                        <li class="cls"><label id="COR" onclick="showDropDown(0)"
+                                style="cursor: pointer; color:black !important;">Courses <i
+                                    class="fa-solid fa-caret-down" id="dropdown-arrow"></i></label></li>
+                        <div class="dropdown dropdown-course"><button class="dropdown-close-btn"
+                                onclick="closeFunction()"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="course-detail-section">
+                                <div class="course-left-section">
+                                    <ul>
+                                        <li class="course-name-dropdown" id="active-dropdown-course">On Demand Courses
+                                        </li>
+                                        <li class="course-name-dropdown" onclick="show()">Data Science Program</li>
+                                        <li class="course-name-dropdown">Full Stack Development</li>
+                                        <li class="course-name-dropdown">Software Testing</li>
+                                        <li class="course-name-dropdown">Cloud Tools</li>
+                                        <li class="course-name-dropdown">SAP</li>
+                                        <li class="course-name-dropdown">Foreign Languages</li>
+                                        <li class="course-name-dropdown">Project Management</li>
+                                    </ul>
+                                </div>
+                                <div class="course-right-section">
+                                    <div class="COuRs course-image-text" id="active-course"><a
+                                            href="/course/data-science-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/data-science-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Data
+                                                        Science</span></div>
+                                                <p class="coursep">Data Science is a multi-faceted approach that
+                                                    combines various</p>
+                                            </a><a class="coursea"
+                                                href="/course/data-science-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/data-analytics-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/data-analytics-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Data
+                                                        Analytics</span></div>
+                                                <p class="coursep">Data Analytics is a process to transform under done
+                                                    data into</p>
+                                            </a><a class="coursea"
+                                                href="/course/data-analytics-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/software-testing-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/software-testing-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Software Testing</span></div>
+                                                <p class="coursep">A student who is going to begin his or her journey in
+                                                    software testing</p>
+                                            </a><a class="coursea"
+                                                href="/course/software-testing-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/full-stack-development-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/full-stack-development-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Full
+                                                        Stack Development</span></div>
+                                                <p class="coursep">As a Full-stack developer one can be extremely
+                                                    skilled and versatile,</p>
+                                            </a><a class="coursea"
+                                                href="/course/full-stack-development-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/digital-marketing-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/digital-marketing-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Digital Marketing</span></div>
+                                                <p class="coursep">Digital marketing can be classified into 8 main
+                                                    categories including-</p>
+                                            </a><a class="coursea"
+                                                href="/course/digital-marketing-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/java-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/java-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Java</span></div>
+                                                <p class="coursep">Java training for beginners in Noida requires a
+                                                    student to get</p>
+                                            </a><a class="coursea" href="/course/java-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/artificial-intelligence-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/artificial-intelligence-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Artificial Intelligence</span></div>
+                                                <p class="coursep">Artificial intelligence (AI) is the ability of a
+                                                    computer</p>
+                                            </a><a class="coursea"
+                                                href="/course/artificial-intelligence-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/mern-stack-development-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/mern-stack-development-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">MERN</span></div>
+                                                <p class="coursep">MERN Stack is a term used to describe a set of
+                                                    technologies</p>
+                                            </a><a class="coursea"
+                                                href="/course/mern-stack-development-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/python-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Python</span></div>
+                                                <p class="coursep">Python is a computer programming language, used to
+                                                    build</p>
+                                            </a><a class="coursea"
+                                                href="/course/python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a
+                                            href="/course/data-science-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/data-science-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Data
+                                                        Science</span></div>
+                                                <p class="coursep">Data Science is a multi-faceted approach that
+                                                    combines various</p>
+                                            </a><a class="coursea"
+                                                href="/course/data-science-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/data-analytics-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/data-analytics-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Data
+                                                        Analytics</span></div>
+                                                <p class="coursep">Data Analytics is a process to transform under done
+                                                    data into</p>
+                                            </a><a class="coursea"
+                                                href="/course/data-analytics-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/business-analyst-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/business-analyst-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Business Analyst</span></div>
+                                                <p class="coursep">As a business analyst one can be extremely skilled
+                                                </p>
+                                            </a><a class="coursea"
+                                                href="/course/business-analyst-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/machine-learning-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/machine-learning-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Machine Learning</span></div>
+                                                <p class="coursep">Machine learning is a branch of artificial
+                                                    intelligence (AI) and computer science</p>
+                                            </a><a class="coursea"
+                                                href="/course/machine-learning-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/python-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Python</span></div>
+                                                <p class="coursep">Python is a computer programming language, used to
+                                                    build websites</p>
+                                            </a><a class="coursea"
+                                                href="/course/python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/data-analytics-using-python-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/data-analytics-using-python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Data
+                                                        Analytics using Python</span></div>
+                                                <p class="coursep">Certified Data Analytics with Python training Course
+                                                </p>
+                                            </a><a class="coursea"
+                                                href="/course/data-analytics-using-python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/machine-learning-using-python-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/machine-learning-using-python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Machine Learning Using python</span></div>
+                                                <p class="coursep SEP">To put it simply, machine learning</p>
+                                            </a><a class="coursea"
+                                                href="/course/machine-learning-using-python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/ai-using-python-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/ai-using-python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">AI
+                                                        Using Python</span></div>
+                                                <p class="coursep">In a nut shell, AI using Python is the practice of
+                                                    using Python to develop</p>
+                                            </a><a class="coursea"
+                                                href="/course/ai-using-python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/data-science-machine-learning-using-python-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/data-science-machine-learning-using-python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Data
+                                                        Science &amp; Machine Learning Using Python</span></div>
+                                                <p class="coursep SEP">In a nut shell, Data Science &amp; ML</p>
+                                            </a><a class="coursea"
+                                                href="/course/data-science-machine-learning-using-python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a
+                                            href="/course/full-stack-development-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/full-stack-development-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Full
+                                                        Stack Development</span></div>
+                                                <p class="coursep">As a Full-stack developer one can be extremely
+                                                    skilled and versatile,</p>
+                                            </a><a class="coursea"
+                                                href="/course/full-stack-development-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/python-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/python-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Python</span></div>
+                                                <p class="coursep">Python is a computer programming language, used to
+                                                    build websites</p>
+                                            </a><a class="coursea"
+                                                href="/course/python-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/java-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/java-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Java</span></div>
+                                                <p class="coursep">Java training for beginners in Noida requires a
+                                                    student to get a detailed</p>
+                                            </a><a class="coursea" href="/course/java-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/full-stack-with-nodejs-training-course-in-noida"
+                                            class="nav-item nav-link"
+                                            aria-label="Read more about Seminole tax hike"></a>
+                                        <div class="courses"><a
+                                                href="/course/full-stack-with-nodejs-training-course-in-noida"
+                                                class="nav-item nav-link"
+                                                aria-label="Read more about Seminole tax hike">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Full
+                                                        Stack With NodeJs</span></div>
+                                                <p class="coursep">Full-stack development with Node.js refers to
+                                                    building</p>
+                                            </a><a class="coursea"
+                                                href="/course/full-stack-with-nodejs-training-course-in-noida"
+                                                aria-label="Read more about Seminole tax hike"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/java-full-stack-using-react-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/java-full-stack-using-react-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Java
+                                                        Full Stack Using ReactJS</span></div>
+                                                <p class="coursep">To put it simply, Java full stack using React refers
+                                                </p>
+                                            </a><a class="coursea"
+                                                href="/course/java-full-stack-using-react-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/web-designing-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/web-designing-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span class="sp">Web
+                                                        Designing</span></div>
+                                                <p class="coursep">Web designing is the process of creating the visual
+                                                    design</p>
+                                            </a><a class="coursea"
+                                                href="/course/web-designing-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/react-js-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/react-js-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">ReactJS</span></div>
+                                                <p class="coursep">React.js is a JavaScript library (not a framework,)
+                                                    though many</p>
+                                            </a><a class="coursea"
+                                                href="/course/react-js-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/angular-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/angular-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Angular</span></div>
+                                                <p class="coursep">Angular is a cutting-edge JavaScript framework
+                                                    developed by</p>
+                                            </a><a class="coursea"
+                                                href="/course/angular-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/mern-stack-development-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a
+                                                href="/course/mern-stack-development-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Mern</span></div>
+                                                <p class="coursep">MERN stack is a term used to describe a set of</p>
+                                            </a><a class="coursea"
+                                                href="/course/mern-stack-development-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a
+                                            href="/course/software-testing-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/software-testing-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Software Testing</span></div>
+                                                <p class="coursep">A student who is going to begin his or her journey in
+                                                    software testing</p>
+                                            </a><a class="coursea"
+                                                href="/course/software-testing-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/manual-testing-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/manual-testing-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Manual Testing</span></div>
+                                                <p class="coursep">The best Manual Testing course training provider in
+                                                    Noida, Uncodemy</p>
+                                            </a><a class="coursea" href="/course/manual-testing-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/automation-testing-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/automation-testing-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Automation Testing</span></div>
+                                                <p class="coursep">Automation Testing is a technique where test cases
+                                                    are executed with</p>
+                                            </a><a class="coursea"
+                                                href="/course/automation-testing-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/istqb-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/istqb-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">ISTQB Training</span></div>
+                                                <p class="coursep">ISTQB stands for the International Software Testing
+                                                    Qualifications</p>
+                                            </a><a class="coursea" href="/course/istqb-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/manual-selenium-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/manual-selenium-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Manual + Selenium</span></div>
+                                                <p class="coursep">The best Manual + Selenium training course provider
+                                                    in Noida</p>
+                                            </a><a class="coursea"
+                                                href="/course/manual-selenium-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a href="/course/aws-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/aws-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Amazon Web Services (AWS)</span></div>
+                                                <p class="coursep">AWS (Amazon Web Services) is a comprehensive,</p>
+                                            </a><a class="coursea" href="/course/aws-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/devops-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/devops-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">DevOps</span></div>
+                                                <p class="coursep">DevOps is a culture that allows the development</p>
+                                            </a><a class="coursea"
+                                                href="/course/devops-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/microsoft-azure-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/microsoft-azure-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Microsoft Azure<span></span></span></div>
+                                                <p class="coursep">Azure enables users to develop, test, deploy, and
+                                                    manage</p>
+                                            </a><a class="coursea"
+                                                href="/course/microsoft-azure-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/cloud-computing-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/cloud-computing-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Cloud Computing<span></span></span></div>
+                                                <p class="coursep">Cloud computing is a computing model that allows
+                                                    users to access</p>
+                                            </a><a class="coursea"
+                                                href="/course/cloud-computing-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/salesforce-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/salesforce-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"><span
+                                                        class="sp">Salesforce<span></span></span></div>
+                                                <p class="coursep">Salesforce is a customer relationship management(CRM)
+                                                    platform</p>
+                                            </a><a class="coursea"
+                                                href="/course/salesforce-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a href="/course/sap-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP Training</span></div>
+                                                <p class="coursep">SAP training refers to the educational programs and
+                                                    courses</p>
+                                            </a><a class="coursea" href="/course/sap-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/sap-sd-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-sd-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP SD Training</span></div>
+                                                <p class="coursep">SAP SD, or SAP Sales and Distribution, is a key
+                                                    module in</p>
+                                            </a><a class="coursea"
+                                                href="/course/sap-sd-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/sap-scm-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-scm-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP SCM
+                                                        Training<span></span></span></div>
+                                                <p class="coursep">SAP SCM (Supply Chain Management) training refers</p>
+                                            </a><a class="coursea"
+                                                href="/course/sap-scm-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/sap-pp-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-pp-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP PP
+                                                        Training<span></span></span></div>
+                                                <p class="coursep">SAP PP (Production Planning) is a module in SAP PP
+                                                    ERP</p>
+                                            </a><a class="coursea"
+                                                href="/course/sap-pp-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/sap-pm-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-pm-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP PM<span></span></span>
+                                                </div>
+                                                <p class="coursep">SAP PM (Plant Maintenance) is a module that deals
+                                                    with the</p>
+                                            </a><a class="coursea"
+                                                href="/course/sap-pm-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/sap-mm-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-mm-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP MM<span></span></span>
+                                                </div>
+                                                <p class="coursep">SAP MM (Materials Management) is a module in the SAP
+                                                    ERP</p>
+                                            </a><a class="coursea"
+                                                href="/course/sap-mm-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/sap-fico-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/sap-fico-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">SAP FICO<span></span></span>
+                                                </div>
+                                                <p class="coursep">SAP FICO stands for SAP Finance (FI) and
+                                                    Controlling(CO)</p>
+                                            </a><a class="coursea"
+                                                href="/course/sap-fico-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a href="/course/japanese-language-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/japanese-language-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">Japanese Language</span>
+                                                </div>
+                                                <p class="coursep">Boost your career with Uncodemy’s Japanese Language
+                                                    Course</p>
+                                            </a><a class="coursea"
+                                                href="/course/japanese-language-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/german-language-course-in-delhi" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/german-language-course-in-delhi"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">German Language
+                                                        <span></span></span></div>
+                                                <p class="coursep">Join Uncodemy, the best German language institute in
+                                                </p>
+                                            </a><a class="coursea"
+                                                href="/course/german-language-course-in-delhi"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/french-language-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/french-language-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">French Language
+                                                        <span></span></span></div>
+                                                <p class="coursep">At Uncodemy, our French language classes in</p>
+                                            </a><a class="coursea"
+                                                href="/course/french-language-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/spanish-language-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/spanish-language-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/data-science.png"
+                                                        alt="data-science"><span class="sp">Spanish Language
+                                                        <span></span></span></div>
+                                                <p class="coursep">Uncodemy’s Spanish Language classes make</p>
+                                            </a><a class="coursea"
+                                                href="/course/spanish-language-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                    <div class="course-image-text"><a href="/course/pgmp-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/pgmp-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/pgmp.png" alt="data-science"><span
+                                                        class="sp">PgMP Training Course</span></div>
+                                                <p class="coursep">Uncodemy offers an advanced PgMP Training Course</p>
+                                            </a><a class="coursea" href="/course/pgmp-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/pfmp-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/pfmp-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/pfmg.png" alt="data-science"><span
+                                                        class="sp">PfMP Training Course <span></span></span></div>
+                                                <p class="coursep">The Portfolio Management Professional (PfMP)
+                                                    certification</p>
+                                            </a><a class="coursea" href="/course/pfmp-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/pmp-training-course-in-noida" class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/pmp-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/pmp.png" alt="data-science"><span
+                                                        class="sp">PMP Training Course <span></span></span></div>
+                                                <p class="coursep">Choose Uncodemy for an exceptional PMP education that
+                                                    paves</p>
+                                            </a><a class="coursea" href="/course/pmp-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                        <a href="/course/scrum-master-training-course-in-noida"
+                                            class="nav-item nav-link"></a>
+                                        <div class="courses"><a href="/course/scrum-master-training-course-in-noida"
+                                                class="nav-item nav-link">
+                                                <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                        data-src="/img/placement/scrum-master.png"
+                                                        alt="data-science"><span class="sp">Scrum Master Training Course
+                                                        <span></span></span></div>
+                                                <p class="coursep">Join Uncodemy’s top-notch Scrum Master Certification
+                                                </p>
+                                            </a><a class="coursea"
+                                                href="/course/scrum-master-training-course-in-noida"><button
+                                                    class="glow-on-hover glo" type="button">Know More</button></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><a class="cls" href="/placement">
+                            <li>Placement</li>
+                        </a>
+                        <ul class="ULI cls">
+                            <li id="course-text"><label onclick="showDropDown(1);"
+                                    style="cursor: pointer; color:black !important;">Training <i
+                                        style="color: black !important;" class="fa-solid fa-caret-down"
+                                        id="dropdown-arrow"></i></label></li>
+                            <div class="dropdown dropdown-course TRAI-ning" id="trainingDropdown"><button
+                                    class="dropdown-close-btn" onclick="closeFunction()"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                                <div class="course-detail-section" id="CAD">
+                                    <div class="course-right-section Train">
+                                        <div class="TRaiN course-image-text" id="active-course"><a
+                                                href="/industrial-training" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/industrial-training"
+                                                    class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/placement/data-science.png"><span
+                                                            class="sp">Industrial Training</span></div>
+                                                    <p class="coursep">Improve the Performance of your Business With our
+                                                        Innovative Industrial</p>
+                                                </a><a class="coursea" href="/industrial-training"><button
+                                                        class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/corporate-training" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/corporate-training"
+                                                    class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/placement/data-science.png"><span
+                                                            class="sp">Corporate Training</span></div>
+                                                    <p class="coursep">Our instructor-led training classes are designed
+                                                        to make you an expert.</p>
+                                                </a><a class="coursea" href="/corporate-training"><button
+                                                        class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/summer-training-in-noida" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/summer-training-in-noida"
+                                                    class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/placement/data-science.png"><span
+                                                            class="sp">Summer Training</span></div>
+                                                    <p class="coursep">Real-life case studies are a great way to
+                                                        demonstrate the capabilities</p>
+                                                </a><a class="coursea" href="/summer-training-in-noida"><button
+                                                        class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/winter-training-in-noida" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/winter-training-in-noida"
+                                                    class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/placement/data-science.png"><span
+                                                            class="sp">Winter Training</span></div>
+                                                    <p class="coursep">A certificate from an accredited course provider
+                                                    </p>
+                                                </a><a class="coursea" href="/winter-training-in-noida"><button
+                                                        class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/blog" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/blog" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/tools/blog.png"><span class="sp">Blog
+                                                            Session</span></div>
+                                                    <p class="coursep">Looking to boost your earning potential</p>
+                                                </a><a class="coursea" href="/blog"><button class="glow-on-hover glo"
+                                                        type="button">Know More</button></a></div><a href="/all-courses"
+                                                class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/all-courses" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/tools/25-255705_icon-classroom-transparent-classroom-icon-png-png-download.png"><span
+                                                            class="sp">All Courses</span></div>
+                                                    <p class="coursep">Improve Your skills with our comprehensive
+                                                        courses</p>
+                                                </a><a class="coursea" href="/all-courses"><button
+                                                        class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="ULI cls">
+                            <li id="course-text"><label onclick="showDropDown(2);"
+                                    style="cursor: pointer; color:black !important;">About <i
+                                        style="color: black !important;" class="fa-solid fa-caret-down"
+                                        id="dropdown-arrow"></i></label></li>
+                            <div class="dropdown dropdown-course TRAI-ning dropdown-about" id="aboutDropdown"><button
+                                    class="dropdown-close-btn" onclick="closeFunction()"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                                <div class="course-detail-section" id="CAD">
+                                    <div class="course-right-section AboutScn Train">
+                                        <div class="TRaiN course-image-text" id="active-course"><a href="/about-us"
+                                                class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/about-us" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/placement/data-science.png"><span
+                                                            class="sp">About Us</span></div>
+                                                    <p class="coursep">Discover our mission to equip individuals with
+                                                        essential IT skills and industry expertise.</p>
+                                                </a><a class="coursea" href="/about-us"><button
+                                                        class="glow-on-hover glo" type="button">View here</button></a>
+                                            </div><a href="/gallery" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/gallery" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/img/placement/data-science.png"><span
+                                                            class="sp">Uncodemy Gallery</span></div>
+                                                    <p class="coursep">Explore highlights from our IT training sessions
+                                                        and success stories.</p>
+                                                </a><a class="coursea" href="/gallery"><button class="glow-on-hover glo"
+                                                        type="button">View here</button></a></div><a
+                                                href="https://certificate.uncodemy.com/"
+                                                class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="https://certificate.uncodemy.com/"
+                                                    class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load"
+                                                            data-src="/image/certificate-apply.png"><span
+                                                            class="sp">Apply for Certificate</span></div>
+                                                    <p class="coursep">Apply for your certificate at Uncodemy and
+                                                        showcase your skills and achievements.</p>
+                                                </a><a class="coursea"
+                                                    href="https://certificate.uncodemy.com/"><button
+                                                        class="glow-on-hover glo" type="button">Apply here</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul><a class="cls career-guidance" href="/career-guidance-by-ai">
+                            <div class="ai-content">
+                                <div class="ai-powered-badge">֎ AI-Powered</div>
+                                <div class="tooltip-arrow"></div>
+                                <li>Career Guidance</li>
+                            </div>
+                        </a><a class="cls" href="/contact-us">
+                            <li>Contact</li>
+                        </a>
+                        <li><a class="pam cls" href="https://pages.razorpay.com/fees-uncodemy" target="_blank">Fees
+                                Payment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="top-bar-random123">
+            <div class="button-container-xyz321"><a href="/new-launches-products" target="_blank"
+                    class="button-random654 new-launch2">📣 Check New Launches</a> <a
+                    href="/course/pg-program-course-details" target="_blank" class="button-random654 new-launch">PG
+                    Program Courses</a> <a href="/course/video-counselling-session" target="_blank"
+                    class="button-random654">Video Counselling Session</a> <a href="/placement#placement-2026"
+                    target="_blank" class="button-random654">Our Top Placement Report of 2026</a> <a
+                    href="mailto:info@gmail.com?subject=Certificate%20Request&body=Enrollment%20ID:%20%0ABatch%20Name:%20%0AStudent%20Name:%20%0ACourse%20Name:%20"
+                    target="_blank" class="button-random654">
+                    Download Certificate
+                </a></div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Getting Started with Playwright Testing: A Beginner’s Guide That Actually Makes Sense</h1>
+            <p>Let’s not sugarcoat it—automated testing has a reputation. Slow. Flaky. Frustrating. Most developers know
+                they should write tests, but few enjoy doing it. And for beginners, just setting things up feels like
+                solving a Rubik’s cube blindfolded.</p>
+            <p>But here’s the reality: modern web apps aren’t simple anymore. They’re fast-moving, JavaScript-heavy
+                beasts—built with frameworks like React, Vue, or Angular, packed with real-time data, modals inside
+                modals, infinite scrolls, and micro-interactions. If you’re not testing well, you’re shipping risk.</p>
+            <div class="banner-btn-group-hhjnn9"><a onclick="showForm()" class="cta-button-m5k2"><i
+                        class="fas fa-download"></i>Enroll Now</a><a onclick="showForm()" class="cta-button-m5k2"><i
+                        class="fas fa-download"></i>Request a Call</a><a onclick="showForm()"
+                    class="cta-button-m5k2">Scheduled a demo</a></div>
+        </div>
+        <div class="hero-image"><img loading="lazy" src="blog-img/web.jpg" width="80%" height="80%"
+                alt="Blogging Illustration"></div>
+    </section>
+    <div class="container-home">
+        <div class="left-home">
+            <div class="content-box-home">
+                <div class="card-blog" id="blogContainer">
+                    <h3 class="p1-home" id="about">Getting Started with Playwright Testing: A Beginner’s Guide That
+                        Actually Makes Sense</h3>
+                    <ul class="post-meta post-meta--4 style-2 ul_li">
+                        <li>
+                            <div class="post-meta__author ul_li">
+                                <div class="avatar"><img loading="lazy" src="/image/rishiraj.jpg"
+                                        srcset="/image/rishiraj.jpeg 2x" class="avatar avatar-22 photo" height="22"
+                                        width="22" decoding="async"></div><span>Mr. RishiRaj / <span class="year">2 days
+                                        ago</span></span>
+                            </div>
+                        </li>
+                        <li><i class="far fa-comment"></i>9</li>
+                        <li><i class="far fa-clock"></i>8 min read</li>
+                    </ul>
+                    <p><img loading="lazy" src="blog-img/web.jpg" alt="image" width="100%" height="100%"></p>
+                    <p class="p1-home">That’s why Playwright matters.</p>
+                    <p class="p1-home">Playwright is the framework that finally gets out of your way. It’s built to
+                        handle modern web complexity—out of the box. Multi-browser support? Built in. Auto-waits for
+                        elements? Built in. Powerful selectors, cross-platform testing, headless mode, parallel
+                        execution? Yep, all in there. You don’t need plugins or duct tape to make it usable. It just
+                        works—and it works well.</p>
+                    <p class="p1-home">And if you’re thinking, “Okay, sounds promising… but where the hell do I
+                        start?”—you’re not alone.</p>
+                    <p class="p1-home">This guide is built for people like you. New to automation. Curious but cautious.
+                        Maybe you've dabbled in Selenium, or maybe you’ve avoided testing altogether. Either way, we're
+                        cutting the jargon and showing you how to get productive fast—with real explanations, actual
+                        code, and no filler.</p>
+                    <p class="p1-home">Want to go deeper? Uncodemy’s <a href="https://uncodemy.com/course/playwright-training-course-in-noida"><strong>Playwright Automation Testing
+                            course</strong></a> is built exactly for this moment. It walks you through the real stuff—how to
+                        install and set up Playwright the right way, how to structure tests so they scale, how to avoid
+                        common flakiness, and how to write tests that don’t break every time the UI shifts by 5 pixels.
+                        No fluff, just hands-on, job-ready skills.</p>
+                    <p class="p1-home">Whether you're aiming to become a QA automation engineer, a full-stack dev who
+                        owns their testing stack, or someone trying to level up before your next job switch—Uncodemy’s
+                        course gives you the structure and depth you need.</p>
+                    <p class="p1-home">Now, let’s get our hands dirty.</p>
+                    <h4>Installing Playwright Without Getting Burned Out</h4>
+                    <p class="p1-home">Setting up testing tools can feel like pulling teeth. You follow some official
+                        docs or a YouTube tutorial from 2021, and suddenly you’re knee-deep in version mismatches,
+                        cryptic errors, and npm yelling at you about peer dependencies. Frustrating.</p>
+                    <p class="p1-home">But getting started with Playwright doesn’t have to be a rage-inducing
+                        experience. In fact, it's probably one of the smoothest setups in the web testing world right
+                        now—if you approach it with the right steps and skip the noise.</p>
+                    <h4>What You Actually Need (Before You Install Anything)</h4>
+                    <p class="p1-home">No complicated checklist here. Just make sure you have:</p>
+                    <ul>
+                        <li class="tools-home"><strong>Node.js (v16 or higher)</strong></li>
+                        <p class="p1-home">If you don’t have it, grab the latest LTS version from nodejs.org. You don’t
+                            need to install nvm or mess with environments unless you know you need that.</p>
+                        <li class="tools-home"><strong>A project folder</strong></li>
+                        <p class="p1-home">You can start fresh with a new folder or use an existing frontend/backend
+                            project. Playwright works standalone or alongside your app.</p>
+                        <li class="tools-home"><strong>VS Code (or any code editor you like)</strong></li>
+                        <p class="p1-home">We recommend VS Code because the Playwright extension for it is a godsend.
+                            But honestly, use whatever editor you feel comfortable in.</p>
+                    </ul>
+                    <p class="p1-home">If you're the kind of learner who likes someone walking you through all of this
+                        line by line—no judgment— <strong>Uncodemy's Playwright course</strong> does exactly that. It's
+                        made for folks who want to learn by doing, not by memorizing.</p>
+                    <h4>The One Command That Handles It All</h4>
+                    <p class="p1-home">Open your terminal in your project directory and type:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    npm init playwright@latest
+                        </pre>
+                    </div>
+                    <p class="p1-home">This is Playwright’s setup wizard, and it’s pretty great. It asks you a few
+                        questions, like:</p>
+                    <ul>
+                        <li class="tools-home">Do you want to use TypeScript? (Yes, you should.)</li>
+                        <li class="tools-home">Which browsers do you want to test? (Chromium, Firefox, WebKit—select
+                            all.)</li>
+                        <li class="tools-home">Do you want a GitHub Actions config? (Why not? CI is your future.)</li>
+                    </ul>
+                    <p class="p1-home">It’ll install the necessary packages, download the browsers, and scaffold a basic
+                        project structure. You don’t need to hunt for dependencies, install three other packages, or
+                        configure your test runner separately. It’s all baked in.</p>
+                    <p class="p1-home">Once it finishes, you’ll have something like this:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    tests/
+                    │
+
+                    ├── example.spec.ts     // Sample test to get started
+
+                    playwright.config.ts    // Your global config file
+
+                    package.json            // Scripts and dependencies
+
+                        </pre>
+                    </div>
+                    <p class="p1-home">Go ahead and run your first test:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                   npx playwright test
+                        </pre>
+                    </div>
+                    <p class="p1-home">It’ll launch in headless mode, run the example, and spit out results. If you see
+                        green, you’re golden.</p>
+                    <h4>Let’s Break Down What You Just Installed</h4>
+                    <p class="p1-home">This part trips people up, so let’s clarify:</p>
+                    <ul>
+                        <li class="tools-home"><strong>Playwright Test Runner:</strong> Unlike Selenium or older
+                            frameworks, Playwright includes its own test runner. You don’t need Jest or Mocha unless you
+                            really want them.</li>
+                        <li class="tools-home"><strong>Browser binaries:</strong> It doesn’t use your system browsers.
+                            It downloads specific versions of Chromium, Firefox, and WebKit so your tests are
+                            consistent, whether you’re running them on Mac, Windows, or CI.</li>
+                        <li class="tools-home"><strong>Config file:</strong> playwright.config.ts is where you’ll define
+                            global settings like base URLs, timeouts, parallel workers, and projects (aka different
+                            browser/device configs).</li>
+                    </ul>
+                    <p class="p1-home">That’s it. No layers of abstraction or legacy junk to worry about.</p>
+                    <h4>Bonus Move: Get the VS Code Extension</h4>
+                    <p class="p1-home">If you’re using VS Code, go install the Playwright Test for VS Code extension. It
+                        gives you:</p>
+                    <ul>
+                        <li class="tools-home">A test explorer pane to run/debug individual tests</li>
+                        <li class="tools-home">Inline test result indicators (green checkmarks or red Xs)</li>
+                        <li class="tools-home">Easy click-to-run functionality when debugging</li>
+                    </ul>
+                    <p class="p1-home">It’s not essential, but it’s one of those tools that makes testing feel less like
+                        work and more like you’re in control.</p>
+                    <p class="p1-home">The takeaway here is simple: <strong>Playwright is one of the easiest modern
+                            tools to set up</strong>, but only if you understand what’s actually happening during
+                        installation.</p>
+                    <p class="p1-home">The key is not to treat this like a “set it and forget it” step. Understand the
+                        structure. Know what’s being installed. Keep your project organized from day one.</p>
+                    <p class="p1-home">And if you want to cut your learning curve in half, take the route that’s made
+                        for real people: <strong>Uncodemy’s course on Playwright</strong>. It’s hands-on, no-BS, and
+                        packed with practical examples.</p>
+                    <h4>Writing Real Tests Without Getting Annoyed</h4>
+                    <p class="p1-home">So you’ve installed Playwright. You ran the example test. It blinked open a
+                        browser, did its thing, and now you’re staring at an empty test file thinking, “Alright... what
+                        now?”</p>
+                    <p class="p1-home">This is where most people get stuck. Not because Playwright is hard, but because
+                        every guide either talks down to you or gives you abstract code that doesn’t feel even remotely
+                        like your actual project.</p>
+                    <p class="p1-home">Let’s fix that. No buzzwords, no fake examples—just the kind of stuff you’ll
+                        actually write.</p>
+                    <h4>Start With a Login Test</h4>
+                    <p class="p1-home">If you’re building anything remotely useful, you’ve got a login page. So let’s
+                        start there.</p>
+                    <p class="p1-home">Here’s the simplest working test:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                import { test, expect } from '@playwright/test';
+
+                test('can visit login page', async ({ page }) => {
+                await page.goto('https://your-app.com/login');
+                await expect(page).toHaveURL(/login/);
+                });
+                        </pre>
+                    </div>
+                    <p class="p1-home">That’s it. If you’re new, don’t worry about being clever. Just focus on small,
+                        working pieces.</p>
+                    <p class="p1-home">Also: group your tests by feature. Don’t dump everything into one tests/ folder
+                        like a wild raccoon.</p>
+                    <h4>Add the Actual Login Flow</h4>
+                    <p class="p1-home">Now let’s make the test do something.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                test('logs in with valid credentials', async ({ page }) => {
+                await page.goto('https://your-app.com/login');
+
+                await page.getByLabel('Email').fill('user@example.com');
+                await page.getByLabel('Password').fill('mypassword');
+                await page.getByRole('button', { name: 'Log In' }).click();
+
+                await expect(page).toHaveURL('https://your-app.com/dashboard');
+                await expect(page.getByText('Welcome')).toBeVisible();
+                });
+
+                        </pre>
+                    </div>
+                    <p class="p1-home">That’s your full login path. You go to the page, fill in the form, click the
+                        button, and check what happens next.</p>
+                    <p class="p1-home">No waitForTimeout, no guessing. If something breaks, it’ll tell you.</p>
+                    <h4>Reuse Login Logic Like a Grown-Up</h4>
+                    <p class="p1-home">You’re not going to want to repeat that login block in every test. That’s a
+                        recipe for chaos. So abstract it:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                // helpers/login.ts
+                export async function login(page, email, password) {
+                await page.goto('https://your-app.com/login');
+                await page.getByLabel('Email').fill(email);
+                await page.getByLabel('Password').fill(password);
+                await page.getByRole('button', { name: 'Log In' }).click();
+                }
+                        </pre>
+                    </div>
+                    <p class="p1-home">Use it like this:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                import { login } from '../helpers/login';
+
+                test('dashboard shows correct greeting', async ({ page }) => {
+                await login(page, 'user@example.com', 'mypassword');
+                await expect(page.getByText('Welcome')).toBeVisible();
+                });
+
+                        </pre>
+                    </div>
+                    <p class="p1-home">Now your tests read like actual sentences. That’s what you want.</p>
+                    <h4>Cover Multiple User Roles (The Smart Way)</h4>
+                    <p class="p1-home">Most apps don’t have just one user. There’s admins, editors, guests, you name it.
+                        You can loop through them like this:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                const users = [
+                { email: 'admin@example.com', password: 'admin123', role: 'Admin' },
+                { email: 'user@example.com', password: 'user123', role: 'User' },
+                ];
+
+                for (const { email, password, role } of users) {
+                test(`${role} can log in`, async ({ page }) => {
+                    await login(page, email, password);
+                    await expect(page.getByText(`Welcome, ${role}`)).toBeVisible();
+                });
+                }
+                        </pre>
+                    </div>
+                    <p class="p1-home">This saves you from writing two near-identical tests. And you’re still testing
+                        real-world scenarios.</p>
+                    <h4>Don’t Test Just Success—Break It Too</h4>
+                    <p class="p1-home">It’s not enough to test happy paths. You need to make sure errors show up when
+                        they’re supposed to.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                test('shows error on bad login', async ({ page }) => {
+                await page.goto('https://your-app.com/login');
+                await page.getByLabel('Email').fill('fake@example.com');
+                await page.getByLabel('Password').fill('wrongpassword');
+                await page.getByRole('button', { name: 'Log In' }).click();
+
+                await expect(page.getByText('Invalid credentials')).toBeVisible();
+                });
+                        </pre>
+                    </div>
+                    <p class="p1-home">This is just as important as the success case. Maybe more.</p>
+                    <h4>Speed Things Up with Stored Sessions</h4>
+                    <p class="p1-home">Once you’ve got a lot of tests, running login every time is going to slow things
+                        down. You can store the session state and skip the login step altogether.</p>
+                    <p class="p1-home">First, record a session:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                npx playwright codegen https://your-app.com/login --save-storage=state.json
+                        </pre>
+                    </div>
+                    <p class="p1-home">Then use it in your config:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                test.use({ storageState: 'state.json' });
+                        </pre>
+                    </div>
+                    <p class="p1-home">Boom. Your test starts with the user already logged in. It’s not cheating—it’s
+                        efficient.</p>
+                    <h4>TL;DR of What You Just Did</h4>
+                    <ul>
+                        <li class="tools-home">You built a real login test from scratch</li>
+                        <li class="tools-home">You made it reusable</li>
+                        <li class="tools-home">You tested both good and bad inputs</li>
+                        <li class="tools-home">You added support for different user types</li>
+                        <li class="tools-home">You made your tests faster with session state</li>
+                    </ul>
+                    <p class="p1-home">All without having to install anything weird or fight the syntax.</p>
+                    <p class="p1-home">That’s how you write real tests in Playwright.</p>
+                    <h4>Real Talk: Scaling Tests Isn’t About Writing More, It’s About Writing Smarter</h4>
+                    <p class="p1-home">You don’t need 1,000 tests to have a good suite. You need:</p>
+                    <ul>
+                        <li class="tools-home">Fast, reliable feedback</li>
+                        <li class="tools-home">Clear results when stuff breaks</li>
+                        <li class="tools-home">CI that doesn’t suck</li>
+                        <li class="tools-home">A team that actually trusts the tests</li>
+                    </ul>
+                    <p class="p1-home">That’s the goal.</p>
+                    <p class="p1-home">And if this still feels overwhelming, <strong>Uncodemy’s Automation Testing with
+                            Playwright course</strong> walks you through all of this—CI setup, test strategy, mocking,
+                        flaky test fixes, everything. It’s not just another syntax tutorial. It's how real teams
+                        actually test modern apps.</p>
+                    <h4>Debugging Without Losing Your Mind</h4>
+                    <p class="p1-home">Failing tests are annoying. Especially when they used to pass, nothing’s changed
+                        (or so you think), and now your CI is screaming in red. It’s like trying to find a typo in a
+                        1,000-line essay—except the typo sometimes disappears when you’re not looking.</p>
+                    <p class="p1-home">That’s the thing about automation. Even with the best tools, flaky or failing
+                        tests happen. But if you know how to troubleshoot properly, Playwright makes it way easier than
+                        most.</p>
+                    <p class="p1-home">So let’s break it down—here’s how to debug Playwright tests like a calm, capable
+                        human being, not someone ready to throw their laptop out the window.</p>
+                    <p class="p1-home"><strong>1. Use --debug to Watch the Test Like a Movie</strong></p>
+                    <p class="p1-home">Your first move should never be “hmm maybe if I rerun it 3 more times it’ll fix
+                        itself.” Instead, fire up the debug mode:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                     npx playwright test login.spec.ts --debug
+                        </pre>
+                    </div>
+                    <p class="p1-home">This opens a real browser where you can literally see what the test is doing. It
+                        pauses between steps so you can check if the right button is being clicked, if the page loaded
+                        properly, or if something’s just plain missing.</p>
+                    <p class="p1-home">Bonus tip: slap <strong>test.only()</strong> on the one test you’re trying to
+                        fix. No need to wait on the whole suite.</p>
+                    <p class="p1-home"><strong>2. Pause the Test Mid-Flight</strong></p>
+                    <p class="p1-home">Sometimes you don’t want to watch the whole test. You want to stop right before
+                        the weird stuff starts.</p>
+                    <p class="p1-home">Here’s your move:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    await page.goto('https://yourapp.com/dashboard');
+                    await page.pause(); // Stops here, lets you poke around
+                        </pre>
+                    </div>
+                    <p class="p1-home">This brings up the Playwright Inspector. It’s like DevTools, but inside your test
+                        environment. Click around, inspect elements, even run JavaScript in the console.</p>
+                    <p class="p1-home">It's a game changer, especially when you’re dealing with dynamic UIs or hidden
+                        elements.</p>
+                    <p class="p1-home"><strong>3. Tracing = Instant Replay for Tests</strong></p>
+                    <p class="p1-home">If a test passes locally but fails in CI, don’t panic. That’s what Playwright’s
+                        tracing feature is for. It records everything your test does so you can replay it later like a
+                        full match highlight reel.</p>
+                    <p class="p1-home">Enable it like this in your config:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                        use: {
+                        trace: 'on-first-retry',
+                        }
+                        </pre>
+                    </div>
+                    <p class="p1-home">When a test bombs, run this:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    npx playwright show-trace trace.zip
+                        </pre>
+                    </div>
+                    <p class="p1-home">You’ll get a visual timeline: DOM changes, network requests, console logs, the
+                        works. It's like being able to rewind real life.</p>
+                    <p class="p1-home"><strong>4. Bad Selectors = Most Common Reason Tests Fail</strong></p>
+                    <p class="p1-home">If a test says it clicked a button but nothing happened, chances are the selector
+                        was off.</p>
+                    <p class="p1-home">Instead of writing brittle CSS like this:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    await page.click('button.submit');
+                        </pre>
+                    </div>
+                    <p class="p1-home">Use the Playwright-recommended approach:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    await page.getByRole('button', { name: 'Submit' }).click();
+                        </pre>
+                    </div>
+                    <p class="p1-home">Or better yet, use data-testid attributes in your codebase:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    &lt;button data-testid="save-settings"&gt;Save&lt;/button&gt;
+
+                    await page.getByTestId('save-settings').click();
+                        </pre>
+                    </div>
+                    <p class="p1-home">It’s cleaner, more stable, and less likely to break when someone moves things
+                        around in the UI.</p>
+                    <p class="p1-home"><strong>5. Don’t Ignore App Logs</strong></p>
+                    <p class="p1-home">Most apps log useful stuff to the browser console—errors, warnings, failed API
+                        calls. Playwright lets you hook into that:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    page.on('console', msg => {
+                    console.log(`APP LOG: [${msg.type()}] ${msg.text()}`);
+                    });
+                        </pre>
+                    </div>
+                    <p class="p1-home">You’ll catch those hidden JavaScript errors or failed fetches that don’t show up
+                        in the terminal but totally kill your tests.</p>
+                    <p class="p1-home"><strong>6. Screenshots & Videos: Not Fancy, Just Useful</strong></p>
+                    <p class="p1-home">You don’t need to record every test, but when something fails? You want that
+                        video.</p>
+                    <p class="p1-home">In your Playwright config:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    use: {
+                    screenshot: 'only-on-failure',
+                    video: 'retain-on-failure',
+                    }
+                        </pre>
+                    </div>
+                    <p class="p1-home">Now, when a test crashes, you can see exactly what the user would’ve seen.
+                        Screenshots freeze the moment; video tells the full story. Don’t skip this.</p>
+                    <p class="p1-home"><strong>7. Mock Stuff That Breaks or Slows You Down</strong></p>
+                    <p class="p1-home">Some things you can’t control—slow APIs, random data, or third-party services
+                        that occasionally flake. Mock them.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    await page.route('**/api/products', route => {
+
+                    route.fulfill({
+
+                        status: 200,
+
+                        contentType: 'application/json',
+
+                        body: JSON.stringify([{ id: 1, name: 'Test Product' }]),
+                    });
+                    });
+
+                        </pre>
+                    </div>
+                    <p class="p1-home">That way, your test doesn’t rely on a real network call—or someone else’s server
+                        behaving.</p>
+                    <p class="p1-home"><strong>8. Simplify Until It Breaks</strong></p>
+                    <p class="p1-home">If you’re stuck and nothing makes sense, start removing lines. Reduce the test to
+                        something minimal:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                await page.goto('https://yourapp.com');
+                await expect(page).toHaveTitle('Dashboard');
+                        </pre>
+                    </div>
+                    <p class="p1-home">Now slowly build it back up. One step at a time. Eventually, you’ll spot what’s
+                        causing the crash.</p>
+                    <p class="p1-home">Yes, it’s tedious. But it works. It always works.</p>
+                    <p class="p1-home"><strong>9. Retry… but With Caution</strong></p>
+                    <p class="p1-home">If you’ve got one flaky test and you’re really sure it’s an edge case, Playwright
+                        lets you retry it:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                    test('flaky test', async ({ page }) => {
+                    // test logic
+                    }).retry(2);
+                        </pre>
+                    </div>
+                    <p class="p1-home">Just don’t overuse this. If you're retrying everything all the time, you’re just
+                        hiding problems, not solving them.</p>
+                    <p class="p1-home"><strong>10. You’re Not a Failure Because Your Test Failed</strong></p>
+                    <p class="p1-home">Seriously. Everyone hits flaky tests. Everyone gets stuck. You’re not dumb, and
+                        your code probably isn’t garbage.</p>
+                    <p class="p1-home">Take a break, zoom out, and go at it again.</p>
+                    <p class="p1-home">And if you want structured help? Real guidance from real people? Uncodemy’s
+                        Playwright course walks you through debugging, selectors, mocking, and more—with examples you
+                        can actually understand. No dry theory. Just the stuff you wish you knew sooner.</p>
+                    <h4>Mocking, Stubbing, and Not Losing Your Sanity Over Test Data</h4>
+                    <p class="p1-home">Alright, time for some real talk. If you’ve ever written tests that depended on
+                        live APIs, flaky databases, or other people’s services, you’ve probably wanted to punch your
+                        screen. Been there.</p>
+                    <p class="p1-home">Here’s the thing: your tests shouldn’t care whether the backend is acting up or
+                        your Wi-Fi’s having a mood. That’s where mocking and stubbing step in—basically faking stuff so
+                        your tests don’t break because someone else’s code did.</p>
+                    <p class="p1-home">Let’s break this down in plain terms.</p>
+                    <h4>Why Mock At All?</h4>
+                    <p class="p1-home">Because you don’t want to test everything every time. You want to test your code.
+                        If your frontend breaks, it should be because of your logic, not because the “/orders” endpoint
+                        suddenly decided to return a 502.</p>
+                    <p class="p1-home">Mocking helps isolate what you’re testing. It makes your test suite predictable,
+                        fast, and less of a dumpster fire.</p>
+                    <h4>Playwright Makes This Stupidly Simple</h4>
+                    <p class="p1-home">Playwright lets you hijack any network request and serve your own made-up
+                        response.</p>
+                    <p class="p1-home">Here’s a real-world example: you’re testing a page that fetches user data.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                   await page.route('**/api/user', route => {
+                route.fulfill({
+                    status: 200,
+                    contentType: 'application/json',
+                    body: JSON.stringify({
+                    id: 1,
+                    name: 'Fake User',
+                    role: 'intern'
+                    })
+                });
+                });
+                        </pre>
+                    </div>
+                    <p class="p1-home">Boom. That request is now yours to control. It never hits the real backend.</p>
+                    <p class="p1-home"><strong>No Backend? No Problem</strong></p>
+                    <p class="p1-home">Let’s say the backend team hasn’t finished building the feature yet. But your PM
+                        still wants a demo by Friday. Mock it.</p>
+                    <p class="p1-home">This is super common in fast-moving teams. Mock the API, build the frontend, and
+                        plug in the real thing later. No blockers. No excuses.</p>
+                    <h4>You Can Go Granular Too</h4>
+                    <p class="p1-home">Don’t want to mock the whole endpoint? Just intercept and mess with one property.
+                    </p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                   await page.route('**/api/products', async (route, request) => {
+                const original = await request.fetch();
+                const json = await original.json();
+
+                json[0].price = 0; // Make it free for testing
+                route.fulfill({
+                    response: original,
+                    body: JSON.stringify(json)
+                });
+                });
+                        </pre>
+                    </div>
+                    <p class="p1-home">Now your test sees a modified version without blowing up the whole response.</p>
+                    <p class="p1-home"><strong>Stubbing in Your Tests: Not Just a Backend Thing</strong></p>
+                    <p class="p1-home">Sometimes you’re not mocking network calls—you’re stubbing browser APIs.</p>
+                    <p class="p1-home">Let’s say your app uses <strong>navigator.geolocation</strong>. Playwright lets
+                        you fake that too.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                   await context.grantPermissions(['geolocation']);
+                   await page.setGeolocation({ latitude: 12.9716, longitude: 77.5946 }); // Bangalore, baby
+                        </pre>
+                    </div>
+                    <p class="p1-home">Now your app thinks the user’s in Bangalore. Try that with plain Selenium.</p>
+                    <h4>When Not to Mock</h4>
+                    <p class="p1-home">Don’t get carried away. If you mock everything, your tests might all pass, but
+                        your app still breaks in production. Not a good look.</p>
+                    <p class="p1-home">The rule of thumb: mock only when the real thing is flaky, unfinished, or outside
+                        your control.</p>
+                    <p class="p1-home">For your own logic, use real data flows as much as you can. If you’re testing a
+                        login form, hit the real endpoint. If you’re testing weather in Antarctica? Mock away.</p>
+                    <h4>Bonus: Mocking for Speed</h4>
+                    <p class="p1-home">Real API calls are slow. Like, really slow in CI pipelines. Mocking makes tests
+                        fly. You can go from a 10-minute test suite to 2 minutes just by cutting out network junk.</p>
+                    <h4>Want to Go Deeper?</h4>
+                    <p class="p1-home">If all this sounds like magic but you’re still not sure how to apply it in a real
+                        app, check out Uncodemy’s Playwright course. They walk through mocking with actual codebases,
+                        show how to simulate edge cases, and help you build a test setup that doesn’t collapse under
+                        pressure. Totally beginner-friendly.</p>
+                    <h4>Writing Test Data That Doesn’t Suck (And Actually Helps)</h4>
+                    <p class="p1-home">You’ve made it this far. Your tests are solid. They run fast. You’ve mocked flaky
+                        APIs, intercepted third-party nonsense, and even faked GPS like a pro. But if your test data is
+                        half-baked, confusing, or just copy-pasted from some random JSON file—you’re still building on
+                        sand.</p>
+                    <p class="p1-home">So let’s fix that.</p>
+                    <h4>Use Data That Looks and Feels Real</h4>
+                    <p class="p1-home">I’m not saying you need real names and emails from your production database
+                        (please don’t), but your mock data should still feel legit. If it’s too barebones, your tests
+                        won’t catch real-world issues. If it’s too messy, good luck understanding failures later.</p>
+                    <p class="p1-home">Bad :</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                   const user = { name: 'test', email: 'x@y.z' };
+                        </pre>
+                    </div>
+                    <p class="p1-home">Better :</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                const user = {
+                name: 'Ayesha Malik',
+                email: 'ayesha.malik@example.com',
+                role: 'editor',
+                isActive: true
+                };
+                        </pre>
+                    </div>
+                    <p class="p1-home">That tells you something. It reflects what your app is actually expecting. And
+                        when it breaks, the reason will actually make sense.</p>
+                    <h4>Don’t Repeat Yourself (Or Regret It Later)</h4>
+                    <p class="p1-home">Stop pasting the same user object into every test. Seriously. Just write a
+                        helper.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                function makeUser(overrides = {}) {
+                return {
+                    id: crypto.randomUUID(),
+                    name: 'Default User',
+                    email: 'default@example.com',
+                    role: 'user',
+                    ...overrides
+                };
+                }
+                        </pre>
+                    </div>
+                    <p class="p1-home">Then you can create exactly what you need, without repeating yourself:</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                const admin = makeUser({ role: 'admin' });
+                const inactive = makeUser({ isActive: false });
+                        </pre>
+                    </div>
+                    <p class="p1-home">Clean, simple, and way easier to update when things change.</p>
+                    <h4>Keep Fixtures Focused</h4>
+                    <p class="p1-home">Big, bloated JSON files full of every possible field? Hard pass. Keep things
+                        scoped. If you're testing the dashboard, mock just enough data for that. If you're testing
+                        project creation, mock just the project—not five users and three invoices too.</p>
+                    <p class="p1-home">Inline it if it's small. Use a fixture file if multiple tests share it. Just
+                        don’t hoard data.</p>
+                    <h4>Avoid Random for Random’s Sake</h4>
+                    <p class="p1-home">It’s tempting to use a faker library and go wild with randomness. But guess what?
+                        Random test data breaks in weird ways. You’ll get a CI failure on Wednesday because one username
+                        had a special character you weren’t expecting.</p>
+                    <p class="p1-home">Instead: pick realistic defaults. Use seeded randomness if you need variety. Make
+                        your tests consistent and repeatable.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                const projectName = `test-project-${Date.now()}`;
+                        </pre>
+                    </div>
+                    <p class="p1-home">That’s fine for local runs. But in CI? Stick with fixed, predictable values
+                        unless you're intentionally testing edge cases.</p>
+                    <h4>Keep Setup Light</h4>
+                    <p class="p1-home">A red flag: your test setup is half a page long, and the thing you're testing is
+                        one line at the bottom. That’s a smell.</p>
+                    <p class="p1-home">If your test is about showing a message when a user has no projects, don’t create
+                        five users and mock two APIs just to get there. Stub what matters. Skip the rest.</p>
+                    <p class="p1-home">Your test should tell a clear story:</p>
+                    <ul>
+                        <li class="tools-home">what’s being tested,</li>
+                        <li class="tools-home">what the expected state is,</li>
+                        <li class="tools-home">and how the app should respond.</li>
+                    </ul>
+                    <p class="p1-home">The rest is just noise.</p>
+                    <h4>Bonus: Name Things Like a Human</h4>
+                    <p class="p1-home">Please. No more data.json or user1, user2, user3. Give your test data intentional
+                        names.</p>
+                    <div class="code-container"><button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                        <pre id="code-block">
+                const guestUser = makeUser({ role: 'guest' });
+                const suspendedUser = makeUser({ status: 'suspended' });
+                        </pre>
+                    </div>
+                    <p class="p1-home">Now your test reads like English. You’ll thank yourself next week when you
+                        revisit it.</p>
+                    <h4>Final Thoughts</h4>
+                    <p class="p1-home">Good test data is like good scaffolding. It’s not flashy, but without it, the
+                        whole thing collapses when someone bumps the wall.</p>
+                    <p class="p1-home">Here’s what matters:</p>
+                    <ul>
+                        <li class="tools-home">Keep it close to reality.</li>
+                        <li class="tools-home">Avoid over-engineering.</li>
+                        <li class="tools-home">Name stuff well.</li>
+                        <li class="tools-home">Use helpers so you don’t repeat yourself.</li>
+                        <li class="tools-home">And always remember: the goal of test data is to support the test, not
+                            overshadow it.</li>
+                    </ul>
+                    <p class="p1-home">You now know how to write real tests, fake what’s flaky, debug what’s broken, and
+                        build a test suite that doesn’t fall apart when someone else pushes to main.</p>
+                    <p class="p1-home">That’s huge.</p>
+                    <p class="p1-home">If you ever feel stuck or want a proper walkthrough with actual projects and
+                        broken apps you can fix yourself, check out Uncodemy’s Playwright course. No fluff. Just working
+                        code, explained clearly.</p>
+                    <p class="p1-home">Now go build something. And if it breaks? You’ll be ready.</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-home">
+            <div class="fixed-section-blog-right-content-sjs">
+                <div class="form-main-container form-main-container-blog footer-main-form-container">
+                    <div class="form-header-container">
+                        <div class="header-section">Application Form</div>
+                        <div class="form-container form-container-blog footer-form-container">
+                            <form onsubmit="submitForm(event)" id="form">
+                                <div class="input-section name-section"><label for="name">Name</label><input type="text"
+                                        id="name" name="name" required></div>
+                                <div class="input-section name-section"><label for="email">Email Address</label><input
+                                        type="email" id="email" name="email" required></div>
+                                <div class="input-section name-section"><label for="mobile">Phone Number</label><input
+                                        type="tel" id="mobile" name="mobile" required
+                                        oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)"
+                                        onchange="this.value=this.value.replace(/\D/g,'').slice(0,10)"></div>
+                                <div class="input-section name-section"><label for="location">Location</label><input
+                                        type="text" id="location" name="location" required></div>
+                                <div class="input-section name-section"><label for="course">Course</label><select
+                                        id="staticCourse" name="course" required data-course-loaded="false">
+                                        <option disabled selected>Select Your Course</option>
+                                    </select></div><input type="submit" class="submit-btn" id="submitBtn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerslider-seprate-sleder-99nf9nbsh-last-fixed">
+                    <div class="heading-slider-lastt">
+                        <h4>Placed Students</h4>
+                    </div>
+                    <div class="slider-containerslider-seprate-sleder-99nf9nbsh-last-fixed plcd-stnd"
+                        id="sliderslider-seprate-sleder-99nf9nbsh-last-fixed-0">
+                        <div class="sliderslider-seprate-sleder-99nf9nbsh-last-fixed">
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    src="blog-img/student1.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    src="blog-img/student2.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    src="blog-img/student3.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    src="blog-img/student4.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    src="blog-img/student5.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerslider-seprate-sleder-99nf9nbsh-last-fixed">
+                    <div class="heading-slider-lastt">
+                        <h4>Our Clients</h4>
+                    </div>
+                    <div class="slider-containerslider-seprate-sleder-99nf9nbsh-last-fixed"
+                        id="sliderslider-seprate-sleder-99nf9nbsh-last-fixed-1">
+                        <div class="sliderslider-seprate-sleder-99nf9nbsh-last-fixed">
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/client1.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/client2.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/client3.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/client4.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/client5.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerslider-seprate-sleder-99nf9nbsh-last-fixed">
+                    <div class="heading-slider-lastt">
+                        <h4>Partners</h4>
+                    </div>
+                    <div class="slider-containerslider-seprate-sleder-99nf9nbsh-last-fixed"
+                        id="sliderslider-seprate-sleder-99nf9nbsh-last-fixed-2">
+                        <div class="sliderslider-seprate-sleder-99nf9nbsh-last-fixed">
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/partners1.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/partners2.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/partners3.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/partners4.png"></div>
+                            <div class="card-seprate-sleder-99nf9nbsh-last"><img loading="lazy"
+                                    class="img-slider-seprate-sleder-99nf9nbsh-last" src="blog-img/partners5.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-x9k3" id="pagination-controls-x9k3-details"></div>
+    <section class="optimized-section-x3k9">
+        <h2 class="section-heading-main-j7d2">Uncodemy Learning Platform</h2>
+        
+        <div class="courses-section-v8n2">
+            <h3 class="section-title-f5m8">Popular Courses</h3>
+            <div class="courses-carousel-static-x4k8" id="courses-carousel">
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/data-science-bhopal.jpg"
+                            alt="Data Science"> <span class="course-badge-static-m3j8">TRENDING</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Data Science</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 12
+                                Weeks</span></div><a href="/course/data-science-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/data-analytics.jpg"
+                            alt="Data Analytics"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Data Analytics</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 10
+                                Weeks</span></div><a href="/course/data-analytics-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/full-stack.jpg"
+                            alt="Full Stack Development"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Full Stack Development</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 24
+                                Weeks</span></div><a href="/course/full-stack-development-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/artificial-intelligence.png"
+                            alt="Data Science"> <span class="course-badge-static-m3j8">TRENDING</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Artificial Intelligence</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 12
+                                Weeks</span></div><a href="/course/artificial-intelligence-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/business-analyst.jpg"
+                            alt="Software Testing img"> <span class="course-badge-static-m3j8">HOT</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Business Analyst</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20
+                                Weeks</span></div><a href="/course/business-analyst-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/automation-testing.webp"
+                            alt="Software Testing img"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Automation Testing</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20
+                                Weeks</span></div><a href="/course/automation-testing-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/amazon-web-service.jpg"
+                            alt="Software Testing img"> <span class="course-badge-static-m3j8">HOT</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Amazon Web Services</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20
+                                Weeks</span></div><a href="/course/aws-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/devops.jpeg"
+                            alt="Software Testing img"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Devops</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20
+                                Weeks</span></div><a href="/course/devops-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/Cloud-Computing.jpg"
+                            alt="Software Testing img"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Cloud Computing</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20
+                                Weeks</span></div><a href="/course/cloud-computing-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/software-testing.jpg"
+                            alt="Software Testing img"> <span class="course-badge-static-m3j8">HOT</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Software Testing</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20
+                                Weeks</span></div><a href="/course/software-testing-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+                <div class="course-card-static-l9d3">
+                    <div class="course-image-static-p5n9"><img loading="lazy" src="/image/Digital-Marketing.jpg"
+                            alt="DM"> <span class="course-badge-static-m3j8">POPULAR</span></div>
+                    <div class="course-content-static-b9k4">
+                        <h4 class="course-title-static-n5j7">Digital Marketing</h4>
+                        <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 8
+                                Weeks</span></div><a href="/course/digital-marketing-training-course-in-noida"
+                            class="course-btn-static-j4n8">View Course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <div class="footer-fixed-section">
+        <div class="ask-for-demo fixed-section-child" onclick="showPopUpForm()"><span class="below-btn">Ask For
+                Demo</span></div><a class="contact-thumb" href="https://pages.razorpay.com/fees-uncodemy"
+            target="_blank">
+            <div class="fee-payment fixed-section-child"><span class="below-btn">Fee Payment</span></div>
+        </a><a href="https://api.whatsapp.com/send?phone=918800023723" target="_blank">
+            <div class="whatsapp fixed-section-child"><span class="below-btn">WhatsApp</span></div>
+        </a><a class="ail ail1" href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">
+            <div class="email-section fixed-section-child"><span class="below-btn">Email</span></div>
+        </a><a class="ail" href="tel:+9198183 66550">
+            <div class="phone fixed-section-child"><span class="below-btn">Call Us Now</span></div>
+        </a>
+    </div>
+<footer>
+        <div class="container-fluid position-relative overlay-top text-white-50 px-0 footer2">
+            <div class="main-container footer-container">
+                <div class="row footer-middle">
+                    <div class="footer-thumb footer-thumb-1 mb-5"><a href="/" class="navbar-brand mb-3"><img
+                                loading="lazy" class="iG lazy-load" data-src="/image/Uncodemy logo-10.png" alt="gp"></a>
+                        <p class="m-0">Uncodemy is a team of high-class working professionals associated with a
+                            Fortune500 company. We are on a mission to employ millions. if you want a job, or career
+                            change,Uncodemy is the right place for you. We will teach you how to work with the latest
+                            technology.</p>
+                        <div class="d-flex justify-content-start mt-4 social-icon-container"><a class="text-white mr-4"
+                                href="https://twitter.com/uncodemy?lang=en" target="_blank"
+                                aria-label="Read more about Seminole tax hike"><i
+                                    class="fa-brands fa-twitter"></i></a><a class="text-white mr-4"
+                                href="https://www.facebook.com/uncodemyofficial/" target="_blank"
+                                aria-label="Read more about Seminole tax hike"><i
+                                    class="fab fa-2x fa-facebook-f"></i></a><a class="text-white mr-4"
+                                href="https://www.linkedin.com/company/uncodemy?originalSubdomain=in" target="_blank"
+                                aria-label="Read more about Seminole tax hike"><i
+                                    class="fab fa-2x fa-linkedin-in"></i></a><a class="text-white"
+                                href="https://www.instagram.com/uncodemyofficial/?hl=en" target="_blank"
+                                aria-label="Read more about Seminole tax hike"><i
+                                    class="fa-brands fa-instagram"></i></a></div>
+                        <p class="m-0 by">Certified By-</p>
+                        <div class="ache"><img loading="lazy" class="nas lazy-load" data-src="/img/tools/1.jpeg"><img
+                                loading="lazy" class="nas1 lazy-load" data-src="/image/acheive.webp">
+                            <div class="irm"><img loading="lazy" class="nas2 lazy-load"
+                                    data-src="/image/Trustpilot-Reviews-Services-1.webp"><a href="/contact-us"
+                                    aria-label="Read more about Seminole tax hike"><img loading="lazy"
+                                        class="nas3 lazy-load" data-src="/image/CONTACT-US.webp"></a></div>
+                        </div>
+                    </div>
+                    <div class="footer-thumb mb-5"><span class="text-white mb-3 get-in">Get In Touch</span>
+                        <div class="footer-flex"><i class="fa fa-map-marker-alt mr-2"></i>
+                            <p>B 14-15, Udhyog Marg, Block B, Sector 1, Near Noida Sector-15 Metro Station, Delhi NCR
+                                Uttar&nbsp;Pradesh&nbsp;201301</p>
+                        </div>
+                        <div class="footer-flex"><i class="fa fa-phone-alt mr-2"></i><a href="tel:+9198183 66550"
+                                style="text-decoration: none; color: black;"><span>+91 9818366550</span></a></div>
+                        <div class="footer-flex"><i class="fa fa-phone-alt mr-2"></i><a href="tel:+91 8766313646"
+                                style="text-decoration: none; color: black;"><span>+91 8766313646</span></a></div>
+                        <div class="footer-flex"><i class="fa fa-phone-alt mr-2"></i><a href="tel:+91 8800023723"
+                                style="text-decoration: none; color: black;"><span>+91 8800023723</span></a></div>
+                        <div class="footer-flex"><i class="fa fa-envelope mailto:mr-2"></i><span><a
+                                    href="mailto:info@uncodemy.com"
+                                    aria-label="Email Uncodemy">info@uncodemy.com</a></span></div>
+                        <hr>
+                        <div class="footer-flex"><i class="fa fa-map-marker-alt mr-2"></i>
+                            <p>USA- 2439 Bagwell Avenue, Gainesville, Florida-32601</p>
+                        </div>
+                        <div class="footer-flex"><i class="fa fa-phone-alt mr-2"></i>
+                            <p>+1-718 416 9028</p>
+                        </div>
+                        <hr>
+                        <div class="footer-flex"><i class="fa fa-map-marker-alt mr-2"></i>
+                            <p>UK - 68 Southern Way, North Lopham, London IP22 0HE</p>
+                        </div>
+                        <div class="footer-flex"><i class="fa fa-phone-alt mr-2"></i>
+                            <p>+44 20 3287 0088</p>
+                        </div>
+                    </div>
+                    <div class="footer-thumb mb-5"><span class="text-white mb-3 get-in">Quick Links</span>
+                        <div class="d-flex flex-column justify-content-start"
+                            style="font-family:'Roboto', sans-serif;;"><a class="text-white-50 mb-2"
+                                href="/privacy-policy"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a><a
+                                class="text-white-50 mb-2" href="/terms-and-conditions"><i
+                                    class="fa fa-angle-right mr-2"></i>Terms &amp; Condition</a><a
+                                class="text-white-50 mb-2" href="/refund-policy"><i
+                                    class="fa fa-angle-right mr-2"></i>Refund Policy</a><a class="text-white-50 mb-2"
+                                href="/register-now"><i class="fa fa-angle-right mr-2"></i>Register Now</a><a
+                                class="text-white-50" href="/contact-us"
+                                aria-label="Read more about Seminole tax hike"><i
+                                    class="fa fa-angle-right mr-2"></i>Contact Us</a></div>
+                    </div>
+                    <div class="footer-thumb mb-5"><span class="text-white mb-3 get-in">Payments</span>
+                        <div class="d-flex flex-column justify-content-start"
+                            style="font-family:'Roboto', sans-serif;;">
+                            <p class="m-0 by">Secure Payments by :</p><img loading="lazy" class="nasc lazy-load"
+                                data-src="/img/tools/payment.webp"><a href="https://pages.razorpay.com/fees-uncodemy"
+                                target="_blank" aria-label="Read more about Seminole tax hike"><img loading="lazy"
+                                    class="nasco lazy-load" data-src="/img/tools/payment.jpeg"></a><a
+                                href="https://api.whatsapp.com/send?phone=918800023723" class="text-white-50 mb-2"
+                                target="_blank" aria-label="Read more about Seminole tax hike"><img loading="lazy"
+                                    class="nasco lazy-load" data-src="/img/tools/whatsappp-logo-png-2293-768x512.png"
+                                    aria-label="Read more about Seminole tax hike"></a><span onclick="showPopUpForm()"
+                                href="/ask-for-demo" class="text-white-50 mb-2"><img loading="lazy"
+                                    class="nasco lazy-load" data-src="/img/tools/demo.jpeg"></span><a
+                                class="text-white-50 mb-2" href="/placement"
+                                aria-label="Read more about Seminole tax hike"><img loading="lazy"
+                                    class="nasco lazy-load" data-src="/img/placement/pc5.jpg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="footer">
+            <div class="container foo">
+                <hr class="hor" style="background-color: white;">
+                <div class="footer-bottom fr">
+                    <div class="ft-course ft"><span class="zone">Students Zone</span><a class="zonea"
+                            href="/blog">Blogs</a><a class="zonea" href="/summer-training-in-noida">Summer
+                            Training</a><a class="zonea" href="/winter-training-in-noida">Winter Training</a><a
+                            class="zonea" href="/industrial-training">Industrial Training</a><a class="zonea"
+                            href="/corporate-training">Corporate Training</a><a class="zonea"
+                            href="/placement">Placement</a><a class="zonea" href="/#specific-section">VideoReviews</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-bottom"><b class="citpage">Cities Course Pages.</b>
+                            <div class="ft-course"><span class="best-course">Best Courses in Noida</span><a
+                                    href="/course/software-testing-training-course-in-noida">Software Testing Training
+                                    Course in Noida</a><a href="/course/data-science-training-course-in-noida">Data
+                                    Science Training Course in Noida</a><a
+                                    href="/course/data-analytics-training-course-in-noida">Data Analytics Training
+                                    Course in Noida</a><a
+                                    href="/course/full-stack-development-training-course-in-noida">Full Stack Developer
+                                    Training Course in Noida</a><a
+                                    href="/course/digital-marketing-training-course-in-noida">Digital Marketing Training
+                                    course in Noida</a><span class="best-course">Best Courses in Delhi</span><a
+                                    href="/course/software-testing-training-course-in-delhi">Software Testing Training
+                                    Course in Delhi</a><a href="/course/data-science-training-course-in-delhi">Data
+                                    Science Training Course in Delhi</a><a
+                                    href="/course/data-analytics-training-course-in-delhi">Data Analytics Training
+                                    Course in Delhi</a><a
+                                    href="/course/full-stack-development-training-course-in-delhi">Full Stack Developer
+                                    Training Course in Delhi</a><a
+                                    href="/course/digital-marketing-training-course-in-delhi">Digital Marketing Training
+                                    Course in Delhi</a><span class="best-course">Best Courses in Pune</span><a
+                                    href="/course/software-testing-training-course-in-pune">Software Testing Training
+                                    Course in Pune</a><a href="/course/data-science-training-course-in-pune">Data
+                                    Science Training Course in Pune</a><a
+                                    href="/course/data-analytics-training-course-in-pune">Data Analytics Training Course
+                                    in Pune</a><a href="/course/full-stack-development-training-course-in-pune">Full
+                                    Stack Developer Training Course in Pune</a><a
+                                    href="/course/digital-marketing-training-course-in-pune">Digital Marketing Training
+                                    Course in Pune</a><span class="best-course">Best Courses in Bangalore</span><a
+                                    href="/course/software-testing-training-course-in-bangalore">Software Testing
+                                    Training Course in Bangalore</a><a
+                                    href="/course/data-science-training-course-in-bangalore">Data Science Training
+                                    Course in Bangalore</a><a
+                                    href="/course/data-analytics-training-course-in-bangalore">Data Analytics Training
+                                    in Bangalore</a><a
+                                    href="/course/full-stack-development-training-course-in-bangalore">Full Stack
+                                    Developer Training Course in Bangalore</a><a
+                                    href="/course/digital-marketing-training-course-in-bangalore">Digital Marketing
+                                    Training Course in Bangalore</a><span class="best-course">Best Courses in
+                                    Mumbai</span><a href="/course/software-testing-training-course-in-mumbai">Software
+                                    Testing Training Course in Mumbai</a><a
+                                    href="/course/data-science-training-course-in-mumbai">Data Science Training Course
+                                    in Mumbai</a><a href="/course/data-analytics-training-course-in-mumbai">Data
+                                    Analytics Trainingin Mumbai</a><a
+                                    href="/course/full-stack-development-training-course-in-mumbai">Full Stack Developer
+                                    Training Course in Mumbai</a><a
+                                    href="/course/digital-marketing-training-course-in-mumbai">Digital Marketing
+                                    Training Course in Mumbai</a><span class="best-course">Best Courses in
+                                    Hyderabad</span><a
+                                    href="/course/software-testing-training-course-in-hyderabad">Software Testing
+                                    Training Course in Hyderabad</a><a
+                                    href="/course/data-science-training-course-in-hyderabad">Data Science Training
+                                    Course in Hyderabad</a><a
+                                    href="/course/data-analytics-training-course-in-hyderabad">Data Analytics Training
+                                    Course in Hyderabad</a><a
+                                    href="/course/full-stack-development-training-course-in-hyderabad">Full Stack
+                                    Developer Training Course in Hyderabad</a><a
+                                    href="/course/digital-marketing-training-course-in-hyderabad">Digital Marketing
+                                    Training Course in Hyderabad</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container-fluid copy text-white-50 border-top py-4"
+            style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                        <p class="m-0">Copyright © <a class="text-white" href="/">Uncodemy Edutech Pvt. Ltd.</a> All
+                            Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <p class="m-0">Designed by <a class="text-white" href="/">Uncodemy</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="/course/js/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="blog.js"></script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+
+</html>

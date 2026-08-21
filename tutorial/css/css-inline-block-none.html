@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Inline, block and none display style | Web Development Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn CSS Inline, block and none display style with clear explanations, examples, and best practices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+                        <a href="https://uncodemy.com/">CSS</a>
+            <span class="sep">/</span>
+            <span class="current">Page 4 of 5: CSS Inline, block and none display style</span>
+        </div>
+    </div>
+
+    <div class="layout">
+
+        <aside class="sidebar-left">
+            <h4>CSS Topics</h4>
+            <ul class="topic-list">
+                <li><a href="introduction-to-css.html"><span class="num">01</span>Introduction to CSS</a></li>
+                <li><a href="css-force-wrap.html"><span class="num">02</span>CSS to force long text and urls to wrap on all browser</a></li>
+                <li><a href="html-color-codes.html"><span class="num">03</span>Html Color Codes</a></li>
+                <li><a href="css-inline-block-none.html" class="active"><span class="num">04</span>CSS Inline, block and none display style</a></li>
+                <li><a href="css-scrollbar-div.html"><span class="num">05</span>CSS to show only horizontal and vertical scroll bar in div</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <span class="eyebrow"><i class="fas fa-layer-group"></i> CSS Display</span>
+            <h1>CSS Inline, block and none display style</h1>
+
+            <div class="card">
+
+                <h2>Overview</h2>
+                <p>The CSS <code>display</code> property is one of the most important and frequently used properties in web development. It determines how an element is rendered in the document layout. The three most fundamental values — <code>block</code>, <code>inline</code>, and <code>none</code> — define the core behavior of all HTML elements. Understanding these is essential for controlling page structure and creating responsive designs.</p>
+
+                <h2>1. Display: Block</h2>
+                <p>Elements with <code>display: block</code> take up the full width available (by default) and start on a new line. They stack vertically, one after another. Common block-level elements include <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, and <code>&lt;section&gt;</code>.</p>
+
+                <ul>
+                    <li><b>Width:</b> By default, expands to fill its parent container.</li>
+                    <li><b>Height:</b> Depends on content, but can be set explicitly.</li>
+                    <li><b>Margins &amp; Padding:</b> Both top/bottom and left/right margins work as expected.</li>
+                    <li><b>Line break:</b> Always starts on a new line.</li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.block-example</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">display</span>: <span style="color:#032f62;">block</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">width</span>: <span style="color:#032f62;">300px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">background</span>: <span style="color:#032f62;">lightblue</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">padding</span>: <span style="color:#032f62;">10px</span>;<br />
+                    }
+                </div>
+
+                <div style="background:lightblue;padding:10px;margin:0.5rem 0;width:300px;">This is a block element with width 300px.</div>
+                <div style="background:lightblue;padding:10px;margin:0.5rem 0;width:300px;">Another block element sits below.</div>
+
+                <h2>2. Display: Inline</h2>
+                <p>Inline elements do not start on a new line and only take up as much width as necessary. They flow within the text content. Common inline elements are <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;img&gt;</code>.</p>
+
+                <ul>
+                    <li><b>Width:</b> Only as wide as its content; <code>width</code> and <code>height</code> properties have no effect.</li>
+                    <li><b>Height:</b> Determined by content; cannot be set explicitly.</li>
+                    <li><b>Margins &amp; Padding:</b> Horizontal margins and padding work, but vertical margins (top/bottom) are ignored.</li>
+                    <li><b>Line break:</b> Does not force a new line.</li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.inline-example</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">display</span>: <span style="color:#032f62;">inline</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">background</span>: <span style="color:#032f62;">yellow</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">padding</span>: <span style="color:#032f62;">5px</span>;<br />
+                    }
+                </div>
+
+                <p>Here is some text with <span style="display:inline;background:yellow;padding:5px;">an inline element</span> inside it. Notice it doesn't break the line.</p>
+
+                <h2>3. Display: None</h2>
+                <p>When an element is set to <code>display: none</code>, it is completely removed from the document flow. It is not rendered and does not occupy any space, as if it doesn't exist. This is different from <code>visibility: hidden</code>, which hides the element but still reserves its space.</p>
+
+                <ul>
+                    <li>Element is not visible.</li>
+                    <li>No space is allocated for it.</li>
+                    <li>It does not affect layout.</li>
+                    <li>Commonly used to show/hide elements dynamically (e.g., with JavaScript).</li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.hidden</span> { <span style="color:#005cc5;">display</span>: <span style="color:#032f62;">none</span>; }
+                </div>
+
+                <div style="border:1px solid #ccc;padding:10px;margin:1rem 0;">
+                    <div style="background:lightgreen;padding:5px;">This is visible.</div>
+                    <div style="display:none;">This is hidden (display: none) – you can't see it.</div>
+                    <div style="background:lightgreen;padding:5px;">This is also visible.</div>
+                </div>
+
+                <h2>4. Display: Inline-Block</h2>
+                <p>While not in the basic trio, <code>inline-block</code> is a very useful hybrid. It allows an element to sit inline with text, but it can also have width, height, margins, and padding applied as if it were a block element.</p>
+
+                <ul>
+                    <li>Flows inline (no line break).</li>
+                    <li>Respects <code>width</code> and <code>height</code>.</li>
+                    <li>Vertical margins and padding work.</li>
+                    <li>Great for creating grids of boxes or navigation items.</li>
+                </ul>
+
+                <div style="background:#f5f7fa;padding:1rem;border-radius:8px;font-family:monospace;font-size:0.9rem;margin:1rem 0;">
+                    <span style="color:#d73a49;">.inline-block-box</span> {<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">display</span>: <span style="color:#032f62;">inline-block</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">width</span>: <span style="color:#032f62;">100px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">height</span>: <span style="color:#032f62;">100px</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">background</span>: <span style="color:#032f62;">orange</span>;<br />
+                    &nbsp;&nbsp;<span style="color:#005cc5;">margin</span>: <span style="color:#032f62;">5px</span>;<br />
+                    }
+                </div>
+
+                <div>
+                    <div style="display:inline-block;width:100px;height:100px;background:orange;margin:5px;"></div>
+                    <div style="display:inline-block;width:100px;height:100px;background:orange;margin:5px;"></div>
+                    <div style="display:inline-block;width:100px;height:100px;background:orange;margin:5px;"></div>
+                </div>
+                <p style="margin-top:10px;">Three inline-block boxes sit side by side.</p>
+
+                <h2>5. Comparison Table</h2>
+                <div style="overflow-x:auto;margin:1rem 0;">
+                    <table style="width:100%;border-collapse:collapse;font-size:0.95rem;background:#f8f9fa;border:1px solid #ddd;">
+                        <thead>
+                            <tr style="background:#e9ecef;">
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">Property</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">block</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">inline</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">none</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;">inline-block</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Starts new line</td><td style="border:1px solid #ddd;padding:8px;">Yes</td><td style="border:1px solid #ddd;padding:8px;">No</td><td style="border:1px solid #ddd;padding:8px;">N/A</td><td style="border:1px solid #ddd;padding:8px;">No</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Width/Height respected</td><td style="border:1px solid #ddd;padding:8px;">Yes</td><td style="border:1px solid #ddd;padding:8px;">No</td><td style="border:1px solid #ddd;padding:8px;">N/A</td><td style="border:1px solid #ddd;padding:8px;">Yes</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Vertical margin/padding</td><td style="border:1px solid #ddd;padding:8px;">Yes</td><td style="border:1px solid #ddd;padding:8px;">No (margin)</td><td style="border:1px solid #ddd;padding:8px;">N/A</td><td style="border:1px solid #ddd;padding:8px;">Yes</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Occupies space</td><td style="border:1px solid #ddd;padding:8px;">Yes</td><td style="border:1px solid #ddd;padding:8px;">Yes</td><td style="border:1px solid #ddd;padding:8px;">No</td><td style="border:1px solid #ddd;padding:8px;">Yes</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>6. Practical Uses</h2>
+                <ul>
+                    <li><b>Block:</b> Layout containers, sections, headings, paragraphs.</li>
+                    <li><b>Inline:</b> Emphasizing text, links, inline icons.</li>
+                    <li><b>None:</b> Dynamically hiding/showing content (e.g., menus, modals, conditional rendering).</li>
+                    <li><b>Inline-block:</b> Navigation menus, grids of cards, button groups, horizontal lists.</li>
+                </ul>
+
+                <h2>7. Common Mistakes</h2>
+                <ul>
+                    <li><b>Setting width on inline elements:</b> It has no effect; use inline-block if you need sizing.</li>
+                    <li><b>Forgetting that <code>display: none</code> removes the element completely:</b> Use <code>visibility: hidden</code> if you need the space kept.</li>
+                    <li><b>Overusing <code>display: block</code> on inline elements:</b> This can break flow; consider if it's truly needed.</li>
+                    <li><b>Not handling whitespace in inline-block:</b> Inline-block elements may have gaps due to HTML whitespace; use <code>font-size: 0</code> or flexbox to fix.</li>
+                </ul>
+
+                <h2>8. Browser Support</h2>
+                <p>All <code>display</code> values discussed are fully supported in every modern browser, including Chrome, Firefox, Safari, Edge, and Opera. They also work in older browsers (IE 8+ for all values).</p>
+
+                <h2>Summary</h2>
+                <p>The <code>display</code> property is a cornerstone of CSS layout. Understanding the differences between <code>block</code>, <code>inline</code>, and <code>none</code> — and how <code>inline-block</code> bridges the gap — will give you complete control over how elements are rendered. Master these basics, and you'll be well on your way to building complex, responsive layouts with confidence.</p>
+
+            </div>
+
+            <div class="prev-next">
+                <a href="html-color-codes.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Html Color Codes</a>
+                <a href="css-scrollbar-div.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>CSS to show only horizontal and vertical scroll bar in div</a>
+            </div>
+
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world web development?</h3>
+                    <p>Learn HTML, CSS3, Bootstrap and JavaScript hands-on with mentor-led sessions.</p>
+                </div>
+                                          <a <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>Full Stack Development</h4>
+                <p class="batch-sub">Kickstart your web dev journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

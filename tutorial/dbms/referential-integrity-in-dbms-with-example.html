@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referential Integrity in DBMS With Example | Uncodemy</title>
+<meta name="description" content="Understand referential integrity in DBMS, how foreign keys enforce it, and see a practical example of maintaining consistent relational data.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://uncodemy.com/sql-training/">DBMS & SQL Training Course</a>
+  <span class="sep">/</span>
+  <span>Page 5 of 11</span>
+</nav>
+
+<div class="page-shell">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+    <h4>Course Topics</h4>
+    <ul class="topic-nav">
+      <li><a href="what-are-the-8-types-of-dbms.html">What are the 8 Types of DBMS?</a></li>
+      <li><a href="understanding-data-abstraction-in-dbms.html">Understanding Data Abstraction in DBMS</a></li>
+      <li><a href="data-models-in-dbms-types-features-applications.html">Data Models in DBMS: Types, Features, and Applications</a></li>
+      <li><a href="data-definition-language-ddl-in-dbms.html">Data Definition Language (DDL) in DBMS: Structuring Your Database</a></li>
+      <li><a href="referential-integrity-in-dbms-with-example.html" class="active">Referential Integrity in DBMS With Example</a></li>
+      <li><a href="acid-properties-in-dbms.html">ACID Properties in DBMS: Atomicity, Consistency, Isolation, and Durability</a></li>
+      <li><a href="transaction-in-dbms.html">Transaction in DBMS: Ensuring Data Integrity and Consistency</a></li>
+      <li><a href="difference-between-dbms-and-rdbms.html">Difference Between DBMS and RDBMS: A Comprehensive Guide</a></li>
+      <li><a href="top-50-postgresql-interview-questions-and-answers.html">Top 50 PostgreSQL Interview Questions and Answers</a></li>
+      <li><a href="top-50-dbms-viva-questions-and-answers.html">Top 50 DBMS Viva Questions and Answers</a></li>
+      <li><a href="dbms-mcq-with-answers.html">50+ DBMS MCQ – Database Management System MCQ with Answers</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <article class="content-card">
+<h1>Referential Integrity in DBMS With Example</h1>
+      
+<p><b>Referential integrity</b> is a database rule that ensures relationships between tables remain consistent — specifically, that a foreign key value in one table always corresponds to an existing primary key value in another table.</p>
+
+<h2>Why Referential Integrity Matters</h2>
+<p>Without referential integrity, you could end up with "orphaned" records — for example, an order in an <code>orders</code> table pointing to a customer ID that no longer exists in the <code>customers</code> table. This breaks data reliability and can crash applications relying on that data.</p>
+
+<h2>How It's Enforced</h2>
+<p>Referential integrity is enforced using <b>foreign key constraints</b>. When you define a foreign key, the database automatically checks that any value inserted matches an existing primary key in the referenced table.</p>
+
+<h2>Example</h2>
+<p><code>CREATE TABLE customers (customer_id INT PRIMARY KEY, name VARCHAR(100));</code></p>
+<p><code>CREATE TABLE orders (order_id INT PRIMARY KEY, customer_id INT, FOREIGN KEY (customer_id) REFERENCES customers(customer_id));</code></p>
+<p>With this setup, trying to insert an order with a <code>customer_id</code> that doesn't exist in the <code>customers</code> table will be rejected by the database.</p>
+
+<h2>Referential Actions</h2>
+<table>
+  <tr><th>Action</th><th>Behavior</th></tr>
+  <tr><td>CASCADE</td><td>Automatically updates or deletes matching rows in the child table</td></tr>
+  <tr><td>SET NULL</td><td>Sets the foreign key value to NULL when the parent row is deleted</td></tr>
+  <tr><td>RESTRICT</td><td>Prevents deletion or update if related rows exist</td></tr>
+  <tr><td>NO ACTION</td><td>Similar to RESTRICT, checked at the end of the transaction</td></tr>
+</table>
+
+<p>Referential integrity is a core part of maintaining a reliable relational database, and understanding it is essential before moving on to broader concepts like ACID properties and transactions.</p>
+      <div class="cta-box">
+        <div>
+          <h3>Ready to master DBMS & SQL Training Course?</h3>
+          <p>Join Uncodemy's hands-on training with mentor support and placement assistance.</p>
+        </div>
+        <a class="btn-cta" href="https://uncodemy.com/sql-training/">Explore Course</a>
+      </div>
+    </article>
+
+    <div class="pagination-nav">
+      <a class="prev" href="data-definition-language-ddl-in-dbms.html"><span class="label">&larr; Previous</span><span class="title">Data Definition Language (DDL) in DBMS: Structuring Your Database</span></a>
+      <a class="next" href="acid-properties-in-dbms.html"><span class="label">Next &rarr;</span><span class="title">ACID Properties in DBMS: Atomicity, Consistency, Isolation, and Durability</span></a>
+    </div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+
+    <div class="batch-card">
+      <span class="batch-badge">🔥 Upcoming Batch</span>
+      <h3>DBMS</h3>
+      <div class="course-name">Live Instructor-Led Training</div>
+
+      <ul class="batch-meta">
+        <li><span>Next Batch Starts</span><span>1 August 2026</span></li>
+        <li><span>Duration</span><span>3 Months</span></li>
+      </ul>
+
+      <div class="countdown" aria-label="Batch countdown timer">
+        <div class="unit"><span class="num" data-cd-days>00</span><span class="lbl">Days</span></div>
+        <div class="unit"><span class="num" data-cd-hours>00</span><span class="lbl">Hrs</span></div>
+        <div class="unit"><span class="num" data-cd-mins>00</span><span class="lbl">Min</span></div>
+        <div class="unit"><span class="num" data-cd-secs>00</span><span class="lbl">Sec</span></div>
+      </div>
+
+      <ul class="perks">
+        <li>Live Classes</li>
+        <li>Mentor Support</li>
+        <li>Placement Assistance</li>
+      </ul>
+
+      <span class="seats-badge">Limited Seats Available</span>
+      <button class="btn-landing" type="button" data-landing-btn>Go to Course Landing Page</button>
+    </div>
+
+    <div class="help-card">
+      <h4>Need Help?</h4>
+      <a class="help-row" data-phone-link href="tel:">
+        <span class="icon">📞</span>
+        <span>Talk to our Counselor: <span data-phone-text>+91 9818366550</span></span>
+      </a>
+      <a class="help-row" data-whatsapp-link href="#" target="_blank" rel="noopener">
+        <span class="icon">💬</span>
+        <span>Chat on WhatsApp</span>
+      </a>
+    </div>
+  </aside>
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="js/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

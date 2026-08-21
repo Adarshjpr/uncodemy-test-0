@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Commerce Graduate in 2026: Should You Learn IT or Skip It? | Uncodemy</title>
+    <meta name="description" content="Complete guide for commerce graduates to decide whether to learn IT in 2026. Compare IT vs commerce career paths, salary, growth, and make the right choice." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/commerce-graduate-learn-it-or-skip-2026" />
+    <meta property="og:title" content="Commerce Graduate in 2026: Should You Learn IT or Skip It? | Uncodemy" />
+    <meta property="og:description" content="A decision-making guide for commerce graduates. Compare IT careers vs traditional commerce paths — salary, growth, skills, and a clear framework to decide." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+    <style>
+        .decision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .decision-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .decision-box .d-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .decision-box .d-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .decision-box .d-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .decision-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .decision-box .d-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .decision-box .d-v {
+                font-size: 14px;
+            }
+            .decision-box .d-l {
+                font-size: 8px;
+            }
+            .decision-box .d-d {
+                font-size: 9px;
+            }
+        }
+        .role-tag {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        .commerce-tip {
+            border-left: 3px solid #0B6E75;
+            background: #E8F4F4;
+            padding: 14px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        .comparison-highlight {
+            background: #fffcf0;
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+        .comparison-highlight h3 {
+            margin-top: 0;
+        }
+        .flow-row .icon-row {
+            display: inline-flex;
+            gap: 4px;
+        }
+        .flow-row .icon-row svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+        .demo-bar .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .s-card h4 .icon-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .s-card h4 .icon-row svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+        .rating-stars {
+            display: inline-flex;
+            gap: 1px;
+            vertical-align: -2px;
+        }
+        .rating-stars svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--primary);
+            color: var(--primary);
+        }
+        .path-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .path-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .path-box .p-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .path-box .p-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .path-box .p-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .path-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .path-box .p-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .path-box .p-v {
+                font-size: 14px;
+            }
+            .path-box .p-l {
+                font-size: 8px;
+            }
+            .path-box .p-d {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <i data-lucide="search" style="width:15px;height:15px;stroke:currentColor;stroke-width:2.4;"></i>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <i data-lucide="menu" style="width:24px;height:24px;stroke:currentColor;stroke-width:2;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Commerce Graduate in 2026: <mark>Should You Learn IT or Skip It?</mark></h1>
+                <p class="lede">You've earned your B.Com or BBA. Now you're standing at a crossroads — pursue a traditional commerce career or dive into the world of IT. This guide gives you a clear, unbiased framework to decide what's right for you — based on your strengths, interests, and goals.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search 'commerce graduate learn it or skip'" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Commerce Careers</button>
+                    <button class="chip" aria-pressed="false">IT Careers</button>
+                    <button class="chip" aria-pressed="true">Decision Making</button>
+                    <button class="chip" aria-pressed="false">FinTech</button>
+                    <button class="chip" aria-pressed="false">Business Analysis</button>
+                    <button class="chip" aria-pressed="false">Career Advice</button>
+                    <button class="chip" aria-pressed="false">Salary Comparison</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <i data-lucide="bar-chart-3" style="width:16px;height:16px;color:var(--primary);"></i>
+                        <b>Career Comparison · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="Compare career paths">
+                        <button aria-pressed="true" data-r="commerce">Commerce</button>
+                        <button aria-pressed="false" data-r="it">IT</button>
+                        <button aria-pressed="false" data-r="hybrid">Hybrid (FinTech)</button>
+                    </div>
+                    <div class="decision-grid" id="decisionTiers">
+                        <div class="decision-box"><div class="d-l">Avg. Starting Salary</div><div class="d-v" id="salaryVal">—</div><div class="d-d">India, fresher</div></div>
+                        <div class="decision-box"><div class="d-l">Growth Potential</div><div class="d-v" id="growthVal">—</div><div class="d-d">5‑year outlook</div></div>
+                        <div class="decision-box"><div class="d-l">Learning Curve</div><div class="d-v" id="curveVal">—</div><div class="d-d">Time to master</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Commerce Graduate</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Assess Your Goals</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Choose Your Path</span>
+                        <i data-lucide="arrow-right" style="width:14px;height:14px;color:var(--primary);"></i>
+                        <span>Build Your Career</span>
+                    </div>
+                    <div class="demo-cap">Click a path to see salary, growth potential, and learning curve. The best choice depends on your strengths and career goals.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs">
+            <a href="#top">Home</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Career Guides</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <a href="#top">Commerce to IT</a>
+            <i data-lucide="chevron-right" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i>
+            <span>Commerce Graduate Decision Guide</span>
+        </p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Decision Guide · Commerce vs IT</p>
+                <h1>Commerce Graduate in 2026: Should You Learn IT or Skip It? — Complete Decision Guide</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 18 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>15 min read</span>
+                    <span class="badge">Free · decision guide</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 980 300" role="img" aria-label="Commerce graduate decision path diagram">
+                        <defs>
+                            <marker id="ar23" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g23" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="980" height="300" fill="url(#g23)" />
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="35">COMMERCE GRADUATE</text>
+                            <text x="360" y="35">SKILLS &amp; INTERESTS</text>
+                            <text x="670" y="35">CAREER PATHS</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="50" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Your background</text>
+                        <text x="50" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Accounting &amp; finance</text>
+                        <text x="50" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Business laws</text>
+                        <text x="50" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Economics &amp; markets</text>
+                        <text x="50" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Communication skills</text>
+                        <rect x="35" y="215" width="210" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="70" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Strong foundation</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="55" width="240" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="340" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Your strengths</text>
+                        <text x="340" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Analytical thinking</text>
+                        <text x="340" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Business perspective</text>
+                        <text x="340" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Problem-solving</text>
+                        <text x="340" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Communication</text>
+                        <rect x="325" y="215" width="210" height="28" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">Highly transferable</text>
+
+                        <!-- Column 3 -->
+                        <rect x="630" y="55" width="320" height="210" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="660" y="85" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Career paths</text>
+                        <text x="660" y="109" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Traditional Commerce</text>
+                        <text x="660" y="133" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• IT / Tech (Business Roles)</text>
+                        <text x="660" y="157" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Hybrid (FinTech, BA)</text>
+                        <text x="660" y="181" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Entrepreneurship</text>
+                        <rect x="655" y="215" width="270" height="28" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="695" y="233" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Choose wisely</text>
+
+                        <path d="M260 160 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar23)" />
+                        <path d="M550 160 H616" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar23)" />
+                    </svg>
+                    <figcaption>Commerce graduates have a strong foundation in business, finance, and communication — skills that are valuable in both traditional and IT careers.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — Should you learn IT or skip it?</h2>
+                    <p><b>The short answer: It depends on your goals, but you don't have to choose one or the other.</b> Commerce graduates have a unique advantage — you can blend your business knowledge with technology skills to become a highly valuable hybrid professional.</p>
+                    <p>Three paths to consider:</p>
+                    <ul>
+                        <li><b>Traditional Commerce</b> — Accounting, finance, banking, audit, compliance. Stable, predictable, but slower salary growth.</li>
+                        <li><b>Pure IT (Business Roles)</b> — Business Analyst, IT Sales, Project Management, QA Testing. Leverage your communication and analytical skills in tech.</li>
+                        <li><b>Hybrid (FinTech &amp; Analytics)</b> — The sweet spot. Combine commerce knowledge with data analytics, FinTech, or business intelligence for maximum career growth.</li>
+                    </ul>
+                    <p>This guide will help you assess your strengths, understand each path, and make a confident decision.</p>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Why commerce graduates are in demand in IT</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Three career paths — compared</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Path 1: Traditional Commerce</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Path 2: IT Careers (Business Roles)</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Path 3: Hybrid — FinTech &amp; Analytics</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Salary comparison — which pays more?</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Decision framework — 5 questions to ask yourself</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Step‑by‑step roadmap for each path</a></li>
+                        <li><a href="#s9"><span class="n">09</span>Skills you already have (and what to add)</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">11</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">12</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">13</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Why commerce graduates are in demand in IT</h2>
+                <p>If you think your commerce degree is irrelevant in tech, think again. Here's why you're a hidden gem:</p>
+                <ul>
+                    <li><b>Business understanding</b> — you know how companies operate, how money flows, and what drives business decisions.</li>
+                    <li><b>Communication skills</b> — you can translate complex business needs into clear requirements — a skill most engineers lack.</li>
+                    <li><b>Analytical thinking</b> — you're trained to analyse data, identify patterns, and make data‑driven decisions.</li>
+                    <li><b>Domain expertise</b> — your understanding of finance, accounting, and economics is invaluable in FinTech, banking software, and ERP systems.</li>
+                    <li><b>Adaptability</b> — commerce graduates are used to learning new concepts and adapting to changing regulations and markets.</li>
+                </ul>
+                <div class="commerce-tip"><b>Key insight:</b> The most valuable professionals in IT are not pure coders — they're people who understand business AND technology. Commerce graduates are perfectly positioned to fill this gap.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Three career paths — compared</h2>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Aspect</th><th>Traditional Commerce</th><th>IT (Business Roles)</th><th>Hybrid (FinTech/Analytics)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Starting Salary</b></td><td>₹3–5 LPA</td><td>₹4–8 LPA</td><td>₹6–12 LPA</td></tr>
+                            <tr><td><b>5‑Year Growth</b></td><td>Moderate (₹6–10 LPA)</td><td>High (₹10–18 LPA)</td><td>Very High (₹15–25 LPA)</td></tr>
+                            <tr><td><b>Learning Curve</b></td><td>Low</td><td>Moderate</td><td>Moderate–Steep</td></tr>
+                            <tr><td><b>Coding Required</b></td><td>None</td><td>Low (SQL basics)</td><td>Low–Medium</td></tr>
+                            <tr><td><b>Job Security</b></td><td>Stable</td><td>High</td><td>Very High</td></tr>
+                            <tr><td><b>Remote Work</b></td><td>Limited</td><td>High</td><td>High</td></tr>
+                            <tr><td><b>Best For</b></td><td>Stability‑focused</td><td>Communication‑focused</td><td>Growth‑focused</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>Path 1: Traditional Commerce</h2>
+                <p>This is the classic path — accounting, finance, banking, audit, taxation, and compliance roles. It's stable, predictable, and requires no coding.</p>
+                <h3>Pros</h3>
+                <ul>
+                    <li>Directly uses your commerce knowledge</li>
+                    <li>Stable, established career path</li>
+                    <li>Clear progression (CA, CMA, MBA)</li>
+                    <li>No coding required</li>
+                </ul>
+                <h3>Cons</h3>
+                <ul>
+                    <li>Slower salary growth compared to IT</li>
+                    <li>Limited remote work opportunities</li>
+                    <li>Requires certifications (CA, CMA, MBA) for significant growth</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Accountant</span> <span class="role-tag">Finance Analyst</span> <span class="role-tag">Auditor</span> <span class="role-tag">Tax Consultant</span> <span class="role-tag">Banking Officer</span></p>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Path 2: IT Careers (Business Roles)</h2>
+                <p>These are IT roles that don't require coding — they leverage your communication, analytical, and business skills.</p>
+                <h3>Top roles for commerce graduates</h3>
+                <ul>
+                    <li><b>Business Analyst</b> — translate business requirements into technical specifications</li>
+                    <li><b>QA Tester</b> — test software for quality and usability</li>
+                    <li><b>IT Sales / Account Manager</b> — sell software and IT services</li>
+                    <li><b>Project Coordinator</b> — manage IT projects and timelines</li>
+                    <li><b>Support Analyst</b> — help customers with software issues</li>
+                </ul>
+                <h3>What you'll need to learn</h3>
+                <ul>
+                    <li>Basic SQL (for data queries)</li>
+                    <li>Jira / Confluence (project tools)</li>
+                    <li>Excel / Google Sheets (data analysis)</li>
+                    <li>Agile fundamentals</li>
+                    <li>Domain knowledge (the industry you're targeting)</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">Business Analyst</span> <span class="role-tag">QA Tester</span> <span class="role-tag">IT Sales Executive</span> <span class="role-tag">Project Coordinator</span></p>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Path 3: Hybrid — FinTech &amp; Analytics</h2>
+                <p>This is the sweet spot — combining commerce knowledge with technology skills. It offers the highest growth and salary potential.</p>
+                <h3>What is FinTech?</h3>
+                <p>FinTech (Financial Technology) is the use of technology to improve financial services. It includes digital payments, lending, insurance, wealth management, and blockchain.</p>
+                <h3>What is Business Analytics?</h3>
+                <p>Business Analytics uses data to make better business decisions. Commerce graduates with data skills are in high demand.</p>
+                <h3>What you'll need to learn</h3>
+                <ul>
+                    <li>Data analytics (Excel, SQL, Python basics)</li>
+                    <li>Data visualisation (Tableau, Power BI)</li>
+                    <li>FinTech fundamentals (digital payments, blockchain)</li>
+                    <li>Business intelligence and reporting</li>
+                    <li>Basic programming (Python for data)</li>
+                </ul>
+                <h3>Job roles</h3>
+                <p><span class="role-tag">FinTech Analyst</span> <span class="role-tag">Business Intelligence Analyst</span> <span class="role-tag">Data Analyst</span> <span class="role-tag">Product Manager (FinTech)</span> <span class="role-tag">Risk Analyst</span></p>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Salary comparison — which pays more?</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Career Path</th><th>0‑2 years</th><th>3‑5 years</th><th>5‑10 years</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Traditional Commerce</b></td><td>₹3–5 LPA</td><td>₹6–8 LPA</td><td>₹8–12 LPA</td></tr>
+                            <tr><td><b>IT (Business Roles)</b></td><td>₹4–8 LPA</td><td>₹8–14 LPA</td><td>₹12–20 LPA</td></tr>
+                            <tr><td><b>Hybrid (FinTech/Analytics)</b></td><td>₹6–12 LPA</td><td>₹12–20 LPA</td><td>₹18–30+ LPA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="commerce-tip"><b>Key insight:</b> The hybrid path offers the highest salary potential because you're combining two valuable skill sets — business and technology. Companies pay a premium for professionals who understand both.</div>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Decision framework — 5 questions to ask yourself</h2>
+                <p>Score yourself on each question to decide which path fits you best.</p>
+
+                <ol class="steps">
+                    <li><b>Do you enjoy numbers and data?</b><br>
+                        <span style="font-size:14px;color:var(--text-muted);">If yes → Hybrid (Analytics) or IT. If no → Traditional Commerce.</span>
+                    </li>
+                    <li><b>Do you want to learn new technology?</b><br>
+                        <span style="font-size:14px;color:var(--text-muted);">If yes → IT or Hybrid. If no → Traditional Commerce.</span>
+                    </li>
+                    <li><b>Is salary growth your top priority?</b><br>
+                        <span style="font-size:14px;color:var(--text-muted);">If yes → Hybrid or IT. If stability is more important → Traditional Commerce.</span>
+                    </li>
+                    <li><b>Do you enjoy communicating and working with people?</b><br>
+                        <span style="font-size:14px;color:var(--text-muted);">If yes → IT business roles or Hybrid. If no → Traditional Commerce or coding-heavy IT.</span>
+                    </li>
+                    <li><b>Are you willing to invest 6‑12 months in learning?</b><br>
+                        <span style="font-size:14px;color:var(--text-muted);">If yes → IT or Hybrid. If no → Traditional Commerce.</span>
+                    </li>
+                </ol>
+
+                <div class="comparison-highlight">
+                    <h3>Quick decision matrix</h3>
+                    <ul>
+                        <li><b>Stability‑seeker →</b> Traditional Commerce</li>
+                        <li><b>Communication‑focused →</b> IT Business Roles</li>
+                        <li><b>Growth‑focused →</b> Hybrid (FinTech / Analytics)</li>
+                        <li><b>Not sure →</b> Start with IT Business Roles, then transition to Hybrid</li>
+                    </ul>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Step‑by‑step roadmap for each path</h2>
+
+                <h3>Traditional Commerce (6‑12 months)</h3>
+                <ol>
+                    <li>Pursue professional certifications (CA, CMA, CPA)</li>
+                    <li>Build Excel and financial modeling skills</li>
+                    <li>Apply for entry‑level roles in accounting, audit, or banking</li>
+                </ol>
+
+                <h3>IT Business Roles (6‑9 months)</h3>
+                <ol>
+                    <li>Learn IT fundamentals (SDLC, Agile, basic SQL)</li>
+                    <li>Get a certification (ISTQB for QA, ECBA for BA, CSM for PM)</li>
+                    <li>Build a portfolio project (test plan, BRD, project plan)</li>
+                    <li>Apply for entry‑level roles</li>
+                </ol>
+
+                <h3>Hybrid (FinTech / Analytics) — 9‑12 months</h3>
+                <ol>
+                    <li>Learn data analytics (Excel, SQL, Python basics, Tableau)</li>
+                    <li>Learn FinTech fundamentals (digital payments, blockchain basics)</li>
+                    <li>Build a portfolio project (data dashboard, FinTech analysis)</li>
+                    <li>Apply for FinTech or analytics roles</li>
+                </ol>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>Skills you already have (and what to add)</h2>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Your existing skills</th><th>Traditional Commerce</th><th>IT Business Roles</th><th>Hybrid (FinTech/Analytics)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Accounting &amp; Finance</b></td><td>Use directly</td><td>Financial software domain</td><td>FinTech domain</td></tr>
+                            <tr><td><b>Business Laws</b></td><td>Use directly</td><td>Compliance domain</td><td>RegTech domain</td></tr>
+                            <tr><td><b>Communication</b></td><td>Basic</td><td>Core skill</td><td>Core skill</td></tr>
+                            <tr><td><b>Analytical Thinking</b></td><td>Use directly</td><td>Core skill</td><td>Core skill</td></tr>
+                            <tr><td><b>What to add</b></td><td>CA/CMA certification</td><td>SQL, Jira, Agile</td><td>SQL, Python, Tableau, FinTech knowledge</td></tr>
+                            <tr><td><b>Time to add</b></td><td>1‑3 years</td><td>6‑9 months</td><td>9‑12 months</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Interview Q&amp;A — for commerce graduates</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Why are you considering IT with a commerce background?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I have a strong foundation in business and finance from my commerce degree. I'm interested in how technology is transforming the business world — especially in FinTech and analytics. I want to combine my business knowledge with tech skills to become a more valuable professional."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>What's the biggest advantage of a commerce background in IT?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I understand how businesses operate, how money flows, and what drives decisions. In IT roles like Business Analyst or FinTech, this is invaluable — I can translate business requirements into technical solutions more effectively than someone without that foundation."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>Do you have any technical skills?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I've learned basic SQL for data queries, I'm familiar with Jira and Agile methodologies, and I've completed a certification in Business Analysis. I'm also learning Tableau and Python basics for data analytics."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>What's your understanding of FinTech?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "FinTech is the use of technology to deliver financial services — digital payments, lending, insurance, wealth management, and blockchain. Companies like Paytm, Razorpay, and Zerodha are examples. I'm particularly interested in how data analytics is transforming risk assessment and customer experience in banking."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>Do you plan to pursue higher education?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I'm considering an MBA in Business Analytics or FinTech in the future, but first I want to gain work experience and build technical skills. I believe practical experience combined with certifications is the most effective way to build my career."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>What salary are you expecting?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "Based on market research, I'm looking at a range of ₹4–8 LPA for an entry‑level role in IT or FinTech. I'm primarily focused on learning and growth, so I'm flexible."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>What if you don't like coding?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "That's completely fine — many IT business roles like Business Analyst, QA Tester, IT Sales, and Project Coordinator require minimal or no coding. I'm focusing on these roles where my communication and analytical skills are the primary value."</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you see yourself in 5 years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> "I see myself as a senior Business Analyst or FinTech Product Manager, leading projects and bridging the gap between business and technology. I want to use my commerce knowledge and tech skills to build products that solve real business problems."</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 11</span>Test yourself — decision readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 12</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is it worth learning IT as a commerce graduate?</summary><div class="body"><p>Yes. Commerce graduates who learn IT skills (especially analytics and FinTech) have higher earning potential and more career options than those who stick to traditional paths.</p></div></details>
+                <details class="acc"><summary>Do I need to learn coding as a commerce graduate?</summary><div class="body"><p>Not necessarily. You can build a great IT career in business roles like Business Analyst, QA Tester, IT Sales, or Project Management without coding. Basic SQL is helpful but not mandatory.</p></div></details>
+                <details class="acc"><summary>What is the best IT path for a commerce graduate?</summary><div class="body"><p>Business Analyst and FinTech roles are the most natural fit. They leverage your business knowledge while adding technology skills. Business Intelligence and Data Analytics are also excellent options.</p></div></details>
+                <details class="acc"><summary>How long does it take to switch from commerce to IT?</summary><div class="body"><p>With 5‑10 hours of study per week, you can be job‑ready in 6‑9 months for business roles, and 9‑12 months for analytics/FinTech roles.</p></div></details>
+                <details class="acc"><summary>Is FinTech a good career for commerce graduates?</summary><div class="body"><p>Yes. FinTech is one of the fastest‑growing sectors and perfectly combines commerce knowledge (finance, accounting, economics) with technology. Commerce graduates are in high demand in FinTech.</p></div></details>
+                <details class="acc"><summary>Should I pursue CA or MBA instead of IT?</summary><div class="body"><p>It depends on your goals. CA offers deep financial expertise but takes 3‑5 years. MBA offers broader business knowledge but requires 2 years and significant investment. IT skills can be learned faster and combined with your commerce degree.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 13</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Commerce to IT — complete roadmap</span><span class="m">Career · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">FinTech career guide for commerce graduates</span><span class="m">FinTech · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Business Analyst — complete beginner guide</span><span class="m">BA · 16 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">SQL for commerce graduates — step by step</span><span class="m">SQL · 12 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Data analytics for non‑tech professionals</span><span class="m">Analytics · 20 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Commerce vs IT — salary comparison 2026</span><span class="m">Career · 10 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>From commerce to IT — with our job‑ready programmes</h3>
+                    <p>Our Business Analysis, FinTech, and Data Analytics programmes are designed for commerce graduates. Learn from industry experts, build a portfolio, and get placement support.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                        <li>Placement support</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4><i data-lucide="graduation-cap" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Free demo class</h4>
+                    <div class="big">Find your path — commerce to IT</div>
+                    <p>Attend a live session — Business Analysis, FinTech, or Data Analytics — designed for commerce graduates like you.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 10:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <i data-lucide="file-text" style="width:26px;height:26px;stroke:#FF5421;stroke-width:1.8;flex:none;"></i>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes decision framework</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4><i data-lucide="book-open" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Commerce to IT — complete decision guide</a></li>
+                        <li><a href="#"><span class="rank">02</span>FinTech — complete beginner guide</a></li>
+                        <li><a href="#"><span class="rank">03</span>Business Analyst — step‑by‑step</a></li>
+                        <li><a href="#"><span class="rank">04</span>Data analytics for commerce graduates</a></li>
+                        <li><a href="#"><span class="rank">05</span>Commerce vs IT — salary comparison</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="help-circle" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Business Analyst · 60 questions</a></li>
+                        <li><a href="#">FinTech · 50 questions</a></li>
+                        <li><a href="#">Data Analytics · 70 questions</a></li>
+                        <li><a href="#">Career Transition · 45 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Commerce to Tech Programme</div>
+                    <p>Business Analysis, FinTech, and Data Analytics — designed for commerce graduates. Weekend batches and placement support.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4><i data-lucide="briefcase" style="width:16px;height:16px;color:var(--primary);display:inline;vertical-align:middle;"></i> Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going — commerce to tech guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">FinTech — complete beginner guide <small>Start your FinTech journey</small></a></li>
+                    <li><a href="#">Business Analyst — step‑by‑step <small>Bridge business and tech</small></a></li>
+                    <li><a href="#">Data analytics for commerce graduates <small>Learn skills step by step</small></a></li>
+                    <li><a href="#">SQL for non‑tech professionals <small>Start with basic queries</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Business Analyst roadmap <small>BA → Senior BA → Product Manager</small></a></li>
+                    <li><a href="#">FinTech roadmap <small>Analyst → Manager → Director</small></a></li>
+                    <li><a href="#">Data Analyst roadmap <small>SQL → Python → BI</small></a></li>
+                    <li><a href="#">Commerce to IT roadmap <small>Step‑by‑step transition</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Decision matrix template <small>Choose your path</small></a></li>
+                    <li><a href="#">SQL cheat sheet <small>For beginners</small></a></li>
+                    <li><a href="#">BRD template <small>For business analysis</small></a></li>
+                    <li><a href="#">Commerce to IT checklist <small>Track your progress</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Commerce to IT — success stories <small>18 August 2026</small></a></li>
+                    <li><a href="#">FinTech trends 2026 <small>16 August 2026</small></a></li>
+                    <li><a href="#">Commerce vs IT — which pays more? <small>14 August 2026</small></a></li>
+                    <li><a href="#">Top IT skills for commerce graduates <small>12 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We offer career‑switcher programmes in Business Analysis, FinTech, and Data Analytics — designed for commerce graduates.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Business Analysis</a></li>
+                        <li><a href="#">FinTech &amp; Digital Banking</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#">Business Intelligence</a></li>
+                        <li><a href="#">Project Management (CSM, PRINCE2)</a></li>
+                        <li><a href="#">QA Testing</a></li>
+                        <li><a href="#">SQL &amp; Data Skills</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        UncodemyPage.init({
+            SCENARIOS: {
+                commerce: { salary: "₹3–5 LPA", growth: "Moderate", curve: "Low" },
+                it: { salary: "₹4–8 LPA", growth: "High", curve: "Moderate" },
+                hybrid: { salary: "₹6–12 LPA", growth: "Very High", curve: "Moderate–Steep" }
+            },
+            stateOrder: ["commerce", "it", "hybrid"],
+            renderScene: function(s) {
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("growthVal").textContent = s.growth;
+                document.getElementById("curveVal").textContent = s.curve;
+            },
+            defaultTrack: "Commerce Careers",
+            emptyMsg: 'Nothing matches that yet. Try “FinTech”, “Business Analyst” or “Commerce”.',
+            LIB: [
+                { t: "Commerce graduate: should you learn IT or skip? — complete guide", g: "Commerce Careers" },
+                { t: "FinTech career guide for commerce graduates", g: "FinTech" },
+                { t: "Business Analyst — complete beginner guide", g: "Business Analysis" },
+                { t: "Data analytics for commerce graduates", g: "Career Advice" },
+                { t: "Commerce vs IT — salary comparison 2026", g: "Salary Comparison" },
+                { t: "Best IT certifications for commerce graduates", g: "Career Advice" },
+                { t: "SQL for non‑tech professionals", g: "Career Advice" },
+                { t: "Commerce to IT — success stories", g: "Career Advice" },
+                { t: "FinTech trends 2026", g: "FinTech" },
+                { t: "How to become a business analyst with a commerce degree", g: "Business Analysis" }
+            ],
+            QUIZ: [{
+                q: "Which career path offers the highest salary potential for a commerce graduate?",
+                o: ["Traditional Commerce", "IT Business Roles", "Hybrid (FinTech/Analytics)", "All are equal"],
+                a: 2,
+                e: "The hybrid path — combining commerce knowledge with technology skills — offers the highest salary potential because you're bringing two valuable skill sets."
+            }, {
+                q: "What is the biggest advantage of a commerce background in IT?",
+                o: ["Coding skills", "Business understanding & communication", "Network engineering", "Database design"],
+                a: 1,
+                e: "Commerce graduates bring business understanding, analytical thinking, and communication skills — which are invaluable in roles like Business Analyst and FinTech."
+            }, {
+                q: "Which IT role requires the least coding for a commerce graduate?",
+                o: ["Software Developer", "Business Analyst", "Data Scientist", "DevOps Engineer"],
+                a: 1,
+                e: "Business Analyst requires minimal coding and leverages your analytical and communication skills. QA Tester and IT Sales are also low‑coding options."
+            }, {
+                q: "What is FinTech?",
+                o: ["A type of coding language", "Technology used in financial services", "A certification for commerce", "A programming framework"],
+                a: 1,
+                e: "FinTech (Financial Technology) is the use of technology to deliver financial services — digital payments, lending, insurance, and blockchain."
+            }, {
+                q: "How long does it take for a commerce graduate to become job‑ready in IT business roles?",
+                o: ["1‑2 months", "6‑9 months", "3‑4 years", "It's not possible"],
+                a: 1,
+                e: "With 5‑10 hours of study per week, most commerce graduates become job‑ready in IT business roles in 6‑9 months."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You've got the knowledge to make an informed decision! Choose the path that aligns with your goals and start building your skills.",
+                fail: "Revisit sections 02 to 07 — understanding each career path and the decision framework is key to making the right choice."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

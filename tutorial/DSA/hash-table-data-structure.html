@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hash Table in Data Structures | DSA Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn about Hash Tables — key-value data structures with O(1) average-case operations. Understand hash functions, collision resolution, and implementations." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Data Structures & Algorithms (DSA) Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 75 of 81: Hash Table in Data Structures</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="radix-sort-for-strings.html"><span class="num">01</span>Radix Sort for Strings</a></li>
+            <li><a href="most-asked-dsa-interview-practice-questions.html"><span class="num">02</span>Most Asked DSA Interview Practice Questions</a></li>
+            <li><a href="maximum-subarray-sum-problem.html"><span class="num">03</span>Maximum Subarray Sum Problem</a></li>
+            <li><a href="merge-sorted-arrays.html"><span class="num">04</span>Merge Sorted Arrays</a></li>
+            <li><a href="linear-search-with-duplicates.html"><span class="num">05</span>Linear Search with Duplicates</a></li>
+            <li><a href="quick-sort-with-pivot-selection.html"><span class="num">06</span>Quick Sort with Pivot Selection</a></li>
+            <li><a href="insertion-sort-for-nearly-sorted-array.html"><span class="num">07</span>Insertion Sort for Nearly Sorted Array</a></li>
+            <li><a href="two-sum-problem.html"><span class="num">08</span>Two Sum Problem</a></li>
+            <li><a href="selection-sort-algorithm.html"><span class="num">09</span>Selection Sort Algorithm</a></li>
+            <li><a href="bubble-sort-algorithm.html"><span class="num">10</span>Bubble Sort Algorithm</a></li>
+            <li><a href="0-1-knapsack-problem.html"><span class="num">11</span>0/1 Knapsack Problem</a></li>
+            <li><a href="bellman-ford-algorithm-working-example-applications.html"><span class="num">12</span>Bellman-Ford Algorithm — Working, Example and Applications</a></li>
+            <li><a href="introduction-to-non-linear-data-structures.html"><span class="num">13</span>Introduction to Non-Linear Data Structures</a></li>
+            <li><a href="difference-between-stack-and-queue-data-structure.html"><span class="num">14</span>Difference Between Stack and Queue Data Structure</a></li>
+            <li><a href="breadth-first-search-vs-depth-first-search.html"><span class="num">15</span>Breadth First Search vs Depth First Search</a></li>
+            <li><a href="abstract-data-type-in-data-structure-with-example.html"><span class="num">16</span>Abstract Data Type in Data Structure with Example</a></li>
+            <li><a href="binary-tree-traversal-in-data-structure.html"><span class="num">17</span>Binary Tree Traversal in Data Structure</a></li>
+            <li><a href="binary-tree-array-implementation.html"><span class="num">18</span>Binary Tree Array Implementation</a></li>
+            <li><a href="binary-tree-in-data-structure-types-and-implementation.html"><span class="num">19</span>Binary Tree in Data Structure — Types and Implementation</a></li>
+            <li><a href="dsa-examples-a-to-z-guide.html"><span class="num">20</span>DSA Examples: A-Z Guide</a></li>
+            <li><a href="deque-in-data-structure.html"><span class="num">21</span>Deque in Data Structure</a></li>
+            <li><a href="priority-queue-in-data-structure-implementation-types.html"><span class="num">22</span>Priority Queue in Data Structure — Implementation, Types & More</a></li>
+            <li><a href="implementing-circular-queue-in-data-structure.html"><span class="num">23</span>Implementing Circular Queue in Data Structure</a></li>
+            <li><a href="queue-in-data-structure-types-and-algorithms.html"><span class="num">24</span>Queue in Data Structure — Types & Algorithms (with Examples)</a></li>
+            <li><a href="understanding-trie-data-structure.html"><span class="num">25</span>Understanding Trie Data Structure</a></li>
+            <li><a href="spanning-tree-and-minimum-spanning-tree-kruskal-prim.html"><span class="num">26</span>Spanning Tree and Minimum Spanning Tree — Kruskal's and Prim's Algorithm</a></li>
+            <li><a href="avl-tree-in-data-structure-with-example.html"><span class="num">27</span>AVL Tree in Data Structure with Example</a></li>
+            <li><a href="trees-in-data-structure-structure-operations-applications.html"><span class="num">28</span>Trees in Data Structure — Structure, Operations & Applications</a></li>
+            <li><a href="segment-tree-in-data-structure-operations-advantages-disadvantages.html"><span class="num">29</span>Segment Tree in Data Structure — Operations, Advantages and Disadvantages</a></li>
+            <li><a href="k-dimensional-tree-in-data-structure.html"><span class="num">30</span>K-Dimensional Tree in Data Structure</a></li>
+            <li><a href="singly-linked-list.html"><span class="num">31</span>Singly Linked List</a></li>
+            <li><a href="reverse-linked-list.html"><span class="num">32</span>Reverse Linked List</a></li>
+            <li><a href="linked-list-in-data-structure-types-and-applications.html"><span class="num">33</span>Linked List in Data Structure — Types and Applications</a></li>
+            <li><a href="doubly-linked-list-in-data-structure-with-example.html"><span class="num">34</span>Doubly Linked List in Data Structure with Example</a></li>
+            <li><a href="circular-linked-list-in-data-structure.html"><span class="num">35</span>Circular Linked List in Data Structure</a></li>
+            <li><a href="dijkstras-algorithm-in-data-structure.html"><span class="num">36</span>Dijkstra's Algorithm in Data Structure</a></li>
+            <li><a href="binary-search-in-data-structure.html"><span class="num">37</span>Binary Search in Data Structure</a></li>
+            <li><a href="data-structure-sorting-types-and-examples-explained.html"><span class="num">38</span>Data Structure Sorting: Types and Examples Explained in Detail</a></li>
+            <li><a href="bubble-sort-in-data-structure.html"><span class="num">39</span>Bubble Sort in Data Structure</a></li>
+            <li><a href="selection-sort-in-data-structure.html"><span class="num">40</span>Selection Sort in Data Structure</a></li>
+            <li><a href="insertion-sort-in-data-structure-algorithm-working-advantages.html"><span class="num">41</span>Insertion Sort in Data Structure — Algorithm, Working and Advantages</a></li>
+            <li><a href="merge-sort-in-data-structure-implementation-cpp-java-python.html"><span class="num">42</span>Merge Sort in Data Structure and Algorithm — with Implementation in C++, Java and Python</a></li>
+            <li><a href="counting-sort-in-data-structure.html"><span class="num">43</span>Counting Sort in Data Structure</a></li>
+            <li><a href="radix-sort-in-data-structure-algorithm-working-complexity.html"><span class="num">44</span>Radix Sort in Data Structure — Algorithm, Working and Complexity</a></li>
+            <li><a href="bucket-sort-in-data-structure.html"><span class="num">45</span>Bucket Sort in Data Structure</a></li>
+            <li><a href="shell-sort-in-data-structure-algorithm-visualization-complexity.html"><span class="num">46</span>Shell Sort in Data Structure — Algorithm, Visualization and Complexity</a></li>
+            <li><a href="heap-sort-algorithm-in-data-structure-working-implementation-applications.html"><span class="num">47</span>Heap Sort Algorithm in Data Structure — Working, Implementation and Applications</a></li>
+            <li><a href="tower-of-hanoi-in-data-structure.html"><span class="num">48</span>Tower of Hanoi in Data Structure</a></li>
+            <li><a href="counting-sort-limited-range.html"><span class="num">49</span>Counting Sort for Limited Range</a></li>
+            <li><a href="binary-search-rotated-sorted-array.html"><span class="num">50</span>Binary Search in Rotated Sorted Array</a></li>
+            <li><a href="inorder-traversal-binary-search-tree.html"><span class="num">51</span>In-order Traversal of Binary Search Tree</a></li>
+            <li><a href="binary-search-tree-data-structure.html"><span class="num">52</span>Binary Search Tree in Data Structures</a></li>
+            <li><a href="merge-sort-linked-list.html"><span class="num">53</span>Merge Sort for Linked List</a></li>
+            <li><a href="quick-sort-algorithm-types-examples.html"><span class="num">54</span>Quick Sort Algorithm in Data Structures — Its Types ( With Examples )</a></li>
+            <li><a href="greedy-algorithm-data-structures.html"><span class="num">55</span>Greedy Algorithm in Data Structures</a></li>
+            <li><a href="array-vs-linked-list-differences.html"><span class="num">56</span>Differences Between Array and Linked List</a></li>
+            <li><a href="multi-dimensional-array.html"><span class="num">57</span>Multi dimensional array in Data Structures</a></li>
+            <li><a href="one-dimensional-array-example.html"><span class="num">58</span>One dimensional Array in Data Structures with Example</a></li>
+            <li><a href="suffix-array-suffix-tree-applications.html"><span class="num">59</span>Suffix Array and Suffix Tree in Data Structures &amp; Applications</a></li>
+            <li><a href="two-dimensional-array.html"><span class="num">60</span>Two dimensional Array In Data Structure</a></li>
+            <li><a href="types-of-arrays-2d-3d-jagged.html"><span class="num">61</span>Types of Arrays in Data Structures: 2D, 3D, Jagged Arrays</a></li>
+            <li><a href="arrays-data-structures-types-representation.html"><span class="num">62</span>Arrays in Data Structures — Types, Representation &amp; Algorithm (With Examples)</a></li>
+            <li><a href="b-tree-data-structure.html"><span class="num">63</span>B Tree: An Efficient Data Structure</a></li>
+            <li><a href="what-are-data-structures-guide.html"><span class="num">64</span>What are Data Structures — Types of Data Structures (Complete Guide)</a></li>
+            <li><a href="recursion-data-structures-recursive-function.html"><span class="num">65</span>Recursion in Data Structures: Recursive Function</a></li>
+            <li><a href="complexity-analysis-of-algorithms.html"><span class="num">66</span>Complexity Analysis of Data Structures and Algorithms</a></li>
+            <li><a href="searching-data-structures-types-methods.html"><span class="num">67</span>Searching in Data Structures — Its Types, Methods &amp; Techniques</a></li>
+            <li><a href="brute-force-algorithm-types-advantages.html"><span class="num">68</span>Brute Force Algorithm in Data Structures: Types, Advantages, Disadvantages</a></li>
+            <li><a href="big-o-notation-time-space-complexity.html"><span class="num">69</span>Big O Notation in Data Structures: Time and Space Complexity</a></li>
+            <li><a href="stack-data-structure-implementations.html"><span class="num">70</span>Stack in Data Structures: Implementations in Java, Python, &amp; C++</a></li>
+            <li><a href="linear-search-algorithm-working-complexity.html"><span class="num">71</span>What is Linear Search in Data Structures — Its Algorithm, Working, &amp; Complexity</a></li>
+            <li><a href="divide-and-conquer-algorithm-working-advantages.html"><span class="num">72</span>Divide and Conquer Algorithm in Data Structures — Its Working, Advantages &amp; Disadvantages</a></li>
+            <li><a href="heap-data-structure.html"><span class="num">73</span>Heap in Data Structures</a></li>
+            <li><a href="hashing-types-functions-examples.html"><span class="num">74</span>Hashing in Data Structures: Types and Functions [With Examples]</a></li>
+            <li><a href="hash-table-data-structure.html" class="active"><span class="num">75</span>Hash Table in Data Structures</a></li>
+            <li><a href="graph-data-structure-types.html"><span class="num">76</span>What is a Graph in Data Structures and its Types?</a></li>
+            <li><a href="bfs-dfs-traversal-data-structure.html"><span class="num">77</span>Breadth First Traversal and Depth First Traversal in Data Structure</a></li>
+            <li><a href="dsa-mcq-questions-answers.html"><span class="num">78</span>Top 45+ DSA MCQ Questions with Answers {Updated}</a></li>
+            <li><a href="dsa-interview-questions-answers.html"><span class="num">79</span>DSA Interview Questions and Answers (Freshers to Experienced)</a></li>
+            <li><a href="dsa-roadmap-step-by-step-guide.html"><span class="num">80</span>DSA Roadmap for Beginners: Step-by-Step Guide to Master in DSA</a></li>
+            <li><a href="data-structure-cheat-sheet-complete.html"><span class="num">81</span>Data Structure Cheat Sheet: Complete Guide</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-code"></i> Hashing</span>
+        <h1>Hash Table in Data Structures</h1>
+
+        <div class="card">
+
+            <p>A <strong>Hash Table</strong> (also called a <strong>Hash Map</strong>) is a data structure that implements an associative array — a structure that maps <strong>keys</strong> to <strong>values</strong>. It uses a <strong>hash function</strong> to compute an index into an array of buckets or slots, from which the desired value can be found. Hash tables offer <strong>O(1) average-case</strong> time complexity for search, insertion, and deletion.</p>
+
+            <h2>Components of a Hash Table</h2>
+            <ul>
+                <li><strong>Keys:</strong> Unique identifiers used to store and retrieve values.</li>
+                <li><strong>Values:</strong> The data associated with a key.</li>
+                <li><strong>Hash Function:</strong> Maps a key to an index in the array.</li>
+                <li><strong>Buckets / Slots:</strong> The array where key-value pairs are stored.</li>
+                <li><strong>Collision Resolution Strategy:</strong> Handles cases where two keys map to the same index.</li>
+            </ul>
+
+            <h2>How a Hash Table Works</h2>
+            <ol>
+                <li><strong>Insert:</strong> Compute the hash of the key → get an index → store the key-value pair at that index (handling collisions if needed).</li>
+                <li><strong>Search:</strong> Compute the hash of the key → get an index → retrieve the value at that index (or traverse the chain/list to find the key).</li>
+                <li><strong>Delete:</strong> Compute the hash of the key → get an index → remove the key-value pair from that index.</li>
+            </ol>
+
+            <h2>Collision Resolution Strategies</h2>
+
+            <h3>1. Separate Chaining</h3>
+            <p>Each bucket contains a linked list (or another data structure) of entries that hash to the same index.</p>
+            <pre class="code-block"><code>class HashTableChaining:
+    def __init__(self, size=10):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+
+    def _hash(self, key):
+        return hash(key) % self.size
+
+    def insert(self, key, value):
+        idx = self._hash(key)
+        for i, (k, v) in enumerate(self.table[idx]):
+            if k == key:
+                self.table[idx][i] = (key, value)
+                return
+        self.table[idx].append((key, value))
+
+    def search(self, key):
+        idx = self._hash(key)
+        for k, v in self.table[idx]:
+            if k == key:
+                return v
+        return None
+
+    def delete(self, key):
+        idx = self._hash(key)
+        for i, (k, v) in enumerate(self.table[idx]):
+            if k == key:
+                self.table[idx].pop(i)
+                return True
+        return False
+</code></pre>
+
+            <h3>2. Open Addressing</h3>
+            <p>All entries are stored in the array itself. When a collision occurs, the algorithm probes for the next available slot.</p>
+
+            <h4>a. Linear Probing</h4>
+            <p>Checks the next slot sequentially: <code>h(key, i) = (h(key) + i) % size</code>.</p>
+            <pre class="code-block"><code>class HashTableLinearProbing:
+    def __init__(self, size=10):
+        self.size = size
+        self.keys = [None] * size
+        self.values = [None] * size
+
+    def _hash(self, key):
+        return hash(key) % self.size
+
+    def insert(self, key, value):
+        idx = self._hash(key)
+        i = 0
+        while i < self.size:
+            probe = (idx + i) % self.size
+            if self.keys[probe] is None or self.keys[probe] == key:
+                self.keys[probe] = key
+                self.values[probe] = value
+                return
+            i += 1
+        raise Exception("Hash table is full")
+
+    def search(self, key):
+        idx = self._hash(key)
+        i = 0
+        while i < self.size:
+            probe = (idx + i) % self.size
+            if self.keys[probe] is None:
+                return None
+            if self.keys[probe] == key:
+                return self.values[probe]
+            i += 1
+        return None
+
+    def delete(self, key):
+        idx = self._hash(key)
+        i = 0
+        while i < self.size:
+            probe = (idx + i) % self.size
+            if self.keys[probe] is None:
+                return False
+            if self.keys[probe] == key:
+                self.keys[probe] = None
+                self.values[probe] = None
+                # Note: Use tombstone for better performance in practice
+                return True
+            i += 1
+        return False
+</code></pre>
+
+            <h4>b. Quadratic Probing</h4>
+            <p>Uses a quadratic function to find the next slot: <code>h(key, i) = (h(key) + c₁*i + c₂*i²) % size</code>.</p>
+
+            <h4>c. Double Hashing</h4>
+            <p>Uses a second hash function to determine the step size: <code>h(key, i) = (h₁(key) + i * h₂(key)) % size</code>.</p>
+
+            <h2>Load Factor and Rehashing</h2>
+            <ul>
+                <li><strong>Load Factor (α):</strong> The ratio of the number of entries to the table size: <code>α = n / m</code> where <code>n</code> is the number of entries and <code>m</code> is the table size.</li>
+                <li><strong>Rehashing:</strong> When the load factor exceeds a threshold (typically 0.75), the table is resized (usually doubled) and all entries are re-inserted. This maintains O(1) performance.</li>
+            </ul>
+            <pre class="code-block"><code>def rehash(self):
+    old_keys = self.keys
+    old_values = self.values
+    self.size *= 2
+    self.keys = [None] * self.size
+    self.values = [None] * self.size
+    for key, value in zip(old_keys, old_values):
+        if key is not None:
+            self.insert(key, value)
+</code></pre>
+
+            <h2>Implementation in Python</h2>
+
+            <h3>Using Built-in dict</h3>
+            <pre class="code-block"><code># Python dictionary (hash table)
+hash_table = {}
+
+# Insert
+hash_table["apple"] = 10
+hash_table["banana"] = 20
+hash_table["orange"] = 30
+
+# Search
+print(hash_table.get("banana"))  # 20
+print(hash_table.get("grape", "Not found"))  # Not found
+
+# Update
+hash_table["apple"] = 15
+
+# Delete
+del hash_table["orange"]
+
+# Iterate
+for key, value in hash_table.items():
+    print(f"{key}: {value}")
+
+# Membership
+if "apple" in hash_table:
+    print("Apple found!")
+</code></pre>
+
+            <h3>Custom Implementation with Chaining</h3>
+            <pre class="code-block"><code>class HashTable:
+    def __init__(self, size=10):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+        self.count = 0
+
+    def _hash(self, key):
+        return hash(key) % self.size
+
+    def insert(self, key, value):
+        idx = self._hash(key)
+        for i, (k, v) in enumerate(self.table[idx]):
+            if k == key:
+                self.table[idx][i] = (key, value)
+                return
+        self.table[idx].append((key, value))
+        self.count += 1
+
+        # Rehash if load factor > 0.75
+        if self.count / self.size > 0.75:
+            self._rehash()
+
+    def search(self, key):
+        idx = self._hash(key)
+        for k, v in self.table[idx]:
+            if k == key:
+                return v
+        return None
+
+    def delete(self, key):
+        idx = self._hash(key)
+        for i, (k, v) in enumerate(self.table[idx]):
+            if k == key:
+                self.table[idx].pop(i)
+                self.count -= 1
+                return True
+        return False
+
+    def _rehash(self):
+        old_table = self.table
+        self.size *= 2
+        self.table = [[] for _ in range(self.size)]
+        self.count = 0
+        for bucket in old_table:
+            for key, value in bucket:
+                self.insert(key, value)
+
+    def __str__(self):
+        result = []
+        for i, bucket in enumerate(self.table):
+            if bucket:
+                result.append(f"{i}: {bucket}")
+        return "\n".join(result)
+
+# Example usage
+ht = HashTable(5)
+ht.insert("apple", 10)
+ht.insert("banana", 20)
+ht.insert("orange", 30)
+ht.insert("grape", 40)
+print(ht.search("banana"))  # 20
+print(ht)
+</code></pre>
+
+            <h2>Implementation in Java</h2>
+
+            <h3>Using Built-in HashMap</h3>
+            <pre class="code-block"><code>import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        // HashMap
+        HashMap<String, Integer> map = new HashMap<>();
+
+        // Insert
+        map.put("apple", 10);
+        map.put("banana", 20);
+        map.put("orange", 30);
+
+        // Search
+        System.out.println(map.get("banana"));  // 20
+        System.out.println(map.getOrDefault("grape", -1));  // -1
+
+        // Update
+        map.put("apple", 15);
+
+        // Delete
+        map.remove("orange");
+
+        // Iterate
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+        // Membership
+        if (map.containsKey("apple")) {
+            System.out.println("Apple found!");
+        }
+    }
+}
+</code></pre>
+
+            <h3>Custom Implementation</h3>
+            <pre class="code-block"><code>import java.util.LinkedList;
+
+class HashTableCustom {
+    private class Entry {
+        String key;
+        int value;
+        Entry(String key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private LinkedList<Entry>[] table;
+    private int size;
+    private int count;
+
+    @SuppressWarnings("unchecked")
+    public HashTableCustom(int size) {
+        this.size = size;
+        this.count = 0;
+        table = new LinkedList[size];
+        for (int i = 0; i < size; i++) {
+            table[i] = new LinkedList<>();
+        }
+    }
+
+    private int hash(String key) {
+        return Math.abs(key.hashCode()) % size;
+    }
+
+    public void insert(String key, int value) {
+        int idx = hash(key);
+        for (Entry entry : table[idx]) {
+            if (entry.key.equals(key)) {
+                entry.value = value;
+                return;
+            }
+        }
+        table[idx].add(new Entry(key, value));
+        count++;
+        if ((double) count / size > 0.75) {
+            rehash();
+        }
+    }
+
+    public Integer search(String key) {
+        int idx = hash(key);
+        for (Entry entry : table[idx]) {
+            if (entry.key.equals(key)) {
+                return entry.value;
+            }
+        }
+        return null;
+    }
+
+    public boolean delete(String key) {
+        int idx = hash(key);
+        for (Entry entry : table[idx]) {
+            if (entry.key.equals(key)) {
+                table[idx].remove(entry);
+                count--;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @SuppressWarnings("unchecked")
+    private void rehash() {
+        LinkedList<Entry>[] oldTable = table;
+        size *= 2;
+        table = new LinkedList[size];
+        for (int i = 0; i < size; i++) {
+            table[i] = new LinkedList<>();
+        }
+        count = 0;
+        for (LinkedList<Entry> bucket : oldTable) {
+            for (Entry entry : bucket) {
+                insert(entry.key, entry.value);
+            }
+        }
+    }
+}
+</code></pre>
+
+            <h2>Implementation in C++</h2>
+
+            <h3>Using STL unordered_map</h3>
+            <pre class="code-block"><code>#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+    unordered_map<string, int> map;
+
+    // Insert
+    map["apple"] = 10;
+    map["banana"] = 20;
+    map["orange"] = 30;
+
+    // Search
+    cout << map["banana"] << endl;  // 20
+
+    // Update
+    map["apple"] = 15;
+
+    // Delete
+    map.erase("orange");
+
+    // Iterate
+    for (auto& pair : map) {
+        cout << pair.first << ": " << pair.second << endl;
+    }
+
+    // Membership
+    if (map.find("apple") != map.end()) {
+        cout << "Apple found!" << endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Custom Implementation</h3>
+            <pre class="code-block"><code>#include <iostream>
+#include <list>
+#include <vector>
+#include <string>
+using namespace std;
+
+class HashTable {
+private:
+    struct Entry {
+        string key;
+        int value;
+        Entry(string k, int v) : key(k), value(v) {}
+    };
+
+    vector<list<Entry>> table;
+    int size;
+    int count;
+
+    int hashFunction(const string& key) {
+        int hash = 0;
+        for (char c : key) {
+            hash = (hash * 31 + c) % size;
+        }
+        return hash;
+    }
+
+    void rehash() {
+        vector<list<Entry>> oldTable = table;
+        size *= 2;
+        table.clear();
+        table.resize(size);
+        count = 0;
+        for (auto& bucket : oldTable) {
+            for (auto& entry : bucket) {
+                insert(entry.key, entry.value);
+            }
+        }
+    }
+
+public:
+    HashTable(int s = 10) : size(s), count(0) {
+        table.resize(size);
+    }
+
+    void insert(const string& key, int value) {
+        int idx = hashFunction(key);
+        for (auto& entry : table[idx]) {
+            if (entry.key == key) {
+                entry.value = value;
+                return;
+            }
+        }
+        table[idx].push_back(Entry(key, value));
+        count++;
+        if ((double)count / size > 0.75) {
+            rehash();
+        }
+    }
+
+    int* search(const string& key) {
+        int idx = hashFunction(key);
+        for (auto& entry : table[idx]) {
+            if (entry.key == key) {
+                return &entry.value;
+            }
+        }
+        return nullptr;
+    }
+
+    bool remove(const string& key) {
+        int idx = hashFunction(key);
+        for (auto it = table[idx].begin(); it != table[idx].end(); ++it) {
+            if (it->key == key) {
+                table[idx].erase(it);
+                count--;
+                return true;
+            }
+        }
+        return false;
+    }
+};
+</code></pre>
+
+            <h2>Complexity Analysis</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Operation</th><th>Average Case</th><th>Worst Case</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Search</td><td>O(1)</td><td>O(n)</td></tr>
+                        <tr><td>Insert</td><td>O(1)</td><td>O(n)</td></tr>
+                        <tr><td>Delete</td><td>O(1)</td><td>O(n)</td></tr>
+                        <tr><td>Space</td><td>O(n)</td><td>O(n)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Note:</strong> Worst-case occurs when all keys collide (poor hash function or adversarial input).</p>
+
+            <h2>Advantages &amp; Disadvantages</h2>
+            <h3>Advantages</h3>
+            <ul>
+                <li><strong>Fast Operations:</strong> O(1) average-time for search, insert, and delete.</li>
+                <li><strong>Flexible Keys:</strong> Can use any data type as a key (with proper hashing).</li>
+                <li><strong>Dynamic:</strong> Can grow/shrink with rehashing.</li>
+                <li><strong>Widely Supported:</strong> Built into most programming languages.</li>
+            </ul>
+            <h3>Disadvantages</h3>
+            <ul>
+                <li><strong>Collisions:</strong> Can degrade performance to O(n) in worst case.</li>
+                <li><strong>Memory Overhead:</strong> May use more memory than other structures.</li>
+                <li><strong>Unordered:</strong> Does not preserve insertion order (unless using LinkedHashMap).</li>
+                <li><strong>Hash Function Quality:</strong> Performance depends heavily on the quality of the hash function.</li>
+            </ul>
+
+            <h2>Applications</h2>
+            <ul>
+                <li><strong>Databases:</strong> Hash-based indexing for fast lookups.</li>
+                <li><strong>Caches:</strong> LRU caches, web caches, DNS caching.</li>
+                <li><strong>Symbol Tables:</strong> Compilers and interpreters store variables.</li>
+                <li><strong>Programming Language Implementations:</strong> Python dict, Java HashMap, C++ unordered_map.</li>
+                <li><strong>Sets:</strong> Removing duplicates, membership testing.</li>
+                <li><strong>Distributed Systems:</strong> Consistent hashing for load balancing.</li>
+                <li><strong>Password Storage:</strong> Storing hashed passwords.</li>
+            </ul>
+
+            <h2>Common Hash Table Problems</h2>
+            <ul>
+                <li><strong>Two Sum:</strong> Find two numbers that sum to target.</li>
+                <li><strong>Top K Frequent Elements:</strong> Find the k most frequent elements.</li>
+                <li><strong>Group Anagrams:</strong> Group strings that are anagrams of each other.</li>
+                <li><strong>Longest Substring Without Repeating Characters:</strong> Use hash map to track character positions.</li>
+                <li><strong>Word Pattern:</strong> Check if a pattern matches a string.</li>
+                <li><strong>LRU Cache:</strong> Implement a Least Recently Used cache using a hash map + doubly linked list.</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>A hash table is a <strong>key-value</strong> store that provides <strong>O(1) average-case</strong> operations.</li>
+                <li>It uses a <strong>hash function</strong> to map keys to array indices.</li>
+                <li>Collisions are resolved using <strong>chaining</strong> (linked lists) or <strong>open addressing</strong> (linear/quadratic probing, double hashing).</li>
+                <li>The <strong>load factor</strong> determines when rehashing is needed to maintain performance.</li>
+                <li>Built-in implementations: Python's <strong>dict</strong>, Java's <strong>HashMap</strong>, C++'s <strong>unordered_map</strong>.</li>
+                <li>Hash tables are used in <strong>databases, caches, compilers, and distributed systems</strong>.</li>
+            </ul>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="hashing-types-functions-examples.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Hashing in Data Structures: Types and Functions [With Examples]</a>
+            <a href="graph-data-structure-types.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>What is a Graph in Data Structures and its Types?</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Data Structures &amp; Algorithms?</h3>
+                <p>Learn DSA hands-on with mentor-led sessions, real interview practice, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/blog/dsa-tutorial-for-beginners-data-structures-and-algorithms">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>DSA Training Course</h4>
+            <p class="batch-sub">Kickstart your problem-solving journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

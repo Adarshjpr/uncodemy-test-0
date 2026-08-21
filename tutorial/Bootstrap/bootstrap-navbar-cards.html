@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers | Bootstrap Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn Bootstrap Navbar (navigation bars, responsive menus, dropdowns) and Cards (flexible content containers, images, headers, footers, grid layouts)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/blog/what-is-bootstrap-and-how-to-use-it">What is Bootstrap and How to Use It — Uncodemy Blog</a>
+        <span class="sep">/</span>
+        <span class="current">Page 5 of 9: Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="bootstrap-introduction-setup.html"><span class="num">01</span>What is Bootstrap? — Introduction &amp; Setup</a></li>
+            <li><a href="bootstrap-grid-system-foundation.html"><span class="num">02</span>Bootstrap Grid System — The Foundation of Layouts</a></li>
+            <li><a href="bootstrap-typography-colors-spacing.html"><span class="num">03</span>Bootstrap Typography, Colors &amp; Spacing — Core Utilities</a></li>
+            <li><a href="bootstrap-buttons-forms-tables.html"><span class="num">04</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a></li>
+            <li><a href="bootstrap-navbar-cards.html" class="active"><span class="num">05</span>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</a></li>
+            <li><a href="bootstrap-modals-carousels-accordions.html"><span class="num">06</span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a></li>
+            <li><a href="bootstrap-flexbox-display-positioning.html"><span class="num">07</span>Bootstrap Flexbox, Display &amp; Positioning — Layout Utilities</a></li>
+            <li><a href="bootstrap-customization-sass-theming.html"><span class="num">08</span>Bootstrap Customization — Sass &amp; Theming</a></li>
+            <li><a href="bootstrap-cheat-sheet-complete.html"><span class="num">09</span>Bootstrap Cheat Sheet — Complete Reference</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-cubes"></i> Components</span>
+        <h1>Bootstrap Navbar &amp; Cards — Layout &amp; Content Containers</h1>
+
+        <div class="card">
+
+            <p>Every website needs <strong>navigation</strong> to help users find their way, and <strong>content containers</strong> to display information beautifully. Bootstrap's <strong>Navbar</strong> and <strong>Card</strong> components are the perfect tools for these tasks. They're flexible, responsive, and can be customized to fit any design.</p>
+
+            <h2>1. Bootstrap Navbar</h2>
+            <p>The Navbar is a responsive navigation header that can collapse on smaller screens. It supports branding, navigation links, dropdowns, forms, and more.</p>
+
+            <h3>Basic Navbar Structure</h3>
+            <pre class="code-block"><code>&lt;nav class="navbar navbar-expand-lg bg-body-tertiary"&gt;
+    &lt;div class="container"&gt;
+        &lt;!-- Brand / Logo --&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Brand Name&lt;/a&gt;
+
+        &lt;!-- Toggle button (hamburger menu) --&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+
+        &lt;!-- Navbar links (collapsible) --&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+            &lt;ul class="navbar-nav"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Services&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h3>Navbar Colors &amp; Themes</h3>
+            <p>Use <code>.navbar-dark</code> or <code>.navbar-light</code> with background color classes to style your navbar.</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Class Combination</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>.navbar-dark .bg-dark</code></td><td>Dark background with light text</td></tr>
+                        <tr><td><code>.navbar-dark .bg-primary</code></td><td>Primary (blue) background with light text</td></tr>
+                        <tr><td><code>.navbar-light .bg-light</code></td><td>Light background with dark text</td></tr>
+                        <tr><td><code>.navbar-light .bg-white</code></td><td>White background with dark text</td></tr>
+                        <tr><td><code>.bg-body-tertiary</code></td><td>Subtle gray background (default)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <pre class="code-block"><code>&lt;!-- Dark navbar --&gt;
+&lt;nav class="navbar navbar-dark bg-dark"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Dark Navbar&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Primary navbar --&gt;
+&lt;nav class="navbar navbar-dark bg-primary"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Primary Navbar&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Light navbar --&gt;
+&lt;nav class="navbar navbar-light bg-light"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Light Navbar&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h3>Navbar with Dropdown</h3>
+            <pre class="code-block"><code>&lt;nav class="navbar navbar-expand-lg bg-body-tertiary"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;My Site&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdown"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarDropdown"&gt;
+            &lt;ul class="navbar-nav"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item dropdown"&gt;
+                    &lt;a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"&gt;
+                        Products
+                    &lt;/a&gt;
+                    &lt;ul class="dropdown-menu"&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Electronics&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Clothing&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Books&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h3>Navbar with Search Form</h3>
+            <pre class="code-block"><code>&lt;nav class="navbar navbar-expand-lg bg-body-tertiary"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Searchable Site&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarSearch"&gt;
+            &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;form class="d-flex" role="search"&gt;
+                &lt;input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search"&gt;
+                &lt;button class="btn btn-outline-primary" type="submit"&gt;Search&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h3>Navbar with Brand Image</h3>
+            <pre class="code-block"><code>&lt;nav class="navbar navbar-expand-lg bg-body-tertiary"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;
+            &lt;img src="logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"&gt;
+            Brand Name
+        &lt;/a&gt;
+        &lt;!-- rest of navbar --&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+            <h3>Fixed Navbar</h3>
+            <p>Make the navbar stick to the top or bottom of the viewport.</p>
+            <pre class="code-block"><code>&lt;!-- Fixed to top --&gt;
+&lt;nav class="navbar fixed-top bg-body-tertiary"&gt;...&lt;/nav&gt;
+
+&lt;!-- Fixed to bottom --&gt;
+&lt;nav class="navbar fixed-bottom bg-body-tertiary"&gt;...&lt;/nav&gt;
+
+&lt;!-- Sticky top (only sticks when scrolling past) --&gt;
+&lt;nav class="navbar sticky-top bg-body-tertiary"&gt;...&lt;/nav&gt;</code></pre>
+
+            <h3>Navbar Placement &amp; Spacing</h3>
+            <p><strong>Note:</strong> When using <code>.fixed-top</code>, add <code>padding-top</code> to your body to prevent content from hiding behind the navbar.</p>
+
+            <h2>2. Bootstrap Cards</h2>
+            <p>Cards are flexible content containers that can include headers, footers, images, lists, and more. They're perfect for displaying blog posts, products, profiles, and any other piece of content.</p>
+
+            <h3>Basic Card Structure</h3>
+            <pre class="code-block"><code>&lt;div class="card" style="width: 18rem;"&gt;
+    &lt;img src="image.jpg" class="card-img-top" alt="Card image"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Card Title&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Some quick example text to build on the card title.&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card with Header &amp; Footer</h3>
+            <pre class="code-block"><code>&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        Featured
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Special title treatment&lt;/h5&gt;
+        &lt;p class="card-text"&gt;With supporting text below as a natural lead-in.&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer text-body-secondary"&gt;
+        2 days ago
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card with List Group</h3>
+            <pre class="code-block"><code>&lt;div class="card" style="width: 18rem;"&gt;
+    &lt;div class="card-header"&gt;Featured&lt;/div&gt;
+    &lt;ul class="list-group list-group-flush"&gt;
+        &lt;li class="list-group-item"&gt;Item 1&lt;/li&gt;
+        &lt;li class="list-group-item"&gt;Item 2&lt;/li&gt;
+        &lt;li class="list-group-item"&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="card-body"&gt;
+        &lt;a href="#" class="card-link"&gt;Card link&lt;/a&gt;
+        &lt;a href="#" class="card-link"&gt;Another link&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card with Image (Top / Bottom / Overlay)</h3>
+            <pre class="code-block"><code>&lt;!-- Image on top (default) --&gt;
+&lt;div class="card"&gt;
+    &lt;img src="image.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;p class="card-text"&gt;Some text&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Image on bottom --&gt;
+&lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;p class="card-text"&gt;Some text&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;img src="image.jpg" class="card-img-bottom" alt="..."&gt;
+&lt;/div&gt;
+
+&lt;!-- Image overlay (text on top of image) --&gt;
+&lt;div class="card text-bg-dark"&gt;
+    &lt;img src="image.jpg" class="card-img" alt="..."&gt;
+    &lt;div class="card-img-overlay"&gt;
+        &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Text on top of image.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card Styles</h3>
+            <p>Use contextual classes to change the card's appearance.</p>
+            <pre class="code-block"><code>&lt;!-- Primary card --&gt;
+&lt;div class="card text-bg-primary mb-3" style="max-width: 18rem;"&gt;
+    &lt;div class="card-header"&gt;Header&lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Primary card&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Some quick example text.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Success card --&gt;
+&lt;div class="card text-bg-success mb-3"&gt;...&lt;/div&gt;
+
+&lt;!-- Danger card --&gt;
+&lt;div class="card text-bg-danger mb-3"&gt;...&lt;/div&gt;
+
+&lt;!-- Warning card --&gt;
+&lt;div class="card text-bg-warning mb-3"&gt;...&lt;/div&gt;
+
+&lt;!-- Info card --&gt;
+&lt;div class="card text-bg-info mb-3"&gt;...&lt;/div&gt;</code></pre>
+
+            <h3>Card with Background &amp; Border</h3>
+            <pre class="code-block"><code>&lt;!-- Border card --&gt;
+&lt;div class="card border-primary mb-3" style="max-width: 18rem;"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title text-primary"&gt;Border card&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Some quick example text.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card Groups</h3>
+            <p>Group multiple cards together with equal height and width using <code>.card-group</code>.</p>
+            <pre class="code-block"><code>&lt;div class="card-group"&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="image1.jpg" class="card-img-top" alt="..."&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Card 1&lt;/h5&gt;
+            &lt;p class="card-text"&gt;This is a card in a group.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="image2.jpg" class="card-img-top" alt="..."&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Card 2&lt;/h5&gt;
+            &lt;p class="card-text"&gt;This is another card in the group.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+        &lt;img src="image3.jpg" class="card-img-top" alt="..."&gt;
+        &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Card 3&lt;/h5&gt;
+            &lt;p class="card-text"&gt;This is a third card in the group.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card Columns (Responsive Grid)</h3>
+            <p>Use the grid system to create responsive card layouts.</p>
+            <pre class="code-block"><code>&lt;div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="image1.jpg" class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Card 1&lt;/h5&gt;
+                &lt;p class="card-text"&gt;This is a card.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="image2.jpg" class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Card 2&lt;/h5&gt;
+                &lt;p class="card-text"&gt;This is another card.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="card"&gt;
+            &lt;img src="image3.jpg" class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Card 3&lt;/h5&gt;
+                &lt;p class="card-text"&gt;This is a third card.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Horizontal Card</h3>
+            <pre class="code-block"><code>&lt;div class="card mb-3" style="max-width: 540px;"&gt;
+    &lt;div class="row g-0"&gt;
+        &lt;div class="col-md-4"&gt;
+            &lt;img src="image.jpg" class="img-fluid rounded-start" alt="..."&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-8"&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Horizontal Card&lt;/h5&gt;
+                &lt;p class="card-text"&gt;This is a wider card with supporting text.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Card with Links &amp; Buttons</h3>
+            <pre class="code-block"><code>&lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Card with Links&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Some text.&lt;/p&gt;
+        &lt;a href="#" class="card-link"&gt;Card link&lt;/a&gt;
+        &lt;a href="#" class="card-link"&gt;Another link&lt;/a&gt;
+        &lt;button class="btn btn-primary mt-2"&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2>Putting It All Together</h2>
+            <p>Here's a complete example combining a Navbar with a Card grid layout:</p>
+            <pre class="code-block"><code>&lt;!-- Navbar --&gt;
+&lt;nav class="navbar navbar-expand-lg bg-dark navbar-dark"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;My Blog&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#blogNav"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="blogNav"&gt;
+            &lt;ul class="navbar-nav ms-auto"&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Blog content with cards --&gt;
+&lt;div class="container mt-4"&gt;
+    &lt;h2 class="mb-4"&gt;Latest Posts&lt;/h2&gt;
+    &lt;div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="card h-100"&gt;
+                &lt;img src="post1.jpg" class="card-img-top" alt="..."&gt;
+                &lt;div class="card-body"&gt;
+                    &lt;h5 class="card-title"&gt;Post Title 1&lt;/h5&gt;
+                    &lt;p class="card-text"&gt;This is a short description of the blog post.&lt;/p&gt;
+                    &lt;a href="#" class="btn btn-primary"&gt;Read More &rarr;&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="card-footer text-body-secondary"&gt;
+                    2 days ago
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="card h-100"&gt;
+                &lt;img src="post2.jpg" class="card-img-top" alt="..."&gt;
+                &lt;div class="card-body"&gt;
+                    &lt;h5 class="card-title"&gt;Post Title 2&lt;/h5&gt;
+                    &lt;p class="card-text"&gt;A longer description that might wrap to multiple lines.&lt;/p&gt;
+                    &lt;a href="#" class="btn btn-primary"&gt;Read More &rarr;&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="card-footer text-body-secondary"&gt;
+                    5 days ago
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="card h-100"&gt;
+                &lt;img src="post3.jpg" class="card-img-top" alt="..."&gt;
+                &lt;div class="card-body"&gt;
+                    &lt;h5 class="card-title"&gt;Post Title 3&lt;/h5&gt;
+                    &lt;p class="card-text"&gt;Short description.&lt;/p&gt;
+                    &lt;a href="#" class="btn btn-primary"&gt;Read More &rarr;&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="card-footer text-body-secondary"&gt;
+                    1 week ago
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> The <strong>Navbar</strong> is the first thing users see — keep it clean and intuitive. <strong>Cards</strong> are incredibly versatile — use them for blog posts, product listings, user profiles, and more. Combine them with the grid system for responsive, professional layouts.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="bootstrap-buttons-forms-tables.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Bootstrap Buttons, Forms &amp; Tables — Essential Components</a>
+            <a href="bootstrap-modals-carousels-accordions.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Bootstrap Modals, Carousels &amp; Accordions — Interactive Components</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Bootstrap?</h3>
+                <p>Master Bootstrap from scratch. Learn how to build modern, responsive websites with this complete frontend framework guide.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Uncodemy <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Frontend Development Course</h4>
+            <p class="batch-sub">Start building modern websites with hands-on, mentor-led frontend training.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

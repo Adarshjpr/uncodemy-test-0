@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functional Programming | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Mastering the apply() Family — lapply, sapply, tapply" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 18 of 20: Functional Programming</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html" class="active"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-layer-group"></i> Functional Programming</span>
+        <h1>Functional Programming</h1>
+
+        <div class="card">
+
+            <p>The <strong>apply family</strong> of functions is R's idiomatic alternative to explicit loops — applying a function across a vector, list, matrix, or grouped data in a single, often faster, expression.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Functional programming with apply()-family functions is considered more 'R-native' than for loops — it's typically more concise, often faster, and easier to parallelize.
+            </div>
+
+            <h2>1. sapply() — Simplified Apply (Most Common)</h2>
+            <p><code>sapply()</code> applies a function to each element of a vector or list and simplifies the result to a vector or matrix when possible.</p>
+                        <pre class="code-block"><code>numbers &lt;- c(1, 2, 3, 4, 5)
+sapply(numbers, function(x) x^2)
+# 1  4  9 16 25
+
+sapply(c(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;), nchar)
+# apple banana   kiwi
+#     5      6      4</code></pre>
+
+            <h2>2. lapply() — List Apply</h2>
+            <p><code>lapply()</code> works like <code>sapply()</code> but always returns a <strong>list</strong>, regardless of the output shape — safer for irregular results.</p>
+                        <pre class="code-block"><code>results &lt;- lapply(numbers, function(x) x^2)
+class(results)    # &quot;list&quot;
+results[[3]]      # 9
+
+# Apply a function across multiple data frame columns
+lapply(df[, c(&quot;age&quot;, &quot;salary&quot;)], mean)</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Use lapply() when the results might vary in length or type — sapply() will error or produce inconsistent results in those cases. Use sapply() when you know the output is uniform.
+            </div>
+
+            <h2>3. apply() — Row/Column Operations on Matrices</h2>
+                        <pre class="code-block"><code>m &lt;- matrix(1:9, nrow = 3)
+
+apply(m, 1, sum)   # row sums (MARGIN = 1)
+apply(m, 2, mean)  # column means (MARGIN = 2)
+apply(m, 2, max)   # column maximums</code></pre>
+
+            <h2>4. tapply() — Grouped Apply</h2>
+            <p><code>tapply()</code> applies a function to subsets of a vector, split by one or more grouping factors — a base R equivalent of <code>group_by() + summarise()</code>.</p>
+                        <pre class="code-block"><code>tapply(df$salary, df$department, mean)
+#     Sales Marketing        IT
+#     52000     58000     67000
+
+tapply(df$salary, list(df$department, df$gender), mean)  # multi-way grouping</code></pre>
+
+            <h2>5. mapply() — Multivariate Apply</h2>
+            <p>Applies a function to <strong>multiple</strong> vectors in parallel, element by element:</p>
+                        <pre class="code-block"><code>mapply(function(x, y) x + y, c(1, 2, 3), c(10, 20, 30))
+# 11 22 33</code></pre>
+
+            <h2>6. vapply() — Type-Safe sapply()</h2>
+            <p><code>vapply()</code> is like <code>sapply()</code> but requires you to specify the expected output type — safer for production code since it fails loudly on unexpected results.</p>
+                        <pre class="code-block"><code>vapply(numbers, function(x) x^2, FUN.VALUE = numeric(1))</code></pre>
+
+            <h2>7. Comparing the Apply Family</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Function</th><th>Input</th><th>Output</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>sapply()</td><td>Vector / List</td><td>Vector or matrix (simplified)</td></tr>
+                        <tr><td>lapply()</td><td>Vector / List</td><td>Always a list</td></tr>
+                        <tr><td>apply()</td><td>Matrix / Array</td><td>Vector, by row or column</td></tr>
+                        <tr><td>tapply()</td><td>Vector + grouping factor</td><td>Array, grouped result</td></tr>
+                        <tr><td>mapply()</td><td>Multiple vectors</td><td>Vector (parallel application)</td></tr>
+                        <tr><td>vapply()</td><td>Vector / List</td><td>Type-checked vector</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>8. apply() Family vs. purrr (Tidyverse Alternative)</h2>
+            <p>The tidyverse's <code>purrr</code> package offers a more consistent modern alternative (<code>map()</code>, <code>map_dbl()</code>, etc.), but the base R apply family remains widely used and essential to understand, since it appears throughout existing R codebases.</p>
+
+            <h2>9. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Default to sapply()/lapply()</strong> — over explicit for loops when applying a function repeatedly.</li>
+                <li><strong>✅ Use apply() with MARGIN</strong> — for row/column matrix operations.</li>
+                <li><strong>✅ Use tapply()</strong> — for quick grouped summaries without loading dplyr.</li>
+                <li><strong>✅ Reach for vapply()</strong> — in production code where type safety matters.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> The apply family isn't just about performance — it makes intent explicit: 'apply this function to every element' reads more clearly than a multi-line loop with a manual accumulator.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-functions-control-flow.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Writing Custom Functions and Control Flow</a>
+            <a href="r-markdown-knitr.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Dynamic Reporting with R Markdown and Knitr</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

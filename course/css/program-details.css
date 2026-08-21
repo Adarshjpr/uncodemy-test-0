@@ -1,0 +1,526 @@
+/* ==========================================================================
+   UNCODEMY — PROGRAM DETAILS
+   --------------------------------------------------------------------------
+   Everything the old "Course at a Glance" list and the standalone
+   "Batch Options" section used to carry, folded into the existing
+   course-assurance-section shell under one heading: Program Details.
+
+   Loads AFTER css/uncodemy-redesign.css. That file is not edited.
+   Selector pattern: html-tag + meaningful class, scoped to the section.
+   ========================================================================== */
+
+section.course-assurance-section {
+    --pd-orange: var(--uc-orange, #ff5421);
+    --pd-orange-600: var(--uc-orange-600, #e8410f);
+    --pd-orange-400: var(--uc-orange-400, #ff8a4c);
+    --pd-orange-100: var(--uc-orange-100, #ffe6dc);
+    --pd-orange-50: var(--uc-orange-50, #fff4ef);
+
+    --pd-ink: var(--uc-ink, #101828);
+    --pd-ink-700: var(--uc-ink-700, #344054);
+    --pd-muted: var(--uc-muted, #667085);
+    --pd-line: var(--uc-line, #e7ebf0);
+
+    --pd-surface: var(--uc-surface, #ffffff);
+    --pd-surface-soft: var(--uc-surface-soft, #f8fafc);
+
+    --pd-radius-sm: var(--uc-radius-sm, 12px);
+    --pd-radius: var(--uc-radius, 18px);
+    --pd-radius-lg: var(--uc-radius-lg, 24px);
+    --pd-radius-pill: var(--uc-radius-pill, 999px);
+
+    --pd-shadow-sm: var(--uc-shadow-sm, 0 4px 16px rgba(16, 24, 40, .06));
+    --pd-shadow-md: var(--uc-shadow-md, 0 12px 32px rgba(16, 24, 40, .08));
+    --pd-shadow-orange: var(--uc-shadow-orange, 0 16px 36px rgba(255, 84, 33, .18));
+
+    --pd-ease: var(--uc-ease, cubic-bezier(.22, .61, .36, 1));
+
+    /* the strip below is a heading-led block now, so it needs top padding back */
+    padding: var(--uc-space-section, 84px) 0;
+    background: var(--pd-surface);
+}
+
+/* --------------------------------------------------------------------------
+   1. THE NINE PROGRAM FACTS  (dark premium strip, kept from the old bar)
+   -------------------------------------------------------------------------- */
+section.course-assurance-section div.course-assurance-bar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    padding: 22px;
+    margin: 0 0 30px;
+    border-radius: var(--pd-radius-lg);
+    background:
+        radial-gradient(900px 320px at 88% -30%, rgba(255, 84, 33, .22) 0%, transparent 62%),
+        linear-gradient(120deg, #12202e 0%, #0f1720 100%);
+    box-shadow: var(--pd-shadow-md);
+}
+
+section.course-assurance-section div.course-assurance-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 16px;
+    border-radius: var(--pd-radius-sm);
+    text-align: left;
+    transition: background .3s var(--pd-ease), transform .3s var(--pd-ease);
+}
+
+section.course-assurance-section div.course-assurance-item:hover {
+    background: rgba(255, 255, 255, .06);
+    transform: translateY(-3px);
+}
+
+section.course-assurance-section span.course-assurance-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--pd-radius-sm);
+    border: 1px solid rgba(255, 138, 76, .32);
+    background: rgba(255, 84, 33, .14);
+    color: var(--pd-orange-400);
+}
+
+/* lucide swaps <i data-lucide> for an <svg>, so size the svg, not the tag */
+section.course-assurance-section span.course-assurance-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+section.course-assurance-section div.course-assurance-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+section.course-assurance-section span.course-assurance-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .52);
+    line-height: 1.2;
+}
+
+section.course-assurance-section span.course-assurance-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, .92);
+}
+
+/* --------------------------------------------------------------------------
+   2. LOWER SPLIT — VIDEO PLAYER + BATCH CARDS
+   -------------------------------------------------------------------------- */
+section.course-assurance-section div.program-details-lower {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    gap: 26px;
+    align-items: start;
+}
+
+section.course-assurance-section h3.program-details-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 16px;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--pd-ink);
+}
+
+section.course-assurance-section h3.program-details-subtitle svg {
+    width: 18px;
+    height: 18px;
+    color: var(--pd-orange);
+}
+
+/* ---------- 2a. video card ---------- */
+section.course-assurance-section article.program-details-media {
+    padding: 20px;
+    border: 1px solid var(--pd-line);
+    border-radius: var(--pd-radius-lg);
+    background: var(--pd-surface);
+    box-shadow: var(--pd-shadow-sm);
+}
+
+section.course-assurance-section div.program-details-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--pd-radius);
+    overflow: hidden;
+    background: #0f1720;
+}
+
+/* fallback for browsers without aspect-ratio */
+@supports not (aspect-ratio: 16 / 9) {
+    section.course-assurance-section div.program-details-frame {
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+}
+
+section.course-assurance-section iframe.program-details-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* click-to-load facade: nothing is fetched from YouTube until the user asks */
+section.course-assurance-section button.program-details-poster {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    background:
+        radial-gradient(620px 260px at 50% 0%, rgba(255, 84, 33, .30) 0%, transparent 66%),
+        linear-gradient(140deg, #16283a 0%, #0f1720 100%);
+    transition: background .35s var(--pd-ease);
+}
+
+section.course-assurance-section button.program-details-poster:hover {
+    background:
+        radial-gradient(620px 260px at 50% 0%, rgba(255, 84, 33, .42) 0%, transparent 66%),
+        linear-gradient(140deg, #1a2f43 0%, #0f1720 100%);
+}
+
+section.course-assurance-section span.program-details-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border-radius: var(--pd-radius-pill);
+    background: linear-gradient(135deg, var(--pd-orange) 0%, var(--pd-orange-600) 100%);
+    box-shadow: var(--pd-shadow-orange);
+    transition: transform .3s var(--pd-ease);
+}
+
+section.course-assurance-section button.program-details-poster:hover span.program-details-play {
+    transform: scale(1.08);
+}
+
+section.course-assurance-section span.program-details-play svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+    fill: currentColor;
+}
+
+section.course-assurance-section span.program-details-poster-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 340px;
+}
+
+section.course-assurance-section span.program-details-poster-hint {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .6);
+}
+
+/* ---------- 2b. playlist ---------- */
+section.course-assurance-section ul.program-details-playlist {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-assurance-section button.program-details-playlist-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--pd-line);
+    border-radius: var(--pd-radius-sm);
+    background: var(--pd-surface-soft);
+    color: var(--pd-ink-700);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .25s var(--pd-ease), background .25s var(--pd-ease),
+        color .25s var(--pd-ease), transform .25s var(--pd-ease);
+}
+
+section.course-assurance-section button.program-details-playlist-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--pd-orange-100);
+    background: var(--pd-orange-50);
+    color: var(--pd-orange-600);
+}
+
+section.course-assurance-section button.program-details-playlist-btn.is-active {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--pd-orange) 0%, var(--pd-orange-600) 100%);
+    color: #ffffff;
+    box-shadow: var(--pd-shadow-orange);
+}
+
+section.course-assurance-section button.program-details-playlist-btn:focus-visible {
+    outline: 2px solid var(--pd-orange);
+    outline-offset: 2px;
+}
+
+section.course-assurance-section span.program-details-playlist-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    border-radius: var(--pd-radius-pill);
+    background: rgba(16, 24, 40, .08);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+section.course-assurance-section button.program-details-playlist-btn.is-active span.program-details-playlist-index {
+    background: rgba(255, 255, 255, .24);
+}
+
+/* ---------- 2c. batch cards ---------- */
+section.course-assurance-section div.program-details-batches {
+    display: flex;
+    flex-direction: column;
+}
+
+section.course-assurance-section ul.program-batch-list {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-assurance-section article.program-batch-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--pd-line);
+    border-radius: var(--pd-radius);
+    background: var(--pd-surface);
+    box-shadow: var(--pd-shadow-sm);
+    transition: transform .3s var(--pd-ease), box-shadow .3s var(--pd-ease),
+        border-color .3s var(--pd-ease);
+}
+
+section.course-assurance-section article.program-batch-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, var(--pd-orange) 0%, var(--pd-orange-400) 100%);
+    opacity: 0;
+    transition: opacity .3s var(--pd-ease);
+}
+
+section.course-assurance-section article.program-batch-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--pd-orange-100);
+    box-shadow: var(--pd-shadow-md);
+}
+
+section.course-assurance-section article.program-batch-card:hover::before {
+    opacity: 1;
+}
+
+section.course-assurance-section span.program-batch-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--pd-radius-sm);
+    border: 1px solid var(--pd-orange-100);
+    background: var(--pd-orange-50);
+    color: var(--pd-orange-600);
+}
+
+section.course-assurance-section span.program-batch-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+section.course-assurance-section div.program-batch-body {
+    min-width: 0;
+}
+
+section.course-assurance-section header.program-batch-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 0 6px;
+}
+
+section.course-assurance-section h4.program-batch-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--pd-ink);
+}
+
+section.course-assurance-section span.program-batch-status {
+    flex: 0 0 auto;
+    padding: 4px 10px;
+    border-radius: var(--pd-radius-pill);
+    background: rgba(15, 157, 88, .1);
+    color: var(--uc-green, #0f9d58);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+section.course-assurance-section p.program-batch-text {
+    margin: 0 0 8px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--pd-muted);
+}
+
+section.course-assurance-section ul.program-batch-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+section.course-assurance-section li.program-batch-meta-item {
+    padding: 4px 10px;
+    border: 1px solid var(--pd-line);
+    border-radius: var(--pd-radius-pill);
+    background: var(--pd-surface-soft);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--pd-ink-700);
+    line-height: 1.4;
+}
+
+section.course-assurance-section li.program-batch-meta-item strong {
+    color: var(--pd-ink);
+    font-weight: 800;
+}
+
+/* ---------- 2d. actions ---------- */
+section.course-assurance-section div.program-details-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0 0;
+}
+
+section.course-assurance-section div.program-details-actions button.uc-btn {
+    flex: 1 1 auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+    section.course-assurance-section div.program-details-lower {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+}
+
+@media (max-width: 992px) {
+    section.course-assurance-section div.course-assurance-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    section.course-assurance-section div.course-assurance-bar {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
+        padding: 14px;
+    }
+
+    section.course-assurance-section div.course-assurance-item {
+        padding: 13px 12px;
+        gap: 12px;
+    }
+
+    section.course-assurance-section span.course-assurance-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    section.course-assurance-section article.program-details-media {
+        padding: 14px;
+    }
+
+    section.course-assurance-section ul.program-details-playlist {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    section.course-assurance-section article.program-batch-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        padding: 15px 16px;
+    }
+
+    section.course-assurance-section header.program-batch-head {
+        flex-wrap: wrap;
+    }
+
+    section.course-assurance-section div.program-details-actions button.uc-btn {
+        flex: 1 1 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    section.course-assurance-section div.course-assurance-item,
+    section.course-assurance-section article.program-batch-card,
+    section.course-assurance-section button.program-details-playlist-btn,
+    section.course-assurance-section span.program-details-play {
+        transition: none;
+    }
+
+    section.course-assurance-section div.course-assurance-item:hover,
+    section.course-assurance-section article.program-batch-card:hover,
+    section.course-assurance-section button.program-details-playlist-btn:hover {
+        transform: none;
+    }
+}

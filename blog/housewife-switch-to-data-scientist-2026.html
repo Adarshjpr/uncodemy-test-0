@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How a Housewife Can Switch to Data Scientist in 2026 | Uncodemy</title>
+    <meta name="description" content="Planning a comeback after a career break and wondering about data science? Here is an honest, step-by-step plan for a housewife to switch to data scientist in 2026.">
+    <link rel="canonical" href="https://uncodemy.com/tutorials/housewife-switch-to-data-scientist-2026">
+    <meta property="og:title" content="How a Housewife Can Switch to Data Scientist in 2026 | Uncodemy">
+    <meta property="og:description" content="A practical roadmap for housewives and career-break returners who want to become a data scientist in 2026 — skills, tools, timeline and a step-by-step comeback plan.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img">
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput">
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials">
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Career guides · 480+ tutorials</p>
+                <h1>How a Housewife Can Switch to <mark>Data Scientist in 2026</mark></h1>
+                <p class="lede">Been away from work for a while and wondering if data science is realistic after a career break? Here is an honest, step-by-step look at what it actually takes for a housewife to become a data scientist in 2026.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;housewife data scientist&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox">
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="true">Career Comeback</button>
+                    <button class="chip" aria-pressed="false">Python & Statistics</button>
+                    <button class="chip" aria-pressed="false">Machine Learning</button>
+                    <button class="chip" aria-pressed="false">Data Analytics with Gen AI</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Data Science Stage vs Effort · Live comparison</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="Compare data science learning stages for a housewife">
+                        <button aria-pressed="true" data-r="pystat">Python & Statistics</button>
+                        <button aria-pressed="false" data-r="ml">Machine Learning</button>
+                        <button aria-pressed="false" data-r="genai">Data Analytics + Gen AI</button>
+                    </div>
+                    <div class="api-flow" id="apiFlow">
+                        <div class="flow-step"><div class="s-l">Time to learn</div><div class="s-v" id="reqVal">—</div><div class="s-d">Studying around home responsibilities</div></div>
+                        <div class="flow-step"><div class="s-l">Entry difficulty</div><div class="s-v" id="resVal">—</div><div class="s-d">For a beginner returning after a break</div></div>
+                        <div class="flow-step"><div class="s-l">Starting salary band</div><div class="s-v" id="assertVal">—</div><div class="s-d">Entry-level data role, India</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Career break</span>
+                        <span class="arrow">→</span>
+                        <span>Python & stats basics</span>
+                        <span class="arrow">→</span>
+                        <span>Live project</span>
+                        <span class="arrow">→</span>
+                        <span>First data science job</span>
+                    </div>
+                    <div class="demo-cap">Click a stage to see how the numbers shift. Python and statistics are where almost every comeback should begin.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Tutorials</a> / <a href="#top">Career Guides</a> / <span>Housewife to Data Scientist</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Comeback · Housewife to data-scientist-ready</p>
+                <h1>How a Housewife Can Switch to Data Scientist in 2026</h1>
+
+                <div class="byline">
+                    <span class="avatar">AK</span>
+                    <span><b>Ankit Kaushik</b> · Lead Trainer, Data Engineering &amp; Full Stack</span>
+                    <span class="sep">|</span>
+                    <span>Updated 11 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>15 min read</span>
+                    <span class="badge">Free · with examples</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 280" role="img" aria-label="Housewife to data scientist path: career break, Python and statistics basics, live project, first data science job">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="280" fill="url(#g4)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">TODAY</text>
+                            <text x="280" y="40">FOUNDATION</text>
+                            <text x="510" y="40">PROJECT</text>
+                            <text x="720" y="40">FIRST JOB</text>
+                        </g>
+                        <rect x="20" y="58" width="200" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="50" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Career Break</text>
+                        <text x="50" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Strong organisation &amp; focus</text>
+                        <text x="50" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">No coding experience yet</text>
+                        <rect x="40" y="164" width="150" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="65" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Starting fresh</text>
+
+                        <rect x="250" y="58" width="210" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="280" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Python & Stats</text>
+                        <text x="280" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Data handling, core statistics</text>
+                        <text x="280" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Guided by a trainer</text>
+                        <rect x="280" y="164" width="150" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="310" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">10–12 wks</text>
+
+                        <rect x="490" y="58" width="190" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="520" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Live Project</text>
+                        <text x="520" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Real dataset, portfolio-ready</text>
+                        <text x="520" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Something to show recruiters</text>
+                        <rect x="520" y="164" width="130" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="545" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">4–5 wks</text>
+
+                        <rect x="710" y="58" width="170" height="170" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="740" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">First DS Role</text>
+                        <text x="740" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Entry-level, on-job growth</text>
+                        <text x="740" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Real experience begins</text>
+                        <rect x="740" y="164" width="110" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="760" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Offer</text>
+
+                        <path d="M220 148 H236" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                        <path d="M460 148 H476" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                        <path d="M680 148 H696" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)"/>
+                    </svg>
+                    <figcaption>Most successful comebacks follow the same shape: Python and statistics foundation, one real data project, then an entry-level role.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary — can a housewife become a data scientist in 2026?</h2>
+                    <p>Yes. A career break is not a disqualifier in <b>data science</b> — companies in 2026 hire on demonstrated skill and project work, not on a continuous resume timeline. What matters is building genuine fundamentals in <b>Python, statistics, and machine learning</b>, then proving them with at least one real, documented project. Returning professionals who treat the comeback like a focused course rather than an open-ended exploration are the ones who land interviews fastest.</p>
+                    <p>In this tutorial you will learn:</p>
+                    <ol>
+                        <li><b>What a data scientist actually does</b> — and why a fresh start is not a disadvantage.</li>
+                        <li><b>Why a career break isn't the obstacle it feels like</b>, if you plan the comeback right.</li>
+                        <li><b>The skills a housewife needs</b> to become job-ready in data science.</li>
+                        <li><b>The tools and concepts to learn</b>, in the right order.</li>
+                        <li><b>A realistic 5-month comeback plan</b> from zero to first application.</li>
+                        <li><b>Mistakes that waste the most time</b> for career-break returners.</li>
+                        <li><b>Test your knowledge</b> — a quick quiz to check your understanding.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What a data scientist actually does</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Why a career break isn't the obstacle it feels like</a></li>
+                        <li><a href="#s3"><span class="n">03</span>The core skills you need to build</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Skill and timeline comparison</a></li>
+                        <li><a href="#s5"><span class="n">05</span>How to start — a simple step-by-step guide</a></li>
+                        <li><a href="#s6"><span class="n">06</span>A realistic 5-month comeback plan</a></li>
+                        <li><a href="#s7"><span class="n">07</span>Mistakes that waste the most time</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Interview Q&amp;A</a></li>
+                        <li><a href="#quiz"><span class="n">09</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">10</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">11</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>What a data scientist actually does</h2>
+                <p>A <strong>data scientist</strong> analyses data to find patterns, builds models that predict outcomes, and turns numbers into decisions a business can act on. This includes cleaning messy data, exploring it with statistics, building and testing machine learning models, and clearly explaining what the results mean. In the early stages of a data science career, most of the work is <b>Python and statistics-heavy</b> — understanding data deeply before any complex modelling begins.</p>
+                <p>In simple terms: a data scientist's job is closer to <b>disciplined, structured problem-solving</b> than to abstract theory — the same skill a household runs on every day, just applied to numbers instead of routines. That overlap is exactly why many career-break returners take to it well.</p>
+                <div class="note"><b>Key point:</b> Most career-break returners become interview-ready for entry-level data science roles in 16 to 20 weeks of focused learning, not years, because a clear plan and consistent hours matter far more than starting age or gap length.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Why a career break isn't the obstacle it feels like</h2>
+                <ul>
+                    <li><b>Skills-first hiring is now common</b> — many companies evaluate data science candidates on projects and tests, not on an unbroken resume timeline.</li>
+                    <li><b>Household management builds real transferable skills</b> — budgeting, planning, and juggling priorities map closely onto project planning and data organisation.</li>
+                    <li><b>Focus and follow-through matter more than a fresh degree</b> — completing a structured course while managing a home proves discipline employers value.</li>
+                    <li><b>Entry-level hiring volume is growing</b> — as more companies build in-house analytics and AI teams, demand for junior data talent is rising steadily.</li>
+                    <li><b>It is a genuine long-term career</b> — junior data scientists can grow into senior data scientists, ML engineers, and analytics leads over time.</li>
+                </ul>
+                <p>Housewives who focus on demonstrable skills — strong Python, solid statistics, one real end-to-end project — are the ones who convert interviews into offers, regardless of how long the break was.</p>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>The core skills you need to build</h2>
+
+                <h3>1. Python for Data Science</h3>
+                <p>Covers scripting, working with libraries like pandas and numpy, and writing code that reads, cleans, and explores data.</p>
+                <ul>
+                    <li><b>Example:</b> Writing a Python script that cleans a messy household-budget-style dataset and summarises spending trends.</li>
+                    <li><b>Best for:</b> Every returner — this is the mandatory starting point, and it builds fast once the syntax clicks.</li>
+                </ul>
+
+                <h3>2. Statistics and Probability</h3>
+                <p>Covers distributions, hypothesis testing, and the core statistical thinking behind every data-driven decision.</p>
+                <ul>
+                    <li><b>Example:</b> Testing whether a change in a product's price actually caused a meaningful change in sales, or if it's just noise.</li>
+                    <li><b>Best for:</b> Building the reasoning skills that separate a data scientist from someone who just runs code.</li>
+                </ul>
+
+                <h3>3. Machine Learning Fundamentals</h3>
+                <p>Covers building, training, and evaluating models like regression and classification using tools like scikit-learn.</p>
+                <ul>
+                    <li><b>Example:</b> Building a model that predicts whether a customer will cancel a subscription based on their usage pattern.</li>
+                    <li><b>Best for:</b> Returners who want to move from "can analyse data" to "can build predictive models."</li>
+                </ul>
+
+                <h3>4. Data Visualisation and Storytelling</h3>
+                <p>Covers presenting findings clearly using charts and dashboards, so results are usable by non-technical decision makers.</p>
+                <ul>
+                    <li><b>Example:</b> Building a simple dashboard that shows which factors most affect customer churn, in plain language.</li>
+                    <li><b>Best for:</b> Turning technical work into something recruiters and interviewers immediately understand.</li>
+                </ul>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Skill and timeline comparison</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Skill area</th><th>Time to learn basics</th><th>Best for</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Python & Statistics</b></td><td>10–12 weeks</td><td>Mandatory first step for every career-break returner</td></tr>
+                            <tr><td><b>Machine Learning</b></td><td>12–16 weeks</td><td>Learned right after Python and statistics are solid</td></tr>
+                            <tr><td><b>Data Analytics with Gen AI</b></td><td>10–14 weeks</td><td>A faster, business-facing alternative or add-on to ML</td></tr>
+                            <tr><td><b>Data Visualisation (Power BI/Tableau)</b></td><td>3–4 weeks</td><td>Learned alongside ML, to present findings clearly</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>Pro tip:</b> Do not try to learn deep machine learning theory before Python and statistics are solid. Interviewers for entry-level data science roles almost always test data handling and statistical reasoning first.</div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>How to start — a simple step-by-step guide</h2>
+
+                <ol class="steps">
+                    <li><b>Get comfortable with Python for data.</b> Move past basic syntax into pandas, numpy, and real data-cleaning tasks.</li>
+                    <li><b>Build core statistics intuition.</b> Learn distributions, correlation, and hypothesis testing with real examples, not just formulas.</li>
+                    <li><b>Learn one visualisation tool.</b> Get hands-on with Power BI or a Python plotting library to present findings clearly.</li>
+                    <li><b>Build a basic machine learning model.</b> Train a simple regression or classification model on a public dataset.</li>
+                    <li><b>Add model evaluation skills.</b> Learn to check whether a model is actually good, not just whether it runs.</li>
+                    <li><b>Build one complete project.</b> Take a full problem end to end and document everything — data source, cleaning, model, and findings.</li>
+                </ol>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Sample data science comeback output">
+                        <button role="tab" aria-selected="true" data-t="0">Self-check</button>
+                        <button role="tab" aria-selected="false" data-t="1">Sample recommendation</button>
+                    </div>
+                    <pre data-p="0"><code>Question                          Answer
+Comfortable with basic math?       Yes
+Written any code before?           No
+Enjoy structured, detail work?     Yes
+Hours available per week           8-10
+City has entry-level DS roles      Yes
+
+Recommendation: Strengthen Python & Statistics,
+add ML next, visualisation alongside.</code></pre>
+                    <pre data-p="1" hidden><code>5-month plan for this profile:
+Month 1: Python fundamentals for data
+Month 2: Statistics & probability basics
+Month 3: Data visualisation + first small analysis
+Month 4: Machine learning fundamentals
+Month 5: One full project, resume, interview prep,
+start applying to entry-level data science roles</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">self-check · Data scientist comeback path</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>A realistic 5-month comeback plan</h2>
+                <ul>
+                    <li><b>Month 1:</b> Learn Python fundamentals for data handling in short, consistent daily sessions that fit around home routines.</li>
+                    <li><b>Month 2:</b> Build core statistics and probability intuition, applying it to small, real datasets.</li>
+                    <li><b>Month 3:</b> Learn a visualisation tool and complete your first small end-to-end data analysis.</li>
+                    <li><b>Month 4:</b> Learn machine learning fundamentals and train your first models on public datasets.</li>
+                    <li><b>Month 5:</b> Finish one complete project, rewrite your resume around demonstrated skills, prepare for interviews, and start applying to entry-level roles.</li>
+                    <li><b>Throughout:</b> Keep documenting everything you build — a visible GitHub or portfolio trail matters more than certificates alone, especially after a break.</li>
+                </ul>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>Mistakes that waste the most time</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Mistake</th><th>Why it costs time</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Jumping straight to deep learning or AI tools</b></td><td>Interviewers still expect solid Python and statistics basics</td><td>Finish Python and statistics fundamentals first</td></tr>
+                            <tr><td><b>Skipping a real project</b></td><td>Certificates alone rarely convince interviewers, especially after a gap</td><td>Build one complete, documented end-to-end project</td></tr>
+                            <tr><td><b>Studying in long, irregular bursts</b></td><td>Inconsistent study is easily disrupted by home responsibilities</td><td>Set a fixed, shorter daily slot instead of occasional long sessions</td></tr>
+                            <tr><td><b>Apologising for the career break in interviews</b></td><td>Draws attention away from the skills actually being evaluated</td><td>State the break plainly, then pivot straight to the project and skills</td></tr>
+                            <tr><td><b>No interview practice</b></td><td>Technical skill without interview readiness stalls offers</td><td>Do mock interviews in month 5, not the week before</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Interview Q&amp;A — switching to data scientist from a career break</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>Can a housewife really become a data scientist after a long break?</summary>
+                    <div class="body"><p>Yes — companies increasingly hire on skills and project work rather than a continuous resume, and career-break returners who build strong Python, statistics, and one real project are hired into entry-level data science roles regularly.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>Do I need a technical degree to become a data scientist?</summary>
+                    <div class="body"><p>No. A structured course covering Python, statistics, and machine learning fundamentals, backed by a real project, is often enough for entry-level roles, regardless of your original degree.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>Which skill should I learn first?</summary>
+                    <div class="body"><p>Start with Python and statistics. Add data visualisation alongside, and move into machine learning only once those fundamentals are solid.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>How long does it take to become job-ready after a break?</summary>
+                    <div class="body"><p>Most career-break returners become interview-ready in 16 to 20 weeks with focused, consistent study and one completed project, since a structured plan matters more than the length of the gap.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>Will interviewers ask about my career gap?</summary>
+                    <div class="body"><p>Often yes, briefly — but most entry-level data science interviews spend the majority of time on your project, your Python and statistics knowledge, and how you think through a problem.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>Should I learn machine learning before Python and statistics?</summary>
+                    <div class="body"><p>No. Build strong Python and statistics fundamentals first — machine learning concepts are much easier to understand and apply once that foundation is solid.</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 09</span>Test yourself — housewife to data scientist quiz</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign-up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 10</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Is data science a realistic career for a housewife returning after a break in 2026?</summary><div class="body"><p>Yes — skills-first hiring means entry-level data science roles are increasingly judged on Python, statistics, and project work rather than an unbroken career timeline.</p></div></details>
+                <details class="acc"><summary>How many hours a week do I need to study?</summary><div class="body"><p>Most returners manage with 8–10 hours a week across short daily sessions, spread over 16 to 20 weeks for Python, statistics, and machine learning basics.</p></div></details>
+                <details class="acc"><summary>Is machine learning harder than Python and statistics for a beginner?</summary><div class="body"><p>Generally yes, since it builds on top of solid coding and statistical thinking. Most returners find it far easier to start with Python and statistics and add machine learning later.</p></div></details>
+                <details class="acc"><summary>Will I need to relocate for an entry-level data science job?</summary><div class="body"><p>Not necessarily — entry-level data roles are available in most major tech hubs and increasingly on a remote or hybrid basis, which also helps with balancing home responsibilities.</p></div></details>
+                <details class="acc"><summary>What if I do not have a project to show?</summary><div class="body"><p>Build one using any public dataset — a household-budget analysis, a sales dataset, or a public health dataset all work well. A single well-documented project is often enough for an entry-level interview.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 11</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Python tutorial for absolute beginners</span><span class="m">Data · 14 min</span></a>
+                    <a class="rel-card" href="what-is-an-api-in-programming.html"><span class="t">What is an API in programming?</span><span class="m">API · 11 min</span></a>
+                    <a class="rel-card" href="bca-student-switch-to-data-engineer-2026.html"><span class="t">How a BCA student can switch to data engineer in 2026</span><span class="m">Data · 15 min</span></a>
+                    <a class="rel-card" href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="t">Best IT career path to start from zero</span><span class="m">Career · 15 min</span></a>
+                    <a class="rel-card" href="which-course-is-future-proof-for-college-dropout-2026.html"><span class="t">Which course is future proof for a college dropout in 2026</span><span class="m">Career · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Statistics for data science, explained simply</span><span class="m">Data · 12 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Restart your career in data science with a job-ready programme built for returners</h3>
+                    <p>Our Data Science programme covers Python, statistics, machine learning, and data visualisation fundamentals, plus one full live project — designed for housewives and career-break returners moving from home routines to real-world data problems.</p>
+                    <span class="price">₹15,500 · full programme <s>₹23,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>5 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekday & weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live beginner data science session</div>
+                    <p>Two hours, no payment, no commitment. Analyse your first real dataset and get hands-on feedback from industry trainers.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Sat &amp; Sun · 11:00 AM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes the 5-month plan</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Python tutorial for beginners</a></li>
+                        <li><a href="#"><span class="rank">02</span>Entry-level data scientist interview questions</a></li>
+                        <li><a href="what-is-an-api-in-programming.html"><span class="rank">03</span>What is an API in programming?</a></li>
+                        <li><a href="#"><span class="rank">04</span>Building your first machine learning model</a></li>
+                        <li><a href="working-professional-best-it-career-path-to-start-from-zero.html"><span class="rank">05</span>Best IT career path to start from zero</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Python for Data · 40 questions</a></li>
+                        <li><a href="#">Statistics · 35 questions</a></li>
+                        <li><a href="#">Machine Learning · 30 questions</a></li>
+                        <li><a href="#">Career Comeback · General · 25 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Data Science</div>
+                    <p>Python, statistics, machine learning and visualisation fundamentals, real tools, one live project — built for career-break returners moving from home management to data-driven roles. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">5</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee — outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in Career Comeback</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Python tutorial for absolute beginners <small>Syntax → pandas → numpy</small></a></li>
+                    <li><a href="#">Statistics for data science, explained simply <small>Core concepts</small></a></li>
+                    <li><a href="what-is-an-api-in-programming.html">What is an API in programming? <small>Core concepts</small></a></li>
+                    <li><a href="#">Resume tips for career-break returners <small>Framing the gap</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data Scientist roadmap <small>Python → Stats → ML → Projects</small></a></li>
+                    <li><a href="working-professional-best-it-career-path-to-start-from-zero.html">Best IT career path from zero <small>Compare all paths</small></a></li>
+                    <li><a href="bca-student-switch-to-data-engineer-2026.html">Data Engineer roadmap <small>SQL → Python → ETL → Cloud</small></a></li>
+                    <li><a href="#">Data Analyst roadmap <small>Excel → SQL → Power BI</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Career comeback self-check worksheet <small>Decide if DS fits you</small></a></li>
+                    <li><a href="#">5-month comeback plan template <small>Ready-to-use planner</small></a></li>
+                    <li><a href="#">Python vs Statistics cheat sheet <small>What to learn, in order</small></a></li>
+                    <li><a href="#">Entry-level data scientist interview question bank <small>50 real questions</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">How a housewife can switch to data scientist in 2026 <small>11 August 2026</small></a></li>
+                    <li><a href="can-a-sales-executive-become-it-professional-2026.html">Can a sales executive really become an IT professional in 2026 <small>11 August 2026</small></a></li>
+                    <li><a href="which-course-is-future-proof-for-college-dropout-2026.html">Which course is future proof for a college dropout in 2026 <small>10 August 2026</small></a></li>
+                    <li><a href="bca-student-switch-to-data-engineer-2026.html">How a BCA student can switch to data engineer in 2026 <small>10 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img">
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and testing in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Data Analytics with Gen AI</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">Software Testing</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Career roadmaps</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                pystat: { req: "10–12 wks", res: "Low", assert: "₹3.5–5 LPA" },
+                ml: { req: "12–16 wks", res: "Medium", assert: "₹4.5–6.5 LPA" },
+                genai: { req: "10–14 wks", res: "Medium", assert: "₹4–6 LPA" }
+            },
+            stateOrder: ["pystat", "ml", "genai"],
+            renderScene: function(s) {
+                document.getElementById("reqVal").textContent = s.req;
+                document.getElementById("resVal").textContent = s.res;
+                document.getElementById("assertVal").textContent = s.assert;
+            },
+            defaultTrack: "Career Comeback",
+            emptyMsg: 'Nothing matches that yet. Try “Python”, “statistics” or “ML”.',
+            LIB: [
+                { t: "How a housewife can switch to data scientist in 2026", g: "Career Comeback" },
+                { t: "Python tutorial for absolute beginners", g: "Python & Statistics" },
+                { t: "Statistics for data science, explained simply", g: "Python & Statistics" },
+                { t: "What is an API in programming?", g: "Machine Learning" },
+                { t: "Entry-level data scientist interview questions", g: "Career Comeback" },
+                { t: "How to build a machine learning project in a month", g: "Career Comeback" },
+                { t: "Machine learning vs deep learning — what's the difference?", g: "Machine Learning" },
+                { t: "Resume tips for career-break returners", g: "Career Comeback" },
+                { t: "Is data science a good career in 2026?", g: "Data Analytics with Gen AI" },
+                { t: "Best IT career path to start from zero", g: "Career Comeback" }
+            ],
+            QUIZ: [{
+                q: "For a housewife with no coding background, which skill should be learned first?",
+                o: ["Deep learning with neural networks", "Python and statistics fundamentals", "Advanced MLOps pipelines", "Kubernetes"],
+                a: 1,
+                e: "Python and statistics fundamentals form the base every other data science skill builds on, making them the right starting point after a break."
+            }, {
+                q: "Why is a career break not necessarily a disadvantage in data science hiring?",
+                o: ["It guarantees a higher salary", "Skills-first hiring means projects and demonstrated ability matter more than an unbroken resume", "Companies never ask about gaps", "It removes the need to learn anything new"],
+                a: 1,
+                e: "Many companies now hire entry-level data science candidates based on demonstrated skill and project work rather than a continuous career timeline."
+            }, {
+                q: "What matters most when applying for a first data science role after a break?",
+                o: ["Only certificates", "A completed project with real data, cleaning, and a working model", "Knowing every deep learning framework", "A perfectly unbroken resume"],
+                a: 1,
+                e: "A documented, completed project demonstrates practical skill far better than certificates alone, especially for candidates returning after a gap."
+            }, {
+                q: "Which concept is central to almost every data science project?",
+                o: ["Statistics and hypothesis testing", "Photo editing", "UI animation", "Social media scheduling"],
+                a: 0,
+                e: "Statistical reasoning underlies data exploration and model evaluation, and is expected knowledge even at entry level."
+            }, {
+                q: "What's the biggest risk of jumping straight to machine learning before Python and statistics are solid?",
+                o: ["Learning too fast", "Struggling to understand why models work or fail, since the fundamentals aren't there yet", "Becoming overqualified", "Running out of course material"],
+                a: 1,
+                e: "Machine learning concepts build directly on Python and statistics; skipping ahead usually means struggling to interpret or debug models later."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You've got a clear read on this — build Python and statistics fundamentals first, then add machine learning and visualisation.",
+                fail: "Revisit sections 03 and 05 — starting with Python and statistics fundamentals is the key decision here."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

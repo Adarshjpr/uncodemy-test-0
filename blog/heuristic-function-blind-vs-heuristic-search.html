@@ -1,0 +1,1017 @@
+<!DOCTYPE html><html lang="en" class="uncodemy-ai-blog"><head>
+    <!-- Advanced SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Heuristic Function: Blind vs. Heuristic Search | Uncodemy Blog</title>
+    <meta name="description" content="Dive into heuristic functions and compare blind (uninformed) vs. heuristic (informed) search algorithms in AI, with advanced insights, code examples, and visualizations from Uncodemy’s AI course.">
+    <meta name="keywords" content="heuristic function, blind search, heuristic search, uninformed search, informed search, A* search, Manhattan distance, AI algorithms, Uncodemy AI course">
+    <meta name="author" content="Uncodemy AI Team">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Heuristic Function: Blind vs. Heuristic Search | Uncodemy Blog">
+    <meta property="og:description" content="Explore heuristic functions and the differences between blind and heuristic search algorithms in AI with detailed explanations, interactive visualizations, and code from Uncodemy.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://uncodemy.com/blog/heuristic-function-blind-vs-heuristic-search">
+    <meta property="og:image" content="https://uncodemy.com/image/logo.png">
+    <meta property="og:site_name" content="Uncodemy">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Heuristic Function: Blind vs. Heuristic Search | Uncodemy Blog">
+    <meta name="twitter:description" content="Explore heuristic functions and the differences between blind and heuristic search algorithms in AI with detailed explanations, interactive visualizations, and code from Uncodemy.">
+    <meta name="twitter:image" content="https://uncodemy.com/image/logo.png">
+    <meta name="twitter:creator" content="@Uncodemy">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://uncodemy.com/blog/heuristic-function-blind-vs-heuristic-search">
+    
+    <!-- Structured Data / Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Heuristic Function: Blind vs. Heuristic Search",
+      "description": "Understand heuristic functions and compare blind vs. heuristic search algorithms in AI with advanced insights, code examples, and visualizations from Uncodemy’s AI course.",
+      "author": {
+        "@type": "Organization",
+        "name": "Uncodemy",
+        "url": "https://uncodemy.com"
+      },
+      "datePublished": "2025-06-21",
+      "image": "https://uncodemy.com/images/heuristic-search-schema.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Uncodemy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://uncodemy.com/logo.png"
+        }
+      },
+      "keywords": "heuristic function, blind search, heuristic search, uninformed search, informed search, A* search, Manhattan distance, AI algorithms, Uncodemy AI course"
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://uncodemy.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://uncodemy.com/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="uncodemy-new-blog.css">
+    <link rel="stylesheet" href="/course/css/styles.css">
+    <link rel="stylesheet" href="/course/css/stylee.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS5ER3EFNH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BS5ER3EFNH');
+</script>
+<script>
+
+    !function(f,b,e,v,n,t,s)
+    
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    fbq('init', '831040531192164');
+    
+    fbq('track', 'PageView');
+    
+    </script>
+    
+    
+    
+    <!-- ✅ META PIXEL END -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16792742286"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16792742286');</script>      <link rel="preload" href="/css/responsive2.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" as="style" onload="this.rel='stylesheet'">
+</head>
+
+<body>
+    <!-- Floating Particles Background -->
+    <div class="uncodemy-particles" id="uncodemyParticles"></div>
+   <nav id="main-nav">
+        <div class="nav-top-head" id="nAv"><span style="width: 3px; height: 17px; background-color:#ff5421;"></span><span><b>For Counseling : </b><span style="color:#ff5421"><a href="tel:+918448807675" aria-label="Call Uncodemy Counseling" title="Call Uncodemy Counseling">+91 8448807675</a> <b class="cnsbld"> / </b><a href="tel:+9198183 66550" style="text-decoration: none; color: #ff5421;">+91 9818366550</a></span> <b class="cnsbld">/</b>
+                <span style="color: #ff5421;"><a href="tel:+91 8766313646" style="text-decoration: none; color: #ff5421;">+91 8766313646</a></span></span><span style="width: 3px; height: 17px; background-color:#ff5421;"></span> <span><b>For Support :</b><span style="color: #ff5421;"><a href="tel:+918800023723" style="text-decoration: none; color: #ff5421;">+91 8800023723</a></span></span> <span style="width: 3px; height: 17px; background-color:#ff5421;"></span> <span><a href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">info@uncodemy.com</a></span> <span style="width: 3px; height: 17px; background-color:#ff5421;"></span> <a href="https://api.whatsapp.com/send?phone=918800023723" aria-label="Read more about Seminole tax hike" style="text-decoration: none; color: black;"><span><img loading="lazy" class="whats lazy-load" data-src="/image/whatsapp.png"></span></a> <span style="width: 3px; height: 17px; background-color:#ff5421;"></span></div>
+        <div class="nav-container"><i class="fa-solid fa-bars hamburger" onclick="showNavigation()"></i><a href="/" aria-label="Read more about Seminole tax hike">
+                <div class="logoimages">
+                    <div class="logo-container"><img loading="lazy" class="loG" src="/img/Logo (1).png" alt="gp"><img loading="lazy" class="long lazy-load" data-src="/img/no1.png" alt="gp"></div>
+                </div>
+            </a>
+            <div class="categories">
+                <nav class="navr">
+                    <menu type="toolbar" id="categories-menu">
+                        <menuitem label="drop"><span class="mainc Mane" id="categoriesBtn" onclick="toggleCategory()">CATEGORIES</span>
+                        <menu class="hii">
+                            <menuitem class="SEt" label="settings"><a>Full-Stack-Development</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has" href="/course/full-stack-with-nodejs-training-course-in-noida" aria-label="Read more about Seminole tax hike">Full Stack With NodeJs</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/python-full-stack-training-course-in-noida">Python Full Stack</a>
+                                </menuitem>
+                                <menuitem label="Test 2"><a class="has" href="/course/java-full-stack-using-react-training-course-in-noida">Java Full Stack
+                                    Using React</a></menuitem>
+                                <menuitem label="Test 3"><a class="has" href="/course/web-designing-training-course-in-noida">Web Designing</a></menuitem>
+                                <menuitem label="Test 3"><a class="has" href="/course/web-development-training-course-in-noida">Web Development</a>
+                                </menuitem>
+                                <menuitem label="Test 3"><a class="has" href="/course/frontend-development-training-course-in-noida">Frontend</a></menuitem>
+                                <menuitem label="Test 4"><a class="has" href="/course/angular-training-course-in-noida">Angular</a></menuitem>
+                                <menuitem label="Test 4"><a class="has" href="/course/react-js-training-course-in-noida">ReactJs</a></menuitem>
+                                <menuitem label="Test 4"><a class="has" href="/course/data-structure-and-algorithm-training-course-in-noida">Data
+                                    Structureand Algorithm</a></menuitem>
+                                <menuitem label="Test 4"><a class="has" href="/course/mean-stack-development-training-course-in-noida">Mean</a></menuitem>
+                                <menuitem label="Test 4"><a class="has" href="/course/mern-stack-development-training-course-in-noida">Mern</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Data Science</a>
+                            <menu class="mant0">
+                                <menuitem label="Test 1"><a class="has" href="/course/business-analyst-training-course-in-noida">Business Analytics</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/python-training-course-in-noida">Python</a></menuitem>
+                                <menuitem label="Test 2"><a class="has" href="/course/data-analytics-using-python-training-course-in-noida">Data Analytics
+                                    using Python</a></menuitem>
+                                <menuitem label="Test 2"><a class="has" href="/course/data-science-machine-learning-using-python-training-course-in-noida">Data
+                                    Science &amp; Machine Learning using Python</a></menuitem>
+                                <menuitem label="Test 3"><a class="has" href="/course/machine-learning-using-python-training-course-in-noida">Machine
+                                    Learning using Python</a></menuitem>
+                                <menuitem label="Test 4"><a class="has" href="/course/ai-using-python-training-course-in-noida">AI Using Python</a>
+                                </menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Software Testing</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has" href="/course/software-testing-training-course-in-noida">Software Testing</a>
+                                </menuitem>
+                                <menuitem label="Test 2"><a class="has" href="/course/manual-testing-course-in-noida">Manual Testing</a></menuitem>
+                                <menuitem label="Test 3"><a class="has" href="/course/automation-testing-course-in-noida">Automation Testing</a></menuitem>
+                                <menuitem label="Test 2"><a class="has" href="/course/istqb-training-course-in-noida">ISTQB Training</a></menuitem>
+                                <menuitem label="Test 2"><a class="has" href="/course/manual-testing-course-in-noida">Manual + Selenium</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Cloud Tools</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has" href="/course/microsoft-azure-training-course-in-noida">Microsoft Azure</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/devops-training-course-in-noida">DevOps</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/aws-training-course-in-noida">Amazon Web Services (AWS)</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/cloud-computing-training-course-in-noida">Cloud Computing</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/salesforce-training-course-in-noida">Salesforce</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Digital Marketing</a>
+                            <menu>
+                                <menuitem label="Test 1"><a class="has" href="/course/digital-marketing-training-course-in-noida">Digital Marketing</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/advance-digital-marketing-training-course-in-noida">AdvanceDigital
+                                    Marketing</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/seo-training-course-in-noida">SEO(SearchEngine Optimization)</a>
+                                </menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Java Technology+</a>
+                            <menu class="mant1">
+                                <menuitem label="Test 1"><a class="has" href="/course/java-training-course-in-noida">Java</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/java-for-beginners-training-course-in-noida">Java ForBeginners</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/java-expert-training-course-in-noida">Java Expert</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/spring-boot-microservices-security-with-hibernate-training-course-in-noida">SpringBoot
+                                    Microservices Security With Hibernate</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Network &amp; Security</a>
+                            <menu class="mant2">
+                                <menuitem label="Test 1"><a class="has" href="/course/ethical-hacking-course-in-noida">Ethical Hacking</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/cyber-security-training-course-in-noida">Cyber Security</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/ccnp-training-course-in-noida">CCNP</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/mcsa-training-course-in-noida">MCSA</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/vmware-training-course-in-noida">Vmware</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Programming Language</a>
+                            <menu class="mant3">
+                                <menuitem label="Test 1"><a class="has" href="/course/c-with-data-structure-and-algorithm-training-course-in-noida">CWith
+                                    Data Structure And Algorithms</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/cpptraining-training-course-in-noida">Object Oriented DataStructure
+                                    &amp; Algorithms Training</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/net-4-months-training-course-in-noida">.NET 4 Months</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/dotnet-full-stack-training-course-in-noida">.NET Full Stack</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/r-programming-training-course-in-noida">R Programming</a></menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>CAD Training</a>
+                            <menu class="mant4">
+                                <menuitem label="Test 1"><a class="has" href="/course/autocad-training-course-in-noida">AUTOCAD</a></menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/cnc-programming-training-course-in-noida">CNC Programming</a>
+                                </menuitem>
+                            </menu>
+                            </menuitem>
+                            <menuitem class="SEt" label="settings"><a>Graphic Designing</a>
+                            <menu class="mant5">
+                                <menuitem label="Test 1"><a class="has" href="/course/graphic-designing-training-course-in-noida">Graphic Designing</a>
+                                </menuitem>
+                                <menuitem label="Test 1"><a class="has" href="/course/uiux-training-course-in-noida">UI/UX Designing</a></menuitem>
+                            </menu>
+                            </menuitem>
+                        </menu>
+                        </menuitem>
+                    </menu>
+                </nav>
+            </div>
+            <div class="navigation-container">
+                <div class="navigation-section se SER">
+                    <ul>
+                        <li><a class="cls" href="/">Home</a></li>
+                        <li class="cls"><label id="COR" onclick="showDropDown(0)" style="cursor: pointer; color:black !important;">Courses <i class="fa-solid fa-caret-down" id="dropdown-arrow"></i></label></li>
+                        <div class="dropdown dropdown-course"><button class="dropdown-close-btn" onclick="closeFunction()"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="course-detail-section">
+                                <div class="course-left-section">
+                                    <ul>
+                                        <li class="course-name-dropdown" id="active-dropdown-course">On Demand Courses
+                                        </li>
+                                        <li class="course-name-dropdown" onclick="show()">Data Science Program</li>
+                                        <li class="course-name-dropdown">Full Stack Development</li>
+                                        <li class="course-name-dropdown">Software Testing</li>
+                                        <li class="course-name-dropdown">Cloud Tools</li>
+                                        <li class="course-name-dropdown">SAP</li>
+                                        <li class="course-name-dropdown">Foreign Languages</li>
+                                        <li class="course-name-dropdown">Project Management</li>
+                                    </ul>
+                                </div>
+                                <div class="course-right-section"><div class="COuRs course-image-text" id="active-course"><div class="courses"><a href="/course/data-science-training-course-in-noida" class="nav-item nav-link" title="Data Science Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ds-logo.jpg" alt="Data Science Training Course Logo"><span class="sp">Data Science</span></div><p class="coursep">Data Science combines statistics, programming, and domain expertise for data-driven insights.</p></a><a class="coursea" href="/course/data-science-training-course-in-noida" title="Learn More About Data Science Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Data Science Training Course">Know More</button></a></div><div class="courses"><a href="/course/data-analytics-training-course-in-noida" class="nav-item nav-link" title="Data Analytics Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/da-logo.jpg" alt="Data Analytics Training Course Logo"><span class="sp">Data Analytics</span></div><p class="coursep">Data Analytics transforms raw data into actionable business insights.</p></a><a class="coursea" href="/course/data-analytics-training-course-in-noida" title="Learn More About Data Analytics Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Data Analytics Training Course">Know More</button></a></div><div class="courses"><a href="/course/software-testing-training-course-in-noida" class="nav-item nav-link" title="Software Testing Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/st-logo.jpg" alt="Software Testing Training Course Logo"><span class="sp">Software Testing</span></div><p class="coursep">Software Testing ensures quality and reliability in software applications.</p></a><a class="coursea" href="/course/software-testing-training-course-in-noida" title="Learn More About Software Testing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Software Testing Training Course">Know More</button></a></div><div class="courses"><a href="/course/full-stack-development-training-course-in-noida" class="nav-item nav-link" title="Full Stack Development Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/fs-logo.jpg" alt="Full Stack Development Training Course Logo"><span class="sp">Full Stack Development</span></div><p class="coursep">Full Stack Development covers front-end and back-end web development skills.</p></a><a class="coursea" href="/course/full-stack-development-training-course-in-noida" title="Learn More About Full Stack Development Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Full Stack Development Training Course">Know More</button></a></div><div class="courses"><a href="/course/digital-marketing-training-course-in-noida" class="nav-item nav-link" title="Digital Marketing Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/dm-logo.jpg" alt="Digital Marketing Training Course Logo"><span class="sp">Digital Marketing</span></div><p class="coursep">Digital Marketing includes SEO, social media, and content strategies.</p></a><a class="coursea" href="/course/digital-marketing-training-course-in-noida" title="Learn More About Digital Marketing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Digital Marketing Training Course">Know More</button></a></div><div class="courses"><a href="/course/java-training-course-in-noida" class="nav-item nav-link" title="Java Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/java-logo.jpg" alt="Java Training Course Logo"><span class="sp">Java</span></div><p class="coursep">Java training equips beginners with skills for robust application development.</p></a><a class="coursea" href="/course/java-training-course-in-noida" title="Learn More About Java Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Java Training Course">Know More</button></a></div><div class="courses"><a href="/course/artificial-intelligence-training-course-in-noida" class="nav-item nav-link" title="Artificial Intelligence Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ai-logo.jpg" alt="Artificial Intelligence Training Course Logo"><span class="sp">Artificial Intelligence</span></div><p class="coursep">Artificial Intelligence enables computers to mimic human intelligence.</p></a><a class="coursea" href="/course/artificial-intelligence-training-course-in-noida" title="Learn More About Artificial Intelligence Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Artificial Intelligence Training Course">Know More</button></a></div><div class="courses"><a href="/course/mern-stack-development-training-course-in-noida" class="nav-item nav-link" title="MERN Stack Development Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/mern-logo.jpg" alt="MERN Stack Development Training Course Logo"><span class="sp">MERN</span></div><p class="coursep">MERN Stack combines MongoDB, Express.js, React, and Node.js for web development.</p></a><a class="coursea" href="/course/mern-stack-development-training-course-in-noida" title="Learn More About MERN Stack Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about MERN Stack Development Training Course">Know More</button></a></div><div class="courses"><a href="/course/python-training-course-in-noida" class="nav-item nav-link" title="Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/python-logo.jpg" alt="Python Training Course Logo"><span class="sp">Python</span></div><p class="coursep">Python is a versatile programming language for web and software development.</p></a><a class="coursea" href="/course/python-training-course-in-noida" title="Learn More About Python Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Python Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/data-science-training-course-in-noida" class="nav-item nav-link" title="Data Science Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ds-logo.jpg" alt="Data Science Training Course Logo"><span class="sp">Data Science</span></div><p class="coursep">Data Science combines statistics, programming, and domain expertise for data-driven insights.</p></a><a class="coursea" href="/course/data-science-training-course-in-noida" title="Learn More About Data Science Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Data Science Training Course">Know More</button></a></div><div class="courses"><a href="/course/data-analytics-training-course-in-noida" class="nav-item nav-link" title="Data Analytics Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/da-logo.jpg" alt="Data Analytics Training Course Logo"><span class="sp">Data Analytics</span></div><p class="coursep">Data Analytics transforms raw data into actionable business insights.</p></a><a class="coursea" href="/course/data-analytics-training-course-in-noida" title="Learn More About Data Analytics Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Data Analytics Training Course">Know More</button></a></div><div class="courses"><a href="/course/business-analyst-training-course-in-noida" class="nav-item nav-link" title="Business Analyst Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/da-logo.jpg" alt="Business Analyst Training Course Logo"><span class="sp">Business Analyst</span></div><p class="coursep">Business Analysts bridge business needs and technical solutions effectively.</p></a><a class="coursea" href="/course/business-analyst-training-course-in-noida" title="Learn More About Business Analyst Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Business Analyst Training Course">Know More</button></a></div><div class="courses"><a href="/course/machine-learning-training-course-in-noida" class="nav-item nav-link" title="Machine Learning Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ml-logo.jpg" alt="Machine Learning Training Course Logo"><span class="sp">Machine Learning</span></div><p class="coursep">Machine Learning enables systems to learn from data and improve.</p></a><a class="coursea" href="/course/machine-learning-training-course-in-noida" title="Learn More About Machine Learning Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Machine Learning Training Course">Know More</button></a></div><div class="courses"><a href="/course/python-training-course-in-noida" class="nav-item nav-link" title="Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/python-logo.jpg" alt="Python Training Course Logo"><span class="sp">Python</span></div><p class="coursep">Python is a versatile programming language for web and software development.</p></a><a class="coursea" href="/course/python-training-course-in-noida" title="Learn More About Python Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Python Training Course">Know More</button></a></div><div class="courses"><a href="/course/data-analytics-using-python-training-course-in-noida" class="nav-item nav-link" title="Data Analytics Using Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/da-logo.jpg" alt="Data Analytics Using Python Training Course Logo"><span class="sp">Data Analytics using Python</span></div><p class="coursep">Data Analytics with Python offers tools for insightful data analysis.</p></a><a class="coursea" href="/course/data-analytics-using-python-training-course-in-noida" title="Learn More About Data Analytics Using Python Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Data Analytics Using Python Training Course">Know More</button></a></div><div class="courses"><a href="/course/machine-learning-using-python-training-course-in-noida" class="nav-item nav-link" title="Machine Learning Using Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ml-logo.jpg" alt="Machine Learning Using Python Training Course Logo"><span class="sp">Machine Learning Using Python</span></div><p class="coursep">Machine Learning with Python builds predictive models efficiently.</p></a><a class="coursea" href="/course/machine-learning-using-python-training-course-in-noida" title="Learn More About Machine Learning Using Python Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Machine Learning Using Python Training Course">Know More</button></a></div><div class="courses"><a href="/course/ai-using-python-training-course-in-noida" class="nav-item nav-link" title="AI Using Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ai-logo.jpg" alt="AI Using Python Training Course Logo"><span class="sp">AI Using Python</span></div><p class="coursep">AI with Python develops intelligent systems using Python libraries.</p></a><a class="coursea" href="/course/ai-using-python-training-course-in-noida" title="Learn More About AI Using Python Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about AI Using Python Training Course">Know More</button></a></div><div class="courses"><a href="/course/data-science-machine-learning-using-python-training-course-in-noida" class="nav-item nav-link" title="Data Science and Machine Learning Using Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/ds-logo.jpg" alt="Data Science and Machine Learning Using Python Training Course Logo"><span class="sp">Data Science &amp; Machine Learning Using Python</span></div><p class="coursep">Data Science and Machine Learning with Python for advanced analytics.</p></a><a class="coursea" href="/course/data-science-machine-learning-using-python-training-course-in-noida" title="Learn More About Data Science and Machine Learning Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Data Science and Machine Learning Using Python Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/full-stack-development-training-course-in-noida" class="nav-item nav-link" title="Full Stack Development Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/fs-logo.jpg" alt="Full Stack Development Training Course Logo"><span class="sp">Full Stack Development</span></div><p class="coursep">Full Stack Development covers front-end and back-end web development skills.</p></a><a class="coursea" href="/course/full-stack-development-training-course-in-noida" title="Learn More About Full Stack Development Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Full Stack Development Training Course">Know More</button></a></div><div class="courses"><a href="/course/python-training-course-in-noida" class="nav-item nav-link" title="Python Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/python-logo.jpg" alt="Python Training Course Logo"><span class="sp">Python</span></div><p class="coursep">Python is a versatile programming language for web and software development.</p></a><a class="coursea" href="/course/python-training-course-in-noida" title="Learn More About Python Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Python Training Course">Know More</button></a></div><div class="courses"><a href="/course/java-training-course-in-noida" class="nav-item nav-link" title="Java Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/java-logo.jpg" alt="Java Training Course Logo"><span class="sp">Java</span></div><p class="coursep">Java training equips beginners with skills for robust application development.</p></a><a class="coursea" href="/course/java-training-course-in-noida" title="Learn More About Java Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Java Training Course">Know More</button></a></div><div class="courses"><a href="/course/full-stack-with-nodejs-training-course-in-noida" class="nav-item nav-link" title="Full Stack with Node.js Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/fs-logo.jpg" alt="Full Stack with Node.js Training Course Logo"><span class="sp">Full Stack With NodeJs</span></div><p class="coursep">Full Stack with Node.js builds scalable web applications.</p></a><a class="coursea" href="/course/full-stack-with-nodejs-training-course-in-noida" title="Learn More About Full Stack with Node.js Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Full Stack with Node.js Training Course">Know More</button></a></div><div class="courses"><a href="/course/java-full-stack-using-react-training-course-in-noida" class="nav-item nav-link" title="Java Full Stack Using React Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/java-logo.jpg" alt="Java Full Stack Using React Training Course Logo"><span class="sp">Java Full Stack Using ReactJS</span></div><p class="coursep">Java Full Stack with React builds modern web applications.</p></a><a class="coursea" href="/course/java-full-stack-using-react-training-course-in-noida" title="Learn More About Java Full Stack Using React Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Java Full Stack Using React Training Course">Know More</button></a></div><div class="courses"><a href="/course/web-designing-training-course-in-noida" class="nav-item nav-link" title="Web Designing Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/web-design-logo.jpg" alt="Web Designing Training Course Logo"><span class="sp">Web Designing</span></div><p class="coursep">Web Designing creates visually appealing and user-friendly websites.</p></a><a class="coursea" href="/course/web-designing-training-course-in-noida" title="Learn More About Web Designing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Web Designing Training Course">Know More</button></a></div><div class="courses"><a href="/course/react-js-training-course-in-noida" class="nav-item nav-link" title="React.js Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/react-logo.jpg" alt="React.js Training Course Logo"><span class="sp">ReactJS</span></div><p class="coursep">React.js builds dynamic user interfaces with JavaScript.</p></a><a class="coursea" href="/course/react-js-training-course-in-noida" title="Learn More About React.js Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about React.js Training Course">Know More</button></a></div><div class="courses"><a href="/course/angular-training-course-in-noida" class="nav-item nav-link" title="Angular Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/angular-logo.jpg" alt="Angular Training Course Logo"><span class="sp">Angular</span></div><p class="coursep">Angular develops robust single-page applications with JavaScript.</p></a><a class="coursea" href="/course/angular-training-course-in-noida" title="Learn More About Angular Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Angular Training Course">Know More</button></a></div><div class="courses"><a href="/course/mern-stack-development-training-course-in-noida" class="nav-item nav-link" title="MERN Stack Development Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/mern-logo.jpg" alt="MERN Stack Development Training Course Logo"><span class="sp">Mern</span></div><p class="coursep">MERN Stack combines MongoDB, Express.js, React, and Node.js for web development.</p></a><a class="coursea" href="/course/mern-stack-development-training-course-in-noida" title="Learn More About MERN Stack Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about MERN Stack Development Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/software-testing-training-course-in-noida" class="nav-item nav-link" title="Software Testing Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/st-logo.jpg" alt="Software Testing Training Course Logo"><span class="sp">Software Testing</span></div><p class="coursep">Software Testing ensures quality and reliability in software applications.</p></a><a class="coursea" href="/course/software-testing-training-course-in-noida" title="Learn More About Software Testing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Software Testing Training Course">Know More</button></a></div><div class="courses"><a href="/course/manual-testing-course-in-noida" class="nav-item nav-link" title="Manual Testing Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/manual-testing-logo.jpg" alt="Manual Testing Course Logo"><span class="sp">Manual Testing</span></div><p class="coursep">Manual Testing verifies software functionality through hands-on testing.</p></a><a class="coursea" href="/course/manual-testing-course-in-noida" title="Learn More About Manual Testing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Manual Testing Course">Know More</button></a></div><div class="courses"><a href="/course/automation-testing-course-in-noida" class="nav-item nav-link" title="Automation Testing Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/automation-testing-logo.jpg" alt="Automation Testing Course Logo"><span class="sp">Automation Testing</span></div><p class="coursep">Automation Testing executes test cases with automated tools.</p></a><a class="coursea" href="/course/automation-testing-course-in-noida" title="Learn More About Automation Testing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Automation Testing Course">Know More</button></a></div><div class="courses"><a href="/course/istqb-training-course-in-noida" class="nav-item nav-link" title="ISTQB Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/st-logo.jpg" alt="ISTQB Software Testing Certification Course Logo"><span class="sp">ISTQB Training</span></div><p class="coursep">ISTQB Training prepares for International Software Testing Qualifications.</p></a><a class="coursea" href="/course/istqb-training-course-in-noida" title="Learn More About ISTQB Training Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about ISTQB Training Course">Know More</button></a></div><div class="courses"><a href="/course/manual-selenium-training-course-in-noida" class="nav-item nav-link" title="Manual and Selenium Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/manual-testing-logo.jpg" alt="Manual and Selenium Testing Course Logo"><span class="sp">Manual + Selenium</span></div><p class="coursep">Manual and Selenium Training combines manual and automated testing skills.</p></a><a class="coursea" href="/course/manual-selenium-training-course-in-noida" title="Learn More About Manual and Selenium Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Manual and Selenium Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/aws-training-course-in-noida" class="nav-item nav-link" title="AWS Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/aws-logo.jpg" alt="AWS Cloud Computing Training Course Logo"><span class="sp">Amazon Web Services (AWS)</span></div><p class="coursep">AWS offers comprehensive cloud computing solutions for businesses.</p></a><a class="coursea" href="/course/aws-training-course-in-noida" title="Learn More About AWS Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about AWS Training Course">Know More</button></a></div><div class="courses"><a href="/course/devops-training-course-in-noida" class="nav-item nav-link" title="DevOps Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/devops-logo.jpg" alt="DevOps Training Course Logo"><span class="sp">DevOps</span></div><p class="coursep">DevOps enhances collaboration between development and operations teams.</p></a><a class="coursea" href="/course/devops-training-course-in-noida" title="Learn More About DevOps Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about DevOps Training Course">Know More</button></a></div><div class="courses"><a href="/course/microsoft-azure-training-course-in-noida" class="nav-item nav-link" title="Microsoft Azure Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/microsoft-logo.jpg" alt="Microsoft Azure Cloud Training Course Logo"><span class="sp">Microsoft Azure</span></div><p class="coursep">Microsoft Azure supports development, testing, and deployment of applications.</p></a><a class="coursea" href="/course/microsoft-azure-training-course-in-noida" title="Learn More About Microsoft Azure Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Microsoft Azure Training Course">Know More</button></a></div><div class="courses"><a href="/course/cloud-computing-training-course-in-noida" class="nav-item nav-link" title="Cloud Computing Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/cloud-computing-logo.jpg" alt="Cloud Computing Training Course Logo"><span class="sp">Cloud Computing</span></div><p class="coursep">Cloud Computing provides scalable, on-demand computing resources.</p></a><a class="coursea" href="/course/cloud-computing-training-course-in-noida" title="Learn More About Cloud Computing Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Cloud Computing Training Course">Know More</button></a></div><div class="courses"><a href="/course/salesforce-training-course-in-noida" class="nav-item nav-link" title="Salesforce Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/salesforce-logo.jpg" alt="Salesforce CRM Training Course Logo"><span class="sp">Salesforce</span></div><p class="coursep">Salesforce is a leading customer relationship management platform.</p></a><a class="coursea" href="/course/salesforce-training-course-in-noida" title="Learn More About Salesforce Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Salesforce Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/sap-training-course-in-noida" class="nav-item nav-link" title="SAP Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-logo.jpg" alt="SAP ERP Training Course Logo"><span class="sp">SAP Training</span></div><p class="coursep">SAP Training covers enterprise resource planning software solutions.</p></a><a class="coursea" href="/course/sap-training-course-in-noida" title="Learn More About SAP Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP Training Course">Know More</button></a></div><div class="courses"><a href="/course/sap-sd-training-course-in-noida" class="nav-item nav-link" title="SAP SD Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-sd-logo.jpg" alt="SAP Sales and Distribution Training Course Logo"><span class="sp">SAP SD Training</span></div><p class="coursep">SAP SD manages sales and distribution processes in ERP systems.</p></a><a class="coursea" href="/course/sap-sd-training-course-in-noida" title="Learn More About SAP SD Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP SD Training Course">Know More</button></a></div><div class="courses"><a href="/course/sap-scm-training-course-in-noida" class="nav-item nav-link" title="SAP SCM Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-scm-logo.jpg" alt="SAP Supply Chain Management Training Course Logo"><span class="sp">SAP SCM Training</span></div><p class="coursep">SAP SCM optimizes supply chain management processes.</p></a><a class="coursea" href="/course/sap-scm-training-course-in-noida" title="Learn More About SAP SCM Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP SCM Training Course">Know More</button></a></div><div class="courses"><a href="/course/sap-pp-training-course-in-noida" class="nav-item nav-link" title="SAP PP Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-pp-logo.jpg" alt="SAP Production Planning Training Course Logo"><span class="sp">SAP PP Training</span></div><p class="coursep">SAP PP streamlines production planning in ERP systems.</p></a><a class="coursea" href="/course/sap-pp-training-course-in-noida" title="Learn More About SAP PP Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP PP Training Course">Know More</button></a></div><div class="courses"><a href="/course/sap-pm-training-course-in-noida" class="nav-item nav-link" title="SAP PM Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-pm-logo.jpg" alt="SAP Plant Maintenance Training Course Logo"><span class="sp">SAP PM</span></div><p class="coursep">SAP PM manages plant maintenance in ERP environments.</p></a><a class="coursea" href="/course/sap-pm-training-course-in-noida" title="Learn More About SAP PM Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP PM Training Course">Know More</button></a></div><div class="courses"><a href="/course/sap-mm-training-course-in-noida" class="nav-item nav-link" title="SAP MM Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-mm-logo.jpg" alt="SAP Materials Management Training Course Logo"><span class="sp">SAP MM</span></div><p class="coursep">SAP MM handles materials management in ERP systems.</p></a><a class="coursea" href="/course/sap-mm-training-course-in-noida" title="Learn More About SAP MM Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP MM Training Course">Know More</button></a></div><div class="courses"><a href="/course/sap-fico-training-course-in-noida" class="nav-item nav-link" title="SAP FICO Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/sap-fico-logo.jpg" alt="SAP Finance and Controlling Training Course Logo"><span class="sp">SAP FICO</span></div><p class="coursep">SAP FICO manages finance and controlling in ERP systems.</p></a><a class="coursea" href="/course/sap-fico-training-course-in-noida" title="Learn More About SAP FICO Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about SAP FICO Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/japanese-language-course-in-noida" class="nav-item nav-link" title="Japanese Language Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/japanese-logo.jpg" alt="Japanese Language Course Logo"><span class="sp">Japanese Language</span></div><p class="coursep">Japanese Language Course enhances career opportunities with fluency.</p></a><a class="coursea" href="/course/japanese-language-course-in-noida" title="Learn More About Japanese Language Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Japanese Language Course">Know More</button></a></div><div class="courses"><a href="/course/german-language-course-in-delhi" class="nav-item nav-link" title="German Language Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/german-logo.jpg" alt="German Language Course Logo"><span class="sp">German Language</span></div><p class="coursep">German Language Course boosts career prospects with proficiency.</p></a><a class="coursea" href="/course/german-language-course-in-delhi" title="Learn More About German Language Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about German Language Course">Know More</button></a></div><div class="courses"><a href="/course/french-language-course-in-noida" class="nav-item nav-link" title="French Language Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/french-logo.jpg" alt="French Language Course Logo"><span class="sp">French Language</span></div><p class="coursep">French Language Course enhances global communication skills.</p></a><a class="coursea" href="/course/french-language-course-in-noida" title="Learn More About French Language Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about French Language Course">Know More</button></a></div><div class="courses"><a href="/course/spanish-language-course-in-noida" class="nav-item nav-link" title="Spanish Language Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/spanish.jpg" alt="Spanish Language Course Logo"><span class="sp">Spanish Language</span></div><p class="coursep">Spanish Language Course fosters fluency for career growth.</p></a><a class="coursea" href="/course/spanish-language-course-in-noida" title="Learn More About Spanish Language Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Spanish Language Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/pgmp-training-course-in-noida" class="nav-item nav-link" title="PgMP Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pgmp-logo.jpg" alt="PgMP Program Management Training Course Logo"><span class="sp">PgMP Training Course</span></div><p class="coursep">PgMP Training enhances program management certification skills.</p></a><a class="coursea" href="/course/pgmp-training-course-in-noida" title="Learn More About PgMP Training Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about PgMP Training Course">Know More</button></a></div><div class="courses"><a href="/course/pfmp-training-course-in-noida" class="nav-item nav-link" title="PfMP Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pfmp-logo.jpg" alt="PfMP Portfolio Management Training Course Logo"><span class="sp">PfMP Training Course</span></div><p class="coursep">PfMP Training prepares for portfolio management certification.</p></a><a class="coursea" href="/course/pfmp-training-course-in-noida" title="Learn More About PfMP Training Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about PfMP Training Course">Know More</button></a></div><div class="courses"><a href="/course/pmp-training-course-in-noida" class="nav-item nav-link" title="PMP Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pmp-logo.jpg" alt="PMP Project Management Training Course Logo"><span class="sp">PMP Training Course</span></div><p class="coursep">PMP Training offers exceptional project management education.</p></a><a class="coursea" href="/course/pmp-training-course-in-noida" title="Learn More About PMP Training Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about PMP Training Course">Know More</button></a></div><div class="courses"><a href="/course/scrum-master-training-course-in-noida" class="nav-item nav-link" title="Scrum Master Training Course"><div class="cou"><img class="ds lazy-load" data-src="/img/work/scrum-logo.jpg" alt="Scrum Master Certification Training Course Logo"><span class="sp">Scrum Master Training Course</span></div><p class="coursep">Scrum Master Training prepares for agile project management,</p></a><a class="coursea" href="/course/scrum-master-training-course-in-noida" title="Learn More About Scrum Master Training Course"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Scrum Master Training Course">Know More</button></a></div></div><div class="course-image-text"><div class="courses"><a href="/course/pg-program-data-science" class="nav-item nav-link" title="PG Program in Data Science"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-ds-logo.jpg" alt="Post Graduate Program in Data Science Logo"><span class="sp">PG Program in Data Science</span></div><p class="coursep">PG Program in Data Science masters data-driven decision-making skills.</p></a><a class="coursea" href="/course/pg-program-data-science" title="Learn More About PG Program in Data Science"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Data Science">Know More</button></a></div><div class="courses"><a href="/course/pg-program-data-analyst" class="nav-item nav-link" title="PG Program in Data Analyst"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-da-logo.jpg" alt="Post Graduate Program in Data Analyst Logo"><span class="sp">PG Program in Data Analyst</span></div><p class="coursep">PG Program in Data Analytics boosts career with data skills.</p></a><a class="coursea" href="/course/pg-program-data-analyst" title="Learn More About PG Program in Data Analyst"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Data Analyst">Know More</button></a></div><div class="courses"><a href="/course/pg-program-software-testing" class="nav-item nav-link" title="PG Program in Software Testing"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-st-logo.jpg" alt="Post Graduate Program in Software Testing Logo"><span class="sp">PG Program in Software Testing</span></div><p class="coursep">PG Program in Software Testing masters quality assurance,</p></a><a class="coursea" href="/course/pg-program-software-testing" title="Learn More About PG Program in Software Testing"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Software Testing">Know More</button></a></div><div class="courses"><a href="/course/pg-program-business-analyst" class="nav-item nav-link" title="PG Program in Business Analyst"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-da-logo.jpg" alt="Post Graduate Program in Business Analyst Logo"><span class="sp">PG Program in Business Analyst</span></div><p class="coursep">PG Program in Business Analyst masters business analytics skills.</p></a><a class="coursea" href="/course/pg-program-business-analyst" title="Learn More About PG Program in Business Analyst"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Business Analyst">Know More</button></a></div><div class="courses"><a href="/course/pg-program-digital-marketing" class="nav-item nav-link" title="PG Program in Digital Marketing"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-dm-logo.jpg" alt="Post Graduate Program in Digital Marketing Logo"><span class="sp">PG Program in Digital Marketing</span></div><p class="coursep">PG Program in Digital Marketing masters SEO,</p></a><a class="coursea" href="/course/pg-program-digital-marketing" title="Learn More About PG Program in Digital Marketing"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Digital Marketing">Know More</button></a></div><div class="courses"><a href="/course/pg-program-automation-testing" class="nav-item nav-link" title="PG Program in Automation Testing"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-at-logo.jpg" alt="Post Graduate Program in Automation Testing Logo"><span class="sp">PG Program in Automation Testing</span></div><p class="coursep">PG Program in Automation Testing masters automated testing,</p></a><a class="coursea" href="/course/pg-program-automation-testing" title="Learn More About PG Program in Automation Testing"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Automation Testing">Know More</button></a></div><div class="courses"><a href="/course/pg-program-cyber-security" class="nav-item nav-link" title="PG Program in Cyber Security"><div class="cou"><img class="ds lazy-load" data-src="/img/work/pg-cyber-logo.jpg" alt="Post Graduate Program in Cyber Security Logo"><span class="sp">PG Program in Cyber Security</span></div><p class="coursep">PG Program in Cyber Security builds expertise in digital security.</p></a><a class="coursea" href="/course/pg-program-cyber-security" title="Learn More About PG Program in Cyber Security"><button class="glow-on-hover glo" type="button" aria-label="Learn more about Post Graduate Program in Cyber Security">Know More</button></a></div></div></div>
+                            </div>
+                        </div><a class="cls" href="/placement">
+                            <li>Placement</li>
+                        </a>
+                        <ul class="ULI cls">
+                            <li id="course-text"><label onclick="showDropDown(1);" style="cursor: pointer; color:black !important;">Training <i style="color: black !important;" class="fa-solid fa-caret-down" id="dropdown-arrow"></i></label></li>
+                            <div class="dropdown dropdown-course TRAI-ning" id="trainingDropdown"><button class="dropdown-close-btn" onclick="closeFunction()"><i class="fa-solid fa-xmark"></i></button>
+                                <div class="course-detail-section" id="CAD">
+                                    <div class="course-right-section Train">
+                                        <div class="TRaiN course-image-text" id="active-course"><a href="/industrial-training" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/industrial-training" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/placement/data-science.png"><span class="sp">Industrial Training</span></div>
+                                                    <p class="coursep">Improve the Performance of your Business With our
+                                                        Innovative Industrial</p>
+                                                </a><a class="coursea" href="/industrial-training"><button class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/corporate-training" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/corporate-training" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/placement/data-science.png"><span class="sp">Corporate Training</span></div>
+                                                    <p class="coursep">Our instructor-led training classes are designed
+                                                        to make you an expert.</p>
+                                                </a><a class="coursea" href="/corporate-training"><button class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/summer-training-in-noida" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/summer-training-in-noida" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/placement/data-science.png"><span class="sp">Summer Training</span></div>
+                                                    <p class="coursep">Real-life case studies are a great way to
+                                                        demonstrate the capabilities</p>
+                                                </a><a class="coursea" href="/summer-training-in-noida"><button class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/winter-training-in-noida" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/winter-training-in-noida" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/placement/data-science.png"><span class="sp">Winter Training</span></div>
+                                                    <p class="coursep">A certificate from an accredited course provider
+                                                    </p>
+                                                </a><a class="coursea" href="/winter-training-in-noida"><button class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div><a href="/blog" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/blog" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/tools/blog.png"><span class="sp">Blog
+                                                            Session</span></div>
+                                                    <p class="coursep">Looking to boost your earning potential</p>
+                                                </a><a class="coursea" href="/blog"><button class="glow-on-hover glo" type="button">Know More</button></a></div><a href="/all-courses" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/all-courses" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/tools/25-255705_icon-classroom-transparent-classroom-icon-png-png-download.png"><span class="sp">All Courses</span></div>
+                                                    <p class="coursep">Improve Your skills with our comprehensive
+                                                        courses</p>
+                                                </a><a class="coursea" href="/all-courses"><button class="glow-on-hover glo" type="button">Know More</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="ULI cls">
+                            <li id="course-text"><label onclick="showDropDown(2);" style="cursor: pointer; color:black !important;">About <i style="color: black !important;" class="fa-solid fa-caret-down" id="dropdown-arrow"></i></label></li>
+                            <div class="dropdown dropdown-course TRAI-ning dropdown-about" id="aboutDropdown"><button class="dropdown-close-btn" onclick="closeFunction()"><i class="fa-solid fa-xmark"></i></button>
+                                <div class="course-detail-section" id="CAD">
+                                    <div class="course-right-section AboutScn Train">
+                                        <div class="TRaiN course-image-text" id="active-course"><a href="/about-us" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/about-us" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/placement/data-science.png"><span class="sp">About Us</span></div>
+                                                    <p class="coursep">Discover our mission to equip individuals with
+                                                        essential IT skills and industry expertise.</p>
+                                                </a><a class="coursea" href="/about-us"><button class="glow-on-hover glo" type="button">View here</button></a>
+                                            </div><a href="/gallery" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="/gallery" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/img/placement/data-science.png"><span class="sp">Uncodemy Gallery</span></div>
+                                                    <p class="coursep">Explore highlights from our IT training sessions
+                                                        and success stories.</p>
+                                                </a><a class="coursea" href="/gallery"><button class="glow-on-hover glo" type="button">View here</button></a></div><a href="https://certificate.uncodemy.com/" class="nav-item nav-link"></a>
+                                            <div class="courses"><a href="https://certificate.uncodemy.com/" class="nav-item nav-link">
+                                                    <div class="cou"><img loading="lazy" class="ds lazy-load" data-src="/image/certificate-apply.png"><span class="sp">Apply for Certificate</span></div>
+                                                    <p class="coursep">Apply for your certificate at Uncodemy and
+                                                        showcase your skills and achievements.</p>
+                                                </a><a class="coursea" href="https://certificate.uncodemy.com/"><button class="glow-on-hover glo" type="button">Apply here</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul><a class="cls career-guidance" href="/career-guidance-by-ai">
+                            <div class="ai-content">
+                                <div class="ai-powered-badge">֎ AI-Powered</div>
+                                <div class="tooltip-arrow"></div>
+                                <li>Career Guidance</li>
+                            </div>
+                        </a><a class="cls" href="/contact-us">
+                            <li>Contact</li>
+                        </a>
+                        <li><a class="pam cls" href="https://pages.razorpay.com/fees-uncodemy" target="_blank">Fees Payment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="top-bar-random123">
+            <div class="button-container-xyz321"><a href="/new-launches-products" target="_blank" class="button-random654 new-launch2">📣 Check New Launches</a> <a href="/course/pg-program-course-details" target="_blank" class="button-random654 new-launch">PG
+                    Program Courses</a> <a href="/course/video-counselling-session" target="_blank" class="button-random654">Video Counselling Session</a> <a href="/placement#placement-2026" target="_blank" class="button-random654">Our Top Placement Report of 2026</a> <a 
+  href="mailto:info@gmail.com?subject=Certificate%20Request&body=Enrollment%20ID:%20%0ABatch%20Name:%20%0AStudent%20Name:%20%0ACourse%20Name:%20"
+  target="_blank"
+  class="button-random654"
+>
+  Download Certificate
+</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Header Section -->
+    <header class="uncodemy-header">
+        <div class="uncodemy-container">
+            <div class="uncodemy-header-content">
+                <div class="uncodemy-breadcrumb">
+                    <a href="https://uncodemy.com">Home</a> / 
+                    <a href="https://uncodemy.com/blog">Blog</a> / 
+                </div>
+                
+                <h1 class="uncodemy-title">
+                    <span class="uncodemy-title-line">Heuristic Function:</span>
+                    <span class="uncodemy-title-highlight">Blind vs. Heuristic Search</span>
+                </h1>
+                <p class="uncodemy-subtitle">Mastering AI Search Algorithms</p>
+                
+                <div class="uncodemy-header-buttons">
+                    <a onclick="showForm()" class="uncodemy-btn uncodemy-btn-primary uncodemy-btn-pulse">
+                        <i class="fas fa-user-graduate"></i> Enroll Now
+                    </a>
+                    <a onclick="showForm()" class="uncodemy-btn uncodemy-btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Request a Call
+                    </a>
+                    <a onclick="showForm()" class="uncodemy-btn uncodemy-btn-tertiary">
+                        <i class="fas fa-calendar-check"></i> Schedule a Demo
+                    </a>
+                </div>
+                
+                <div class="uncodemy-meta">
+                    <div class="uncodemy-meta-item">
+                        <i class="fas fa-user-tie"></i> <span>Uncodemy AI Team</span>
+                    </div>
+                    <div class="uncodemy-meta-item">
+                        <i class="fas fa-calendar-alt"></i> <span>June 21, 2026</span>
+                    </div>
+                    <div class="uncodemy-meta-item">
+                        <i class="fas fa-clock"></i> <span>10 min read</span>
+                    </div>
+                    <div class="uncodemy-meta-item">
+                        <i class="fas fa-share-alt"></i> 
+                        <span class="uncodemy-social-share">
+                            <a href="https://www.instagram.com/uncodemyofficial/" target="_blank"><img class="shareimg" src="/course/da-testing-img/instagram.jpg" alt="Instagram" srcset=""></a>
+                            <a href="https://www.facebook.com/uncodemyofficial/" target="_blank"><img class="shareimg" src="/course/da-testing-img/facebook.webp" alt="Facebook" srcset=""></a>
+                            <a href="https://www.linkedin.com/company/uncodemy" target="_blank"><img class="shareimg" src="/course/da-testing-img/linkedin.webp" alt="LinkedIn" srcset=""></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="uncodemy-scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="uncodemy-mouse">
+                <div class="uncodemy-scroller"></div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="uncodemy-main">
+        <div class="uncodemy-container">
+            <article class="uncodemy-article">
+                <!-- Featured Image -->
+                <div class="uncodemy-featured-img-container">
+                    <img src="blog-img/uncodemy_cover.png" alt="Heuristic Function and Blind vs. Heuristic Search" class="uncodemy-featured-img">
+                    <div class="uncodemy-img-caption">Heuristic Functions: Powering Intelligent AI Search</div>
+                </div>
+
+                <!-- Question-Answer Section -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-question uncodemy-title-icon"></i>
+                        Heuristic Function and Search Algorithms
+                    </h2>
+                    <div class="uncodemy-highlight">
+                        <div class="uncodemy-highlight-header">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Overview of Heuristic Functions</h3>
+                        </div>
+                        <h4>Que 2.6. What is a heuristic function? Differentiate between blind search and heuristic search algorithms.</h4>
+                        <p class="uncodemy-paragraph"><strong>Answer:</strong></p>
+                        <p class="uncodemy-paragraph">
+                            A <strong>heuristic function</strong> is a cornerstone of informed search algorithms in AI, estimating the cost from a current state to the goal state to guide exploration efficiently. Unlike blind (uninformed) searches, which explore all possible paths exhaustively, heuristic (informed) searches leverage domain knowledge to prioritize promising paths, reducing computational overhead. Below, we define heuristic functions, explore their properties, and compare blind and heuristic search strategies with advanced insights.
+                        </p>
+                        <h5 class="uncodemy-subsection-title">Heuristic Function</h5>
+                        <p class="uncodemy-paragraph">
+                            A heuristic function, denoted as h(n), evaluates the current state n of an agent and estimates the cost to reach the goal. It’s a practical tool for problems where exact computation is infeasible, such as pathfinding, puzzle-solving, or game AI.
+                        </p>
+                        <ul class="uncodemy-list">
+                            <li><i class="fas fa-lightbulb"></i> <strong>Definition</strong>: A function that ranks alternatives by estimating proximity to the goal, guiding search algorithms.</li>
+                            <li><i class="fas fa-calculator"></i> <strong>Input/Output</strong>: Takes the current state as input and outputs a non-negative value (h(n) ≥ 0) representing estimated cost.</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Purpose</strong>: Reduces search space by prioritizing states likely closer to the goal, e.g., Manhattan distance in an 8-puzzle.</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Trade-off</strong>: May not guarantee the optimal solution but finds good solutions in reasonable time.</li>
+                        </ul>
+                        <p class="uncodemy-paragraph">
+                            <strong>Example</strong>: In the 8-puzzle, the heuristic h(n) = number of misplaced tiles estimates how far the current board is from the goal configuration, guiding moves toward the solution.
+                        </p>
+                        <h5 class="uncodemy-subsection-title">Properties of Heuristic Search</h5>
+                        <p class="uncodemy-paragraph">
+                            Heuristic searches rely on well-designed heuristics to ensure efficiency and correctness. Key properties include:
+                        </p>
+                        <ul class="uncodemy-list">
+                            <li><i class="fas fa-star"></i> <strong>Admissibility</strong>: A heuristic is admissible if h(n) ≤ true cost to the goal for all nodes n, ensuring optimality in algorithms like A*.</li>
+                            <li><i class="fas fa-check-square"></i> <strong>Completeness</strong>: A heuristic search is complete if it finds a solution when one exists, assuming finite branching and proper implementation.</li>
+                            <li><i class="fas fa-balance-scale"></i> <strong>Dominance</strong>: Heuristic h₁ dominates h₂ if h₁(n) ≥ h₂(n) for all n, leading to fewer node expansions and faster search.</li>
+                            <li><i class="fas fa-trophy"></i> <strong>Optimality</strong>: An algorithm is optimal if it finds the least-cost path among a class of algorithms, e.g., A* with admissible heuristics.</li>
+                            <li><i class="fas fa-sync-alt"></i> <strong>Consistency (Monotonicity)</strong>: A heuristic is consistent if h(n) ≤ c(n, n’) + h(n’) for all nodes n, n’ (where c is the edge cost), ensuring no re-expansion of nodes in A*.</li>
+                        </ul>
+                        <p class="uncodemy-paragraph">
+                            <strong>Example</strong>: In GPS navigation, an admissible heuristic like straight-line distance (h(n) ≤ actual road distance) ensures A* finds the shortest route.
+                        </p>
+                        <h5 class="uncodemy-subsection-title">Comparison: Blind vs. Heuristic Search</h5>
+                        <p class="uncodemy-paragraph">
+                            Blind and heuristic searches differ fundamentally in their approach, efficiency, and applicability. The table below summarizes their differences:
+                        </p>
+                        <div class="uncodemy-featured-img-container">
+                            <div class="uncodemy-img-caption">
+                                <strong>Table: Blind vs. Heuristic Search Strategies</strong><br>
+                                - <strong>S.No. 1</strong>: Blind search uses only problem definition; Heuristic search uses heuristic function + problem definition.<br>
+                                - <strong>S.No. 2</strong>: Blind search is less efficient (exhaustive); Heuristic search is more efficient (guided).<br>
+                                - <strong>S.No. 3</strong>: Blind search treats all actions equally; Heuristic search prioritizes actions by heuristic value.<br>
+                                - <strong>S.No. 4</strong>: Blind search struggles with complex problems; Heuristic search solves most problems effectively.<br>
+                                - <strong>S.No. 5</strong>: Blind search is uninformed; Heuristic search is informed.<br>
+                                - <strong>S.No. 6</strong>: Blind search requires high computation; Heuristic search uses less computation.<br>
+                                - <strong>S.No. 7</strong>: Blind search includes BFS, DFS; Heuristic search includes Best-First, A*.<br>
+                                <em>Note: Heuristic search excels in large search spaces but depends on heuristic quality.</em>
+                            </div>
+                        </div>
+                        <p class="uncodemy-paragraph">
+                            <strong>Infinite Loop Issue</strong>: Blind searches like Depth-First Search (DFS) can encounter infinite loops when states re-occur (e.g., in graphs with cycles). Heuristic searches mitigate this by using heuristics to avoid revisiting unpromising states and maintaining a visited set, ensuring termination in finite spaces.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Introduction to Heuristic Functions -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-lightbulb uncodemy-title-icon"></i>
+                        Understanding Heuristic Functions in AI
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Heuristic functions are the intelligence behind informed search algorithms, enabling AI systems to make smarter decisions by estimating the cost to reach a goal. Unlike blind searches, which rely on brute-force exploration, heuristic searches use domain-specific knowledge to navigate problem spaces efficiently.
+                    </p>
+                    <div class="uncodemy-highlight uncodemy-definition-box">
+                        <div class="uncodemy-highlight-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Key Insight</h3>
+                        </div>
+                        <p>
+                            <strong>Heuristic Search</strong> leverages domain knowledge (e.g., Manhattan distance) to reduce search space, while <strong>Blind Search</strong> explores all paths equally, often leading to inefficiency or infinite loops in cyclic graphs.
+                        </p>
+                    </div>
+                    <p class="uncodemy-paragraph">
+                        <strong>Example</strong>: In a chess engine, a heuristic function might evaluate board positions based on piece values and control of the center, guiding the AI toward winning moves faster than a blind search like BFS.
+                    </p>
+                    <div class="uncodemy-info-card">
+                        <div class="uncodemy-info-card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="uncodemy-info-card-content">
+                            <h4>Did You Know?</h4>
+                            <p>A* search, a heuristic algorithm, is used in video games for pathfinding (e.g., NPCs navigating maps) and robotics for obstacle avoidance.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Comparison of Search Strategies -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-diagram-project uncodemy-title-icon"></i>
+                        Comparison of Blind vs. Heuristic Search
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        The following textual diagram provides a detailed comparison of blind and heuristic search strategies, highlighting their mechanics and trade-offs.
+                    </p>
+                    <div class="uncodemy-featured-img-container">
+                        <div class="uncodemy-img-caption">
+                            <strong>Diagram: Blind vs. Heuristic Search Comparison</strong><br>
+                            - <strong>Blind Search</strong>: Explores nodes systematically without guidance (e.g., BFS explores level by level, DFS dives deep).<br>
+                            - <strong>Heuristic Search</strong>: Prioritizes nodes based on heuristic estimates (e.g., A* uses f(n) = g(n) + h(n)).<br>
+                            - <strong>Visualization</strong>: Blind search visits all nodes equally; Heuristic search focuses on nodes closer to the goal.<br>
+                            - <strong>Impact</strong>: Blind search is complete but slow; Heuristic search is faster but heuristic-dependent.<br>
+                            <em>Note: Blind searches risk infinite loops in cyclic graphs, while heuristics guide toward termination.</em>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detailed Search Strategies -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-globe-americas uncodemy-title-icon"></i>
+                        Blind and Heuristic Search Strategies
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Below, we explore blind and heuristic search strategies using animated cards, with real-world applications and advanced insights.
+                    </p>
+                    <div class="uncodemy-card-grid animate__animated animate__fadeIn">
+                        <div class="uncodemy-card">
+                            <div class="uncodemy-card-icon">
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                            <h3 class="uncodemy-card-title">Blind Search</h3>
+                            <p>Explores nodes without domain knowledge, using systematic methods like Breadth-First Search (BFS) or Depth-First Search (DFS). Suitable for simple problems but inefficient for large spaces due to exhaustive exploration.</p>
+                            <div class="uncodemy-card-hover-content">
+                                <a href="https://uncodemy.com/blog/blind-search" class="uncodemy-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="uncodemy-card">
+                            <div class="uncodemy-card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="uncodemy-card-title">Heuristic Search</h3>
+                            <p>Uses heuristic functions to estimate goal proximity, improving efficiency. Algorithms like A* and Greedy Best-First Search guide exploration toward optimal solutions in complex problems like pathfinding.</p>
+                            <div class="uncodemy-card-hover-content">
+                                <a href="https://uncodemy.com/blog/heuristic-search" class="uncodemy-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Heuristic Function Workflow -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-sitemap uncodemy-title-icon"></i>
+                        Heuristic Function Workflow: A* Search
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Heuristic functions guide search algorithms like A* to solve problems efficiently. The diagram below illustrates A*’s workflow for the 8-puzzle using the Manhattan distance heuristic.
+                    </p>
+                    <div class="uncodemy-featured-img-container">
+                        <div class="uncodemy-img-caption">
+                            <strong>Diagram: A* Search Workflow (8-Puzzle)</strong><br>
+                            1. <strong>Initialize</strong>: Start with the initial puzzle state.<br>
+                            2. <strong>Evaluate</strong>: Compute f(n) = g(n) + h(n), where g(n) is the cost from start, and h(n) is the Manhattan distance (sum of tile displacements).<br>
+                            3. <strong>Select</strong>: Expand the node with the lowest f(n) using a priority queue.<br>
+                            4. <strong>Check</strong>: If the goal state is reached, return the path; else, generate neighbors (valid tile moves).<br>
+                            5. <strong>Repeat</strong>: Continue until the goal is found or no solution exists.<br>
+                            <em>Note: A* is optimal with admissible heuristics and avoids infinite loops by tracking visited states.</em>
+                        </div>
+                    </div>
+                    <p class="uncodemy-paragraph">
+                        <strong>Example</strong>: For an 8-puzzle with initial state [[1, 2, 3], [4, 0, 5], [6, 7, 8]], A* prioritizes moves that reduce the Manhattan distance to the goal [[1, 2, 3], [4, 5, 6], [7, 8, 0]], solving it faster than BFS.
+                    </p>
+                </section>
+
+                <!-- Drawbacks of Blind Search -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-exclamation-triangle uncodemy-title-icon"></i>
+                        Drawbacks of Blind Search
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Blind search algorithms face several limitations, visualized below as textual diagrams.
+                    </p>
+                    <div class="uncodemy-card-grid animate__animated animate__fadeIn">
+                        <div class="uncodemy-card">
+                            <div class="uncodemy-card-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3 class="uncodemy-card-title">Inefficiency</h3>
+                            <p>Explores all nodes equally, leading to high time and space complexity (e.g., BFS: O(b^d), DFS: O(b^m)). Unsuitable for large search spaces.</p>
+                            <div class="uncodemy-featured-img-container">
+                                <div class="uncodemy-img-caption">
+                                    <strong>Diagram: Inefficiency</strong><br>
+                                    - <strong>Visualization</strong>: A tree where BFS visits all nodes level by level, consuming memory.<br>
+                                    - <strong>Impact</strong>: Slows down for deep or wide graphs.<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uncodemy-card">
+                            <div class="uncodemy-card-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3 class="uncodemy-card-title">Infinite Loops</h3>
+                            <p>Risks infinite loops in graphs with cycles (e.g., DFS revisiting states). Requires cycle detection to terminate.</p>
+                            <div class="uncodemy-featured-img-container">
+                                <div class="uncodemy-img-caption">
+                                    <strong>Diagram: Infinite Loops</strong><br>
+                                    - <strong>Visualization</strong>: A cyclic graph where DFS loops indefinitely.<br>
+                                    - <strong>Impact</strong>: Fails to terminate without visited state tracking.<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uncodemy-card">
+                            <div class="uncodemy-card-icon">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <h3 class="uncodemy-card-title">Non-Optimality</h3>
+                            <p>May find suboptimal solutions (e.g., DFS finds first path, not shortest). BFS is optimal but memory-intensive.</p>
+                            <div class="uncodemy-featured-img-container">
+                                <div class="uncodemy-img-caption">
+                                    <strong>Diagram: Non-Optimality</strong><br>
+                                    - <strong>Visualization</strong>: DFS finding a long path while a shorter one exists.<br>
+                                    - <strong>Impact</strong>: Poor solutions in optimization problems.<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advantages of Heuristic Search -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-check-circle uncodemy-title-icon"></i>
+                        Advantages of Heuristic Search
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Heuristic search algorithms overcome blind search limitations, offering significant benefits:
+                    </p>
+                    <ul class="uncodemy-list">
+                        <li><strong>Efficiency</strong>: Reduces search space by prioritizing promising nodes, e.g., A* explores fewer nodes than BFS.</li>
+                        <li><strong>Optimality</strong>: Guarantees optimal solutions with admissible heuristics (e.g., A* for shortest paths).</li>
+                        <li><strong>Termination</strong>: Avoids infinite loops by focusing on goal-directed paths and tracking visited states.</li>
+                    </ul>
+                    <p class="uncodemy-paragraph">
+                        <strong>Example</strong>: In robotics, A* uses a heuristic (e.g., Euclidean distance) to navigate around obstacles, finding paths faster than DFS.
+                    </p>
+                </section>
+
+                <!-- Code Example -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-code uncodemy-title-icon"></i>
+                        A* Search in Action: Python Code
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Below is a Python implementation of A* search for the 8-puzzle, demonstrating heuristic search with the Manhattan distance heuristic.
+                    </p>
+                    <pre class="uncodemy-code-block">from heapq import heappush, heappop
+import copy
+
+# Heuristic: Manhattan distance
+def manhattan_distance(state, goal):
+    distance = 0
+    for i in range(3):
+        for j in range(3):
+            if state[i][j] != 0:
+                x, y = divmod(state[i][j] - 1, 3)  # Goal position of tile
+                distance += abs(x - i) + abs(y - j)
+    return distance
+
+# A* Search
+def a_star(start, goal):
+    def state_to_tuple(state):
+        return tuple(tuple(row) for row in state)
+    
+    frontier = [(0, start, [])]  # (f(n), state, path)
+    visited = set()
+    while frontier:
+        f, current, path = heappop(frontier)
+        current_tuple = state_to_tuple(current)
+        if current_tuple in visited:
+            continue
+        visited.add(current_tuple)
+        if current == goal:
+            return path + [current]
+        
+        # Possible moves: up, down, left, right
+        for di, dj in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            for i in range(3):
+                for j in range(3):
+                    if current[i][j] == 0:
+                        ni, nj = i + di, j + dj
+                        if 0 &lt;= ni &lt; 3 and 0 &lt;= nj &lt; 3:
+                            new_state = copy.deepcopy(current)
+                            new_state[i][j], new_state[ni][nj] = new_state[ni][nj], new_state[i][j]
+                            new_tuple = state_to_tuple(new_state)
+                            if new_tuple not in visited:
+                                g = len(path) + 1
+                                h = manhattan_distance(new_state, goal)
+                                heappush(frontier, (g + h, new_state, path + [current]))
+    return None
+
+# Example 8-puzzle
+start = [[1, 2, 3], [4, 0, 5], [6, 7, 8]]
+goal = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+path = a_star(start, goal)
+if path:
+    print(f"A* Path Length: {len(path)-1} moves")
+else:
+    print("No solution found")
+                    </pre>
+                    <p class="uncodemy-paragraph">
+                        This code uses A* to solve the 8-puzzle efficiently, leveraging the Manhattan distance heuristic to prioritize moves. Unlike BFS, it avoids exploring unnecessary states, and unlike DFS, it prevents infinite loops by tracking visited states.
+                    </p>
+                </section>
+
+                <!-- Technical Insights -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-microchip uncodemy-title-icon"></i>
+                        Technical Insights for Students
+                    </h2>
+                    <p class="uncodemy-paragraph">
+                        Mastering heuristic functions and search algorithms requires understanding their mechanics, implementation, and optimization:
+                    </p>
+                    <ul class="uncodemy-list">
+                        <li><strong>Heuristic Design</strong>: Create admissible and consistent heuristics (e.g., Manhattan distance for puzzles, Euclidean distance for navigation) to ensure optimality and efficiency.</li>
+                        <li><strong>Infinite Loops</strong>: Blind search (e.g., DFS) risks infinite loops in cyclic graphs; heuristic search (e.g., A*) avoids this by prioritizing goal-directed paths and using a visited set.</li>
+                        <li><strong>Complexity</strong>: Blind search has O(b^d) time/space (b = branching factor, d = depth); A* with admissible heuristic is optimal but may still be O(b^d) in worst case.</li>
+                        <li><strong>Implementation</strong>: Use priority queues (`heapq`) for A* to select nodes with lowest f(n) = g(n) + h(n).</li>
+                        <li><strong>Optimizations</strong>: Consistent heuristics ensure no node re-expansion, while techniques like iterative deepening A* (IDA*) reduce memory usage.</li>
+                    </ul>
+                    <p class="uncodemy-paragraph">
+                        <strong>Mathematical Formulation</strong>: A* minimizes f(n) = g(n) + h(n), where g(n) is the cost from start to n, and h(n) is the heuristic estimate to the goal. For admissibility, h(n) ≤ h*(n) (true cost).
+                    </p>
+                    <p class="uncodemy-paragraph">
+                        <strong>Practical Tip</strong>: Implement an 8-puzzle solver on Google Colab to compare BFS’s exhaustive search (high memory) with A*’s heuristic efficiency (fewer nodes). Experiment with heuristics like misplaced tiles vs. Manhattan distance.
+                    </p>
+                </section>
+
+                <!-- Key Takeaways -->
+                <section class="uncodemy-section">
+                    <h2 class="uncodemy-section-title">
+                        <i class="fas fa-check-circle uncodemy-title-icon"></i>
+                        Key Takeaways
+                    </h2>
+                    <ul class="uncodemy-list">
+                        <li>Heuristic functions estimate goal proximity, enabling efficient informed search.</li>
+                        <li>Blind search (BFS, DFS) is uninformed, slow, and risks infinite loops in cyclic graphs.</li>
+                        <li>Heuristic search (A*, Best-First) is informed, faster, and optimal with admissible heuristics.</li>
+                        <li>Mastering heuristic design and A* implementation is crucial for AI applications like pathfinding and puzzle-solving.</li>
+                    </ul>
+                </section>
+
+                <!-- CTA Section -->
+                <div class="uncodemy-cta-box">
+                    <div class="uncodemy-cta-content">
+                        <h3>Ready to Master AI Search Algorithms?</h3>
+                        <p>Join Uncodemy’s AI Certification Program to learn advanced heuristic functions and search techniques.</p>
+                    </div>
+                    <a onclick="showForm()" class="uncodemy-btn uncodemy-btn-primary uncodemy-btn-large">
+                        <i class="fas fa-rocket"></i> Start Learning Today
+                    </a>
+                </div>
+
+                <!-- Related Courses -->
+                <div class="pagination-x9k3" id="pagination-controls-x9k3-details"></div>
+                <section class="optimized-section-x3k9">
+                    <h2 class="section-heading-main-j7d2">Uncodemy Learning Platform</h2>
+                    
+                    <div class="courses-section-v8n2">
+                        <h3 class="section-title-f5m8">Popular Courses</h3>
+                        <div class="courses-carousel-static-x4k8" id="courses-carousel">
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/data-science-bhopal.jpg" alt="Data Science"> <span class="course-badge-static-m3j8">TRENDING</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Data Science</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 12 Weeks</span></div>
+                                    <a href="/course/data-science-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/data-analytics.jpg" alt="Data Analytics"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Data Analytics</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 10 Weeks</span></div>
+                                    <a href="/course/data-analytics-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/full-stack.jpg" alt="Full Stack Development"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Full Stack Development</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 24 Weeks</span></div>
+                                    <a href="/course/full-stack-development-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/artificial-intelligence.png" alt="Artificial Intelligence"> <span class="course-badge-static-m3j8">TRENDING</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Artificial Intelligence</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 12 Weeks</span></div>
+                                    <a href="/course/artificial-intelligence-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/business-analyst.jpg" alt="Business Analyst"> <span class="course-badge-static-m3j8">HOT</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Business Analyst</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20 Weeks</span></div>
+                                    <a href="/course/business-analyst-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/automation-testing.webp" alt="Automation Testing"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Automation Testing</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20 Weeks</span></div>
+                                    <a href="/course/automation-testing-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/amazon-web-service.jpg" alt="Amazon Web Services"> <span class="course-badge-static-m3j8">HOT</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Amazon Web Services</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20 Weeks</span></div>
+                                    <a href="/course/aws-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/devops.jpeg" alt="DevOps"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">DevOps</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20 Weeks</span></div>
+                                    <a href="/course/devops-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/Cloud-Computing.jpg" alt="Cloud Computing"> <span class="course-badge-static-m3j8">BESTSELLER</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Cloud Computing</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20 Weeks</span></div>
+                                    <a href="/course/cloud-computing-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/software-testing.jpg" alt="Software Testing"> <span class="course-badge-static-m3j8">HOT</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Software Testing</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 20 Weeks</span></div>
+                                    <a href="/course/software-testing-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                            <div class="course-card-static-l9d3">
+                                <div class="course-image-static-p5n9"><img loading="lazy" src="/image/Digital-Marketing.jpg" alt="Digital Marketing"> <span class="course-badge-static-m3j8">POPULAR</span></div>
+                                <div class="course-content-static-b9k4">
+                                    <h4 class="course-title-static-n5j7">Digital Marketing</h4>
+                                    <div class="course-meta-static-k8d2"><i class="fas fa-language"></i> <span>ENGLISH | HINDI | 8 Weeks</span></div>
+                                    <a href="/course/digital-marketing-training-course-in-noida" class="course-btn-static-j4n8">View Course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            
+            <!-- Author Bio -->
+            <div class="uncodemy-author">
+                <div class="uncodemy-author-img">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80" alt="Uncodemy AI Expert">
+                </div>
+                <div class="uncodemy-author-content">
+                    <h3>About the Author</h3>
+                    <p>Dr. Sarah Johnson is Uncodemy's lead AI instructor with 10+ years of experience in machine learning and neural networks. She has worked with leading tech companies and now focuses on training the next generation of AI professionals.</p>
+                    <div class="uncodemy-author-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <div class="footer-fixed-section">
+        <div class="ask-for-demo fixed-section-child" onclick="showPopUpForm()"><span class="below-btn">Ask For
+                Demo</span></div><a class="contact-thumb" href="https://pages.razorpay.com/fees-uncodemy"
+            target="_blank">
+            <div class="fee-payment fixed-section-child"><span class="below-btn">Fee Payment</span></div>
+        </a><a href="https://api.whatsapp.com/send?phone=918800023723" target="_blank">
+            <div class="whatsapp fixed-section-child"><span class="below-btn">WhatsApp</span></div>
+        </a><a class="ail ail1" href="mailto:info@uncodemy.com" aria-label="Email Uncodemy">
+            <div class="email-section fixed-section-child"><span class="below-btn">Email</span></div>
+        </a><a class="ail" href="tel:+9198183 66550">
+            <div class="phone fixed-section-child"><span class="below-btn">Call Us Now</span></div>
+        </a>
+    </div>
+<footer class="uncodemy-footer">
+        <div class="uncodemy-container">
+            <div class="uncodemy-footer-grid">
+                <div class="uncodemy-footer-col">
+                    <h3 class="uncodemy-footer-title">Uncodemy</h3>
+                    <p>Empowering the next generation of tech professionals through industry-relevant training and certifications.</p>
+                    <div class="uncodemy-footer-social">
+                        <a href="https://www.instagram.com/uncodemyofficial/" target="_blank"><img class="shareimg" src="/course/da-testing-img/instagram.jpg" alt="Instagram" srcset=""></a>
+                        <a href="https://www.facebook.com/uncodemyofficial/" target="_blank"><img class="shareimg" src="/course/da-testing-img/facebook.webp" alt="Facebook" srcset=""></a>
+                        <a href="https://www.linkedin.com/company/uncodemy" target="_blank"><img class="shareimg" src="/course/da-testing-img/linkedin.webp" alt="LinkedIn" srcset=""></a>
+                    </div>
+                </div>
+                
+                <div class="uncodemy-footer-col">
+                    <h3 class="uncodemy-footer-title">Quick Links</h3>
+                    <ul class="uncodemy-footer-links">
+                        <li><a href="https://uncodemy.com/courses">All Courses</a></li>
+                        <li><a href="https://uncodemy.com/about">About Us</a></li>
+                        <li><a href="https://uncodemy.com/blog">Blog</a></li>
+                        <li><a href="https://uncodemy.com/contact-us">Contact</a></li>
+                        <li><a href="https://uncodemy.com/placement">Placement</a></li>
+                    </ul>
+                </div>
+                
+                <div class="uncodemy-footer-col">
+                    <h3 class="uncodemy-footer-title">Popular Courses</h3>
+                    <ul class="uncodemy-footer-links">
+                        <li><a href="https://uncodemy.com/course/artificial-intelligence-training-course-in-noida">AI &amp; ML Certification</a></li>
+                        <li><a href="https://uncodemy.com/course/data-science-training-course-in-noida">Data Science Course</a></li>
+                        <li><a href="https://uncodemy.com/course/python-training-course-in-noida">Python Programming</a></li>
+                        <li><a href="https://uncodemy.com/course/full-stack-development-training-course-in-noida">Full Stack Development</a></li>
+                        <li><a href="https://uncodemy.com/course/data-analytics-training-course-in-noida">Data Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="uncodemy-footer-col">
+                    <h3 class="uncodemy-footer-title">Contact Info</h3>
+                    <ul class="uncodemy-footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps?q=B,+14-15,+Udhyog+Marg,+Block+B,+Sector+1,+Noida,+Uttar+Pradesh+201301" target="_blank" rel="noopener noreferrer">
+                               B, 14-15, Udhyog Marg, Block B, Sector 1, Noida, Uttar Pradesh 201301
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+917701928515">+91 77019 28515</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@uncodemy.com">info@uncodemy.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="uncodemy-footer-bottom">
+                <div class="uncodemy-footer-copyright">
+                    Copyright © Uncodemy Edutech Pvt. Ltd. All Rights Reserved.
+                </div>
+                <div class="uncodemy-footer-legal">
+                    <a href="https://uncodemy.com/privacy-policy">Privacy Policy</a>
+                    <a href="https://uncodemy.com/terms-and-conditions">Terms of Service</a>
+                    <a href="https://uncodemy.com/refunded-policy">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="overlay"></div>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="uncodemy-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- JavaScript -->
+    <script defer="" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script defer="" src="uncodemy-new-blog.js"></script>
+    <script defer="" src="/js/form.js"></script>
+    <script defer="" src="/course/js/script.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer="" src="blog.js"></script>
+
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body></html>

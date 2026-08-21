@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncodemy - IT Training Institute</title>
+    <style>
+        /* Color System - CSS Variables */
+        :root {
+            --primary-color: #FF5A1F;
+            --secondary-color: #2563EB;
+            --accent-color: #22C55E;
+            --bg-color: #F9FAFB;
+            --text-dark: #1F2937;
+            --border-color: #E5E7EB;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #6B7280;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 90, 31, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Skills/Icons Section */
+        .hero-skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .skill-item {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 90, 31, 0.2);
+        }
+
+        .skill-item:nth-child(2) {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .skill-item:nth-child(3) {
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+        }
+
+        .skill-item:nth-child(4) {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background-color: white;
+            margin-top: 4rem;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: #6B7280;
+            line-height: 1.8;
+        }
+
+        /* Policy Section */
+        .policy {
+            padding: 4rem 2rem;
+            background-color: var(--bg-color);
+            margin-top: 4rem;
+        }
+
+        .policy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .policy h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .policy-intro {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #6B7280;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .policy-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .policy-item {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .policy-item:hover {
+            box-shadow: 0 15px 35px rgba(255, 90, 31, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .policy-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .policy-item li {
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .policy-item li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .policy-item li:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-item p {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .policy-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .policy-item a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .navbar-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 3rem 1.5rem;
+                margin-top: 70px;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Navbar Mobile */
+            .hamburger {
+                display: flex;
+            }
+
+            .menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                border-bottom: 2px solid var(--border-color);
+            }
+
+            .menu.active {
+                max-height: 300px;
+            }
+
+            .menu li {
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 0.5rem 2rem;
+            }
+
+            .menu a::after {
+                display: none;
+            }
+
+            /* Hero Mobile */
+            .hero {
+                margin-top: 60px;
+                padding: 2rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .button-group {
+                margin-bottom: 2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .hero-skills {
+                gap: 1.5rem;
+            }
+
+            .skill-item {
+                width: 110px;
+                height: 110px;
+                font-size: 1rem;
+            }
+
+            /* Features Mobile */
+            .features {
+                padding: 2rem 1rem;
+            }
+
+            .features h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-container {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                margin-top: 55px;
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-skills {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .skill-item {
+                width: 90px;
+                height: 90px;
+                font-size: 0.85rem;
+            }
+
+            .features h2 {
+                font-size: 1.5rem;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            /* Policy Mobile */
+            .policy {
+                padding: 2rem 1rem;
+            }
+
+            .policy h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .policy-intro {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .policy-item {
+                padding: 1.5rem;
+                border-left-width: 4px;
+            }
+
+            .policy-item h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .policy-item li {
+                font-size: 0.95rem;
+                margin-bottom: 0.8rem;
+                padding-left: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navbar-container">
+            <a href="#" class="logo">Uncodemy</a>
+            <ul class="menu" id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#placement">Placement</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+   
+
+   
+    <!-- Shipping & Exchange Policy Section -->
+    <section class="policy" id="policy">
+        <div class="policy-container">
+            <h2>Shipping & Exchange Policy</h2>
+            <p class="policy-intro">At Uncodemy, we primarily offer digital services and online/offline training programs. Please review the policy below to understand how service delivery and exchanges are handled.</p>
+            
+            <div class="policy-content">
+                <div class="policy-item">
+                    <h3>1. Service Delivery (Shipping)</h3>
+                    <ul>
+                        <li>Uncodemy does not ship any physical products.</li>
+                        <li>All courses, training programs, learning materials, and services are delivered in digital or in-person format.</li>
+                        <li>Access credentials, course links, or onboarding details are shared via email, WhatsApp, or the registered student portal within 24–48 working hours after successful payment confirmation.</li>
+                        <li>In case of offline or classroom training, joining instructions are communicated separately after enrollment.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>2. Exchange Policy</h3>
+                    <ul>
+                        <li>Since Uncodemy provides intangible digital services, exchange of services is not applicable.</li>
+                        <li>Once a learner is enrolled in a specific course or program, it cannot be exchanged for another course, batch, or service.</li>
+                        <li>Any request for changes will be reviewed at Uncodemy's discretion and is not guaranteed.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>3. Delayed or Failed Access</h3>
+                    <ul>
+                        <li>If a customer does not receive course access or onboarding details within the specified time, they must notify Uncodemy within 48 hours of payment.</li>
+                        <li>Our support team will resolve access-related issues on priority.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>4. Third-Party Tools & Platforms</h3>
+                    <ul>
+                        <li>Some courses may involve access to third-party tools, platforms, or software.</li>
+                        <li>Uncodemy is not responsible for delays or issues caused by third-party service providers.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-item">
+                    <h3>5. Contact Information</h3>
+                    <p>For any concerns related to service delivery or access:</p>
+                    <ul>
+                        <li><strong>Business Name:</strong> Uncodemy Edutech Pvt. Ltd.</li>
+                        <li><strong>Email:</strong> <a href="mailto:support@uncodemy.com">support@uncodemy.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+917701928515">+91 7701928515</a></li>
+                        <li><strong>Website:</strong> <a href="https://uncodemy.com" target="_blank">https://uncodemy.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Uncodemy Edutech Pvt. Ltd. All rights reserved.</p>
+        <p>Email: <a href="mailto:support@uncodemy.com">support@uncodemy.com</a> | Phone: <a href="tel:+917701928515">+91 7701928515</a></p>
+        <p><a href="https://uncodemy.com" target="_blank">Visit Our Website</a></p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = event.target.closest('nav');
+            if (!isClickInsideNav && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

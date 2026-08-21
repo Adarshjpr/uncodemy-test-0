@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interview Questions and Answer | JavaScript Tutorial | Uncodemy</title>
+    <meta name="description" content="Master JavaScript Interview Questions and Answers with clear explanations, examples, and best practices — from beginner to advanced concepts." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+        /* additional Q&A styling — matches the array page */
+        .qa-block {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+        .qa-block:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .qa-block .q {
+            font-weight: 600;
+            color: var(--ink);
+            font-size: 1.05rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: baseline;
+        }
+        .qa-block .q .qnum {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            min-width: 2.2rem;
+        }
+        .qa-block .a {
+            color: var(--ink-soft);
+            margin-top: 0.4rem;
+            padding-left: 2.8rem;
+        }
+        .qa-block .a code {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+        }
+        .qa-block .a pre {
+            background: #1E2230;
+            color: #F3F4F8;
+            padding: 14px 16px;
+            border-radius: var(--radius-sm);
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0.6rem 0 0.2rem;
+        }
+        .qa-block .a pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        .qa-block .a ul,
+        .qa-block .a ol {
+            padding-left: 1.4rem;
+            margin: 0.4rem 0 0.2rem;
+        }
+        .qa-block .a ul li,
+        .qa-block .a ol li {
+            margin-bottom: 0.2rem;
+        }
+        .qa-toc {
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0 1.8rem;
+        }
+        .qa-toc h3 {
+            font-size: 1rem;
+            margin: 0 0 0.4rem;
+            color: var(--primary-dark);
+        }
+        .qa-toc ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.2rem 1.2rem;
+            list-style: none;
+            padding: 0;
+        }
+        .qa-toc ul li {
+            font-size: 0.85rem;
+        }
+        .qa-toc ul li a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.2s;
+        }
+        .qa-toc ul li a:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+        @media (max-width: 600px) {
+            .qa-block .a {
+                padding-left: 0;
+            }
+            .qa-toc ul {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+    <!-- ===== TOPBAR ===== -->
+    <uncodemy-navbar></uncodemy-navbar>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+            <a href="https://uncodemy.com/course/playwright-training-course-in-noida">JavaScript</a>
+            <span class="sep">/</span>
+            <span class="current">Page 36 of 36: JavaScript Interview Questions and Answer</span>
+        </div>
+    </div>
+
+    <!-- ===== LAYOUT ===== -->
+    <div class="layout">
+
+        <!-- ===== LEFT SIDEBAR ===== -->
+        <aside class="sidebar-left">
+            <h4>JavaScript Tutorial</h4>
+            <ul class="topic-list">
+                <li><a href="introduction-to-javascript.html"><span class="num">01</span>Introduction to JavaScript</a></li>
+                <li><a href="top-features-of-javascript.html"><span class="num">02</span>Top Features of JavaScript You Need to Know!</a></li>
+                <li><a href="variable-in-javascript.html"><span class="num">03</span>Variable in JavaScript</a></li>
+                <li><a href="variables-declaration-types-scope.html"><span class="num">04</span>Variables in JavaScript: Declaration, Types, Scope</a></li>
+                <li><a href="local-and-global-variables.html"><span class="num">05</span>Understanding Local and Global Variables in JavaScript</a></li>
+                <li><a href="data-types-primitive-non-primitive.html"><span class="num">06</span>Data Types in JavaScript: Primitive &amp; Non-Primitive</a></li>
+                <li><a href="numbers-in-javascript.html"><span class="num">07</span>Numbers in JavaScript</a></li>
+                <li><a href="strings-in-javascript.html"><span class="num">08</span>Strings in JavaScript</a></li>
+                <li><a href="ternary-operator-in-javascript.html"><span class="num">09</span>Ternary Operator in JavaScript: Simplifying Conditional Logic</a></li>
+                <li><a href="array-access-methods.html"><span class="num">10</span>An Easy Solution for Array Methods in JavaScript</a></li>
+                <li><a href="filtering-arrays.html"><span class="num">11</span>Filtering Arrays in JavaScript: The Essential Guide</a></li>
+                <li><a href="map-in-javascript.html"><span class="num">12</span>Map in Javascript</a></li>
+                <li><a href="foreach-in-javascript.html"><span class="num">13</span>forEach() in JavaScript</a></li>
+                <li><a href="functions-user-defined-and-standard.html"><span class="num">14</span>Functions in JavaScript: User-Defined and Standard Library Functions</a></li>
+                <li><a href="arrow-functions.html"><span class="num">15</span>Mastering Arrow Functions in JavaScript</a></li>
+                <li><a href="callback-functions-in-javascript.html"><span class="num">16</span>Callback Functions in JavaScript: A Comprehensive Guide</a></li>
+                <li><a href="closure-in-javascript.html"><span class="num">17</span>Closure in JavaScript: Explanation with Example</a></li>
+                <li><a href="hoisting-in-javascript.html"><span class="num">18</span>Hoisting in JavaScript: Variable Hoisting and Function Hoisting</a></li>
+                <li><a href="prototypes-in-javascript.html"><span class="num">19</span>A Complete Guide to Prototypes in JavaScript: How They Work and Why They Matter</a></li>
+                <li><a href="understanding-prototype-in-javascript.html"><span class="num">20</span>Understanding Prototype in JavaScript</a></li>
+                <li><a href="restrict-numeric-value-in-textbox.html"><span class="num">21</span>Restrict user to enter numeric value in textbox using javascript</a></li>
+                <li><a href="convert-string-to-xml-and-xml-to-string.html"><span class="num">22</span>Convert string to xml and xml to string using javascript</a></li>
+                <li><a href="email-validation-using-regex.html"><span class="num">23</span>JavaScript Email Address validation using Regular Expression</a></li>
+                <li><a href="defining-namespace-or-nested-objects.html"><span class="num">24</span>Defining Namespace or Nested Objects in JavaScript</a></li>
+                <li><a href="switch-statement-in-javascript.html"><span class="num">25</span>Switch Statement in JavaScript: Implementation with Examples</a></li>
+                <li><a href="mastering-loops-in-javascript.html"><span class="num">26</span>Mastering Loops in JavaScript: A Comprehensive Guide</a></li>
+                <li><a href="for-loop-in-javascript.html"><span class="num">27</span>for Loop in JavaScript: A Detailed Discussion with Examples</a></li>
+                <li><a href="javascript-events-easy-learner.html"><span class="num">28</span>JavaScript Events An Easy Learner</a></li>
+                <li><a href="form-validation-in-javascript.html"><span class="num">29</span>Master Form Validation in Javascript: Learn How to Improve Your Forms Now!</a></li>
+                <li><a href="understanding-dom-and-bom.html"><span class="num">30</span>Understanding DOM and BOM</a></li>
+                <li><a href="javascript-design-patterns.html"><span class="num">31</span>Learn JavaScript Design Patterns to Simplify Your Development</a></li>
+                <li><a href="become-full-stack-javascript-developer.html"><span class="num">32</span>How to Become a Full Stack JavaScript Developer?</a></li>
+                <li><a href="javascript-cheat-sheet.html"><span class="num">33</span>JavaScript Cheat Sheet: Full Guide</a></li>
+                <li><a href="javascript-developer-salary.html"><span class="num">34</span>JavaScript Developer Salary</a></li>
+                <li><a href="top-50-javascript-array-questions.html"><span class="num">35</span>Top 50 JavaScript Array Questions and Answer</a></li>
+                <li><a href="javascript-interview-questions-and-answer.html" class="active"><span class="num">36</span>JavaScript Interview Questions and Answer</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="content">
+
+            <span class="eyebrow"><i class="fas fa-briefcase"></i> Interview Prep</span>
+            <h1>JavaScript Interview Questions and Answer</h1>
+
+            <div class="card">
+
+                <p style="font-size:1.05rem; color:var(--ink);">
+                    JavaScript interviews test your understanding of core language features, asynchronous programming, scope, closures, and problem-solving skills. This comprehensive guide covers <strong>50+ frequently asked interview questions</strong> — from beginner fundamentals to advanced concepts — with clear explanations and practical code examples.
+                </p>
+
+                <!-- ===== TABLE OF CONTENTS ===== -->
+                <div class="qa-toc">
+                    <h3><i class="fas fa-list-ul"></i> Quick Jump</h3>
+                    <ul>
+                        <li><a href="#q1">1–10: Basics &amp; Variables</a></li>
+                        <li><a href="#q11">11–20: Functions &amp; Scope</a></li>
+                        <li><a href="#q21">21–30: Objects &amp; Prototypes</a></li>
+                        <li><a href="#q31">31–40: Async &amp; Event Loop</a></li>
+                        <li><a href="#q41">41–50: ES6+ &amp; Advanced</a></li>
+                        <li><a href="#q51">51–55: DOM &amp; Misc</a></li>
+                    </ul>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 1–10: BASICS & VARIABLES                                       -->
+                <!-- ============================================================ -->
+                <h2 id="q1">1–10: Basics &amp; Variables</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q1</span> What is the difference between <code>var</code>, <code>let</code>, and <code>const</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><strong><code>var</code></strong> — function-scoped, can be re-declared, hoisted with <code>undefined</code>.</li>
+                            <li><strong><code>let</code></strong> — block-scoped, cannot be re-declared in the same scope, hoisted but not initialized (Temporal Dead Zone).</li>
+                            <li><strong><code>const</code></strong> — block-scoped, cannot be re-declared or reassigned (but object properties can be mutated).</li>
+                        </ul>
+                        <pre><code>var a = 1;
+        let b = 2;
+        const c = 3;
+        // c = 4; // TypeError</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q2</span> What is the difference between <code>==</code> and <code>===</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>==</code> — abstract equality, performs type coercion before comparison.</li>
+                            <li><code>===</code> — strict equality, compares both value and type without coercion.</li>
+                        </ul>
+                        <pre><code>console.log(2 == '2');   // true (coercion)
+        console.log(2 === '2');  // false (type mismatch)</code></pre>
+                        Always prefer <code>===</code> for predictable behavior.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q3</span> What is hoisting in JavaScript?</div>
+                    <div class="a">
+                        Hoisting is the behavior where variable and function declarations are moved to the top of their scope during compilation. <code>var</code> declarations are hoisted with <code>undefined</code>, while <code>let</code> and <code>const</code> are hoisted but not initialized.
+                        <pre><code>console.log(x); // undefined (hoisted)
+        var x = 5;
+        // console.log(y); // ReferenceError (TDZ)
+        let y = 10;</code></pre>
+                        Function declarations are hoisted entirely.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q4</span> What is the difference between <code>null</code> and <code>undefined</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>undefined</code> — a variable has been declared but not assigned a value.</li>
+                            <li><code>null</code> — an intentionally assigned empty value, representing "no value".</li>
+                        </ul>
+                        <pre><code>let a;
+        console.log(a); // undefined
+        let b = null;
+        console.log(b); // null
+        console.log(typeof null); // 'object' (historical quirk)</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q5</span> What are JavaScript data types?</div>
+                    <div class="a">
+                        <strong>Primitive (7):</strong> <code>string</code>, <code>number</code>, <code>bigint</code>, <code>boolean</code>, <code>undefined</code>, <code>symbol</code>, <code>null</code>.<br>
+                        <strong>Non-primitive:</strong> <code>object</code> (includes arrays, functions, dates, etc.).
+                        <pre><code>console.log(typeof 'hello'); // string
+        console.log(typeof 42);     // number
+        console.log(typeof {});     // object
+        console.log(typeof []);     // object (array is an object)</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q6</span> What is the Temporal Dead Zone (TDZ)?</div>
+                    <div class="a">
+                        The TDZ is the period between entering a scope and the actual declaration of a <code>let</code> or <code>const</code> variable. Accessing the variable during this period throws a <code>ReferenceError</code>.
+                        <pre><code>// TDZ starts here
+        console.log(x); // ReferenceError
+        let x = 5;      // TDZ ends here</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q7</span> What is the difference between <code>NaN</code> and <code>undefined</code>?</div>
+                    <div class="a">
+                        <code>NaN</code> (Not-a-Number) is a numeric value that represents an invalid number. <code>undefined</code> means a variable has no value assigned. <code>typeof NaN</code> returns <code>'number'</code>.
+                        <pre><code>console.log(typeof NaN); // 'number'
+        console.log(NaN === NaN); // false (NaN is not equal to itself)</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q8</span> What is the <code>typeof</code> operator used for?</div>
+                    <div class="a">
+                        <code>typeof</code> returns a string indicating the type of the operand. It's useful for type checking, but has quirks (e.g., <code>typeof null === 'object'</code>).
+                        <pre><code>console.log(typeof 42);          // 'number'
+        console.log(typeof 'hello');    // 'string'
+        console.log(typeof undefined);  // 'undefined'
+        console.log(typeof null);       // 'object' (bug in JS)
+        console.log(typeof function(){}); // 'function'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q9</span> What is the difference between <code>++i</code> and <code>i++</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>++i</code> (pre-increment) — increments the value and returns the new value.</li>
+                            <li><code>i++</code> (post-increment) — returns the current value, then increments.</li>
+                        </ul>
+                        <pre><code>let i = 5;
+        console.log(++i); // 6 (i becomes 6, then logged)
+        let j = 5;
+        console.log(j++); // 5 (logged, then j becomes 6)</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q10</span> How do you check if a variable is an array?</div>
+                    <div class="a">
+                        Use <code>Array.isArray()</code> — it's the safest method.
+                        <pre><code>let arr = [1, 2, 3];
+        console.log(Array.isArray(arr)); // true
+        console.log(Array.isArray({}));   // false</code></pre>
+                        <code>instanceof Array</code> can fail across frames.
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 11–20: FUNCTIONS & SCOPE                                       -->
+                <!-- ============================================================ -->
+                <h2 id="q11">11–20: Functions &amp; Scope</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q11</span> What is a closure?</div>
+                    <div class="a">
+                        A closure is a function that remembers its lexical scope even when the function is executed outside that scope. It allows inner functions to access variables from an outer function after the outer function has returned.
+                        <pre><code>function outer() {
+          let count = 0;
+          return function inner() {
+            count++;
+            return count;
+          };
+        }
+        const counter = outer();
+        console.log(counter()); // 1
+        console.log(counter()); // 2</code></pre>
+                        Closures are used for data privacy, currying, and event handlers.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q12</span> What is the difference between function declarations and function expressions?</div>
+                    <div class="a">
+                        <ul>
+                            <li><strong>Function declaration:</strong> hoisted entirely, can be called before definition.</li>
+                            <li><strong>Function expression:</strong> not hoisted, only defined when the interpreter reaches that line.</li>
+                        </ul>
+                        <pre><code>// Function declaration
+        console.log(add(2, 3)); // 5
+        function add(a, b) { return a + b; }
+        
+        // Function expression
+        // console.log(sub(5, 2)); // TypeError
+        const sub = function(a, b) { return a - b; };</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q13</span> What are arrow functions? How do they differ from regular functions?</div>
+                    <div class="a">
+                        Arrow functions are a shorter syntax introduced in ES6. Key differences:
+                        <ul>
+                            <li>No <code>this</code> binding — they inherit <code>this</code> from the enclosing scope.</li>
+                            <li>Cannot be used as constructors (no <code>new</code>).</li>
+                            <li>No <code>arguments</code> object (use rest parameters instead).</li>
+                            <li>Implicit return for single-expression bodies.</li>
+                        </ul>
+                        <pre><code>const add = (a, b) => a + b;
+        const square = n => n * n;
+        // this binding example
+        const obj = {
+          name: 'John',
+          greet: () => console.log(this.name) // this refers to outer scope
+        };</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q14</span> What is the <code>this</code> keyword in JavaScript?</div>
+                    <div class="a">
+                        <code>this</code> refers to the context in which a function is called. Its value depends on how the function is invoked:
+                        <ul>
+                            <li><strong>Global:</strong> <code>this</code> === <code>window</code> (browser) or <code>global</code> (Node).</li>
+                            <li><strong>Object method:</strong> <code>this</code> refers to the object.</li>
+                            <li><strong>Constructor:</strong> <code>this</code> refers to the new instance.</li>
+                            <li><strong>Arrow function:</strong> <code>this</code> is lexically bound.</li>
+                            <li><strong>Explicit binding:</strong> <code>call()</code>, <code>apply()</code>, <code>bind()</code>.</li>
+                        </ul>
+                        <pre><code>const obj = {
+          name: 'Alice',
+          greet() { console.log(this.name); }
+        };
+        obj.greet(); // 'Alice'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q15</span> What is the difference between <code>call()</code>, <code>apply()</code>, and <code>bind()</code>?</div>
+                    <div class="a">
+                        All three are used to set the <code>this</code> value explicitly.
+                        <ul>
+                            <li><code>call()</code> — invokes the function with a given <code>this</code> and arguments (comma-separated).</li>
+                            <li><code>apply()</code> — same as <code>call()</code>, but arguments are passed as an array.</li>
+                            <li><code>bind()</code> — returns a new function with a bound <code>this</code> (does not invoke immediately).</li>
+                        </ul>
+                        <pre><code>function greet(greeting) {
+          console.log(greeting + ', ' + this.name);
+        }
+        const user = { name: 'Bob' };
+        greet.call(user, 'Hello');   // 'Hello, Bob'
+        greet.apply(user, ['Hi']);    // 'Hi, Bob'
+        const bound = greet.bind(user, 'Hey');
+        bound();                      // 'Hey, Bob'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q16</span> What is the difference between <code>arguments</code> and rest parameters?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>arguments</code> — an array-like object available inside regular functions (not arrow functions). Has <code>length</code> but lacks array methods.</li>
+                            <li><strong>Rest parameters</strong> — <code>...args</code> syntax, returns a real array, works in arrow functions.</li>
+                        </ul>
+                        <pre><code>function regular() {
+          console.log(arguments.length);
+        }
+        const arrow = (...args) => console.log(args.length);
+        regular(1, 2, 3); // 3
+        arrow(1, 2, 3);   // 3</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q17</span> What is a higher-order function?</div>
+                    <div class="a">
+                        A higher-order function is a function that takes another function as an argument, returns a function, or both. Examples: <code>map()</code>, <code>filter()</code>, <code>reduce()</code>.
+                        <pre><code>function applyTwice(fn, value) {
+          return fn(fn(value));
+        }
+        const result = applyTwice(x => x * 2, 3);
+        console.log(result); // 12</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q18</span> What is a pure function?</div>
+                    <div class="a">
+                        A pure function has two key properties:
+                        <ul>
+                            <li>Always returns the same output for the same input (deterministic).</li>
+                            <li>No side effects (does not modify external state).</li>
+                        </ul>
+                        <pre><code>// Pure
+        function add(a, b) { return a + b; }
+        // Impure (modifies external state)
+        let count = 0;
+        function increment() { count++; }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q19</span> What is the difference between <code>function</code> and <code>=></code> for methods in objects?</div>
+                    <div class="a">
+                        Regular functions in objects have their own <code>this</code> binding to the object. Arrow functions inherit <code>this</code> from the outer scope (which may be the global scope), so they are not suitable for object methods if you need to access the object.
+                        <pre><code>const obj = {
+          name: 'Test',
+          regular: function() { console.log(this.name); }, // 'Test'
+          arrow: () => console.log(this.name) // undefined (global this)
+        };
+        obj.regular();
+        obj.arrow();</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q20</span> What is a callback function?</div>
+                    <div class="a">
+                        A callback is a function passed as an argument to another function, to be executed later (often after an asynchronous operation completes).
+                        <pre><code>function fetchData(callback) {
+          setTimeout(() => {
+            callback('Data received');
+          }, 1000);
+        }
+        fetchData((data) => console.log(data));</code></pre>
+                        Callbacks are the foundation of asynchronous programming in JavaScript.
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 21–30: OBJECTS & PROTOTYPES                                    -->
+                <!-- ============================================================ -->
+                <h2 id="q21">21–30: Objects &amp; Prototypes</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q21</span> What is prototype inheritance in JavaScript?</div>
+                    <div class="a">
+                        JavaScript uses prototypal inheritance — objects can inherit properties and methods from other objects via the prototype chain. Every object has an internal <code>[[Prototype]]</code> link (accessed via <code>__proto__</code> or <code>Object.getPrototypeOf()</code>).
+                        <pre><code>const parent = { greet: 'Hello' };
+        const child = Object.create(parent);
+        console.log(child.greet); // 'Hello' (inherited)</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q22</span> What is the difference between <code>Object.create()</code> and <code>new</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>Object.create(proto)</code> — creates a new object with the specified prototype.</li>
+                            <li><code>new Constructor()</code> — creates a new object using a constructor function and sets the prototype to <code>Constructor.prototype</code>.</li>
+                        </ul>
+                        <pre><code>const proto = { shared: 'value' };
+        const obj1 = Object.create(proto);
+        function Person(name) { this.name = name; }
+        const obj2 = new Person('John');</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q23</span> What is the <code>class</code> syntax in JavaScript?</div>
+                    <div class="a">
+                        ES6 introduced <code>class</code> syntax — syntactic sugar over prototype-based inheritance. It provides a cleaner way to define constructor functions and methods.
+                        <pre><code>class Animal {
+          constructor(name) { this.name = name; }
+          speak() { console.log(this.name + ' makes a noise.'); }
+        }
+        class Dog extends Animal {
+          speak() { console.log(this.name + ' barks.'); }
+        }
+        const d = new Dog('Rex');
+        d.speak(); // 'Rex barks.'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q24</span> What is the difference between <code>Object.freeze()</code> and <code>Object.seal()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>Object.freeze()</code> — prevents adding, deleting, or modifying properties (makes the object immutable).</li>
+                            <li><code>Object.seal()</code> — prevents adding or deleting properties, but existing properties can still be modified.</li>
+                        </ul>
+                        <pre><code>const obj = { a: 1 };
+        Object.freeze(obj);
+        obj.a = 2; // silently fails (or TypeError in strict mode)
+        console.log(obj.a); // 1</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q25</span> How do you clone an object?</div>
+                    <div class="a">
+                        <ul>
+                            <li><strong>Shallow copy:</strong> spread (<code>{...obj}</code>) or <code>Object.assign({}, obj)</code>.</li>
+                            <li><strong>Deep copy:</strong> <code>structuredClone(obj)</code> (modern) or <code>JSON.parse(JSON.stringify(obj))</code> (with limitations).</li>
+                        </ul>
+                        <pre><code>const original = { a: 1, b: { c: 2 } };
+        const shallow = { ...original };
+        shallow.b.c = 42; // modifies original.b.c too
+        const deep = structuredClone(original);
+        deep.b.c = 99;    // original.b.c remains 42</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q26</span> What is the difference between <code>for...in</code> and <code>for...of</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>for...in</code> — iterates over enumerable property keys (including inherited) of an object.</li>
+                            <li><code>for...of</code> — iterates over iterable values (arrays, strings, maps, sets, etc.).</li>
+                        </ul>
+                        <pre><code>const arr = ['a', 'b', 'c'];
+        for (let key in arr) console.log(key); // '0', '1', '2'
+        for (let value of arr) console.log(value); // 'a', 'b', 'c'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q27</span> What is the difference between <code>Map</code> and <code>Object</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>Map</code> — keys can be any type (including objects), preserves insertion order, has <code>size</code> property, and is iterable.</li>
+                            <li><code>Object</code> — keys are strings or symbols, has prototype inheritance, and is not directly iterable.</li>
+                        </ul>
+                        <pre><code>const map = new Map();
+        map.set('key', 'value');
+        map.set(42, 'number');
+        console.log(map.get(42)); // 'number'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q28</span> What is a <code>Set</code> in JavaScript?</div>
+                    <div class="a">
+                        A <code>Set</code> is a collection of unique values (no duplicates). It maintains insertion order and works with any value type.
+                        <pre><code>const set = new Set([1, 2, 2, 3]);
+        console.log(set); // Set { 1, 2, 3 }
+        set.add(4);
+        console.log(set.has(3)); // true
+        set.delete(2);</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q29</span> How do you check if an object has a property?</div>
+                    <div class="a">
+                        Use <code>hasOwnProperty()</code> (own property) or the <code>in</code> operator (includes inherited properties).
+                        <pre><code>const obj = { a: 1 };
+        console.log(obj.hasOwnProperty('a')); // true
+        console.log(obj.hasOwnProperty('toString')); // false
+        console.log('toString' in obj); // true (inherited)</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q30</span> What is the difference between <code>Object.keys()</code>, <code>Object.values()</code>, and <code>Object.entries()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>Object.keys(obj)</code> — returns an array of enumerable property keys.</li>
+                            <li><code>Object.values(obj)</code> — returns an array of enumerable property values.</li>
+                            <li><code>Object.entries(obj)</code> — returns an array of <code>[key, value]</code> pairs.</li>
+                        </ul>
+                        <pre><code>const obj = { a: 1, b: 2, c: 3 };
+        console.log(Object.keys(obj));   // ['a', 'b', 'c']
+        console.log(Object.values(obj)); // [1, 2, 3]
+        console.log(Object.entries(obj)); // [['a',1], ['b',2], ['c',3]]</code></pre>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 31–40: ASYNC & EVENT LOOP                                      -->
+                <!-- ============================================================ -->
+                <h2 id="q31">31–40: Async &amp; Event Loop</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q31</span> What is the event loop in JavaScript?</div>
+                    <div class="a">
+                        The event loop is the mechanism that allows JavaScript (which is single-threaded) to handle asynchronous operations. It continuously checks the call stack and the task queue, pushing tasks from the queue to the stack when the stack is empty.
+                        <pre><code>console.log('Start');
+        setTimeout(() => console.log('Timeout'), 0);
+        Promise.resolve().then(() => console.log('Promise'));
+        console.log('End');
+        // Output: Start, End, Promise, Timeout</code></pre>
+                        Microtasks (promises) have higher priority than macrotasks (setTimeout).
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q32</span> What is the difference between synchronous and asynchronous code?</div>
+                    <div class="a">
+                        <ul>
+                            <li><strong>Synchronous:</strong> code runs sequentially, blocking further execution until the current operation completes.</li>
+                            <li><strong>Asynchronous:</strong> code runs non-blocking; operations like network requests, timers, or file I/O are delegated to the browser/Node, and callbacks are executed later.</li>
+                        </ul>
+                        <pre><code>// Synchronous
+        console.log('A');
+        console.log('B'); // B runs after A
+        // Asynchronous
+        console.log('A');
+        setTimeout(() => console.log('B'), 0);
+        console.log('C'); // C runs before B</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q33</span> What is a Promise?</div>
+                    <div class="a">
+                        A Promise is an object representing the eventual completion (or failure) of an asynchronous operation. It has three states: <code>pending</code>, <code>fulfilled</code>, or <code>rejected</code>.
+                        <pre><code>const promise = new Promise((resolve, reject) => {
+          setTimeout(() => resolve('Success!'), 1000);
+        });
+        promise.then(value => console.log(value)) // 'Success!'
+               .catch(err => console.error(err));</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q34</span> What is the difference between <code>Promise.all()</code> and <code>Promise.allSettled()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>Promise.all()</code> — rejects immediately if any promise rejects; resolves with an array of values if all resolve.</li>
+                            <li><code>Promise.allSettled()</code> — waits for all promises to settle (fulfill or reject) and returns an array of status objects.</li>
+                        </ul>
+                        <pre><code>Promise.all([p1, p2]).then(v => console.log(v));
+        Promise.allSettled([p1, p2]).then(results => {
+          results.forEach(r => console.log(r.status));
+        });</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q35</span> What is <code>async/await</code>?</div>
+                    <div class="a">
+                        <code>async/await</code> is syntactic sugar built on promises, making asynchronous code look and behave more like synchronous code. An <code>async</code> function returns a promise, and <code>await</code> pauses execution until the promise resolves.
+                        <pre><code>async function fetchData() {
+          try {
+            const response = await fetch('https://api.example.com');
+            const data = await response.json();
+            console.log(data);
+          } catch (error) {
+            console.error(error);
+          }
+        }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q36</span> What is callback hell and how do you avoid it?</div>
+                    <div class="a">
+                        Callback hell (or "Pyramid of Doom") occurs when multiple nested callbacks make code difficult to read and maintain. It can be avoided using:
+                        <ul>
+                            <li>Promises with chaining (<code>.then()</code>)</li>
+                            <li><code>async/await</code> (most readable)</li>
+                            <li>Breaking functions into smaller, named functions</li>
+                        </ul>
+                        <pre><code>// Callback hell
+        doA(() => {
+          doB(() => {
+            doC(() => console.log('Done'));
+          });
+        });
+        // With async/await
+        async function run() {
+          await doA();
+          await doB();
+          await doC();
+          console.log('Done');
+        }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q37</span> What is the difference between <code>setTimeout</code> and <code>setInterval</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>setTimeout(fn, delay)</code> — executes the function once after the specified delay.</li>
+                            <li><code>setInterval(fn, interval)</code> — repeatedly executes the function every <code>interval</code> milliseconds.</li>
+                        </ul>
+                        <pre><code>setTimeout(() => console.log('Once'), 1000);
+        const id = setInterval(() => console.log('Repeating'), 2000);
+        clearInterval(id); // stop after some time</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q38</span> What is a microtask vs macrotask?</div>
+                    <div class="a">
+                        <ul>
+                            <li><strong>Microtasks:</strong> <code>Promise.then()</code>, <code>queueMicrotask()</code>, <code>MutationObserver</code>. They run immediately after the current stack, before any macrotasks.</li>
+                            <li><strong>Macrotasks:</strong> <code>setTimeout()</code>, <code>setInterval()</code>, <code>I/O</code>, <code>UI rendering</code>. They run in the next iteration of the event loop.</li>
+                        </ul>
+                        <pre><code>console.log('1');
+        setTimeout(() => console.log('2'), 0);
+        Promise.resolve().then(() => console.log('3'));
+        console.log('4');
+        // Output: 1, 4, 3, 2</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q39</span> What is <code>fetch()</code> and how does it work?</div>
+                    <div class="a">
+                        <code>fetch()</code> is a modern API for making network requests. It returns a Promise that resolves to a <code>Response</code> object.
+                        <pre><code>fetch('https://api.example.com/data')
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(err => console.error(err));
+        
+        // With async/await
+        async function getData() {
+          const res = await fetch('https://api.example.com/data');
+          const data = await res.json();
+          return data;
+        }</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q40</span> What is the difference between <code>try/catch</code> with async/await and <code>.catch()</code> with promises?</div>
+                    <div class="a">
+                        They are equivalent in functionality. <code>try/catch</code> with <code>await</code> provides a more synchronous-looking syntax for error handling.
+                        <pre><code>// Promise style
+        fetch(url)
+          .then(res => res.json())
+          .catch(err => console.error(err));
+        
+        // async/await style
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+        } catch (err) {
+          console.error(err);
+        }</code></pre>
+                        The <code>try/catch</code> approach is often more readable, especially with multiple awaits.
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 41–50: ES6+ & ADVANCED                                         -->
+                <!-- ============================================================ -->
+                <h2 id="q41">41–50: ES6+ &amp; Advanced</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q41</span> What is destructuring in JavaScript?</div>
+                    <div class="a">
+                        Destructuring allows unpacking values from arrays or properties from objects into distinct variables.
+                        <pre><code>// Array destructuring
+        const [a, b] = [1, 2];
+        console.log(a, b); // 1, 2
+        // Object destructuring
+        const { name, age } = { name: 'John', age: 30 };
+        console.log(name, age); // 'John', 30</code></pre>
+                        It can be used with default values, rest patterns, and nested structures.
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q42</span> What are template literals?</div>
+                    <div class="a">
+                        Template literals are string literals using backticks (<code>`</code>) that support embedded expressions via <code>${}</code> and multi-line strings.
+                        <pre><code>const name = 'Alice';
+        const greeting = `Hello, ${name}!
+        Welcome to the course.`;
+        console.log(greeting);</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q43</span> What is the spread operator (<code>...</code>) and what is it used for?</div>
+                    <div class="a">
+                        The spread operator expands an iterable (array, string, object) into individual elements. Common uses:
+                        <ul>
+                            <li>Copying arrays/objects: <code>[...arr]</code>, <code>{...obj}</code></li>
+                            <li>Merging arrays/objects: <code>[...a, ...b]</code></li>
+                            <li>Function arguments: <code>Math.max(...nums)</code></li>
+                        </ul>
+                        <pre><code>const arr1 = [1, 2];
+        const arr2 = [3, 4];
+        const merged = [...arr1, ...arr2]; // [1, 2, 3, 4]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q44</span> What is the rest parameter?</div>
+                    <div class="a">
+                        The rest parameter (<code>...args</code>) collects remaining arguments into a real array. It is used in function definitions to handle variable numbers of arguments.
+                        <pre><code>function sum(...numbers) {
+          return numbers.reduce((acc, n) => acc + n, 0);
+        }
+        console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q45</span> What is the difference between <code>import</code> and <code>require()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>require()</code> — CommonJS, synchronous, used in Node.js (and older bundlers).</li>
+                            <li><code>import</code> — ES6 module syntax, asynchronous, used in modern JavaScript (both browser and Node with type:module).</li>
+                        </ul>
+                        <pre><code>// CommonJS
+        const module = require('./module');
+        // ES6
+        import module from './module.js';</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q46</span> What is the <code>Symbol</code> data type?</div>
+                    <div class="a">
+                        <code>Symbol</code> is a primitive data type introduced in ES6. Each symbol is unique and immutable, often used as object property keys to avoid name collisions.
+                        <pre><code>const sym1 = Symbol('id');
+        const sym2 = Symbol('id');
+        console.log(sym1 === sym2); // false
+        const obj = { [sym1]: 'value' };
+        console.log(obj[sym1]); // 'value'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q47</span> What are getters and setters in JavaScript?</div>
+                    <div class="a">
+                        Getters and setters are special methods that allow you to define how a property is accessed and modified. They are defined using <code>get</code> and <code>set</code> keywords.
+                        <pre><code>const obj = {
+          _name: '',
+          get name() { return this._name; },
+          set name(value) { this._name = value.trim(); }
+        };
+        obj.name = '  John  ';
+        console.log(obj.name); // 'John'</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q48</span> What is the difference between <code>forEach()</code> and <code>map()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>forEach()</code> — iterates over each element, executes a callback, but does <strong>not</strong> return a new array (returns <code>undefined</code>).</li>
+                            <li><code>map()</code> — creates a <strong>new array</strong> by applying a function to each element.</li>
+                        </ul>
+                        <pre><code>const arr = [1, 2, 3];
+        arr.forEach(n => console.log(n)); // logs 1,2,3
+        const doubled = arr.map(n => n * 2); // [2, 4, 6]</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q49</span> What is a generator function?</div>
+                    <div class="a">
+                        A generator function (<code>function*</code>) returns a generator object that can be used to control the execution of the function. It uses <code>yield</code> to pause and resume execution.
+                        <pre><code>function* countUp() {
+          let i = 0;
+          while (true) {
+            yield i++;
+          }
+        }
+        const gen = countUp();
+        console.log(gen.next().value); // 0
+        console.log(gen.next().value); // 1
+        console.log(gen.next().value); // 2</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q50</span> What is the <code>new</code> operator doing under the hood?</div>
+                    <div class="a">
+                        When you use <code>new Constructor()</code>:
+                        <ol>
+                            <li>A new empty object is created.</li>
+                            <li>The object's prototype is set to <code>Constructor.prototype</code>.</li>
+                            <li>The constructor is called with <code>this</code> bound to the new object.</li>
+                            <li>If the constructor returns an object, that object is returned; otherwise, the new object is returned.</li>
+                        </ol>
+                        <pre><code>function Person(name) { this.name = name; }
+        const p = new Person('Alice');
+        console.log(p.name); // 'Alice'</code></pre>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 51–55: DOM & MISC                                              -->
+                <!-- ============================================================ -->
+                <h2 id="q51">51–55: DOM &amp; Miscellaneous</h2>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q51</span> What is the DOM?</div>
+                    <div class="a">
+                        The DOM (Document Object Model) is a programming interface for HTML documents. It represents the page as a tree of nodes, allowing JavaScript to manipulate the structure, style, and content of a web page.
+                        <pre><code>// Selecting and modifying an element
+        const el = document.getElementById('myId');
+        el.textContent = 'New text';
+        el.style.color = 'red';</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q52</span> What is event delegation?</div>
+                    <div class="a">
+                        Event delegation is a technique where you attach a single event listener to a parent element, and use event bubbling to handle events on child elements. This improves performance and handles dynamically added elements.
+                        <pre><code>document.querySelector('#parent').addEventListener('click', (e) => {
+          if (e.target.matches('.child')) {
+            console.log('Child clicked:', e.target.textContent);
+          }
+        });</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q53</span> What is the difference between <code>stopPropagation()</code> and <code>preventDefault()</code>?</div>
+                    <div class="a">
+                        <ul>
+                            <li><code>stopPropagation()</code> — prevents the event from bubbling up the DOM tree.</li>
+                            <li><code>preventDefault()</code> — prevents the default action of the event (e.g., form submission, link navigation).</li>
+                        </ul>
+                        <pre><code>anchor.addEventListener('click', (e) => {
+          e.preventDefault(); // prevents navigation
+          e.stopPropagation(); // prevents parent handlers
+        });</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q54</span> What is <code>localStorage</code> and <code>sessionStorage</code>?</div>
+                    <div class="a">
+                        Both are web storage APIs for storing key-value pairs in the browser.
+                        <ul>
+                            <li><code>localStorage</code> — persists data even after the browser is closed (no expiration).</li>
+                            <li><code>sessionStorage</code> — persists data only for the duration of the page session (cleared when the tab is closed).</li>
+                        </ul>
+                        <pre><code>localStorage.setItem('key', 'value');
+        const val = localStorage.getItem('key');
+        localStorage.removeItem('key');</code></pre>
+                    </div>
+                </div>
+
+                <div class="qa-block">
+                    <div class="q"><span class="qnum">Q55</span> What is a <code>Cookie</code> and how does it differ from <code>localStorage</code>?</div>
+                    <div class="a">
+                        Cookies are small pieces of data stored by the browser, sent with every HTTP request to the server. They have expiration dates and size limits (~4KB). <code>localStorage</code> is client-side only, persists longer, and has a larger limit (~5–10MB).
+                        <pre><code>// Setting a cookie
+        document.cookie = 'username=John; expires=...; path=/';
+        // localStorage is simpler
+        localStorage.setItem('username', 'John');</code></pre>
+                    </div>
+                </div>
+
+                <!-- ===== END OF Q&A ===== -->
+
+                <div style="margin-top:2.4rem; padding:1.2rem 1.6rem; background:var(--primary-light); border-radius:var(--radius-sm);">
+                    <p style="margin:0; font-weight:500; color:var(--primary-dark);">
+                        <i class="fas fa-lightbulb"></i> &nbsp; <strong>Pro Tip:</strong> Practice writing code for each concept. Understanding the theory is important, but being able to implement solutions quickly is what sets you apart in interviews.
+                    </p>
+                </div>
+
+            </div><!-- /card -->
+
+            <!-- ===== PREV / NEXT ===== -->
+            <div class="prev-next">
+                <a href="top-50-javascript-array-questions.html">
+                    <span class="label"><i class="fas fa-arrow-left"></i> Previous</span>
+                    Top 50 JavaScript Array Questions and Answer
+                </a>
+                <span class="disabled next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>None (Last Page)</span>
+            </div>
+
+            <!-- ===== CTA BOX ===== -->
+            <div class="cta-box">
+                <div>
+                    <h3>Ready to master real-world JavaScript development?</h3>
+                    <p>Learn JavaScript hands-on with mentor-led, live sessions.</p>
+                </div>
+                <a class="btn-cta" href="https://uncodemy.com/course/playwright-training-course-in-noida">
+                    Explore Course <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </main>
+
+        <!-- ===== RIGHT SIDEBAR ===== -->
+        <aside class="sidebar-right">
+            <div class="batch-card">
+                <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+                <h4>JavaScript Training</h4>
+                <p class="batch-sub">Kickstart your development journey with live, mentor-guided classes.</p>
+                <div class="countdown-box">
+                    <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                    <span class="countdown-value" data-countdown>Loading...</span>
+                </div>
+                <ul class="batch-meta">
+                    <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                    <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                    <li><span class="dot"></span>Live Classes</li>
+                    <li><span class="dot"></span>Mentor Support</li>
+                    <li><span class="dot"></span>Placement Assistance</li>
+                </ul>
+                <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+                <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="help-card">
+                <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                <div class="help-row" data-action="phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+                </div>
+                <div class="help-row" data-action="whatsapp">
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                    <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+                </div>
+            </div>
+        </aside>
+
+    </div><!-- /layout -->
+
+    <!-- ===== FOOTER ===== -->
+    <div id="UnCodeMy-Footer"></div>
+
+    <script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

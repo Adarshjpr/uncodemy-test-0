@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building Scalable Web Apps | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Deploying Shiny Applications to Servers" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 20 of 20: Building Scalable Web Apps</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html" class="active"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-server"></i> Deployment</span>
+        <h1>Building Scalable Web Apps</h1>
+
+        <div class="card">
+
+            <p>A Shiny app running on your laptop is only useful to you. This final lesson covers taking your app from <code>localhost</code> to a live, publicly accessible <strong>production deployment</strong>.</p>
+
+            <h2>1. Testing Locally First</h2>
+                        <pre class="code-block"><code># In RStudio, with app.R open:
+shiny::runApp(&quot;path/to/your/app&quot;)
+
+# Or simply click &quot;Run App&quot; in the RStudio toolbar</code></pre>
+
+            <h2>2. Deployment Option Overview</h2>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Platform</th><th>Best For</th><th>Cost</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>shinyapps.io</td><td>Quick deployment, small-to-medium apps</td><td>Free tier + paid plans</td></tr>
+                        <tr><td>Shiny Server (Open Source)</td><td>Self-hosted on your own Linux server</td><td>Free (you manage the server)</td></tr>
+                        <tr><td>Posit Connect</td><td>Enterprise deployment with access control</td><td>Paid, enterprise-focused</td></tr>
+                        <tr><td>Docker container</td><td>Portable deployment to any cloud (AWS, GCP, Azure)</td><td>Depends on hosting</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Deploying to shinyapps.io (Fastest Path)</h2>
+            <h3>Step 1: Create an Account</h3>
+            <p>Sign up for free at <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a>.</p>
+
+            <h3>Step 2: Install and Configure rsconnect</h3>
+                        <pre class="code-block"><code>install.packages(&quot;rsconnect&quot;)
+library(rsconnect)
+
+# Copy your token/secret from the shinyapps.io dashboard
+rsconnect::setAccountInfo(name = &quot;your-account-name&quot;,
+                           token = &quot;YOUR_TOKEN&quot;,
+                           secret = &quot;YOUR_SECRET&quot;)</code></pre>
+
+            <h3>Step 3: Deploy Your App</h3>
+                        <pre class="code-block"><code>rsconnect::deployApp(&quot;path/to/your/app&quot;)</code></pre>
+            <p>RStudio will upload your app, install required packages in the cloud, and give you a live public URL like <code>https://your-account.shinyapps.io/your-app/</code>.</p>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issues:</strong> Never hardcode API keys, database passwords, or secrets directly in app.R when deploying. Use environment variables set through the deployment platform's dashboard instead.
+            </div>
+
+            <h2>4. Setting Up Your Own Shiny Server (Linux)</h2>
+                        <pre class="code-block"><code># On an Ubuntu server
+sudo apt-get install gdebi-core
+wget https://download3.rstudio.org/ubuntu-18.04/x86_64/shiny-server-1.5.20.1002-amd64.deb
+sudo gdebi shiny-server-1.5.20.1002-amd64.deb
+
+# Place your app in the default directory
+sudo cp -R my_shiny_app /srv/shiny-server/
+
+# Access it at http://your-server-ip:3838/my_shiny_app/</code></pre>
+
+            <h2>5. Managing Dependencies for Deployment</h2>
+            <p>Use <code>renv</code> to lock exact package versions so your deployed app behaves identically to your local development environment:</p>
+                        <pre class="code-block"><code>install.packages(&quot;renv&quot;)
+renv::init()       # creates a project-local library and lockfile
+renv::snapshot()   # records exact package versions in renv.lock</code></pre>
+
+            <h2>6. Performance Tips for Production Apps</h2>
+            <ul>
+                <li>Use <code>reactive()</code> and <code>eventReactive()</code> to avoid redundant recalculation.</li>
+                <li>Pre-aggregate large datasets outside the app where possible, rather than on every reactive trigger.</li>
+                <li>Enable caching with <code>bindCache()</code> for expensive, repeatable computations (Shiny 1.6+).</li>
+                <li>Monitor app logs on shinyapps.io or Shiny Server for errors and slow response times.</li>
+            </ul>
+
+            <h2>7. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Test thoroughly locally</strong> — before deploying anywhere.</li>
+                <li><strong>✅ Choose the right platform</strong> — shinyapps.io for speed, Shiny Server for full control.</li>
+                <li><strong>✅ Lock dependencies with renv</strong> — for consistent, reproducible deployments.</li>
+                <li><strong>✅ Never hardcode secrets</strong> — use environment variables instead.</li>
+                <li><strong>✅ Optimize reactivity</strong> — for a smooth experience under real user load.</li>
+            </ul>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Congratulations — you've gone from installing R to deploying a live, interactive web application. That end-to-end journey is exactly what separates a hobbyist from a production-ready R developer.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-markdown-knitr.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Dynamic Reporting with R Markdown and Knitr</a>
+            <span class="disabled"><span class="label">Next <i class="fas fa-arrow-right"></i></span>You've reached the end!</span>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

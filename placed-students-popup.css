@@ -1,0 +1,457 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box
+ }
+
+ .toast-container {
+     position: fixed;
+     bottom: 100px;
+     left: 20px;
+     max-width: 250px;
+     display: flex;
+     align-items: center;
+     text-align: left;
+     flex-direction: column;
+     gap: 10px;
+     z-index: 1000
+ }
+
+ .toast {
+     background-color: aquamarine;
+     color: #ff5421;
+     font-weight: 600;
+     padding: 10px;
+     border-radius: 16px;
+     display: none;
+     box-shadow: rgba(0, 0, 0, .16) 0 10px 36px 0, rgba(0, 0, 0, .06) 0 0 0 1px;
+     font-size: 16px;
+     opacity: 0;
+     font-size: 13px;
+     transition: opacity 1s ease-in-out, transform .5s ease-in-out;
+     display: flex;
+     align-items: center;
+     justify-content: space-between
+ }
+
+ .toast.show {
+     display: flex;
+     opacity: 1;
+     transform: translateY(0);
+     animation: shake .5s ease-in-out
+ }
+
+ @keyframes shake {
+     0% {
+         transform: translateX(0)
+     }
+
+     25% {
+         transform: translateX(-5px)
+     }
+
+     50% {
+         transform: translateX(5px)
+     }
+
+     75% {
+         transform: translateX(-5px)
+     }
+
+     100% {
+         transform: translateX(0)
+     }
+ }
+
+ .fade-out {
+     animation: fadeOut 3s forwards
+ }
+
+ @media (max-width:768px) {
+     .toast-container {
+         left: 0;
+         right: 0;
+         bottom: 80px;
+         gap: 10px;
+         max-width: -webkit-fill-available
+     }
+
+     .toast {
+         font-size: 12px;
+         padding: 12px;
+         padding: 12px;
+         position: relative;
+         right: 75px
+     }
+
+     .toast-container>div {
+         position: relative;
+         width: 50%;
+         box-sizing: border-box
+     }
+    }
+
+
+
+   
+    /* Base Styles */
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        } */
+    
+    /* Popup Container */
+    .popup-xg34s {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9999 ;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease-out;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    /* Popup Content */
+    .popup-content-xg34s {
+        background: #ffffff;
+        border-radius: 12px;
+        width: 1000px;
+        height: 500px;
+        display: flex;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        animation: slideUp 0.5s ease-out;
+    }
+    
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Close Button */
+    .close-xg34s {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #666;
+        font-weight: normal;
+        transition: all 0.3s ease;
+        z-index: 10;
+        background: rgba(255,255,255,0.8);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+    }
+    
+    .close-xg34s:hover {
+        color: #ff5722;
+        transform: rotate(90deg);
+    }
+    
+    /* Left Section - Batch Details */
+    .popup-left-xg34s {
+        flex: 1;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        overflow-y: auto;
+    }
+    
+    /* Right Section - Timer & Benefits */
+    .popup-right-xg34s {
+        width: 350px;
+        background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .popup-right-xg34s::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+    }
+    
+    /* Typography */
+    .popup-title-xg34s {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        line-height: 1.3;
+        text-align: center;
+    }
+    
+    .offer-tag {
+        display: inline-block;
+        background: #ff5722;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .offer-highlight {
+        font-size: 16px;
+        color: #2c3e50;
+        font-weight: 600;
+        margin: 5px 0;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    /* Session Schedule */
+    /* .schedule-container {
+        margin: 15px 0;
+    } */
+    
+    .batch-title {
+        font-size: 18px;
+        color: #ff5722;
+        /* margin: 20px 0 10px 0; */
+        font-weight: 600;
+    }
+    
+    /* .session-list {
+        margin-bottom: 20px;
+    } */
+    
+    .session-item {
+        /* background: white; */
+        /* border-radius: 6px; */
+        padding: 5px;
+        /* margin-bottom: 5px; */
+        /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .session-info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .session-date {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-right: 10px;
+    }
+    
+    .session-time {
+        color: #7f8c8d;
+    }
+    
+    .session-trainer {
+        color: #ff5722;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    
+    .session-topic {
+        color: #34495e;
+        font-weight: 500;
+    }
+    
+    /* Right Side Content */
+    .countdown-container {
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .countdown-title {
+        font-size: 16px;
+        color: white;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 600;
+    }
+    
+    .countdown-timer {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .countdown-item {
+        text-align: center;
+        background: rgba(255,255,255,0.2);
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        min-width: 50px;
+    }
+    
+    .countdown-number {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .countdown-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+    
+    .offer-benefits {
+        color: white;
+    }
+    
+    .benefits-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .benefits-list {
+        list-style-type: none;
+        font-size: 14px;
+    }
+    
+    .benefits-list li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        line-height: 1.4;
+    }
+    
+    .benefits-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4CAF50;
+        font-weight: bold;
+    }
+    
+    /* CTA Button */
+    .popup-button-xg34s {
+        background: linear-gradient(90deg, #ff5722, #ff9800);
+        color: white;
+        border: none;
+        padding: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 15px;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+    
+    .popup-button-xg34s:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255,87,34,0.4);
+    }
+    .final-img{
+        height: 400px;
+        width: 460px;
+    }
+    .offer-highlight{
+        margin: auto;
+        display: flex
+;
+    justify-content: center;
+    }
+    
+    /* Responsive Design */
+    /* @media screen and (max-width: 1040px) {
+        .popup-content-xg34s {
+            width: 95%;
+            height: auto;
+            max-height: 90vh;
+            flex-direction: column;
+        }
+        
+        .popup-right-xg34s {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .popup-left-xg34s {
+            overflow-y: visible;
+        }
+    } */
+    
+    @media screen and (max-width: 768px) {
+        
+        .popup-right-xg34s {
+            padding: 20px;
+            display: none;
+        }
+        
+        .popup-title-xg34s {
+            font-size: 20px;
+        }
+        
+        .countdown-item {
+            min-width: 40px;
+        }
+        
+        .benefits-list li {
+            font-size: 13px;
+        }
+        
+        .session-info {
+            flex-direction: row;
+        }
+        
+        .session-date, .session-time, .session-trainer {
+            margin-bottom: 3px;
+        }
+        .session-trainer {
+display: none;
+}
+.final-img {
+height: auto;
+width: 305px;
+}
+.popup-content-xg34s{
+    max-width: 300px;
+    overflow: hidden;
+    height: 465px;
+}
+    }
+
+
+    @media screen and (max-width: 320px) {
+        .popup-content-xg34s {
+            max-width: 300px;
+        }
+        .final-img {
+            height: auto;
+            width: 300px;
+            }
+    }
+
+
+

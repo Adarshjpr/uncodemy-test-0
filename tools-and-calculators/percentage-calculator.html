@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator — Find Any Percentage Instantly</title>
+<script src="uncodemy-navbar.js" defer></script>
+<link rel="stylesheet" href="footer-style.css" />
+<style>
+  :root{
+    --orange:#ff5a1f; --orange-dark:#e14a12; --navy:#0d1226; --navy-2:#161c38;
+    --bg:#ffffff; --bg-soft:#f6f3ee; --border:#ece8e0; --text:#1a1a1a; --sub:#6b6a66;
+    --save:#27500a; --save-bg:#eaf3de;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6;
+  }
+  .hero{
+    background:linear-gradient(135deg,#fff0e8,#f3f2fb);
+    padding:56px 20px 70px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+    color:var(--orange); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px;
+  }
+  .eyebrow::before{content:'●'; font-size:8px;}
+  h1{font-size:40px; font-weight:700; margin:0 0 16px; line-height:1.25; font-family:Georgia,'Times New Roman',serif; max-width:680px; margin-left:auto; margin-right:auto;}
+  h1 em{font-style:normal; color:var(--orange);}
+  .lede{font-size:16px; color:var(--sub); margin:0 auto; max-width:560px;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px 80px;}
+  .calc-shell{
+    max-width:1200px; margin:auto; padding:0 20px; position:relative; z-index:2;
+  }
+  .calc-card{
+    background:#fff; border-radius:20px; padding:32px; box-shadow:0 20px 50px rgba(20,15,5,0.08);
+    border:1px solid var(--border); margin: 10px;
+  }
+  .logo-chip{
+    display:inline-block; background:var(--navy); color:#fff; font-weight:700; font-size:13px;
+    padding:6px 10px; border-radius:6px; margin-bottom:14px; letter-spacing:.03em;
+  }
+  h2{font-size:21px; font-weight:700; margin:0 0 6px;}
+  .hint{font-size:13px; color:var(--sub); margin:0 0 22px;}
+  .calc-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:28px;}
+  @media (max-width:760px){ .calc-grid{grid-template-columns:1fr;} }
+  .mode-toggle{display:flex; gap:8px; margin-bottom:24px;}
+  .mode-toggle button{
+    flex:1; padding:10px; border-radius:9px; border:1px solid var(--border);
+    background:#fff; font-size:13.5px; font-weight:600; cursor:pointer; color:var(--text);
+    transition:all .15s;
+  }
+  .mode-toggle button.active{background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%); color:#fff; border-color:var(--orange);}
+  .field{margin-bottom:22px;}
+  .field-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  label{font-size:13px; color:var(--text); font-weight:600;}
+  .unit-tag{font-size:11px; color:var(--sub);}
+  input[type=number]{
+    width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
+    font-size:16px; font-weight:600; background:var(--bg-soft); color:var(--text);
+  }
+  input[type=number]:focus{outline:none; border-color:var(--orange);}
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:4px;
+    background:var(--border); margin-top:10px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+    background:var(--orange); cursor:pointer; border:3px solid #fff; box-shadow:0 0 0 1px var(--orange);
+  }
+  .range-labels{display:flex; justify-content:space-between; font-size:11px; color:var(--sub); margin-top:4px;}
+  .result-panel{
+    background:var(--bg-soft); border-radius:16px; padding:26px; text-align:center;
+  }
+  .result-panel .value{font-size:38px; font-weight:800; color:var(--orange); margin:0 0 2px;}
+  .result-panel .label{font-size:13px; color:var(--sub); margin:0 0 18px; font-weight:600;}
+  .badge{
+    display:inline-block; font-size:13px; font-weight:700; padding:6px 16px; border-radius:20px;
+    margin-bottom:20px; background:var(--save-bg); color:var(--save);
+  }
+  .stat-row{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid var(--border); font-size:13.5px; text-align:left;}
+  .stat-row span:first-child{color:var(--sub);}
+  .stat-row span:last-child{font-weight:700;}
+  .disclaimer{font-size:12px; color:var(--sub); margin-top:14px;}
+
+  .section-title{font-size:24px; font-weight:700; margin:0 0 10px;}
+  .section-lede{font-size:15px; color:var(--sub); max-width:680px; margin:0 0 26px;}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:36px;}
+  @media (max-width:700px){ .steps3{grid-template-columns:1fr;} }
+  .step-box{background:var(--bg-soft); border-radius:14px; padding:22px;}
+  .step-num{
+    width:30px; height:30px; background:var(--orange); color:#fff; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:14px;
+  }
+  .step-box strong{display:block; font-size:16px; margin-bottom:6px;}
+  .step-box p{font-size:13.5px; color:var(--sub); margin:0;}
+
+  .kicker{color:var(--orange); font-weight:700; font-size:14px; margin:0 0 14px;}
+  .formula-box{
+    background:var(--navy); color:#fff; border-radius:14px; padding:26px; font-size:15px;
+    margin-bottom:36px;
+  }
+  .formula-box .eq{font-size:17px; font-weight:600; margin:0 0 16px; font-family:'Georgia',serif;}
+  .formula-box p{margin:4px 0; color:#cfd3e6; font-size:13.5px;}
+
+  table{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:14px;}
+  table td{padding:12px 14px; border-top:1px solid var(--border);}
+  table tr:first-child td{border-top:none;}
+  table td:first-child{font-weight:600; width:45%;}
+  table td:last-child{font-weight:700; text-align:right;}
+
+  .tier-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:36px;}
+  @media (max-width:700px){ .tier-grid{grid-template-columns:1fr 1fr;} }
+  .tier-box{background:var(--bg-soft); border-radius:12px; padding:16px; text-align:center;}
+  .tier-box .pct{font-size:20px; font-weight:800; color:var(--orange); margin:0 0 4px;}
+  .tier-box .desc{font-size:12px; color:var(--sub); margin:0;}
+
+  details{border-top:1px solid var(--border); padding:16px 0;}
+  details:last-child{border-bottom:1px solid var(--border);}
+  summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; font-size:20px; color:var(--orange); font-weight:700;}
+  details[open] summary::after{content:'–';}
+  details p{font-size:14px; color:var(--sub); margin:12px 0 0;}
+
+  .cta{
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark)); border-radius:18px;
+    padding:44px 30px; text-align:center; color:#fff; margin-bottom:10px;
+  }
+  .cta h3{font-size:22px; margin:0 0 8px;}
+  .cta p{font-size:14px; opacity:.92; margin:0 0 20px;}
+  .cta button{
+    background:#fff; color:var(--orange-dark); border:none; padding:12px 26px;
+    border-radius:9px; font-weight:700; font-size:14px; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="hero">
+  <div class="eyebrow">Works for any two numbers</div>
+  <h1>Find any <em>percentage</em> in seconds</h1>
+  <p class="lede">Work out what a percentage of a number is, or how much one value has changed as a percentage — both instantly, no manual maths.</p>
+</div>
+
+<div class="calc-shell">
+  <div class="calc-card">
+    <span class="logo-chip">%</span>
+    <h2>Your numbers</h2>
+    <p class="hint">Find X% of a number, or work out the percentage change between two values.</p>
+
+    <div class="mode-toggle">
+      <button id="modeSingle" class="active">% of a number</button>
+      <button id="modeStacked">% change</button>
+    </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="field" id="pctOfField">
+          <div class="field-top"><label>Percentage</label><span class="unit-tag">%</span></div>
+          <input type="number" id="ctcAmount" value="20">
+          <input type="range" id="ctcAmountR" min="0" max="100" value="20">
+          <div class="range-labels"><span>0%</span><span>100%</span></div>
+        </div>
+        <div class="field" id="pctOfNumberField">
+          <div class="field-top"><label>Of this number</label><span class="unit-tag">value</span></div>
+          <input type="number" id="basicPct" value="500">
+          <input type="range" id="basicPctR" min="1" max="100000" step="1" value="500">
+          <div class="range-labels"><span>1</span><span>1,00,000</span></div>
+        </div>
+        <div class="field" id="fromField" style="display:none;">
+          <div class="field-top"><label>Original value</label><span class="unit-tag">value</span></div>
+          <input type="number" id="fromValue" value="200">
+          <input type="range" id="fromValueR" min="1" max="100000" value="200">
+          <div class="range-labels"><span>1</span><span>1,00,000</span></div>
+        </div>
+        <div class="field" id="toField" style="display:none;">
+          <div class="field-top"><label>New value</label><span class="unit-tag">value</span></div>
+          <input type="number" id="toValue" value="250">
+          <input type="range" id="toValueR" min="1" max="100000" value="250">
+          <div class="range-labels"><span>1</span><span>1,00,000</span></div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <p class="value" id="finalPrice">--</p>
+        <p class="label" id="finalLabel">Result</p>
+        <span class="badge" id="savingsBadge"></span>
+
+        <div class="stat-row"><span id="statOriginalLabel">Percentage</span><span id="statOriginal">0%</span></div>
+        <div class="stat-row"><span id="statDiscountLabel">Number</span><span id="statDiscountPct">0</span></div>
+        <div class="stat-row"><span id="statSavedLabel">Difference</span><span id="statSaved">0</span></div>
+        <div class="stat-row"><span id="statFinalLabel">Result</span><span id="statFinal">0</span></div>
+      </div>
+    </div>
+    <p class="disclaimer">Percentage change is calculated relative to the original value — a rise from 100 to 150 is 50% up, but a fall back from 150 to 100 is a 33.3% drop, not 50%.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div style="height:36px;"></div>
+  <h2 class="section-title">How percentages are calculated</h2>
+  <p class="section-lede">A percentage is a fraction out of 100. Finding "X% of a number" means multiplying the number by X and dividing by 100. Percentage change compares a new value to an original one — and because it's always measured against the original, increases and decreases of the same absolute amount rarely produce mirror-image percentages.</p>
+
+  <div class="steps3">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <strong>Pick a mode</strong>
+      <p>Find a percentage of a number, or the percentage change between two values.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <strong>Enter your numbers</strong>
+      <p>A percentage and a value, or an original and a new value.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <strong>See the result</strong>
+      <p>The calculated amount or percentage, worked out instantly.</p>
+    </div>
+  </div>
+
+  <p class="kicker">The percentage formulas</p>
+  <div class="formula-box">
+    <p class="eq">X% of number = (X ÷ 100) × number</p>
+    <p>Percentage change = [(new value − original value) ÷ original value] × 100</p>
+    <p>A positive result means an increase; a negative result means a decrease.</p>
+  </div>
+
+  <p class="kicker">A worked example</p>
+  <p class="section-lede" style="margin-bottom:14px;">Finding 20% of 500, then checking the change from 500 to 600:</p>
+  <table>
+    <tr><td>20% of 500</td><td>100</td></tr>
+    <tr><td>Original value</td><td>500</td></tr>
+    <tr><td>New value</td><td>600</td></tr>
+    <tr><td>Difference</td><td>100</td></tr>
+    <tr><td>Percentage change</td><td>+20%</td></tr>
+  </table>
+  <p class="section-lede">Now reverse it: going from 600 back down to 500 is a −16.7% change, not −20% — because the base value used for the percentage is different each direction.</p>
+
+  <p class="kicker">Common percentage uses</p>
+  <div class="tier-grid">
+    <div class="tier-box"><p class="pct">%</p><p class="desc">Discounts and markups</p></div>
+    <div class="tier-box"><p class="pct">Δ%</p><p class="desc">Salary hikes, growth rates</p></div>
+    <div class="tier-box"><p class="pct">%</p><p class="desc">Exam scores, grading</p></div>
+    <div class="tier-box"><p class="pct">Δ%</p><p class="desc">Investment returns</p></div>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <details open>
+    <summary>Why isn't a 20% increase followed by a 20% decrease back to the original?</summary>
+    <p>Because each percentage is calculated on a different base. A 20% increase on 100 gives 120, but a 20% decrease is then calculated on 120, not the original 100 — giving 96, not 100.</p>
+  </details>
+  <details>
+    <summary>How do I find what percentage one number is of another?</summary>
+    <p>Divide the first number by the second, then multiply by 100. For example, 40 out of 200 is (40 ÷ 200) × 100 = 20%.</p>
+  </details>
+  <details>
+    <summary>What's the difference between percentage and percentage points?</summary>
+    <p>A percentage point is a plain difference between two percentages, while a percentage change is relative. Going from 20% to 25% is a rise of 5 percentage points, but a 25% relative increase in the percentage itself.</p>
+  </details>
+  <details>
+    <summary>Can percentage change be more than 100%?</summary>
+    <p>Yes — if a value more than doubles, the percentage increase exceeds 100%. For example, going from 50 to 150 is a 200% increase.</p>
+  </details>
+
+  <div style="height:20px;"></div>
+  <div class="cta">
+    <h3>Working out a discount or markup?</h3>
+    <p>This calculator pairs well with our discount calculator for a full pricing breakdown.</p>
+    <button>Try another calculation</button>
+  </div>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+<script src="footer-script.js"></script>
+
+<script>
+let changeMode = false;
+const btnSingle = document.getElementById('modeSingle');
+const btnStacked = document.getElementById('modeStacked');
+const pctOfField = document.getElementById('pctOfField');
+const pctOfNumberField = document.getElementById('pctOfNumberField');
+const fromField = document.getElementById('fromField');
+const toField = document.getElementById('toField');
+const finalLabel = document.getElementById('finalLabel');
+const statOriginalLabel = document.getElementById('statOriginalLabel');
+const statDiscountLabel = document.getElementById('statDiscountLabel');
+const statSavedLabel = document.getElementById('statSavedLabel');
+const statFinalLabel = document.getElementById('statFinalLabel');
+
+function setMode(isChange){
+  changeMode = isChange;
+  pctOfField.style.display = isChange ? 'none' : 'block';
+  pctOfNumberField.style.display = isChange ? 'none' : 'block';
+  fromField.style.display = isChange ? 'block' : 'none';
+  toField.style.display = isChange ? 'block' : 'none';
+
+  finalLabel.textContent = isChange ? '% change' : 'Result';
+  statOriginalLabel.textContent = isChange ? 'Original value' : 'Percentage';
+  statDiscountLabel.textContent = isChange ? 'New value' : 'Number';
+  statSavedLabel.textContent = isChange ? 'Difference' : 'Difference';
+  statFinalLabel.textContent = isChange ? '% change' : 'Result';
+
+  btnSingle.classList.toggle('active', !isChange);
+  btnStacked.classList.toggle('active', isChange);
+  calc();
+}
+btnSingle.onclick = () => setMode(false);
+btnStacked.onclick = () => setMode(true);
+
+function syncPair(numId, rangeId){
+  const num = document.getElementById(numId);
+  const range = document.getElementById(rangeId);
+  num.addEventListener('input', () => { range.value = num.value; calc(); });
+  range.addEventListener('input', () => { num.value = range.value; calc(); });
+}
+syncPair('ctcAmount','ctcAmountR');
+syncPair('basicPct','basicPctR');
+syncPair('fromValue','fromValueR');
+syncPair('toValue','toValueR');
+
+function formatNumber(n){
+  return Math.round(n * 100) / 100;
+}
+
+function calc(){
+  const finalPriceEl = document.getElementById('finalPrice');
+  const badgeEl = document.getElementById('savingsBadge');
+
+  if(!changeMode){
+    const pct = parseFloat(document.getElementById('ctcAmount').value) || 0;
+    const number = parseFloat(document.getElementById('basicPct').value) || 0;
+    const result = (pct / 100) * number;
+    const diff = number - result;
+
+    finalPriceEl.textContent = formatNumber(result);
+    badgeEl.textContent = pct + '% of ' + number;
+
+    document.getElementById('statOriginal').textContent = pct + '%';
+    document.getElementById('statDiscountPct').textContent = formatNumber(number);
+    document.getElementById('statSaved').textContent = formatNumber(diff);
+    document.getElementById('statFinal').textContent = formatNumber(result);
+  } else {
+    const from = parseFloat(document.getElementById('fromValue').value) || 0;
+    const to = parseFloat(document.getElementById('toValue').value) || 0;
+
+    if(from === 0){
+      finalPriceEl.textContent = '--';
+      badgeEl.textContent = 'Original value can\'t be zero';
+      document.getElementById('statOriginal').textContent = formatNumber(from);
+      document.getElementById('statDiscountPct').textContent = formatNumber(to);
+      document.getElementById('statSaved').textContent = formatNumber(to - from);
+      document.getElementById('statFinal').textContent = '--';
+      return;
+    }
+
+    const diff = to - from;
+    const pctChange = (diff / from) * 100;
+    const isIncrease = pctChange >= 0;
+
+    finalPriceEl.textContent = (isIncrease ? '+' : '') + formatNumber(pctChange) + '%';
+    badgeEl.textContent = isIncrease ? 'Increase' : 'Decrease';
+
+    document.getElementById('statOriginal').textContent = formatNumber(from);
+    document.getElementById('statDiscountPct').textContent = formatNumber(to);
+    document.getElementById('statSaved').textContent = (isIncrease ? '+' : '') + formatNumber(diff);
+    document.getElementById('statFinal').textContent = (isIncrease ? '+' : '') + formatNumber(pctChange) + '%';
+  }
+}
+
+['ctcAmount','basicPct','fromValue','toValue'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calc);
+});
+setMode(false);
+</script>
+</body>
+</html>

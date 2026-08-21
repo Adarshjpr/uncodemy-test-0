@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Installation Guide &amp; CLI Basics | Node.js Tutorial | Uncodemy</title>
+    <meta name="description" content="Complete Node.js installation guide for Windows, macOS, and Linux. Learn npm, npx, version management, and essential CLI commands for production-ready development." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Full Stack with Node.js Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 5 of 12: Node.js Installation Guide &amp; CLI Basics</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="nodejs-introduction-history.html"><span class="num">01</span>What is Node.js? — Introduction, History &amp; Why Use It?</a></li>
+            <li><a href="nodejs-advantages-limitations.html"><span class="num">02</span>Advantages and Limitations of Node.js</a></li>
+            <li><a href="nodejs-vs-express-vs-other.html"><span class="num">03</span>Node.js vs Express.js vs Other Server-Side Frameworks</a></li>
+            <li><a href="nodejs-architecture-event-loop.html"><span class="num">04</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a></li>
+            <li><a href="nodejs-installation-cli.html" class="active"><span class="num">05</span>Node.js Installation Guide &amp; CLI Basics</a></li>
+            <li><a href="nodejs-vscode-repl.html"><span class="num">06</span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a></li>
+            <li><a href="nodejs-code-execution.html"><span class="num">07</span>Exploring Node.js Code Execution Process</a></li>
+            <li><a href="nodejs-core-modules.html"><span class="num">08</span>Exploring Node.js Core Modules</a></li>
+            <li><a href="nodejs-express-routing.html"><span class="num">09</span>Exploring ExpressJS Routing</a></li>
+            <li><a href="nodejs-authentication-authorization.html"><span class="num">10</span>Authentication &amp; Authorization in Node.js</a></li>
+            <li><a href="nodejs-real-time-application.html"><span class="num">11</span>A Guide to Build Real-Time Application Using Node.js</a></li>
+            <li><a href="nodejs-interview-questions.html"><span class="num">12</span>Top 50+ NodeJS Interview Questions for Freshers &amp; Senior Developers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-terminal"></i> Installation & CLI</span>
+        <h1>Node.js Installation Guide &amp; CLI Basics</h1>
+
+        <div class="card">
+
+            <p>Before you can build anything with Node.js, you need to get it installed and understand the essential command-line tools. This guide will walk you through installing Node.js on <strong>Windows, macOS, and Linux</strong>, and introduce you to the <strong>Node.js CLI</strong>, <strong>npm</strong>, <strong>npx</strong>, and <strong>version management</strong> — the tools you'll use every single day as a Node.js developer.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Your development environment setup is the foundation of your productivity. A correctly configured Node.js installation with the right version management strategy will save you hours of debugging later.
+            </div>
+
+            <h2>1. Which Version to Install?</h2>
+
+            <p>Node.js releases come in two tracks:</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Version Type</th><th>Description</th><th>When to Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>LTS (Long-Term Support)</strong></td>
+                            <td>Stable, well-tested, receives security updates for 30 months</td>
+                            <td><span style="color: var(--success); font-weight: 600;">✅ Production</span> — Always use LTS in production</td></tr>
+                        <tr><td><strong>Current (Latest)</strong></td>
+                            <td>Latest features, experimental, updates every 2 weeks</td>
+                            <td><span style="color: var(--warning); font-weight: 600;">⚠️ Development</span> — For testing new features only</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Best Practice:</strong> Always use the <strong>latest LTS version</strong> for production applications. Check <a href="https://nodejs.org" target="_blank">nodejs.org</a> for the current LTS version. As of writing, Node.js 22 LTS is the recommended version.
+            </div>
+
+            <h2>2. Installation Methods</h2>
+
+            <h3>Method 1: Official Installer (Windows &amp; macOS)</h3>
+
+            <h4>Windows</h4>
+            <ol>
+                <li>Download the Windows installer from <a href="https://nodejs.org" target="_blank">nodejs.org</a> (choose the LTS version).</li>
+                <li>Run the <code>.msi</code> installer.</li>
+                <li>Follow the installation wizard (default settings are recommended).</li>
+                <li>Restart your terminal.</li>
+                <li>Verify the installation:</li>
+            </ol>
+            <pre class="code-block"><code>node --version   # Should show v22.x.x
+npm --version     # Should show the npm version</code></pre>
+
+            <h4>macOS</h4>
+            <ol>
+                <li>Download the macOS installer from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
+                <li>Run the <code>.pkg</code> installer.</li>
+                <li>Follow the installation wizard.</li>
+                <li>Verify the installation:</li>
+            </ol>
+            <pre class="code-block"><code>node --version
+npm --version</code></pre>
+
+            <h3>Method 2: Package Managers (Linux &amp; macOS)</h3>
+
+            <h4>Ubuntu/Debian</h4>
+            <pre class="code-block"><code># Using NodeSource repository (recommended)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using apt (may have older versions)
+sudo apt update
+sudo apt install nodejs npm</code></pre>
+
+            <h4>macOS (Homebrew)</h4>
+            <pre class="code-block"><code># Install Homebrew first (if not installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Node.js
+brew install node
+
+# Verify
+node --version
+npm --version</code></pre>
+
+            <h4>Fedora/RHEL/CentOS</h4>
+            <pre class="code-block"><code>curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
+sudo dnf install nodejs</code></pre>
+
+            <h4>Arch Linux</h4>
+            <pre class="code-block"><code>sudo pacman -S nodejs npm</code></pre>
+
+            <h4>Windows (Chocolatey)</h4>
+            <pre class="code-block"><code>choco install nodejs-lts</code></pre>
+
+            <h3>Method 3: Version Managers (Recommended for Production)</h3>
+
+            <p><strong>This is the most recommended approach</strong> for professional developers. Version managers allow you to:</p>
+            <ul>
+                <li>Install and switch between multiple Node.js versions instantly.</li>
+                <li>Test your application against different Node.js versions.</li>
+                <li>Use different versions for different projects.</li>
+                <li>Easily upgrade or downgrade versions.</li>
+            </ul>
+
+            <h4>nvm (Node Version Manager) — Most Popular</h4>
+            <p><strong>Installation:</strong></p>
+            <pre class="code-block"><code># macOS / Linux
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+
+# Windows (use nvm-windows)
+# Download from: https://github.com/coreybutler/nvm-windows/releases</code></pre>
+
+            <p><strong>Essential nvm Commands:</strong></p>
+            <pre class="code-block"><code># Install the latest LTS version
+nvm install --lts
+
+# Install a specific version
+nvm install 20.10.0
+
+# List installed versions
+nvm ls
+
+# Switch to a specific version
+nvm use 20.10.0
+
+# Set a default version
+nvm alias default 20.10.0
+
+# List all available remote versions
+nvm ls-remote</code></pre>
+
+            <h4>n (Simple Version Manager for macOS/Linux)</h4>
+            <pre class="code-block"><code># Install n
+curl -L https://bit.ly/n-install | bash
+
+# Install the latest LTS
+n lts
+
+# Install a specific version
+n 20.10.0
+
+# Switch version
+n</code></pre>
+
+            <h4>fnm (Fast Node Manager — Written in Rust)</h4>
+            <pre class="code-block"><code># Install using Homebrew (macOS)
+brew install fnm
+
+# Install using Winget (Windows)
+winget install Schniz.fnm
+
+# Install LTS
+fnm install --lts
+
+# Use a version
+fnm use 20.10.0</code></pre>
+
+            <h2>3. Verifying Your Installation</h2>
+
+            <p>After installation, run these commands to verify everything is working correctly:</p>
+            <pre class="code-block"><code># Check Node.js version
+node -v
+
+# Check npm version
+npm -v
+
+# Check npx version
+npx -v
+
+# Print Node.js installation path
+which node
+
+# Print npm installation path
+which npm
+
+# Check if Node.js is working
+node -e "console.log('Hello, Node.js!')"</code></pre>
+
+            <h2>4. Node.js CLI — Essential Commands</h2>
+
+            <p>The Node.js CLI is your primary interface for running Node.js applications and scripts.</p>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Command</th><th>Description</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>node</code></td><td>Start Node.js REPL (interactive shell)</td><td><code>node</code></td></tr>
+                        <tr><td><code>node file.js</code></td><td>Execute a JavaScript file</td><td><code>node app.js</code></td></tr>
+                        <tr><td><code>node --version</code></td><td>Show Node.js version</td><td><code>node -v</code></td></tr>
+                        <tr><td><code>node --eval</code></td><td>Execute code directly</td><td><code>node -e "console.log('hi')"</code></td></tr>
+                        <tr><td><code>node --inspect</code></td><td>Start with debugging enabled</td><td><code>node --inspect app.js</code></td></tr>
+                        <tr><td><code>node --watch</code></td><td>Watch files for changes (Node.js 18+)</td><td><code>node --watch app.js</code></td></tr>
+                        <tr><td><code>node --check</code></td><td>Syntax check without execution</td><td><code>node -c file.js</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. npm — Node Package Manager</h2>
+
+            <p>npm is the <strong>largest package registry in the world</strong>, with over 2 million packages. It's automatically installed with Node.js.</p>
+
+            <h3>Essential npm Commands</h3>
+
+            <pre class="code-block"><code># Initialize a new project
+npm init                      # Interactive
+npm init -y                   # Skip questions (defaults)
+
+# Install packages
+npm install express           # Install a specific package
+npm install                   # Install all dependencies from package.json
+npm install --save-dev jest   # Install as dev dependency
+npm install -g nodemon        # Install globally
+
+# Uninstall packages
+npm uninstall express         # Remove a package
+
+# Update packages
+npm update                    # Update all packages
+npm update express            # Update a specific package
+
+# Run scripts
+npm start                     # Run the "start" script
+npm test                      # Run the "test" script
+npm run build                 # Run a custom script
+
+# View information
+npm list                      # List installed packages
+npm list --depth=0            # List only top-level packages
+npm outdated                  # Check for outdated packages
+
+# Publish packages
+npm publish                   # Publish your package to npm
+
+# Security
+npm audit                     # Check for vulnerabilities
+npm audit fix                 # Fix vulnerabilities</code></pre>
+
+            <h4>package.json — The Heart of Every Node.js Project</h4>
+            <pre class="code-block"><code>{
+    "name": "my-project",
+    "version": "1.0.0",
+    "description": "My Node.js application",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "jest",
+        "build": "webpack --mode production"
+    },
+    "dependencies": {
+        "express": "^4.18.0",
+        "mongoose": "^7.0.0"
+    },
+    "devDependencies": {
+        "jest": "^29.0.0",
+        "nodemon": "^2.0.0"
+    }
+}</code></pre>
+
+            <h3>package-lock.json</h3>
+            <p>The <code>package-lock.json</code> file locks the exact versions of every dependency. This ensures that every developer and production environment uses the <strong>exact same dependency versions</strong>, preventing "it works on my machine" problems.</p>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Best Practice:</strong> Always commit <code>package-lock.json</code> to version control. Never use <code>npm install</code> without <code>--lockfile</code> in production. Use <code>npm ci</code> instead of <code>npm install</code> in CI/CD pipelines for faster, deterministic builds.
+            </div>
+
+            <h2>6. npx — Execute Packages Without Installing</h2>
+
+            <p><strong>npx</strong> is a tool that comes with npm (since version 5.2.0). It allows you to execute Node.js packages <strong>without installing them globally</strong>.</p>
+
+            <pre class="code-block"><code># Execute a package without installing
+npx create-react-app my-app   # Creates a React app
+
+npx express-generator         # Generates an Express app
+
+npx mocha                    # Run tests with mocha
+
+npx prettier --write .       # Format code with Prettier
+
+npx npm-check-updates -u     # Update all dependencies to latest</code></pre>
+
+            <h2>7. Global vs Local Installations</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Install Type</th><th>Command</th><th>Where it's installed</th><th>When to use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Local</strong></td><td><code>npm install express</code></td><td><code>node_modules/</code> in your project</td><td>Project dependencies (most packages)</td></tr>
+                        <tr><td><strong>Global</strong></td><td><code>npm install -g nodemon</code></td><td>System-wide location</td><td>CLI tools, utilities</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Production Warning:</strong> Avoid global installations in CI/CD and production environments. Always use local installations and <code>npx</code> for executable tools. This ensures consistency across environments.
+            </div>
+
+            <h2>8. Common Installation Issues &amp; Solutions</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 1: "command not found: node"</strong></p>
+                <p><strong>Solution:</strong> Node.js is not in your PATH. Restart your terminal. On Windows, you may need to restart your computer. Alternatively, add the Node.js installation path manually to your system's PATH environment variable.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 2: Permission Errors (EACCES, EPERM)</strong></p>
+                <p><strong>Solution:</strong> This is a common issue on Linux/macOS. Fix it by:</p>
+                <ul>
+                    <li>Use <code>sudo</code> for global installations (not recommended).</li>
+                    <li>Better: Reinstall Node.js using a version manager (nvm) which doesn't require sudo.</li>
+                    <li>Or change the npm global directory: <code>mkdir ~/.npm-global &amp;&amp; npm config set prefix ~/.npm-global</code></li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 3: Version Mismatch Across Environments</strong></p>
+                <p><strong>Solution:</strong> Use a version manager (nvm). Add a <code>.nvmrc</code> file to your project root:</p>
+                <pre class="code-block"><code># .nvmrc
+20.10.0</code></pre>
+                <p>Then users can run <code>nvm use</code> to automatically switch to the correct version.</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 4: npm Install Fails with SSL Errors</strong></p>
+                <p><strong>Solution:</strong> Try these steps:</p>
+                <ul>
+                    <li>Update npm: <code>npm install -g npm@latest</code></li>
+                    <li>Clear cache: <code>npm cache clean --force</code></li>
+                    <li>Use HTTP instead of HTTPS: <code>npm config set registry http://registry.npmjs.org/</code></li>
+                    <li>Check your network/proxy settings.</li>
+                </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>Issue 5: Node.js Uses Too Much Memory</strong></p>
+                <p><strong>Solution:</strong> Increase the memory limit:</p>
+                <pre class="code-block"><code># For Node.js (increase to 4GB)
+node --max-old-space-size=4096 app.js</code></pre>
+                <p>Or set an environment variable: <code>export NODE_OPTIONS="--max-old-space-size=4096"</code></p>
+            </div>
+
+            <h2>9. Production-Ready Checklist</h2>
+
+            <ul>
+                <li><strong>✅ Install LTS version</strong> — Always use the latest LTS for production.</li>
+                <li><strong>✅ Use a version manager</strong> — nvm (or fnm) for easy version switching.</li>
+                <li><strong>✅ Add .nvmrc</strong> — Lock the Node.js version for your team.</li>
+                <li><strong>✅ Commit package-lock.json</strong> — Ensure deterministic builds.</li>
+                <li><strong>✅ Use npm ci</strong> — In CI/CD pipelines instead of <code>npm install</code>.</li>
+                <li><strong>✅ Avoid global packages in production</strong> — Use <code>npx</code> or local installs.</li>
+                <li><strong>✅ Set memory limits</strong> — Use <code>--max-old-space-size</code> for production.</li>
+                <li><strong>✅ Verify installation</strong> — Test Node.js and npm are working correctly.</li>
+                <li><strong>✅ Keep npm updated</strong> — Regularly update npm for security patches.</li>
+                <li><strong>✅ Use npm audit</strong> — Regularly check for vulnerabilities.</li>
+            </ul>
+
+            <h2>10. Quick Reference — One-Liner Commands</h2>
+
+            <pre class="code-block"><code># Install Node.js (macOS)
+brew install node
+
+# Install Node.js (Ubuntu/Debian)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt-get install -y nodejs
+
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+
+# Install latest LTS with nvm
+nvm install --lts && nvm use --lts
+
+# Create a new Node.js project
+mkdir my-app && cd my-app && npm init -y
+
+# Install Express
+npm install express
+
+# Run a Node.js app
+node app.js
+
+# Run with auto-restart (nodemon)
+npm install -g nodemon && nodemon app.js</code></pre>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Production Wisdom:</strong> A properly configured development environment is the foundation of productive development. Take the time to set up your tools correctly — it will pay dividends in saved time, fewer bugs, and smoother deployments throughout your career.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="nodejs-architecture-event-loop.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Exploring Node.js Architecture — Event Loop, Non-Blocking I/O</a>
+            <a href="nodejs-vscode-repl.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Setting Up VS Code &amp; REPL Terminal for Node.js Development</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Node.js?</h3>
+                <p>Build scalable, high-performance backend applications with Node.js. Learn from industry experts with hands-on projects.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/course/full-stack-with-nodejs-training-course-in-noida">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Full Stack with Node.js Course</h4>
+            <p class="batch-sub">Kickstart your full-stack development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

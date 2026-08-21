@@ -1,0 +1,1182 @@
+/* ============ BASE ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+.jeet-hero {
+  margin: 0;
+  padding: 26px 0 40px;
+  font-family: 'Poppins', "Segoe UI", Arial, sans-serif;
+  /* background: linear-gradient(180deg, #f4f7ff 0%, #f9fbff 40%, #ffffff 100%); */
+  color: #0f1b33;
+  line-height: 1.4;
+  position: relative;
+}
+
+.uc-shell {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 26px;
+}
+
+/* ============ HERO – Reduced spacing ============ */
+.uc-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 332px 448px;
+  gap: 30px;
+  align-items: start;
+}
+
+.uc-hero-left {
+  padding-top: 6px;
+}
+
+.uc-hero-heading {
+  margin: 0 0 5px;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #0f1b33;
+}
+
+.uc-heading-accent {
+  color: #030303;
+}
+
+.uc-hero-desc {
+  margin: 0 0 15px;
+  max-width: 565px;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* rating chips row */
+.uc-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.uc-rating-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.uc-rating-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.uc-badge-google {
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .13);
+  font-size: 19px;
+}
+
+.uc-badge-sulekha {
+  background: linear-gradient(135deg, #ff9800, #e53935);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.uc-badge-trust {
+  background: #25a3e8;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.uc-badge-justdial {
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .13);
+  color: #0d47a1;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.uc-badge-facebook {
+  background: #1877f2;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.uc-rating-score {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.uc-google-g {
+  font-weight: 700;
+  background: linear-gradient(90deg, #4285f4 0 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75% 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* review card */
+.uc-review-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 20px;
+  margin-bottom: 6px;
+  background: #ffffff;
+  border: 1px solid #e6eaf2;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 27, 51, .07);
+}
+
+.uc-stars {
+  display: flex;
+  gap: 3px;
+  font-size: 24px;
+  color: #ffb400;
+}
+
+.uc-star {
+  line-height: 1;
+}
+
+.uc-review-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.uc-review-score {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.uc-review-count {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #4a5568;
+}
+
+/* collaboration */
+.uc-collab {
+  margin-top: 2px;
+}
+
+.uc-collab-label {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #f05a28;
+}
+
+.uc-collab-logos {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.uc-ibm {
+  font-family: 'Poppins', sans-serif;
+  font-size: 33px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1f5fce;
+  line-height: 1;
+  position: relative;
+}
+
+.uc-ibm::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(180deg, transparent 0 3px, #ffffff 3px 5px);
+  mix-blend-mode: screen;
+}
+
+.uc-ms {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.uc-ms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 15px);
+  grid-template-rows: repeat(2, 15px);
+  gap: 3px;
+}
+
+.uc-ms-sq {
+  display: block;
+}
+
+.uc-ms-red {
+  background: #f25022;
+}
+
+.uc-ms-green {
+  background: #7fba00;
+}
+
+.uc-ms-blue {
+  background: #00a4ef;
+}
+
+.uc-ms-yellow {
+  background: #ffb900;
+}
+
+.uc-ms-word {
+  font-size: 28px;
+  font-weight: 400;
+  color: #5e5e5e;
+  letter-spacing: -.4px;
+}
+
+/* ============ OFFER CARD – Reduced spacing ============ */
+.uc-offer-wrap {
+  position: relative;
+  padding-top: 8px;
+}
+
+.uc-offer-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e6eaf2;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(15, 27, 51, .09);
+  padding: 24px 26px 22px;
+  text-align: center;
+}
+
+.uc-offer-ribbon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #f0472b, #f4682c);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  padding: 8px 22px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(240, 71, 43, .35);
+}
+
+.uc-offer-heading {
+  margin: 2px 0 2px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #0f1b33;
+}
+
+.uc-offer-sub {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #3d4a63;
+}
+
+.uc-old-price {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #5b6478;
+}
+
+.uc-old-amount {
+  position: relative;
+}
+
+.uc-old-amount::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  top: 52%;
+  height: 3px;
+  background: #f05a28;
+  transform: rotate(-7deg);
+}
+
+.uc-gst {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b6478;
+}
+
+.uc-now-pay {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.uc-price-box {
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f4571f, #ff7f36);
+  color: #ffffff;
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  box-shadow: 0 8px 18px rgba(244, 87, 31, .28);
+}
+
+.uc-price-gst {
+  font-size: 14px;
+  font-weight: 600;
+  vertical-align: super;
+}
+
+.uc-emi-box {
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  background: #fffbe9;
+  border: 1px dashed #e9c96b;
+}
+
+.uc-emi-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  color: #8a6d1f;
+  margin-bottom: 2px;
+}
+
+.uc-emi-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f1b33;
+}
+
+.uc-offer-list {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  text-align: left;
+}
+
+.uc-offer-li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.uc-offer-li-icon {
+  width: 19px;
+  font-size: 16px;
+  color: #3d4a63;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.uc-book-btn {
+  display: block;
+  width: 100%;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #3b46d8, #7b31d4);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(78, 66, 214, .32);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.uc-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(78, 66, 214, .4);
+}
+
+.uc-book-btn:focus-visible {
+  outline: 3px solid #ffb400;
+  outline-offset: 3px;
+}
+
+.uc-filling {
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* ============ ACCREDITATION GRID – Uniform logo sizes ============ */
+.uc-accred {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.uc-accred-card {
+  /* background: #ffffff;
+  border: 1px solid #e6eaf2;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 27, 51, .05); */
+  min-height: 120px; /* slightly reduced to keep cards neat */
+  padding: 12px;     /* reduced padding to give more room to logos */
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* 
+   Make all logo images uniform – 
+   same max-height, max-width, and object-fit 
+   so they scale evenly inside the card.
+*/
+.uc-accred-card img {
+  max-height: 70px;   /* all logos will be at most 70px tall */
+  max-width: 100%;    /* width can stretch but not exceed container */
+  width: auto;        /* maintain aspect ratio */
+  height: auto;       /* maintain aspect ratio */
+  object-fit: contain;
+  object-position: center;
+  display: block;     /* remove extra spacing */
+}
+
+/* 
+   For cards that use text-based logos (e.g. NASSCOM, FSP) 
+   we keep the existing styles – they are not images.
+   But we can also vertically centre them.
+*/
+.uc-accred-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+/* existing text-based styles (unchanged) */
+.uc-nasscom-word {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: #a4001f;
+  line-height: 1;
+}
+
+.uc-reg {
+  font-size: 11px;
+  vertical-align: super;
+}
+
+.uc-nasscom-sub {
+  font-size: 15px;
+  font-weight: 600;
+  color: #d0021b;
+}
+
+.uc-fsp-word {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a5fb4;
+  line-height: 1;
+  letter-spacing: -.3px;
+}
+
+.uc-fsp-reg {
+  font-size: 10px;
+  vertical-align: super;
+}
+
+.uc-fsp-prime {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e8562a;
+  letter-spacing: 5px;
+  line-height: 1.2;
+}
+
+.uc-fsp-note {
+  font-size: 9.5px;
+  font-weight: 500;
+  color: #2b6cb0;
+  letter-spacing: .2px;
+}
+
+.uc-nsdca-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uc-nsdca-emblem {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.uc-nsdca-text {
+  text-align: left;
+}
+
+.uc-nsdca-word {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: .3px;
+}
+
+.uc-nsdca-l1 {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.uc-nsdca-l2 {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1a5fb4;
+}
+
+.uc-nsdca-l3 {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #e8562a;
+}
+
+.uc-gp-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uc-gp-bar {
+  width: 9px;
+  height: 44px;
+  background: #4285f4;
+  border-radius: 2px;
+  flex: 0 0 auto;
+}
+
+.uc-gp-text {
+  text-align: left;
+}
+
+.uc-gp-google {
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -.6px;
+  line-height: 1.1;
+}
+
+.uc-g-b {
+  color: #4285f4;
+}
+
+.uc-g-r {
+  color: #ea4335;
+}
+
+.uc-g-y {
+  color: #fbbc05;
+}
+
+.uc-g-g {
+  color: #34a853;
+}
+
+.uc-gp-partner {
+  display: block;
+  font-size: 25px;
+  font-weight: 400;
+  color: #5f6368;
+  letter-spacing: -.6px;
+  line-height: 1.1;
+}
+
+.uc-iabac-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.uc-iabac-globe {
+  font-size: 38px;
+  color: #1b3a6b;
+  line-height: 1;
+}
+
+.uc-iabac-text {
+  text-align: left;
+}
+
+.uc-iabac-word {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: .4px;
+}
+
+.uc-iabac-line {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.uc-iso-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uc-iso-globe {
+  font-size: 38px;
+  color: #1f5fce;
+  line-height: 1;
+}
+
+.uc-iso-text {
+  text-align: left;
+}
+
+.uc-iso-word {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0d47a1;
+  line-height: 1;
+  letter-spacing: .5px;
+}
+
+.uc-iso-line {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ============ FEATURE BAR ============ */
+.uc-feature-bar {
+  margin-top: 34px;
+  background: #0d2149;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 18px 8px;
+}
+
+.uc-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 2px 20px;
+  border-right: 1px solid rgba(255, 255, 255, .16);
+}
+
+.uc-feature-item:last-child {
+  border-right: 0;
+}
+
+.uc-feature-icon {
+  font-size: 30px;
+  color: #ffffff;
+  line-height: 1.2;
+  flex: 0 0 auto;
+}
+
+.uc-feature-text {
+  display: block;
+}
+
+.uc-feature-title {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.uc-feature-desc {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #c7d2e8;
+}
+
+/* ============ WHY CHOOSE ============ */
+.uc-why-card {
+  margin-top: 26px;
+  background: #ffffff;
+  border: 1px solid #e6eaf2;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(15, 27, 51, .07);
+  display: grid;
+  grid-template-columns: 1.25fr repeat(6, 1fr);
+  padding: 30px 10px;
+}
+
+.uc-why-heading {
+  margin: 0;
+  padding: 0 26px;
+  align-self: center;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0f1b33;
+  border-right: 1px solid #e6eaf2;
+}
+
+.uc-why-accent {
+  color: #f05a28;
+}
+
+.uc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  padding: 0 10px;
+  border-right: 1px solid #e6eaf2;
+  text-align: center;
+}
+
+.uc-stat:last-child {
+  border-right: 0;
+}
+
+.uc-stat-icon {
+  font-size: 28px;
+  color: #2f3a52;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.uc-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f05a28;
+  line-height: 1.1;
+}
+
+.uc-stat-label {
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #39445c;
+}
+
+/* ============ BOTTOM STRIP ============ */
+.uc-strip {
+  margin-top: 26px;
+  background: #0d2149;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px 34px;
+}
+
+.uc-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.uc-strip-icon {
+  font-size: 17px;
+  color: #dbe4f7;
+}
+
+.uc-strip-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ===== COLLEGE SECTION – Images with Text ===== */
+.college {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 4px 0;
+}
+
+/* Each college item (logo + text) */
+.college-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 80px;
+}
+
+/* School logos – FIX OVERFLOW */
+.college .school {
+  max-height: 40px;  /* maximum height */
+  max-width: 70px;   /* maximum width */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Arrow image */
+.college .arro {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* Text labels under logos */
+.college-label {
+  font-size: 10px !important;
+  font-weight: 500;
+  color: #2d3748;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Student name */
+.placed-student-name {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+  color: #0f1b33;
+}
+
+/* ===== CAROUSEL CARD ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 12px 8px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eef2f7;
+  min-width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.card .img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #f05a28;
+}
+
+.card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#left,
+#right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 2px solid #e6eaf2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex !important; /* kabhi hide na ho */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  font-size: 18px;
+  color: #1a2639;
+}
+
+#left {
+  left: -10px;
+}
+
+#right {
+  right: -10px;
+}
+
+#left:hover,
+#right:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+#left:active,
+#right:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+
+/* ============ RESPONSIVE (with reduced spacing & uniform logos) ============ */
+@media (max-width: 1400px)  {
+  .uc-hero {
+    grid-template-columns: minmax(0, 1fr) 320px 400px;
+    gap: 24px;
+  }
+  .uc-hero-heading {
+    font-size: 42px;
+  }
+}
+
+@media (max-width:1285px)  {
+  .uc-hero-heading {
+    font-size: 35px;
+}
+.uc-hero-desc{
+  font-size: 15px !important;
+}
+}
+@media (max-width:1210px)  {
+  .uc-hero-heading {
+    font-size: 27px;
+}
+.uc-hero-desc{
+  font-size: 15px !important;
+}
+}
+@media (max-width: 1150px) {
+  .uc-hero {
+    grid-template-columns: 60% 40%;
+    gap: 20px;
+  }
+  .uc-hero-heading {
+    font-size: 42px;
+  }
+  .uc-accred {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .uc-accred-card {
+    min-height: 110px;
+    padding: 10px;
+  }
+  .uc-accred-card img {
+    max-height: 60px;
+  }
+  .uc-feature-bar {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 24px;
+  }
+  .uc-feature-item:nth-child(3n) {
+    border-right: 0;
+  }
+  .uc-why-card {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 26px;
+  }
+  .uc-why-heading {
+    grid-column: 1 / -1;
+    border-right: 0;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .uc-stat:nth-child(3n+1) {
+    border-right: 1px solid #e6eaf2;
+  }
+  .uc-stat:nth-child(4n) {
+    border-right: 1px solid #e6eaf2;
+  }
+}
+
+@media (max-width: 820px) {
+  .uc-hero {
+    grid-template-columns: 60% 40%;
+    gap: 14px;
+  }
+  .uc-hero-heading {
+    font-size: 40px;
+}
+.uc-accred{
+  display: none;
+}
+  .uc-offer-wrap {
+    max-width: 360px;
+    margin: 0 auto;     
+  }
+  .uc-accred {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .uc-accred-card {
+    min-height: 100px;
+    padding: 8px;
+  }
+  .uc-accred-card img {
+    max-height: 55px; /* smaller on mobile */
+  }
+  .uc-hero-heading {
+    font-size: 34px;
+  }
+  .uc-feature-bar,
+  .uc-why-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .uc-feature-item,
+  .uc-stat {
+    border-right: 0 !important;
+  }
+}
+@media (max-width:695px) {
+
+  .uc-hero {
+      grid-template-columns: 1fr;
+      gap: 14px;
+  
+  }
+  .uc-review-card{
+    display: none !important;
+    flex-wrap: wrap;
+    box-shadow: 0;
+    }
+.rating-img{
+  justify-content: flex-start !important;
+}}
+@media (max-width:470px) {
+  .uc-review-card{
+  display: flex;
+  flex-wrap: wrap;
+  }
+ .mail{
+    display: none !important;
+  }
+  .uc-hero {
+    align-items: center;
+      /* width: 82%; */
+  }
+@media (prefers-reduced-motion: reduce) {
+  .uc-book-btn {
+    transition: none;
+  }
+}}
+/* ===========================
+   UC Placement CTA Buttons
+=========================== */
+
+.uc-placement-training {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  /* border-top: 2px solid #ff5421; */
+  padding: 30px 0;
+  width: 100%;
+}
+
+.uc-placement-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 0 22px;
+
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  white-space: nowrap;
+}
+
+.uc-placement-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.uc-placement-btn-outline {
+  background: transparent;
+  color: #ff5421;
+  border: 1px solid #ff5421;
+}
+
+.uc-placement-btn-outline:hover {
+  background: #ff5421;
+  color: #fff;
+}
+
+.uc-placement-btn-outline:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.uc-placement-btn-fill {
+  background: #ff5421;
+  color: #fff;
+  border: 1px solid #ff5421;
+}
+
+.uc-placement-btn-fill:hover {
+  background: #e94918;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .uc-placement-training {
+      justify-content: center;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+  .uc-placement-training {
+      flex-direction: column;
+      gap: 12px;
+  }
+
+  .uc-placement-btn {
+      width: 100%;
+      max-width: 340px;
+  }
+}

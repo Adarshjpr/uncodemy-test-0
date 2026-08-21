@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Learning Workflows | R Programming Tutorial | Uncodemy</title>
+    <meta name="description" content="Clustering (K-means), Random Forest, and Model Evaluation" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">R Programming Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 16 of 20: Machine Learning Workflows</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="r-introduction.html"><span class="num">01</span>Introduction to R</a></li>
+            <li><a href="r-environment-setup.html"><span class="num">02</span>Environment Setup</a></li>
+            <li><a href="r-rstudio-ide.html"><span class="num">03</span>RStudio IDE Mastery</a></li>
+            <li><a href="r-variables-datatypes.html"><span class="num">04</span>Variables, Data Types, and Basic Operations</a></li>
+            <li><a href="r-data-structures.html"><span class="num">05</span>Data Structures in R</a></li>
+            <li><a href="r-dataframes-lists.html"><span class="num">06</span>Advanced Structures — Data Frames and Lists</a></li>
+            <li><a href="r-import-export.html"><span class="num">07</span>Importing and Exporting Data</a></li>
+            <li><a href="r-dplyr.html"><span class="num">08</span>Data Transformation with dplyr</a></li>
+            <li><a href="r-tidyr-cleaning.html"><span class="num">09</span>Data Reshaping and Cleaning</a></li>
+            <li><a href="r-base-graphics.html"><span class="num">10</span>Base R Graphics</a></li>
+            <li><a href="r-ggplot2.html"><span class="num">11</span>Advanced Visualizations with ggplot2</a></li>
+            <li><a href="r-shiny-plotly.html"><span class="num">12</span>Interactive Dashboards</a></li>
+            <li><a href="r-descriptive-stats.html"><span class="num">13</span>Descriptive Statistics and Probability Distributions</a></li>
+            <li><a href="r-hypothesis-testing.html"><span class="num">14</span>Hypothesis Testing</a></li>
+            <li><a href="r-regression.html"><span class="num">15</span>Predictive Modeling</a></li>
+            <li><a href="r-machine-learning.html" class="active"><span class="num">16</span>Machine Learning Workflows</a></li>
+            <li><a href="r-functions-control-flow.html"><span class="num">17</span>Writing Custom Functions and Control Flow</a></li>
+            <li><a href="r-apply-family.html"><span class="num">18</span>Functional Programming</a></li>
+            <li><a href="r-markdown-knitr.html"><span class="num">19</span>Dynamic Reporting with R Markdown and Knitr</a></li>
+            <li><a href="r-shiny-deployment.html"><span class="num">20</span>Building Scalable Web Apps</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-robot"></i> Machine Learning</span>
+        <h1>Machine Learning Workflows</h1>
+
+        <div class="card">
+
+            <p>Beyond classical statistics, R offers a full machine learning toolkit. This lesson covers unsupervised <strong>clustering</strong>, the <strong>Random Forest</strong> ensemble method, and how to properly <strong>evaluate</strong> any classification model.</p>
+
+            <h2>1. K-Means Clustering (Unsupervised Learning)</h2>
+            <p>K-means groups similar observations into <em>k</em> clusters without any labeled outcome variable.</p>
+                        <pre class="code-block"><code>set.seed(42)
+df_scaled &lt;- scale(df[, c(&quot;age&quot;, &quot;salary&quot;)])  # standardize features first!
+
+km_model &lt;- kmeans(df_scaled, centers = 3, nstart = 25)
+df$cluster &lt;- km_model$cluster
+
+table(df$cluster)
+km_model$centers   # coordinates of each cluster center</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Always scale() your numeric features before k-means — variables on larger numeric scales (like salary) would otherwise dominate the distance calculation.
+            </div>
+
+            <h2>2. Choosing the Number of Clusters — Elbow Method</h2>
+                        <pre class="code-block"><code>wss &lt;- sapply(1:10, function(k) {{
+  kmeans(df_scaled, centers = k, nstart = 10)$tot.withinss
+}})
+
+plot(1:10, wss, type = &quot;b&quot;, pch = 19,
+     xlab = &quot;Number of Clusters (k)&quot;, ylab = &quot;Total Within-Cluster Sum of Squares&quot;)</code></pre>
+
+            <h2>3. Random Forest — Supervised Classification/Regression</h2>
+            <p>Random Forest builds many decision trees and combines their votes — robust, accurate, and requires minimal tuning.</p>
+                        <pre class="code-block"><code>install.packages(&quot;randomForest&quot;)
+library(randomForest)
+library(caret)
+
+set.seed(42)
+train_index &lt;- createDataPartition(df$churned, p = 0.8, list = FALSE)
+train_data &lt;- df[train_index, ]
+test_data  &lt;- df[-train_index, ]
+
+rf_model &lt;- randomForest(as.factor(churned) ~ tenure + monthly_charges + support_calls,
+                          data = train_data, ntree = 500, importance = TRUE)
+
+print(rf_model)
+importance(rf_model)          # which variables matter most
+varImpPlot(rf_model)          # visualize variable importance</code></pre>
+
+            <h2>4. Making Predictions with Random Forest</h2>
+                        <pre class="code-block"><code>predictions &lt;- predict(rf_model, newdata = test_data)</code></pre>
+
+            <h2>5. Model Evaluation — Confusion Matrix</h2>
+                        <pre class="code-block"><code>library(caret)
+
+conf_matrix &lt;- confusionMatrix(predictions, as.factor(test_data$churned))
+print(conf_matrix)</code></pre>
+                        <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Metric</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Accuracy</td><td>Overall proportion of correct predictions</td></tr>
+                        <tr><td>Sensitivity (Recall)</td><td>Proportion of actual positives correctly identified</td></tr>
+                        <tr><td>Specificity</td><td>Proportion of actual negatives correctly identified</td></tr>
+                        <tr><td>Precision</td><td>Proportion of predicted positives that are correct</td></tr>
+                        <tr><td>Kappa</td><td>Agreement beyond chance</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. Model Evaluation — ROC and AUC</h2>
+                        <pre class="code-block"><code>install.packages(&quot;pROC&quot;)
+library(pROC)
+
+prob_predictions &lt;- predict(rf_model, newdata = test_data, type = &quot;prob&quot;)[, 2]
+roc_obj &lt;- roc(test_data$churned, prob_predictions)
+
+plot(roc_obj, main = &quot;ROC Curve&quot;)
+auc(roc_obj)   # Area Under the Curve — closer to 1 is better</code></pre>
+
+                        <div style="margin: 20px 0; padding: 15px 20px; background: #FFF1EC; border-radius: var(--radius-sm); border-left: 4px solid #FF5421;">
+                <strong><i class="fas fa-exclamation-triangle" style="color: #FF5421;"></i> Common Issues:</strong> Accuracy alone can be misleading on imbalanced datasets (e.g., 95% non-churners). Always check sensitivity, specificity, and AUC together.
+            </div>
+
+            <h2>7. Train/Test Split Best Practice</h2>
+            <ul>
+                <li>Always split data <strong>before</strong> any preprocessing that "learns" from the data (like scaling parameters).</li>
+                <li>A common split is 70–80% training, 20–30% testing.</li>
+                <li>Use <code>set.seed()</code> so your split — and results — are reproducible.</li>
+            </ul>
+
+            <h2>8. Production-Ready Checklist</h2>
+            <ul>
+                <li><strong>✅ Scale features before k-means</strong> — and choose k with the elbow method.</li>
+                <li><strong>✅ Use Random Forest for robust classification</strong> — minimal tuning, strong baseline.</li>
+                <li><strong>✅ Split data into train/test</strong> — before evaluating any supervised model.</li>
+                <li><strong>✅ Evaluate with confusion matrix + ROC/AUC</strong> — not accuracy alone.</li>
+            </ul>
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Pro Tip:</strong> Machine learning in R (via caret, randomForest, tidymodels) is production-capable — many real analytics teams run it directly in R without ever touching Python.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="r-regression.html" class="prev"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Predictive Modeling</a>
+            <a href="r-functions-control-flow.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Writing Custom Functions and Control Flow</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master R Programming?</h3>
+                <p>Build real-world data analysis and visualization projects with hands-on training, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>R Programming Course</h4>
+            <p class="batch-sub">Kickstart your data science journey with live, mentor-guided R programming classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

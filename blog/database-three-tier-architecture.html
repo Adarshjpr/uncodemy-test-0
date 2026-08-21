@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database Three Tier Architecture Tutorial for Beginners (2026) — Complete Guide | Uncodemy</title>
+    <meta name="description" content="Free step-by-step guide to database three tier architecture: understand the presentation, application, and data tiers, their roles, communication flow, and real-world examples. Includes diagrams, code snippets, common errors, interview questions, and a quiz.">
+    <link rel="canonical" href="https://uncodemy.com/tutorials/database-three-tier-architecture">
+    <meta property="og:title" content="Database Three Tier Architecture Tutorial for Beginners (2026) — Uncodemy">
+    <meta property="og:description" content="Learn the three tier architecture in DBMS from scratch: each tier explained, how they communicate, advantages over two-tier, and a complete project walkthrough.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+
+    <link rel="stylesheet" href="assets/css/common.css">
+    <style>
+        /* page-specific: three-tier diagram + logo variant */
+.logo-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: var(--primary);
+            display: grid;
+            place-items: center;
+            flex: none;
+        }
+
+.logo-bars {
+            display: flex;
+            align-items: flex-end;
+            height: 16px;
+        }
+
+.logo-bars span {
+            display: block;
+            width: 3px;
+            border-radius: 1px;
+            background: #fff;
+            margin: 0 1px;
+        }
+
+.arch-diagram {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+
+.tier {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+
+.tier .t-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+.tier .t-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+.tier .t-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+.f-logo .logo-mark {
+            background: #fff;
+        }
+
+.f-logo .logo-bars span {
+            background: var(--text-primary);
+        }
+
+.f-logo .logo-txt {
+            color: #fff;
+        }
+@media (max-width: 1024px) {
+    .arch-diagram {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .arch-diagram {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .tier .t-v {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tier .t-v {
+        font-size: 14px;
+    }
+    .tier .t-l {
+        font-size: 8px;
+    }
+    .tier .t-d {
+        font-size: 9px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+              <img src="logo.png" alt="uncodemy" class="logo-img" style="height: 30px; width: 60px; object-fit: contain;">
+               <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput">
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials">
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free learning library · 480+ tutorials</p>
+                <h1>Learn Database Design &amp; Architecture <mark>Three‑Tier, explained simply</mark></h1>
+                <p class="lede">Written by the trainers who teach these concepts in classrooms in Noida. This tutorial breaks down the three tier architecture in DBMS into clear layers, real‑world examples, and the mistakes that trip beginners.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;three tier architecture in dbms&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox">
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">SQL</button>
+                    <button class="chip" aria-pressed="false">NoSQL</button>
+                    <button class="chip" aria-pressed="false">Database Design</button>
+                    <button class="chip" aria-pressed="true">Architecture</button>
+                    <button class="chip" aria-pressed="false">Backend</button>
+                    <button class="chip" aria-pressed="false">DevOps</button>
+                    <button class="chip" aria-pressed="false">Cloud</button>
+                    <button class="chip" aria-pressed="false">Data Engineering</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Three‑Tier Architecture · Live diagram</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different loads">
+                        <button aria-pressed="true" data-r="normal">Normal load</button>
+                        <button aria-pressed="false" data-r="peak">Peak load</button>
+                        <button aria-pressed="false" data-r="scaled">Scaled</button>
+                    </div>
+                    <div class="arch-diagram" id="archTiers">
+                        <div class="tier"><div class="t-l">Presentation</div><div class="t-v" id="presVal">—</div><div class="t-d">Clients (req/s)</div></div>
+                        <div class="tier"><div class="t-l">Application</div><div class="t-v" id="appVal">—</div><div class="t-d">Business logic (ms)</div></div>
+                        <div class="tier"><div class="t-l">Data</div><div class="t-v" id="dbVal">—</div><div class="t-d">Queries / s</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Browser / Mobile</span>
+                        <span class="arrow">→</span>
+                        <span>App Server</span>
+                        <span class="arrow">→</span>
+                        <span>Database</span>
+                    </div>
+                    <div class="demo-cap">Each tier is independent. Click a load scenario to see how performance metrics shift across the three layers.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Tutorials</a> / <a href="#top">Database</a> / <span>Three‑Tier Architecture</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Database Architecture · Beginner to job‑ready</p>
+                <h1>Database Three Tier Architecture Tutorial: understand the three layers and how they interact</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 5 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>12 min read</span>
+                    <span class="badge">Free · with diagrams</span>
+                </div>
+
+                <figure>
+                    <svg viewBox="0 0 900 300" role="img" aria-label="Diagram of three-tier database architecture: presentation tier, application tier, data tier with communication arrows.">
+                        <defs>
+                            <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="900" height="300" fill="url(#g1)"/>
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">PRESENTATION TIER</text>
+                            <text x="370" y="40">APPLICATION TIER</text>
+                            <text x="690" y="40">DATA TIER</text>
+                        </g>
+                        <rect x="30" y="58" width="240" height="190" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="60" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Client Devices</text>
+                        <text x="60" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Browser, mobile app, desktop</text>
+                        <text x="60" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">API calls, web requests</text>
+                        <rect x="60" y="164" width="180" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="80" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">HTTP / GraphQL</text>
+                        <text x="60" y="220" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72">User interface, UX</text>
+
+                        <rect x="330" y="58" width="240" height="190" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="360" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Application Server</text>
+                        <text x="360" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Business logic, rules</text>
+                        <text x="360" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Authentication, validation</text>
+                        <rect x="370" y="164" width="160" height="34" rx="6" fill="#FDF1D8" stroke="#E8A317"/>
+                        <text x="390" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8a6100">SQL / ORM</text>
+                        <text x="360" y="220" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72">Middleware, caching</text>
+
+                        <rect x="630" y="58" width="240" height="190" rx="12" fill="#fff" stroke="#DCE4E2"/>
+                        <text x="660" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Database</text>
+                        <text x="660" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">SQL / NoSQL</text>
+                        <text x="660" y="140" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1E2A36">Stored procedures, indexes</text>
+                        <rect x="670" y="164" width="160" height="34" rx="6" fill="#E4F1F1" stroke="#0B6E75"/>
+                        <text x="690" y="185" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0B6E75">Driver / Pool</text>
+                        <text x="660" y="220" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72">ACID, sharding, replicas</text>
+
+                        <path d="M280 153 H316" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar)"/>
+                        <path d="M580 153 H616" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar)"/>
+                    </svg>
+                    <figcaption>The three layers: Presentation (client), Application (business logic), Data (database). Each tier runs independently, allowing you to scale or update one without affecting the others.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary</h2>
+                    <p>A <b>database three tier architecture</b> separates an application into three logical layers: the <b>presentation tier</b> (user interface), the <b>application tier</b> (business logic), and the <b>data tier</b> (database). This separation improves scalability, security, and maintainability.</p>
+                    <p>In this tutorial you will learn:</p>
+                    <ol>
+                        <li><b>What each tier does</b> and how they communicate.</li>
+                        <li><b>Why three-tier</b> is better than two-tier for modern applications.</li>
+                        <li><b>How to design</b> a simple three-tier system with a real‑world example.</li>
+                        <li><b>Common pitfalls</b> and how to avoid them.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>What is three‑tier architecture?</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Understanding each tier</a></li>
+                        <li><a href="#s3"><span class="n">03</span>Communication flow</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Advantages over two‑tier</a></li>
+                        <li><a href="#project"><span class="n">05</span>Real‑world project: e‑commerce</a></li>
+                        <li><a href="#errors"><span class="n">06</span>Common errors &amp; fixes</a></li>
+                        <li><a href="#interview"><span class="n">07</span>Interview questions</a></li>
+                        <li><a href="#quiz"><span class="n">08</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">09</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">10</span>Related tutorials</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="s1"><span class="num">SECTION 01</span>What is three‑tier architecture?</h2>
+                <p>The <strong>database three tier architecture</strong> (often called <strong>three tier architecture in dbms</strong>) is a client‑server model that divides an application into three distinct layers:</p>
+                <ul>
+                    <li><b>Presentation tier</b> – the user interface (web browser, mobile app, desktop client).</li>
+                    <li><b>Application tier</b> – the business logic, rules, and processing (the “brain”).</li>
+                    <li><b>Data tier</b> – the database management system that stores and retrieves data.</li>
+                </ul>
+                <p>Each tier runs on its own infrastructure, often on separate physical or virtual machines. This separation allows teams to update or scale each tier independently, which is why most enterprise applications use a <strong>database 3 tier architecture</strong>.</p>
+                <div class="note"><b>Key insight:</b> The application tier acts as a mediator. The client never directly talks to the database. All queries and updates go through the application tier, which enforces security and business rules.</div>
+
+                <h2 id="s2"><span class="num">SECTION 02</span>Understanding each tier</h2>
+                <h3>1. Presentation Tier (Client)</h3>
+                <p>This is what the user sees and interacts with. It sends user actions (clicks, form submissions) to the application tier and displays the results. It should contain <em>no business logic</em> – its only job is to present data and capture input.</p>
+                <ul>
+                    <li><b>Examples:</b> React/Vue web apps, Android/iOS apps, desktop GUIs.</li>
+                    <li><b>Communicates via:</b> HTTP, REST, GraphQL, or WebSocket.</li>
+                    <li><b>Does NOT:</b> connect directly to the database, or execute SQL.</li>
+                </ul>
+
+                <h3>2. Application Tier (Business Logic)</h3>
+                <p>This is the heart of the system. It receives requests from the presentation tier, applies business rules, validates data, performs calculations, and then talks to the data tier. It also handles authentication, authorization, and logging.</p>
+                <ul>
+                    <li><b>Examples:</b> Node.js, Python/Django, Java Spring Boot, C# .NET.</li>
+                    <li><b>Communicates via:</b> SQL, ORM (e.g., Entity Framework, Hibernate), or stored procedures.</li>
+                    <li><b>Does:</b> enforce business logic, format data, manage sessions.</li>
+                </ul>
+
+                <h3>3. Data Tier (Database)</h3>
+                <p>This tier stores and retrieves data. It can be a relational database (MySQL, PostgreSQL, SQL Server) or a NoSQL system (MongoDB, Cassandra). It ensures data integrity, provides indexes for performance, and handles concurrent access.</p>
+                <ul>
+                    <li><b>Examples:</b> PostgreSQL, Oracle, MongoDB, Redis.</li>
+                    <li><b>Communicates via:</b> Database drivers, connection pools.</li>
+                    <li><b>Does:</b> ACID transactions, query optimisation, replication.</li>
+                </ul>
+
+                <h2 id="s3"><span class="num">SECTION 03</span>Communication flow</h2>
+                <p>A typical request flows as follows:</p>
+                <ol>
+                    <li><b>Client → Application:</b> The user clicks a button (e.g., “Place Order”). The presentation tier sends an HTTP POST request with order details to the application server.</li>
+                    <li><b>Application → Database:</b> The application tier validates the input, checks stock availability, calculates the total, and then executes a SQL <code>INSERT</code> or uses an ORM to persist the order. It may also query the database for product prices and customer data.</li>
+                    <li><b>Database → Application:</b> The database returns a success status and the new order ID.</li>
+                    <li><b>Application → Client:</b> The application tier formats a response (e.g., JSON with order confirmation) and sends it back to the client.</li>
+                </ol>
+                <p>This separation ensures that the database is never exposed directly to the client, which is a fundamental security principle of the <strong>three tier architecture in dbms</strong>.</p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Node.js (App tier)</button>
+                        <button role="tab" aria-selected="false" data-t="1">Python (App tier)</button>
+                        <button role="tab" aria-selected="false" data-t="2">SQL (Data tier)</button>
+                    </div>
+                    <pre data-p="0"><code>// Express.js endpoint - Application tier
+app.post('/api/orders', async (req, res) => {
+  try {
+    const { productId, quantity, userId } = req.body;
+    if (!productId || quantity < 1) {
+      return res.status(400).json({ error: 'Invalid input' });
+    }
+    const product = await db.query('SELECT price, stock FROM products WHERE id = $1', [productId]);
+    if (product.stock < quantity) {
+      return res.status(409).json({ error: 'Insufficient stock' });
+    }
+    const total = product.price * quantity;
+    const order = await db.query(
+      'INSERT INTO orders (user_id, total, status) VALUES ($1, $2, $3) RETURNING id',
+      [userId, total, 'PENDING']
+    );
+    await db.query('UPDATE products SET stock = stock - $1 WHERE id = $2', [quantity, productId]);
+    res.status(201).json({ orderId: order.id, total });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});</code></pre>
+                    <pre data-p="1" hidden><code># Django view - Application tier
+from django.http import JsonResponse
+from django.db import transaction
+from .models import Product, Order, OrderItem
+
+def place_order(request):
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+    
+    product_id = request.POST.get('product_id')
+    quantity = int(request.POST.get('quantity', 0))
+    user = request.user
+    
+    if not product_id or quantity < 1:
+        return JsonResponse({'error': 'Invalid product or quantity'}, status=400)
+    
+    try:
+        with transaction.atomic():
+            product = Product.objects.select_for_update().get(id=product_id)
+            if product.stock < quantity:
+                return JsonResponse({'error': 'Stock insufficient'}, status=409)
+            total = product.price * quantity
+            order = Order.objects.create(user=user, total=total, status='PENDING')
+            OrderItem.objects.create(order=order, product=product, quantity=quantity, price=product.price)
+            product.stock -= quantity
+            product.save()
+            return JsonResponse({'order_id': order.id, 'total': total})
+    except Product.DoesNotExist:
+        return JsonResponse({'error': 'Product not found'}, status=404)</code></pre>
+                    <pre data-p="2" hidden><code>-- Data tier: Stored procedure for placing an order (example in PL/pgSQL)
+CREATE OR REPLACE FUNCTION place_order(
+    p_user_id INT,
+    p_product_id INT,
+    p_quantity INT
+) RETURNS TABLE (order_id INT, total DECIMAL) AS $$
+DECLARE
+    v_price DECIMAL;
+    v_stock INT;
+    v_order_id INT;
+    v_total DECIMAL;
+BEGIN
+    SELECT price, stock INTO v_price, v_stock FROM products WHERE id = p_product_id FOR UPDATE;
+    IF v_stock < p_quantity THEN
+        RAISE EXCEPTION 'Insufficient stock';
+    END IF;
+    v_total := v_price * p_quantity;
+    INSERT INTO orders (user_id, total, status) VALUES (p_user_id, v_total, 'PENDING') RETURNING id INTO v_order_id;
+    INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (v_order_id, p_product_id, p_quantity, v_price);
+    UPDATE products SET stock = stock - p_quantity WHERE id = p_product_id;
+    RETURN QUERY SELECT v_order_id, v_total;
+END;
+$$ LANGUAGE plpgsql;</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">app-tier.js · full API endpoint</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <h2 id="s4"><span class="num">SECTION 04</span>Advantages over two‑tier architecture</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Aspect</th><th>Two‑Tier</th><th>Three‑Tier (database 3 tier architecture)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Scalability</td><td>Limited – client and server are tightly coupled.</td><td>Each tier scales independently; add more app servers without touching the database.</td></tr>
+                            <tr><td>Security</td><td>Clients often have direct database access (exposes credentials).</td><td>Only the app tier talks to the database; clients never see credentials.</td></tr>
+                            <tr><td>Maintainability</td><td>Business logic is scattered between client and database.</td><td>All business logic is centralised in the app tier, making updates easier.</td></tr>
+                            <tr><td>Deployment</td><td>Any change requires redeploying the entire monolith.</td><td>You can update the UI, app logic, or database schema independently.</td></tr>
+                            <tr><td>Performance</td><td>Network overhead is lower because fewer hops.</td><td>Slightly higher latency due to an extra hop, but caching and load balancing mitigate it.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note"><b>When to choose three‑tier?</b> For any application with more than 50 concurrent users, complex business rules, or security requirements (PCI‑DSS, HIPAA). Modern web and mobile apps are almost always three‑tier.</div>
+
+                <h2 id="project"><span class="num">SECTION 05</span>Real‑world project: e‑commerce system</h2>
+                <p>Let's apply this knowledge to build a simplified e‑commerce backend. We'll design a three‑tier architecture for a bookstore.</p>
+                <ol class="steps">
+                    <li><b>Presentation Tier:</b> A React SPA with pages for browsing books, adding to cart, and checkout. It makes REST calls to the app tier.</li>
+                    <li><b>Application Tier:</b> A Node.js/Express server that handles user authentication, book search, cart management, and order processing. It uses an ORM to talk to the database.</li>
+                    <li><b>Data Tier:</b> A PostgreSQL database with tables for <code>users</code>, <code>books</code>, <code>carts</code>, <code>orders</code>, and <code>order_items</code>. The app tier executes parameterised queries to prevent SQL injection.</li>
+                    <li><b>Communication:</b> The presentation tier sends AJAX requests to the app tier; the app tier uses a connection pool to talk to the database.</li>
+                    <li><b>Security:</b> JWT tokens are issued by the app tier; the database never sees raw user credentials.</li>
+                    <li><b>Scaling:</b> When traffic spikes, we add more app server instances behind a load balancer. The database is scaled with read replicas for reporting queries.</li>
+                </ol>
+                <p><b>Stretch goal:</b> Add a caching tier (Redis) between the app and data tiers to reduce database load.</p>
+
+                <h2 id="errors"><span class="num">SECTION 06</span>Common errors &amp; fixes</h2>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Error / Symptom</th><th>Root cause</th><th>Fix</th></tr></thead>
+                        <tbody>
+                            <tr><td>“Cannot connect to database – timeout”</td><td>Application tier is trying to reach the database on a private network but the firewall blocks it.</td><td>Place the app tier and data tier in the same VPC or use a jump host. Ensure connection string has correct credentials.</td></tr>
+                            <tr><td>“Data source error: password authentication failed”</td><td>Hard‑coded credentials in the app code are out of date or exposed.</td><td>Use environment variables or a secrets manager. Never commit credentials to source control.</td></tr>
+                            <tr><td>SQL injection vulnerability</td><td>App tier concatenates user input directly into SQL queries.</td><td>Always use parameterised queries or an ORM that escapes inputs.</td></tr>
+                            <tr><td>“Transaction deadlock”</td><td>Two concurrent requests try to update the same rows in a different order.</td><td>Use consistent locking order (e.g., always update products before orders). Keep transactions short.</td></tr>
+                            <tr><td>Presentation tier shows stale data after update</td><td>Cache is not invalidated after a write.</td><td>Implement cache invalidation or use a “read‑through” cache pattern; or bypass cache for critical reads.</td></tr>
+                            <tr><td>N+1 query problem</td><td>App tier loops over a result set and fires a separate query for each row.</td><td>Use eager loading (JOINs) or batch queries. In an ORM, use <code>select_related</code> / <code>prefetch_related</code>.</td></tr>
+                            <tr><td>“Data too long for column”</td><td>Presentation tier sends data that exceeds database column length.</td><td>Add validation at the application tier before passing to the database.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="interview"><span class="num">SECTION 07</span>Interview questions with model answers</h2>
+
+                <details class="acc"><summary><span class="qn">Q1</span>What is the difference between two‑tier and three‑tier architecture?</summary>
+                    <div class="body"><p>Two‑tier architecture has only client and server; business logic is either on the client or the database. Three‑tier separates the business logic into a dedicated middle tier, improving scalability and security.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>Why is the application tier important for security?</summary>
+                    <div class="body"><p>The application tier acts as a gatekeeper. It validates all inputs, enforces authentication and authorisation, and prevents the database from being directly exposed to the client. This mitigates SQL injection and data leakage.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>How do you handle database scaling in a three‑tier architecture?</summary>
+                    <div class="body"><p>You can scale the data tier using read replicas for read‑heavy workloads, sharding for write‑heavy, and connection pooling to manage many app connections. The app tier can be scaled horizontally independently.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>Can the application tier talk to multiple databases?</summary>
+                    <div class="body"><p>Yes. The app tier can connect to multiple databases – for example, a primary PostgreSQL for writes and a read replica for analytics. It can also interact with a cache (Redis) and a search engine (Elasticsearch) simultaneously.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>What is the role of an ORM in the application tier?</summary>
+                    <div class="body"><p>An ORM (Object‑Relational Mapper) abstracts the database, allowing developers to work with objects instead of raw SQL. It also helps prevent SQL injection when used correctly, and simplifies schema migrations.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>How do you prevent the N+1 query problem?</summary>
+                    <div class="body"><p>Use eager loading to fetch related data in a single query using JOINs, or batch the queries. In an ORM, use <code>prefetch_related</code> or <code>include</code> to load associated collections in one go.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>What would you do if the application tier becomes a bottleneck?</summary>
+                    <div class="body"><p>Scale horizontally by adding more app server instances behind a load balancer. Optimise the code (caching, asynchronous processing) and consider moving heavy computations to background jobs.</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Describe a three‑tier system you have designed.</summary>
+                    <div class="body"><p>Use the STAR method: Situation (e.g., client needed a scalable e‑commerce backend), Task (design a three‑tier architecture), Action (implemented with React + Node.js + PostgreSQL, used Redis for caching, and set up auto‑scaling groups), Result (handled 10x traffic increase with no downtime).</p></div></details>
+
+                <h2 id="quiz"><span class="num">SECTION 08</span>Test yourself</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign‑up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <h2 id="faq"><span class="num">SECTION 09</span>Frequently asked questions</h2>
+                <details class="acc"><summary>What is the difference between two‑tier and three‑tier architecture?</summary><div class="body"><p>In two‑tier, the client directly communicates with the database; business logic is often embedded in stored procedures or on the client. In three‑tier, an intermediate application tier separates concerns, making the system more scalable and secure.</p></div></details>
+                <details class="acc"><summary>What is the role of the application tier in three‑tier architecture?</summary><div class="body"><p>The application tier (or middle tier) processes user requests, enforces business rules, and communicates with the data tier. It also handles authentication, caching, and validation.</p></div></details>
+                <details class="acc"><summary>Can a three‑tier architecture work with any database?</summary><div class="body"><p>Yes, the data tier can be any relational or NoSQL database. The application tier abstracts the database using drivers or ORMs, making the system database‑agnostic.</p></div></details>
+                <details class="acc"><summary>What are common security concerns in a three‑tier architecture?</summary><div class="body"><p>SQL injection, cross‑site scripting (XSS), and insecure session management. The application tier must sanitise inputs, use parameterised queries, and implement proper authentication.</p></div></details>
+                <details class="acc"><summary>How do you scale a three‑tier database architecture?</summary><div class="body"><p>Scale each tier independently: add more app servers, use read replicas for the database, shard the data, and employ caching. Load balancers distribute traffic across app tiers.</p></div></details>
+                <details class="acc"><summary>Is three‑tier architecture outdated?</summary><div class="body"><p>No, it remains the foundation for most enterprise applications. Microservices and serverless are evolutions, but they often still follow the three‑tier pattern at a higher level.</p></div></details>
+
+                <h2 id="related"><span class="num">SECTION 10</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Database normalisation explained</span><span class="m">Database · 11 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">SQL joins with real interview questions</span><span class="m">SQL · 15 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">What is a stored procedure?</span><span class="m">Database · 9 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Redis caching for backend performance</span><span class="m">Backend · 17 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Designing a RESTful API</span><span class="m">API · 8 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Database indexing strategies</span><span class="m">Database · 12 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Master full‑stack development with database design</h3>
+                    <p>Our Full Stack Development programme covers database design, SQL, backend (Node.js/Python), and frontend integration – with live projects, mock interviews, and placement support.</p>
+                    <span class="price">₹15,500 · full programme <s>₹24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>8 live projects</li>
+                        <li>Interview prep</li>
+                        <li>Module certificates</li>
+                        <li>Weekend batches</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live Full‑Stack session</div>
+                    <p>Two hours, no payment, no commitment. Build a three‑tier application with the batch and decide afterwards.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this tutorial as PDF</span><span class="m">Includes all code samples</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>SQL interview questions for freshers</a></li>
+                        <li><a href="#"><span class="rank">02</span>Database normalisation cheat sheet</a></li>
+                        <li><a href="#"><span class="rank">03</span>Building a REST API with Node.js</a></li>
+                        <li><a href="#"><span class="rank">04</span>ACID vs BASE</a></li>
+                        <li><a href="#"><span class="rank">05</span>Database sharding explained</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Database · 60 questions</a></li>
+                        <li><a href="#">SQL · 85 questions</a></li>
+                        <li><a href="#">Backend · 70 questions</a></li>
+                        <li><a href="#">System Design · 50 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Full Stack Development</div>
+                    <p>Database design, SQL, Node.js, React, AWS, and more. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">∞</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee – outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related tutorials</div>
+                <h3>Keep going in Database &amp; Backend</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Database normalisation in 20 minutes <small>Understand 1NF, 2NF, 3NF</small></a></li>
+                    <li><a href="#">ACID properties with examples <small>Atomicity, Consistency, Isolation, Durability</small></a></li>
+                    <li><a href="#">Indexing strategies for performance <small>When to use B‑tree vs Hash</small></a></li>
+                    <li><a href="#">REST API design best practices <small>Resource naming, status codes</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Know what to learn next</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Backend Developer roadmap 2026 <small>Databases → APIs → Cloud</small></a></li>
+                    <li><a href="#">Database Administrator roadmap <small>SQL, tuning, replication</small></a></li>
+                    <li><a href="#">Full Stack Developer roadmap <small>Frontend → Backend → DB</small></a></li>
+                    <li><a href="#">Data Engineer roadmap <small>ETL, warehousing, streaming</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">E‑commerce database schema <small>ER diagram with SQL scripts</small></a></li>
+                    <li><a href="#">SQL cheat sheet <small>All key commands with examples</small></a></li>
+                    <li><a href="#">PostgreSQL vs MySQL comparison</small></a></li>
+                    <li><a href="#">System design template <small>For interviews and projects</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Multi‑tenant databases: schema per tenant? <small>5 August 2026</small></a></li>
+                    <li><a href="#">DynamoDB vs MongoDB for new projects <small>1 August 2026</small></a></li>
+                    <li><a href="#">When to use a cache (Redis vs Memcached) <small>28 July 2026</small></a></li>
+                    <li><a href="#">PostgreSQL 17 features you should know <small>22 July 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height: 30px; width: 60px; object-fit: contain;">
+                      <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and data in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                        <li><a href="#">Data Analytics with Gen AI</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Career roadmaps</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact – Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                normal: { pres: 1200, app: 80, db: 200 },
+                peak: { pres: 8500, app: 220, db: 870 },
+                scaled: { pres: 8400, app: 95, db: 380 }
+            },
+            stateOrder: ["normal", "peak", "scaled"],
+            renderScene: function(s) {
+                document.getElementById("presVal").textContent = s.pres.toLocaleString();
+                document.getElementById("appVal").textContent = s.app + " ms";
+                document.getElementById("dbVal").textContent = s.db + " /s";
+            },
+            defaultTrack: "Architecture",
+            emptyMsg: 'Nothing matches that yet. Try “three‑tier”, “normalisation” or “ACID”.',
+            LIB: [
+                { t: "Database three tier architecture explained", g: "Architecture" },
+                { t: "What is three tier architecture in dbms?", g: "Architecture" },
+                { t: "Database 3 tier architecture vs two tier", g: "Architecture" },
+                { t: "Three tier architecture advantages and disadvantages", g: "Architecture" },
+                { t: "SQL joins with interview questions", g: "SQL" },
+                { t: "SQL window functions from scratch", g: "SQL" },
+                { t: "Database normalisation in 20 minutes", g: "Database" },
+                { t: "ACID properties explained", g: "Database" },
+                { t: "Building a REST API with Node.js", g: "Backend" },
+                { t: "Redis caching for beginners", g: "Backend" },
+                { t: "Database sharding vs replication", g: "Database" },
+                { t: "PostgreSQL vs MySQL for new projects", g: "Database" },
+                { t: "System design for interviews", g: "Architecture" },
+                { t: "Microservices vs monolith", g: "Architecture" },
+                { t: "Deploy a backend on AWS", g: "Cloud" },
+                { t: "DynamoDB vs MongoDB", g: "Database" }
+            ],
+            QUIZ: [{
+                q: "Which tier is responsible for business logic and validation?",
+                o: ["Presentation tier", "Application tier", "Data tier", "Network tier"],
+                a: 1,
+                e: "The application tier (middle tier) holds business rules, authentication, and validation. The presentation tier only handles UI, and the data tier stores data."
+            }, {
+                q: "Why should the client never talk directly to the database in a three‑tier architecture?",
+                o: ["It's slower", "It violates security principles", "It requires more code",
+                    "It makes the UI less responsive"
+                ],
+                a: 1,
+                e: "Direct database access exposes credentials and makes it easier for attackers to execute SQL injection. The application tier acts as a security gatekeeper."
+            }, {
+                q: "Which of the following is a common way to scale the application tier?",
+                o: ["Adding more CPUs to the database", "Adding more app servers behind a load balancer",
+                    "Increasing the client-side cache", "Using a faster network"
+                ],
+                a: 1,
+                e: "Horizontal scaling (adding more instances) of the application tier is the primary method to handle increased load, as it is stateless and can be replicated."
+            }, {
+                q: "What is the N+1 query problem?",
+                o: ["It means the database returns N+1 rows instead of N",
+                    "It means the application executes 1 query for each result from a previous query",
+                    "It means the ORM creates N+1 tables", "It is a network timeout issue"
+                ],
+                a: 1,
+                e: "The N+1 problem occurs when you fetch a list of records (1 query) and then for each record fire a separate query (N queries) to fetch related data. This kills performance."
+            }, {
+                q: "Which technique helps reduce database load in a three‑tier architecture?",
+                o: ["Use of stored procedures", "Implementing caching (e.g., Redis) between app and data tiers",
+                    "Denormalising all tables", "Using a single application server"
+                ],
+                a: 1,
+                e: "Caching reduces the number of repeated database queries by storing frequently accessed data in memory, significantly offloading the data tier."
+            }],
+            passScore: 4,
+            resultText: {
+                pass: "You've got the essentials! Next, try designing your own three‑tier system – the e‑commerce project in section 05 is a great start.",
+                fail: "Revisit sections 02 and 03 – understanding each tier's responsibilities and communication flow is key to acing interviews."
+            }
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>

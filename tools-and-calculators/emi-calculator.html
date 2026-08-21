@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator — Estimate Your Loan EMI Instantly</title>
+<script src="uncodemy-navbar.js" defer></script>
+<link rel="stylesheet" href="footer-style.css" />
+<style>
+  :root{
+    --orange:#ff5a1f; --orange-dark:#e14a12; --navy:#0d1226; --navy-2:#161c38;
+    --bg:#ffffff; --bg-soft:#f6f3ee; --border:#ece8e0; --text:#1a1a1a; --sub:#6b6a66;
+    --save:#27500a; --save-bg:#eaf3de;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6;
+  }
+  .hero{
+    background:linear-gradient(135deg,#fff0e8,#f3f2fb);
+    padding:56px 20px 70px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+    color:var(--orange); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px;
+  }
+  .eyebrow::before{content:'●'; font-size:8px;}
+  h1{font-size:40px; font-weight:700; margin:0 0 16px; line-height:1.25; font-family:Georgia,'Times New Roman',serif; max-width:680px; margin-left:auto; margin-right:auto;}
+  h1 em{font-style:normal; color:var(--orange);}
+  .lede{font-size:16px; color:var(--sub); margin:0 auto; max-width:560px;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px 80px;}
+  .calc-shell{
+    max-width:1200px; margin:auto; padding:0 20px; position:relative; z-index:2;
+  }
+  .calc-card{
+    background:#fff; border-radius:20px; padding:32px; box-shadow:0 20px 50px rgba(20,15,5,0.08);
+    border:1px solid var(--border); margin: 10px;
+  }
+  .logo-chip{
+    display:inline-block; background:var(--navy); color:#fff; font-weight:700; font-size:13px;
+    padding:6px 10px; border-radius:6px; margin-bottom:14px; letter-spacing:.03em;
+  }
+  h2{font-size:21px; font-weight:700; margin:0 0 6px;}
+  .hint{font-size:13px; color:var(--sub); margin:0 0 22px;}
+  .calc-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:28px;}
+  @media (max-width:760px){ .calc-grid{grid-template-columns:1fr;} }
+  .mode-toggle{display:flex; gap:8px; margin-bottom:24px;}
+  .mode-toggle button{
+    flex:1; padding:10px; border-radius:9px; border:1px solid var(--border);
+    background:#fff; font-size:13.5px; font-weight:600; cursor:pointer; color:var(--text);
+    transition:all .15s;
+  }
+  .mode-toggle button.active{background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%); color:#fff; border-color:var(--orange);}
+  .field{margin-bottom:22px;}
+  .field-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  label{font-size:13px; color:var(--text); font-weight:600;}
+  .unit-tag{font-size:11px; color:var(--sub);}
+  input[type=number]{
+    width:100%; padding:11px 12px; border-radius:9px; border:1px solid var(--border);
+    font-size:16px; font-weight:600; background:var(--bg-soft); color:var(--text);
+  }
+  input[type=number]:focus{outline:none; border-color:var(--orange);}
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:4px;
+    background:var(--border); margin-top:10px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+    background:var(--orange); cursor:pointer; border:3px solid #fff; box-shadow:0 0 0 1px var(--orange);
+  }
+  .range-labels{display:flex; justify-content:space-between; font-size:11px; color:var(--sub); margin-top:4px;}
+  .result-panel{
+    background:var(--bg-soft); border-radius:16px; padding:26px; text-align:center;
+  }
+  .result-panel .value{font-size:38px; font-weight:800; color:var(--orange); margin:0 0 2px;}
+  .result-panel .label{font-size:13px; color:var(--sub); margin:0 0 18px; font-weight:600;}
+  .badge{
+    display:inline-block; font-size:13px; font-weight:700; padding:6px 16px; border-radius:20px;
+    margin-bottom:20px; background:var(--save-bg); color:var(--save);
+  }
+  .stat-row{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid var(--border); font-size:13.5px; text-align:left;}
+  .stat-row span:first-child{color:var(--sub);}
+  .stat-row span:last-child{font-weight:700;}
+  .disclaimer{font-size:12px; color:var(--sub); margin-top:14px;}
+
+  .section-title{font-size:24px; font-weight:700; margin:0 0 10px;}
+  .section-lede{font-size:15px; color:var(--sub); max-width:680px; margin:0 0 26px;}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:36px;}
+  @media (max-width:700px){ .steps3{grid-template-columns:1fr;} }
+  .step-box{background:var(--bg-soft); border-radius:14px; padding:22px;}
+  .step-num{
+    width:30px; height:30px; background:var(--orange); color:#fff; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:14px;
+  }
+  .step-box strong{display:block; font-size:16px; margin-bottom:6px;}
+  .step-box p{font-size:13.5px; color:var(--sub); margin:0;}
+
+  .kicker{color:var(--orange); font-weight:700; font-size:14px; margin:0 0 14px;}
+  .formula-box{
+    background:var(--navy); color:#fff; border-radius:14px; padding:26px; font-size:15px;
+    margin-bottom:36px;
+  }
+  .formula-box .eq{font-size:17px; font-weight:600; margin:0 0 16px; font-family:'Georgia',serif;}
+  .formula-box p{margin:4px 0; color:#cfd3e6; font-size:13.5px;}
+
+  table{width:100%; border-collapse:collapse; margin-bottom:16px; font-size:14px;}
+  table td{padding:12px 14px; border-top:1px solid var(--border);}
+  table tr:first-child td{border-top:none;}
+  table td:first-child{font-weight:600; width:45%;}
+  table td:last-child{font-weight:700; text-align:right;}
+
+  .tier-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:36px;}
+  @media (max-width:700px){ .tier-grid{grid-template-columns:1fr 1fr;} }
+  .tier-box{background:var(--bg-soft); border-radius:12px; padding:16px; text-align:center;}
+  .tier-box .pct{font-size:20px; font-weight:800; color:var(--orange); margin:0 0 4px;}
+  .tier-box .desc{font-size:12px; color:var(--sub); margin:0;}
+
+  details{border-top:1px solid var(--border); padding:16px 0;}
+  details:last-child{border-bottom:1px solid var(--border);}
+  summary{cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; font-size:20px; color:var(--orange); font-weight:700;}
+  details[open] summary::after{content:'–';}
+  details p{font-size:14px; color:var(--sub); margin:12px 0 0;}
+
+  .cta{
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark)); border-radius:18px;
+    padding:44px 30px; text-align:center; color:#fff; margin-bottom:10px;
+  }
+  .cta h3{font-size:22px; margin:0 0 8px;}
+  .cta p{font-size:14px; opacity:.92; margin:0 0 20px;}
+  .cta button{
+    background:#fff; color:var(--orange-dark); border:none; padding:12px 26px;
+    border-radius:9px; font-weight:700; font-size:14px; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="hero">
+  <div class="eyebrow">Home, car & personal loans</div>
+  <h1>Find your <em>monthly EMI</em> before you borrow</h1>
+  <p class="lede">Enter your loan amount, interest rate, and tenure — this calculator instantly shows your monthly EMI and total interest payable.</p>
+</div>
+
+<div class="calc-shell">
+  <div class="calc-card">
+    <span class="logo-chip">₹</span>
+    <h2>Your loan details</h2>
+    <p class="hint">Work out EMI by tenure in years, or switch to months for shorter loans.</p>
+
+    <div class="mode-toggle">
+      <button id="modeSingle" class="active">Tenure in years</button>
+      <button id="modeStacked">Tenure in months</button>
+    </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="field">
+          <div class="field-top"><label>Loan amount</label><span class="unit-tag">₹</span></div>
+          <input type="number" id="ctcAmount" value="2500000">
+          <input type="range" id="ctcAmountR" min="50000" max="10000000" step="10000" value="2500000">
+          <div class="range-labels"><span>₹50,000</span><span>₹1Cr</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label>Interest rate</label><span class="unit-tag">% per year</span></div>
+          <input type="number" id="basicPct" value="8.5" step="0.1">
+          <input type="range" id="basicPctR" min="1" max="24" step="0.1" value="8.5">
+          <div class="range-labels"><span>1%</span><span>24%</span></div>
+        </div>
+        <div class="field" id="tenureYearsField">
+          <div class="field-top"><label>Loan tenure</label><span class="unit-tag">years</span></div>
+          <input type="number" id="bonusAmount" value="20">
+          <input type="range" id="bonusAmountR" min="1" max="30" value="20">
+          <div class="range-labels"><span>1 yr</span><span>30 yrs</span></div>
+        </div>
+        <div class="field" id="tenureMonthsField" style="display:none;">
+          <div class="field-top"><label>Loan tenure</label><span class="unit-tag">months</span></div>
+          <input type="number" id="tenureMonths" value="60">
+          <input type="range" id="tenureMonthsR" min="3" max="360" value="60">
+          <div class="range-labels"><span>3 mo</span><span>360 mo</span></div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <p class="value" id="finalPrice">--</p>
+        <p class="label">Monthly EMI</p>
+        <span class="badge" id="savingsBadge"></span>
+
+        <div class="stat-row"><span>Loan amount</span><span id="statOriginal">₹0</span></div>
+        <div class="stat-row"><span>Total interest</span><span id="statDiscountPct">₹0</span></div>
+        <div class="stat-row"><span>Total payment</span><span id="statSaved">₹0</span></div>
+        <div class="stat-row"><span>Monthly EMI</span><span id="statFinal">₹0</span></div>
+      </div>
+    </div>
+    <p class="disclaimer">Estimate only — assumes a fixed interest rate for the full tenure with standard reducing-balance EMI. Actual EMI may vary with processing fees, floating rates, or prepayments.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div style="height:36px;"></div>
+  <h2 class="section-title">How EMI is calculated</h2>
+  <p class="section-lede">Every EMI is a fixed monthly payment that covers both interest and principal, calculated using the reducing-balance method. In early months, more of the EMI goes toward interest; as the outstanding principal shrinks, later EMIs pay off more principal — even though the EMI amount itself stays the same throughout.</p>
+
+  <div class="steps3">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <strong>Enter loan amount</strong>
+      <p>The principal you're borrowing from the lender.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <strong>Set rate and tenure</strong>
+      <p>Annual interest rate and how many years or months to repay.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <strong>See your EMI</strong>
+      <p>Monthly instalment plus total interest over the loan.</p>
+    </div>
+  </div>
+
+  <p class="kicker">The EMI formula</p>
+  <div class="formula-box">
+    <p class="eq">EMI = P × r × (1 + r)ⁿ / [(1 + r)ⁿ − 1]</p>
+    <p>P = loan amount, r = monthly interest rate (annual rate ÷ 12 ÷ 100), n = number of monthly instalments.</p>
+    <p>Total interest = (EMI × n) − P</p>
+  </div>
+
+  <p class="kicker">A worked example</p>
+  <p class="section-lede" style="margin-bottom:14px;">A ₹25,00,000 home loan at 8.5% for 20 years:</p>
+  <table>
+    <tr><td>Loan amount</td><td>₹25,00,000</td></tr>
+    <tr><td>Interest rate</td><td>8.5% per year</td></tr>
+    <tr><td>Tenure</td><td>20 years (240 months)</td></tr>
+    <tr><td>Monthly EMI</td><td>₹21,696</td></tr>
+    <tr><td>Total interest paid</td><td>₹27,07,040</td></tr>
+    <tr><td>Total payment</td><td>₹52,07,040</td></tr>
+  </table>
+  <p class="section-lede">Notice the total interest paid is more than the loan amount itself — this is normal for long-tenure loans and is why a shorter tenure, if affordable, usually saves significantly on interest.</p>
+
+  <p class="kicker">Typical interest rate ranges</p>
+  <div class="tier-grid">
+    <div class="tier-box"><p class="pct">8–9%</p><p class="desc">Home loans</p></div>
+    <div class="tier-box"><p class="pct">9–12%</p><p class="desc">Car loans</p></div>
+    <div class="tier-box"><p class="pct">10–16%</p><p class="desc">Personal loans</p></div>
+    <div class="tier-box"><p class="pct">16%+</p><p class="desc">Credit card / unsecured</p></div>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <details open>
+    <summary>Does a longer tenure mean a cheaper loan?</summary>
+    <p>No — a longer tenure lowers your monthly EMI but increases the total interest paid over the loan's life, since interest accrues on the outstanding balance for a longer period.</p>
+  </details>
+  <details>
+    <summary>Why does the EMI stay the same but the interest portion change?</summary>
+    <p>Under the reducing-balance method, interest is calculated on the outstanding principal each month. As you repay principal, the outstanding balance shrinks, so a smaller share of each future EMI goes toward interest and a larger share toward principal.</p>
+  </details>
+  <details>
+    <summary>Does this include processing fees?</summary>
+    <p>No — this calculator only estimates the interest-and-principal EMI. Lenders often charge a separate processing fee, typically 0.5–2% of the loan amount, paid upfront.</p>
+  </details>
+  <details>
+    <summary>What happens if I prepay part of the loan?</summary>
+    <p>A part-prepayment reduces your outstanding principal, which either shortens your tenure or lowers your future EMI, depending on what your lender allows — and it reduces the total interest you'd otherwise pay.</p>
+  </details>
+
+  <div style="height:20px;"></div>
+  <div class="cta">
+    <h3>Comparing loan offers?</h3>
+    <p>Run each lender's rate and tenure through this calculator to see which one actually costs less overall.</p>
+    <button>Compare loan offers</button>
+  </div>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+<script src="footer-script.js"></script>
+
+<script>
+let monthsMode = false;
+const btnSingle = document.getElementById('modeSingle');
+const btnStacked = document.getElementById('modeStacked');
+const yearsField = document.getElementById('tenureYearsField');
+const monthsField = document.getElementById('tenureMonthsField');
+
+function setMode(isMonths){
+  monthsMode = isMonths;
+  yearsField.style.display = isMonths ? 'none' : 'block';
+  monthsField.style.display = isMonths ? 'block' : 'none';
+  btnSingle.classList.toggle('active', !isMonths);
+  btnStacked.classList.toggle('active', isMonths);
+  calc();
+}
+btnSingle.onclick = () => setMode(false);
+btnStacked.onclick = () => setMode(true);
+
+function syncPair(numId, rangeId){
+  const num = document.getElementById(numId);
+  const range = document.getElementById(rangeId);
+  num.addEventListener('input', () => { range.value = num.value; calc(); });
+  range.addEventListener('input', () => { num.value = range.value; calc(); });
+}
+syncPair('ctcAmount','ctcAmountR');
+syncPair('basicPct','basicPctR');
+syncPair('bonusAmount','bonusAmountR');
+syncPair('tenureMonths','tenureMonthsR');
+
+function formatRupees(n){
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+function calc(){
+  const principal = parseFloat(document.getElementById('ctcAmount').value) || 0;
+  const annualRate = parseFloat(document.getElementById('basicPct').value) || 0;
+  const years = parseFloat(document.getElementById('bonusAmount').value) || 0;
+  const monthsInput = parseFloat(document.getElementById('tenureMonths').value) || 0;
+
+  const finalPriceEl = document.getElementById('finalPrice');
+  const badgeEl = document.getElementById('savingsBadge');
+
+  const n = monthsMode ? monthsInput : years * 12;
+  const r = annualRate / 12 / 100;
+
+  if(principal <= 0 || n <= 0){
+    finalPriceEl.textContent = '--';
+    badgeEl.textContent = '';
+    document.getElementById('statOriginal').textContent = '₹0';
+    document.getElementById('statDiscountPct').textContent = '₹0';
+    document.getElementById('statSaved').textContent = '₹0';
+    document.getElementById('statFinal').textContent = '₹0';
+    return;
+  }
+
+  let emi;
+  if(r > 0){
+    emi = principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  } else {
+    emi = principal / n;
+  }
+
+  const totalPayment = emi * n;
+  const totalInterest = totalPayment - principal;
+
+  finalPriceEl.textContent = formatRupees(emi);
+  badgeEl.textContent = 'Total interest ' + formatRupees(totalInterest);
+
+  document.getElementById('statOriginal').textContent = formatRupees(principal);
+  document.getElementById('statDiscountPct').textContent = formatRupees(totalInterest);
+  document.getElementById('statSaved').textContent = formatRupees(totalPayment);
+  document.getElementById('statFinal').textContent = formatRupees(emi);
+}
+
+['ctcAmount','basicPct','bonusAmount','tenureMonths'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calc);
+});
+setMode(false);
+</script>
+</body>
+</html>

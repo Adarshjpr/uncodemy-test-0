@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is Android and Why to use it? | Android Tutorial | Uncodemy</title>
+    <meta name="description" content="Learn what Android is, its history, architecture, versions, and why it's the world's most popular mobile operating system." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/extra.css" />
+<link rel="stylesheet" href="../components/footer-style.css">
+<script src="../components/uncodemy-navbar.js" defer></script>
+<link rel="icon" type="image/png" href="../assets/img/logo.png">
+</head>
+<body>
+
+<uncodemy-navbar></uncodemy-navbar>
+
+<div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+        <a href="https://uncodemy.com/">Android Development Training Course</a>
+        <span class="sep">/</span>
+        <span class="current">Page 2 of 12: What is Android and Why to use it?</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar-left">
+        <h4>Course Content</h4>
+        <ul class="topic-list">
+            <li><a href="android-getting-started.html"><span class="num">01</span>Getting Started with Android Development</a></li>
+            <li><a href="android-what-is-android.html" class="active"><span class="num">02</span>What is Android and Why to use it?</a></li>
+            <li><a href="android-app-components.html"><span class="num">03</span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a></li>
+            <li><a href="android-ui-design.html"><span class="num">04</span>Android UI Design — Layouts, Views &amp; ViewGroups</a></li>
+            <li><a href="android-intents.html"><span class="num">05</span>Intents &amp; Intent Filters — Navigating Between Screens</a></li>
+            <li><a href="android-recyclerview.html"><span class="num">06</span>RecyclerView &amp; Adapters — Displaying Lists of Data</a></li>
+            <li><a href="android-sharedpreferences.html"><span class="num">07</span>SharedPreferences &amp; Data Storage — Saving User Data</a></li>
+            <li><a href="android-sqlite.html"><span class="num">08</span>SQLite Database — Persistent Data Storage</a></li>
+            <li><a href="android-networking.html"><span class="num">09</span>Networking in Android — Making API Calls</a></li>
+            <li><a href="android-permissions.html"><span class="num">10</span>Android Permissions — Security Best Practices</a></li>
+            <li><a href="android-publishing.html"><span class="num">11</span>Publishing Your App — Play Store Deployment</a></li>
+            <li><a href="android-interview-questions.html"><span class="num">12</span>Top Android Interview Questions &amp; Answers</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <span class="eyebrow"><i class="fas fa-mobile-alt"></i> Introduction</span>
+        <h1>What is Android and Why to use it?</h1>
+
+        <div class="card">
+
+            <p><strong>Android</strong> is a mobile operating system based on a modified version of the Linux kernel, designed primarily for touchscreen mobile devices such as smartphones and tablets. It is developed by a consortium of developers known as the Open Handset Alliance, with Google as the lead developer.</p>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: #FFF8E1; border-radius: var(--radius-sm); border-left: 4px solid #FFC107;">
+                <strong><i class="fas fa-warning" style="color: #FFC107;"></i> Production Reality:</strong> Android is not just an operating system — it's an ecosystem. Understanding Android's architecture, versions, and market position is essential for making informed decisions about app development and your career direction.
+            </div>
+
+            <h2>1. A Brief History of Android</h2>
+
+            <div style="margin: 20px 0; padding: 15px 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+                <p><strong>📅 2003:</strong> Android Inc. was founded by Andy Rubin, Rich Miner, Nick Sears, and Chris White.</p>
+                <p><strong>📅 2005:</strong> Google acquired Android Inc. for an estimated $50 million.</p>
+                <p><strong>📅 2007:</strong> The Open Handset Alliance (OHA) was announced, led by Google with 34 founding members.</p>
+                <p><strong>📅 2008:</strong> The first Android phone — the <strong>HTC Dream</strong> — was released with Android 1.0.</p>
+                <p><strong>📅 2010-2019:</strong> Android versions were named after desserts (Cupcake, Donut, Eclair, Froyo, Gingerbread, Honeycomb, Ice Cream Sandwich, Jelly Bean, KitKat, Lollipop, Marshmallow, Nougat, Oreo, Pie).</p>
+                <p><strong>📅 2019-Present:</strong> Android switched to a numerical versioning system (Android 10, 11, 12, 13, 14, 15).</p>
+            </div>
+
+            <h2>2. Android Architecture</h2>
+
+            <div style="margin: 20px 0; padding: 20px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--line); font-family: monospace; font-size: 0.85rem; line-height: 2;">
+                <div style="text-align: center; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Android Architecture Stack</div>
+                <div style="text-align: center;">
+                    ┌─────────────────────────────────────────────────────────────┐<br />
+                    │              1. Applications Layer                        │<br />
+                    │       (Your Apps, Google Apps, Third-Party Apps)          │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │              2. Application Framework                     │<br />
+                    │  (Activity Manager, Content Providers, View System, etc.) │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │              3. Libraries &amp; Android Runtime               │<br />
+                    │   (SQLite, WebKit, OpenGL, SSL, ART/Dalvik VM)           │<br />
+                    ├─────────────────────────────────────────────────────────────┤<br />
+                    │              4. Linux Kernel                             │<br />
+                    │  (Security, Memory Management, Process Management, Drivers)│<br />
+                    └─────────────────────────────────────────────────────────────┘
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Layer</th><th>Components</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Applications</strong></td><td>Your apps, Google Apps, third-party apps</td><td>User-facing functionality</td></tr>
+                        <tr><td><strong>Application Framework</strong></td><td>Activity Manager, Content Providers, View System, Package Manager</td><td>APIs used by developers to build apps</td></tr>
+                        <tr><td><strong>Libraries &amp; Runtime</strong></td><td>SQLite, WebKit, OpenGL, SSL, Android Runtime (ART)</td><td>Core libraries and Java/Kotlin execution</td></tr>
+                        <tr><td><strong>Linux Kernel</strong></td><td>Device drivers, power management, memory management</td><td>Hardware abstraction and system security</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Android Versions — Quick Overview</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Version</th><th>Code Name</th><th>API Level</th><th>Release Year</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Android 15</td><td>Vanilla Ice Cream</td><td>35</td><td>2024</td></tr>
+                        <tr><td>Android 14</td><td>Upside Down Cake</td><td>34</td><td>2023</td></tr>
+                        <tr><td>Android 13</td><td>Tiramisu</td><td>33</td><td>2022</td></tr>
+                        <tr><td>Android 12</td><td>Snow Cone</td><td>32</td><td>2021</td></tr>
+                        <tr><td>Android 11</td><td>Red Velvet Cake</td><td>30</td><td>2020</td></tr>
+                        <tr><td>Android 10</td><td>Queen Cake</td><td>29</td><td>2019</td></tr>
+                        <tr><td>Android 9 Pie</td><td>Pie</td><td>28</td><td>2018</td></tr>
+                        <tr><td>Android 8 Oreo</td><td>Oreo</td><td>26-27</td><td>2017</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Why Choose Android for Development?</h2>
+
+            <h3>4.1 Massive Market Share</h3>
+            <ul>
+                <li>Over <strong>2.5 billion active Android devices</strong> worldwide.</li>
+                <li>More than <strong>70% of the global smartphone market</strong> is Android.</li>
+                <li>Android dominates in emerging markets (India, Africa, South America).</li>
+            </ul>
+
+            <h3>4.2 Open Source &amp; Customizable</h3>
+            <ul>
+                <li>Android is <strong>open-source</strong> — you can modify the OS and contribute to AOSP.</li>
+                <li>No licensing fees — you can build and distribute apps without paying royalties.</li>
+                <li>Freedom to customize your app's UI/UX extensively.</li>
+            </ul>
+
+            <h3>4.3 Google Play Store Distribution</h3>
+            <ul>
+                <li>The <strong>Google Play Store</strong> has over 2.5 million apps.</li>
+                <li>Easy to publish apps with the Google Play Console.</li>
+                <li>Monetization options: paid apps, in-app purchases, subscriptions, and ads.</li>
+            </ul>
+
+            <h3>4.4 Rich Developer Ecosystem</h3>
+            <ul>
+                <li><strong>Android Studio</strong> — powerful IDE with layout editor, profiler, and emulator.</li>
+                <li><strong>Kotlin</strong> — modern, concise, and officially supported language.</li>
+                <li><strong>Jetpack Libraries</strong> — Android's suite of libraries for modern app development.</li>
+                <li><strong>Extensive documentation</strong> and a large developer community.</li>
+            </ul>
+
+            <h3>4.5 Career Opportunities</h3>
+            <ul>
+                <li>Android developers are in <strong>high demand</strong> globally.</li>
+                <li>Average salary in India: <strong>₹4-8 LPA</strong> for freshers, with rapid growth.</li>
+                <li>Average salary in the US: <strong>$110,000+</strong> per year.</li>
+                <li>Remote work opportunities are abundant.</li>
+            </ul>
+
+            <h2>5. Android vs iOS — Quick Comparison</h2>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Aspect</th><th>Android</th><th>iOS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Market Share</strong></td><td>~70% (Global)</td><td>~25% (Global)</td></tr>
+                        <tr><td><strong>Language</strong></td><td>Kotlin / Java</td><td>Swift / Objective-C</td></tr>
+                        <tr><td><strong>IDE</strong></td><td>Android Studio</td><td>Xcode</td></tr>
+                        <tr><td><strong>App Store</strong></td><td>Google Play Store</td><td>Apple App Store</td></tr>
+                        <tr><td><strong>Customization</strong></td><td>High</td><td>Low</td></tr>
+                        <tr><td><strong>Development Cost</strong></td><td>Low (Windows, Linux, macOS)</td><td>High (macOS only)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. What You'll Learn in This Series</h2>
+
+            <ul>
+                <li><strong>Android Studio</strong> — Set up and master the IDE.</li>
+                <li><strong>Kotlin</strong> — Modern language for Android development.</li>
+                <li><strong>UI Design</strong> — Layouts, views, and Material Design.</li>
+                <li><strong>Components</strong> — Activities, Services, Broadcast Receivers, Content Providers.</li>
+                <li><strong>Data Storage</strong> — SharedPreferences, SQLite, and Room.</li>
+                <li><strong>Networking</strong> — Retrofit, Volley, and API integration.</li>
+                <li><strong>Permissions</strong> — Runtime permissions and security.</li>
+                <li><strong>Publishing</strong> — Deploy your app to the Play Store.</li>
+            </ul>
+
+            <div style="margin-top: 20px; padding: 15px 20px; background: var(--primary-light); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                <strong><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Key Takeaway:</strong> Android is the most popular mobile platform in the world. Learning Android development opens doors to a vast ecosystem, high-paying careers, and the ability to build apps used by billions of people. The journey starts here.
+            </div>
+
+        </div>
+
+        <div class="prev-next">
+            <a href="android-getting-started.html"><span class="label"><i class="fas fa-arrow-left"></i> Previous</span>Getting Started with Android Development</a>
+            <a href="android-app-components.html" class="next"><span class="label">Next <i class="fas fa-arrow-right"></i></span>Android App Components — Activities, Services, Broadcast Receivers, Content Providers</a>
+        </div>
+
+        <div class="cta-box">
+            <div>
+                <h3>Ready to master Android Development?</h3>
+                <p>Build real-world Android apps with hands-on projects, mentor-led sessions, and placement support.</p>
+            </div>
+            <a class="btn-cta" href="https://uncodemy.com/">Explore Course <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="batch-card">
+            <span class="badge-floating"><i class="fas fa-fire"></i> Upcoming Batch</span>
+            <h4>Android Development Course</h4>
+            <p class="batch-sub">Kickstart your Android development journey with live, mentor-guided classes.</p>
+            <div class="countdown-box">
+                <span class="countdown-label"><i class="far fa-clock"></i> Batch starts in</span>
+                <span class="countdown-value" data-countdown>Loading...</span>
+            </div>
+            <ul class="batch-meta">
+                <li><span class="dot"></span><b>Starts:</b>&nbsp;<span data-batch-start>Loading...</span></li>
+                <li><span class="dot"></span><b>Duration:</b>&nbsp;<span data-batch-duration>Loading...</span></li>
+                <li><span class="dot"></span>Live Classes</li>
+                <li><span class="dot"></span>Mentor Support</li>
+                <li><span class="dot"></span>Placement Assistance</li>
+            </ul>
+            <span class="seats-badge"><i class="fas fa-exclamation-circle"></i> Limited Seats Available</span>
+            <button class="btn-landing" data-landing-btn>Go to Course Landing Page <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <div class="help-card">
+            <h4><i class="fas fa-headset"></i> Need Help?</h4>
+            <div class="help-row" data-action="phone">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <div>Talk to our Counselor<br><span data-contact-phone>Loading...</span></div>
+            </div>
+            <div class="help-row" data-action="whatsapp">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <div>Chat on WhatsApp<br><span data-contact-whatsapp>Message us</span></div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div id="UnCodeMy-Footer"></div>
+
+<script src="assets/script.js"></script>
+<script src="../components/footer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Career Opportunities in Data Analytics &amp; AI for Humanities Students | Uncodemy</title>
+    <meta name="description" content="Career opportunities in data analytics and AI for humanities students. Where history, sociology, psychology, literature, political science and economics graduates fit, with skills, salary and a study plan." />
+    <link rel="canonical" href="https://uncodemy.com/tutorials/humanities-students-data-analytics-ai-career-opportunities" />
+    <meta property="og:title" content="Career Opportunities in Data Analytics &amp; AI for Humanities Students | Uncodemy" />
+    <meta property="og:description" content="Humanities to data and AI: the roles where your subject is an advantage, the skills to add, and a 7-month plan with projects that use your discipline." />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <style>
+        /* page-specific: career path diagram */
+        .career-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0 8px;
+        }
+        .career-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 8px;
+            text-align: center;
+        }
+        .career-box .c-l {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .career-box .c-v {
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .career-box .c-d {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .career-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .career-box .c-v {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .career-box .c-v {
+                font-size: 14px;
+            }
+            .career-box .c-l {
+                font-size: 8px;
+            }
+            .career-box .c-d {
+                font-size: 9px;
+            }
+        }
+        /* role badges */
+        .role-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .04em;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ========================= HEADER ========================= -->
+    <header class="site">
+        <div class="wrap hdr">
+            <a class="logo" href="#top">
+                <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                <span class="logo-txt">un<em>code</em>my</span>
+            </a>
+            <nav class="main" id="nav">
+                <div class="mobile-search">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" placeholder="Search tutorials" aria-label="Search tutorials" id="mobileSearchInput" />
+                </div>
+                <a href="#top" aria-current="page">Tutorials</a>
+                <a href="#courses">Courses</a>
+                <a href="#project">Projects</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#resources">Resources</a>
+            </nav>
+            <label class="hdr-search" for="hdrq">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="hdrq" type="search" placeholder="Search tutorials" aria-label="Search tutorials" />
+            </label>
+            <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-in">
+            <div>
+                <p class="eyebrow">Free career guide · 480+ tutorials</p>
+                <h1>Career Opportunities in Data Analytics &amp; AI <mark>A Guide for Humanities Students</mark></h1>
+                <p class="lede">Humanities graduates are not competing with engineers &mdash; they are filling a different gap. This guide maps your discipline to the analytics and AI roles where it is an advantage, then sets out the technical layer to add and the projects to build.</p>
+
+                <div class="fx-wrap">
+                    <div class="fx">
+                        <span class="fx-tag" aria-hidden="true">fx</span>
+                        <input id="q" type="search" autocomplete="off" placeholder="Search &ldquo;humanities data analytics ai opportunities&rdquo;" aria-label="Search tutorials" aria-expanded="false" aria-controls="suggest" role="combobox" />
+                        <button id="qbtn">Search</button>
+                    </div>
+                    <div class="suggest" id="suggest" role="listbox" aria-label="Tutorial suggestions"></div>
+                </div>
+
+                <div class="chips" id="chips">
+                    <span class="lbl">Tracks</span>
+                    <button class="chip" aria-pressed="false">Career Change</button>
+                    <button class="chip" aria-pressed="true">Humanities</button>
+                    <button class="chip" aria-pressed="false">Data Analytics</button>
+                    <button class="chip" aria-pressed="false">AI Roles</button>
+                    <button class="chip" aria-pressed="false">Research</button>
+                    <button class="chip" aria-pressed="false">Social Data</button>
+                    <button class="chip" aria-pressed="false">Python</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="demo">
+                    <div class="demo-bar">
+                        <b>Career Path Explorer · Live guide</b>
+                        <span class="live"><span class="dot"></span> Interactive</span>
+                    </div>
+                    <div class="slicer" id="slicer" role="group" aria-label="View different career paths">
+                        <button aria-pressed="true" data-r="analyst">Data Analyst</button>
+                        <button aria-pressed="false" data-r="research">Research Analyst</button>
+                        <button aria-pressed="false" data-r="ux">UX Research</button>
+                        <button aria-pressed="false" data-r="policy">Policy / AI Ethics</button>
+                    </div>
+                    <div class="career-grid" id="careerTiers">
+                        <div class="career-box"><div class="c-l">Role</div><div class="c-v" id="roleName">&mdash;</div><div class="c-d">Job title</div></div>
+                        <div class="career-box"><div class="c-l">Avg. Salary (India)</div><div class="c-v" id="salaryVal">&mdash;</div><div class="c-d">Fresher to mid-level</div></div>
+                        <div class="career-box"><div class="c-l">Learning Time</div><div class="c-v" id="timeVal">&mdash;</div><div class="c-d">From zero to job-ready</div></div>
+                    </div>
+                    <div class="flow-row" id="flowRow">
+                        <span>Humanities Graduate</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Data + AI Skills</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Discipline&#8209;Led Projects</span>
+                        <span class="arrow">&rarr;</span>
+                        <span>Analytics or AI Role</span>
+                    </div>
+                    <div class="demo-cap">Tap a role to compare entry points. Research, insights and UX roles reward your methods training directly; analyst roles need the most tooling but have the most openings.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="wrap">
+        <p class="crumbs"><a href="#top">Home</a> / <a href="#top">Career Guides</a> / <a href="#top">Humanities to Data &amp; AI</a> / <span>Humanities Career Opportunities</span></p>
+
+        <div class="cols">
+            <!-- ------------- ARTICLE ------------- -->
+            <article class="tut">
+                <p class="eyebrow">Career Guide · Humanities to Data &amp; AI</p>
+                <h1>Career Opportunities in Data Analytics and AI for Humanities Students</h1>
+
+                <div class="byline">
+                    <span class="avatar">VK</span>
+                    <span><b>Vijay Kumar</b> · Lead Trainer, Data Analytics &amp; BI</span>
+                    <span class="sep">|</span>
+                    <span>Updated 12 August 2026</span>
+                    <span class="sep">|</span>
+                    <span>16 min read</span>
+                    <span class="badge">Free · career guide</span>
+                </div>
+
+                               <figure>
+                    <svg viewBox="0 0 950 280" role="img" aria-label="Diagram mapping humanities disciplines through added data skills into analytics and AI job roles">
+                        <defs>
+                            <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#0B6E75"/></marker>
+                            <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F1F4F3"/></linearGradient>
+                        </defs>
+                        <rect width="950" height="280" fill="url(#g4)" />
+                        
+                        <!-- Titles -->
+                        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B6B72" letter-spacing="1.4">
+                            <text x="40" y="40">YOUR DISCIPLINE</text>
+                            <text x="350" y="40">ADD THIS LAYER</text>
+                            <text x="660" y="40">WHERE YOU FIT</text>
+                        </g>
+
+                        <!-- Column 1 -->
+                        <rect x="20" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="45" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Humanities training</text>
+                        <text x="45" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Research methods</text>
+                        <text x="45" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Qualitative analysis</text>
+                        <text x="45" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Argument &amp; ethics</text>
+                        <text x="45" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Writing for readers</text>
+                        <rect x="40" y="210" width="190" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="65" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">A different toolkit</text>
+
+                        <!-- Column 2 -->
+                        <rect x="310" y="58" width="230" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="335" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">The technical layer</text>
+                        <text x="335" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Excel &amp; survey data</text>
+                        <text x="335" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• SQL</text>
+                        <text x="335" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Dashboards</text>
+                        <text x="335" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Python &amp; text analysis</text>
+                        <rect x="335" y="210" width="180" height="20" rx="4" fill="#FDF1D8" stroke="#E8A317" />
+                        <text x="360" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8a6100">5&ndash;7 months part time</text>
+
+                        <!-- Column 3 -->
+                        <rect x="620" y="58" width="300" height="180" rx="12" fill="#fff" stroke="#DCE4E2" />
+                        <text x="645" y="90" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0B6E75" font-weight="700">Roles that fit</text>
+                        <text x="645" y="114" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Research / Insights Analyst</text>
+                        <text x="645" y="138" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Data Analyst</text>
+                        <text x="645" y="162" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• UX Researcher</text>
+                        <text x="645" y="186" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1E2A36">• Policy &amp; AI Ethics Analyst</text>
+                        <rect x="645" y="210" width="250" height="20" rx="4" fill="#E4F1F1" stroke="#0B6E75" />
+                        <text x="670" y="224" font-family="IBM Plex Mono, monospace" font-size="10" fill="#0B6E75">Growing demand</text>
+
+                        <!-- Arrows -->
+                        <path d="M250 148 H296" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                        <path d="M540 148 H606" stroke="#0B6E75" stroke-width="1.6" marker-end="url(#ar4)" />
+                    </svg>
+                    <figcaption>Humanities disciplines supply methods and judgement that quantitative training does not cover. The technical layer is what makes those strengths legible to employers.</figcaption>
+                </figure>
+
+                <div class="answer">
+                    <h2>Quick summary &mdash; humanities students in data analytics and AI</h2>
+                    <p>Humanities graduates enter this field through a different door than engineers, and it is often a less crowded one. Your training in <b>research methods, qualitative analysis, argument and ethics</b> maps onto insights research, UX research, policy analysis, AI evaluation and social&#8209;data analytics. The technical layer &mdash; Excel, SQL, dashboards and some Python &mdash; takes five to seven months part time, and it is what turns your existing strengths into something an employer can evaluate.</p>
+                    <p>In this guide you will learn:</p>
+                    <ol>
+                        <li><b>Discipline&#8209;by&#8209;discipline mapping</b> &mdash; history, sociology, psychology, literature, political science, economics.</li>
+                        <li><b>Six role families</b> where humanities training is an advantage.</li>
+                        <li><b>The technical layer</b> &mdash; exactly what to learn and in what order.</li>
+                        <li><b>Mixed&#8209;methods projects</b> that no engineering candidate will produce.</li>
+                        <li><b>A 7&#8209;month plan</b> with an early application point.</li>
+                        <li><b>Interview answers</b> that make your discipline concrete.</li>
+                    </ol>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol id="toc">
+                        <li><a href="#s1"><span class="n">01</span>Your discipline mapped to roles</a></li>
+                        <li><a href="#s2"><span class="n">02</span>Six role families and what they pay</a></li>
+                        <li><a href="#s3"><span class="n">03</span>The technical layer &mdash; what to learn, in order</a></li>
+                        <li><a href="#s4"><span class="n">04</span>Where AI creates new openings for humanities graduates</a></li>
+                        <li><a href="#s5"><span class="n">05</span>Mixed methods &mdash; your actual competitive advantage</a></li>
+                        <li><a href="#s6"><span class="n">06</span>Four projects that use your discipline</a></li>
+                        <li><a href="#s7"><span class="n">07</span>The obstacles, stated plainly</a></li>
+                        <li><a href="#s8"><span class="n">08</span>Step&#8209;by&#8209;step roadmap &mdash; seven months</a></li>
+                        <li><a href="#s9"><span class="n">09</span>Skills to learn &mdash; the complete list</a></li>
+                        <li><a href="#s10"><span class="n">10</span>Interview Q&amp;A &mdash; for humanities graduates</a></li>
+                        <li><a href="#quiz"><span class="n">11</span>Test yourself</a></li>
+                        <li><a href="#faq"><span class="n">12</span>FAQ</a></li>
+                        <li><a href="#related"><span class="n">13</span>Related resources</a></li>
+                    </ol>
+                </nav>
+
+                <!-- ===== S1 ===== -->
+                <h2 id="s1"><span class="num">SECTION 01</span>Your discipline mapped to roles</h2>
+                <p>Different humanities subjects lead to different strengths. Find your row.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Discipline</th><th>Your specific strength</th><th>Best&#8209;fit roles</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Sociology / Anthropology</b></td><td>Survey design, fieldwork, coding qualitative data</td><td>UX Researcher, Insights Analyst, Social Data Analyst</td></tr>
+                            <tr><td><b>Psychology</b></td><td>Experiment design, statistics, behavioural measurement</td><td>UX Researcher, Product Analyst, People Analytics</td></tr>
+                            <tr><td><b>Economics</b></td><td>Quantitative method, causal reasoning, econometrics</td><td>Data Analyst, Decision Scientist, Pricing Analyst</td></tr>
+                            <tr><td><b>Political Science / Public Policy</b></td><td>Policy analysis, institutions, regulation</td><td>Policy Analyst, AI Governance, Public&#8209;sector Analytics</td></tr>
+                            <tr><td><b>History</b></td><td>Source criticism, evidence chains, long&#8209;form synthesis</td><td>Research Analyst, AI Evaluation, Investigative Analytics</td></tr>
+                            <tr><td><b>Literature / Linguistics</b></td><td>Close reading, text structure, semantics</td><td>AI Evaluation, NLP Annotation Lead, Content Analytics</td></tr>
+                            <tr><td><b>Philosophy</b></td><td>Argument analysis, ethics, edge&#8209;case reasoning</td><td>AI Ethics, Trust &amp; Safety, Policy Analyst</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>Key insight:</b> lead with your discipline rather than hiding it. A sociology graduate who can also write SQL is a distinctive candidate; a sociology graduate presenting as a generic analyst is competing on the tooling alone.</div>
+
+                <!-- ===== S2 ===== -->
+                <h2 id="s2"><span class="num">SECTION 02</span>Six role families and what they pay</h2>
+                <p>These are the families where humanities backgrounds appear most often in Indian job listings.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Role family</th><th>What you do</th><th>Technical load</th><th>Salary (fresher)</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Research / Insights Analyst</b></td><td>Surveys, market and customer research, reporting</td><td>Low&ndash;medium</td><td>&#8377;4.5&ndash;9 LPA</td></tr>
+                            <tr><td><b>Data Analyst</b></td><td>Company reporting, dashboards, business questions</td><td>Medium</td><td>&#8377;4&ndash;8 LPA</td></tr>
+                            <tr><td><b>UX Researcher</b></td><td>User interviews, usability studies, behavioural data</td><td>Low&ndash;medium</td><td>&#8377;6&ndash;12 LPA</td></tr>
+                            <tr><td><b>AI Evaluation / Annotation Lead</b></td><td>Rubrics, guidelines, quality programmes</td><td>Low</td><td>&#8377;4&ndash;8 LPA</td></tr>
+                            <tr><td><b>Policy / AI Ethics Analyst</b></td><td>Regulation, governance, harm analysis</td><td>Low&ndash;medium</td><td>&#8377;6&ndash;14 LPA</td></tr>
+                            <tr><td><b>People / HR Analytics</b></td><td>Attrition, hiring funnels, engagement analysis</td><td>Medium</td><td>&#8377;5&ndash;10 LPA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note"><b>Pro tip:</b> the fastest route depends on what you enjoy, but the widest route is Data Analyst &mdash; it has several times more openings than the others combined, and it lets you move sideways into research or policy later.</div>
+
+                <!-- ===== S3 ===== -->
+                <h2 id="s3"><span class="num">SECTION 03</span>The technical layer &mdash; what to learn, in order</h2>
+                <p>This is the same core as any analyst path. The difference is what you will point it at.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Excel &mdash; cleaning, lookups, pivot tables, survey response tabulation</li>
+                    <li>SQL &mdash; joins, aggregation, window functions</li>
+                    <li>Power BI or Tableau &mdash; one dashboard tool, properly</li>
+                    <li>Statistics &mdash; sampling, significance, confidence intervals, regression basics</li>
+                    <li>Python and pandas &mdash; handling text and survey data at scale</li>
+                    <li>Text analysis &mdash; frequency, sentiment, topic grouping, LLM&#8209;assisted coding of open responses</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">Data Analyst</span> <span class="role-badge">Research Analyst</span> <span class="role-badge">Insights Analyst</span> <span class="role-badge">Social Data Analyst</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">SQL &mdash; the core query skill</button>
+                        <button role="tab" aria-selected="false" data-t="1">Python &mdash; survey and text data</button>
+                        <button role="tab" aria-selected="false" data-t="2">Excel &mdash; the fastest start</button>
+                    </div>
+                    <pre data-p="0"><code>-- SQL: the single most important skill for an analyst
+-- Question: which product category earned the most last quarter?
+
+SELECT
+    p.category,
+    COUNT(DISTINCT o.order_id)      AS orders,
+    ROUND(SUM(o.amount), 2)         AS revenue,
+    ROUND(AVG(o.amount), 2)         AS avg_order_value
+FROM orders o
+JOIN products p ON p.product_id = o.product_id
+WHERE o.order_date &gt;= '2026-04-01'
+  AND o.order_date &lt;  '2026-07-01'
+  AND o.status = 'completed'
+GROUP BY p.category
+HAVING SUM(o.amount) &gt; 100000
+ORDER BY revenue DESC
+LIMIT 10;
+
+-- If you can read this query, you can already do 40% of an analyst's daily work.</code></pre>
+                    <pre data-p="1" hidden><code># Python + pandas: clean a messy sales file and answer a business question
+import pandas as pd
+
+df = pd.read_csv("sales_2026.csv")
+
+# 1. Clean
+df.columns = df.columns.str.strip().str.lower()
+df["order_date"] = pd.to_datetime(df["order_date"], errors="coerce")
+df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
+df = df.dropna(subset=["order_date", "amount"])
+
+# 2. Answer: monthly revenue per region
+monthly = (
+    df.groupby([df["order_date"].dt.to_period("M"), "region"])["amount"]
+      .sum()
+      .unstack(fill_value=0)
+      .round(0)
+)
+print(monthly.tail(6))
+
+# 3. Flag the drop that a manager will actually ask about
+change = monthly.pct_change().iloc[-1] * 100
+print(change[change &lt; -10].sort_values())</code></pre>
+                    <pre data-p="2" hidden><code>' Excel / Google Sheets - the formulas that get asked about in interviews
+
+' 1. Lookup a value from another sheet (modern, safe version)
+=XLOOKUP(A2, Customers!$A:$A, Customers!$D:$D, "Not found")
+
+' 2. Conditional total with two criteria
+=SUMIFS(Sales[Amount], Sales[Region], $A2, Sales[Month], B$1)
+
+' 3. Count unique customers
+=SUMPRODUCT(1/COUNTIF(Sales[Customer], Sales[Customer]))
+
+' 4. Month-on-month growth %
+=IFERROR((C2-B2)/B2, "")
+
+' 5. Clean text before analysis
+=TRIM(PROPER(CLEAN(A2)))
+
+' Master these five and pivot tables, and Excel stops being a blocker.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">SQL &middot; quarterly revenue by category</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S4 ===== -->
+                <h2 id="s4"><span class="num">SECTION 04</span>Where AI creates new openings for humanities graduates</h2>
+                <p>This is the newest part of the market, and the part where a humanities degree is least often treated as a disadvantage.</p>
+
+                <h3>What you&rsquo;ll learn</h3>
+                <ul>
+                    <li>Evaluating model outputs against written rubrics</li>
+                    <li>Writing annotation guidelines and testing rater agreement</li>
+                    <li>Auditing model behaviour for bias across groups and contexts</li>
+                    <li>AI governance &mdash; mapping regulation onto product requirements</li>
+                    <li>Trust and safety &mdash; policy writing and escalation review</li>
+                    <li>Using LLMs to code open&#8209;ended survey responses at scale, then validating the results</li>
+                </ul>
+
+                <h3>Job titles</h3>
+                <p><span class="role-badge">AI Evaluation Specialist</span> <span class="role-badge">AI Ethics Analyst</span> <span class="role-badge">Trust &amp; Safety Analyst</span> <span class="role-badge">Annotation Programme Lead</span></p>
+
+                <div class="code" data-code>
+                    <div class="code-tabs" role="tablist" aria-label="Code examples">
+                        <button role="tab" aria-selected="true" data-t="0">Python &mdash; coding open responses</button>
+                    </div>
+                    <pre data-p="0"><code># Working with an LLM API - the everyday skill in AI-era analytics
+import os, json, requests
+
+def classify_feedback(text):
+    """Turn free-text customer feedback into structured data."""
+    prompt = (
+        "Classify the customer feedback below.\n"
+        "Return ONLY JSON with keys: sentiment (positive/neutral/negative), "
+        "topic (delivery/pricing/quality/support/other), urgent (true/false).\n\n"
+        f"Feedback: {text}"
+    )
+    r = requests.post(
+        "https://api.example-llm.com/v1/messages",
+        headers={"x-api-key": os.environ["API_KEY"]},
+        json={"model": "small-fast", "max_tokens": 200,
+              "messages": [{"role": "user", "content": prompt}]},
+        timeout=30,
+    )
+    return json.loads(r.json()["content"][0]["text"])
+
+rows = [classify_feedback(t) for t in open("feedback.txt")]
+print(rows[:3])
+# 2,000 rows of text become a table you can chart. That is the new analyst workflow.</code></pre>
+                    <div class="code-foot">
+                        <span class="file" id="codeFile">Python &middot; classify open responses with an LLM</span>
+                        <button class="copy" data-copy>Copy code</button>
+                    </div>
+                </div>
+
+                <!-- ===== S5 ===== -->
+                <h2 id="s5"><span class="num">SECTION 05</span>Mixed methods &mdash; your actual competitive advantage</h2>
+                <p>Most analysts can produce a number. Far fewer can pair it with why. That combination is what humanities training uniquely supports.</p>
+
+                <ul>
+                    <li><b>Quantify, then explain.</b> A dashboard shows checkout abandonment at 38%. Ten user interviews explain that the delivery estimate appears only after payment details. One number, one cause, one fix.</li>
+                    <li><b>Code qualitative data properly.</b> Turning 2,000 free&#8209;text responses into a defensible category system, with an inter&#8209;rater check, is method training that quantitative courses skip.</li>
+                    <li><b>Question the measure.</b> &ldquo;Engagement&rdquo; and &ldquo;satisfaction&rdquo; are constructs, not facts. Knowing that a proxy can drift away from the thing it proxies prevents expensive mistakes.</li>
+                    <li><b>Read the context.</b> A regional difference that looks like a data error is sometimes a genuine cultural or policy difference. Someone has to know that.</li>
+                    <li><b>Write it so it lands.</b> Analysis that nobody acts on is wasted, and clear writing is the difference.</li>
+                </ul>
+
+                <div class="note"><b>Key insight:</b> in interviews, describe yourself as a mixed&#8209;methods analyst. It is accurate, it is rare, and it stops the conversation being a comparison against engineering candidates on tooling alone.</div>
+
+                <!-- ===== S6 ===== -->
+                <h2 id="s6"><span class="num">SECTION 06</span>Four projects that use your discipline</h2>
+                <p>Pick a subject where your degree gives you something to say. This is what makes your portfolio memorable.</p>
+
+                <ul>
+                    <li><b>1. A social or policy data dashboard.</b> Use government open data &mdash; education, health, employment, crime &mdash; and build a dashboard comparing districts or states. Add a one&#8209;page brief on what the pattern suggests and which comparisons are unsafe to make.</li>
+                    <li><b>2. A mixed&#8209;methods study.</b> Run a small survey (100+ responses), analyse the closed questions quantitatively, code the open responses into categories with an agreement check, and report where the two sources disagree.</li>
+                    <li><b>3. A text analysis project.</b> Take 3,000 reviews, news headlines or parliamentary transcripts. Track how topics and framing shift over time, with charts and a written interpretation.</li>
+                    <li><b>4. A bias audit.</b> Test a model or a public dataset for differential behaviour across groups. Document the method, the sample sizes, the finding and the limitations honestly &mdash; including where your sample was too small to conclude.</li>
+                </ul>
+
+                <div class="note"><b>Pro tip:</b> the limitations paragraph is your signature. Interviewers notice a candidate who states where their own analysis cannot support a conclusion, because most candidates never do.</div>
+
+                <!-- ===== S7 ===== -->
+                <h2 id="s7"><span class="num">SECTION 07</span>The obstacles, stated plainly</h2>
+                <p>You will hit these. Knowing them in advance is what stops them ending the attempt.</p>
+
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Obstacle</th><th>Where it bites</th><th>How to get past it</th></tr></thead>
+                        <tbody>
+                            <tr><td>Resume screening filters</td><td>Large&#8209;company fresher hiring</td><td>Apply through referrals; keep a project link in the CV header</td></tr>
+                            <tr><td>&ldquo;No quantitative background&rdquo; assumption</td><td>First screening call</td><td>Open with a number from your own project in the first minute</td></tr>
+                            <tr><td>Statistics confidence gap</td><td>Technical rounds</td><td>Learn sampling, significance and regression properly &mdash; it is a few weeks</td></tr>
+                            <tr><td>Tool sprawl anxiety</td><td>While studying</td><td>Four tools only: Excel, SQL, one BI tool, Python. Ignore the rest</td></tr>
+                            <tr><td>Isolation</td><td>Months two to four</td><td>Join a community or cohort; the drop&#8209;out rate for solo learners is the real risk</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S8 ===== -->
+                <h2 id="s8"><span class="num">SECTION 08</span>Step&#8209;by&#8209;step roadmap &mdash; seven months</h2>
+                <p>For 10 hours a week. There is an application point at month four, before the plan is finished.</p>
+
+                <ol class="steps">
+                    <li><b>Month 1: Excel and data thinking</b> &mdash; cleaning, lookups, pivots, survey tabulation. Deliverable: one public dataset cleaned with five written findings.</li>
+                    <li><b>Month 2&ndash;3: SQL</b> &mdash; joins through window functions. Deliverable: 100 solved queries, and Project 1 begun.</li>
+                    <li><b>Month 4: Power BI or Tableau</b> &mdash; modelling and dashboard design. Deliverable: Project 1, the social or policy dashboard. <i>Start applying for research and analyst roles now.</i></li>
+                    <li><b>Month 5: statistics</b> &mdash; sampling, significance, confidence intervals, regression basics. Deliverable: Project 2, the mixed&#8209;methods study.</li>
+                    <li><b>Month 6: Python and text analysis</b> &mdash; pandas, frequency and sentiment, LLM&#8209;assisted coding of open responses. Deliverable: Project 3, the text analysis.</li>
+                    <li><b>Month 7: AI evaluation and portfolio</b> &mdash; rubrics and a bias audit. Deliverable: Project 4, plus a CV and GitHub rewritten around your four projects.</li>
+                </ol>
+
+                <div class="note"><b>Pro tip:</b> write every project up for a reader, not for a marker. Question, method, finding, limitation &mdash; one page. Your writing is a competitive advantage here, so use it.</div>
+
+                <!-- ===== S9 ===== -->
+                <h2 id="s9"><span class="num">SECTION 09</span>Skills to learn &mdash; the complete list</h2>
+                <p>The core is small and shared. The specialisation row is where your discipline decides the direction.</p>
+
+                <h3>Core skills (needed on every path)</h3>
+                <ul>
+                    <li><b>Excel</b> &mdash; cleaning, lookups, pivots, survey tabulation</li>
+                    <li><b>SQL</b> &mdash; joins, aggregation, window functions</li>
+                    <li><b>One BI tool</b> &mdash; Power BI or Tableau, learned properly</li>
+                    <li><b>Statistics</b> &mdash; sampling, significance, confidence intervals, regression</li>
+                    <li><b>Python &amp; pandas</b> &mdash; text and survey data at scale</li>
+                    <li><b>Qualitative method</b> &mdash; coding schemes and rater agreement</li>
+                    <li><b>AI literacy</b> &mdash; using and evaluating language models</li>
+                    <li><b>Writing</b> &mdash; one page that changes a decision</li>
+                </ul>
+
+                <h3>Path&#8209;specific skills</h3>
+                <div class="scroll-x">
+                    <table class="tbl">
+                        <thead><tr><th>Path</th><th>Key skills</th><th>Tools / Technologies</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Research / Insights</b></td><td>Survey design, qualitative coding, reporting</td><td>Excel, SPSS/R, Python, Tableau, survey platforms</td></tr>
+                            <tr><td><b>Data Analyst</b></td><td>SQL, dashboards, cleaning, storytelling</td><td>PostgreSQL, Power BI, Python (pandas), Git</td></tr>
+                            <tr><td><b>UX Research</b></td><td>Interviews, usability testing, behavioural analysis</td><td>Figma, Maze, GA4, SQL, spreadsheets</td></tr>
+                            <tr><td><b>Policy / AI Ethics</b></td><td>Regulation mapping, harm analysis, audit method</td><td>Spreadsheets, SQL, evaluation frameworks</td></tr>
+                            <tr><td><b>People Analytics</b></td><td>Attrition, funnels, engagement measurement</td><td>Excel, SQL, Power BI, HR systems</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ===== S10 ===== -->
+                <h2 id="s10"><span class="num">SECTION 10</span>Interview Q&amp;A &mdash; for humanities graduates</h2>
+                <details class="acc"><summary><span class="qn">Q1</span>You studied history. How is that relevant to analytics?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;History is training in evidence: where a source came from, what it leaves out, and whether a claim survives cross&#8209;checking. In my district education project that habit mattered &mdash; two of my five source files used inconsistent district boundaries, which would have produced a completely wrong comparison if I had trusted them.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q2</span>Do you have the quantitative skills for this role?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Yes. I write multi&#8209;table SQL including window functions, build Power BI models with DAX measures, and use sampling and significance testing appropriately. In my survey project I reported effect sizes with confidence intervals rather than just percentages, because the sample was small enough for that to matter.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q3</span>What does mixed methods mean, and why should we care?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;It means pairing the number with the reason. Quantitative data told me 38% of users abandoned checkout; ten interviews told me why &mdash; the delivery estimate only appeared after payment details. One without the other gives you either a problem you cannot fix or a story you cannot size.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q4</span>How do you analyse 2,000 open&#8209;text survey responses?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I read a random 100 first and build a category scheme from what is actually there rather than from what I expected. Then I have a second person code 50 independently to check agreement, revise the ambiguous categories, and only then classify the full set &mdash; increasingly with an LLM, validated against my hand&#8209;coded sample.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q5</span>A stakeholder wants a metric you think is misleading. What do you do?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;I give them the metric and one line on what it does not capture. For example, average session time can rise because people are confused rather than engaged. I would deliver it alongside a measure that separates those two cases, so they can see the difference themselves.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q6</span>Tell me about a time your analysis changed a decision.</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;In my policy dashboard project, the assumption was that dropout tracked the number of schools. The data showed it tracked teacher vacancy far more strongly, which pointed at a staffing problem rather than an infrastructure one. That is a different budget line entirely, and I wrote it up as a one&#8209;page recommendation.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q7</span>How do you use AI tools in your work?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Mostly for classifying open&#8209;ended text at scale and drafting code. I always hand&#8209;label a sample first and measure the model against it &mdash; on my last project the model agreed with my coding on 87% of cases, and the disagreements were concentrated in one ambiguous category, which told me the category definition was the problem.&rdquo;</p></div></details>
+
+                <details class="acc"><summary><span class="qn">Q8</span>Where do you want to be in three years?</summary>
+                    <div class="body"><p><b>Sample answer:</b> &ldquo;Leading research or insights for a product area, combining behavioural data with qualitative work. I want the quantitative side strong enough that I never have to outsource the analysis of my own research.&rdquo;</p></div></details>
+
+                <!-- ===== QUIZ ===== -->
+                <h2 id="quiz"><span class="num">SECTION 11</span>Test yourself &mdash; humanities to data and AI readiness</h2>
+                <div class="quiz" id="quiz">
+                    <div class="quiz-head">
+                        <h3 style="margin:0">Five questions. No sign&#8209;up.</h3>
+                        <span class="score" id="score">0 / 5</span>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin:0">Pick an answer to see why it is right or wrong.</p>
+                    <div id="qs"></div>
+                    <div class="quiz-done" id="qdone"></div>
+                </div>
+
+                <!-- ===== FAQ ===== -->
+                <h2 id="faq"><span class="num">SECTION 12</span>Frequently asked questions</h2>
+                <details class="acc"><summary>Which humanities subject is best for a data career?</summary><div class="body"><p>Economics and psychology transfer most directly because they already include quantitative method. Sociology and political science map well onto research and policy analytics, and literature, linguistics, history and philosophy map strongly onto AI evaluation and governance work. None of them is a barrier.</p></div></details>
+                <details class="acc"><summary>Do I need to learn programming?</summary><div class="body"><p>For analyst and research roles, SQL is essential and Python is strongly recommended. For AI evaluation and policy roles you can start without programming, though SQL becomes necessary for growth past mid-level.</p></div></details>
+                <details class="acc"><summary>Is a master's degree needed for research or UX roles?</summary><div class="body"><p>It helps for UX research and policy roles, where method training is valued, and it is not required. A portfolio containing a real mixed-methods study often substitutes for it, especially at startups and mid-size companies.</p></div></details>
+                <details class="acc"><summary>How do I get past resume filters that want a technical degree?</summary><div class="body"><p>Three things work: referrals from alumni already in the industry, a project link in your CV header so a recruiter can verify you in one click, and applying to research, insights and operations titles alongside data analyst roles.</p></div></details>
+                <details class="acc"><summary>What salary should I expect?</summary><div class="body"><p>Around ₹4&ndash;9 LPA for entry-level analyst and research roles, ₹6&ndash;12 LPA for UX research, and ₹6&ndash;14 LPA for policy and AI ethics roles, varying widely by city and employer type.</p></div></details>
+                <details class="acc"><summary>Is AI reducing the need for research and analysis?</summary><div class="body"><p>It has automated parts of data collection and first-pass text coding, while increasing demand for people who can design the study, validate the output and interpret what it means. The judgement layer is growing, not shrinking.</p></div></details>
+
+                <!-- ===== RELATED ===== -->
+                <h2 id="related"><span class="num">SECTION 13</span>Continue from here</h2>
+                <div class="rel-grid">
+                    <a class="rel-card" href="#"><span class="t">Survey design and analysis basics</span><span class="m">Research · 14 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Text analysis with Python</span><span class="m">Python · 16 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">Power BI for public data projects</span><span class="m">BI · 13 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">SQL for absolute beginners</span><span class="m">SQL · 18 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">UX research career guide</span><span class="m">UX · 15 min</span></a>
+                    <a class="rel-card" href="#"><span class="t">AI ethics and governance careers</span><span class="m">Policy · 14 min</span></a>
+                </div>
+
+                <div class="enroll" id="courses">
+                    <p class="eyebrow" style="color:var(--amber)">Classroom &amp; online · Noida</p>
+                    <h3>Data Analytics &amp; AI programme for humanities graduates</h3>
+                    <p>Excel, SQL, Power BI, statistics, Python and text analysis, taught with social and public&#8209;data projects. Includes mixed&#8209;methods work, AI evaluation and a portfolio built around your discipline.</p>
+                    <span class="price">&#8377;15,500 · full programme <s>&#8377;24,000</s></span>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#">Book a free demo class</a>
+                        <a class="btn btn-ghost" href="#">Download the syllabus</a>
+                    </div>
+                    <ul>
+                        <li>Starts from zero</li>
+                        <li>Social data projects</li>
+                        <li>Mixed&#8209;methods module</li>
+                        <li>Text analysis with Python</li>
+                        <li>AI evaluation</li>
+                        <li>Mock interviews</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ------------- SIDEBAR ------------- -->
+            <aside class="side">
+                <div class="s-card s-demo">
+                    <h4>Free demo class</h4>
+                    <div class="big">Sit in on a live analytics class</div>
+                    <p>Two hours, no payment, no commitment. See a public&#8209;data dashboard built from raw files and judge the pace.</p>
+                    <a class="btn btn-primary" href="#">Reserve a seat</a>
+                    <div class="meta">Next batch · Mon &amp; Thu · 7:00 PM IST</div>
+                </div>
+
+                <button class="s-pdf" id="pdfBtn">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5421" stroke-width="1.8" style="flex:none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6m0 0-2.5-2.5M12 18l2.5-2.5"/></svg>
+                    <span><span class="t">Save this guide as PDF</span><span class="m">Includes 7&#8209;month plan &amp; project briefs</span></span>
+                </button>
+
+                <div class="s-card">
+                    <h4>Popular guides</h4>
+                    <ul class="s-list">
+                        <li><a href="#"><span class="rank">01</span>Humanities to data and AI</a></li>
+                        <li><a href="#"><span class="rank">02</span>Survey design and analysis</a></li>
+                        <li><a href="#"><span class="rank">03</span>Text analysis with Python</a></li>
+                        <li><a href="#"><span class="rank">04</span>Power BI for public data</a></li>
+                        <li><a href="#"><span class="rank">05</span>SQL for absolute beginners</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card">
+                    <h4>Interview Q&amp;A packs</h4>
+                    <ul class="s-list">
+                        <li><a href="#">Data Analyst · 80 questions</a></li>
+                        <li><a href="#">Research &amp; insights · 45 questions</a></li>
+                        <li><a href="#">UX research · 40 questions</a></li>
+                        <li><a href="#">AI evaluation · 40 questions</a></li>
+                    </ul>
+                </div>
+
+                <div class="s-card s-banner">
+                    <span class="kicker">Admissions open</span>
+                    <div class="t">Data Analytics for Humanities Graduates</div>
+                    <p>Excel, SQL, Power BI, statistics, Python and text analysis with social and public&#8209;data projects. Weekday and weekend batches in Noida, plus live online.</p>
+                    <a class="btn btn-primary" href="#">See the syllabus</a>
+                </div>
+
+                <div class="s-card">
+                    <h4>Placement support</h4>
+                    <div class="place">
+                        <div><div class="v">14+</div><div class="l">Hiring partners</div></div>
+                        <div><div class="v">8</div><div class="l">Live projects</div></div>
+                        <div><div class="v">1:1</div><div class="l">Mock interviews</div></div>
+                        <div><div class="v">&infin;</div><div class="l">Batch repeats</div></div>
+                    </div>
+                    <p class="s-note">Placement assistance includes resume rebuilds, portfolio review and interview scheduling. It is support, not a guarantee &mdash; outcomes depend on your performance.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========================= BOTTOM BAND ========================= -->
+    <section class="band" id="resources">
+        <div class="wrap band-grid">
+            <div>
+                <div class="sub">Related resources</div>
+                <h3>Keep going &mdash; career guides</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Survey design and analysis <small>Method first</small></a></li>
+                    <li><a href="#">Text analysis with Python <small>Reviews to insight</small></a></li>
+                    <li><a href="#">Power BI for public data <small>District comparisons</small></a></li>
+                    <li><a href="#">Mixed&#8209;methods project guide <small>Numbers plus why</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Career roadmaps</div>
+                <h3>Plan your data &amp; AI career</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Data Analyst roadmap <small>Excel &rarr; SQL &rarr; BI</small></a></li>
+                    <li><a href="#">Research Analyst roadmap <small>Survey &rarr; Stats &rarr; Reporting</small></a></li>
+                    <li><a href="#">UX Research roadmap <small>Interviews &rarr; Testing &rarr; Metrics</small></a></li>
+                    <li><a href="#">AI Ethics roadmap <small>Policy &rarr; Audit &rarr; Governance</small></a></li>
+                </ul>
+            </div>
+            <div id="jobs">
+                <div class="sub">Free resources</div>
+                <h3>Download and practise</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">7&#8209;month study plan <small>Humanities &rarr; Data</small></a></li>
+                    <li><a href="#">Survey template pack <small>Four instruments</small></a></li>
+                    <li><a href="#">Qualitative coding sheet <small>With agreement check</small></a></li>
+                    <li><a href="#">Public data source list <small>India open data</small></a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="sub">Latest articles</div>
+                <h3>Fresh this week</h3>
+                <ul style="margin-top:12px">
+                    <li><a href="#">Humanities graduates in analytics <small>12 August 2026</small></a></li>
+                    <li><a href="#">Mixed methods in product teams <small>10 August 2026</small></a></li>
+                    <li><a href="#">AI governance hiring in India <small>8 August 2026</small></a></li>
+                    <li><a href="#">Writing a findings one&#8209;pager <small>5 August 2026</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="site">
+        <div class="wrap">
+            <div class="f-grid">
+                <div>
+                    <div class="f-logo">
+                        <img src="logo.png" alt="uncodemy" class="logo-img" style="height:30px;width:60px;object-fit:contain;" />
+                        <span class="logo-txt">un<em>code</em>my</span>
+                    </div>
+                    <p class="about">A technical training institute in Noida. We teach development, databases, cloud, and data in small batches, with live projects and placement support.</p>
+                </div>
+                <div>
+                    <h5>Courses</h5>
+                    <ul>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Science &amp; Analytics</a></li>
+                        <li><a href="#">DevOps &amp; Cloud</a></li>
+                        <li><a href="#">Backend with Node.js</a></li>
+                        <li><a href="#">Python &amp; Django</a></li>
+                        <li><a href="#">AWS with DevOps</a></li>
+                        <li><a href="#">Data Engineering</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Learn free</h5>
+                    <ul>
+                        <li><a href="#">All tutorials</a></li>
+                        <li><a href="#">Career guides</a></li>
+                        <li><a href="#">Interview questions</a></li>
+                        <li><a href="#">Projects library</a></li>
+                        <li><a href="#">Cheat sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Institute</h5>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Trainers</a></li>
+                        <li><a href="#">Placement support</a></li>
+                        <li><a href="#">Book a demo class</a></li>
+                        <li><a href="#">Contact &ndash; Noida</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bot">
+                <span>© 2026 Uncodemy · Noida, Uttar Pradesh</span>
+                <span>Privacy · Terms · Refund policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/common.js"></script>
+    <script>
+        UncodemyPage.init({
+            SCENARIOS: {
+                "analyst": {
+                                "role": "Data Analyst",
+                                "salary": "₹4–8 LPA",
+                                "time": "5–6 months"
+                },
+                "research": {
+                                "role": "Research / Insights Analyst",
+                                "salary": "₹4.5–9 LPA",
+                                "time": "4–5 months"
+                },
+                "ux": {
+                                "role": "UX Researcher",
+                                "salary": "₹6–12 LPA",
+                                "time": "6–8 months"
+                },
+                "policy": {
+                                "role": "Policy & AI Ethics Analyst",
+                                "salary": "₹6–14 LPA",
+                                "time": "6–9 months"
+                }
+            },
+            stateOrder: ["analyst", "research", "ux", "policy"],
+            renderScene: function(s) {
+                document.getElementById("roleName").textContent = s.role;
+                document.getElementById("salaryVal").textContent = s.salary;
+                document.getElementById("timeVal").textContent = s.time;
+            },
+            defaultTrack: "Humanities",
+            emptyMsg: "Nothing matches that yet. Try “Survey”, “SQL” or “Text analysis”.",
+            LIB: [
+                {
+                                "t": "Humanities to data analytics and AI",
+                                "g": "Humanities"
+                },
+                {
+                                "t": "Survey design and analysis basics",
+                                "g": "Research"
+                },
+                {
+                                "t": "Text analysis with Python",
+                                "g": "Social Data"
+                },
+                {
+                                "t": "Power BI for public data projects",
+                                "g": "Data Analytics"
+                },
+                {
+                                "t": "Python and pandas for beginners",
+                                "g": "Python"
+                },
+                {
+                                "t": "UX research career guide",
+                                "g": "Research"
+                },
+                {
+                                "t": "AI ethics and governance careers",
+                                "g": "AI Roles"
+                },
+                {
+                                "t": "Qualitative coding with agreement checks",
+                                "g": "Research"
+                },
+                {
+                                "t": "Mixed methods for product teams",
+                                "g": "Social Data"
+                },
+                {
+                                "t": "Career switch after graduation",
+                                "g": "Career Change"
+                }
+],
+            QUIZ: [
+                {
+                                "q": "Which role family has the most openings for humanities graduates?",
+                                "o": [
+                                                "AI Ethics Analyst",
+                                                "Data Analyst",
+                                                "UX Researcher",
+                                                "People Analytics"
+                                ],
+                                "a": 1,
+                                "e": "Data Analyst. It has several times more openings than the other families combined, and it allows lateral moves into research or policy work later."
+                },
+                {
+                                "q": "What is the main advantage of mixed-methods work?",
+                                "o": [
+                                                "It is faster",
+                                                "It pairs the number with the explanation behind it",
+                                                "It avoids statistics",
+                                                "It needs no tools"
+                                ],
+                                "a": 1,
+                                "e": "Quantitative data sizes the problem; qualitative work explains it. Analysts who can do both are rare and unusually useful."
+                },
+                {
+                                "q": "How should you code 2,000 open-text responses?",
+                                "o": [
+                                                "Guess the categories in advance",
+                                                "Build categories from a random sample, then check rater agreement",
+                                                "Use one keyword search",
+                                                "Report the raw text"
+                                ],
+                                "a": 1,
+                                "e": "Build the scheme from what is actually in a sample, test agreement with a second coder, revise the ambiguous categories, then classify the full set."
+                },
+                {
+                                "q": "Which four tools are enough to start?",
+                                "o": [
+                                                "Excel, SQL, one BI tool, Python",
+                                                "Ten different libraries",
+                                                "Only Python",
+                                                "SPSS alone"
+                                ],
+                                "a": 0,
+                                "e": "Excel, SQL, one dashboard tool and Python cover the vast majority of analyst and research work. Tool sprawl wastes study time."
+                },
+                {
+                                "q": "What makes a humanities portfolio distinctive?",
+                                "o": [
+                                                "More charts",
+                                                "A stated limitations section and a clear written interpretation",
+                                                "Longer notebooks",
+                                                "Using the newest model"
+                                ],
+                                "a": 1,
+                                "e": "Honest limitations and clear interpretation. Most candidates never state where their analysis cannot support a conclusion, and interviewers notice when someone does."
+                }
+],
+            passScore: 4,
+            resultText: {
+                "pass": "Your direction is clear. Start month 1 in section 08 and pick the project that uses your own subject.",
+                "fail": "Re-read sections 01 and 05 — the discipline mapping and the mixed-methods advantage are what make this path distinctive."
+}
+        });
+    </script>
+  <script defer src="https://uncodemy.com/js/form.js"></script>
+</body>
+</html>
