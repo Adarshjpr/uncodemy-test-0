@@ -19,8 +19,8 @@ const path = require("path");
 
 // Yahan jitne chahe utne find/replace pairs add kar sakte ho
 const REPLACEMENTS = [
-  { find: "/css/placement.css", replace: "../css/placement.css" },
-  { find: "/css/responsive2.css", replace: "../css/responsive2.css" },
+  { find: "../css/placement.css", replace: "/css/placement.css" },
+  { find: "../css/responsive2.css", replace: "/css/responsive2.css" },
 ];
 
 function getAllHtmlFiles(dir) {
